@@ -372,6 +372,12 @@
                         <onclick>Skin.ToggleSetting(DisableShiftVL)</onclick>
                         <selected>!Skin.HasSetting(DisableShiftVL)</selected>
                     </control>
+                    <control type="radiobutton" id="599">
+                        <label>$LOCALIZE[31972]</label>
+                        <include>Default_SettingRadioButtonShort</include>
+                        <onclick>Skin.ToggleSetting(DisablePosterLiteVL)</onclick>
+                        <selected>!Skin.HasSetting(DisablePosterLiteVL)</selected>
+                    </control>
                 </control>
                 <control type="scrollbar" id="61">
                     <posx>1815</posx>
