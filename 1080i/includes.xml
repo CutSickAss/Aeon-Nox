@@ -856,6 +856,8 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(lowlist)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(lowermainmenu)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(submenufixedlist)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(plitep)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pliteback1)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(firstrun)</onload>
     </include>
     <include name="PVR_Settings">
