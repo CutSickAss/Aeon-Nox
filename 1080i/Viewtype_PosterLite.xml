@@ -179,7 +179,7 @@
 	  <fadetime>250</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture flipy="true">osd/osd_progress_bar_back.png</texture>
-	  <animation effect="fade" start="75" end="75" time="0" condition="true">Conditional</animation>
+	  <animation effect="fade" start="60" end="60" time="0" condition="true">Conditional</animation>
       <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
     </control>
     <control type="fadelabel">
