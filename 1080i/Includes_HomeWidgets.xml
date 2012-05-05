@@ -787,7 +787,7 @@
                     <control type="label">
                         <posx>720</posx>
                         <posy>948</posy>
-                        <textcolor>ab749a9a</textcolor>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
                         <label>[UPPERCASE]$LOCALIZE[31040][/UPPERCASE]</label>
                         <font>Font_Reg18_Caps</font>
                         <visible>!Player.Paused</visible>
@@ -795,7 +795,7 @@
                     <control type="label">
                         <posx>720</posx>
                         <posy>948</posy>
-                        <textcolor>ab749a9a</textcolor>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
                         <label>31043</label>
                         <font>Font_Reg18_Caps</font>
                         <visible>Player.Paused</visible>
@@ -974,133 +974,141 @@
     </include>
     <include name="HomeNowPlayingPlaylist">
         <!-- Playlist -->
-        <control type="group">
-            <posy>-30</posy>
+        <control type="grouplist">
+            <posx>1166</posx>
+            <posy>670</posy>
+            <width>1290</width>
+            <height>1080</height>
+            <align>left</align>
+            <itemgap>-4</itemgap>
+            <orientation>vertical</orientation>
             <animation effect="slide" start="0,-900" end="0,0" time="800" tween="sine" easing="out" delay="1700">WindowOpen</animation>
             <animation effect="slide" start="0,0" end="0,-900" time="300" tween="cubic" easing="out">WindowClose</animation>
             <animation effect="fade" time="400">VisibleChange</animation>
-            <visible>!IsEmpty(MusicPlayer.offset(1).Title) + Skin.HasSetting(itemsplaylist)</visible>
+            <visible>!IsEmpty(MusicPlayer.offset(1).Title) + [Skin.HasSetting(itemsplaylist) | Skin.HasSetting(nowplayingpanel)]</visible>
             <control type="label">
-                <posx>1166</posx>
+                <posx>0</posx>
+                <posy>0</posy>
                 <width>724</width>
                 <height>38</height>
                 <aligny>left</aligny>
-                <posy>728</posy>
-                <textcolor>ab749a9a</textcolor>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
                 <label>[UPPERCASE]$LOCALIZE[209] $LOCALIZE[182]:[/UPPERCASE]</label>
                 <font>Font_Info_Caps</font>
             </control>
             <control type="label">
-                <posx>1166</posx>
-                <posy>765</posy>
+                <posx>0</posx>
+                <posy>0</posy>
                 <width>724</width>
                 <height>38</height>
                 <aligny>left</aligny>
                 <textcolor>abFFFFFF</textcolor>
-                <label>[UPPERCASE][COLOR ab749a9a] 1: [/COLOR]$INFO[MusicPlayer.Offset(1).Artist] - $INFO[MusicPlayer.Offset(1).Title][/UPPERCASE]</label>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  1: [/COLOR]$INFO[MusicPlayer.Offset(1).Artist] - $INFO[MusicPlayer.Offset(1).Title][/UPPERCASE]</label>
                 <font>Font_Info_Caps</font>
             </control>
             <control type="label">
-                <posx>1166</posx>
-                <posy>788</posy>
+                <posx>0</posx>
+                <posy>0</posy>
                 <width>724</width>
                 <height>38</height>
                 <aligny>left</aligny>
                 <textcolor>abFFFFFF</textcolor>
-                <label>[UPPERCASE][COLOR ab749a9a] 2: [/COLOR]$INFO[MusicPlayer.Offset(2).Artist] - $INFO[MusicPlayer.Offset(2).Title][/UPPERCASE]</label>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  2: [/COLOR]$INFO[MusicPlayer.Offset(2).Artist] - $INFO[MusicPlayer.Offset(2).Title][/UPPERCASE]</label>
                 <font>Font_Info_Caps</font>
                 <visible>!IsEmpty(MusicPlayer.Offset(2).Title)</visible>
             </control>
             <control type="label">
-                <posx>1166</posx>
-                <posy>810</posy>
+                <posx>0</posx>
+                <posy>0</posy>
                 <width>724</width>
                 <height>38</height>
                 <aligny>left</aligny>
                 <textcolor>abFFFFFF</textcolor>
-                <label>[UPPERCASE][COLOR ab749a9a] 3: [/COLOR]$INFO[MusicPlayer.Offset(3).Artist] - $INFO[MusicPlayer.Offset(3).Title][/UPPERCASE]</label>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  3: [/COLOR]$INFO[MusicPlayer.Offset(3).Artist] - $INFO[MusicPlayer.Offset(3).Title][/UPPERCASE]</label>
                 <font>Font_Info_Caps</font>
                 <visible>!IsEmpty(MusicPlayer.Offset(3).Title)</visible>
             </control>
             <control type="label">
-                <posx>1166</posx>
-                <posy>832</posy>
+                <posx>0</posx>
+                <posy>0</posy>
                 <width>724</width>
                 <height>38</height>
                 <aligny>left</aligny>
                 <textcolor>abFFFFFF</textcolor>
-                <label>[UPPERCASE][COLOR ab749a9a] 4: [/COLOR]$INFO[MusicPlayer.Offset(4).Artist] - $INFO[MusicPlayer.Offset(4).Title][/UPPERCASE]</label>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  4: [/COLOR]$INFO[MusicPlayer.Offset(4).Artist] - $INFO[MusicPlayer.Offset(4).Title][/UPPERCASE]</label>
                 <font>Font_Info_Caps</font>
                 <visible>!IsEmpty(MusicPlayer.Offset(4).Title)</visible>
             </control>
             <control type="label">
-                <posx>1166</posx>
-                <posy>855</posy>
+                <posx>0</posx>
+                <posy>0</posy>
                 <width>724</width>
                 <height>38</height>
                 <aligny>left</aligny>
                 <textcolor>abFFFFFF</textcolor>
-                <label>[UPPERCASE][COLOR ab749a9a] 5: [/COLOR]$INFO[MusicPlayer.Offset(5).Artist] - $INFO[MusicPlayer.Offset(5).Title][/UPPERCASE]</label>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  5: [/COLOR]$INFO[MusicPlayer.Offset(5).Artist] - $INFO[MusicPlayer.Offset(5).Title][/UPPERCASE]</label>
                 <font>Font_Info_Caps</font>
                 <visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
             </control>
-            <control type="group">
-                <visible>!Skin.HasSetting(fiveitemsplaylist)</visible>
-                <control type="label">
-                    <posx>1166</posx>
-                    <posy>878</posy>
-                    <width>724</width>
-                    <height>38</height>
-                    <aligny>left</aligny>
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>[UPPERCASE][COLOR ab749a9a] 6: [/COLOR]$INFO[MusicPlayer.Offset(6).Artist] - $INFO[MusicPlayer.Offset(6).Title][/UPPERCASE]</label>
-                    <font>Font_Info_Caps</font>
-                    <visible>!IsEmpty(MusicPlayer.Offset(6).Title)</visible>
-                </control>
-                <control type="label">
-                    <posx>1166</posx>
-                    <posy>900</posy>
-                    <width>724</width>
-                    <height>38</height>
-                    <aligny>left</aligny>
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>[UPPERCASE][COLOR ab749a9a] 7: [/COLOR]$INFO[MusicPlayer.Offset(7).Artist] - $INFO[MusicPlayer.Offset(7).Title][/UPPERCASE]</label>
-                    <font>Font_Info_Caps</font>
-                    <visible>!IsEmpty(MusicPlayer.Offset(7).Title)</visible>
-                </control>
-                <control type="label">
-                    <posx>1166</posx>
-                    <posy>922</posy>
-                    <width>724</width>
-                    <height>38</height>
-                    <aligny>left</aligny>
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>[UPPERCASE][COLOR ab749a9a] 8: [/COLOR]$INFO[MusicPlayer.Offset(8).Artist] - $INFO[MusicPlayer.Offset(8).Title][/UPPERCASE]</label>
-                    <font>Font_Info_Caps</font>
-                    <visible>!IsEmpty(MusicPlayer.Offset(8).Title)</visible>
-                </control>
-                <control type="label">
-                    <posx>1166</posx>
-                    <posy>945</posy>
-                    <width>724</width>
-                    <height>38</height>
-                    <aligny>left</aligny>
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>[UPPERCASE][COLOR ab749a9a] 9: [/COLOR]$INFO[MusicPlayer.Offset(9).Artist] - $INFO[MusicPlayer.Offset(9).Title][/UPPERCASE]</label>
-                    <font>Font_Info_Caps</font>
-                    <visible>!IsEmpty(MusicPlayer.Offset(9).Title)</visible>
-                </control>
-                <control type="label">
-                    <posx>1166</posx>
-                    <posy>968</posy>
-                    <width>724</width>
-                    <height>38</height>
-                    <aligny>left</aligny>
-                    <textcolor>abFFFFFF</textcolor>
-                    <label>[UPPERCASE][COLOR ab749a9a]10: [/COLOR]$INFO[MusicPlayer.Offset(10).Artist] - $INFO[MusicPlayer.Offset(10).Title][/UPPERCASE]</label>
-                    <font>Font_Info_Caps</font>
-                    <visible>!IsEmpty(MusicPlayer.Offset(10).Title)</visible>
-                </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>724</width>
+                <height>38</height>
+                <aligny>left</aligny>
+                <textcolor>abFFFFFF</textcolor>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  6: [/COLOR]$INFO[MusicPlayer.Offset(6).Artist] - $INFO[MusicPlayer.Offset(6).Title][/UPPERCASE]</label>
+                <font>Font_Info_Caps</font>
+                <visible>!IsEmpty(MusicPlayer.Offset(6).Title)</visible>
+                <visible>!Skin.HasSetting(fiveitemsplaylist) | Skin.HasSetting(nowplayingpanel)</visible>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>724</width>
+                <height>38</height>
+                <aligny>left</aligny>
+                <textcolor>abFFFFFF</textcolor>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  7: [/COLOR]$INFO[MusicPlayer.Offset(7).Artist] - $INFO[MusicPlayer.Offset(7).Title][/UPPERCASE]</label>
+                <font>Font_Info_Caps</font>
+                <visible>!IsEmpty(MusicPlayer.Offset(7).Title)</visible>
+                <visible>!Skin.HasSetting(fiveitemsplaylist) | Skin.HasSetting(nowplayingpanel)</visible>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>724</width>
+                <height>38</height>
+                <aligny>left</aligny>
+                <textcolor>abFFFFFF</textcolor>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  8: [/COLOR]$INFO[MusicPlayer.Offset(8).Artist] - $INFO[MusicPlayer.Offset(8).Title][/UPPERCASE]</label>
+                <font>Font_Info_Caps</font>
+                <visible>!IsEmpty(MusicPlayer.Offset(8).Title)</visible>
+                <visible>!Skin.HasSetting(fiveitemsplaylist) | Skin.HasSetting(nowplayingpanel)</visible>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>724</width>
+                <height>38</height>
+                <aligny>left</aligny>
+                <textcolor>abFFFFFF</textcolor>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]  9: [/COLOR]$INFO[MusicPlayer.Offset(9).Artist] - $INFO[MusicPlayer.Offset(9).Title][/UPPERCASE]</label>
+                <font>Font_Info_Caps</font>
+                <visible>!IsEmpty(MusicPlayer.Offset(9).Title)</visible>
+                <visible>!Skin.HasSetting(fiveitemsplaylist) | Skin.HasSetting(nowplayingpanel)</visible>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>724</width>
+                <height>38</height>
+                <aligny>left</aligny>
+                <textcolor>abFFFFFF</textcolor>
+                <label>[UPPERCASE][COLOR $VAR[TitleColorVar]]10: [/COLOR]$INFO[MusicPlayer.Offset(10).Artist] - $INFO[MusicPlayer.Offset(10).Title][/UPPERCASE]</label>
+                <font>Font_Info_Caps</font>
+                <visible>!IsEmpty(MusicPlayer.Offset(10).Title)</visible>
+                <visible>!Skin.HasSetting(fiveitemsplaylist) | Skin.HasSetting(nowplayingpanel)</visible>
             </control>
         </control>
     </include>
@@ -1109,10 +1117,8 @@
             <posx>1436</posx>
             <posy>672</posy>
             <animation effect="slide" start="575" end="0" time="700" tween="cubic" easing="out" delay="400">WindowOpen</animation>
-            <visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh)) + Skin.HasSetting(homeartistslideshow)</visible>
-            <animation type="VisibleChange" reversible="true">
-                <effect type="rotatey" center="248" start="-180" end="0" time="1500" />
-            </animation>
+            <visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))</visible>
+            <animation effect="fade" time="400">VisibleChange</animation>
             <control type="image">
                 <description>CD Background</description>
                 <posx>0</posx>
@@ -1130,23 +1136,23 @@
                 <posx>22</posx>
                 <width>380</width>
                 <height>354</height>
-                <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-                <aspectratio scalediffuse="false">scale</aspectratio>
-                <timeperimage>5000</timeperimage>
-                <fadetime>750</fadetime>
-                <randomize>true</randomize>
-            </control>
-            <control type="multiimage">
-                <posy>19</posy>
-                <posx>22</posx>
-                <width>380</width>
-                <height>354</height>
                 <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">DefaultArtist.png</imagepath>
                 <aspectratio scalediffuse="false">scale</aspectratio>
                 <timeperimage>5000</timeperimage>
                 <fadetime>750</fadetime>
                 <randomize>true</randomize>
                 <visible>Window.IsActive(1124)</visible>
+            </control>
+            <control type="multiimage">
+                <posy>19</posy>
+                <posx>22</posx>
+                <width>380</width>
+                <height>354</height>
+                <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <timeperimage>5000</timeperimage>
+                <fadetime>750</fadetime>
+                <randomize>true</randomize>
             </control>
             <control type="image">
                 <description>CD Background</description>
@@ -1303,13 +1309,12 @@
                 </control>
             </control>
             <control type="group">
-                <animation effect="zoom" start="100" end="125" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(smallmusichome)">Conditional</animation>
-                <animation effect="slide" start="0,0" end="-100,-150" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(smallmusichome)">Conditional</animation>
                 <control type="label">
                     <posy>717</posy>
                     <label>[UPPERCASE]$INFO[MusicPlayer.Artist][/UPPERCASE]</label>
                     <font>Font_Reg21_Caps</font>
                     <include>Furniture_HomeNowPlayingMetrics</include>
+                    <visible>Substring(Control.GetLabel(8308),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                     <animation effect="slide" time="400" tween="cubic" easing="inout" end="82" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
                 </control>
                 <control type="label">
@@ -1320,21 +1325,22 @@
                     <font>Font_Info_Caps</font>
                     <animation effect="slide" time="400" tween="cubic" easing="inout" end="98" condition="!Skin.HasSetting(disablecdart)">Conditional</animation>
                 </control>
-                <control type="image">
-                    <posx>555</posx>
-                    <posy>796</posy>
+                <control type="image" id="8308">
+                    <posx>535</posx>
+                    <posy>649</posy>
                     <width>309</width>
-                    <height>120</height>
+                    <height>108</height>
                     <aspectratio>stretch</aspectratio>
                     <fadetime>400</fadetime>
-                    <texture background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
+                   <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
+                    <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
                     <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
                     <animation effect="slide" time="400" tween="cubic" easing="inout" end="-98" condition="Skin.HasSetting(disablecdart)">Conditional</animation>
                 </control>
                 <control type="label">
                     <include>Furniture_HomeNowPlayingMetrics</include>
                     <posy>940</posy>
-                    <textcolor>ab749a9a</textcolor>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
                     <label>[UPPERCASE]$LOCALIZE[31040][/UPPERCASE]</label>
                     <font>Font_Info_Caps</font>
                     <visible>!Player.Paused</visible>
@@ -1343,7 +1349,7 @@
                 <control type="label">
                     <include>Furniture_HomeNowPlayingMetrics</include>
                     <posy>940</posy>
-                    <textcolor>ab749a9a</textcolor>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
                     <label>31043</label>
                     <font>Font_Info</font>
                     <visible>Player.Paused</visible>
@@ -1373,6 +1379,20 @@
             <posy>-650</posy>
             <height>1080</height>
             <width>1920</width>
+                <animation type="Conditional" condition="Skin.HasSetting(rotatenowplaying) + Skin.HasSetting(nowplayingpanel)" reversible="false">
+                    <effect type="rotatey" center="960" start="0" end="-90" time="550" tween="cubic" easing="in" />
+                    <!--<effect type="slide" start="0,0" end="0,-45" time="550" />-->
+                    <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="550" />
+                    <effect type="fade" start="100" end="0" time="0" delay="550" />
+                    <effect type="rotatey" center="960" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                </animation>
+                <animation type="Conditional" condition="!Skin.HasSetting(rotatenowplaying) + Skin.HasSetting(nowplayingpanel)" reversible="false">
+                    <effect type="rotatey" center="960" start="0" end="90" time="550" tween="cubic" easing="in" />
+                    <!--<effect type="slide" start="0,-45" end="0,0" delay="550" time="550" />-->
+                    <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="550" />
+                    <effect type="fade" start="0" end="100" time="0" delay="550" />
+                    <effect type="rotatey" center="960" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                </animation>
             <include>Animation_OpenCloseZoom</include>
             <animation type="Visible" reversible="true">
                 <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
@@ -1384,8 +1404,9 @@
             </animation>
             <visible>[!Skin.HasSetting(nohomepageMusicinfo) + Player.HasAudio] | [!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo]</visible>
             <control type="group">
-                <visible>Skin.HasSetting(smallmusichome)</visible>
+                <visible>Skin.HasSetting(nowplayingpanel)</visible>
                 <animation effect="zoom" start="100" end="95" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
+                <animation effect="fade" time="400">VisibleChange</animation>
                 <control type="image">
                     <posx>120</posx>
                     <posy>660</posy>
@@ -1402,7 +1423,7 @@
                     <posy>660</posy>
                     <width>1650</width>
                     <height>402</height>
-                    <animation effect="fade" start="100" end="70" time="0" condition="Skin.HasSetting(smallmusichome)">Conditional</animation>
+                    <animation effect="fade" start="100" end="40" time="0" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
                     <texture border="50">featured/panel_featured.png</texture>
                 </control>
             </control>
@@ -1416,22 +1437,109 @@
                     <effect type="fade" start="0" end="100" delay="500" time="200" />
                 </animation>
                 <control type="group">
-                    <animation effect="zoom" start="100" end="75" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(smallmusichome)">Conditional</animation>
-                    <animation effect="slide" end="280,250" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(smallmusichome)">Conditional</animation>
-                    <animation effect="zoom" start="100" end="90" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(smallmusichome)">Conditional</animation>
-                    <animation effect="slide" end="0,70" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(smallmusichome)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="75" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
+                    <animation effect="slide" end="280,250" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="90" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(nowplayingpanel)">Conditional</animation>
+                    <animation effect="slide" end="0,70" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(nowplayingpanel)">Conditional</animation>
                     <include>Furniture_HomeNowPlayingAudio</include>
                     <include>Furniture_HomeNowPlayingVideo</include>
                 </control>
                 <control type="group">
                     <visible>Player.HasAudio</visible>
-                    <animation effect="zoom" start="100" end="75" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(smallmusichome)">Conditional</animation>
-                    <animation effect="slide" end="370,300" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(smallmusichome)">Conditional</animation>
-                    <animation effect="zoom" start="100" end="90" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(smallmusichome)">Conditional</animation>
-                    <animation effect="slide" end="200,70" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(smallmusichome)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="75" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
+                    <animation effect="slide" end="370,245" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
+                    <animation effect="zoom" start="100" end="90" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(nowplayingpanel)">Conditional</animation>
+                    <animation effect="slide" end="200,70" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(nowplayingpanel)">Conditional</animation>
                     <include>HomeNowPlayingPlaylist</include>
-                    <include condition="System.HasAddon(script.artistslideshow)">HomeArtistSlideShow</include>
+                    <control type="group">
+                        <visible>!Skin.HasSetting(nowplayingpanel) + Skin.HasSetting(homeartistslideshow)</visible>
+                        <include condition="System.HasAddon(script.artistslideshow)">HomeArtistSlideShow</include>
+                    </control>
                 </control>
+            </control>
+        </control>
+        <control type="group">
+            <posx>22</posx>
+            <posy>-650</posy>
+            <visible>Skin.HasSetting(rotatenowplaying)</visible>
+            <visible>[!Skin.HasSetting(nohomepageMusicinfo) + Player.HasAudio] | [!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo]</visible>
+            <animation effect="fade" time="500">WindowOpen</animation>
+            <animation effect="fade" time="200">WindowClose</animation>
+            <animation type="Visible" reversible="false">
+                <effect type="rotatey" center="960" start="0" end="-90" time="550" tween="cubic" easing="in" />
+                <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="550" />
+                <effect type="fade" start="0" end="100" time="0" delay="550" />
+                <effect type="rotatey" center="960" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                <!--<effect type="slide" start="0,-45" end="0,0" delay="550" time="550" />-->
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="rotatey" center="960" start="0" end="90" time="550" tween="cubic" easing="in" />
+                <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="550" />
+                <effect type="fade" start="100" end="0" time="0" delay="550" />
+                <effect type="rotatey" center="960" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                <!--<effect type="slide" start="0,0" end="0,-45" time="550" />-->
+            </animation>
+            <control type="group">
+                <visible>Skin.HasSetting(nowplayingpanel)</visible>
+                <animation effect="zoom" start="100" end="95" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
+                <animation effect="fade" time="400">VisibleChange</animation>
+                <control type="image">
+                    <posx>120</posx>
+                    <posy>660</posy>
+                    <width>1650</width>
+                    <height>402</height>
+                    <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
+                    <texture border="50">featured/panel_featured_shadow.png</texture>
+                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                    <include>Animation_VisibleChange400</include>
+                </control>
+                <control type="image">
+                    <posx>120</posx>
+                    <posy>660</posy>
+                    <width>1650</width>
+                    <height>402</height>
+                    <animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
+                    <texture border="50">featured/panel_featured.png</texture>
+                </control>
+                    <control type="group">
+                        <animation effect="zoom" start="100" end="85" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
+                        <animation effect="slide" start="0" end="-1420,55" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
+                        <include>HomeArtistSlideShow</include>
+                    </control>
+            <!--        <control type="label">
+                        <posx>623</posx>
+                        <posy>658</posy>
+                        <width>1373</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Condensed22</font>
+                        <textcolor>grey2</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>-->
+                    <control type="textbox">
+                        <posx>528</posx>
+                        <posy>700</posy>
+                        <width>1200</width>
+                        <height>311</height>
+                        <align>justify</align>
+                        <aligny>top</aligny>
+                        <font>Font_Condensed22</font>
+                        <textcolor>ccffffff</textcolor>
+                        <label>$VAR[NowPlayingTextBoxLabelVar]</label>
+                        <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    </control>
+                    <control type="image">
+                        <posx>21</posx>
+                        <posy>21</posy>
+                        <width>1608</width>
+                        <height>360</height>
+                        <texture border="50">featured/panel_featured_overlay.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
             </control>
         </control>
     </include>
@@ -2375,7 +2483,7 @@
                         <posx>27</posx>
                         <posy>26</posy>
                         <width>1596</width>
-                        <height>350</height>
+                        <height>360</height>
                         <include>Animation_VisibleChange400</include>
                         <orientation>horizontal</orientation>
                         <animation effect="fade" start="100" end="0" time="0" condition="!Substring(Control.GetLabel(4321),panel)">Conditional</animation>
@@ -2436,7 +2544,7 @@
                                 <visible>Control.HasFocus(5010)</visible>
                             </control>
                         </focusedlayout>
-                        <itemlayout width="319" height="319" condition="Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs)">
+                        <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs)">
                             <control type="group">
                                 <control type="image">
                                     <description>Main Icon</description>
@@ -2473,7 +2581,7 @@
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="319" height="319" condition="Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs)">
+                        <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs)">
                             <control type="group">
                                 <control type="image">
                                     <description>Main Icon</description>
@@ -2700,13 +2808,20 @@
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
-                        <onup condition="Container(5019).HasFocus(1)">SetProperty(CustomYesNoDialog,1,home)</onup>
-                        <onup condition="Container(5019).HasFocus(2)">SetProperty(CustomYesNoDialog,2,home)</onup>
-                        <onup condition="Container(5019).HasFocus(3)">SetProperty(CustomYesNoDialog,3,home)</onup>
-                        <onup condition="Container(5019).HasFocus(4)">SetProperty(CustomYesNoDialog,4,home)</onup>
-                        <onup condition="Container(5019).HasFocus(5)">SetProperty(CustomYesNoDialog,5,home)</onup>
-                        <onup>ActivateWindow(1137)</onup>
-                        <ondown>9000</ondown>
+                        <onup condition="Container(5019).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,1,home)</onup>
+                        <onup condition="Container(5019).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,2,home)</onup>
+                        <onup condition="Container(5019).HasFocus(3) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,3,home)</onup>
+                        <onup condition="Container(5019).HasFocus(4) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,4,home)</onup>
+                        <onup condition="Container(5019).HasFocus(5) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,5,home)</onup>
+                        <onup condition="Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
+                        <ondown condition="Skin.HasSetting(lowermainmenu)">9000</ondown>
+                        <ondown condition="Container(5019).HasFocus(1) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,1,home)</ondown>
+                        <ondown condition="Container(5019).HasFocus(2) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,2,home)</ondown>
+                        <ondown condition="Container(5019).HasFocus(3) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,3,home)</ondown>
+                        <ondown condition="Container(5019).HasFocus(4) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,4,home)</ondown>
+                        <ondown condition="Container(5019).HasFocus(5) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,5,home)</ondown>
+                        <ondown condition="!Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</ondown>
+                        <onup condition="!Skin.HasSetting(lowermainmenu)">9000</onup> 
                         <orientation>horizontal</orientation>
                         <itemlayout width="319" height="360">
                             <control type="group">
@@ -2874,13 +2989,20 @@
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
-                        <onup condition="Container(5020).HasFocus(1)">SetProperty(CustomYesNoDialog,6,home)</onup>
-                        <onup condition="Container(5020).HasFocus(2)">SetProperty(CustomYesNoDialog,7,home)</onup>
-                        <onup condition="Container(5020).HasFocus(3)">SetProperty(CustomYesNoDialog,8,home)</onup>
-                        <onup condition="Container(5020).HasFocus(4)">SetProperty(CustomYesNoDialog,9,home)</onup>
-                        <onup condition="Container(5020).HasFocus(5)">SetProperty(CustomYesNoDialog,10,home)</onup>
-                        <onup>ActivateWindow(1137)</onup>
-                        <ondown>9000</ondown>
+                        <onup condition="Container(5020).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,6,home)</onup>
+                        <onup condition="Container(5020).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,7,home)</onup>
+                        <onup condition="Container(5020).HasFocus(3) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,8,home)</onup>
+                        <onup condition="Container(5020).HasFocus(4) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,9,home)</onup>
+                        <onup condition="Container(5020).HasFocus(5) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,10,home)</onup>
+                        <onup condition="Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
+                        <ondown condition="Skin.HasSetting(lowermainmenu)">9000</ondown>
+                        <ondown condition="Container(5020).HasFocus(1) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,6,home)</ondown>
+                        <ondown condition="Container(5020).HasFocus(2) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,7,home)</ondown>
+                        <ondown condition="Container(5020).HasFocus(3) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,8,home)</ondown>
+                        <ondown condition="Container(5020).HasFocus(4) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,9,home)</ondown>
+                        <ondown condition="Container(5020).HasFocus(5) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,10,home)</ondown>
+                        <ondown condition="!Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</ondown>
+                        <onup condition="!Skin.HasSetting(lowermainmenu)">9000</onup>
                         <orientation>horizontal</orientation>
                         <itemlayout width="319" height="360">
                             <control type="group">
@@ -3070,7 +3192,8 @@
                         <onup condition="!Skin.HasSetting(lowermainmenu)">9000</onup>
                         <onback>AlarmClock(HomeTileLeft,Control.Move(5001,1),00:07,silent,loop)</onback>
                         <onback>9000</onback>
-                        <onclick>PlayMedia($ESCINFO[Container(5001).ListItem.Property(Path)])</onclick>
+                        <onclick condition="!Stringcompare(Control.GetLabel(4321),featuredmusic)">PlayMedia($ESCINFO[Container(5001).ListItem.Property(Path)])</onclick>
+                       	<onclick condition="Stringcompare(Control.GetLabel(4321),featuredmusic)">$INFO[Container(5001).ListItem.Property(Path)]</onclick>
                         <onfocus>CancelAlarm(HomeTileLeft,true)</onfocus>
                         <visible>SubString(Control.GetLabel(4321),featured)</visible>
                     </control>
@@ -3368,106 +3491,106 @@
                             </item>
                             <item>
                                 <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomSong.1.Thumb)]</thumb>
-                                <label>$INFO[Window(Home).Property(RandomSong.1.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomSong.1.Artist)]</label2>
+                                <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Thumb)]</thumb>
+                                <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
+                                <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomSong.1.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomSong.1.Album)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomSong.1.Fanart)]</property>
+                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.1.Rating)]</property>
+                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.1.Album)]</property>
+                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
-                                <property name="Path">$INFO[Window(Home).Property(RandomSong.1.Path)]</property>
+                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.1.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
                             <item>
                                 <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomSong.2.Thumb)]</thumb>
-                                <label>$INFO[Window(Home).Property(RandomSong.2.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomSong.2.Artist)]</label2>
+                                <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Thumb)]</thumb>
+                                <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
+                                <label2>$INFO[Window(Home).Property(RandomAlbum.2.Artist)]</label2>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomSong.2.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomSong.2.Album)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomSong.2.Fanart)]</property>
+                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.2.Rating)]</property>
+                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.2.Album)]</property>
+                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
-                                <property name="Path">$INFO[Window(Home).Property(RandomSong.2.Path)]</property>
+                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.2.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
                             <item>
                                 <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomSong.3.Thumb)]</thumb>
-                                <label>$INFO[Window(Home).Property(RandomSong.3.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomSong.3.Artist)]</label2>
+                                <thumb>$INFO[Window(Home).Property(RandomAlbum.3.Thumb)]</thumb>
+                                <label>$INFO[Window(Home).Property(RandomAlbum.3.Title)]</label>
+                                <label2>$INFO[Window(Home).Property(RandomAlbum.3.Artist)]</label2>
                                 <property name="NavItem">item3.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomSong.3.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomSong.3.Album)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomSong.3.Fanart)]</property>
+                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.3.Rating)]</property>
+                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.3.Album)]</property>
+                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.3.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
-                                <property name="Path">$INFO[Window(Home).Property(RandomSong.3.Path)]</property>
+                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.3.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
                             <item>
                                 <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomSong.4.Thumb)]</thumb>
-                                <label>$INFO[Window(Home).Property(RandomSong.4.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomSong.4.Artist)]</label2>
+                                <thumb>$INFO[Window(Home).Property(RandomAlbum.4.Thumb)]</thumb>
+                                <label>$INFO[Window(Home).Property(RandomAlbum.4.Title)]</label>
+                                <label2>$INFO[Window(Home).Property(RandomAlbum.4.Artist)]</label2>
                                 <property name="NavItem">item4.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomSong.4.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomSong.4.Album)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomSong.4.Fanart)]</property>
+                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.4.Rating)]</property>
+                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.4.Album)]</property>
+                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.4.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
-                                <property name="Path">$INFO[Window(Home).Property(RandomSong.4.Path)]</property>
+                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.4.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
                             <item>
                                 <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomSong.5.Thumb)]</thumb>
-                                <label>$INFO[Window(Home).Property(RandomSong.5.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomSong.5.Artist)]</label2>
+                                <thumb>$INFO[Window(Home).Property(RandomAlbum.5.Thumb)]</thumb>
+                                <label>$INFO[Window(Home).Property(RandomAlbum.5.Title)]</label>
+                                <label2>$INFO[Window(Home).Property(RandomAlbum.5.Artist)]</label2>
                                 <property name="NavItem">item5.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomSong.5.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomSong.5.Album)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomSong.5.Fanart)]</property>
+                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.5.Rating)]</property>
+                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.5.Album)]</property>
+                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.5.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
-                                <property name="Path">$INFO[Window(Home).Property(RandomSong.5.Path)]</property>
+                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.5.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
                             <item>
                                 <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomSong.6.Thumb)]</thumb>
-                                <label>$INFO[Window(Home).Property(RandomSong.6.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomSong.6.Artist)]</label2>
+                                <thumb>$INFO[Window(Home).Property(RandomAlbum.6.Thumb)]</thumb>
+                                <label>$INFO[Window(Home).Property(RandomAlbum.6.Title)]</label>
+                                <label2>$INFO[Window(Home).Property(RandomAlbum.6.Artist)]</label2>
                                 <property name="NavItem">item6.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomSong.6.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomSong.6.Album)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomSong.6.Fanart)]</property>
+                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.6.Rating)]</property>
+                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.6.Album)]</property>
+                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.6.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
-                                <property name="Path">$INFO[Window(Home).Property(RandomSong.6.Path)]</property>
+                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.6.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
                             <item>
                                 <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomSong.7.Thumb)]</thumb>
-                                <label>$INFO[Window(Home).Property(RandomSong.7.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomSong.7.Artist)]</label2>
+                                <thumb>$INFO[Window(Home).Property(RandomAlbum.7.Thumb)]</thumb>
+                                <label>$INFO[Window(Home).Property(RandomAlbum.7.Title)]</label>
+                                <label2>$INFO[Window(Home).Property(RandomAlbum.7.Artist)]</label2>
                                 <property name="NavItem">item7.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomSong.7.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomSong.7.Album)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomSong.7.Fanart)]</property>
+                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.7.Rating)]</property>
+                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.7.Album)]</property>
+                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.7.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
-                                <property name="Path">$INFO[Window(Home).Property(RandomSong.7.Path)]</property>
+                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.7.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
                             <item>
                                 <icon>DefaultAlbumCover.png</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomSong.8.Thumb)]</thumb>
-                                <label>$INFO[Window(Home).Property(RandomSong.8.Title)]</label>
-                                <label2>$INFO[Window(Home).Property(RandomSong.8.Artist)]</label2>
+                                <thumb>$INFO[Window(Home).Property(RandomAlbum.8.Thumb)]</thumb>
+                                <label>$INFO[Window(Home).Property(RandomAlbum.8.Title)]</label>
+                                <label2>$INFO[Window(Home).Property(RandomAlbum.8.Artist)]</label2>
                                 <property name="NavItem">item8.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomSong.8.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomSong.8.Album)]</property>
-                                <property name="Fanart">$INFO[Window(Home).Property(RandomSong.8.Fanart)]</property>
+                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.8.Rating)]</property>
+                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.8.Album)]</property>
+                                <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.8.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
-                                <property name="Path">$INFO[Window(Home).Property(RandomSong.8.Path)]</property>
+                                <property name="Path">$INFO[Window(Home).Property(RandomAlbum.8.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
                         </content>
@@ -3484,7 +3607,23 @@
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(5001).ListItem.Label]$INFO[Container(5001).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
+                        <visible>!Control.HasFocus(5010) + !Control.HasFocus(5001)</visible>
                     </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>300</posy>
+                        <width>466</width>
+                        <height>40</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Condensed18</font>
+                        <textcolor>$VAR[SelectedColorVar]</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[Container(5001).ListItem.Label]$INFO[Container(5001).ListItem.Label2, - ]</label>
+                        <textoffsetx>15</textoffsetx>
+                        <visible>Control.HasFocus(5010) | Control.HasFocus(5001)</visible>
+                    </control>
+
                     <control type="image">
                         <posx>466</posx>
                         <posy>315</posy>
@@ -3543,7 +3682,7 @@
                         <onclick condition="Stringcompare(Control.GetLabel(4321),featuredmusic)">SetFocus(9000)</onclick>
                     </control>
                     <control type="wraplist" id="5002">
-                        <visible>Stringcompare(Control.GetLabel(4321),featuredmusic) | Stringcompare(Control.GetLabel(4321),featuredmovies) | Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+                        <visible>Substring(Control.GetLabel(4321),featured)</visible>
                         <include>Animation_VisibleChange400</include>
                         <posx>0</posx>
                         <posy>0</posy>
@@ -3749,6 +3888,21 @@
                         <textcolor>white</textcolor>
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(5002).ListItem.Label]</label>
+                        <visible>![Control.HasFocus(5011) | Control.HasFocus(5002)]</visible>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>300</posy>
+                        <width>246</width>
+                        <height>40</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Condensed18</font>
+                        <textcolor>$VAR[SelectedColorVar]</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[Container(5002).ListItem.Label]</label>
+                        <visible>Control.HasFocus(5011) | Control.HasFocus(5002)</visible>
                         <textoffsetx>15</textoffsetx>
                     </control>
                     <control type="image">
@@ -4224,6 +4378,21 @@
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(5003).ListItem.Label]$INFO[Container(5003).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
+                        <visible>![Control.HasFocus(5012) | Control.HasFocus(5003)]</visible>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>300</posy>
+                        <width>466</width>
+                        <height>40</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Condensed18</font>
+                        <textcolor>$VAR[SelectedColorVar]</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[Container(5003).ListItem.Label]$INFO[Container(5003).ListItem.Label2, - ]</label>
+                        <textoffsetx>15</textoffsetx>
+                        <visible>Control.HasFocus(5012) | Control.HasFocus(5003)</visible>
                     </control>
                     <control type="image">
                         <posx>466</posx>
@@ -4324,16 +4493,12 @@
                     <height>402</height>
                     <texture border="50">featured/panel_featured.png</texture>
                 </control>
-                <!--<control type="image">
-                    <posx>27</posx>
-                    <posy>26</posy>
-                    <width>1596</width>
-                    <height>350</height>
-                    <texture>$INFO[Container(5010).ListItem.Property(Fanart)]</texture>
-                    <aspectratio align="center">scale</aspectratio>
-                    <colordiffuse>DD27292b</colordiffuse>
-                </control>-->
-
+                <control type="button"  id="5014">
+                    <include>HiddenObject</include>
+                    <onfocus condition="Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)">SetFocus(5020)</onfocus>
+                    <onfocus condition="Substring(Control.GetLabel(4321),tv)">SetFocus(5021)</onfocus>
+                    <onfocus condition="Substring(Control.GetLabel(4321),album) | Substring(Control.GetLabel(4321),song)">SetFocus(5030)</onfocus>
+                </control>
                 <control type="group">
                     <posx>27</posx>
                     <posy>26</posy>
@@ -4387,14 +4552,14 @@
                         <label>$INFO[Container(5010).ListItem.Label2]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
-                    <control type="grouplist" id="5014">
+                    <control type="grouplist" id="5020">
                         <description>Trailer + Play + Return button</description>
                         <posx>-100</posx>
                         <posy>-150</posy>
                         <width>0</width>
                         <height>0</height>
-                        <onleft>5014</onleft>
-                        <onright>5014</onright>
+                        <onleft>5020</onleft>
+                        <onright>5020</onright>
                         <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
                         <onback>SetFocus(5010)</onback>
                         <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
@@ -4431,7 +4596,7 @@
                         </control>
                         <control type="button" id="5017">
                             <description>RANDOMIZE</description>
-                            <label>RANDOMIZE]</label>
+                            <label>$LOCALIZE[31087]</label>
                             <onclick>RunScript(script.metadata.actors,borntoday,10,random)</onclick>
                             <include>HiddenObject</include>
                             <visible>Substring(Control.GetLabel(4321),actors)</visible>
@@ -4443,6 +4608,19 @@
                             <ondown>SetFocus(5010)</ondown>
                         </control>
                         <control type="button" id="5018">
+                            <description>RANDOMIZE</description>
+                            <label>$LOCALIZE[31087]</label>
+                            <onclick>XBMC.RunScript(script.randomitems,limit=8&amp;unplayed=True)</onclick>
+                            <include>HiddenObject</include>
+                            <visible>Substring(Control.GetLabel(4321),random)</visible>
+                            <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
+                            <onback>SetFocus(5010)</onback>
+                            <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
+                            <onup>SetFocus(5010)</onup>
+                            <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
+                            <ondown>SetFocus(5010)</ondown>
+                        </control>
+                        <control type="button" id="5019">
                             <description>Return</description>
                             <label>$LOCALIZE[31066]</label>
                             <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
@@ -4488,6 +4666,15 @@
                             <include>BreadcrumbsLabel</include>
                             <label>$INFO[Control.GetLabel(5017)]</label>
                             <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(5017)">Conditional</animation>
+                            <visible>Control.IsVisible(5017)</visible>
+                        </control>
+                        <control type="label">
+                            <textcolor>white2</textcolor>
+                            <font>Font_Condensed22_Caps</font>
+                            <shadowcolor>black</shadowcolor>
+                            <include>BreadcrumbsLabel</include>
+                            <label>$INFO[Control.GetLabel(5018)]</label>
+                            <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(5018)">Conditional</animation>
                         </control>
                     </control>
                 </control>
@@ -4545,14 +4732,14 @@
                         <label>$INFO[Container(5010).ListItem.Property(Plot)]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
-                    <control type="grouplist" id="5014">
+                    <control type="grouplist" id="5021">
                         <description>Play + Return button</description>
                         <posx>-100</posx>
                         <posy>-150</posy>
                         <width>0</width>
                         <height>0</height>
-                        <onleft>5014</onleft>
-                        <onright>5014</onright>
+                        <onleft>5021</onleft>
+                        <onright>5021</onright>
                         <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
                         <onback>SetFocus(5010)</onback>
                         <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
@@ -4562,7 +4749,7 @@
                         <align>left</align>
                         <orientation>horizontal</orientation>
                         <itemgap>50</itemgap>
-                        <control type="button" id="5015">
+                        <control type="button" id="5022">
                             <description>Play</description>
                             <label>$LOCALIZE[208]</label>
                             <include>HiddenObject</include>
@@ -4574,7 +4761,7 @@
                             <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
                             <ondown>SetFocus(5010)</ondown>
                         </control>
-                        <control type="button" id="5017">
+                        <control type="button" id="5023">
                             <description>Return</description>
                             <label>$LOCALIZE[31066]</label>
                             <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
@@ -4613,6 +4800,142 @@
                         </control>
                     </control>
                 </control>
+                
+                
+                
+                
+                
+                
+                <control type="group">
+                    <posx>27</posx>
+                    <posy>26</posy>
+                    <width>1596</width>
+                    <height>350</height>
+                    <visible>Substring(Control.GetLabel(4321),album) | Substring(Control.GetLabel(4321),song)</visible>
+                    <control type="image">
+                        <description>Main Icon</description>
+                        <posx>5</posx>
+                        <posy>5</posy>
+                        <width>340</width>
+                        <height>340</height>
+                        <texture background="true" fallback="DefaultAlbumCover.png.png">$INFO[Container(5010).ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                    </control>
+                    <control type="label">
+                        <posx>610</posx>
+                        <posy>5</posy>
+                        <width>986</width>
+                        <height>50</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Reg24</font>
+                        <textcolor>white2</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[Container(5010).ListItem.Label]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+                    <control type="label">
+                        <posx>610</posx>
+                        <posy>58</posy>
+                        <width>986</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Condensed22</font>
+                        <textcolor>grey2</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[Container(5010).ListItem.Label2]$INFO[Container(5010).ListItem.Property(EpisodeNumber), • [UPPERCASE],[/UPPERCASE]]</label>
+                        <label>$INFO[Container(5010).ListItem.Label2]$INFO[Container(5010).ListItem.Property(EpisodeNumber), • [UPPERCASE],[/UPPERCASE]]$INFO[Container(5010).ListItem.Property(Rating), • ]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+                    <control type="textbox">
+                        <posx>625</posx>
+                        <posy>145</posy>
+                        <width>956</width>
+                        <height>195</height>
+                        <align>justify</align>
+                        <aligny>top</aligny>
+                        <font>Font_Condensed22</font>
+                        <textcolor>ccffffff</textcolor>
+                        <label>$INFO[Container(5010).ListItem.Property(Plot)]</label>
+                        <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    </control>
+                    <control type="grouplist" id="5030">
+                        <description>Play + Return button</description>
+                        <posx>-100</posx>
+                        <posy>-150</posy>
+                        <width>0</width>
+                        <height>0</height>
+                        <onleft>5030</onleft>
+                        <onright>5030</onright>
+                        <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
+                        <onback>SetFocus(5010)</onback>
+                        <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
+                        <onup>SetFocus(5010)</onup>
+                        <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
+                        <ondown>SetFocus(5010)</ondown>
+                        <align>left</align>
+                        <orientation>horizontal</orientation>
+                        <itemgap>50</itemgap>
+                        <control type="button" id="5032">
+                            <description>Play</description>
+                            <label>$LOCALIZE[208]</label>
+                            <include>HiddenObject</include>
+                            <onclick>PlayMedia($ESCINFO[Container(5010).ListItem.Property(Path)])</onclick>
+                            <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
+                            <onback>SetFocus(5010)</onback>
+                            <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
+                            <onup>SetFocus(5010)</onup>
+                            <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
+                            <ondown>SetFocus(5010)</ondown>
+                        </control>
+                        <control type="button" id="5033">
+                            <description>Return</description>
+                            <label>$LOCALIZE[31066]</label>
+                            <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
+                            <onclick>SetFocus(5010)</onclick>
+                            <include>HiddenObject</include>
+                            <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
+                            <onback>SetFocus(5010)</onback>
+                            <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
+                            <onup>SetFocus(5010)</onup>
+                            <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
+                            <ondown>SetFocus(5010)</ondown>
+                        </control>
+                    </control>
+                    <control type="grouplist">
+                        <posx>625</posx>
+                        <posy>98</posy>
+                        <width>1373</width>
+                        <align>left</align>
+                        <itemgap>40</itemgap>
+                        <orientation>horizontal</orientation>
+                        <control type="label">
+                            <textcolor>white2</textcolor>
+                            <font>Font_Condensed22_Caps</font>
+                            <shadowcolor>black</shadowcolor>
+                            <include>BreadcrumbsLabel</include>
+                            <label>$INFO[Control.GetLabel(5015)]</label>
+                            <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(5015)">Conditional</animation>
+                        </control>
+                        <control type="label">
+                            <textcolor>white2</textcolor>
+                            <font>Font_Condensed22_Caps</font>
+                            <shadowcolor>black</shadowcolor>
+                            <include>BreadcrumbsLabel</include>
+                            <label>$INFO[Control.GetLabel(5017)]</label>
+                            <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(5017)">Conditional</animation>
+                        </control>
+                    </control>
+                </control>
+                
+                
+                
+                
+                
+                
+                
+                
                 <control type="image">
                     <posx>21</posx>
                     <posy>21</posy>

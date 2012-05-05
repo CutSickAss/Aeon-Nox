@@ -9,8 +9,10 @@
 			<texture background="true">$VAR[TVShowLogoVar]</texture>
 			<fadetime>300</fadetime>
 			<aspectratio align="bottom">keep</aspectratio>
-			<visible>[![Control.IsVisible(501) | Control.IsVisible(504)] | Skin.HasSetting(ClassicTopBar)]</visible>
+			<visible>[![Control.IsVisible(501) | Control.IsVisible(504)] | [Skin.HasSetting(ClassicTopBar) + !Container.Content(movies)]]</visible>
 			<visible>![Container.Content(tvshows) + Control.IsVisible(503) + Skin.HasSetting(landscapelogo)]</visible>
+            <visible>!Control.isVisible(8822)</visible>
+             <animation effect="slide" start="0,0" end="0,-34" time="0" condition="Container.Content(movies)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 		</control>
@@ -237,7 +239,7 @@
 					<height>220</height>
 					<aspectratio align="center">keep</aspectratio>
 					<fadetime>400</fadetime>
-					<texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,logo.png]</texture>
+					<texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,character.png]</texture>
 				</control>
 				<control type="image">
 					<posx>-6</posx>
@@ -444,6 +446,33 @@
 					<posx>480</posx>
 					<posy>2</posy>
 					<width>657</width>
+					<height>404</height>
+					<font>Font_Reg18</font>
+					<label fallback="312577">$VAR[FanartPanelPlotVar]</label>
+					<align>justify</align>
+					<textcolor>white6</textcolor>
+					<animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
+					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <visible>!Control.IsVisible(504) + !Control.IsVisible(503)</visible>
+                    <visible>[[Skin.HasSetting(noflow) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]]</visible>
+				</control>
+				<control type="textbox">
+					<posx>480</posx>
+					<posy>2</posy>
+					<width>657</width>
+					<height>440</height>
+					<font>Font_Reg18</font>
+					<label fallback="312577">$VAR[FanartPanelPlotVar]</label>
+					<align>justify</align>
+					<textcolor>white6</textcolor>
+					<animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
+					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <visible>Control.IsVisible(504) + [[Skin.HasSetting(noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]]</visible>
+				</control>
+				<control type="textbox">
+					<posx>480</posx>
+					<posy>2</posy>
+					<width>657</width>
 					<height>472</height>
 					<font>Font_Reg18</font>
 					<label fallback="312577">$VAR[FanartPanelPlotVar]</label>
@@ -451,7 +480,23 @@
 					<textcolor>white6</textcolor>
 					<animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <visible>Control.IsVisible(504) + ![[Skin.HasSetting(noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]]</visible>
 				</control>
+				<control type="textbox">
+					<posx>480</posx>
+					<posy>2</posy>
+					<width>657</width>
+					<height>472</height>
+					<font>Font_Reg18</font>
+                    <visible>!Control.IsVisible(504)</visible>
+					<label fallback="312577">$VAR[FanartPanelPlotVar]</label>
+					<align>justify</align>
+					<textcolor>white6</textcolor>
+					<animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
+					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <visible>![[Skin.HasSetting(noflow) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] | Control.IsVisible(503)</visible>
+				</control>
+                
 			</control>
 			<include condition="System.GetBool(videolibrary.groupmoviesets) + System.HasAddon(script.moviesets)">InfoPanelPosterMovieSetsLayout</include>
 		</control>
@@ -460,14 +505,14 @@
 		<control type="group" id="8857">
 			<description>Furniture Showcase</description>
 			<include>Animation_OpenClose_Furniture</include>
-			<visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)] | Control.IsVisible(528)]</visible>
+			<visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>472</posy>
 				<width>1920</width>
 				<height>608</height>
 				<texture>views/showcase_floor.png</texture>
-				<colordiffuse>$VAR[FloorColorVar]</colordiffuse>
+				<colordiffuse>$VAR[ExtendedFloorColorVar]</colordiffuse>
 			</control>
 			<control type="group" id="8860">
 				<visible>![Control.IsVisible(512)  | Control.IsVisible(510) | Window.IsActive(PVR)]</visible>
@@ -578,8 +623,6 @@
 		</control>
 	</include>
 	<include name="SecondLabelFloor">
-		<control type="group">
-			<include>Animation_CommonFade</include>
 			<control type="label">
 				<posx>510</posx>
 				<posy>1002</posy>
@@ -591,7 +634,6 @@
 				<shadowcolor>floorshadow</shadowcolor>
 				<label>[UPPERCASE]$VAR[SecondLabelVar][/UPPERCASE]</label>
 			</control>
-		</control>
 	</include>
 	<include name="FirstLabelFloor">
 		<control type="label">
@@ -600,7 +642,6 @@
 			<width>900</width>
 			<align>center</align>
 			<aligny>center</aligny>
-			<include>Animation_CommonFade</include>
 			<font>Font_ShowcaseMainLabel2_Caps</font>
 			<scroll>true</scroll>
 			<scrollspeed>50</scrollspeed>
@@ -612,23 +653,11 @@
 	<include name="FloorLabels">
 		<control type="group">
 			<visible>Control.IsVisible(509) | [Control.IsVisible(500) + !StringCompare(Container.FolderName,youtube)] | Control.IsVisible(508) |  Control.IsVisible(513) | Control.IsVisible(504) | Control.IsVisible(501)</visible>
-			<control type="image" id="8822">
-				<description>ClearART</description>
-				<posx>745</posx>
-				<posy>950</posy>
-				<width>450</width>
-				<height>110</height>
-				<texture background="true" fallback="empty.png">$INFO[ListItem.Path,,logo.png]</texture>
-				<aspectratio>keep</aspectratio>
-				<animation effect="fade" delay="300" time="300" reversible="false">Hidden</animation>
-				<animation effect="fade" start="0" delay="100" end="100" time="300" reversible="true" condition="!Stringcompare(Control.GetLabel(8822),empty.png)">Conditional</animation>
-				<visible>!Skin.HasSetting(movielogosfloor) + Container.Content(movies) + !Container.OnNext</visible>
-			</control>
+            <include>dialogeffect</include>
 			<control type="group">
-				<visible>![Container.Content(movies) + !Skin.HasSetting(movielogosfloor) + !Stringcompare(Control.GetLabel(8822),empty.png)]</visible>
 				<animation effect="fade" start="0" end="100" time="100" delay="100" reversible="false">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="0" delay="0" reversible="false">Hidden</animation>
-				<visible>!Container.OnScrollNext + !Container.OnScrollPrevious</visible>
+                <visible>[Control.IsVisible(8822)  + !Container.OnScrollNext + !Container.OnScrollPrevious + Stringcompare(Control.GetLabel(8822),empty.png)] | !Control.IsVisible(8822)</visible>
 				<include>SecondLabelFloor</include>
 				<include>FirstLabelFloor</include>
 			</control>
@@ -642,19 +671,10 @@
 			<height>72</height>
 			<texture>views/showcase_gradient.png</texture>
 			<include>Animation_CommonFade</include>
-			<visible>[Control.IsVisible(8857) | Control.IsVisible(8860)]+![Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506) | Control.IsVisible(528)]</visible>
+			<visible>[Control.IsVisible(8857) | Control.IsVisible(8860)]+![Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
 			<animation effect="slide" time="200" start="0" end="1440" tween="cubic" easing="out" condition="Control.IsVisible(510)">Conditional</animation>
 			<!--<animation effect="zoom" time="200" start="0,675,1280,48" end="840,675,520,48" tween="cubic" easing="out" condition="Control.IsVisible(50)">Conditional</animation>-->
 			<animation effect="slide" time="200" start="0" end="-770" tween="cubic" easing="out" condition="Control.IsVisible(512)">Conditional</animation>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>1026</posy>
-			<width>1920</width>
-			<height>58</height>
-			<texture>views/showcase_gradient.png</texture>
-			<include>Animation_CommonFade</include>
-			<visible>Control.IsVisible(528)+!Control.HasFocus(528109)</visible>
 		</control>
 		<control type="image" id="4050">
 			<texture>-</texture>
@@ -669,14 +689,8 @@
 			<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 			<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(61) + Control.IsVisible(4050)">Conditional</animation>
 			<onup>50</onup>
-			<ondown condition="Control.isVisible(501) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">Skin.ToggleSetting(noflowtv)</ondown>
-			<ondown condition="Control.isVisible(504) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">Skin.ToggleSetting(noflowdvdtv)</ondown>
-			<ondown condition="Control.isVisible(501) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">Skin.ToggleSetting(noflow)</ondown>
-			<ondown condition="Control.isVisible(504) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">Skin.ToggleSetting(noflowdvd)</ondown>
-			<ondown condition="Control.isVisible(509)">Skin.ToggleSetting(noflowalbum)</ondown>
-			<ondown condition="Control.isVisible(513)">Skin.ToggleSetting(noflowalbumdvd)</ondown>
-			<ondown condition="[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist)] + Player.HasVideo">SetFocus(110)</ondown>
-			<showonepage>true</showonepage>
+            <ondown>50</ondown>
+            <showonepage>true</showonepage>
 		</control>
 		<control type="image">
 			<posx>0</posx>
@@ -690,13 +704,13 @@
 	<include name="Furniture_Glow">
 		<control type="image">
 			<include>Animation_OpenClose_Furniture</include>
-			<visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)] | [Control.IsVisible(528)+Skin.HasSetting(DisableGlowbar)]]</visible>
+			<visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
 			<posx>0</posx>
 			<posy>-100</posy>
 			<width>1920</width>
 			<height>608</height>
 			<texture flipy="true">views/showcase_glow.png</texture>
-			<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+			<colordiffuse>$VAR[ExtendedFloorColorVar]</colordiffuse>
 		</control>
 	</include>
 	<include name="WallPanel">
