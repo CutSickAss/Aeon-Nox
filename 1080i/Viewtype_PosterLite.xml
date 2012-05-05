@@ -494,7 +494,7 @@
     </control>
   </include>
   <include name="PosFade">
-    <visible>![[Control.IsVisible(528195)+Control.HasFocus(7000)]|Control.IsVisible(528196)|[Window.IsVisible(custom_1126_ViewtypeSettings.xml)+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]+!StringCompare(Container.ListItem(0).Label,..)]]</visible>
+    <visible>![[Control.IsVisible(528195)+Control.HasFocus(7000)]|Control.IsVisible(528196)|[Window.IsVisible(custom_1126_ViewtypeSettings.xml)+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]+!StringCompare(ListItem.Label,..)]]</visible>
     <animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528199)+Skin.HasSetting(1sec)">Conditional</animation>
     <animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528199)+Skin.HasSetting(2sec)">Conditional</animation>
     <animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528199)+Skin.HasSetting(3sec)">Conditional</animation>

@@ -84,12 +84,12 @@
             <control type="button" id="528195">
                 <description>Infopanel: Manual</description>
                 <include>HiddenObject</include>
-                <visible>[Control.HasFocus(528)|Control.HasFocus(7000)]+[[Container.Content(movies)+!Skin.HasSetting(showcaseinfoon)]|[Container.Content(tvshows)+!Skin.HasSetting(showcaseinfoontv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(Container.ListItem(0).Label,..)</visible>
+                <visible>[Control.HasFocus(528)|Control.HasFocus(7000)]+[[Container.Content(movies)+!Skin.HasSetting(showcaseinfoon)]|[Container.Content(tvshows)+!Skin.HasSetting(showcaseinfoontv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
             </control>
             <control type="button" id="528196">
                 <description>Infopanel: On</description>
                 <include>HiddenObject</include>
-                <visible>Control.IsVisible(528)+Control.HasFocus(528)+![Window.IsVisible(contextmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(shutdownmenu)|Window.IsVisible(playercontrols)|Window.IsVisible(1128)|Window.IsVisible(busydialog)|Window.IsVisible(progressdialog)|Window.IsVisible(selectdialog)]+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]+!StringCompare(Container.ListItem(0).Label,..)</visible>
+                <visible>Control.IsVisible(528)+Control.HasFocus(528)+![Window.IsVisible(contextmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(shutdownmenu)|Window.IsVisible(playercontrols)|Window.IsVisible(1128)|Window.IsVisible(busydialog)|Window.IsVisible(progressdialog)|Window.IsVisible(selectdialog)]+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]+!StringCompare(ListItem.Label,..)</visible>
             </control>
             <control type="button" id="528194">
                 <include>HiddenObject</include>
@@ -110,7 +110,7 @@
             <control type="button" id="528199">
                 <description>Infopanel: Delayed (Posters/Logos)</description>
                 <include>HiddenObject</include>
-                <visible>Control.HasFocus(528)+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+Skin.HasSetting(infopaneautotv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(Container.ListItem(0).Label,..)</visible>
+                <visible>Control.HasFocus(528)+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+Skin.HasSetting(infopaneautotv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
             </control>
         </control>
         <include>Furniture_Showcase</include>
