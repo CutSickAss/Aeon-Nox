@@ -10,8 +10,10 @@
 			<fadetime>300</fadetime>
 			<aspectratio align="bottom">keep</aspectratio>
 			<visible>[![Control.IsVisible(501) | Control.IsVisible(504)] | [Skin.HasSetting(ClassicTopBar) + !Container.Content(movies)]]</visible>
-			<visible>![Container.Content(tvshows) + Control.IsVisible(503) + Skin.HasSetting(landscapelogo)]</visible>
+			<visible>![Container.Content(tvshows) + Control.IsVisible(503) + Skin.HasSetting(landscapelogo)] + !Stringcompare(Control.GetLabel(8999),empty.png)</visible>
             <visible>!Control.isVisible(8822)</visible>
+                                <animation effect="fade" start="0" delay="0" end="100" time="0" reversible="true" condition="!Stringcompare(Control.GetLabel(8999),empty.png)">Conditional</animation>
+
              <animation effect="slide" start="0,0" end="0,-34" time="0" condition="Container.Content(movies)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			<animation effect="fade" start="0" end="100" time="400">Visible</animation>
@@ -232,6 +234,17 @@
 				<description>TVShowThumbs</description>
 				<posx>161</posx>
 				<posy>68</posy>
+				<control type="image" id="8999">
+					<posx>-6</posx>
+					<posy>-6</posy>
+					<width>391</width>
+					<height>220</height>
+					<aspectratio align="center">keep</aspectratio>
+					<fadetime>400</fadetime>
+					<texture fallback="empty.png" background="true">$INFO[ListItem.Path,,character.png]</texture>
+                    <animation effect="fade" start="0" delay="0" end="100" time="300" reversible="true" condition="!Stringcompare(Control.GetLabel(8999),empty.png)">Conditional</animation>
+
+				</control>
 				<control type="image">
 					<posx>-6</posx>
 					<posy>-6</posy>
@@ -239,7 +252,8 @@
 					<height>220</height>
 					<aspectratio align="center">keep</aspectratio>
 					<fadetime>400</fadetime>
-					<texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,character.png]</texture>
+                    <visible>StringCompare(Control.GetLabel(8999),empty.png)</visible>
+					<texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,logo.png]</texture>
 				</control>
 				<control type="image">
 					<posx>-6</posx>
@@ -505,7 +519,7 @@
 		<control type="group" id="8857">
 			<description>Furniture Showcase</description>
 			<include>Animation_OpenClose_Furniture</include>
-			<visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
+			<visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)] | Control.IsVisible(528)]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>472</posy>
@@ -671,10 +685,19 @@
 			<height>72</height>
 			<texture>views/showcase_gradient.png</texture>
 			<include>Animation_CommonFade</include>
-			<visible>[Control.IsVisible(8857) | Control.IsVisible(8860)]+![Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506)]</visible>
+			<visible>[Control.IsVisible(8857) | Control.IsVisible(8860)]+![Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506) | Control.IsVisible(528)]</visible>
 			<animation effect="slide" time="200" start="0" end="1440" tween="cubic" easing="out" condition="Control.IsVisible(510)">Conditional</animation>
 			<!--<animation effect="zoom" time="200" start="0,675,1280,48" end="840,675,520,48" tween="cubic" easing="out" condition="Control.IsVisible(50)">Conditional</animation>-->
 			<animation effect="slide" time="200" start="0" end="-770" tween="cubic" easing="out" condition="Control.IsVisible(512)">Conditional</animation>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>1026</posy>
+			<width>1920</width>
+			<height>58</height>
+			<texture>views/showcase_gradient.png</texture>
+			<include>Animation_CommonFade</include>
+			<visible>Control.IsVisible(528)+!Control.HasFocus(528109)</visible>
 		</control>
 		<control type="image" id="4050">
 			<texture>-</texture>
@@ -704,7 +727,7 @@
 	<include name="Furniture_Glow">
 		<control type="image">
 			<include>Animation_OpenClose_Furniture</include>
-			<visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
+			<visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)] | [Control.IsVisible(528)+Skin.HasSetting(DisableGlowbar)]]</visible>
 			<posx>0</posx>
 			<posy>-100</posy>
 			<width>1920</width>

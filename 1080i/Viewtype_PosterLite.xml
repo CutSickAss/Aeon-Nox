@@ -419,8 +419,14 @@
 		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="image">
-          <posx>706</posx>
-          <include>CuFlVa</include>
+          <posx>712</posx>
+		  <width>123</width>
+		  <height>82</height>
+		  <align>center</align>
+		  <aligny>justify</aligny>
+		  <aspectratio>keep</aspectratio>
+		  <colordiffuse>FFe1e1e1</colordiffuse>
+		  <fadetime>250</fadetime>
           <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
 		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
@@ -479,9 +485,15 @@
           <label>$INFO[ListItem.Year]</label>
         </control>
         <control type="image">
-          <posx>213</posx>
+          <posx>219</posx>
           <posy>-23</posy>
-          <include>CuFlVa</include>
+		  <width>123</width>
+		  <height>82</height>
+		  <align>center</align>
+		  <aligny>justify</aligny>
+		  <aspectratio>keep</aspectratio>
+		  <colordiffuse>FFe1e1e1</colordiffuse>
+		  <fadetime>250</fadetime>
           <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
         </control>
         <control type="image">
