@@ -122,14 +122,14 @@
       <width>464</width>
       <height>683</height>
 	  <fadetime>250</fadetime>
-      <texture diffuse="thumbs/movieposter_mask.png">$VAR[ListPosterVar]</texture>
+      <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[ListPosterVar]</texture>
       <aspectratio scalediffuse="false">stretch</aspectratio>
     </control>
     <control type="image">
       <width>464</width>
       <height>683</height>
 	  <fadetime>250</fadetime>
-      <texture>thumbs/thumb_glass.png</texture>
+      <texture background="true">thumbs/thumb_glass.png</texture>
     </control>
     <control type="image">
       <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
@@ -137,7 +137,7 @@
       <width>464</width>
       <height>683</height>
 	  <fadetime>250</fadetime>
-      <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">$VAR[ListPosterVar]</texture>
+      <texture flipy="true" background="true" diffuse="thumbs/movieposter_mask_reflect.png">$VAR[ListPosterVar]</texture>
       <aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
     </control>
     <control type="image">
@@ -159,7 +159,7 @@
       <height>204</height>
 	  <fadetime>250</fadetime>
       <aspectratio aligny="bottom">keep</aspectratio>
-      <texture fallback="fallback.png">$VAR[TVShowLogoVar]</texture>
+      <texture background="true" fallback="fallback.png">$VAR[TVShowLogoVar]</texture>
     </control>
 	<control type="image">
 	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
@@ -168,7 +168,7 @@
       <height>204</height>
 	  <fadetime>250</fadetime>
       <aspectratio aligny="top">keep</aspectratio>
-      <texture flipy="true" fallback="fallback.png">$VAR[TVShowLogoVar]</texture>
+      <texture flipy="true" background="true" fallback="fallback.png">$VAR[TVShowLogoVar]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
     </control>
   </include>
@@ -301,7 +301,7 @@
 		  <fadetime>250</fadetime>
 		  <animation effect="fade" time="10" condition="![Container.OnNext|Container.OnPrevious]">Visible</animation>
           <aspectratio>stretch</aspectratio>
-          <texture>osd/osd_bottom_bar.png</texture>
+          <texture background="true">osd/osd_bottom_bar.png</texture>
           <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
         </control>
         <control type="fadelabel">
@@ -353,7 +353,7 @@
 		  <align>center</align>
 		  <aligny>center</aligny>
 		  <aspectratio scalediffuse="false">stretch</aspectratio>
-		  <texture background="true" diffuse="thumbs/banner_wall_mask.png">$INFO[ListItem.Path,,banner.jpg]</texture>
+		  <texture diffuse="thumbs/banner_wall_mask.png">$INFO[ListItem.Path,,banner.jpg]</texture>
 		  <bordertexture border="-11">thumbs/banner_shadow.png</bordertexture>
 		  <bordersize>8</bordersize>
 		  <visible>Container.Content(tvshows)+!IsEmpty(ListItem.Path,,banner.jpg)</visible>
@@ -422,11 +422,7 @@
           <posx>712</posx>
 		  <width>123</width>
 		  <height>82</height>
-		  <align>center</align>
-		  <aligny>justify</aligny>
-		  <aspectratio>keep</aspectratio>
-		  <colordiffuse>FFe1e1e1</colordiffuse>
-		  <fadetime>250</fadetime>
+		  <include>CuFlVa</include>
           <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
 		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
@@ -489,11 +485,7 @@
           <posy>-23</posy>
 		  <width>123</width>
 		  <height>82</height>
-		  <align>center</align>
-		  <aligny>justify</aligny>
-		  <aspectratio>keep</aspectratio>
-		  <colordiffuse>FFe1e1e1</colordiffuse>
-		  <fadetime>250</fadetime>
+		  <include>CuFlVa</include>
           <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
         </control>
         <control type="image">
