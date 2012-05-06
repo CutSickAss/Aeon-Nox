@@ -366,7 +366,7 @@
       <control type="group">
         <visible>Container.Content(movies)</visible>
         <posx>548</posx>
-        <posy>998</posy>
+        <posy>994</posy>
         <control type="image">
           <include>CuFlVa</include>
           <texture>flags/music/year/year.png</texture>
@@ -420,6 +420,7 @@
         </control>
         <control type="image">
           <posx>712</posx>
+		  <posy>4</posy>
 		  <width>123</width>
 		  <height>82</height>
 		  <include>CuFlVa</include>
@@ -482,7 +483,7 @@
         </control>
         <control type="image">
           <posx>219</posx>
-          <posy>-23</posy>
+          <posy>-19</posy>
 		  <width>123</width>
 		  <height>82</height>
 		  <include>CuFlVa</include>
