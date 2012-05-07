@@ -100,6 +100,7 @@
     <string id="31087">Όλα τυχαία</string>
     <string id="31088">Χρήση χρώματος σε όλες τις επιφάνειες</string>
     <string id="31089">Και τα δύο</string>
+    <string id="31090">Ρύθμιση Διαφάνειας</string>
 
     <!-- Playlist Editor labels -->
     <string id="31055">Άνοιγμα λίστας αναπαραγωγής</string>
@@ -415,7 +416,6 @@
     <string id="42006">Απαιτείται το script.randommovie</string>
     <string id="42007">Πιέστε ΔΕΞΙΑ για επιλέξετε τη διαδρομή της οπτ. Τοίχου</string>
     <string id="42008">Πρέπει να ορίσετε μια διαδρομή</string>
-    <string id="42009">Πιέστε ΔΕΞΙΑ για να ορίσετε τη διαφάνεια</string>
     <string id="42010">Αυτή η λειτουργία απαιτεί το πρόσθετο ColorPicker</string>
     <string id="42011">Ανανεώνονται τα αποθετήρια πρόσθετων</string>
     <string id="42012">Ανανεώνονται τα τοπικά πρόσθετα</string>
