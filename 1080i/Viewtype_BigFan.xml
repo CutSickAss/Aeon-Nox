@@ -19,7 +19,7 @@
                 <scrolltime tween="quadratic" easing="out">500</scrolltime>
                 <focusposition>0</focusposition>
                 <orientation>horizontal</orientation>
-                <preloaditems>6</preloaditems>
+                <preloaditems>2</preloaditems>
                 <visible>Window.IsActive(videos) + [Container.Content(seasons) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(genres)]</visible>
                 <itemlayout height="1080" width="1920">
                     <control type="image">
@@ -168,34 +168,34 @@
                     <animation effect="fade" start="0" end="100" time="400">Visible</animation>
                 </control>
             </control>
-			<control type="grouplist">
-				<posx>352</posx>
-				<posy>159r</posy>
-				<width>1500</width>
-				<height>60</height>
-				<align>left</align>
-				<itemgap>10</itemgap>
-				<orientation>horizontal</orientation>
-				<control type="label">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width min="200" max="1400">auto</width>
-					<height>38</height>
-					<font>Font_ShowcaseMainLabel2_Caps</font>
-					<align>left</align>
-					<scroll>true</scroll>
-					<textcolor>white6</textcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>60</width>
-					<height>60</height>
-					<info>ListItem.Overlay</info>
-					<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-				</control>
-			</control>
+            <control type="grouplist">
+                <posx>352</posx>
+                <posy>159r</posy>
+                <width>1500</width>
+                <height>60</height>
+                <align>left</align>
+                <itemgap>10</itemgap>
+                <orientation>horizontal</orientation>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width min="200" max="1400">auto</width>
+                    <height>38</height>
+                    <font>Font_ShowcaseMainLabel2_Caps</font>
+                    <align>left</align>
+                    <scroll>true</scroll>
+                    <textcolor>white6</textcolor>
+                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>60</width>
+                    <height>60</height>
+                    <info>ListItem.Overlay</info>
+                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                </control>
+            </control>
             <control type="label">
                 <posx>352</posx>
                 <posy>98r</posy>

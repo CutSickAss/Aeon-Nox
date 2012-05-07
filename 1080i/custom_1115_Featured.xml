@@ -131,7 +131,7 @@
                         <height>160</height>
                         <texture border="50">featured/panel_featured.png</texture>
                         <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-					</control>
+                    </control>
                     <control type="image">
                         <posx>21</posx>
                         <posy>593</posy>
@@ -244,7 +244,7 @@
                         <width>1332</width>
                         <height>612</height>
                         <texture>featured/panel_featured.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>21</posx>
@@ -864,7 +864,7 @@
                         <width>1332</width>
                         <height>612</height>
                         <texture>featured/panel_featured.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>21</posx>
@@ -1479,7 +1479,7 @@
                         <width>1332</width>
                         <height>612</height>
                         <texture>featured/panel_featured.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>21</posx>
@@ -2542,7 +2542,7 @@
                         <width>1332</width>
                         <height>612</height>
                         <texture>featured/panel_featured.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>21</posx>
@@ -3241,7 +3241,7 @@
                         <width>1332</width>
                         <height>612</height>
                         <texture>featured/panel_featured.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>21</posx>
@@ -3954,7 +3954,7 @@
                         <width>1332</width>
                         <height>612</height>
                         <texture>featured/panel_featured.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>21</posx>
@@ -4538,7 +4538,7 @@
                         <width>1332</width>
                         <height>612</height>
                         <texture>featured/panel_featured.png</texture>
-						<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>21</posx>
@@ -5154,6 +5154,7 @@
                 <height>87</height>
                 <visible>Skin.HasSetting(altbreadcrumbstexture)</visible>
                 <texture flipy="true">home/nav_back.png</texture>
+                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
             </control>
             <control type="image">
                 <posx>0</posx>
@@ -5163,7 +5164,10 @@
                 <texture>common/common_topbar.png</texture>
                 <visible>!Skin.HasSetting(altbreadcrumbstexture)</visible>
             </control>
-            <include>Neon_Topbar</include>
+            <control type="group">
+                <visible>!Skin.HasSetting(altbreadcrumbstexture)</visible>
+                <include>Neon_Topbar</include>
+            </control>
             <control type="group">
                 <control type="grouplist">
                     <posx>8</posx>
@@ -5306,7 +5310,7 @@
                         <visible>Skin.HasSetting(breadcrumbsweather)</visible>
                         <visible>Weather.IsFetched</visible>
                         <include>Animation_VisibleChange400</include>
-                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]]$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits,,  •  ][/COLOR]</label>
+                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]]$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  •[/COLOR]</label>
                     </control>
                     <control type="label">
                         <posx>0</posx>
@@ -5319,7 +5323,7 @@
                         <shadowcolor>bcshadow</shadowcolor>
                         <scroll>false</scroll>
                         <align>left</align>
-                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date][/COLOR][COLOR=time]$INFO[System.Time,  •  ][/COLOR]       </label>
+                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]       </label>
                     </control>
                 </control>
             </control>

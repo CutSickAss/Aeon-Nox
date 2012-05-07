@@ -56,6 +56,58 @@
             <include>Animation_VisibleChange400</include>
             <include>Animation_WindowFade200</include>
         </control>
+        <control type="group">
+            <visible>!Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(Glowbar_Home)</visible>
+            <include>Animation_VisibleChangeDelayed</include>
+            <control type="image">
+                <description>media info background image</description>
+                <posx>0</posx>
+                <posy>360</posy>
+                <width>1920</width>
+                <height>945</height>
+                <texture>home/nowplaying_shadow.png</texture>
+                <visible>!ControlGroup(5000).HasFocus</visible>
+                <visible>Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)</visible>
+                <include>Animation_VisibleChangeDelayed</include>
+                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            </control>
+            <control type="image">
+                <description>media info background image</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>945</height>
+                <texture flipy="true">home/nowplaying_shadow.png</texture>
+                <include>Animation_VisibleChangeDelayed</include>
+                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)]</visible>
+                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            </control>
+        </control>
+        <control type="group">
+            <visible>Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(Glowbar_Home)</visible>
+            <include>Animation_VisibleChangeDelayed</include>
+            <control type="image">
+                <description>media info background image</description>
+                <posx>0</posx>
+                <posy>160</posy>
+                <width>1920</width>
+                <height>694</height>
+                <texture>home/nowplaying_shadow.png</texture>
+                <visible>!ControlGroup(5000).HasFocus</visible>
+                <visible>Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)</visible>
+                <include>Animation_VisibleChangeDelayed</include>
+            </control>
+            <control type="image">
+                <description>media info background image</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>545</height>
+                <texture flipy="true">home/nowplaying_shadow.png</texture>
+                <include>Animation_VisibleChangeDelayed</include>
+                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)]</visible>
+            </control>
+        </control>
         <!-- NowPlaying Info -->
         <include>Furniture_HomeNowPlaying</include>
         <include>HomeFeaturedWidget</include>
@@ -83,6 +135,7 @@
                 <width>1920</width>
                 <height>87</height>
                 <texture>home/nav_back.png</texture>
+                <colordiffuse>$VAR[ExtendedHomeColorVar]</colordiffuse>
             </control>
             <control type="grouplist" id="8992">
                 <posx>704</posx>
@@ -151,10 +204,10 @@
                     <width>1300</width>
                     <height>87</height>
                     <texture>home/submenubar.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    <colordiffuse>$VAR[ExtendedHomeColorVar]</colordiffuse>
                 </control>
-                    <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
-                    <include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
+                <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
+                <include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
             </control>
             <!-- Home Menu Bar -->
             <control type="image">
@@ -164,16 +217,16 @@
                 <height>225</height>
                 <texture>$VAR[HomeMenuBackVar]</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-<animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+                <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
             </control>
             <!-- Home Menu -->
-                <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
-                <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
-                <control type="group">
-                    <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
-                    <include>Furniture_ClassicHomeGradient</include>
-                    <include>Neon_Home</include>
-                </control>
+            <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
+            <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
+            <control type="group">
+                <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+                <include>Furniture_ClassicHomeGradient</include>
+                <include>Neon_Home</include>
+            </control>
         </control>
     </controls>
 </window>

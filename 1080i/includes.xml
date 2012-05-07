@@ -36,10 +36,9 @@
     <include file="Includes_Weather.xml" />
     <include file="Includes_MainMenu.xml" />
     <include file="Includes_PVR.xml" />
-    <include file="Viewtype_PosterLite.xml" />
     <include name="VideoBackground">
         <control type="group">
-            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(528) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)]] + ![Control.IsVisible(528)+!Skin.HasSetting(fstrailer)]</visible>
+            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)]]</visible>
             <include>Animation_VisibleChange200</include>
             <control type="image">
                 <include>FullscreenDimensions</include>
@@ -427,7 +426,6 @@
     <include name="blurayart">
         <texture background="true" fallback="common/cdart/bd.png">$INFO[Player.FolderPath]cdart.png</texture>
     </include>
-       
     <include name="cdartlibrary">
         <texture background="true" fallback="common/cdart/default.png">$VAR[cdARTVar]</texture>
     </include>
@@ -437,7 +435,6 @@
     <include name="blurayartlibrary">
         <texture background="true" fallback="common/cdart/bd.png">$VAR[cdARTVar]</texture>
     </include>
-
     <include name="BackgroundEffect">
         <imagepath>cerberus</imagepath>
         <timeperimage>20</timeperimage>
@@ -707,11 +704,11 @@
         <width>46</width>
         <height>540</height>
         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturesliderbackground>-</texturesliderbackground>
-                    <texturesliderbar>-</texturesliderbar>
-                    <texturesliderbarfocus>-</texturesliderbarfocus>
-                    <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-                    <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
+        <texturesliderbackground>-</texturesliderbackground>
+        <texturesliderbar>-</texturesliderbar>
+        <texturesliderbarfocus>-</texturesliderbarfocus>
+        <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
+        <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
         <showonepage>false</showonepage>
         <orientation>vertical</orientation>
     </include>
@@ -812,46 +809,50 @@
         </item>
     </include>
     <include name="AutoConfig">
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.ResetSettings</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_programs,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_music,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_videolibrary,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_PVR,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_pictures,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_featured,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_addons,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_musicplaylist,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_videoplaylist,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_mainmenu,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_weather,FFFFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(AutoScroll)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(breadcrumbslabel)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(smallerdialogs)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(osdbigtop)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(musicfanartslideshow)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(TVShowsUsePosters)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(itemsplaylist)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(showcasewrap)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(showcaseinfoon)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(showcaseinfoontv)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(fanartinfopane)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(posterinfopane503)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(fanartinfopane504)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(nohighlist)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(wallgenre)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(newstatus)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(watchedoverlay)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(preferplot)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(usecases)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(useclearcasesinfowall)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(infopanellauncher)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(MoreFullscreenInfo)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(lowlist)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(lowermainmenu)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(submenufixedlist)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(plitep)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pliteback1)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(firstrun)</onload>
+        <onload>Skin.ResetSettings</onload>
+        <onload>Skin.SetString(diffuse_programs,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_music,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_videolibrary,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_PVR,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_pictures,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_featured,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_addons,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_musicplaylist,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_videoplaylist,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_mainmenu,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_weather,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_color,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_settings,FF6db9e5)</onload>
+        <onload>Skin.SetBool(AutoScroll)</onload>
+        <onload>Skin.SetBool(breadcrumbslabel)</onload>
+        <onload>Skin.SetBool(smallerdialogs)</onload>
+        <onload>Skin.SetBool(musicfanartslideshow)</onload>
+        <onload>Skin.SetBool(TVShowsUsePosters)</onload>
+        <onload>Skin.SetBool(itemsplaylist)</onload>
+        <onload>Skin.SetBool(showcasewrap)</onload>
+        <onload>Skin.SetBool(showcaseinfoon)</onload>
+        <onload>Skin.SetBool(showcaseinfoontv)</onload>
+        <onload>Skin.SetBool(fanartinfopane)</onload>
+        <onload>Skin.SetBool(posterinfopane503)</onload>
+        <onload>Skin.SetBool(fanartinfopane504)</onload>
+        <onload>Skin.SetBool(nohighlist)</onload>
+        <onload>Skin.SetBool(wallgenre)</onload>
+        <onload>Skin.SetBool(unwatchedicon)</onload>
+        <onload>Skin.SetBool(newstatus)</onload>
+        <onload>Skin.SetBool(watchedoverlay)</onload>
+        <onload>Skin.SetBool(preferplot)</onload>
+        <onload>Skin.SetBool(usecases)</onload>
+        <onload>Skin.SetBool(useclearcasesinfowall)</onload>
+        <onload>Skin.SetBool(infopanellauncher)</onload>
+        <onload>Skin.SetBool(MoreFullscreenInfo)</onload>
+        <onload>Skin.SetBool(lowlist)</onload>
+        <onload>Skin.SetBool(lowermainmenu)</onload>
+        <onload>Skin.SetBool(submenufixedlist)</onload>
+        <onload>Skin.SetBool(wallgenretv)</onload>
+        <onload>Skin.SetBool(altbreadcrumbstexture)</onload>
+        <onload>Skin.SetBool(DisableGlowbar)</onload>
+        <onload>Skin.SetBool(ExtendedGlowMode)</onload>
+        <onload>Skin.SetBool(firstrun)</onload>
     </include>
     <include name="PVR_Settings">
         <item id="21">
@@ -868,18 +869,6 @@
         <animation effect="fade" start="0" end="100" time="150" delay="3000" condition="Skin.HasSetting(3sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Skin.HasSetting(4sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="5000" condition="Skin.HasSetting(5sec)">Visible</animation>
-    </include>
-    <include name="PLDelAn">
-        <animation effect="fade" delay="1500" condition="Skin.HasSetting(1sec)">WindowOpen</animation>
-        <animation effect="fade" delay="1500" condition="Skin.HasSetting(1sec)">Visible</animation>
-        <animation effect="fade" delay="2500" condition="Skin.HasSetting(2sec)">WindowOpen</animation>
-        <animation effect="fade" delay="2500" condition="Skin.HasSetting(2sec)">Visible</animation>
-        <animation effect="fade" delay="3500" condition="Skin.HasSetting(3sec)">WindowOpen</animation>
-        <animation effect="fade" delay="3500" condition="Skin.HasSetting(3sec)">Visible</animation>
-        <animation effect="fade" delay="4500" condition="Skin.HasSetting(4sec)">WindowOpen</animation>
-        <animation effect="fade" delay="4500" condition="Skin.HasSetting(4sec)">Visible</animation>
-        <animation effect="fade" delay="5500" condition="Skin.HasSetting(5sec)">WindowOpen</animation>
-        <animation effect="fade" delay="5500" condition="Skin.HasSetting(5sec)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
@@ -943,7 +932,6 @@
         <radioheight>98</radioheight>
         <radioposx>508</radioposx>
     </include>
-
     <include name="ActorMetaDataContextButton">
         <control type="button" id="2001">
             <description>actor/director info button (visible only container is MovieActors, MovieDirectors or TvShowActors)</description>

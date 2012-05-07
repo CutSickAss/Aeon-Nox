@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="3002">
     <defaultcontrol always="true">450</defaultcontrol>
     <allowoverlay>no</allowoverlay>
@@ -71,14 +72,14 @@
             <control type="scrollbar" id="60">
                 <posx>1200</posx>
                 <posy>158</posy>
-                <width>9</width>
+                <width>46</width>
                 <height>728</height>
                 <showonepage>false</showonepage>
-                <texturesliderbackground>views/list/texturesliderbackground.png</texturesliderbackground>
-                <texturesliderbar border="0,3,0,3">views/list/texturesliderbar.png</texturesliderbar>
-                <texturesliderbarfocus border="0,3,0,3">views/list/texturesliderbarfocus.png</texturesliderbarfocus>
-                <textureslidernib>views/ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>views/ScrollBarNib.png</textureslidernibfocus>
+                <texturesliderbackground>-</texturesliderbackground>
+                <texturesliderbar>-</texturesliderbar>
+                <texturesliderbarfocus>-</texturesliderbarfocus>
+                <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
+                <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
                 <orientation>vertical</orientation>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <onup>60</onup>
@@ -288,7 +289,6 @@
                     </control>
                 </focusedlayout>
             </control>
-
             <control type="grouplist" id="9000">
                 <posx>102</posx>
                 <posy>910</posy>
