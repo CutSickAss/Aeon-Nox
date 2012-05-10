@@ -1532,4 +1532,22 @@
         <value condition="Window.IsActive(musicinformation)">$INFO[ListItem.FileNameAndPath,,/cdart.png]</value>
         <value>$INFO[ListItem.Path,,cdart.png]</value>
     </variable>
+    <!-- PosterLite -->
+    <variable name="PLPlot">
+        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$INFO[Container(3000).ListItem.Plot]</value>
+        <value condition="Container.Content(movies) + !Skin.HasSetting(preferplot) + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+        <value>$INFO[ListItem.Plot]</value>
+    </variable>
+    <variable name="PLGenre">
+        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[515]:[/COLOR] $INFO[Container(3000).ListItem.Genre]</value>
+        <value>[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[515]:[/COLOR] $INFO[ListItem.Genre]</value>
+    </variable>
+    <variable name="PLDuration">
+        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[20161]:[/COLOR] $INFO[Container(3000).ListItem.Duration] $LOCALIZE[12391]</value>
+        <value>$INFO[ListItem.Duration] $LOCALIZE[12391]</value>
+    </variable>
+    <variable name="PLTotal">
+        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[16102]:[/COLOR] $INFO[Container(3000).ListItem.Property(WatchedMovies)] [COLOR=$VAR[SubTitleColorVar]]/[/COLOR] $INFO[Container(3000).ListItem.Property(TotalMovies)]</value>
+        <value condition="Container.Content(tvshows)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[20360]:[/COLOR] $INFO[ListItem.Episode]  [COLOR=$VAR[SubTitleColorVar]]($LOCALIZE[16101]:[/COLOR] $INFO[ListItem.Property(UnWatchedEpisodes)][COLOR=$VAR[SubTitleColorVar]])[/COLOR]</value>
+    </variable>
 </includes>

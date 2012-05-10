@@ -933,7 +933,7 @@
                 <onclick>Skin.ToggleSetting(TVShowsUsePoster)</onclick>
                 <selected>Skin.HasSetting(TVShowsUsePoster)</selected>
                 <onclick>Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
-                <visible>[Container.Content(tvshows) | Container.Content(seasons)] + !stringcompare(Skin.String(actualViewtype),posterlite)</visible>
+                <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
             </control>
             <control type="radiobutton" id="111">
                 <label>31123</label>
@@ -949,7 +949,7 @@
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <onclick>Skin.ToggleSetting(preferplot)</onclick>
                 <usealttexture>!Skin.HasSetting(preferplot)</usealttexture>
-                <visible>Window.IsActive(videolibrary) + !stringcompare(Skin.String(actualViewtype),posterlite)</visible>
+                <visible>Window.IsActive(videolibrary)</visible>
             </control>
             <control type="button" id="1664">
                 <description>Set area color</description>
