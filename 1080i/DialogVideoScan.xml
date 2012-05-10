@@ -37,15 +37,6 @@
                     <posy>54</posy>
                     <include>Dialogs_LabelVars</include>
                 </control>
-                <!--<control type="label" id="402">
-          <posy>56</posy>
-          <include>Dialogs_LabelVars</include>
-        </control>-->
-                <control type="progress" id="403">
-                    <description>progress control</description>
-                    <include>Dialogs_Progress</include>
-                    <visible>false</visible>
-                </control>
                 <control type="progress" id="404">
                     <description>progress control</description>
                     <include>Dialogs_Progress</include>

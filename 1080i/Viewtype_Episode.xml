@@ -330,9 +330,10 @@
                         <height>90</height>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.Episode]</label>
+                        <label>$INFO[ListItem.TrackNumber]</label>
                         <font>Font_Condensed28_Caps</font>
                         <include>listcolornofocus</include>
+                        <visible>Container.Content(songs)</visible>
                     </control>
                     <control type="label">
                         <posx>1280</posx>
@@ -351,7 +352,7 @@
                         <width>950</width>
                         <height>45</height>
                         <align>right</align>
-                        <label>$VAR[EpisodeSubTitleVar]</label>
+                        <label>$VAR[InfoWallBottomLabel1Var]$INFO[ListItem.Rating, • ]</label>
                         <font>Font_Condensed20</font>
                         <textcolor>ffaaaaaa</textcolor>
                     </control>
@@ -365,13 +366,13 @@
                 </itemlayout>
                 <focusedlayout width="950" height="346" condition="Window.IsActive(musiclibrary)">
                     <control type="image">
-                        <posx>1001</posx>
-                        <posy>11</posy>
-                        <width>300</width>
-                        <height>300</height>
-                        <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
-                        <bordersize>9</bordersize>
+                        <posx>990</posx>
+                        <posy>0</posy>
+                        <width>322</width>
+                        <height>322</height>
+                        <texture background="true" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                        <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
+                        <bordersize>20</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
@@ -405,7 +406,7 @@
                             <width>950</width>
                             <height>90</height>
                             <align>right</align>
-                            <label>$VAR[InfoWallBottomLabel1Var]dd$INFO[ListItem.Rating, • ]</label>
+                            <label>$VAR[InfoWallBottomLabel1Var]$INFO[ListItem.Rating, • ]</label>
                             <font>Font_Condensed20</font>
                             <textcolor>ffaaaaaa</textcolor>
                             <visible>!IsEmpty(ListItem.Title)</visible>
@@ -414,7 +415,7 @@
                             <posx>99</posx>
                             <posy>107</posy>
                             <width>740</width>
-                            <height>122</height>
+                            <height>194</height>
                             <align>right</align>
                             <label>$VAR[InfoWallTextboxVar]</label>
                             <font>Font_Condensed22</font>
@@ -453,22 +454,37 @@
                     <height>739</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
                     <fadetime>400</fadetime>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[PosterVar]</texture>
+                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[PosterVar2]</texture>
                     <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>19</bordersize>
-                    <visible>!Skin.HasSetting(disableepisodeposter) + Skin.HasSetting(EpisodeViewIcon)</visible>
+                    <visible>Skin.HasSetting(EpisodeMoviePoster) + Container.Content(movies)</visible>
                 </control>
-                <control type="image">
-                    <posx>49</posx>
-                    <posy>190</posy>
-                    <width>502</width>
-                    <height>739</height>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <fadetime>400</fadetime>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$INFO[Container.SeasonThumb]</texture>
-                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                    <bordersize>19</bordersize>
-                    <visible>!Skin.HasSetting(disableepisodeposter) + !Skin.HasSetting(EpisodeViewIcon)</visible>
+                <control type="group">
+                    <visible>!Container.Content(movies)</visible>
+                    <control type="image">
+                        <posx>49</posx>
+                        <posy>190</posy>
+                        <width>502</width>
+                        <height>739</height>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[PosterVar2]</texture>
+                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                        <bordersize>19</bordersize>
+                        <visible>!Skin.HasSetting(disableepisodeposter) + Skin.HasSetting(EpisodeViewIcon)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>49</posx>
+                        <posy>190</posy>
+                        <width>502</width>
+                        <height>739</height>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture background="true" diffuse="thumbs/movieposter_mask.png">$INFO[Container.SeasonThumb]</texture>
+                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                        <bordersize>19</bordersize>
+                        <visible>!Skin.HasSetting(disableepisodeposter) + !Skin.HasSetting(EpisodeViewIcon)</visible>
+                    </control>
                 </control>
             </control>
         </control>

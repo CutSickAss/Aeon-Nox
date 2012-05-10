@@ -15,6 +15,11 @@
             <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
             <aspectratio>scale</aspectratio>
         </control>
+                <control type="multiimage">
+                    <fadetime>FanartCrossfadeTime</fadetime>
+                    <imagepath background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart]</imagepath>
+                    <visible>[Skin.HasSetting(musicextrafanart) + !IsEmpty(Skin.String(ArtistsLogosPath))]</visible>
+                </control>
         <control type="image">
             <description>black background shadow</description>
             <posx>0</posx>

@@ -3,21 +3,17 @@
     <defaultcontrol>-</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onload>Skin.Reset(vispanelrotate)</onload>
-    <onload>Skin.Reset(vispanelrotate2)</onload>
     <onload>AlarmClock(Vis,Skin.ToggleSetting(vispanelrotate),00:15,silent,loop)</onload>
-    <onload>AlarmClock(Vis2,Skin.ToggleSetting(vispanelrotate2),00:04,silent,loop)</onload>
     <onload>AlarmClock(Vis3,Control.Move(5222,1),00:04,silent,loop)</onload>
     <onload>AlarmClock(Vis4,Control.Move(5223,1),00:04,silent,loop)</onload>
     <onunload>CancelAlarm(Vis,true)</onunload>
-    <onunload>CancelAlarm(Vis2,true)</onunload>
     <onunload>CancelAlarm(Vis3,true)</onunload>
     <onunload>CancelAlarm(Vis4,true)</onunload>
     <onunload>Skin.Reset(vispanelrotate)</onunload>
-    <onunload>Skin.Reset(vispanelrotate2)</onunload>
     <controls>
         <control type="group">
             <include>Animation_VisibleChange400</include>
-            <visible>!Skin.HasSetting(nofanartmusicviz) + !Skin.HasSetting(Viz-CDWall)</visible>
+            <visible>[!Skin.HasSetting(nofanartmusicviz) + !Skin.HasSetting(Viz-CDWall)] | [!Skin.HasSetting(DisableArtistslideshow) + StringCompare(Control.GetLabel(8838),empty.png)]</visible>
             <control type="multiimage">
                 <include>MusicVizBG</include>
                 <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$INFO[Skin.String(MusicHomeItem.MultiFanart)]</imagepath>
@@ -43,16 +39,16 @@
                 <imagepath background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/extrafanart]</imagepath>
                 <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
             </control>
-            <control type="multiimage">
-                <include>MusicVizBG</include>
-                <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">special://profile/Thumbnails/Music/Fanart</imagepath>
-                <visible>Skin.HasSetting(musicfanartslideshow)</visible>
-            </control>
-            <control type="multiimage">
-                <include>MusicVizBG</include>
-                <imagepath fallback="special://skin/backgrounds/curtains.jpg" background="true">special://profile/Thumbnails/Video/Fanart</imagepath>
-                <visible>Skin.HasSetting(videofanartslideshow)</visible>
-            </control>
+        </control>
+        <control type="multiimage">
+            <include>MusicVizBG</include>
+            <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">special://profile/Thumbnails/Music/Fanart</imagepath>
+            <visible>Skin.HasSetting(musicfanartslideshow)</visible>
+        </control>
+        <control type="multiimage">
+            <include>MusicVizBG</include>
+            <imagepath fallback="special://skin/backgrounds/curtains.jpg" background="true">special://profile/Thumbnails/Video/Fanart</imagepath>
+            <visible>Skin.HasSetting(videofanartslideshow)</visible>
         </control>
         <include>ArtistSlideshowBG</include>
         <include>cdwall-musicvisualisation</include>
@@ -75,6 +71,7 @@
                     <width>794</width>
                     <height>87</height>
                     <texture flipy="true">home/timepanel_mid.png</texture>
+					<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 </control>
                 <control type="label">
                     <description>time label</description>
@@ -85,9 +82,9 @@
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>Font_Condensed22_Caps</font>
-                    <textcolor>white2</textcolor>
-                    <shadowcolor>-</shadowcolor>
-                    <label>[COLOR ffaaaaaa]$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]</label>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <shadowcolor>bcshadow</shadowcolor>
+                    <label>[COLOR 88FFFFFF] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)][/COLOR]  •  $INFO[System.Time]       </label>
                 </control>
                 <control type="group">
                     <posx>0</posx>
@@ -104,7 +101,7 @@
                         <font>Font_Condensed22_Caps</font>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <shadowcolor>-</shadowcolor>
-                        <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][COLOR ffaaaaaa]  •  $INFO[Window(Weather).Property(Current.Humidity)][/COLOR]</label>
+                        <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
                     </control>
                 </control>
             </control>
@@ -214,9 +211,54 @@
                     <posx>262</posx>
                     <posy>-243</posy>
                     <fadetime>300</fadetime>
+                    <visible>!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)</visible>
+                    <include>cdart</include>
+                    <aspectratio align="bottom">keep</aspectratio>
+                </control>
+                <control type="image">
+                    <visible>Skin.HasSetting(cdartinvis) + !Skin.HasSetting(ThumbOrSlide)</visible>
+                    <description>Cd overlay</description>
+                    <animation effect="slide" start="-180" end="0" time="700" tween="cubic" easing="out" delay="750">Visible</animation>
+                    <animation effect="slide" end="-180" start="0" time="400" tween="cubic" easing="out">Hidden</animation>
+                    <animation effect="slide" start="-180" end="0" time="700" tween="cubic" easing="out" delay="400">WindowOpen</animation>
+                    <animation type="WindowClose">
+                        <effect type="slide" start="0" end="-180" time="400" tween="cubic" easing="in" delay="0" />
+                        <effect type="fade" start="100" end="0" time="0" delay="400" />
+                        <condition type="!Player.Playing" />
+                    </animation>
+                    <animation effect="rotate" end="-360" center="auto" time="6000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                    <aspectratio>keep</aspectratio>
+                    <width>387</width>
+                    <height>381</height>
+                    <posx>262</posx>
+                    <posy>-243</posy>
+                    <fadetime>300</fadetime>
+                    <include>vinylart</include>
+                    <visible>Skin.HasSetting(vinylart)</visible>
+                    <aspectratio align="bottom">keep</aspectratio>
+                </control>
+                <control type="image">
+                    <visible>Skin.HasSetting(cdartinvis) + !Skin.HasSetting(ThumbOrSlide)</visible>
+                    <description>Cd overlay</description>
+                    <animation effect="slide" start="-180" end="0" time="700" tween="cubic" easing="out" delay="750">Visible</animation>
+                    <animation effect="slide" end="-180" start="0" time="400" tween="cubic" easing="out">Hidden</animation>
+                    <animation effect="slide" start="-180" end="0" time="700" tween="cubic" easing="out" delay="400">WindowOpen</animation>
+                    <animation type="WindowClose">
+                        <effect type="slide" start="0" end="-180" time="400" tween="cubic" easing="in" delay="0" />
+                        <effect type="fade" start="100" end="0" time="0" delay="400" />
+                        <condition type="!Player.Playing" />
+                    </animation>
+                    <animation effect="rotate" end="-360" center="auto" time="6000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+                    <aspectratio>keep</aspectratio>
+                    <width>387</width>
+                    <height>381</height>
+                    <posx>262</posx>
+                    <posy>-243</posy>
+                    <fadetime>300</fadetime>
                     <include condition="!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)">cdart</include>
                     <include condition="Skin.HasSetting(vinylart)">vinylart</include>
-                    <include condition="Skin.HasSetting(blurayart)">blurayart</include>
+                    <include>blurayart</include>
+                    <visible>Skin.HasSetting(blurayart)</visible>
                     <aspectratio align="bottom">keep</aspectratio>
                 </control>
                 <control type="group">
@@ -466,7 +508,7 @@
                     <align>right</align>
                     <aligny>-</aligny>
                     <font>Font_Condensed22_Caps</font>
-                    <label>$INFO[MusicPlayer.BitRate,][COLOR grey] kbps | [/COLOR]$INFO[MusicPlayer.SampleRate][COLOR grey] kHz[/COLOR] | $INFO[MusicPlayer.bitspersample][COLOR grey] bit  | [/COLOR] $INFO[MusicPlayer.Channels][COLOR grey] $LOCALIZE[31703][/COLOR]</label>
+                    <label>$INFO[MusicPlayer.BitRate,,[COLOR grey] kbps | [/COLOR]]$INFO[MusicPlayer.SampleRate,,[COLOR grey] kHz |[/COLOR] ]$INFO[MusicPlayer.bitspersample,,[COLOR grey] bit  | [/COLOR] ]$INFO[MusicPlayer.Channels,,[COLOR grey] $LOCALIZE[31703][/COLOR]]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <shadowcolor>black</shadowcolor>
                 </control>
@@ -576,18 +618,58 @@
                     </control>
                 </control>
                 <control type="group">
-                    <animation type="WindowOpen" reversible="false">
-                        <effect type="slide" start="-1200,0" end="0,0" delay="500" time="500" easing="out" tween="quadratic" />
-                        <effect type="fade" start="0" end="100" delay="500" time="200" />
-                    </animation>
-                    <animation type="WindowOpen" reversible="false">
-                        <effect type="slide" start="0,-1200" end="0,0" delay="500" time="200" easing="out" tween="quadratic" />
-                        <effect type="fade" start="0" end="100" delay="500" time="200" />
-                    </animation>
                     <control type="group"><!--artist slideshow-->
-                        <animation effect="slide" start="0" end="-1330,0" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
+                        <animation effect="slide" start="0" end="-1330,0" time="0" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
                         <animation effect="zoom" start="100" end="110" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
-                        <include>HomeArtistSlideShow</include>          
+        <control type="group">
+            <posx>1436</posx>
+            <posy>672</posy>
+            <visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))</visible>
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <control type="image">
+                <description>CD Background</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>425</width>
+                <height>400</height>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <texture>thumbs/boxes/cd_shadow_light_shadow.png</texture>
+                <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
+                <include>Animation_VisibleChange400</include>
+            </control>
+            <control type="multiimage">
+                <posy>19</posy>
+                <posx>22</posx>
+                <width>380</width>
+                <height>354</height>
+                <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">DefaultArtist.png</imagepath>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <timeperimage>5000</timeperimage>
+                <fadetime>750</fadetime>
+                <randomize>true</randomize>
+                <visible>Window.IsActive(1124)</visible>
+            </control>
+            <control type="multiimage">
+                <posy>19</posy>
+                <posx>22</posx>
+                <width>380</width>
+                <height>354</height>
+                <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <timeperimage>5000</timeperimage>
+                <fadetime>750</fadetime>
+                <randomize>true</randomize>
+            </control>
+            <control type="image">
+                <description>CD Background</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>425</width>
+                <height>400</height>
+                <texture>thumbs/boxes/cd_shadow_light.png</texture>
+            </control>
+        </control>     
                     </control>
                         <!-- Playlist -->
                         <control type="grouplist">
@@ -598,8 +680,6 @@
                             <align>left</align>
                             <itemgap>0</itemgap>
                             <orientation>vertical</orientation>
-                            <animation effect="slide" start="0,-900" end="0,0" time="800" tween="sine" easing="out" delay="1700">WindowOpen</animation>
-                            <animation effect="slide" start="0,0" end="0,-900" time="300" tween="cubic" easing="out">WindowClose</animation>
                             <animation effect="fade" time="400">VisibleChange</animation>
                             <control type="label">
                                 <posx>0</posx>
@@ -784,7 +864,7 @@
                         <align>justify</align>
                         <aligny>top</aligny>
                         <font>Font_Reg15</font>
-                        <textcolor>ccffffff</textcolor>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
                         <label>$VAR[NowPlayingTextBoxLabelVar]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
@@ -1025,8 +1105,8 @@
                         <align>justify</align>
                         <aligny>top</aligny>
                         <font>Font_Reg15</font>
-                        <textcolor>ccffffff</textcolor>
-                        <label>$VAR[NowPlayingTextBoxLabelVar2]</label>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <label>$INFO[Window(visualisation).Property(ArtistSlideshow.ArtistBiography),$LOCALIZE[21887]:  [COLOR ccffffff],[/COLOR][CR]]$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[24017]: [COLOR ccffffff],[/COLOR][CR]]$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[24016]:  [COLOR ccffffff],[/COLOR]]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                     <control type="group">

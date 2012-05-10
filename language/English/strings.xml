@@ -102,6 +102,9 @@
     <string id="31089">Both</string>
     <string id="31090">Adjust Transparency</string>
     <string id="31091">Random MusicVids</string>
+    <string id="31092">Artist fanart (Extrafanart, fanart.jpg, default fanart)</string>
+    <string id="31093">Actors Born Today</string>
+    <string id="31094">Widget Fanart</string>
 
     <!-- Playlist Editor labels -->
     <string id="31055">Open playlist</string>
@@ -329,7 +332,7 @@
     <string id="31676">Top bar</string>
     <string id="31677">Left side</string>
     <string id="31186">Kiosk mode</string>
-    <string id="31179">Disable media menu</string>
+    <string id="31179">Disable media menu and hide options in video info</string>
     <string id="31180">Hide options in media menu</string>
     <string id="31378">Set path to music library (needed for extrafanart, clearLOGO)</string>
     <string id="31678">Set path to cond. weather bg folder</string>
@@ -427,13 +430,15 @@
     <string id="42014">Click on menu items to see available options</string>
     <string id="42015">Play some Music to get live Preview of Settings</string>
     <string id="42016">Needs "Additional Artist Info" activated in Artistslideshow Plugin</string>
-    
+    <string id="42017">Welcome to Aeon Nox 3.0</string>
+    <string id="42018">Visit XBMC.org Forums for support</string>
+
 
     <string id="42100">Set area color for 'Featured' window</string>
     <string id="42101">Set area color for  'Settings' window</string>
     <string id="42102">AIRING TODAY</string>
     <string id="42104">Fallback</string>
     <string id="42105">Playlist widget</string>
-    <string id="31972">PosterLite</string>
+
 
 </strings>
