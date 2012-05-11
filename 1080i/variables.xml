@@ -357,12 +357,28 @@
     </variable>
     <variable name="VideoFanartVar">
         <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),recentmovies)">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),randommovies)">$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),randomtv)">$INFO[Window(Home).Property(RandomEpisode.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),recenttv)">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),randomalbums)">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),recentalbums)">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),inprogressmovies)">$INFO[Window(Home).Property(WatchList_Movie.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),watchlistmusic)">$INFO[Window(Home).Property(Watchlist_Album.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + StringCompare(Skin.String(MovieHomeItem.MultiFanart),watchlisttv)">$INFO[Window(Home).Property(WatchList_Episode.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + [IsEmpty(Skin.String(MovieHomeItem.MultiFanart)) | StringCompare(Skin.String(MovieHomeItem.MultiFanart),widgetfanart)]">special://skin/backgrounds/movies.jpg</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + !IsEmpty(Skin.String(MovieHomeItem.MultiFanart))">$INFO[Skin.String(MovieHomeItem.MultiFanart)]</value>
-        <value condition="Skin.HasSetting(NoVideoLibraryFanart) + Container.Content(movies) + IsEmpty(Skin.String(MovieHomeItem.MultiFanart))">special://skin/backgrounds/movies.jpg</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),recentmovies)">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),randommovies)">$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),randomtv)">$INFO[Window(Home).Property(RandomEpisode.1.Fanart)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),recenttv)">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),randomalbums)">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),recentalbums)">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),inprogressmovies)">$INFO[Window(Home).Property(WatchList_Movie.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),watchlistmusic)">$INFO[Window(Home).Property(Watchlist_Album.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + StringCompare(Skin.String(TVShowHomeItem.MultiFanart),watchlisttv)">$INFO[Window(Home).Property(WatchList_Episode.1.Fanart)]</value>
+        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + [IsEmpty(Skin.String(MovieHomeItem.MultiFanart)) | StringCompare(Skin.String(MovieHomeItem.MultiFanart),widgetfanart)]">special://skin/backgrounds/tvshows.jpg</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !IsEmpty(Skin.String(TVShowHomeItem.MultiFanart))">$INFO[Skin.String(TVShowHomeItem.MultiFanart)]</value>
-        <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + IsEmpty(Skin.String(TVShowHomeItem.MultiFanart))">special://skin/backgrounds/tvshows.jpg</value>
-        <value condition="[Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(NoVideoLibraryFanart)  + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]]">$INFO[Skin.String(VideosHomeItem.MultiFanart)]</value>
+        <value condition="[Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(NoVideoLibraryFanart)  + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]]">special://skin/backgrounds/movies.jpg</value>
         <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem.Label,special://skin/extras/year/video/fanart/,.jpg]</value>
         <value condition="Container.Content(movies)] + IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/fallback_movies.jpg</value>
@@ -559,11 +575,11 @@
         <value>$LOCALIZE[31062] $INFO[Window(home).Property(CustomYesNoDialog)]?</value>
     </variable>
     <variable name="Window1137LeftButtonLabelVar">
-        <value condition="Window.IsActive(1124)">1</value>
+        <value condition="Window.IsActive(1124)">$LOCALIZE[31685]</value>
         <value>$LOCALIZE[107]</value>
     </variable>
     <variable name="Window1137RightButtonLabelVar">
-        <value condition="Window.IsActive(1124)">2</value>
+        <value condition="Window.IsActive(1124)">$LOCALIZE[31700]</value>
         <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="LibraryStatsVar">
@@ -692,7 +708,7 @@
         <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),recentsongs)">$LOCALIZE[31218]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),randomsongs)">$LOCALIZE[31067]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),recentalbums)">$LOCALIZE[31359]</value>
-        <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),randomalbums)">$LOCALIZE[31068]</value>
+        <value condition="substring(Container(9000).ListItem.Property(Widget),randomalbums)">$LOCALIZE[31068]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),randomaddons)">$LOCALIZE[31070]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),recentmusicvideo)">$LOCALIZE[31081]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),randommusicvideo)">$LOCALIZE[31091]</value>
@@ -1202,7 +1218,18 @@
         <value condition="Control.HasFocus(9010) | Control.HasFocus(9012)">$INFO[Container(9002).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(9003)">$INFO[Container(9003).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(3001)">$INFO[Container(3001).ListItem.Property(Fanart)]</value>
-        <value condition="ControlGroup(4000).HasFocus()">$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),recentmovies)]">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),recentalbums)]">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),randomalbums)]">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),recenttv)]">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),randomtv)]">$INFO[Window(Home).Property(RandomEpisode.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),randommovies)]">$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),watchlisttv)]">$INFO[Window(Home).Property(WatchList_Episode.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),inprogressmovies)]">$INFO[Window(Home).Property(WatchList_Movie.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),watchlistmusic)]">$INFO[Window(Home).Property(WatchList_Album.1.Fanart)]</value>
+        <value condition="[Substring(Skin.String(WeatherHomeItem.MultiFanart),playlistfanart)]">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</value>
+        <value condition="StringCompare(Skin.String(WeatherHomeItem.MultiFanart),weather)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Weather.FanartCode]</value>
+        <value>$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</value>
     </variable>
     <!-- Global Search -->
     <variable name="GlobalSearchFanartVar">

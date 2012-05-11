@@ -37,6 +37,15 @@
                 <texture>wall/wall_bg_reflection.png</texture>
             </control>
             <include>Neon_Floor</include>
+        <control type="image">
+            <include>Animation_OpenClose_Furniture</include>
+            <posx>0</posx>
+            <posy>-100</posy>
+            <width>1920</width>
+            <height>608</height>
+            <texture flipy="true">views/showcase_glow.png</texture>
+            <colordiffuse>$VAR[FloorColorVar]</colordiffuse>
+        </control>
             <include>Furniture_SettingsBackPanel</include>
             <animation type="WindowOpen" reversible="false" condition="![Window.Previous(10004)|Window.Previous(1116)]">
                 <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
@@ -240,6 +249,7 @@
                         <description>Color selector</description>
                         <label>$LOCALIZE[42101]</label>
                         <include>Default_SettingButton</include>
+                        <onclick>SetProperty(Selector.Shortcut,1,1111)</onclick>
                         <onclick>ActivateWindow(1128)</onclick>
                     </control>
                     <control type="button" id="516">
