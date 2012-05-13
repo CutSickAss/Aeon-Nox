@@ -130,6 +130,14 @@
     <onunload condition="Stringcompare(Skin.String(MenuItem),ComicsHomeItem)">Skin.SetString(ComicsHomeItem.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),ComicsHomeItem)">Skin.SetString(ComicsHomeItem.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),ComicsHomeItem)">Skin.SetString(ComicsHomeItem.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(MusicVideosHomeItem.MultiFanart)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(MusicVideosHomeItem.Widget)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(MusicVideosHomeItem.Label)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(MusicVideosHomeItem.Path)])</onload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)">Skin.SetString(MusicVideosHomeItem.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)">Skin.SetString(MusicVideosHomeItem.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)">Skin.SetString(MusicVideosHomeItem.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)">Skin.SetString(MusicVideosHomeItem.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload>Skin.SetString(ItemToEdit.Label, )</onunload>
     <controls>
         <control type="group">
@@ -140,6 +148,19 @@
                 <posx>456</posx>
                 <posy>200</posy>
                 <width>1010</width>
+                <height>442</height>
+                <texture border="20">osd/osd_settings_back_glow.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                <include>PanelGlowFade</include>
+                <include>Animation_VisibleChange400</include>
+            </control>
+            <control type="image">
+                <description>Panel</description>
+                <posx>456</posx>
+                <posy>200</posy>
+                <width>1010</width>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <height>442</height>
                 <texture border="20">osd/osd_settings_back.png</texture>
             </control>
@@ -196,6 +217,7 @@
                         <posy>240</posy>
                         <width>1172</width>
                         <height>540</height>
+                        <ondown>4</ondown>
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
@@ -339,22 +361,31 @@
                             <visible>Stringcompare(Skin.String(MenuItem),ComicsHomeItem)</visible>
                             <onclick condition="IsEmpty(Skin.String(ItemToEdit.Path))">Notification($LOCALIZE[42002],$LOCALIZE[42008])</onclick>
                         </control>
-                        <control type="button" id="2141">
+                        <control type="radiobutton" id="24">
+                            <description>Hide item</description>
+                            <label>$LOCALIZE[24021]</label>
+                            <include>Objects_CustomizerSettingsButton</include>
+                            <onclick>Skin.ToggleSetting(HomeMenuNoMusicVideosButton)</onclick>
+                            <selected>Skin.HasSetting(HomeMenuNoMusicVideosButton)</selected>
+                            <visible>Stringcompare(Skin.String(MenuItem),MusicVideosHomeItem)</visible>
+                            <onclick condition="IsEmpty(Skin.String(ItemToEdit.Path))">Notification($LOCALIZE[42002],$LOCALIZE[42008])</onclick>
+                        </control>
+                        <control type="button" id="25">
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>$LOCALIZE[31679]</label>
                             <onclick>Skin.SetString(ItemToEdit.Label)</onclick>
                         </control>
-                        <control type="button" id="24053">
+                        <control type="button" id="26">
                             <label>$LOCALIZE[31681]</label>
                             <include>Objects_CustomizerSettingsButton</include>
                             <onclick>ActivateWindow(1133)</onclick>
                         </control>
-                        <control type="button" id="2142">
+                        <control type="button" id="27">
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>$LOCALIZE[31680]</label>
                             <onclick>ActivateWindow(1134)</onclick>
                         </control>
-                        <control type="button" id="5">
+                        <control type="button" id="28">
                             <description>Disable Item</description>
                             <label>$LOCALIZE[571]</label>
                             <include>Objects_CustomizerSettingsButton</include>
@@ -363,7 +394,7 @@
                             <onclick>SetFocus(9000)</onclick>
                             <visible>!IsEmpty(Skin.String(ItemToEdit.Path))</visible>
                         </control>
-                        <control type="button" id="6">
+                        <control type="button" id="29">
                             <description>Set default action</description>
                             <label>$LOCALIZE[31466]</label>
                             <include>Objects_CustomizerSettingsButton</include>
@@ -371,7 +402,7 @@
                             <onclick>SetFocus(9000)</onclick>
                             <visible>IsEmpty(Skin.String(ItemToEdit.Path))</visible>
                         </control>
-                        <control type="button" id="24">
+                        <control type="button" id="30">
                             <description>Hide item</description>
                             <label>$LOCALIZE[409]</label>
                             <include>Objects_CustomizerSettingsButton</include>

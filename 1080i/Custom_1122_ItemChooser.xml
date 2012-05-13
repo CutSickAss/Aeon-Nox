@@ -107,6 +107,19 @@
                 <posy>200</posy>
                 <width>1010</width>
                 <height>570</height>
+                <texture>osd/osd_settings_back_glow.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                <include>PanelGlowFade</include>
+                <include>Animation_VisibleChange400</include>
+            </control>
+            <control type="image">
+                <description>Panel</description>
+                <posx>456</posx>
+                <posy>200</posy>
+                <width>1010</width>
+                <height>570</height>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <texture>osd/osd_settings_back.png</texture>
             </control>
             <include>Animation_OpenCloseZoom</include>
@@ -252,7 +265,7 @@
                             <selected>!Skin.HasSetting(CustomHomeItem9.Enable)</selected>
                             <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem9)</visible>
                         </control>
-                        <control type="button" id="24051">
+                        <control type="button" id="20">
                             <label>$LOCALIZE[41155]</label>
                             <include>Objects_CustomizerSettingsButton</include>
                             <onclick>Skin.SetString(ItemToEdit.Label, )</onclick>
@@ -268,7 +281,7 @@
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),0)">Skin.SetString(ItemToEdit.Type,1)</onclick>
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),7)">Skin.SetString(ItemToEdit.Type,0)</onclick>
                         </control>
-                        <control type="button" id="24052">
+                        <control type="button" id="21">
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>$LOCALIZE[41156]</label>
                             <onclick>Skin.SetString(ItemToEdit.Label, )</onclick>
@@ -283,7 +296,7 @@
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),6)">Skin.SetString(ItemToEdit.Type,5)</onclick>
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),7)">Skin.SetString(ItemToEdit.Type,6)</onclick>
                         </control>
-                        <control type="button" id="2406">
+                        <control type="button" id="22">
                             <posx>0</posx>
                             <posy>300</posy>
                             <include>Objects_CustomizerSettingsButton</include>
@@ -293,28 +306,39 @@
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),1)">Skin.SetAddon(ItemToEdit.Path,xbmc.addon.audio)</onclick>
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),2)">Skin.SetAddon(ItemToEdit.Path,xbmc.addon.image)</onclick>
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),3)">Skin.SetAddon(ItemToEdit.Path,xbmc.addon.executable)</onclick>
+                            <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),4) | stringcompare(Skin.String(ItemToEdit.Type),5)">Skin.SetString(HomeMenuPlaylist_Path,ItemToEdit.Path)</onclick>
+                            <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),4) | stringcompare(Skin.String(ItemToEdit.Type),5)">Skin.SetString(HomeMenuPlaylist_Label,ItemToEdit.Label)</onclick>
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),4)">ActivateWindow(1125)</onclick>
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),5)">ActivateWindow(1132)</onclick>
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),6)">RunScript(script.favourites,property=ItemToEdit)</onclick>
                             <onclick condition="stringcompare(Skin.String(ItemToEdit.Type),7)">Skin.SetString(ItemToEdit.Path)</onclick>
                             <enable>!IsEmpty(Skin.String(ItemToEdit.Type)</enable>
                         </control>
-                        <control type="button" id="2141">
+                        <control type="button" id="23">
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>$LOCALIZE[31679]</label>
                             <onclick>Skin.SetString(ItemToEdit.Label)</onclick>
                         </control>
-                        <control type="button" id="24053">
+                        <control type="button" id="24">
                             <label>$LOCALIZE[31681]</label>
                             <include>Objects_CustomizerSettingsButton</include>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem1) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom1.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onclick>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem2) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom2.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onclick>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem3) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom3.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onclick>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem4) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom4.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onclick>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem5) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom5.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onclick>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem6) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom6.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onclick>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem7) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom7.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onclick>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem8) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom8.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onclick>
+                            <onclick condition="System.HasAddon(script.randomandlastitems) + Stringcompare(Skin.String(MenuItem),CustomHomeItem9) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(ItemToEdit.Path)], method=$INFO[Skin.String(Custom9.Method)], limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onclick>
                             <onclick>ActivateWindow(1133)</onclick>
                         </control>
-                        <control type="button" id="2142">
+                        <control type="button" id="25">
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>$LOCALIZE[31680]</label>
                             <onclick>ActivateWindow(1134)</onclick>
                         </control>
-                        <control type="button" id="2101">
+                        <control type="button" id="26">
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>$LOCALIZE[31027]</label>
                             <onclick>Skin.SetString(ItemToEdit.Type,0)</onclick>

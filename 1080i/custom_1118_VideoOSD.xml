@@ -8,6 +8,17 @@
     </coordinates>
     <include>Animation_DialogPopup</include>
     <controls>
+            <control type="image">
+                <description>Panel</description>
+                <posx>357</posx>
+                <posy>180</posy>
+                <width>1212</width>
+                <height>722</height>
+                <texture>osd/osd_settings_back_glow.png</texture>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <include>PanelGlowFade</include>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
         <control type="image">
             <description>Panel</description>
             <posx>357</posx>
@@ -15,6 +26,7 @@
             <width>1212</width>
             <height>722</height>
             <texture>osd/osd_settings_back.png</texture>
+            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
         </control>
         <control type="image">
             <posx>375</posx>
@@ -29,7 +41,7 @@
             <posy>225</posy>
             <width>600</width>
             <height>60</height>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[TitleColorVar]</textcolor>
             <font>Font_Bold19</font>
             <label>$LOCALIZE[31619]</label>
             <align>left</align>

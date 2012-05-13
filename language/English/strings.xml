@@ -54,7 +54,7 @@
     <string id="31222">Featured movies</string>
     <string id="31358">Latest album</string>
     <string id="31359">Latest albums</string>
-    <string id="31475">MOST PLAYED ALBUMS</string>
+    <string id="31475">Most Played Albums</string>
     <string id="31027">Reset item</string>
     <string id="31030">WEATHER SCREEN</string>
     <string id="31031">NAVIGATE</string>
@@ -286,6 +286,7 @@
     <string id="31629">All Videos</string>
     <string id="31630">Custom</string>
     <string id="31631">Show Logo.png instead Of Title</string>
+    <string id="31633">QuickNav</string>
 
     <!-- Home Menu -->
     <string id="31500">PICTURES</string>
@@ -358,6 +359,8 @@
     <string id="31698">Show list of actors/artists birthdays</string>
     <string id="31699">Smaller main menu</string>
     <string id="31700">Panel</string>
+    <string id="31701">Music Visualisation Settings</string>
+    <string id="31702">Video OSD Settings</string>
 
     <!-- Extra Unified PVR labels -->
     <string id="52502">Live TV</string>
@@ -440,6 +443,6 @@
     <string id="42102">AIRING TODAY</string>
     <string id="42104">Fallback</string>
     <string id="42105">Playlist widget</string>
-    <string id="31972">PosterLite</string>
+
 
 </strings>

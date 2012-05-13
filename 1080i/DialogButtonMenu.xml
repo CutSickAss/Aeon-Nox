@@ -45,12 +45,12 @@
         </control>
         <control type="image">
             <description>POSTER icon</description>
-            <posx>709</posx>
-            <posy>280</posy>
-            <width>493</width>
-            <height>497</height>
+            <posx>729</posx>
+            <posy>287</posy>
+            <width>463</width>
+            <height>500</height>
             <aspectratio>stretch</aspectratio>
-            <texture>dialogs/dialog_border.png</texture>
+            <texture>thumbs/thumb_glass_shadow.png</texture>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             <fadetime>400</fadetime>
             <visible>!Control.IsVisible(7) + !Control.IsVisible(8) + !Control.IsVisible(1)</visible>
@@ -73,6 +73,7 @@
                 <posy>-39</posy>
                 <width>462</width>
                 <height>39</height>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <texture>dialogs/context_top_shutdown.png</texture>
             </control>
             <control type="button" id="1">
@@ -184,6 +185,7 @@
                 <posy>699</posy>
                 <width>462</width>
                 <height>40</height>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <texture>dialogs/context_bottom.png</texture>
             </control>
         </control>

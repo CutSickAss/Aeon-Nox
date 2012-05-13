@@ -18,7 +18,7 @@
             <animation effect="fade" start="0" end="100" time="400">Visible</animation>
         </control>
         <control type="group">
-            <visible>[Container.Content(movies) + [[Skin.HasSetting(fanartinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(fanartinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(fanartinfopane504) + Control.IsVisible(504)] | [Control.IsVisible(501) + Skin.HasSetting(fourthumbs)] | [Control.IsVisible(503) + Skin.HasSetting(fourthumbs503)] | [Control.IsVisible(504) + Skin.HasSetting(fourthumbs504)]]] |
+            <visible>Container.Content(musicvideos) | [Container.Content(movies) + [[Skin.HasSetting(fanartinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(fanartinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(fanartinfopane504) + Control.IsVisible(504)] | [Control.IsVisible(501) + Skin.HasSetting(fourthumbs)] | [Control.IsVisible(503) + Skin.HasSetting(fourthumbs503)] | [Control.IsVisible(504) + Skin.HasSetting(fourthumbs504)]]] |
 				[Container.Content(tvshows) + !Skin.HasSetting(tvposterinfopane)] | Container.Content(seasons) | Container.Content(episodes)</visible>
             <posx>158</posx>
             <posy>63</posy>
@@ -760,6 +760,7 @@
                 <texture>wall/wall_bg_glow.png</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <include>PanelGlowFade</include>
                 <animation effect="zoom" start="112,68,1695,1038" end="38,68,1845,1038" time="0" reversible="false" condition="Control.IsVisible(512)">Conditional</animation>
             </control>
             <control type="image">
