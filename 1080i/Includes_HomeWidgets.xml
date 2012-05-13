@@ -1171,7 +1171,7 @@
                 <visible>!Skin.HasSetting(disablecdart)</visible>
                 <control type="image">
                     <posx>474</posx>
-                    <posy>760</posy>
+                    <posy>765</posy>
                     <height>1</height>
                     <width>388</width>
                     <texture>home/nowplaying_line_gradient.png</texture>
@@ -1302,7 +1302,7 @@
             </control>
             <control type="group">
                 <control type="label">
-                    <posy>717</posy>
+                    <posy>722</posy>
                     <label>[UPPERCASE]$INFO[MusicPlayer.Artist][/UPPERCASE]</label>
                     <font>Font_Reg21_Caps</font>
                     <include>Furniture_HomeNowPlayingMetrics</include>
@@ -1319,7 +1319,7 @@
                 </control>
                 <control type="image" id="8308">
                     <posx>530</posx>
-                    <posy>649</posy>
+                    <posy>654</posy>
                     <width>309</width>
                     <height>108</height>
                     <aspectratio>stretch</aspectratio>
