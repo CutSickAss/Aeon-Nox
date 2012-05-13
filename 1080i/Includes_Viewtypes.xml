@@ -739,7 +739,7 @@
     <include name="Furniture_Glow">
         <control type="image">
             <include>Animation_OpenClose_Furniture</include>
-            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)] | [Control.IsVisible(528)+Skin.HasSetting(DisableGlowbar)]]</visible>
+            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
             <posx>0</posx>
             <posy>-100</posy>
             <width>1920</width>

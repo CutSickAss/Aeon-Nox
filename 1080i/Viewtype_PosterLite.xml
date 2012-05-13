@@ -345,18 +345,26 @@
 		  <visible>!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)+!IsEmpty(Container(3000).ListItem.Genre)</visible>
 		</control>
 		<!-- TV Show Banner -->
-		<control type="image">
-		  <posx>803</posx>
-		  <posy>-48</posy>
-		  <width>528</width>
-		  <height>110</height>
-		  <align>center</align>
-		  <aligny>center</aligny>
-		  <aspectratio scalediffuse="false">stretch</aspectratio>
-		  <texture diffuse="thumbs/banner_wall_mask.png">$INFO[ListItem.Path,,banner.jpg]</texture>
-		  <bordertexture border="-11">thumbs/banner_shadow.png</bordertexture>
-		  <bordersize>8</bordersize>
+		<control type="group">
 		  <visible>Container.Content(tvshows)+!IsEmpty(ListItem.Path,,banner.jpg)</visible>
+		  <posx>795</posx>
+		  <posy>-42</posy>
+		  <control type="image">
+			<width>528</width>
+			<height>98</height>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture diffuse="thumbs/banner_wall_mask.png">$INFO[ListItem.Path,,banner.jpg]</texture>
+		  </control>
+		  <control type="image">
+			<posx>-10</posx>
+			<posy>-9</posy>
+			<width>548</width>
+			<height>116</height>
+			<aspectratio>stretch</aspectratio>
+			<texture diffuse="thumbs/banner_mask.png">common/blank.png</texture>
+			<bordertexture border="12">thumbs/banner_shadow.png</bordertexture>
+			<colordiffuse>$VAR[SubTitleColorVar]</colordiffuse>
+		  </control>
 		</control>
 	  </control>
 	</control>
