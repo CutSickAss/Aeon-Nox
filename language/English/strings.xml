@@ -54,7 +54,6 @@
     <string id="31222">Featured movies</string>
     <string id="31358">Latest album</string>
     <string id="31359">Latest albums</string>
-    <string id="31475">Most Played Albums</string>
     <string id="31027">Reset item</string>
     <string id="31030">WEATHER SCREEN</string>
     <string id="31031">NAVIGATE</string>
@@ -443,6 +442,6 @@
     <string id="42102">AIRING TODAY</string>
     <string id="42104">Fallback</string>
     <string id="42105">Playlist widget</string>
-    <string id="31972">PosterLite</string>
+
 
 </strings>
