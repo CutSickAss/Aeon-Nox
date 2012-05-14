@@ -6,7 +6,7 @@
     <onload condition="System.GetBool(videolibrary.groupmoviesets) + System.HasAddon(script.moviesets)">XBMC.RunScript(script.moviesets,containerId=3000)</onload>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <allowoverlay>no</allowoverlay>
-    <views>50,52,53,57,500,501,503,504,505,508,509,510,511,512,514,516,528</views>
+    <views>50,52,53,57,500,501,503,504,505,508,509,510,511,512,514,516</views>
     <controls>
         <include condition="System.GetBool(videolibrary.groupmoviesets) + System.HasAddon(script.moviesets)">MovieSetsList</include>
         <control type="group">
@@ -51,18 +51,8 @@
             <colordiffuse>aaffffff</colordiffuse>
             <animation effect="fade" start="0" end="100" time="400" delay="100">Visible</animation>
             <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
-            <visible>!Control.IsVisible(514) + !Control.IsVisible(516) + !Control.IsVisible(511) + !Control.IsVisible(528)</visible>
+            <visible>!Control.IsVisible(514) + !Control.IsVisible(516) + !Control.IsVisible(511)</visible>
             <visible>[[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(500)]]</visible>
-        </control>
-        <control type="image">
-            <posy>0</posy>
-            <width>1920</width>
-            <height>1080</height>
-            <texture>common/black.png</texture>
-            <colordiffuse>aaffffff</colordiffuse>
-            <animation effect="fade" start="0" end="100" time="400" delay="100">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
-            <visible>Control.IsVisible(528) + [Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
@@ -77,46 +67,6 @@
             <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(504) | Control.IsVisible(501)</visible>
             <include>ShowcaseInfoPaneMovies</include>
             <animation effect="slide" end="0,45" time="400" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
-        </control>
-        <control type="group">
-            <!-- view id = 528 PosterLite -->
-            <include condition="!Skin.HasSetting(DisablePosterLiteVL)">PosterLite</include>
-            <visible>Control.IsVisible(528)</visible>
-            <control type="button" id="528195">
-                <description>Infopanel: Manual</description>
-                <include>HiddenObject</include>
-                <visible>[Control.HasFocus(528)|Control.HasFocus(7000)]+[[Container.Content(movies)+!Skin.HasSetting(showcaseinfoon)]|[Container.Content(tvshows)+!Skin.HasSetting(showcaseinfoontv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
-            </control>
-            <control type="button" id="528193">
-                <include>HiddenObject</include>
-                <visible>Window.IsVisible(contextmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(shutdownmenu)|Window.IsVisible(playercontrols)|Window.IsVisible(1128)|Window.IsVisible(busydialog)|Window.IsVisible(progressdialog)|Window.IsVisible(selectdialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(filebrowser)</visible>
-            </control>
-            <control type="button" id="528194">
-                <include>HiddenObject</include>
-                <visible>Control.HasFocus(528)+!Control.IsVisible(528193)+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+Skin.HasSetting(infopaneautotv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
-            </control>
-            <control type="button" id="528196">
-                <description>Infopanel: On</description>
-                <include>HiddenObject</include>
-                <visible>Control.IsVisible(528)+Control.HasFocus(528)+!Control.IsVisible(528193)+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]+!StringCompare(ListItem.Label,..)</visible>
-            </control>
-            <control type="button" id="528197">
-                <description>Infopanel: Delayed (Labels)</description>
-                <include>HiddenObject</include>
-                <visible>Control.IsVisible(528194)+!SubString(ListItem.Path,videodb://1/7/)</visible>
-                <include>PLDelAn</include>
-            </control>
-            <control type="button" id="528198">
-                <description>Infopanel: Delayed (Labels) - MovieSets</description>
-                <include>HiddenObject</include>
-                <visible>Control.IsVisible(528194)+SubString(ListItem.Path,videodb://1/7/)</visible>
-                <include>PLDelAn</include>
-            </control>
-            <control type="button" id="528199">
-                <description>Infopanel: Delayed (Posters/Logos)</description>
-                <include>HiddenObject</include>
-                <visible>Control.HasFocus(528)+[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+Skin.HasSetting(infopaneautotv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
-            </control>
         </control>
         <include>Furniture_Showcase</include>
         <include condition="!Skin.HasSetting(DisableInfoWallVL) | !Skin.HasSetting(DisableWallVL)">WallPanel</include>
@@ -154,16 +104,14 @@
             <description>Invisible buttons for trailer</description>
             <control type="button" id="7000">
                 <include>HiddenObject</include>
-                <onfocus condition="[[Skin.HasSetting(showcaseinfoon) + Container.Content(movies) + IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(showcaseinfoonep) + Container.Content(episodes)] | [Skin.HasSetting(showcaseinfoontv)+[Container.Content(tvshows) | Container.Content(seasons)]]] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508) | Control.IsVisible(528)]">SetFocus(9000)</onfocus>
-                <onfocus condition="[Skin.HasSetting(showcaseinfoon) + Container.Content(movies) + !IsEmpty(ListItem.Trailer)] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(528)]">SetFocus(1801)</onfocus>
+                <onfocus condition="[[Skin.HasSetting(showcaseinfoon) + Container.Content(movies) + IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(showcaseinfoonep) + Container.Content(episodes)] | [Skin.HasSetting(showcaseinfoontv)+[Container.Content(tvshows) | Container.Content(seasons)]] | Control.IsVisible(508)] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)]">SetFocus(9000)</onfocus>
+                <onfocus condition="[Skin.HasSetting(showcaseinfoon) + Container.Content(movies) + !IsEmpty(ListItem.Trailer)] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503)]">SetFocus(1801)</onfocus>
                 <onup condition="IsEmpty(ListItem.Trailer)">9000</onup>
                 <onup condition="!IsEmpty(ListItem.Trailer)">1801</onup>
                 <onleft condition="Control.IsVisible(501)">Control.Move(501,-1)</onleft>
                 <onleft condition="Control.IsVisible(504)">Control.Move(504,-1)</onleft>
                 <onleft condition="Control.IsVisible(503)">Control.Move(503,-1)</onleft>
                 <onleft condition="Control.IsVisible(508)">Control.Move(508,-1)</onleft>
-                <onleft condition="Control.IsVisible(528)">Control.Move(528,-1)</onleft>
-                <onright condition="Control.IsVisible(528)">Control.Move(528,1)</onright>
                 <onright condition="Control.IsVisible(501)">Control.Move(501,1)</onright>
                 <onright condition="Control.IsVisible(504)">Control.Move(504,1)</onright>
                 <onright condition="Control.IsVisible(503)">Control.Move(503,1)</onright>
