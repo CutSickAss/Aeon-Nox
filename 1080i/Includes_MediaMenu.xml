@@ -316,6 +316,7 @@
                 <texture>common/logo_trailer.png</texture>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
+                <animation effect="fade" start="100" end="60" time="1500" pulse="true" condition="true">conditional</animation>
                 <animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.IsVisible(4051)">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="200" condition="[IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)] | [IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | Container.Scrolling">Conditional</animation>
                 <visible>!ControlGroup(9000).HasFocus + [Window.IsActive(musiclibrary) | Window.IsActive(videos)]</visible>
@@ -401,7 +402,7 @@
                         <textureradionofocus>common/arrowleft.png</textureradionofocus> 
                         <description>Trailer button</description>
                         <height>60</height>
-                        <width>420</width>
+                        <width>400</width>
                         <texturenofocus>settings/listselect_nf.png</texturenofocus>
                         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <alttexturenofocus>settings/listselect_nf.png</alttexturenofocus>

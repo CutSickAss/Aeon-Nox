@@ -30,6 +30,26 @@
             <imagepath background="true" fallback="special://skin/backgrounds/system.jpg">$VAR[FeaturedFanartVar]</imagepath>
         </control>
         <include>CommonMediaPlayingBackground</include>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+			<texture>common/black.png</texture>
+			<visible>Skin.HasSetting(Glowbar_Home)</visible>
+			<include>Animation_VisibleChange400</include>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>-150</posy>
+			<width>1920</width>
+			<height>608</height>
+			<texture flipy="true">views/showcase_glow.png</texture>
+			<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+			<visible>Skin.HasSetting(Glowbar_Home)</visible>
+			<include>Animation_VisibleChange400</include>
+			<include>Animation_WindowFade200</include>
+			<animation effect="fade" start="100" end="80" time="5000" pulse="true" condition="true">conditional</animation>
+		</control>
+		<include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
         <!-- Furniture -->
         <control type="group">
             <description>Furniture</description>
@@ -124,6 +144,18 @@
                 <control type="group">
                     <posx>450</posx>
                     <posy>-30</posy>
+                    <control type="image">
+                        <description>Panel</description>
+                        <posx>0</posx>
+                        <posy>450</posy>
+                        <width>1332</width>
+                        <height>160</height>
+                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>450</posy>
@@ -238,6 +270,18 @@
                 </control>
                 <control type="group">
                     <posx>450</posx>
+                    <control type="image">
+                        <description>Panel</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1332</width>
+                        <height>612</height>
+                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -859,6 +903,18 @@
                 <control type="group">
                     <posx>450</posx>
                     <control type="image">
+                        <description>Panel</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1332</width>
+                        <height>612</height>
+                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
+                    <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1332</width>
@@ -1473,6 +1529,18 @@
                 </control>
                 <control type="group">
                     <posx>450</posx>
+                    <control type="image">
+                        <description>Panel</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1332</width>
+                        <height>612</height>
+                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -2537,6 +2605,18 @@
                 <control type="group">
                     <posx>450</posx>
                     <control type="image">
+                        <description>Panel</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1332</width>
+                        <height>612</height>
+                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
+                    <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1332</width>
@@ -3235,6 +3315,18 @@
                 </control>
                 <control type="group">
                     <posx>450</posx>
+                    <control type="image">
+                        <description>Panel</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1332</width>
+                        <height>612</height>
+                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -3949,6 +4041,18 @@
                 <control type="group">
                     <posx>450</posx>
                     <control type="image">
+                        <description>Panel</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1332</width>
+                        <height>612</height>
+                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
+                    <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1332</width>
@@ -4532,6 +4636,18 @@
                 </control>
                 <control type="group" id="4013">
                     <posx>450</posx>
+                    <control type="image">
+                        <description>Panel</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1332</width>
+                        <height>612</height>
+                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
