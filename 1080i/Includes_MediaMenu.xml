@@ -489,7 +489,7 @@
                         <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
                         <onclick condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
                         <onclick>Dialog.Close(1126)</onclick>
-                        <onclick>Control.SetFocus(50)</onclick>
+                        <onclick>SetFocus(50)</onclick>
                         <textureradiofocus>common/logo_trailer.png</textureradiofocus>
                         <textureradionofocus>common/logo_trailer.png</textureradionofocus>
                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
