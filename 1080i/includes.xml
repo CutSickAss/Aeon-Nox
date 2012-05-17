@@ -909,7 +909,6 @@
         <onload>Skin.SetBool(DisableGlowbar)</onload>
         <onload>Skin.SetBool(ExtendedGlowMode)</onload>
         <onload>Skin.SetBool(1sec)</onload>
-        <onload>Skin.SetBool(plitep)</onload>
         <onload>Skin.SetBool(pliteback1)</onload>
         <onload>Skin.SetBool(firstrun)</onload>
         <onload>Skin.SetString(IncludeWatchedCVPL,False)</onload>

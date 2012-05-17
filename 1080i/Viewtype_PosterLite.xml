@@ -51,7 +51,7 @@
 		<preloaditems>2</preloaditems>
 		<scrolltime tween="quadratic" easing="out">250</scrolltime>
 	    <include>Animation_OpenCloseZoom_New</include>
-        <itemlayout width="190" height="1000" condition="[Container.Content(movies)+Skin.HasSetting(plitep)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvp)]">
+        <itemlayout width="190" height="1000" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 		  <control type="group">
 			<posx>-75</posx>
 			<posy>605</posy>
@@ -60,7 +60,7 @@
 		    <include>PLPosters</include>
 		  </control>
         </itemlayout>
-        <focusedlayout width="478" height="768" condition="[Container.Content(movies)+Skin.HasSetting(plitep)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvp)]">
+        <focusedlayout width="478" height="768" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 		  <control type="group">
 			<posx>8</posx>
 			<posy>330</posy>
@@ -76,7 +76,7 @@
 			<include>PLPosters</include>
 		  </control>
 		</focusedlayout>
-        <itemlayout width="420" height="164" condition="[Container.Content(movies)+!Skin.HasSetting(plitep)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvp)]">
+        <itemlayout width="420" height="164" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 		  <control type="group">
 			<posx>-605</posx>
 			<posy>836</posy>
@@ -85,9 +85,9 @@
 			<include>PLLogos</include>
 		  </control>
         </itemlayout>
-        <focusedlayout width="570" height="224" condition="[Container.Content(movies)+!Skin.HasSetting(plitep)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvp)]">
+        <focusedlayout width="570" height="224" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 		  <control type="group">
-			<posx>-484</posx>
+			<posx>-487</posx>
 			<posy>810</posy>
 			<animation effect="fade" time="350" delay="150" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
 			<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false" condition="!Control.IsVisible(528196)">Focus</animation>
@@ -159,7 +159,7 @@
       <height>204</height>
 	  <fadetime>250</fadetime>
       <aspectratio aligny="bottom">keep</aspectratio>
-      <texture background="true" fallback="fallback.png">$VAR[TVShowLogoVar]</texture>
+      <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
     </control>
 	<control type="image">
 	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
@@ -168,8 +168,23 @@
       <height>204</height>
 	  <fadetime>250</fadetime>
       <aspectratio aligny="top">keep</aspectratio>
-      <texture flipy="true" background="true" fallback="fallback.png">$VAR[TVShowLogoVar]</texture>
+      <texture flipy="true" background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+    </control>
+    <control type="group">
+	  <visible>[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]</visible>
+	  <control type="image">
+		<posx>354</posx>
+		<width>90</width>
+		<height>90</height>
+		<include>OverlayVisibility0</include>
+	  </control>
+	  <control type="group">
+		<posx>30</posx>
+		<posy>-23</posy>
+		<include>UnwatchedIcon</include>
+		<animation effect="zoom" start="140" end="140" time="0" condition="true">Conditional</animation>
+	  </control>
     </control>
   </include>
   <include name="PLTopT">
@@ -352,7 +367,7 @@
 		  <control type="image">
 			<width>528</width>
 			<height>98</height>
-			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<aspectratio>stretch</aspectratio>
 			<texture diffuse="thumbs/banner_wall_mask.png">$INFO[ListItem.Path,,banner.jpg]</texture>
 		  </control>
 		  <control type="image">
@@ -477,7 +492,7 @@
           <align>left</align>
           <include>CuFlVa</include>
           <label>$VAR[PLTotal]</label>
-          <visible>!IsEmpty(ListItem.Episode)+[!Skin.HasSetting(plitetvp)|[Skin.HasSetting(plitetvp)+!Skin.HasSetting(unwatchedicon)]]</visible>
+          <visible>!IsEmpty(ListItem.Episode)+[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)]]|[[[Container.Content(movies)+!Skin.HasSetting(plclear)+!Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+!Skin.HasSetting(plcleartv)+!Skin.HasSetting(pllogotv)]]+!Skin.HasSetting(UnwatchedIcon)]]</visible>
         </control>
         <control type="image">
           <posy>-22</posy>

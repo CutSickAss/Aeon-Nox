@@ -1560,4 +1560,16 @@
         <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[16102]:[/COLOR] $INFO[Container(3000).ListItem.Property(WatchedMovies)] [COLOR=$VAR[SubTitleColorVar]]/[/COLOR] $INFO[Container(3000).ListItem.Property(TotalMovies)]</value>
         <value condition="Container.Content(tvshows)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[20360]:[/COLOR] $INFO[ListItem.Episode]  [COLOR=$VAR[SubTitleColorVar]]($LOCALIZE[16101]:[/COLOR] $INFO[ListItem.Property(UnWatchedEpisodes)][COLOR=$VAR[SubTitleColorVar]])[/COLOR]</value>
     </variable>
+    <variable name="PLIconVar">
+        <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$INFO[ListItem.Path,,logo.png]</value>
+        <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$INFO[ListItem.Path,,clearart.png]</value>
+        <value condition="Container.Content(tvshows)+Skin.HasSetting(pllandtv)">$INFO[ListItem.Path,,landscape.jpg]</value>
+        <value>$INFO[ListItem.Property(Fanart_Image)]</value>
+    </variable>
+    <variable name="PLIconLabelVar">
+        <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$LOCALIZE[31059]</value>
+        <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$LOCALIZE[31086]</value>
+        <value condition="[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]">$LOCALIZE[31150]</value>
+        <value>$LOCALIZE[31060]</value>
+    </variable>
 </includes>
