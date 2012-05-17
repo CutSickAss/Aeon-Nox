@@ -247,7 +247,6 @@
             <onclick condition="Control.IsVisible(528)">Skin.SetString(actualViewtype,posterlite)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
             <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + Control.IsVisible(3000)">3000</ondown>
-            <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + !Control.IsVisible(3000)">1802</ondown>
         </control>
     </include>
     <include name="Media_Menu_Tooltip">
@@ -263,7 +262,6 @@
                 <effect type="fade" time="400" start="100" end="0" />
                 <effect type="slide" time="400" start="0,0" end="-90,0" easing="in" tween="cubic" />
             </animation>
-            <animation effect="slide" start="0" end="-60" time="200" reversible="true" condition="Control.HasFocus(110)">Conditional</animation>
             <animation effect="slide" start="0" end="-80" time="300" reversible="true" condition="IsEmpty(ListItem.Trailer) + Skin.HasSetting(kioskmode)">Conditional</animation>
             <animation effect="slide" start="0" end="-181" time="400" reversible="true" easing="in" tween="cubic" condition="Window.IsActive(1121)">Conditional</animation>
             <animation effect="slide" start="0" end="-123" time="400" reversible="true" easing="in" tween="cubic" condition="Window.IsActive(1119)">Conditional</animation>
@@ -420,7 +418,7 @@
                     <control type="button" id="1802">
                         <description>View As button</description>
                         <include>Objects_MediaMenuButtonAlt</include>
-                        <label>$LOCALIZE[582]: [B]$INFO[Container.Viewmode][/B]</label>
+                        <label>$LOCALIZE[582]: [COLOR $VAR[SelectedColorVar]][B]$INFO[Container.Viewmode][/B][/COLOR]</label>
                         <onclick>Skin.SetBool(viewtypeselect)</onclick>
                         <onclick>ActivateWindow(1121)</onclick>
                         <visible>!Window.IsActive(musicplaylisteditor)</visible>
@@ -493,7 +491,6 @@
                         <textureradiofocus>common/logo_trailer.png</textureradiofocus>
                         <textureradionofocus>common/logo_trailer.png</textureradionofocus>
                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
-                        <ondown condition="!Control.IsVisible(4000)">1802</ondown>
                         <visible>!IsEmpty(ListItem.Trailer)</visible>
                     </control>
                     <control type="radiobutton" id="1800">
@@ -523,7 +520,6 @@
                         <textureradiofocus>common/logo_trailer.png</textureradiofocus>
                         <textureradionofocus>common/logo_trailer.png</textureradionofocus>
                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
-                        <ondown condition="!Control.IsVisible(4000)">1802</ondown>
                         <onclick>PlayMedia($ESCINFO[Window.Property(SongToMusicVideo.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)</visible>
                     </control>
@@ -549,7 +545,6 @@
                         <include>Animation_CommonFade</include>
                         <label>$LOCALIZE[21452]</label>
                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
-                        <ondown condition="!Control.IsVisible(4000)">9000</ondown>
                         <onclick>ActivateWindow(AddonBrowser)</onclick>
                         <visible>SubString(Container.FolderPath,addons://) + !Window.IsActive(addonbrowser)</visible>
                     </control>

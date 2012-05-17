@@ -1051,7 +1051,6 @@
 		</control>
 		<include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
 		<!-- LiveTV Info -->
-		<include condition="System.GetBool(pvrmanager.enabled)">PVRPanel</include>
 		<control type="group">
 			<visible>!Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(Glowbar_Home)</visible>
 			<include>Animation_VisibleChangeDelayed</include>
@@ -1105,13 +1104,14 @@
 			</control>
 		</control>
 		<!-- Featured widget test -->
-		<include condition="!Skin.HasSetting(lowermainmenu)">HomeFeaturedWidget</include>
+		<include>HomeFeaturedWidget</include>
 		<!-- Latest/Random Items -->
 		<control type="group">
 			<include>Animation_OpenCloseZoom</include>
 			<include>RecentWidget</include>
 		</control>
 		<include>PosterWidgetTrailerLabel</include>
+
 		<!-- Library Totals -->
 		<include>LibraryStats</include>
 		<!-- Time Panel-->
@@ -1128,6 +1128,7 @@
 				<control type="group" id="9001">
 					<posx>240</posx>
 					<posy>609</posy>
+                    <animation effect="zoom" end="120" center="960,610" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
 					<animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(9010)">conditional</animation>
 					<animation effect="slide" start="0,0" end="0,-60" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(9010)">conditional</animation>
 					<control type="image">
@@ -1209,11 +1210,9 @@
 			</control>
 		</control>
 		<!--Weather info-->
-		<include condition="!SubString(Weather.Plugin,weather.wunderground) + !IsEmpty(Weather.Plugin)">Weather_Widget_Standard</include>
-		<include condition="SubString(Weather.Plugin,weather.wunderground) + !IsEmpty(Weather.Plugin)">Weather_Widget_Plus</include>
+		<include condition="!Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin)">Weather_Widget_Standard</include>
+		<include condition="Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin)">Weather_Widget_Plus</include>
 		<!-- Music Info -->
 		<include condition="!Skin.HasSetting(nohomepageMusicinfo) | !Skin.HasSetting(homepageVideoinfo)">Furniture_HomeNowPlaying</include>
-		<!-- Featured widget test -->
-		<include condition="Skin.HasSetting(lowermainmenu)">HomeFeaturedWidget</include>
 	</controls>
 </window>

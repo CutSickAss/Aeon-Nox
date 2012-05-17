@@ -264,169 +264,6 @@
             </control>
         </control>
     </include>
-
-    <include name="PVRPanel">
-        <control type="group">
-            <posx>-132</posx>
-            <visible>Container(9000).HasFocus(21) + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
-            <posy>472</posy>
-            <animation effect="slide" start="0,0" end="-750,0" time="300">WindowClose</animation>
-            <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
-            <animation effect="slide" start="-750" end="0" time="300">VisibleChange</animation>
-            <animation effect="slide" start="-750,0" end="0,0" delay="2500" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="0,338" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            <control type="image">
-                <description>time background</description>
-                <posx>0</posx>
-                <posy>-46</posy>
-                <width>1094</width>
-                <height>87</height>
-                <texture flipx="true">home/timepanel_mid.png</texture>
-                <include>Animation_VisibleChange400</include>
-                <colordiffuse>$VAR[ExtendedHomeColorVar]</colordiffuse>
-                <visible>!Skin.HasSetting(totalshomehigh)</visible>
-                <animation effect="slide" start="0,0" end="0,-472" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            </control>
-            <control type="image">
-                <description>time background</description>
-                <posx>0</posx>
-                <posy>-472</posy>
-                <width>1094</width>
-                <height>87</height>
-                <texture flipy="true" flipx="true">home/timepanel_mid.png</texture>
-                <colordiffuse>$VAR[ExtendedHomeColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
-                <visible>Skin.HasSetting(totalshomehigh)</visible>
-                <animation effect="slide" start="0,0" end="0,472" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
-            </control>
-            <control type="group">
-                <visible>Skin.HasSetting(totalshomehigh)</visible>
-                <animation effect="slide" start="0,0" end="0,150" time="0" condition="PVR.IsRecording">conditional</animation>
-                <visible>PVR.HasNonRecordingTimer</visible>
-                <control type="image">
-                    <posx>140</posx>
-                    <posy>-471</posy>
-                    <width>38</width>
-                    <height>38</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NextRecordingChannelIcon]</texture>
-                </control>
-                <control type="image">
-                    <posx>190</posx>
-                    <posy>-468</posy>
-                    <width>30</width>
-                    <height>30</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>PVR/PVR-HasTimer.png</texture>
-                </control>
-                <control type="label">
-                    <description>Next Timer Header label</description>
-                    <posx>240</posx>
-                    <posy>-470</posy>
-                    <height>38</height>
-                    <width>750</width>
-                    <label>$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</label>
-                    <font>Font_Reg16</font>
-                    <textcolor>white6</textcolor>
-                    <scroll>true</scroll>
-                </control>
-            </control>
-            <control type="group">
-                <visible>!Skin.HasSetting(totalshomehigh)</visible>
-                <animation effect="slide" start="0,0" end="0,150" time="0" condition="PVR.IsRecording">conditional</animation>
-                <visible>PVR.HasNonRecordingTimer</visible>
-                <control type="image">
-                    <posx>140</posx>
-                    <posy>1</posy>
-                    <width>38</width>
-                    <height>38</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NextRecordingChannelIcon]</texture>
-                </control>
-                <control type="image">
-                    <posx>190</posx>
-                    <posy>4</posy>
-                    <width>30</width>
-                    <height>30</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>PVR/PVR-HasTimer.png</texture>
-                </control>
-                <control type="label">
-                    <description>Next Timer Header label</description>
-                    <posx>240</posx>
-                    <posy>3</posy>
-                    <height>38</height>
-                    <width>750</width>
-                    <label>$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</label>
-                    <font>Font_Reg16</font>
-                    <textcolor>white6</textcolor>
-                    <scroll>true</scroll>
-                </control>
-            </control>
-            <control type="group">
-                <visible>Skin.HasSetting(totalshomehigh)</visible>
-                <visible>PVR.IsRecording</visible>
-                <control type="image">
-                    <posx>140</posx>
-                    <posy>-471</posy>
-                    <width>45</width>
-                    <height>38</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NowRecordingChannelIcon]</texture>
-                </control>
-                <control type="image">
-                    <posx>190</posx>
-                    <posy>-471</posy>
-                    <width>34</width>
-                    <height>34</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>PVR/PVR-IsRecording.png</texture>
-                </control>
-                <control type="label">
-                    <description>Is Recording Header label</description>
-                    <posx>240</posx>
-                    <posy>-470</posy>
-                    <height>38</height>
-                    <width>750</width>
-                    <label>$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</label>
-                    <font>Font_Reg16</font>
-                    <textcolor>white6</textcolor>
-                    <scroll>true</scroll>
-                </control>
-            </control>
-            <control type="group">
-                <visible>!Skin.HasSetting(totalshomehigh)</visible>
-                <visible>PVR.IsRecording</visible>
-                <control type="image">
-                    <posx>140</posx>
-                    <posy>1</posy>
-                    <width>45</width>
-                    <height>38</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NowRecordingChannelIcon]</texture>
-                </control>
-                <control type="image">
-                    <posx>190</posx>
-                    <posy>3</posy>
-                    <width>34</width>
-                    <height>34</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>PVR/PVR-IsRecording.png</texture>
-                </control>
-                <control type="label">
-                    <description>Is Recording Header label</description>
-                    <posx>240</posx>
-                    <posy>3</posy>
-                    <height>38</height>
-                    <width>750</width>
-                    <label>$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</label>
-                    <font>Font_Reg16</font>
-                    <textcolor>white6</textcolor>
-                    <scroll>true</scroll>
-                </control>
-            </control>
-        </control>
-    </include>
     <include name="RSSPanel">
         <control type="group">
             <visible>[system.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)] + !Skin.HasSetting(DisableRSS)</visible>
@@ -657,11 +494,8 @@
     <include name="Furniture_HomeNowPlayingVideo">
         <control type="group" id="8994">
             <description>Now Playing Video</description>
-            <visible>!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo + !Control.HasFocus(8000)</visible>
+            <visible>!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo</visible>
             <include>Animation_CommonFade</include>
-            <animation type="Conditional" condition="ControlGroup(5000).HasFocus">
-                <effect type="fade" start="100" end="0" time="500" tween="cubic" easing="inout" />
-            </animation>
             <control type="group">
                 <posx>-8</posx>
                 <posy>-22</posy>
@@ -800,165 +634,6 @@
                         <width>600</width>
                         <wrapmultiline>true</wrapmultiline>
                         <font>Font_Reg22_Caps</font>
-                    </control>
-                </control>
-            </control>
-            <control type="group">
-                <posy>472</posy>
-                <posx>-132</posx>
-                <visible>!Skin.HasSetting(ShowBackgroundVideo)</visible>
-                <visible>Container(9000).HasFocus(21) + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
-                <animation effect="slide" start="0,0" end="-750,0" time="300">WindowClose</animation>
-                <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
-                <animation effect="slide" start="-750" end="0" time="300">VisibleChange</animation>
-                <animation effect="slide" start="-750,0" end="0,0" delay="2500" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
-                <animation effect="slide" start="0,0" end="0,338" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                <control type="image">
-                    <description>time background</description>
-                    <posx>0</posx>
-                    <posy>-46</posy>
-                    <width>1094</width>
-                    <height>87</height>
-                    <texture flipx="true">home/timepanel_mid.png</texture>
-                    <include>Animation_VisibleChange400</include>
-                    <visible>!Skin.HasSetting(totalshomehigh)</visible>
-                    <animation effect="slide" start="0,0" end="0,-472" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <description>time background</description>
-                    <posx>0</posx>
-                    <posy>-472</posy>
-                    <width>1094</width>
-                    <height>87</height>
-                    <texture flipy="true" flipx="true">home/timepanel_mid.png</texture>
-                    <include>Animation_VisibleChange400</include>
-                    <visible>Skin.HasSetting(totalshomehigh)</visible>
-                    <animation effect="slide" start="0,0" end="0,472" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
-                </control>
-                <control type="group">
-                    <visible>Skin.HasSetting(totalshomehigh)</visible>
-                    <animation effect="slide" start="0,0" end="0,150" time="0" condition="PVR.IsRecording">conditional</animation>
-                    <visible>PVR.HasNonRecordingTimer</visible>
-                    <control type="image">
-                        <posx>140</posx>
-                        <posy>-471</posy>
-                        <width>38</width>
-                        <height>38</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NextRecordingChannelIcon]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>190</posx>
-                        <posy>-468</posy>
-                        <width>30</width>
-                        <height>30</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>PVR/PVR-HasTimer.png</texture>
-                    </control>
-                    <control type="label">
-                        <description>Next Timer Header label</description>
-                        <posx>240</posx>
-                        <posy>-470</posy>
-                        <height>38</height>
-                        <width>750</width>
-                        <label>$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</label>
-                        <font>Font_Reg16</font>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                </control>
-                <control type="group">
-                    <visible>!Skin.HasSetting(totalshomehigh)</visible>
-                    <animation effect="slide" start="0,0" end="0,150" time="0" condition="PVR.IsRecording">conditional</animation>
-                    <visible>PVR.HasNonRecordingTimer</visible>
-                    <control type="image">
-                        <posx>140</posx>
-                        <posy>1</posy>
-                        <width>38</width>
-                        <height>38</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NextRecordingChannelIcon]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>190</posx>
-                        <posy>4</posy>
-                        <width>30</width>
-                        <height>30</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>PVR/PVR-HasTimer.png</texture>
-                    </control>
-                    <control type="label">
-                        <description>Next Timer Header label</description>
-                        <posx>240</posx>
-                        <posy>3</posy>
-                        <height>38</height>
-                        <width>750</width>
-                        <label>$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</label>
-                        <font>Font_Reg16</font>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                </control>
-                <control type="group">
-                    <visible>Skin.HasSetting(totalshomehigh)</visible>
-                    <visible>PVR.IsRecording</visible>
-                    <control type="image">
-                        <posx>140</posx>
-                        <posy>-471</posy>
-                        <width>45</width>
-                        <height>38</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NowRecordingChannelIcon]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>190</posx>
-                        <posy>-471</posy>
-                        <width>34</width>
-                        <height>34</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>PVR/PVR-IsRecording.png</texture>
-                    </control>
-                    <control type="label">
-                        <description>Is Recording Header label</description>
-                        <posx>240</posx>
-                        <posy>-470</posy>
-                        <height>38</height>
-                        <width>750</width>
-                        <label>$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</label>
-                        <font>Font_Reg16</font>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
-                    </control>
-                </control>
-                <control type="group">
-                    <visible>!Skin.HasSetting(totalshomehigh)</visible>
-                    <visible>PVR.IsRecording</visible>
-                    <control type="image">
-                        <posx>140</posx>
-                        <posy>1</posy>
-                        <width>45</width>
-                        <height>38</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture background="true" fallback="DefaultVideoCover.png">$INFO[PVR.NowRecordingChannelIcon]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>190</posx>
-                        <posy>3</posy>
-                        <width>34</width>
-                        <height>34</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>PVR/PVR-IsRecording.png</texture>
-                    </control>
-                    <control type="label">
-                        <description>Is Recording Header label</description>
-                        <posx>240</posx>
-                        <posy>3</posy>
-                        <height>38</height>
-                        <width>750</width>
-                        <label>$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</label>
-                        <font>Font_Reg16</font>
-                        <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
                     </control>
                 </control>
             </control>
@@ -1374,16 +1049,16 @@
             <width>1920</width>
             <animation effect="slide" start="0,0" end="0,25" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(highnavhelp) | Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
             <animation type="Conditional" condition="Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel)" reversible="false">
-                <effect type="rotatey" center="960" start="0" end="-90" time="550" tween="cubic" easing="in" />
-                <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="550" />
+                <effect type="rotatex" center="201" start="0" end="90" time="550" tween="cubic" easing="in" />
+                <effect type="rotatex" center="201" start="90" end="-90" time="0" delay="550" />
                 <effect type="fade" start="100" end="0" time="0" delay="550" />
-                <effect type="rotatey" center="960" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                <effect type="rotatex" center="201" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
             </animation>
             <animation type="Conditional" condition="!Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel)" reversible="false">
-                <effect type="rotatey" center="960" start="0" end="90" time="550" tween="cubic" easing="in" />
-                <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="550" />
+                <effect type="rotatex" center="201" start="0" end="-90" time="550" tween="cubic" easing="in" />
+                <effect type="rotatex" center="201" start="-90" end="90" time="0" delay="550" />
                 <effect type="fade" start="0" end="100" time="0" delay="550" />
-                <effect type="rotatey" center="960" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                <effect type="rotatex" center="201" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
             </animation>
             <include>Animation_OpenCloseZoom</include>
             <animation type="Visible" reversible="true">
@@ -1513,16 +1188,16 @@
             <animation effect="slide" start="0,0" end="0,25" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(highnavhelp) | Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
             <animation effect="zoom" start="100" end="95" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>       
             <animation type="Visible" reversible="false">
-                <effect type="rotatey" center="960" start="0" end="-90" time="550" tween="cubic" easing="in" />
-                <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="550" />
+                <effect type="rotatex" center="201" start="0" end="90" time="550" tween="cubic" easing="in" />
+                <effect type="rotatex" center="201" start="90" end="-90" time="0" delay="550" />
                 <effect type="fade" start="0" end="100" time="0" delay="550" />
-                <effect type="rotatey" center="960" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                <effect type="rotatex" center="201" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
             </animation>
             <animation type="Hidden" reversible="false">
-                <effect type="rotatey" center="960" start="0" end="90" time="550" tween="cubic" easing="in" />
-                <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="550" />
+                <effect type="rotatex" center="201" start="0" end="-90" time="550" tween="cubic" easing="in" />
+                <effect type="rotatex" center="201" start="-90" end="90" time="0" delay="550" />
                 <effect type="fade" start="100" end="0" time="0" delay="550" />
-                <effect type="rotatey" center="960" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                <effect type="rotatex" center="201" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
             </animation>
                 <control type="image">
                     <posx>120</posx>
@@ -1598,9 +1273,9 @@
                             <control type="list" id="5222">
                                 <include>Animation_VisibleChange400</include>
                                 <posx>-543</posx>
-                                <posy>615</posy>
+                                <posy>623</posy>
                                 <width>800</width>
-                                <height>460</height>
+                                <height>440</height>
                                 <onup>5011</onup>
                                 <ondown>5011</ondown>
                                 <onback>5011</onback>
@@ -1611,13 +1286,13 @@
                                 <focusposition>0</focusposition>
                                 <scrolltime tween="cubic" easing="inout">1200</scrolltime>
                                 <preloaditems>2</preloaditems>
-                                <itemlayout width="614" height="30">
+                                <itemlayout width="614" height="40">
                                     <control type="label">
                                         <posx>375</posx>
                                         <posy>0</posy>
                                         <width>375</width>
                                         <height>34</height>
-                                        <font>Font_Info_Caps</font>
+                                        <font>Font_Reg18_Caps</font>
                                         <textcolor>grey2</textcolor>
                                         <shadowcolor>-</shadowcolor>
                                         <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
@@ -1626,13 +1301,13 @@
                                         <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                                     </control>
                                 </itemlayout>
-                                <focusedlayout width="614" height="30">
+                                <focusedlayout width="614" height="40">
                                     <control type="label">
                                         <posx>375</posx>
                                         <posy>0</posy>
                                         <width>368</width>
                                         <height>34</height>
-                                        <font>Font_Info_Caps</font>
+                                        <font>Font_Reg18_Caps</font>
                                         <textcolor>$VAR[TitleColorVar]</textcolor>
                                         <shadowcolor>-</shadowcolor>
                                         <selectedcolor>$VAR[TitleColorVar]</selectedcolor>
@@ -1750,7 +1425,7 @@
     <include name="Weather_Widget_Standard">
         <control type="group">
             <visible>Substring(Control.GetLabel(4321),weather) + Weather.IsFetched</visible>
-            <visible>!SubString(Weather.Plugin,weather.wunderground) + !IsEmpty(Weather.Plugin)</visible>
+            <visible>!Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin)</visible>
             <posy>660</posy>
             <include>Animation_HomeWidgetZoom</include>
             <animation effect="slide" start="0,0" end="0,-268" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
@@ -2180,7 +1855,7 @@
     <include name="Weather_Widget_Plus">
         <control type="group">
             <visible>Substring(Control.GetLabel(4321),weather) + Weather.IsFetched</visible>
-            <visible>SubString(Weather.Plugin,weather.wunderground) + !IsEmpty(Weather.Plugin)</visible>
+            <visible>Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin)</visible>
             <posy>660</posy>
             <include>Animation_HomeWidgetZoom</include>
             <animation effect="slide" start="0,0" end="0,-268" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
@@ -2650,18 +2325,18 @@
             <control type="group">
                 <posx>0</posx>
                 <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <effect type="rotatey" center="960" start="0" end="-90" time="550" tween="cubic" easing="in" />
+                    <effect type="rotatex" center="201" start="0" end="90" time="550" tween="cubic" easing="in" />
                     <!--<effect type="slide" start="0,0" end="0,-45" time="550" />-->
-                    <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="550" />
+                    <effect type="rotatex" center="201" start="90" end="-90" time="0" delay="550" />
                     <effect type="fade" start="100" end="0" time="0" delay="550" />
-                    <effect type="rotatey" center="960" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                    <effect type="rotatex" center="201" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
                 </animation>
                 <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <effect type="rotatey" center="960" start="0" end="90" time="550" tween="cubic" easing="in" />
+                    <effect type="rotatex" center="201" start="0" end="-90" time="550" tween="cubic" easing="in" />
                     <!--<effect type="slide" start="0,-45" end="0,0" delay="550" time="550" />-->
-                    <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="550" />
+                    <effect type="rotatex" center="201" start="-90" end="90" time="0" delay="550" />
                     <effect type="fade" start="0" end="100" time="0" delay="550" />
-                    <effect type="rotatey" center="960" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                    <effect type="rotatex" center="201" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
                 </animation>
                 <control type="image">
                     <posx>0</posx>
@@ -4666,17 +4341,17 @@
                 <posx>0</posx>
                 <visible>!IsEmpty(Window(Home).Property(PanelWidgetInfo))</visible>
                 <animation type="Visible" reversible="false">
-                    <effect type="rotatey" center="960" start="0" end="-90" time="550" tween="cubic" easing="in" />
-                    <effect type="rotatey" center="960" start="-90" end="90" time="0" delay="550" />
+                    <effect type="rotatex" center="201" start="0" end="90" time="550" tween="cubic" easing="in" />
+                    <effect type="rotatex" center="201" start="90" end="-90" time="0" delay="550" />
                     <effect type="fade" start="0" end="100" time="0" delay="550" />
-                    <effect type="rotatey" center="960" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                    <effect type="rotatex" center="201" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
                     <!--<effect type="slide" start="0,-45" end="0,0" delay="550" time="550" />-->
                 </animation>
                 <animation type="Hidden" reversible="false">
-                    <effect type="rotatey" center="960" start="0" end="90" time="550" tween="cubic" easing="in" />
-                    <effect type="rotatey" center="960" start="90" end="-90" time="0" delay="550" />
+                    <effect type="rotatex" center="201" start="0" end="-90" time="550" tween="cubic" easing="in" />
+                    <effect type="rotatex" center="201" start="-90" end="90" time="0" delay="550" />
                     <effect type="fade" start="100" end="0" time="0" delay="550" />
-                    <effect type="rotatey" center="960" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                    <effect type="rotatex" center="201" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
                     <!--<effect type="slide" start="0,0" end="0,-45" time="550" />-->
                 </animation>
                 <control type="image">

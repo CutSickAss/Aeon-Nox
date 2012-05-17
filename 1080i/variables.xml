@@ -436,7 +436,7 @@
         <value condition="Container.Content(seasons)">$INFO[ListItem.Mpaa]</value>
     </variable>
     <variable name="FanartPanelDetail4Var">
-        <value condition="Container.Content(movies) | IsEmpty(ListItem.TvShowTitle)">$LOCALIZE[368]:</value>
+        <value condition="Container.Content(movies) | IsEmpty(ListItem.TvShowTitle)">$LOCALIZE[31095]:</value>
         <value condition="Container.Content(episodes)">$LOCALIZE[563]:</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + [Skin.HasSetting(wallgenretv) | Control.IsVisible(503) | Skin.HasSetting(NextAiredInfo)]">$LOCALIZE[20360]:</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(wallgenretv) + !Control.IsVisible(503)">$LOCALIZE[515]:</value>
@@ -571,7 +571,7 @@
     </variable>
     <variable name="Window1137Label1Var">
         <value condition="Window.IsActive(1124)">$LOCALIZE[31063]</value>
-        <value>$LOCALIZE[31062] $INFO[Window(home).Property(CustomYesNoDialog)]?</value>
+        <value>$LOCALIZE[31062]?</value>
     </variable>
     <variable name="Window1137LeftButtonLabelVar">
         <value condition="Window.IsActive(1124)">$LOCALIZE[31685]</value>
@@ -585,6 +585,8 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget),moviescustom) | Container(9000).HasFocus(10)">$INFO[Container(9000).ListItem.Property(LibraryStatsMovies)]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),tvcustom) | Container(9000).HasFocus(11)">$INFO[Container(9000).ListItem.Property(LibraryStatsTV)]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),albumscustom) | Container(9000).HasFocus(3) | Container(9000).HasFocus(33)">$INFO[Container(9000).ListItem.Property(LibraryStatsMusic)]</value>
+        <value condition="Container(9000).HasFocus(21) + PVR.IsRecording">$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</value>
+        <value condition="Container(9000).HasFocus(21) + PVR.HasNonRecordingTimer">$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] | $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</value>
         <value condition="Window.IsActive(1131)">$LOCALIZE[31683]</value>
     </variable>
     <variable name="ShortLibraryStatsVar">
@@ -1542,34 +1544,9 @@
         <value condition="[Skin.HasSetting(Glowbar_Home) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_top_shutdown_glow.png</value>
         <value>dialogs/context_top_shutdown.png</value>
     </variable>
-    <!-- PosterLite -->
-    <variable name="PLPlot">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$INFO[Container(3000).ListItem.Plot]</value>
-        <value condition="Container.Content(movies) + !Skin.HasSetting(preferplot) + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
-        <value>$INFO[ListItem.Plot]</value>
-    </variable>
-    <variable name="PLGenre">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[515]:[/COLOR] $INFO[Container(3000).ListItem.Genre]</value>
-        <value>[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[515]:[/COLOR] $INFO[ListItem.Genre]</value>
-    </variable>
-    <variable name="PLDuration">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[20161]:[/COLOR] $INFO[Container(3000).ListItem.Duration] $LOCALIZE[12391]</value>
-        <value>$INFO[ListItem.Duration] $LOCALIZE[12391]</value>
-    </variable>
-    <variable name="PLTotal">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[16102]:[/COLOR] $INFO[Container(3000).ListItem.Property(WatchedMovies)] [COLOR=$VAR[SubTitleColorVar]]/[/COLOR] $INFO[Container(3000).ListItem.Property(TotalMovies)]</value>
-        <value condition="Container.Content(tvshows)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[20360]:[/COLOR] $INFO[ListItem.Episode]  [COLOR=$VAR[SubTitleColorVar]]($LOCALIZE[16101]:[/COLOR] $INFO[ListItem.Property(UnWatchedEpisodes)][COLOR=$VAR[SubTitleColorVar]])[/COLOR]</value>
-    </variable>
-    <variable name="PLIconVar">
-        <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$INFO[ListItem.Path,,logo.png]</value>
-        <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$INFO[ListItem.Path,,clearart.png]</value>
-        <value condition="Container.Content(tvshows)+Skin.HasSetting(pllandtv)">$INFO[ListItem.Path,,landscape.jpg]</value>
-        <value>$INFO[ListItem.Property(Fanart_Image)]</value>
-    </variable>
-    <variable name="PLIconLabelVar">
-        <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$LOCALIZE[31059]</value>
-        <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$LOCALIZE[31086]</value>
-        <value condition="[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]">$LOCALIZE[31150]</value>
-        <value>$LOCALIZE[31060]</value>
+
+    <variable name="FakeListRCB">
+        <value condition="Control.HasFocus(500) | Control.HasFocus(600) | Control.HasFocus(700) | Control.HasFocus(800) | Control.HasFocus(900)">$VAR[SelectedColorVar]</value>
+        <value>77ffffff</value>
     </variable>
 </includes>
