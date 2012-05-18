@@ -191,7 +191,7 @@
         <value condition="[SubString(Player.Filenameandpath,bluray) | SubString(Player.Filenameandpath,blu-ray) | SubString(Player.Filenameandpath,bdrip) | SubString(Player.Filenameandpath,brrip)]">bluray</value>
         <value condition="SubString(Player.Filenameandpath,dvb)">dvb</value>
         <value condition="SubString(Player.Filenameandpath,web-dl)">web-dl</value>
-        <value condition="SubString(Player.Filenameandpath,dvd)  | SubString(Player.Filenameandpath,.iso,Right)  | SubString(Player.Filenameandpath,.ifo,Right)">dvd</value>
+        <value condition="SubString(Player.Filenameandpath,dvd) | SubString(Player.Filenameandpath,.iso,Right) | SubString(Player.Filenameandpath,.ifo,Right)">dvd</value>
         <value>$INFO[VideoPlayer.VideoCodec]</value>
     </variable>
     <variable name="RatingFlagVar">
@@ -700,7 +700,7 @@
         <value condition="!SubString(Container(9000).ListItem.Property(Widget),panel)">$VAR[WidgetTypeLabelVar]</value>
     </variable>
     <variable name="FlagDiffuseVar">
-        <value condition="Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | [Control.IsVisible(503) + !Skin.HasSetting(showcaseinfoontv) + Container.Content(tvshows) + Skin.HasSetting(landscapelogo)] | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]">FFe1e1e1</value>
+        <value condition="Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | [Control.IsVisible(503) + !Skin.HasSetting(showcaseinfoontv) + [Container.Content(tvshows) | Container.Content(movies)] + Skin.HasSetting(landscapelogo)] | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]">FFe1e1e1</value>
         <value>floor</value>
     </variable>
     <variable name="MusicOSDRepeatButtonVar">
@@ -1454,7 +1454,7 @@
         <value>$LOCALIZE[571]</value>
     </variable>
     <variable name="NavHelper1IconVar">
-        <value condition="ControlGroup(5000).HasFocus + !Skin.HasSetting(lowermainmenu)">common/arrowdown.png</value>
+        <value condition="ControlGroup(5000).HasFocus + [[!Skin.HasSetting(lowermainmenu) + IsEmpty(Window(Home).Property(PanelWidgetInfo))] | [Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(Home).Property(PanelWidgetInfo))]]">common/arrowdown.png</value>
         <value condition="ControlGroup(5000).HasFocus | [[Control.IsVisible(5000) | Control.IsVisible(8998) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),system)] + Skin.HasSetting(lowermainmenu)] + !Control.HasFocus(8000)">common/arrowup.png</value>
         <value condition="Control.HasFocus(8000) + SubString(Control.GetLabel(4321),random)">common/arrowright.png</value>
         <value condition="Control.HasFocus(8000) + !IsEmpty(Container(8000).ListItem.Property(Trailer)) + SubString(Control.GetLabel(4321),recentmovies)">common/arrowright.png</value>
@@ -1548,6 +1548,10 @@
     <variable name="FakeListRCB">
         <value condition="Control.HasFocus(500) | Control.HasFocus(600) | Control.HasFocus(700) | Control.HasFocus(800) | Control.HasFocus(900)">$VAR[SelectedColorVar]</value>
         <value>77ffffff</value>
+    </variable>
+    <variable name="LandscapeLogoLabelVar">
+        <value condition="Container.Content(movies)">$INFO[Listitem.Tagline]</value>
+        <value>$INFO[ListItem.Label2][LOWERCASE]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)][/LOWERCASE]</value>
     </variable>
     <!-- PosterLite -->
     <variable name="PLPlot">
