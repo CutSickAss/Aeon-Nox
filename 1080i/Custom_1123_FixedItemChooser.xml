@@ -182,7 +182,7 @@
                         <label>$LOCALIZE[41158]:</label>
                         <label2>[COLOR white]$VAR[MenuLabelVar][/COLOR]</label2>
                     </control>
-                   <control type="button">
+                    <control type="button">
                         <include>Objects_CustomizerInfoButton</include>
                         <label>$LOCALIZE[31295]:</label>
                         <label2>[COLOR white]$VAR[WidgetTypeLabelVar1124][/COLOR]</label2>

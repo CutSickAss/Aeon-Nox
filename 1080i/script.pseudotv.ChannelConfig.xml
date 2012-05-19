@@ -1,13 +1,12 @@
-﻿<window type="dialog">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog">
     <allowoverlay>no</allowoverlay>
     <zorder>1</zorder>
-
     <coordinates>
         <system>1</system>
         <posx>0</posx>
         <posy>0</posy>
     </coordinates>
-
     <controls>
         <control type="group">
             <visible>!Window.IsVisible(script.pseudotv.AdvancedConfig.xml</visible>
@@ -17,6 +16,18 @@
                 <posy>23</posy>
                 <width>1233</width>
                 <height>673</height>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <include>Animation_VisibleChange400</include>
+                <texture>settings/settings_panelback_shadow.png</texture>
+            </control>
+            <control type="image">
+                <description>background image</description>
+                <posx>23</posx>
+                <posy>23</posy>
+                <width>1233</width>
+                <height>673</height>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <texture>settings/settings_panelback.png</texture>
             </control>
             <control type="image">
@@ -89,13 +100,11 @@
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
             </control>
-
             <control type="group" id="105">
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>600</width>
                 <height>400</height>
-
                 <control type="label">
                     <posx>40</posx>
                     <posy>7</posy>
@@ -105,7 +114,6 @@
                     <align>left</align>
                     <label>Channel</label>
                 </control>
-
                 <control type="label">
                     <posx>500</posx>
                     <posy>7</posy>
@@ -115,9 +123,6 @@
                     <align>right</align>
                     <label>Content</label>
                 </control>
-
-
-
                 <control type="list" id="102">
                     <description>All channels list</description>
                     <posx>258</posx>
@@ -130,7 +135,6 @@
                     <onleft>9</onleft>
                     <itemgap>10</itemgap>
                     <pagecontrol>103</pagecontrol>
-
                     <itemlayout width="936" height="49">
                         <control type="image">
                             <posx>0</posx>
@@ -150,7 +154,6 @@
                             <textcolor>grey2</textcolor>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
                             <posx>916</posx>
                             <posy>0</posy>
@@ -163,18 +166,15 @@
                             <info>ListItem.Label2</info>
                         </control>
                     </itemlayout>
-
                     <focusedlayout width="936" height="49">
                         <control type="image">
                             <posx>0</posx>
                             <posy>0</posy>
                             <width>936</width>
                             <height>49</height>
-							<texture>views/tripanel/listselect_fo.png</texture>
-							<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-
+                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
-
                         <control type="label">
                             <posx>20</posx>
                             <posy>0</posy>
@@ -186,7 +186,6 @@
                             <textcolor>white</textcolor>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
                             <posx>916</posx>
                             <posy>0</posy>
@@ -242,9 +241,8 @@
                         <posy>0</posy>
                         <width>936</width>
                         <height>49</height>
-							<texture>views/tripanel/listselect_fo.png</texture>
-							<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-
+                        <texture>views/tripanel/listselect_fo.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     </control>
                     <control type="label">
                         <posx>20</posx>
@@ -338,9 +336,7 @@
                     <ondown>107</ondown>
                     <onleft>9</onleft>
                 </control>
-
             </control>
-
             <control type="group" id="107">
                 <!-- Controls for type Custom Playlist -->
                 <control type="group" id="120">
@@ -383,9 +379,7 @@
                         <ondown>121</ondown>
                         <onleft>9</onleft>
                     </control>
-
                 </control>
-
                 <!-- Controls for type TV Network -->
                 <control type="group" id="121">
                     <posx>258</posx>
@@ -399,9 +393,8 @@
                             <posy>0</posy>
                             <width>936</width>
                             <height>49</height>
-							<texture>views/tripanel/listselect_fo.png</texture>
-							<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-
+                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <posx>20</posx>
@@ -488,7 +481,6 @@
                         <ondown>114</ondown>
                     </control>
                 </control>
-
                 <!-- Controls for type Movie Studio -->
                 <control type="group" id="122">
                     <posx>258</posx>
@@ -502,9 +494,8 @@
                             <posy>0</posy>
                             <width>936</width>
                             <height>49</height>
-							<texture>views/tripanel/listselect_fo.png</texture>
-							<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-
+                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <posx>20</posx>
@@ -591,7 +582,6 @@
                         <ondown>114</ondown>
                     </control>
                 </control>
-
                 <!-- Controls for type TV Genre -->
                 <control type="group" id="123">
                     <posx>258</posx>
@@ -605,9 +595,8 @@
                             <posy>0</posy>
                             <width>936</width>
                             <height>49</height>
-							<texture>views/tripanel/listselect_fo.png</texture>
-							<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-
+                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <posx>20</posx>
@@ -694,7 +683,6 @@
                         <ondown>114</ondown>
                     </control>
                 </control>
-
                 <!-- Controls for type Movie Genre -->
                 <control type="group" id="124">
                     <posx>258</posx>
@@ -708,9 +696,8 @@
                             <posy>0</posy>
                             <width>936</width>
                             <height>49</height>
-							<texture>views/tripanel/listselect_fo.png</texture>
-							<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-
+                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <posx>20</posx>
@@ -797,7 +784,6 @@
                         <ondown>114</ondown>
                     </control>
                 </control>
-
                 <!-- Controls for type Mixed Genre -->
                 <control type="group" id="125">
                     <posx>258</posx>
@@ -811,9 +797,8 @@
                             <posy>0</posy>
                             <width>936</width>
                             <height>49</height>
-							<texture>views/tripanel/listselect_fo.png</texture>
-							<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-
+                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <posx>20</posx>
@@ -900,7 +885,6 @@
                         <ondown>114</ondown>
                     </control>
                 </control>
-
                 <!-- Controls for type TV Show -->
                 <control type="group" id="126">
                     <posx>258</posx>
@@ -914,9 +898,8 @@
                             <posy>0</posy>
                             <width>936</width>
                             <height>49</height>
-							<texture>views/tripanel/listselect_fo.png</texture>
-							<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-
+                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <posx>20</posx>
@@ -1013,7 +996,6 @@
                         <onleft>9</onleft>
                     </control>
                 </control>
-
                 <!-- Controls for type Directory -->
                 <control type="group" id="127">
                     <posx>258</posx>

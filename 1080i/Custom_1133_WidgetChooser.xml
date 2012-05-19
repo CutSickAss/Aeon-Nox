@@ -564,7 +564,7 @@
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(MusicVideos)</visible>
                         </item>
-                       <item>
+                        <item>
                             <label>$LOCALIZE[31091]</label>
                             <onclick>SetProperty(CustomYesNoDialog,randommusicvideos,1124)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>

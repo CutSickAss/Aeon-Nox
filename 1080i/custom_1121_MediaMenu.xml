@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1121">
     <defaultcontrol always="true">9011</defaultcontrol>
     <coordinates>
@@ -6,12 +6,12 @@
         <posx>0</posx>
         <posy>0</posy>
     </coordinates>
-        <animation type="WindowClose">
-            <effect type="slide" start="0,0" end="-420,0" time="400" easing="in" tween="cubic" />
-        </animation>
-            <animation type="WindowOpen">
-                <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
-            </animation>
+    <animation type="WindowClose">
+        <effect type="slide" start="0,0" end="-420,0" time="400" easing="in" tween="cubic" />
+    </animation>
+    <animation type="WindowOpen">
+        <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
+    </animation>
     <controls>
         <control type="list" id="9011">
             <visible>Skin.HasSetting(viewtypeselect)</visible>
@@ -230,14 +230,6 @@
                     <onclick>Container.SetViewMode(509)</onclick>
                     <visible>[Window.IsActive(501) | Window.IsActive(musiclibrary) | Window.IsActive(programs) | Window.IsActive(pictures) | Container.Content(addons) | Window.IsActive(addonbrowser) | Window.IsActive(musicplaylist)] + !Container.Content(years)</visible>
                 </item>
-                <item>
-                    <label>$LOCALIZE[31972]</label>
-                    <icon>-</icon>
-                    <thumb>-</thumb>
-                    <onclick>Container.SetViewMode(528)</onclick>
-                    <visible>[Container.Content(movies) | Container.Content(tvshows)]</visible>
-                    <visible>![Window.IsActive(videos)+Skin.HasSetting(DisablePosterLiteVL)]</visible>
-                </item>
             </content>
         </control>
         <control type="list" id="9011">
@@ -266,7 +258,7 @@
                     <posy>20</posy>
                     <width>54</width>
                     <height>38</height>
-					<aspectratio align="center">keep</aspectratio>
+                    <aspectratio align="center">keep</aspectratio>
                     <texture>$INFO[ListItem.Thumb]</texture>
                     <colordiffuse>white2</colordiffuse>
                 </control>
