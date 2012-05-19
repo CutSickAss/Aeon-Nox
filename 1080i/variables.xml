@@ -1560,16 +1560,16 @@
         <value>$INFO[ListItem.Plot]</value>
     </variable>
     <variable name="PLGenre">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[515]:[/COLOR] $INFO[Container(3000).ListItem.Genre]</value>
-        <value>[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[515]:[/COLOR] $INFO[ListItem.Genre]</value>
+        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$LOCALIZE[515]: [COLOR=$VAR[PLColorVar]]$INFO[Container(3000).ListItem.Genre][/COLOR]</value>
+        <value>$LOCALIZE[515]: [COLOR=$VAR[PLColorVar]]$INFO[ListItem.Genre][/COLOR]</value>
     </variable>
     <variable name="PLDuration">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[20161]:[/COLOR] $INFO[Container(3000).ListItem.Duration] $LOCALIZE[12391]</value>
+        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[PLColorVar]]$LOCALIZE[20161]:[/COLOR] $INFO[Container(3000).ListItem.Duration] $LOCALIZE[12391]</value>
         <value>$INFO[ListItem.Duration] $LOCALIZE[12391]</value>
     </variable>
     <variable name="PLTotal">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[16102]:[/COLOR] $INFO[Container(3000).ListItem.Property(WatchedMovies)] [COLOR=$VAR[SubTitleColorVar]]/[/COLOR] $INFO[Container(3000).ListItem.Property(TotalMovies)]</value>
-        <value condition="Container.Content(tvshows)">[COLOR=$VAR[SubTitleColorVar]]$LOCALIZE[20360]:[/COLOR] $INFO[ListItem.Episode]  [COLOR=$VAR[SubTitleColorVar]]($LOCALIZE[16101]:[/COLOR] $INFO[ListItem.Property(UnWatchedEpisodes)][COLOR=$VAR[SubTitleColorVar]])[/COLOR]</value>
+        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$LOCALIZE[16102]: [COLOR=$VAR[PLColorVar]]$INFO[Container(3000).ListItem.Property(WatchedMovies)][/COLOR] / [COLOR=$VAR[PLColorVar]]$INFO[Container(3000).ListItem.Property(TotalMovies)][/COLOR]</value>
+        <value condition="Container.Content(tvshows)">$LOCALIZE[20360]: [COLOR=$VAR[PLColorVar]]$INFO[ListItem.Episode][/COLOR]  ($LOCALIZE[16101]: [COLOR=$VAR[PLColorVar]]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR])</value>
     </variable>
     <variable name="PLIconVar">
         <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$INFO[ListItem.Path,,logo.png]</value>
@@ -1582,5 +1582,10 @@
         <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$LOCALIZE[31086]</value>
         <value condition="[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]">$LOCALIZE[31150]</value>
         <value>$LOCALIZE[31060]</value>
+    </variable>
+    <variable name="PLColorVar">
+        <value condition="!Skin.HasSetting(colortext)">FFD8D8D8</value>
+        <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
+        <value>$VAR[AreaColorVar]</value>
     </variable>
 </includes>

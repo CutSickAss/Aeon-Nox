@@ -100,7 +100,7 @@
             <control type="button" id="1690">
                 <description>Fanart</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[20445]: $VAR[VideoFanArtLabelVar]</label>
+                <label>$LOCALIZE[20445]: [COLOR $VAR[SelectedColorVar]]$VAR[VideoFanArtLabelVar][/COLOR]</label>
                 <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartseries)">Skin.SetBool(extrafanartseries)</onclick>
                 <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartseries)">Notification($LOCALIZE[42002],$LOCALIZE[42004])</onclick>
                 <onclick condition="Skin.HasSetting(extrafanartseries)">Skin.SetBool(NoVideoLibraryFanartTVShows)</onclick>
@@ -527,7 +527,7 @@
             <control type="button" id="1765">
                 <description>Toggle Logo (TV)</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[41159]: [B]$VAR[PLIconLabelVar][/B]</label>
+                <label>$LOCALIZE[41159]: [COLOR $VAR[SelectedColorVar]]$VAR[PLIconLabelVar][/COLOR]</label>
                 <onclick condition="!Skin.HasSetting(plcleartv) + !Skin.HasSetting(pllandtv) + !Skin.HasSetting(pllogotv)">Skin.SetBool(plcleartv)</onclick>
                 <onclick condition="Skin.HasSetting(plcleartv)">Skin.SetBool(pllogotv)</onclick>
                 <onclick condition="Skin.HasSetting(plcleartv)">Skin.Reset(plcleartv)</onclick>
@@ -539,7 +539,7 @@
             <control type="button" id="1766">
                 <description>Toggle Logo (Movies)</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[41159]: [B]$VAR[PLIconLabelVar][/B]</label>
+                <label>$LOCALIZE[41159]: [COLOR $VAR[SelectedColorVar]]$VAR[PLIconLabelVar][/COLOR]</label>
                 <onclick condition="!Skin.HasSetting(plclear) + !Skin.HasSetting(plland) + !Skin.HasSetting(pllogo)">Skin.SetBool(plclear)</onclick>
                 <onclick condition="Skin.HasSetting(plclear)">Skin.SetBool(pllogo)</onclick>
                 <onclick condition="Skin.HasSetting(plclear)">Skin.Reset(plclear)</onclick>
@@ -552,8 +552,8 @@
                 <description>Toggle Title (TV)</description>
                 <pulseonselect>yes</pulseonselect>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[369]: [B]$LOCALIZE[13106][/B]</label>
-                <altlabel>$LOCALIZE[369]: [B]$LOCALIZE[13108][/B]</altlabel>
+                <label>$LOCALIZE[369]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[13106][/COLOR]</label>
+                <altlabel>$LOCALIZE[369]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[13108][/COLOR]</altlabel>
                 <onclick>Skin.ToggleSetting(plitetvtitle)</onclick>
                 <usealttexture>!Skin.HasSetting(plitetvtitle)</usealttexture>
                 <visible>Container.Content(tvshows)+stringcompare(Skin.String(actualViewtype),posterlite)</visible>
@@ -562,8 +562,8 @@
                 <description>Toggle Title (Movies)</description>
                 <pulseonselect>yes</pulseonselect>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[369]: [B]$LOCALIZE[13106][/B]</label>
-                <altlabel>$LOCALIZE[369]: [B]$LOCALIZE[13108][/B]</altlabel>
+                <label>$LOCALIZE[369]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[13106][/COLOR]</label>
+                <altlabel>$LOCALIZE[369]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[13108][/COLOR]</altlabel>
                 <onclick>Skin.ToggleSetting(plitetitle)</onclick>
                 <usealttexture>!Skin.HasSetting(plitetitle)</usealttexture>
                 <visible>Container.Content(movies)+stringcompare(Skin.String(actualViewtype),posterlite)</visible>
