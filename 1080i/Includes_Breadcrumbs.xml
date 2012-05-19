@@ -22,6 +22,7 @@
         <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">dialogeffect</include>
     </include>
     <include name="Breadcrumbs_BackBar">
+        <animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(528109)">Conditional</animation>
         <control type="group">
             <visible>!Skin.HasSetting(ClassicTopBar) + !Skin.HasSetting(disabletopbar)</visible>
             <control type="image">
