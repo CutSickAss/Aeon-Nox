@@ -1562,7 +1562,7 @@
         <value>$LOCALIZE[515]: [COLOR=$VAR[PLColorVar]]$INFO[ListItem.Genre][/COLOR]</value>
     </variable>
     <variable name="PLDuration">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">[COLOR=$VAR[PLColorVar]]$LOCALIZE[20161]:[/COLOR] $INFO[Container(3000).ListItem.Duration] $LOCALIZE[12391]</value>
+        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$LOCALIZE[20161]: [COLOR=$VAR[PLColorVar]]$INFO[Container(3000).ListItem.Duration] $LOCALIZE[12391][/COLOR]</value>
         <value>$INFO[ListItem.Duration] $LOCALIZE[12391]</value>
     </variable>
     <variable name="PLTotal">
