@@ -173,7 +173,14 @@
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
     </control>
     <control type="group">
-	  <visible>[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]</visible>
+	  <visible>[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+!StringCompare(ListItem.Label,..)</visible>
+	  <control type="image">
+		<width>525</width>
+		<height>204</height>
+		<fadetime>250</fadetime>
+		<aspectratio>keep</aspectratio>
+		<texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass_reflect.png</texture>
+	  </control>
 	  <control type="image">
 		<posx>354</posx>
 		<width>90</width>
