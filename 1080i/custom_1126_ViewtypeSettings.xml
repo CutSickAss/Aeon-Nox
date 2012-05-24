@@ -184,6 +184,41 @@
                 <visible>Container.Content(episodes) + !stringcompare(Skin.String(Nox.actualViewtype),bigfan)</visible>
                 <visible>stringcompare(Skin.String(Nox.actualViewtype),showcasemovies) | Stringcompare(Skin.String(Nox.actualViewtype),showcasedvd) | Stringcompare(Skin.String(Nox.actualViewtype),landscape) | Stringcompare(Skin.String(Nox.actualViewtype),showcasesquare)</visible>
             </control>
+            <!-- PosterLite -->
+            <control type="togglebutton" id="1761">
+                <description>Toggle Background (TV)</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[31102] [COLOR $VAR[SelectedColorVar]]1[/COLOR]</label>
+                <altlabel>$LOCALIZE[31102] [COLOR $VAR[SelectedColorVar]]2[/COLOR]</altlabel>
+                <onclick>Skin.ToggleSetting(Nox.plitetvback1)</onclick>
+                <usealttexture>!Skin.HasSetting(Nox.plitetvback1)</usealttexture>
+                <visible>Container.Content(tvshows)+stringcompare(Skin.String(Nox.actualViewtype),posterlite)</visible>
+            </control>
+            <control type="togglebutton" id="1762">
+                <description>Toggle Background (Movies)</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[31102] [COLOR $VAR[SelectedColorVar]]1[/COLOR]</label>
+                <altlabel>$LOCALIZE[31102] [COLOR $VAR[SelectedColorVar]]2[/COLOR]</altlabel>
+                <onclick>Skin.ToggleSetting(Nox.pliteback1)</onclick>
+                <usealttexture>!Skin.HasSetting(Nox.pliteback1)</usealttexture>
+                <visible>Container.Content(movies)+stringcompare(Skin.String(Nox.actualViewtype),posterlite)</visible>
+            </control>
+            <control type="radiobutton" id="1763">
+                <description>Toggle Transparency (TV)</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[13324]</label>
+                <onclick>Skin.ToggleSetting(Nox.plitetvlinp)</onclick>
+                <selected>Skin.HasSetting(Nox.plitetvlinp)</selected>
+                <visible>Container.Content(tvshows)+stringcompare(Skin.String(Nox.actualViewtype),posterlite)</visible>
+            </control>
+            <control type="radiobutton" id="1764">
+                <description>Toggle Transparency (Movies)</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[13324]</label>
+                <onclick>Skin.ToggleSetting(Nox.plitelinp)</onclick>
+                <selected>Skin.HasSetting(Nox.plitelinp)</selected>
+                <visible>Container.Content(movies)+stringcompare(Skin.String(Nox.actualViewtype),posterlite)</visible>
+            </control>
             <control type="radiobutton" id="1615">
                 <!-- Toggle Fanart -->
                 <description>Toggle Fanart</description>
@@ -220,7 +255,7 @@
                 <onclick condition="Skin.HasSetting(Nox.showcaseinfoontv) + !Skin.HasSetting(Nox.infopaneautotv)">Notification($LOCALIZE[42002],$LOCALIZE[42001])</onclick>
                 <onclick condition="Skin.HasSetting(Nox.showcaseinfoontv) + !Skin.HasSetting(Nox.infopaneautotv)">Skin.SetBool(Nox.infopaneautotv)</onclick>
                 <visible>[Container.Content(tvshows) | Container.Content(seasons)] + !stringcompare(Skin.String(Nox.actualViewtype),bigfan)</visible>
-                <visible>stringcompare(Skin.String(Nox.actualViewtype),showcasemovies) | Stringcompare(Skin.String(Nox.actualViewtype),showcasedvd) | Stringcompare(Skin.String(Nox.actualViewtype),landscape) | Stringcompare(Skin.String(Nox.actualViewtype),showcasesquare) | Stringcompare(Skin.String(Nox.actualViewtype),banners)</visible>
+                <visible>stringcompare(Skin.String(Nox.actualViewtype),showcasemovies) | Stringcompare(Skin.String(Nox.actualViewtype),showcasedvd) | Stringcompare(Skin.String(Nox.actualViewtype),landscape) | Stringcompare(Skin.String(Nox.actualViewtype),showcasesquare) | Stringcompare(Skin.String(Nox.actualViewtype),banners) | Stringcompare(Skin.String(Nox.actualViewtype),posterlite)</visible>
             </control>
             <control type="radiobutton" id="1617">
                 <!-- Toggle Fanart -->
@@ -257,7 +292,7 @@
                 <onclick condition="!Skin.HasSetting(Nox.showcaseinfoon) + !Skin.HasSetting(Nox.infopaneauto)">Skin.SetBool(Nox.showcaseinfoon)</onclick>
                 <onclick condition="Skin.HasSetting(Nox.showcaseinfoon) + !Skin.HasSetting(Nox.infopaneauto)">Notification($LOCALIZE[42002],$LOCALIZE[42001])</onclick>
                 <onclick condition="Skin.HasSetting(Nox.showcaseinfoon) + !Skin.HasSetting(Nox.infopaneauto)">Skin.SetBool(Nox.infopaneauto)</onclick>
-                <visible>stringcompare(Skin.String(Nox.actualViewtype),showcasemovies) | Stringcompare(Skin.String(Nox.actualViewtype),showcasedvd) | Stringcompare(Skin.String(Nox.actualViewtype),landscape) | Stringcompare(Skin.String(Nox.actualViewtype),showcasesquare)</visible>
+                <visible>stringcompare(Skin.String(Nox.actualViewtype),showcasemovies) | Stringcompare(Skin.String(Nox.actualViewtype),showcasedvd) | Stringcompare(Skin.String(Nox.actualViewtype),landscape) | Stringcompare(Skin.String(Nox.actualViewtype),showcasesquare) | Stringcompare(Skin.String(Nox.actualViewtype),posterlite)</visible>
                 <visible>[Container.Content(movies) | Container.Content(musicvideos)] + !stringcompare(Skin.String(Nox.actualViewtype),bigfan)</visible>
             </control>
             <control type="button" id="1624">
@@ -488,6 +523,53 @@
                 <onclick condition="!Skin.HasSetting(Nox.bigfanclearart) + !Skin.HasSetting(Nox.bigfanlogo) + Skin.HasSetting(Nox.bigfanlandscape)">Skin.Reset(Nox.bigfanlandscape)</onclick>
                 <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(Nox.actualViewtype),bigfan) + !Container.Content(genres)</visible>
             </control>
+            <!--PosterLite Options-->
+            <control type="button" id="1765">
+                <description>Toggle Logo (TV)</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[41159]: [COLOR $VAR[SelectedColorVar]]$VAR[PLIconLabelVar][/COLOR]</label>
+                <onclick condition="!Skin.HasSetting(Nox.plcleartv) + !Skin.HasSetting(Nox.pllandtv) + !Skin.HasSetting(Nox.pllogotv)">Skin.SetBool(Nox.pllandtv)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.pllandtv)">Skin.SetBool(Nox.pllogotv)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.pllandtv)">Skin.Reset(Nox.pllandtv)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.pllogotv)">Skin.SetBool(Nox.plcleartv)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.pllogotv)">Skin.Reset(Nox.pllogotv)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.pllandtv)|Skin.HasSetting(Nox.pllogotv)">Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
+                <onclick condition="Skin.HasSetting(Nox.plcleartv) + !Skin.HasSetting(Nox.pllogotv) + !Skin.HasSetting(Nox.pllandtv)">Skin.Reset(Nox.plcleartv)</onclick>
+                <visible>stringcompare(Skin.String(Nox.actualViewtype),posterlite) + Container.Content(tvshows)</visible>
+            </control>
+            <control type="button" id="1766">
+                <description>Toggle Logo (Movies)</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[41159]: [COLOR $VAR[SelectedColorVar]]$VAR[PLIconLabelVar][/COLOR]</label>
+                <onclick condition="!Skin.HasSetting(Nox.plclear) + !Skin.HasSetting(Nox.plland) + !Skin.HasSetting(Nox.pllogo)">Skin.SetBool(Nox.plland)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.plland)">Skin.SetBool(Nox.pllogo)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.plland)">Skin.Reset(Nox.plland)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.pllogo)">Skin.SetBool(Nox.plclear)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.pllogo)">Skin.Reset(Nox.pllogo)</onclick>
+                <onclick condition="Skin.HasSetting(Nox.plland)|Skin.HasSetting(Nox.pllogo)">Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
+                <onclick condition="Skin.HasSetting(Nox.plclear) + !Skin.HasSetting(Nox.pllogo) + !Skin.HasSetting(Nox.plland)">Skin.Reset(Nox.plclear)</onclick>
+                <visible>stringcompare(Skin.String(Nox.actualViewtype),posterlite) + Container.Content(movies)</visible>
+            </control>
+            <control type="togglebutton" id="1767">
+                <description>Toggle Title (TV)</description>
+                <pulseonselect>yes</pulseonselect>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[369]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[13106][/COLOR]</label>
+                <altlabel>$LOCALIZE[369]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[13108][/COLOR]</altlabel>
+                <onclick>Skin.ToggleSetting(Nox.plitetvtitle)</onclick>
+                <usealttexture>!Skin.HasSetting(Nox.plitetvtitle)</usealttexture>
+                <visible>Container.Content(tvshows)+stringcompare(Skin.String(Nox.actualViewtype),posterlite)</visible>
+            </control>
+            <control type="togglebutton" id="1768">
+                <description>Toggle Title (Movies)</description>
+                <pulseonselect>yes</pulseonselect>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[369]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[13106][/COLOR]</label>
+                <altlabel>$LOCALIZE[369]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[13108][/COLOR]</altlabel>
+                <onclick>Skin.ToggleSetting(Nox.plitetitle)</onclick>
+                <usealttexture>!Skin.HasSetting(Nox.plitetitle)</usealttexture>
+                <visible>Container.Content(movies)+stringcompare(Skin.String(Nox.actualViewtype),posterlite)</visible>
+            </control>
             <!--Landscape Options-->
             <control type="togglebutton" id="1639">
                 <description>Toggle Logo</description>
@@ -526,7 +608,7 @@
                 <onclick condition="Skin.HasSetting(Nox.watchedoverlay) + Skin.HasSetting(Nox.newstatus)">Skin.Reset(Nox.watchedoverlay)</onclick>
                 <onclick condition="Skin.HasSetting(Nox.watchedoverlay) + Skin.HasSetting(Nox.newstatus)">Skin.Reset(Nox.newstatus)</onclick>
                 <onclick condition="!Skin.HasSetting(Nox.watchedoverlay) + !Skin.HasSetting(Nox.newstatus)">Skin.SetBool(Nox.watchedoverlay)</onclick>
-                <enable>![stringcompare(Skin.String(Nox.actualViewtype),landscape) + [Skin.HasSetting(Nox.landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + !Skin.HasSetting(Nox.showcaseinfoontv)]</enable>
+                <enable>![stringcompare(Skin.String(Nox.actualViewtype),landscape) + [Skin.HasSetting(Nox.landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + !Skin.HasSetting(Nox.showcaseinfoontv)] + ![stringcompare(Skin.String(Nox.actualViewtype),posterlite) + [[Container.Content(tvshows) + [Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)]]|[Container.Content(movies) + [Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)]]]]</enable>
                 <visible>[stringcompare(Skin.String(Nox.actualViewtype),episode) | Stringcompare(Skin.String(Nox.actualViewtype),banners) | Stringcompare(Skin.String(Nox.actualViewtype),showcasemovies) | Stringcompare(Skin.String(Nox.actualViewtype),showcasedvd) | Stringcompare(Skin.String(Nox.actualViewtype),posters) | Stringcompare(Skin.String(Nox.actualViewtype),landscape) | Stringcompare(Skin.String(Nox.actualViewtype),banners) | Stringcompare(Skin.String(Nox.actualViewtype),addonwall) | Stringcompare(Skin.String(Nox.actualViewtype),wall) | Stringcompare(Skin.String(Nox.actualViewtype),bigfan)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
             </control>
             <!--InfoWall Options-->
@@ -536,8 +618,9 @@
                 <label>$LOCALIZE[31184]</label>
                 <onclick>Skin.ToggleSetting(Nox.unwatchedicon)</onclick>
                 <selected>Skin.HasSetting(Nox.unwatchedicon)</selected>
+                <enable>![stringcompare(Skin.String(Nox.actualViewtype),posterlite) + [[Container.Content(tvshows) + [Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)]]|[Container.Content(movies) + [Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)]]]]</enable>
                 <visible>![stringcompare(Skin.String(Nox.actualViewtype),landscape) + Skin.HasSetting(Nox.landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
-                <visible>[[stringcompare(Skin.String(Nox.actualViewtype),landscape) | Stringcompare(Skin.String(Nox.actualViewtype),shift) | Stringcompare(Skin.String(Nox.actualViewtype),wall) | Stringcompare(Skin.String(Nox.actualViewtype),addonwall) | Stringcompare(Skin.String(Nox.actualViewtype),episode)] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(Nox.tripanelbanner) + StringCompare(Skin.String(Nox.actualViewtype),tripanel)]]</visible>
+                <visible>[[stringcompare(Skin.String(Nox.actualViewtype),landscape) | Stringcompare(Skin.String(Nox.actualViewtype),shift) | Stringcompare(Skin.String(Nox.actualViewtype),wall) | Stringcompare(Skin.String(Nox.actualViewtype),addonwall) | Stringcompare(Skin.String(Nox.actualViewtype),episode) | Stringcompare(Skin.String(Nox.actualViewtype),posterlite)] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(Nox.tripanelbanner) + StringCompare(Skin.String(Nox.actualViewtype),tripanel)]]</visible>
             </control>
             <control type="radiobutton" id="1643">
                 <description>Clear Cases</description>
@@ -578,7 +661,7 @@
                 <altlabel>$LOCALIZE[202]: [COLOR $VAR[SelectedColorVar]]$LOCALIZE[31429][/COLOR]</altlabel>
                 <onclick>Skin.ToggleSetting(Nox.InfoWallTagLine)</onclick>
                 <usealttexture>!Skin.HasSetting(Nox.InfoWallTagLine)</usealttexture>
-                <visible>stringcompare(Skin.String(Nox.actualViewtype),addonwall) + Container.Content(movies)</visible>
+                <visible>[stringcompare(Skin.String(Nox.actualViewtype),addonwall) | Stringcompare(Skin.String(Nox.actualViewtype),posterlite)] + Container.Content(movies)</visible>
             </control>
             <control type="radiobutton" id="1700">
                 <description>Toggle aspect of thumbs</description>
@@ -865,6 +948,7 @@
                 <onclick>Skin.ToggleSetting(Nox.TVShowsUsePoster)</onclick>
                 <selected>Skin.HasSetting(Nox.TVShowsUsePoster)</selected>
                 <onclick>Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
+                <enable>![StringCompare(Skin.String(Nox.actualViewtype),posterlite)+[[Container.Content(movies)+[Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)|Skin.HasSetting(Nox.plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)|Skin.HasSetting(Nox.pllandtv)]]]]</enable>
                 <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
             </control>
             <control type="radiobutton" id="111">
