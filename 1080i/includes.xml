@@ -36,10 +36,9 @@
     <include file="Includes_Weather.xml" />
     <include file="Includes_MainMenu.xml" />
     <include file="Includes_PVR.xml" />
-    <include file="Viewtype_PosterLite.xml" />
     <include name="VideoBackground">
         <control type="group">
-            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(528) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]] + ![Control.IsVisible(528)+!Skin.HasSetting(fstrailer)]</visible>
+            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
             <include>Animation_VisibleChange200</include>
             <control type="image">
                 <include>FullscreenDimensions</include>
@@ -865,56 +864,54 @@
         </item>
     </include>
     <include name="AutoConfig">
-        <onload>Skin.SetString(Nox.diffuse_programs,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_music,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_videolibrary,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_PVR,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_pictures,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_featured,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_addons,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_musicplaylist,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_videoplaylist,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_mainmenu,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_weather,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_color,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.diffuse_settings,FFFFFFFF)</onload>
-        <onload>Skin.SetString(Nox.BackgroundDarkness,A0FFFFFF)</onload>
-        <onload>Skin.SetBool(Nox.AutoScroll)</onload>
-        <onload>Skin.SetBool(Nox.breadcrumbslabel)</onload>
-        <onload>Skin.SetBool(Nox.smallerdialogs)</onload>
-        <onload>Skin.SetBool(Nox.musicfanartslideshow)</onload>
-        <onload>Skin.SetBool(Nox.itemsplaylist)</onload>
-        <onload>Skin.SetBool(Nox.showcasewrap)</onload>
-        <onload>Skin.SetBool(Nox.showcaseinfoon)</onload>
-        <onload>Skin.SetBool(Nox.showcaseinfoontv)</onload>
-        <onload>Skin.SetBool(Nox.fanartinfopane)</onload>
-        <onload>Skin.SetBool(Nox.posterinfopane503)</onload>
-        <onload>Skin.SetBool(Nox.fanartinfopane504)</onload>
-        <onload>Skin.SetBool(Nox.nohighlist)</onload>
-        <onload>Skin.SetBool(Nox.wallgenre)</onload>
-        <onload>Skin.SetBool(Nox.unwatchedicon)</onload>
-        <onload>Skin.SetBool(Nox.newstatus)</onload>
-        <onload>Skin.SetBool(Nox.watchedoverlay)</onload>
-        <onload>Skin.SetBool(Nox.preferplot)</onload>
-        <onload>Skin.SetBool(Nox.usecases)</onload>
-        <onload>Skin.SetBool(Nox.useclearcasesinfowall)</onload>
-        <onload>Skin.SetBool(Nox.infopanellauncher)</onload>
-        <onload>Skin.SetBool(Nox.MoreFullscreenInfo)</onload>
-        <onload>Skin.SetBool(Nox.lowlist)</onload>
-        <onload>Skin.SetBool(Nox.lowermainmenu)</onload>
-        <onload>Skin.SetBool(Nox.submenufixedlist)</onload>
-        <onload>Skin.SetBool(Nox.wallgenretv)</onload>
-        <onload>Skin.SetBool(Nox.altbreadcrumbstexture)</onload>
-        <onload>Skin.SetBool(Nox.DisableGlowbar)</onload>
-        <onload>Skin.SetBool(Nox.ExtendedGlowMode)</onload>
-        <onload>Skin.SetBool(Nox.1sec)</onload>
-        <onload>Skin.SetBool(Nox.GlobalNowPlaying)</onload>
-        <onload>Skin.SetBool(Nox.altoverlayinfowall)</onload>
-        <onload>Skin.SetBool(Nox.pliteback1)</onload>
-        <onload>Skin.SetBool(Nox.pllogotv)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_programs,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_music,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_videolibrary,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_PVR,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_pictures,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_featured,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_addons,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_musicplaylist,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_videoplaylist,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_mainmenu,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_weather,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_color,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.diffuse_settings,FFFFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.BackgroundDarkness,A0FFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.AutoScroll)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.breadcrumbslabel)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.smallerdialogs)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.musicfanartslideshow)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.itemsplaylist)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.showcasewrap)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.showcaseinfoon)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.showcaseinfoontv)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.fanartinfopane)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.posterinfopane503)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.fanartinfopane504)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.nohighlist)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.wallgenre)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.unwatchedicon)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.newstatus)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.watchedoverlay)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.preferplot)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.usecases)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.useclearcasesinfowall)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.infopanellauncher)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.MoreFullscreenInfo)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.lowlist)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.lowermainmenu)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.submenufixedlist)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.wallgenretv)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.altbreadcrumbstexture)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.DisableGlowbar)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.ExtendedGlowMode)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.1sec)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.GlobalNowPlaying)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.altoverlayinfowall)</onload>
         <onload>Skin.SetBool(Nox.firstrun)</onload>
-        <onload>Skin.SetString(Nox.IncludeWatchedCVPL,False)</onload>
-        <onload>Notification($LOCALIZE[42017],$LOCALIZE[42018])</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.IncludeWatchedCVPL,False)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Notification($LOCALIZE[42017],$LOCALIZE[42018])</onload>
     </include>
     <include name="PVR_Settings">
         <item id="21">
@@ -931,18 +928,6 @@
         <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Skin.HasSetting(Nox.3sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="5333" condition="Skin.HasSetting(Nox.4sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="6666" condition="Skin.HasSetting(Nox.5sec)">Visible</animation>
-    </include>
-    <include name="PLDelAn">
-        <animation effect="fade" delay="1500" condition="Skin.HasSetting(Nox.1sec)">WindowOpen</animation>
-        <animation effect="fade" delay="1500" condition="Skin.HasSetting(Nox.1sec)">Visible</animation>
-        <animation effect="fade" delay="2500" condition="Skin.HasSetting(Nox.2sec)">WindowOpen</animation>
-        <animation effect="fade" delay="2500" condition="Skin.HasSetting(Nox.2sec)">Visible</animation>
-        <animation effect="fade" delay="3500" condition="Skin.HasSetting(Nox.3sec)">WindowOpen</animation>
-        <animation effect="fade" delay="3500" condition="Skin.HasSetting(Nox.3sec)">Visible</animation>
-        <animation effect="fade" delay="4500" condition="Skin.HasSetting(Nox.4sec)">WindowOpen</animation>
-        <animation effect="fade" delay="4500" condition="Skin.HasSetting(Nox.4sec)">Visible</animation>
-        <animation effect="fade" delay="5500" condition="Skin.HasSetting(Nox.5sec)">WindowOpen</animation>
-        <animation effect="fade" delay="5500" condition="Skin.HasSetting(Nox.5sec)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
@@ -1036,7 +1021,7 @@
             <include>FullscreenDimensions</include>
             <colordiffuse>AAFFFFFF</colordiffuse>
             <texture>common/black.png</texture>
-            <visible>!Window.IsVisible(fullscreenvideo)</visible>
+            <animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(fullscreenvideo)">Conditional</animation>
             <animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         </control>
