@@ -50,7 +50,7 @@
         <focusposition>2</focusposition>
         <pagecontrol>63</pagecontrol>
 		<preloaditems>2</preloaditems>
-		<scrolltime tween="quadratic" easing="out">250</scrolltime>
+		<scrolltime tween="quadratic" easing="out">300</scrolltime>
 	    <include>Animation_OpenCloseZoom_New</include>
         <itemlayout width="190" height="1000" condition="![[Container.Content(movies)+[Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)|Skin.HasSetting(Nox.plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)|Skin.HasSetting(Nox.pllandtv)]]]">
 		  <control type="group">
@@ -65,9 +65,9 @@
 		  <control type="group">
 			<posx>8</posx>
 			<posy>330</posy>
-			<animation effect="fade" time="250" delay="100" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
-			<animation effect="zoom" center="475,978" start="39" end="100" time="250" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnNext">Focus</animation>
-			<animation effect="zoom" center="6,978" start="39" end="100" time="250" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnPrevious">Focus</animation>
+			<animation effect="fade" time="300" delay="100" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
+			<animation effect="zoom" center="475,978" start="39" end="100" time="300" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnNext">Focus</animation>
+			<animation effect="zoom" center="6,978" start="39" end="100" time="300" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnPrevious">Focus</animation>
 			<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 			<animation effect="zoom" center="0,978" start="100" end="39" time="200" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnNext">Unfocus</animation>
 			<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnPrevious">
@@ -90,11 +90,11 @@
 		  <control type="group">
 			<posx>-484</posx>
 			<posy>810</posy>
-			<animation effect="fade" time="350" delay="150" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
+			<animation effect="fade" time="350" delay="200" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
 			<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false" condition="!Control.IsVisible(528196)">Focus</animation>
 			<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 			<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)">
-			  <effect type="zoom" center="0,910" start="100" end="74" time="200" />
+			  <effect type="zoom" center="-10,900" start="100" end="74" time="200" />
 			  <effect type="slide" end="-150,4" time="0" />
 			</animation>
 			<include>PLLogos</include>
@@ -122,14 +122,14 @@
     <control type="image">
       <width>464</width>
       <height>683</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[ListPosterVar]</texture>
       <aspectratio scalediffuse="false">stretch</aspectratio>
     </control>
     <control type="image">
       <width>464</width>
       <height>683</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <texture background="true">thumbs/thumb_glass.png</texture>
     </control>
     <control type="image">
@@ -137,7 +137,7 @@
       <posy>685</posy>
       <width>464</width>
       <height>683</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <texture flipy="true" background="true" diffuse="thumbs/movieposter_mask_reflect.png">$VAR[ListPosterVar]</texture>
       <aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
     </control>
@@ -158,7 +158,7 @@
     <control type="image">
       <width>525</width>
       <height>204</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <aspectratio aligny="bottom">keep</aspectratio>
       <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
     </control>
@@ -167,7 +167,7 @@
       <posy>205</posy>
       <width>525</width>
       <height>204</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <aspectratio aligny="top">keep</aspectratio>
       <texture flipy="true" background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
@@ -177,18 +177,18 @@
 	  <control type="image">
 		<width>525</width>
 		<height>204</height>
-		<fadetime>250</fadetime>
+		<fadetime>300</fadetime>
 		<aspectratio>keep</aspectratio>
 		<texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass_reflect.png</texture>
 	  </control>
 	  <control type="image">
-		<posx>354</posx>
+		<posx>355</posx>
 		<width>90</width>
 		<height>90</height>
 		<include>OverlayVisibility0</include>
 	  </control>
 	  <control type="group">
-		<posx>30</posx>
+		<posx>32</posx>
 		<posy>-23</posy>
 		<include>UnwatchedIcon</include>
 		<animation effect="zoom" start="140" end="140" time="0" condition="true">Conditional</animation>
@@ -199,7 +199,7 @@
     <control type="image">
       <width>780</width>
       <height>126</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture flipy="true">osd/osd_progress_bar_back.png</texture>
 	  <animation effect="fade" start="60" end="60" time="0" condition="true">Conditional</animation>
@@ -224,7 +224,7 @@
     <control type="image">
 	  <visible>[Container.Content(movies)+!Skin.HasSetting(Nox.pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plitetvback1)]</visible>
 	  <include>FullscreenDimensions</include>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <texture>views/logo_back.png</texture>
       <colordiffuse>FF000000</colordiffuse>
       <animation effect="fade" start="100" end="80" time="50" condition="[Container.Content(movies)+Skin.HasSetting(Nox.plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.plitetvlinp)]">Conditional</animation>
@@ -234,7 +234,7 @@
       <posy>770</posy>
       <width>1920</width>
       <height>400</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture>views/lowlist_panelback.png</texture>
       <animation effect="fade" start="100" end="90" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(Nox.plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plitetvlinp)]">Conditional</animation>
@@ -253,7 +253,7 @@
     <aligny>justify</aligny>
     <aspectratio>keep</aspectratio>
     <colordiffuse>FFe1e1e1</colordiffuse>
-    <fadetime>250</fadetime>
+    <fadetime>300</fadetime>
   </include>
   <include name="PLFadeL">
 	<scrollout>false</scrollout>
@@ -270,7 +270,7 @@
         <posy>245</posy>
         <width>207</width>
         <height>38</height>
-	    <fadetime>250</fadetime>
+	    <fadetime>300</fadetime>
         <texture>$VAR[ListImage2Var]</texture>
         <colordiffuse>ffffff00</colordiffuse>
       </control>
@@ -321,7 +321,7 @@
           <posy>-69</posy>
           <width>1056</width>
           <height>86</height>
-		  <fadetime>250</fadetime>
+		  <fadetime>300</fadetime>
 		  <animation effect="fade" time="10" condition="![Container.OnNext|Container.OnPrevious]">Visible</animation>
           <aspectratio>stretch</aspectratio>
           <texture background="true">osd/osd_bottom_bar.png</texture>
