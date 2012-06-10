@@ -17,8 +17,8 @@
     <control type="group">
       <posx>700</posx>
       <posy>124</posy>
-      <animation effect="slide" start="1500,0" end="0,0" time="800" delay="1200" tween="quadratic" easing="out" reversible="false">Visible</animation>
-      <visible>Player.HasVideo+!VideoPlayer.IsFullscreen+!Skin.HasSetting(Nox.fstrailer)</visible>
+      <animation effect="slide" start="1000,0" end="0,0" time="500" delay="800" tween="quadratic" easing="out" reversible="false">Visible</animation>
+      <visible>Player.HasVideo+!Window.IsVisible(busydialog)+!VideoPlayer.IsFullscreen+!Skin.HasSetting(Nox.fstrailer)</visible>
       <control type="image">
         <width>1028</width>
         <height>590</height>
@@ -275,8 +275,9 @@
         <colordiffuse>ffffff00</colordiffuse>
       </control>
       <!-- Labels -->
-	  <control type="group">
-		<visible>[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+Control.HasFocus(7000)]|Control.IsVisible(528196)|[Window.IsVisible(custom_1126_ViewtypeSettings.xml)+[[Container.Content(movies)+Skin.HasSetting(Nox.showcaseinfoon)+!Skin.HasSetting(Nox.infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.showcaseinfoontv)+!Skin.HasSetting(Nox.infopaneautotv)]]]]+![Control.IsVisible(528195)+!Control.HasFocus(7000)]</visible>
+	  <control type="group" id="528200">
+		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(528109)+!Control.HasFocus(63)]]+!Window.IsVisible(1126)]|Control.IsVisible(528196)|Control.IsVisible(528193)]</visible>
+		<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
 		  <posx>0</posx>
@@ -532,11 +533,11 @@
     </control>
   </include>
   <include name="PosFade">
-    <visible>![[Control.IsVisible(528195)+Control.HasFocus(7000)]|Control.IsVisible(528196)|[Window.IsVisible(custom_1126_ViewtypeSettings.xml)+[[Container.Content(movies)+Skin.HasSetting(Nox.showcaseinfoon)+!Skin.HasSetting(Nox.infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.showcaseinfoontv)+!Skin.HasSetting(Nox.infopaneautotv)]]+!StringCompare(ListItem.Label,..)]]</visible>
-    <animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528199)+Skin.HasSetting(Nox.1sec)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528199)+Skin.HasSetting(Nox.2sec)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528199)+Skin.HasSetting(Nox.3sec)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="500" delay="4000" reversible="false" condition="Control.IsVisible(528199)+Skin.HasSetting(Nox.4sec)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="500" delay="5000" reversible="false" condition="Control.IsVisible(528199)+Skin.HasSetting(Nox.5sec)">Conditional</animation>
+	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(528109)|Control.HasFocus(63)|Window.IsVisible(1126)]+![[Container.Content(movies)+Skin.HasSetting(Nox.showcaseinfoon)+!Skin.HasSetting(Nox.infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.showcaseinfoontv)+!Skin.HasSetting(Nox.infopaneautotv)]]</visible>
+    <animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.1sec)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.2sec)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.3sec)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="500" delay="4000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.4sec)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="500" delay="5000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.5sec)">Conditional</animation>
   </include>
 </includes>

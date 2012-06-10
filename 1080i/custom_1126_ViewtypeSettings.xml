@@ -535,7 +535,7 @@
                 <onclick condition="Skin.HasSetting(Nox.pllogotv)">Skin.Reset(Nox.pllogotv)</onclick>
                 <onclick condition="Skin.HasSetting(Nox.pllandtv)|Skin.HasSetting(Nox.pllogotv)">Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
                 <onclick condition="Skin.HasSetting(Nox.plcleartv) + !Skin.HasSetting(Nox.pllogotv) + !Skin.HasSetting(Nox.pllandtv)">Skin.Reset(Nox.plcleartv)</onclick>
-                <visible>stringcompare(Skin.String(Nox.actualViewtype),posterlite) + Container.Content(tvshows)</visible>
+                <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(Nox.actualViewtype),posterlite) + Container.Content(tvshows)</visible>
             </control>
             <control type="button" id="1766">
                 <description>Toggle Logo (Movies)</description>
@@ -548,7 +548,7 @@
                 <onclick condition="Skin.HasSetting(Nox.pllogo)">Skin.Reset(Nox.pllogo)</onclick>
                 <onclick condition="Skin.HasSetting(Nox.plland)|Skin.HasSetting(Nox.pllogo)">Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
                 <onclick condition="Skin.HasSetting(Nox.plclear) + !Skin.HasSetting(Nox.pllogo) + !Skin.HasSetting(Nox.plland)">Skin.Reset(Nox.plclear)</onclick>
-                <visible>stringcompare(Skin.String(Nox.actualViewtype),posterlite) + Container.Content(movies)</visible>
+                <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(Nox.actualViewtype),posterlite) + Container.Content(movies)</visible>
             </control>
             <control type="togglebutton" id="1767">
                 <description>Toggle Title (TV)</description>
