@@ -18,7 +18,7 @@
       <posx>700</posx>
       <posy>124</posy>
       <animation effect="slide" start="1000,0" end="0,0" time="500" delay="800" tween="quadratic" easing="out" reversible="false">Visible</animation>
-      <visible>Player.HasVideo+!Window.IsVisible(busydialog)+!VideoPlayer.IsFullscreen+!Skin.HasSetting(Nox.fstrailer)</visible>
+      <visible>Player.HasVideo+!Window.IsVisible(busydialog)+!VideoPlayer.IsFullscreen+!Skin.HasSetting(fstrailer)</visible>
       <control type="image">
         <width>1028</width>
         <height>590</height>
@@ -52,7 +52,7 @@
 		<preloaditems>2</preloaditems>
 		<scrolltime tween="quadratic" easing="out">300</scrolltime>
 	    <include>Animation_OpenCloseZoom_New</include>
-        <itemlayout width="190" height="1000" condition="![[Container.Content(movies)+[Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)|Skin.HasSetting(Nox.plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)|Skin.HasSetting(Nox.pllandtv)]]]">
+        <itemlayout width="190" height="1000" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 		  <control type="group">
 			<posx>-75</posx>
 			<posy>605</posy>
@@ -61,7 +61,7 @@
 		    <include>PLPosters</include>
 		  </control>
         </itemlayout>
-        <focusedlayout width="478" height="768" condition="![[Container.Content(movies)+[Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)|Skin.HasSetting(Nox.plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)|Skin.HasSetting(Nox.pllandtv)]]]">
+        <focusedlayout width="478" height="768" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 		  <control type="group">
 			<posx>8</posx>
 			<posy>330</posy>
@@ -77,7 +77,7 @@
 			<include>PLPosters</include>
 		  </control>
 		</focusedlayout>
-        <itemlayout width="420" height="164" condition="[[Container.Content(movies)+[Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)|Skin.HasSetting(Nox.plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)|Skin.HasSetting(Nox.pllandtv)]]]">
+        <itemlayout width="420" height="164" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 		  <control type="group">
 			<posx>-605</posx>
 			<posy>836</posy>
@@ -86,7 +86,7 @@
 			<include>PLLogos</include>
 		  </control>
         </itemlayout>
-        <focusedlayout width="570" height="224" condition="[[Container.Content(movies)+[Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)|Skin.HasSetting(Nox.plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)|Skin.HasSetting(Nox.pllandtv)]]]">
+        <focusedlayout width="570" height="224" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 		  <control type="group">
 			<posx>-484</posx>
 			<posy>810</posy>
@@ -106,12 +106,12 @@
         <posx>570</posx>
         <posy>0</posy>
 		<control type="group">
-          <visible>!Skin.HasSetting(Nox.ClassicTopBar)+!Skin.HasSetting(Nox.disabletopbar)</visible>
+          <visible>!Skin.HasSetting(ClassicTopBar)+!Skin.HasSetting(disabletopbar)</visible>
           <posy>42</posy>
 		  <include>PLTopT</include>
         </control>
         <control type="group">
-          <visible>[Skin.HasSetting(Nox.ClassicTopBar)|Skin.HasSetting(Nox.disabletopbar)]</visible>
+          <visible>[Skin.HasSetting(ClassicTopBar)|Skin.HasSetting(disabletopbar)]</visible>
 		  <include>PLTopT</include>
         </control>
       </control>
@@ -133,7 +133,7 @@
       <texture background="true">thumbs/thumb_glass.png</texture>
     </control>
     <control type="image">
-      <visible>[Container.Content(movies)+!Skin.HasSetting(Nox.pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plitetvback1)]</visible>
+      <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
       <posy>685</posy>
       <width>464</width>
       <height>683</height>
@@ -163,7 +163,7 @@
       <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
     </control>
 	<control type="image">
-	  <visible>[Container.Content(movies)+!Skin.HasSetting(Nox.pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plitetvback1)]</visible>
+	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
       <posy>205</posy>
       <width>525</width>
       <height>204</height>
@@ -173,7 +173,7 @@
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
     </control>
     <control type="group">
-	  <visible>[[Container.Content(movies)+Skin.HasSetting(Nox.plland)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.pllandtv)]]+!StringCompare(ListItem.Label,..)</visible>
+	  <visible>[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+!StringCompare(ListItem.Label,..)</visible>
 	  <control type="image">
 		<width>525</width>
 		<height>204</height>
@@ -203,7 +203,7 @@
       <aspectratio>stretch</aspectratio>
       <texture flipy="true">osd/osd_progress_bar_back.png</texture>
 	  <animation effect="fade" start="60" end="60" time="0" condition="true">Conditional</animation>
-      <visible>[[Container.Content(movies)+!Skin.HasSetting(Nox.plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
+      <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
     </control>
     <control type="fadelabel">
       <posx>65</posx>
@@ -217,28 +217,28 @@
       <scrollspeed>20</scrollspeed>
 	  <include>PLFadeL</include>
       <label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
-      <visible>[[Container.Content(movies)+!Skin.HasSetting(Nox.plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plitetvtitle)]]+!StringCompare(ListItem.Label,..)+!IsEmpty(ListItem.Label)</visible>
+      <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)+!IsEmpty(ListItem.Label)</visible>
     </control>
   </include>
   <include name="PLiteBack">
     <control type="image">
-	  <visible>[Container.Content(movies)+!Skin.HasSetting(Nox.pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plitetvback1)]</visible>
+	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
 	  <include>FullscreenDimensions</include>
 	  <fadetime>300</fadetime>
       <texture>views/logo_back.png</texture>
       <colordiffuse>FF000000</colordiffuse>
-      <animation effect="fade" start="100" end="80" time="50" condition="[Container.Content(movies)+Skin.HasSetting(Nox.plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.plitetvlinp)]">Conditional</animation>
+      <animation effect="fade" start="100" end="80" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
     </control>
     <control type="image">
-	  <visible>[Container.Content(movies)+Skin.HasSetting(Nox.pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.plitetvback1)]</visible>
+	  <visible>[Container.Content(movies)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
       <posy>770</posy>
       <width>1920</width>
       <height>400</height>
 	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture>views/lowlist_panelback.png</texture>
-      <animation effect="fade" start="100" end="90" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(Nox.plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plitetvlinp)]">Conditional</animation>
-      <animation effect="fade" start="100" end="50" time="50" condition="[Container.Content(movies)+Skin.HasSetting(Nox.plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.plitetvlinp)]">Conditional</animation>
+      <animation effect="fade" start="100" end="90" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvlinp)]">Conditional</animation>
+      <animation effect="fade" start="100" end="50" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
     </control>
 	<control type="group">
 	  <posy>755</posy>
@@ -288,7 +288,7 @@
           <aligny>justify</aligny>
           <font>Font_Reg24</font>
           <label>$VAR[PLPlot]</label>
-          <autoscroll time="4000" delay="8000" repeat="8000">Skin.HasSetting(Nox.AutoScroll)</autoscroll>
+          <autoscroll time="4000" delay="8000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
         <control type="fadelabel">
           <posx>0</posx>
@@ -326,7 +326,7 @@
 		  <animation effect="fade" time="10" condition="![Container.OnNext|Container.OnPrevious]">Visible</animation>
           <aspectratio>stretch</aspectratio>
           <texture background="true">osd/osd_bottom_bar.png</texture>
-          <visible>Container.Content(movies)+!Skin.HasSetting(Nox.InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
+          <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
         </control>
         <control type="fadelabel">
           <posx>508</posx>
@@ -341,7 +341,7 @@
           <textcolor>FF363636</textcolor>
           <label>[I]$INFO[ListItem.Tagline][/I]</label>
 		  <animation effect="fade" time="10">Visible</animation>
-          <visible>Container.Content(movies)+!Skin.HasSetting(Nox.InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
+          <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
         </control>
         <control type="fadelabel">
           <posx>806</posx>
@@ -502,7 +502,7 @@
           <align>left</align>
           <include>CuFlVa</include>
           <label>$VAR[PLTotal]</label>
-          <visible>!IsEmpty(ListItem.Episode)+[[Container.Content(movies)+[Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)]]|[Container.Content(tvshows)+[Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)]]|[[[Container.Content(movies)+!Skin.HasSetting(Nox.plclear)+!Skin.HasSetting(Nox.pllogo)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.plcleartv)+!Skin.HasSetting(Nox.pllogotv)]]+!Skin.HasSetting(Nox.UnwatchedIcon)]]</visible>
+          <visible>!IsEmpty(ListItem.Episode)+[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)]]|[[[Container.Content(movies)+!Skin.HasSetting(plclear)+!Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+!Skin.HasSetting(plcleartv)+!Skin.HasSetting(pllogotv)]]+!Skin.HasSetting(UnwatchedIcon)]]</visible>
         </control>
         <control type="image">
           <posy>-22</posy>
@@ -533,11 +533,11 @@
     </control>
   </include>
   <include name="PosFade">
-	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(528109)|Control.HasFocus(63)|Window.IsVisible(1126)]+![[Container.Content(movies)+Skin.HasSetting(Nox.showcaseinfoon)+!Skin.HasSetting(Nox.infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.showcaseinfoontv)+!Skin.HasSetting(Nox.infopaneautotv)]]</visible>
-    <animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.1sec)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.2sec)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.3sec)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="500" delay="4000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.4sec)">Conditional</animation>
-    <animation effect="fade" start="100" end="0" time="500" delay="5000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(Nox.5sec)">Conditional</animation>
+	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(528109)|Control.HasFocus(63)|Window.IsVisible(1126)]+![[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]</visible>
+    <animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(1sec)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(2sec)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(3sec)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="500" delay="4000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(4sec)">Conditional</animation>
+    <animation effect="fade" start="100" end="0" time="500" delay="5000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(5sec)">Conditional</animation>
   </include>
 </includes>
