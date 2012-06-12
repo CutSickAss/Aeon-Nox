@@ -293,7 +293,7 @@
         <control type="fadelabel">
           <posx>0</posx>
           <posy>0</posy>
-          <width>767</width>
+          <width>750</width>
           <height>75</height>
 		  <align>left</align>
 		  <aligny>center</aligny>
@@ -344,9 +344,9 @@
           <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
         </control>
         <control type="fadelabel">
-          <posx>806</posx>
+          <posx>789</posx>
           <posy>0</posy>
-          <width>514</width>
+          <width>531</width>
           <height>75</height>
 		  <font>Font_Bold19</font>
           <align>right</align>
