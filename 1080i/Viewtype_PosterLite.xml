@@ -252,7 +252,6 @@
     <align>center</align>
     <aligny>justify</aligny>
     <aspectratio>keep</aspectratio>
-    <colordiffuse>FFe1e1e1</colordiffuse>
     <fadetime>300</fadetime>
   </include>
   <include name="PLFadeL">
