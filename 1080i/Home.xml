@@ -115,58 +115,6 @@
         </control>
         <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
         <!-- LiveTV Info -->
-        <control type="group">
-            <visible>!Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(Glowbar_Home)</visible>
-            <include>Animation_VisibleChangeDelayed</include>
-            <control type="image">
-                <description>media info background image</description>
-                <posx>0</posx>
-                <posy>360</posy>
-                <width>1920</width>
-                <height>945</height>
-                <texture>home/nowplaying_shadow.png</texture>
-                <visible>!ControlGroup(5000).HasFocus</visible>
-                <visible>Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)</visible>
-                <include>Animation_VisibleChangeDelayed</include>
-                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            </control>
-            <control type="image">
-                <description>media info background image</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1920</width>
-                <height>945</height>
-                <texture flipy="true">home/nowplaying_shadow.png</texture>
-                <include>Animation_VisibleChangeDelayed</include>
-                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)]</visible>
-                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            </control>
-        </control>
-        <control type="group">
-            <visible>Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(Glowbar_Home)</visible>
-            <include>Animation_VisibleChangeDelayed</include>
-            <control type="image">
-                <description>media info background image</description>
-                <posx>0</posx>
-                <posy>160</posy>
-                <width>1920</width>
-                <height>694</height>
-                <texture>home/nowplaying_shadow.png</texture>
-                <visible>!ControlGroup(5000).HasFocus</visible>
-                <visible>Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)</visible>
-                <include>Animation_VisibleChangeDelayed</include>
-            </control>
-            <control type="image">
-                <description>media info background image</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1920</width>
-                <height>545</height>
-                <texture flipy="true">home/nowplaying_shadow.png</texture>
-                <include>Animation_VisibleChangeDelayed</include>
-                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)]</visible>
-            </control>
-        </control>
         <!-- Featured widget -->
         <include condition="Substring(Skin.String(widgetlist),featured) | Substring(Skin.String(widgetlist),panel)">HomeFeaturedWidget</include>
         <include condition="Substring(Skin.String(widget2list),featured) | Substring(Skin.String(widget2list),panel)">HomeFeaturedWidget2</include>
