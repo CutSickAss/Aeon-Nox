@@ -38,9 +38,10 @@
     <include file="Includes_PVR.xml" />
     <include file="Includes_Widget2.xml" />
     <include file="Includes_CustomizerWindow.xml" />
+    <include file="Viewtype_PosterLite.xml" />
     <include name="VideoBackground">
         <control type="group">
-            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
+            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(528) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]] + ![Control.IsVisible(528)+!Skin.HasSetting(fstrailer)]</visible>
             <include>Animation_VisibleChange200</include>
             <control type="image">
                 <include>FullscreenDimensions</include>
@@ -944,6 +945,8 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(1sec)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(GlobalNowPlaying)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(altoverlayinfowall)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pliteback1)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pllogotv)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(IncludeWatchedCVPL,False)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Notification($LOCALIZE[42017],$LOCALIZE[42018])</onload>
         <onload>Skin.SetBool(firstrun)</onload>
@@ -963,6 +966,18 @@
         <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Skin.HasSetting(3sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="5333" condition="Skin.HasSetting(4sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="6666" condition="Skin.HasSetting(5sec)">Visible</animation>
+    </include>
+    <include name="PLDelAn">
+        <animation effect="fade" delay="1500" condition="Skin.HasSetting(1sec)">WindowOpen</animation>
+        <animation effect="fade" delay="1500" condition="Skin.HasSetting(1sec)">Visible</animation>
+        <animation effect="fade" delay="2500" condition="Skin.HasSetting(2sec)">WindowOpen</animation>
+        <animation effect="fade" delay="2500" condition="Skin.HasSetting(2sec)">Visible</animation>
+        <animation effect="fade" delay="3500" condition="Skin.HasSetting(3sec)">WindowOpen</animation>
+        <animation effect="fade" delay="3500" condition="Skin.HasSetting(3sec)">Visible</animation>
+        <animation effect="fade" delay="4500" condition="Skin.HasSetting(4sec)">WindowOpen</animation>
+        <animation effect="fade" delay="4500" condition="Skin.HasSetting(4sec)">Visible</animation>
+        <animation effect="fade" delay="5500" condition="Skin.HasSetting(5sec)">WindowOpen</animation>
+        <animation effect="fade" delay="5500" condition="Skin.HasSetting(5sec)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
