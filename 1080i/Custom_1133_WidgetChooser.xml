@@ -477,7 +477,7 @@
                             <label>$LOCALIZE[31324] (VPL)</label>
                             <visible>Library.HasContent(tvshows)</visible>
                             <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,recenttvcustom,1124)</onclick>
-                            <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,recenttvcustom,1124)</onclick>
+                            <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,recenttvcustom2,1124)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <onclick condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(Custom1.Method1,Last)</onclick>
                             <onclick condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(Custom2.Method1,Last)</onclick>
@@ -520,7 +520,7 @@
                         <item>
                             <label>$LOCALIZE[31220] (VPL)</label>
                             <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,randomtvcustom,1124)</onclick>
-                            <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,randomtvcustom,1124)</onclick>
+                            <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,randomtvcustom2,1124)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
                             <onclick condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(Custom1.Method1,Random)</onclick>
@@ -917,7 +917,7 @@
                         </item>
                         <item>
                             <label>Latest Pics</label>
-							<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Latest'&sort='Added'&limit=10)</onclick>
+							<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Latest'&sort='Added'&limit=8)</onclick>
                             <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,recentpics,1124)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,recentpics2,1124)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
@@ -925,7 +925,7 @@
                         </item>
                         <item>
                             <label>Random Pics</label>
-							<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Random'&sort='Added'&limit=10)</onclick>
+							<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Random'&sort='Added'&limit=8)</onclick>
                             <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,randompics,1124)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,randompics2,1124)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
@@ -943,16 +943,5 @@
                 </control>
             </control>
         </control>
-        <!--        <control type="radiobutton" id="271">
-          <description>Include watched items</description>
-          <include>Objects_CommonSettingsButton</include>
-          <label>31672</label>
-          <label2>[COLOR=$VAR[SelectedColorVar]]$INFO[Skin.String(IncludeWatchedCVPL)][/COLOR]</label2>
-          <onclick>Skin.ToggleSetting(IncludeWatchedCVPLBool)</onclick>
-          <onclick condition="!Skin.HasSetting(IncludeWatchedCVPLBool)">Skin.SetString(IncludeWatchedCVPL,True)</onclick>
-          <onclick condition="Skin.HasSetting(IncludeWatchedCVPLBool)">Skin.SetString(IncludeWatchedCVPL,False)</onclick>
-          <selected>Skin.HasSetting(IncludeWatchedCVPLBool)</selected>
-          <visible>System.HasAddon(script.randomandlastitems)+[Stringcompare(Window.Property(actualItem),VPL1) | Stringcompare(Window.Property(actualItem),VPL2) | Stringcompare(Window.Property(actualItem),VPL3)]</visible>
-        </control>-->
     </controls>
 </window>

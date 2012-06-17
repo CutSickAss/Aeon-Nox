@@ -98,7 +98,7 @@
                         <scrollspeed>40</scrollspeed>
                     </control>
                 </control>
-                <control type="textbox">
+<!--                 <control type="textbox">
                     <description>Plot Textbox</description>
                     <posy>286</posy>
                     <posx>145</posx>
@@ -109,8 +109,8 @@
                     <label>$VAR[GlobalPlotVar]</label>
                     <align>justify</align>
                     <autoscroll delay="10000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
-                    <visible>!Container.Content(episodes)</visible>
-                </control>
+                    <visible>!Container.Content(episodes) + ![Container.Content(movies) + Skin.HasSetting(tripanelextrafanart)]</visible>
+                </control> -->
                 <control type="textbox">
                     <description>Plot Textbox</description>
                     <posy>287</posy>
@@ -119,13 +119,12 @@
                     <textcolor>ddeeeeee</textcolor>
                     <width>434</width>
                     <height>260</height>
-                    <visible>Container.Content(episodes)</visible>
-                    <label>$VAR[GlobalPlotVar]</label>
+<!--                     <visible>Container.Content(episodes) | [Container.Content(movies) + Skin.HasSetting(tripanelextrafanart)]</visible>
+ -->                    <label>$VAR[GlobalPlotVar]</label>
                     <align>justify</align>
                     <autoscroll delay="10000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="group">
-                    <visible>Container.Content(episodes)</visible>
                     <posx>65</posx>
                     <posy>490</posy>
                     <animation effect="zoom" start="100" end="92" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
@@ -142,19 +141,18 @@
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     </control>
                     <control type="image">
-                        <texture background="true" diffuse="thumbs/multiplex_tvmask.png">DefaultVideoCover.png</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="DefaultVideoCover.png">$VAR[InfoWallPreviewTextureVar]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>9</bordersize>
                         <posx>-9</posx>
                         <posy>77</posy>
                         <width>508</width>
                         <height>287</height>
                         <fadetime>IconCrossfadeTime</fadetime>
-                        <info>ListItem.Thumb</info>
                     </control>
                     <control type="image">
                         <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                         <bordersize>9</bordersize>
                         <posx>-9</posx>
@@ -164,6 +162,16 @@
                         <fadetime>IconCrossfadeTime</fadetime>
                     </control>
                 </control>
+<!--                     <control type="multiimage">
+                        <imagepath background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="DefaultVideoCover.png">$INFO[ListItem.Path,,extrafanart]</imagepath>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <bordersize>9</bordersize>
+                        <posx>56</posx>
+                        <posy>667</posy>
+                        <width>308</width>
+                        <height>287</height>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                    </control> -->
             </control>
             <control type="group" id="5202">
                 <description>Poster thumb</description>
@@ -181,7 +189,7 @@
                     <height>795</height>
                     <fadetime>400</fadetime>
                     <texture background="true" flipy="true" diffuse="views/tripanel/poster_diffuse_ref.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
                     <description>Poster</description>
@@ -191,7 +199,7 @@
                     <height>795</height>
                     <fadetime>400</fadetime>
                     <texture background="true" diffuse="views/tripanel/poster_diffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
                     <posx>0</posx>
@@ -199,7 +207,7 @@
                     <width>640</width>
                     <height>980</height>
                     <texture>views/tripanel/poster_overlay.png</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
             </control>
             <control type="group" id="5203">
@@ -219,7 +227,7 @@
                     <height>732</height>
                     <fadetime>400</fadetime>
                     <texture background="true" flipy="true" diffuse="views/tripanel/poster_diffuse_ref.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
                     <description>Poster</description>
@@ -229,7 +237,7 @@
                     <height>732</height>
                     <fadetime>400</fadetime>
                     <texture background="true" diffuse="views/tripanel/poster_diffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
                     <posx>0</posx>
@@ -237,7 +245,7 @@
                     <width>590</width>
                     <height>903</height>
                     <texture>views/tripanel/poster_overlay.png</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
             </control>
             <control type="group" id="5204">
@@ -379,7 +387,7 @@
                     </control>
                     <control type="image">
                         <texture background="true" diffuse="thumbs/multiplex_tvmask.png">DefaultVideoCover.png</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordersize>9</bordersize>
                         <posx>-9</posx>
                         <posy>77</posy>
@@ -390,7 +398,7 @@
                     </control>
                     <control type="image">
                         <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                         <bordersize>9</bordersize>
                         <posx>-9</posx>

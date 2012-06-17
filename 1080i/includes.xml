@@ -38,10 +38,9 @@
     <include file="Includes_PVR.xml" />
     <include file="Includes_Widget2.xml" />
     <include file="Includes_CustomizerWindow.xml" />
-    <include file="Viewtype_PosterLite.xml" />
     <include name="VideoBackground">
         <control type="group">
-            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(528) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]] + ![Control.IsVisible(528)+!Skin.HasSetting(fstrailer)]</visible>
+            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
             <include>Animation_VisibleChange200</include>
             <control type="image">
                 <include>FullscreenDimensions</include>
@@ -75,7 +74,7 @@
         <fadetime>FanartCrossfadeTime</fadetime>
         <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-        <aspectratio align="center">scale</aspectratio>
+        <aspectratio align="center" aligny="top">scale</aspectratio>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="fade" time="250">Visible</animation>
@@ -95,6 +94,7 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <imagepath fallback="special://skin/backgrounds/pictures.jpg" background="true">$INFO[Skin.String(PicturesHomeItem.MultiFanart)]</imagepath>
+			<aspectratio align="center" aligny="top">scale</aspectratio>
         </control>
     </include>
     <include name="CommonComicsBackground">
@@ -102,6 +102,7 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <imagepath fallback="special://skin/backgrounds/comics.jpg" background="true">$INFO[Skin.String(ComicsHomeItem.MultiFanart)]</imagepath>
+		    <aspectratio align="center" aligny="top">scale</aspectratio>
         </control>
     </include>
     <include name="CommonSettingsBackground">
@@ -109,6 +110,7 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <imagepath fallback="special://skin/backgrounds/system.jpg" background="true">$INFO[Skin.String(SettingsHomeItem.MultiFanart)]</imagepath>
+		    <aspectratio align="center" aligny="top">scale</aspectratio>
         </control>
     </include>
     <include name="MusicExtraFanartHome">
@@ -117,7 +119,7 @@
             <description>extrafanart</description>
             <randomize>true</randomize>
             <imagepath background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/extrafanart]</imagepath>
-            <aspectratio align="center" aligny="center">scale</aspectratio>
+            <aspectratio align="center" aligny="top">scale</aspectratio>
             <visible>Player.HasAudio + Skin.HasSetting(musicfanarthome)</visible>
             <include>Animation_VisibleChange400</include>
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
@@ -132,7 +134,7 @@
             <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
             <visible>Player.HasAudio + Skin.HasSetting(artistslideshowhome)</visible>
             <include>Animation_VisibleChange400</include>
-            <aspectratio align="center" aligny="center">keep</aspectratio>
+            <aspectratio align="center" aligny="top">scale</aspectratio>
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
         </control>
@@ -744,6 +746,22 @@
         <textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
         <textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
     </include>
+    <include name="Objects_1120SettingsButton">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>672</width>
+        <height>60</height>
+        <font>Font_Reg20</font>
+        <textcolor>grey2</textcolor>
+        <focusedcolor>white</focusedcolor>
+        <textoffsetx>45</textoffsetx>
+        <radioposx>550</radioposx>
+        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
+        <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
+        <textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
+        <textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
+    </include>
     <include name="Objects_CustomizerSettingsButton">
         <posx>0</posx>
         <posy>0</posy>
@@ -926,8 +944,6 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(1sec)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(GlobalNowPlaying)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(altoverlayinfowall)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pliteback1)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pllogotv)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(IncludeWatchedCVPL,False)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Notification($LOCALIZE[42017],$LOCALIZE[42018])</onload>
         <onload>Skin.SetBool(firstrun)</onload>
@@ -947,18 +963,6 @@
         <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Skin.HasSetting(3sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="5333" condition="Skin.HasSetting(4sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="6666" condition="Skin.HasSetting(5sec)">Visible</animation>
-    </include>
-    <include name="PLDelAn">
-        <animation effect="fade" delay="1500" condition="Skin.HasSetting(1sec)">WindowOpen</animation>
-        <animation effect="fade" delay="1500" condition="Skin.HasSetting(1sec)">Visible</animation>
-        <animation effect="fade" delay="2500" condition="Skin.HasSetting(2sec)">WindowOpen</animation>
-        <animation effect="fade" delay="2500" condition="Skin.HasSetting(2sec)">Visible</animation>
-        <animation effect="fade" delay="3500" condition="Skin.HasSetting(3sec)">WindowOpen</animation>
-        <animation effect="fade" delay="3500" condition="Skin.HasSetting(3sec)">Visible</animation>
-        <animation effect="fade" delay="4500" condition="Skin.HasSetting(4sec)">WindowOpen</animation>
-        <animation effect="fade" delay="4500" condition="Skin.HasSetting(4sec)">Visible</animation>
-        <animation effect="fade" delay="5500" condition="Skin.HasSetting(5sec)">WindowOpen</animation>
-        <animation effect="fade" delay="5500" condition="Skin.HasSetting(5sec)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
@@ -1029,10 +1033,28 @@
             <visible>Container.Content(Actors) | Container.Content(Directors) | Container.Content(Artists)</visible>
         </control>
     </include>
+    <include name="MovieSetsContextButton">
+        <control type="button" id="2008">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>58</height>
+            <width>462</width>
+            <textcolor>context</textcolor>
+            <focusedcolor>FFdfdfdf</focusedcolor>
+            <texturenofocus>dialogs/context_nofocus.png</texturenofocus>
+            <texturefocus>dialogs/shutdown_focus.png</texturefocus>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <align>center</align>
+            <font>Font_Reg19</font>
+            <textoffsety>12</textoffsety>
+            <label>$LOCALIZE[24007]</label>
+            <onclick>RunScript(script.moviesets,moviesetinfo)</onclick>
+        </control>
+    </include>
     <include name="DialogVideoInfoButton">
         <posx>0</posx>
         <posy>0</posy>
-        <width>250</width>
+        <width>254.5</width>
         <height>50</height>
         <textcolor>FF868686</textcolor>
         <focusedcolor>FFececec</focusedcolor>
