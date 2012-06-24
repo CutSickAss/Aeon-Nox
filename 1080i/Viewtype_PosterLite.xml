@@ -36,71 +36,8 @@
     </control>
     <control type="group">
       <visible>Control.IsVisible(528)</visible>
-      <control type="fixedlist" id="528">
-        <posx>-338</posx>
-        <posy>0</posy>
-        <width>2850</width>
-        <height>1500</height>
-        <onleft>528</onleft>
-        <onright>528</onright>
-        <ondown>63</ondown>
-        <onup>7000</onup>
-		<orientation>horizontal</orientation>
-        <viewtype label="31972">BigWrap</viewtype>
-        <focusposition>2</focusposition>
-        <pagecontrol>63</pagecontrol>
-		<preloaditems>2</preloaditems>
-		<scrolltime tween="quadratic" easing="out">300</scrolltime>
-	    <include>Animation_OpenCloseZoom_New</include>
-        <itemlayout width="190" height="1000" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
-		  <control type="group">
-			<posx>-75</posx>
-			<posy>605</posy>
-			<animation effect="zoom" center="auto" start="39" end="39" time="0" condition="true">Conditional</animation>
-		    <include>PosFade</include>
-		    <include>PLPosters</include>
-		  </control>
-        </itemlayout>
-        <focusedlayout width="478" height="768" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
-		  <control type="group">
-			<posx>8</posx>
-			<posy>330</posy>
-			<animation effect="fade" time="300" delay="100" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
-			<animation effect="zoom" center="475,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnNext">Focus</animation>
-			<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnPrevious">Focus</animation>
-			<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
-			<animation effect="zoom" center="0,978" start="100" end="39" time="300" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnNext">Unfocus</animation>
-			<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnPrevious">
-			  <effect type="zoom" center="300,978" start="100" end="39" time="300" />
-			  <effect type="slide" end="-460" time="0" />
-			</animation>
-			<include>PLPosters</include>
-		  </control>
-		</focusedlayout>
-        <itemlayout width="420" height="164" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
-		  <control type="group">
-			<posx>-605</posx>
-			<posy>836</posy>
-			<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
-      		<include>PosFade</include>
-			<include>PLLogos</include>
-		  </control>
-        </itemlayout>
-        <focusedlayout width="570" height="224" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
-		  <control type="group">
-			<posx>-484</posx>
-			<posy>810</posy>
-			<animation effect="fade" time="350" delay="200" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
-			<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false" condition="!Control.IsVisible(528196)">Focus</animation>
-			<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
-			<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)">
-			  <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
-			  <effect type="slide" end="-150,4" time="0" />
-			</animation>
-			<include>PLLogos</include>
-		  </control>
-        </focusedlayout>
-      </control>
+      <include condition="!Skin.HasSetting(showcasewrap)">plfixed</include>
+      <include condition="Skin.HasSetting(showcasewrap)">plwrap</include>
       <!-- Title -->
       <control type="group">
         <posx>570</posx>
@@ -116,6 +53,83 @@
         </control>
       </control>
     </control>
+  </include>
+
+  <include name="contents528list">
+    <posx>-338</posx>
+    <posy>0</posy>
+    <width>2850</width>
+    <height>1500</height>
+    <onleft>528</onleft>
+    <onright>528</onright>
+    <ondown>63</ondown>
+    <onup>7000</onup>
+    <orientation>horizontal</orientation>
+    <viewtype label="31972">BigWrap</viewtype>
+    <focusposition>2</focusposition>
+    <pagecontrol>63</pagecontrol>
+    <preloaditems>2</preloaditems>
+    <scrolltime tween="quadratic" easing="out">300</scrolltime>
+    <include>Animation_OpenCloseZoom_New</include>
+    <itemlayout width="190" height="1000" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
+      <control type="group">
+        <posx>-75</posx>
+		<posy>605</posy>
+		<animation effect="zoom" center="auto" start="39" end="39" time="0" condition="true">Conditional</animation>
+		<include>PosFade</include>
+		<include>PLPosters</include>
+	  </control>
+    </itemlayout>
+    <focusedlayout width="478" height="768" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
+      <control type="group">
+        <posx>8</posx>
+        <posy>330</posy>
+		<animation effect="fade" time="200" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
+	    <animation effect="zoom" center="475,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnNext">Focus</animation>
+		<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnPrevious">Focus</animation>
+		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation effect="zoom" center="0,978" start="100" end="39" time="300" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnNext">Unfocus</animation>
+		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnPrevious">
+		  <effect type="zoom" center="300,978" start="100" end="39" time="300" />
+		  <effect type="slide" end="-460" time="0" />
+	    </animation>
+		<include>PLPosters</include>
+      </control>
+    </focusedlayout>
+    <itemlayout width="420" height="164" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
+	  <control type="group">
+		<posx>-605</posx>
+		<posy>836</posy>
+		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
+      	<include>PosFade</include>
+		<include>PLLogos</include>
+	  </control>
+    </itemlayout>
+    <focusedlayout width="570" height="224" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
+	  <control type="group">
+		<posx>-484</posx>
+		<posy>810</posy>
+		<animation effect="fade" time="200" delay="100" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
+		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false" condition="!Control.IsVisible(528196)">Focus</animation>
+		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)">
+          <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
+          <effect type="slide" end="-150,4" time="0" />
+	    </animation>
+		<include>PLLogos</include>
+      </control>
+    </focusedlayout>
+  </include>
+  
+  <include name="plfixed">
+    <control type="fixedlist" id="528">
+      <include>contents528list</include>
+    </control>
+  </include>
+  <include name="plwrap">
+    <control type="wraplist" id="528">
+	  <include>contents528list</include>
+	</control>
   </include>
   
   <include name="PLPosters">
@@ -227,7 +241,8 @@
 	  <fadetime>300</fadetime>
       <texture>views/logo_back.png</texture>
       <colordiffuse>FF000000</colordiffuse>
-      <animation effect="fade" start="100" end="80" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
+      <animation effect="fade" start="100" end="93" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvlinp)]">Conditional</animation>
+      <animation effect="fade" start="100" end="78" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
     </control>
     <control type="image">
 	  <visible>[Container.Content(movies)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
@@ -287,7 +302,7 @@
           <aligny>justify</aligny>
           <font>Font_Reg24</font>
           <label>$VAR[PLPlot]</label>
-          <autoscroll time="4000" delay="8000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+          <autoscroll time="4000" delay="10000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
         <control type="fadelabel">
           <posx>0</posx>

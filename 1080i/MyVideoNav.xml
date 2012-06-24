@@ -18,7 +18,6 @@
                 <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <imagepath background="true" fallback="special://skin/backgrounds/videos.jpg">$VAR[VideoFanartVar]</imagepath>
                 <animation effect="fade" start="100" end="50" time="800">Hidden</animation>
-                <visible>!Window.IsActive(movieinformation)</visible>
             </control>
             <control type="multiimage">
                 <fadetime>FanartCrossfadeTime</fadetime>
@@ -258,10 +257,17 @@
                     <control type="label">
                         <include>BreadcrumbsLabel</include>
                         <label>$VAR[BreadcrumbsVideoVar]</label>
+                        <visible>Substring(Container.FolderPath,videodb://,left)</visible>
                     </control>
                     <control type="label">
                         <include>BreadcrumbsLabel</include>
                         <label>$INFO[Container.FolderName, / ]</label>
+                        <visible>Substring(Container.FolderPath,videodb://,left)</visible>
+                    </control>
+                    <control type="label">
+                        <include>BreadcrumbsLabel</include>
+                        <label>$INFO[ListItem.Path]</label>
+                        <visible>!Substring(Container.FolderPath,videodb://,left)</visible>
                     </control>
                 </control>
             </control>

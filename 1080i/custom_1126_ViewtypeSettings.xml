@@ -934,7 +934,7 @@
                 <onclick>Skin.ToggleSetting(showcasewrap)</onclick>
                 <include condition="!Window.IsActive(script-Rom_Collection_Browser-main.xml)">ReloadWindowOnClick</include>
                 <usealttexture>Skin.HasSetting(showcasewrap)</usealttexture>
-                <visible>[stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | Stringcompare(Skin.String(actualViewtype),showcasecd)]</visible>
+                <visible>[stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | Stringcompare(Skin.String(actualViewtype),showcasecd) | stringcompare(Skin.String(actualViewtype),posterlite)]</visible>
             </control>
             <control type="radiobutton" id="1635">
                 <description>Switch tri-panels</description>
