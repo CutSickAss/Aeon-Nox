@@ -4699,11 +4699,12 @@
                         <orientation>horizontal</orientation>
                         <itemgap>50</itemgap>
                         <control type="button" id="5032">
-                            <description>Play</description>
+                            <description>Play / Open</description>
                             <label>$LOCALIZE[208]</label>
                             <include>HiddenObject</include>
+                            <onclick condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(music,$ESCINFO[Container(5010).ListItem.Property(Path)],return)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),song)">PlayMedia($ESCINFO[Container(5010).ListItem.Property(Path)])</onclick>
-                            <onclick condition="!Substring(Control.GetLabel(4321),song)">$INFO[Container(5010).ListItem.Property(Path)]</onclick>
+                            <onclick condition="!Substring(Control.GetLabel(4321),song) + !Substring(Control.GetLabel(4321),artist)">$INFO[Container(5010).ListItem.Property(Path)]</onclick>
                             <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
                             <onback>SetFocus(5010)</onback>
                             <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
@@ -5538,6 +5539,7 @@
                                     <posy>15</posy>
                                     <height>320</height>
                                     <width>340</width>
+                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
                                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="image">
@@ -5603,7 +5605,7 @@
                                     <width>400</width>
                                     <height>175</height>
                                     <align>left</align>
-                                    <label>$INFO[ListItem.Property(Album_Description)]</label>
+                                    <label>$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</label>
                                     <font>Font_Condensed20</font>
                                     <include>listcolornofocus</include>
                                     <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -5615,6 +5617,7 @@
                                 <control type="image">
                                     <posx>20</posx>
                                     <posy>15</posy>
+                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
                                     <height>320</height>
                                     <width>340</width>
                                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
@@ -5682,7 +5685,7 @@
                                     <width>400</width>
                                     <height>175</height>
                                     <align>left</align>
-                                    <label>$INFO[ListItem.Property(Album_Description)]</label>
+                                    <label>$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</label>
                                     <font>Font_Condensed20</font>
                                     <include>listcolornofocus</include>
                                     <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>

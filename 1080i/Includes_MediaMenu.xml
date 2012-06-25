@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <!--Max: 1707 -->
     <include name="PlaylistEditorButtons">
@@ -243,6 +243,7 @@
             <onclick condition="Control.IsVisible(514)">Skin.SetString(actualViewtype,episode)</onclick>
             <onclick condition="Control.IsVisible(516)">Skin.SetString(actualViewtype,bigfan)</onclick>
             <onclick condition="Control.IsVisible(517)">Skin.SetString(actualViewtype,stripshow)</onclick>
+            <onclick condition="Control.IsVisible(550)">Skin.SetString(actualViewtype,panel)</onclick>
             <onclick condition="Control.IsVisible(528)">Skin.SetString(actualViewtype,posterlite)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
             <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + Control.IsVisible(3000)">3000</ondown>
