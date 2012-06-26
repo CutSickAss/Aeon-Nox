@@ -35,7 +35,7 @@
                 <posy>-19</posy>
                 <width>549</width>
                 <height>804</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
                 <fadetime>IconCrossfadeTime2</fadetime>
                 <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                 <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
@@ -46,7 +46,7 @@
                 <posy>766</posy>
                 <width>510</width>
                 <height>765</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
                 <colordiffuse>white6</colordiffuse>
                 <fadetime>IconCrossfadeTime2</fadetime>
                 <texture diffuse="thumbs/movieposter_mask_reflect.png" flipy="true" background="true" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
@@ -622,7 +622,7 @@
                     <posy>255</posy>
                     <width>510</width>
                     <height>510</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <fadetime>IconCrossfadeTime2</fadetime>
                     <texture background="true" diffuse="thumbs/cdcover_mask.png" fallback="DefaultAlbumCover.png">$VAR[ListAlbumVar]</texture>
                 </control>
@@ -631,7 +631,7 @@
                     <posy>766</posy>
                     <width>510</width>
                     <height>510</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <fadetime>IconCrossfadeTime2</fadetime>
                     <colordiffuse>white6</colordiffuse>
                     <texture diffuse="thumbs/cdcover_mask_reflect.png" flipy="true" background="true" fallback="DefaultAlbumCover.png">$VAR[ListAlbumVar]</texture>
@@ -642,7 +642,7 @@
                     <posy>235</posy>
                     <width>550</width>
                     <height>550</height>
-                    <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+                    <aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
                     <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_aa.png</texture>
                     <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
                     <bordersize>20</bordersize>

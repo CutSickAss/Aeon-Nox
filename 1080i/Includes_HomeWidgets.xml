@@ -567,7 +567,7 @@
                     <include>Animation_CommonFade</include>
                     <control type="image">
                         <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[VideoPlayer.Cover]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                         <bordersize>9</bordersize>
                         <posx>35</posx>
@@ -582,7 +582,7 @@
                         <width>498</width>
                         <height>287</height>
                         <fadetime>IconCrossfadeTime2</fadetime>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                         <visible>!IsEmpty(VideoPlayer.Cover)</visible>
                         <bordersize>9</bordersize>
@@ -804,7 +804,7 @@
                 <width>380</width>
                 <height>354</height>
                 <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">DefaultArtist.png</imagepath>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
                 <timeperimage>5000</timeperimage>
                 <fadetime>750</fadetime>
                 <randomize>true</randomize>
@@ -816,7 +816,7 @@
                 <width>380</width>
                 <height>354</height>
                 <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
                 <timeperimage>5000</timeperimage>
                 <fadetime>750</fadetime>
                 <randomize>true</randomize>
@@ -936,7 +936,7 @@
                     <posy>684</posy>
                     <height>363</height>
                     <width>363</width>
-                    <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+                    <aspectratio scalediffuse="false" align="right">stretch</aspectratio>
                     <texture diffuse="thumbs/cdcover_mask2.png">thumbs/cdcover_glass_noreflect.png</texture>
                 </control>
             </control>
@@ -969,7 +969,7 @@
                     <posy>664</posy>
                     <height>403</height>
                     <width>403</width>
-                    <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+                    <aspectratio scalediffuse="false" align="right">stretch</aspectratio>
                     <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
                     <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
                     <bordersize>20</bordersize>
@@ -1270,7 +1270,7 @@
                         <width>380</width>
                         <height>354</height>
                         <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Container(5222).ListItem.Icon]</imagepath>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <timeperimage>5000</timeperimage>
                         <fadetime>750</fadetime>
                         <randomize>true</randomize>
@@ -1461,7 +1461,7 @@
                         <posy>0</posy>
                         <width>284</width>
                         <height>394</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <imagepath diffuse="home/weather_diffuse.png">$INFO[Window(Weather).Property(Day0.FanartCode),special://home/addons/weather.fanart.pda.style/media/]</imagepath>
                         <timeperimage>100</timeperimage>
                         <randomize>false</randomize>
@@ -1565,7 +1565,7 @@
                         <posy>0</posy>
                         <width>284</width>
                         <height>394</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <imagepath diffuse="home/weather_diffuse.png">$INFO[Window(Weather).Property(Day1.FanartCode),special://home/addons/weather.fanart.pda.style/media/]</imagepath>
                         <timeperimage>100</timeperimage>
                         <randomize>false</randomize>
@@ -1669,7 +1669,7 @@
                         <posy>0</posy>
                         <width>284</width>
                         <height>394</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <imagepath diffuse="home/weather_diffuse.png">$INFO[Window(Weather).Property(Day2.FanartCode),special://home/addons/weather.fanart.pda.style/media/]</imagepath>
                         <timeperimage>100</timeperimage>
                         <randomize>false</randomize>
@@ -1773,7 +1773,7 @@
                         <posy>0</posy>
                         <width>284</width>
                         <height>394</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <imagepath diffuse="home/weather_diffuse.png">$INFO[Window(Weather).Property(Day3.FanartCode),special://home/addons/weather.fanart.pda.style/media/]</imagepath>
                         <timeperimage>100</timeperimage>
                         <randomize>false</randomize>
@@ -1892,7 +1892,7 @@
                         <posy>0</posy>
                         <width>284</width>
                         <height>394</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <imagepath diffuse="home/weather_diffuse.png">$INFO[Window(weather).Property(Daily.1.FanartCode),special://home/addons/weather.fanart.pda.style/media/]</imagepath>
                         <timeperimage>100</timeperimage>
                         <randomize>false</randomize>
@@ -1998,7 +1998,7 @@
                         <posy>0</posy>
                         <width>284</width>
                         <height>394</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <imagepath diffuse="home/weather_diffuse.png">$INFO[Window(weather).Property(Daily.2.FanartCode),special://home/addons/weather.fanart.pda.style/media/]</imagepath>
                         <timeperimage>100</timeperimage>
                         <randomize>false</randomize>
@@ -2104,7 +2104,7 @@
                         <posy>0</posy>
                         <width>284</width>
                         <height>394</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <imagepath diffuse="home/weather_diffuse.png">$INFO[Window(weather).Property(Daily.3.FanartCode),special://home/addons/weather.fanart.pda.style/media/]</imagepath>
                         <timeperimage>100</timeperimage>
                         <randomize>false</randomize>
@@ -2210,7 +2210,7 @@
                         <posy>0</posy>
                         <width>284</width>
                         <height>394</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <imagepath diffuse="home/weather_diffuse.png">$INFO[Window(weather).Property(Daily.4.FanartCode),special://home/addons/weather.fanart.pda.style/media/]</imagepath>
                         <timeperimage>100</timeperimage>
                         <randomize>false</randomize>
@@ -2409,7 +2409,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -2446,7 +2446,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -2592,7 +2592,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="image">
@@ -2629,7 +2629,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -2939,7 +2939,7 @@
                                 <width>614</width>
                                 <height>340</height>
                                 <texture background="true">$INFO[ListItem.Icon]</texture>
-                                <aspectratio align="center">scale</aspectratio>
+                                <aspectratio align="center">stretch</aspectratio>
                             </control>
                             <control type="image">
                                 <description>black</description>
@@ -2959,7 +2959,7 @@
                                 <width>614</width>
                                 <height>340</height>
                                 <texture background="true">$INFO[ListItem.Icon]</texture>
-                                <aspectratio align="center">scale</aspectratio>
+                                <aspectratio align="center">stretch</aspectratio>
                             </control>
                             <control type="image">
                                 <description>black</description>
@@ -3709,7 +3709,7 @@
                                 <width>614</width>
                                 <height>340</height>
                                 <texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.Icon]</texture>
-                                <aspectratio align="center">scale</aspectratio>
+                                <aspectratio align="center">stretch</aspectratio>
                             </control>
                             <control type="image">
                                 <description>black</description>
@@ -3729,7 +3729,7 @@
                                 <width>614</width>
                                 <height>340</height>
                                 <texture background="true" fallback="DefaultAlbumCover.png">$INFO[ListItem.Icon]</texture>
-                                <aspectratio align="center">scale</aspectratio>
+                                <aspectratio align="center">stretch</aspectratio>
                             </control>
                             <control type="image">
                                 <description>black</description>
@@ -4222,7 +4222,7 @@
                         <width>218</width>
                         <height>340</height>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[Container(5010).ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                     </control>
                     <control type="label">
                         <posx>223</posx>
@@ -4450,7 +4450,7 @@
                         <width>605</width>
                         <height>340</height>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[Container(5010).ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                     </control>
                     <control type="label">
                         <posx>610</posx>
@@ -4603,7 +4603,7 @@
                         <width>340</width>
                         <height>340</height>
                         <texture background="true" fallback="DefaultAlbumCover.png.png">$INFO[Container(5010).ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                     </control>
                     <control type="label">
                         <posx>345</posx>
@@ -4799,7 +4799,7 @@
                         <width>340</width>
                         <height>340</height>
                         <texture background="true" fallback="DefaultAddon.png.png">$INFO[Container(5010).ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                     </control>
                     <control type="label">
                         <posx>345</posx>
@@ -4974,7 +4974,7 @@
                                 <width>218</width>
                                 <height>340</height>
                                 <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                                <aspectratio>scale</aspectratio>
+                                <aspectratio>stretch</aspectratio>
                             </control>
                             <control type="image">
                                 <posx>5</posx>
@@ -4995,7 +4995,7 @@
                                 <width>218</width>
                                 <height>340</height>
                                 <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                                <aspectratio>scale</aspectratio>
+                                <aspectratio>stretch</aspectratio>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -5016,7 +5016,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAlbumCover.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -5053,7 +5053,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAlbumCover.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -5104,7 +5104,7 @@
                                     <width>389</width>
                                     <height>340</height>
                                     <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
-                                    <aspectratio>scale</aspectratio>
+                                    <aspectratio>stretch</aspectratio>
                                 </control>
                                 <control type="image">
                                     <description>black</description>
@@ -5162,7 +5162,7 @@
                                     <width>389</width>
                                     <height>340</height>
                                     <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
-                                    <aspectratio>scale</aspectratio>
+                                    <aspectratio>stretch</aspectratio>
                                 </control>
                                 <control type="image">
                                     <description>black</description>
@@ -5261,7 +5261,7 @@
                                 <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                                 <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                                 <bordersize>19.5</bordersize>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
                             </control>
                     <control type="label">
                         <posx>200</posx>
@@ -5377,7 +5377,7 @@
                             <control type="group">
                                 <control type="image">
                                     <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                                     <bordersize>9</bordersize>
                                     <posx>15</posx>
@@ -5392,7 +5392,7 @@
                                     <width>455</width>
                                     <height>297</height>
                                     <fadetime>IconCrossfadeTime2</fadetime>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                                     <bordersize>9</bordersize>
                                 </control>
@@ -5452,7 +5452,7 @@
                             <control type="group">
                                 <control type="image">
                                     <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                                     <bordersize>9</bordersize>
                                     <posx>15</posx>
@@ -5467,7 +5467,7 @@
                                     <width>455</width>
                                     <height>297</height>
                                     <fadetime>IconCrossfadeTime2</fadetime>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                                     <bordersize>9</bordersize>
                                 </control>
@@ -5539,7 +5539,7 @@
                                     <posy>15</posy>
                                     <height>320</height>
                                     <width>340</width>
-                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                    <aspectratio scalediffuse="false" align="center">stretch</aspectratio>
                                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="image">
@@ -5547,7 +5547,7 @@
                                     <posy>-5</posy>
                                     <height>360</height>
                                     <width>380</width>
-                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                    <aspectratio scalediffuse="false" align="center">stretch</aspectratio>
                                     <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
                                     <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
                                     <bordersize>20</bordersize>
@@ -5617,7 +5617,7 @@
                                 <control type="image">
                                     <posx>20</posx>
                                     <posy>15</posy>
-                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                    <aspectratio scalediffuse="false" align="center">stretch</aspectratio>
                                     <height>320</height>
                                     <width>340</width>
                                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
@@ -5627,7 +5627,7 @@
                                     <posy>-5</posy>
                                     <height>360</height>
                                     <width>380</width>
-                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                    <aspectratio scalediffuse="false" align="center">stretch</aspectratio>
                                     <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
                                     <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
                                     <bordersize>20</bordersize>
