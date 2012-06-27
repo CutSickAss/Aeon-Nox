@@ -9,7 +9,8 @@
         <control type="group">
             <animation effect="slide" start="-729,0" end="0,0" time="400" easing="out" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" start="0,0" end="-729,0" time="400" easing="out" tween="quadratic">WindowClose</animation>
-            <animation effect="slide" start="0,0" end="-729,0" time="400" easing="out" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml) | Window.IsVisible(script-Actors-DialogInfo.xml)">Conditional</animation>
+            <animation effect="slide" start="-729,0" end="0,0" time="400" easing="out" tween="quadratic" condition="!Window.IsVisible(script-Actors-DialogVideoInfo.xml)|!Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="-729,0" time="400" easing="out" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml)|Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
             <control type="image">
                 <description>Cover image</description>
                 <posx>0</posx>
@@ -45,7 +46,8 @@
         <control type="group">
             <animation effect="slide" start="1192,0" end="0,0" time="400" easing="out" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" start="0,0" end="1192,0" time="400" easing="out" tween="quadratic">WindowClose</animation>
-            <animation effect="slide" start="0,0" end="1192,0" time="400" easing="out" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml) | Window.IsVisible(script-Actors-DialogInfo.xml)">Conditional</animation>
+            <animation effect="slide" start="1192,0" end="0,0" time="400" easing="out" tween="quadratic" condition="!Window.IsVisible(script-Actors-DialogVideoInfo.xml)|!Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="1192,0" time="400" easing="out" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml)|Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
             <control type="image">
                 <description>background image</description>
                 <posx>729</posx>
@@ -1260,6 +1262,7 @@
                     <width>750</width>
                     <height>60</height>
                     <texture>osd/osd_settings_buttonnf.png</texture>
+					<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 </control>
                 <control type="label" id="1">
                     <posx>0</posx>
@@ -1307,6 +1310,7 @@
                     <onback>5000</onback>
                     <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, medianame=$ESCINFO[ListItem.TVShowTitle])</onclick>
                     <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader,mode=gui,mediatype=movie,medianame=$ESCINFO[ListItem.Title],mediapath=$ESCINFO[ListItem.Path])</onclick>
+					<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <onclick>SetFocus(5000)</onclick>
                 </control>
                 <control type="button" id="5053">
@@ -1330,7 +1334,8 @@
                     <onright>5052</onright>
                     <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mediatype=tvshow, medianame=$ESCINFO[ListItem.TVShowTitle])</onclick>
                     <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mediatype=movie, medianame=$ESCINFO[ListItem.Title],mediapath=$ESCINFO[ListItem.Path])</onclick>
-                    <onclick>SetFocus(5000)</onclick>
+					<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                   <onclick>SetFocus(5000)</onclick>
                 </control>
             </control>
             <control type="image">

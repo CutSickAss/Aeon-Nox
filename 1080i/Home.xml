@@ -83,6 +83,7 @@
         </control>
         <!-- Home Fullscreen Video -->
         <include>CommonMediaPlayingBackground</include>
+        <include condition="Substring(Skin.String(backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         <control type="group">
             <visible>Skin.HasSetting(Glowbar_Home)</visible>
             <include>Animation_VisibleChange400</include>
@@ -303,8 +304,8 @@
             </control>
         </control>
         <!--Weather info-->
-        <include condition="!Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin) + SubString(Skin.String(widgetlist),weather)">Weather_Widget_Standard</include>
-        <include condition="Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin) + SubString(Skin.String(widgetlist),weather)">Weather_Widget_Plus</include>
+        <include condition="!Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin) + [SubString(Skin.String(widgetlist),weather) | SubString(Skin.String(widget2list),weather)]">Weather_Widget_Standard</include>
+        <include condition="Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin) + [SubString(Skin.String(widgetlist),weather) | SubString(Skin.String(widget2list),weather)]">Weather_Widget_Plus</include>
         <!-- Music Info -->
         <include condition="!Skin.HasSetting(nohomepageMusicinfo) | !Skin.HasSetting(homepageVideoinfo)">Furniture_HomeNowPlaying</include>
         <control type="group">

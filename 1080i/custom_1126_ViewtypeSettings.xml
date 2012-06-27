@@ -584,10 +584,12 @@
                 <description>Toggle Logo</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[41159]: [COLOR=$VAR[SelectedColorVar]]$VAR[LandscapeTypeLabelVar][/COLOR]</label>
-                <onclick condition="!Skin.HasSetting(landscapelogo) + !Skin.HasSetting(landscapeonelogo)">Skin.SetBool(landscapeonelogo)</onclick>
+                <onclick condition="!Skin.HasSetting(landscapelogo) + !Skin.HasSetting(landscapeonelogo) + !Skin.HasSetting(landscapeclearart)">Skin.SetBool(landscapeonelogo)</onclick>
                 <onclick condition="Skin.HasSetting(landscapeonelogo)">Skin.SetBool(landscapelogo)</onclick>
                 <onclick condition="Skin.HasSetting(landscapeonelogo)">Skin.Reset(landscapeonelogo)</onclick>
+                <onclick condition="Skin.HasSetting(landscapelogo)">Skin.SetBool(landscapeclearart)</onclick>
                 <onclick condition="Skin.HasSetting(landscapelogo)">Skin.Reset(landscapelogo)</onclick>
+                <onclick condition="Skin.HasSetting(landscapeclearart)">Skin.Reset(landscapeclearart)</onclick>
                 <visible>[Container.Content(tvshows) | Container.Content(movies)] + stringcompare(Skin.String(actualViewtype),landscape)</visible>
             </control>
             <control type="radiobutton" id="1636">
@@ -629,7 +631,7 @@
                 <selected>Skin.HasSetting(unwatchedicon)</selected>
                 <enable>![stringcompare(Skin.String(actualViewtype),posterlite) + [[Container.Content(tvshows) + [Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)]]|[Container.Content(movies) + [Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)]]]]</enable>
                 <visible>![stringcompare(Skin.String(actualViewtype),landscape) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
-                <visible>[[stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),wall) | Stringcompare(Skin.String(actualViewtype),addonwall) | Stringcompare(Skin.String(actualViewtype),episode) | Stringcompare(Skin.String(actualViewtype),posterlite)] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(tripanelbanner) + StringCompare(Skin.String(actualViewtype),tripanel)]]</visible>
+                <visible>[[stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),wall) | Stringcompare(Skin.String(actualViewtype),addonwall) | Stringcompare(Skin.String(actualViewtype),episode) | Stringcompare(Skin.String(actualViewtype),posterlite) |  [Stringcompare(Skin.String(actualViewtype),panel) + Skin.HasSetting(panellogo)]] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(tripanelbanner) + StringCompare(Skin.String(actualViewtype),tripanel)]]</visible>
             </control>
             <control type="radiobutton" id="1643">
                 <description>Clear Cases</description>
