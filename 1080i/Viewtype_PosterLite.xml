@@ -18,7 +18,7 @@
       <posx>700</posx>
       <posy>124</posy>
       <animation effect="slide" start="1000,0" end="0,0" time="500" delay="800" tween="quadratic" easing="out" reversible="false">Visible</animation>
-      <visible>Player.HasVideo+!Window.IsVisible(busydialog)+!VideoPlayer.IsFullscreen+!Skin.HasSetting(fstrailer)</visible>
+      <visible>Player.HasVideo+!Window.IsVisible(busydialog)+!Window.IsVisible(DialogBusy.xml)+!Window.IsVisible(progressdialog)+!VideoPlayer.IsFullscreen+!Skin.HasSetting(fstrailer)</visible>
       <control type="image">
         <width>1028</width>
         <height>590</height>
