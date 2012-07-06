@@ -27,7 +27,7 @@
         <width>225</width>
         <height>338</height>
         <align>center</align>
-        <aspectratio scalediffuse="false">stretch</aspectratio>
+        <aspectratio scalediffuse="false">scale</aspectratio>
     </include>
     <include name="MovieShowcaseThumbReflectionMainCases">
         <posx>92</posx>
@@ -35,7 +35,7 @@
         <width>225</width>
         <height>338</height>
         <colordiffuse>52FFFFFF</colordiffuse>
-        <aspectratio scalediffuse="false">stretch</aspectratio>
+        <aspectratio scalediffuse="false">scale</aspectratio>
     </include>
     <include name="MovieShowcaseThumbReflectionCasesCover">
         <posx>92</posx>

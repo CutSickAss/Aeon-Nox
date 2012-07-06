@@ -358,6 +358,12 @@
                         <onclick>Skin.ToggleSetting(DisableInfoPanelVL)</onclick>
                         <selected>!Skin.HasSetting(DisableInfoPanelVL)</selected>
                     </control>
+                    <control type="radiobutton" id="599">
+                        <label>$LOCALIZE[31972]</label>
+                        <include>Default_SettingRadioButtonShort</include>
+                        <onclick>Skin.ToggleSetting(DisablePosterLiteVL)</onclick>
+                        <selected>!Skin.HasSetting(DisablePosterLiteVL)</selected>
+                    </control>
                 </control>
             </control>
         </control>
