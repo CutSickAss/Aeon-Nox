@@ -2245,7 +2245,7 @@
                         <aligny>center</aligny>
                         <font>Font_ShowcaseMainLabel2_Caps</font>
                         <scroll>true</scroll>
-                        <scrollspeed>50</scrollspeed>
+                        <scrollspeed>30</scrollspeed>
                         <textcolor>floor</textcolor>
                         <shadowcolor>floorshadow</shadowcolor>
                         <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
@@ -2598,7 +2598,7 @@
                     <include>Animation_CommonFade</include>
                     <font>Font_ShowcaseMainLabel2_Caps</font>
                     <scroll>true</scroll>
-                    <scrollspeed>50</scrollspeed>
+                    <scrollspeed>30</scrollspeed>
                     <textcolor>floor</textcolor>
                     <shadowcolor>floorshadow</shadowcolor>
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
@@ -3179,6 +3179,12 @@
                         <description>View As button</description>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <label>137</label>
+                        <label2></label2>
+                    </control>
+                    <control type="button" id="4001">
+                        <description>View As button</description>
+                        <include>Objects_MediaMenuButtonAlt</include>
+                        <label>Missing info filter</label>
                         <label2></label2>
                     </control>
                     <control type="radiobutton" id="1000">

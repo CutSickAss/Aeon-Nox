@@ -22,7 +22,6 @@
         <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">dialogeffect</include>
     </include>
     <include name="Breadcrumbs_BackBar">
-        <animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(528109)">Conditional</animation>
         <control type="group">
             <visible>!Skin.HasSetting(ClassicTopBar) + !Skin.HasSetting(disabletopbar)</visible>
             <control type="image">
@@ -109,7 +108,7 @@
                         <label>[COLOR a8FFFFFF]$INFO[MusicPlayer.Artist][/COLOR]</label>
                         <label>[COLOR white2]$INFO[MusicPlayer.Title][/COLOR]</label>
                         <scrollout>false</scrollout>
-                        <scrollspeed>50</scrollspeed>
+                        <scrollspeed>20</scrollspeed>
                         <pauseatend>7000</pauseatend>
                         <visible>Player.HasAudio</visible>
                     </control>
@@ -125,7 +124,7 @@
                         <label>[COLOR a8FFFFFF]$INFO[Videoplayer.TVShowTitle][/COLOR]</label>
                         <label>[COLOR white2]$INFO[Videoplayer.Title][/COLOR]</label>
                         <scrollout>false</scrollout>
-                        <scrollspeed>50</scrollspeed>
+                        <scrollspeed>20</scrollspeed>
                         <pauseatend>7000</pauseatend>
                         <visible>!IsEmpty(Videoplayer.TVShowTitle) + Player.HasVideo</visible>
                     </control>
@@ -140,7 +139,7 @@
                         <scroll>true</scroll>
                         <label>$INFO[Videoplayer.Title]</label>
                         <scrollout>false</scrollout>
-                        <scrollspeed>50</scrollspeed>
+                        <scrollspeed>20</scrollspeed>
                         <pauseatend>7000</pauseatend>
                         <visible>IsEmpty(Videoplayer.TVShowTitle) + Player.HasVideo + IsEmpty(VideoPlayer.ChannelName)</visible>
                     </control>
@@ -156,7 +155,7 @@
                         <label>$INFO[Videoplayer.Title]</label>
                         <label>$INFO[Videoplayer.ChannelName]</label>
                         <scrollout>false</scrollout>
-                        <scrollspeed>50</scrollspeed>
+                        <scrollspeed>20</scrollspeed>
                         <pauseatend>7000</pauseatend>
                         <visible>Player.HasVideo + !IsEmpty(VideoPlayer.ChannelName)</visible>
                     </control>
@@ -195,7 +194,7 @@
                 <headlinecolor>$VAR[BreadCrumbsContentColorVar]</headlinecolor>
                 <highlightcolor>$VAR[BreadCrumbsContentColorVar]</highlightcolor>
                 <titlecolor>FFFFFFFF</titlecolor>
-                <scrollspeed>50</scrollspeed>
+                <scrollspeed>20</scrollspeed>
             </control>
         </control>
     </include>
@@ -311,7 +310,7 @@
                     <visible>true</visible>
                     <posx>0</posx>
                     <posy>0</posy>
-                    <width>1882</width>
+                    <width>1855</width>
                     <align>right</align>
                     <aligny>center</aligny>
                     <orientation>horizontal</orientation>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <!--Max: 1707 -->
     <include name="PlaylistEditorButtons">
@@ -245,13 +245,11 @@
             <onclick condition="Control.IsVisible(517)">Skin.SetString(actualViewtype,stripshow)</onclick>
             <onclick condition="Control.IsVisible(518)">Skin.SetString(actualViewtype,fspanel)</onclick>
             <onclick condition="Control.IsVisible(550)">Skin.SetString(actualViewtype,panel)</onclick>
-            <onclick condition="Control.IsVisible(528)">Skin.SetString(actualViewtype,posterlite)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
             <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + Control.IsVisible(3000)">3000</ondown>
         </control>
     </include>
     <include name="Media_Menu_Tooltip">
-        <animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(528109)">Conditional</animation>
         <control type="group">
             <posx>-12</posx>
             <posy>-38</posy>
@@ -286,7 +284,7 @@
                     <posy>527</posy>
                     <width>25</width>
                     <height>25</height>
-                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(script-NextAired-TVGuide.xml) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | Control.IsVisible(528) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
+                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(script-NextAired-TVGuide.xml) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
                     <animation effect="rotate" start="0" end="-180" center="auto" delay="300" time="800" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                     <animation effect="rotate" start="-90" end="180" center="auto" delay="300" time="800" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
                     <texture>common/arrowleft.png</texture>
@@ -487,7 +485,7 @@
                         <onleft>Skin.Reset(viewtypeselect)</onleft>
                         <onleft>ActivateWindow(1121)</onleft>
                         <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
-                        <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500) + !Control.IsVisible(528)">SetFocus(50)</onclick>
+                        <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onclick>
                         <onclick condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
                         <textureradiofocus>common/logo_trailer.png</textureradiofocus>
                         <textureradionofocus>common/logo_trailer.png</textureradionofocus>
@@ -665,34 +663,34 @@
                 <control type="button">
                     <width>75</width>
                     <height>75</height>
-                    <texturenofocus>BigIcons/ButtonFirst.png</texturenofocus>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonFirst.png</texturenofocus>
                 </control>
                 <control type="button">
                     <width>75</width>
                     <height>75</height>
-                    <texturenofocus>BigIcons/ButtonFRW.png</texturenofocus>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonFRW.png</texturenofocus>
                 </control>
                 <control type="togglebutton">
                     <width>75</width>
                     <height>75</height>
-                    <texturenofocus>BigIcons/ButtonPause.png</texturenofocus>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
                     <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                    <alttexturenofocus>BigIcons/ButtonPlay.png</alttexturenofocus>
+                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
                 </control>
                 <control type="button">
                     <width>75</width>
                     <height>75</height>
-                    <texturenofocus>BigIcons/ButtonStop.png</texturenofocus>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
                 </control>
                 <control type="button">
                     <width>75</width>
                     <height>75</height>
-                    <texturenofocus>BigIcons/ButtonFFW.png</texturenofocus>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonFFW.png</texturenofocus>
                 </control>
                 <control type="button">
                     <width>75</width>
                     <height>75</height>
-                    <texturenofocus>BigIcons/ButtonEnd.png</texturenofocus>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonEnd.png</texturenofocus>
                 </control>
             </control>
             <control type="grouplist" id="3000">
@@ -714,7 +712,7 @@
                     <label>210</label>
                     <font>-</font>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                    <texturefocus>BigIcons/ButtonFirst.png</texturefocus>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonFirst.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <onclick>PlayerControl(Previous)</onclick>
                 </control>
@@ -724,7 +722,7 @@
                     <label>31354</label>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
                     <font>-</font>
-                    <texturefocus>BigIcons/ButtonFRW.png</texturefocus>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonFRW.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <onclick>PlayerControl(Rewind)</onclick>
                 </control>
@@ -734,11 +732,11 @@
                     <label>31351</label>
                     <altlabel>208</altlabel>
                     <font>-</font>
-                    <texturefocus>BigIcons/ButtonPause.png</texturefocus>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                    <alttexturefocus>BigIcons/ButtonPlay.png</alttexturefocus>
-                    <alttexturenofocus>BigIcons/ButtonPlay.png</alttexturenofocus>
+                    <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
+                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
                     <onclick>PlayerControl(Play)</onclick>
                 </control>
@@ -747,7 +745,7 @@
                     <height>75</height>
                     <label>31352</label>
                     <font>-</font>
-                    <texturefocus>BigIcons/ButtonStop.png</texturefocus>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonStop.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
                     <onclick>down</onclick>
@@ -759,7 +757,7 @@
                     <label>31353</label>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
                     <font>-</font>
-                    <texturefocus>BigIcons/ButtonFFW.png</texturefocus>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonFFW.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <onclick>PlayerControl(Forward)</onclick>
                 </control>
@@ -769,7 +767,7 @@
                     <label>209</label>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
                     <font>-</font>
-                    <texturefocus>BigIcons/ButtonEnd.png</texturefocus>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonEnd.png</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <onclick>PlayerControl(Next)</onclick>
                 </control>
