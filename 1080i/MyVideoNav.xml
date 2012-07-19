@@ -6,7 +6,7 @@
     <onload condition="System.HasAddon(script.tv.show.next.aired) + IsEmpty(Window(Home).Property(DontRunTVShowScripts)) + !Skin.HasSetting(NextAiredInfo)">RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload condition="[System.GetBool(videolibrary.groupmoviesets) | SubString(Container.FolderPath,videodb://1/7/)] + System.HasAddon(script.moviesets)">XBMC.RunScript(script.moviesets,containerId=3000)</onload>
     <onload>ClearProperty(BrowseActors,home)</onload>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
+    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include><include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
     <allowoverlay>no</allowoverlay>
     <views>50,52,53,57,500,501,503,504,550,508,509,510,511,512,514,516,518,528</views>
     <controls>
@@ -46,9 +46,8 @@
             <include>DelayAnimations</include>
         </control>
         <control type="image">
-            <posy>-207</posy>
-            <width>1920</width>
-            <height>1080</height>
+            <include>FullscreenDimensions</include>
+
             <texture>common/black.png</texture>
             <colordiffuse>aaffffff</colordiffuse>
             <animation effect="fade" time="250">WindowOpen</animation>
@@ -56,18 +55,8 @@
             <animation effect="fade" start="0" end="100" time="400" delay="100">Visible</animation>
             <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
             <visible>!Control.IsVisible(5999)</visible>
-            <visible>!Control.IsVisible(514) + !Control.IsVisible(516) + !Control.IsVisible(511) + !Control.IsVisible(518) + !Control.IsVisible(528)</visible>
+            <visible>!Control.IsVisible(514) + !Control.IsVisible(516) + !Control.IsVisible(511) + !Control.IsVisible(518)</visible>
             <visible>[[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550)]]</visible>
-        </control>
-        <control type="image">
-            <posy>0</posy>
-            <width>1920</width>
-            <height>1080</height>
-            <texture>common/black.png</texture>
-            <colordiffuse>aaffffff</colordiffuse>
-            <animation effect="fade" start="0" end="100" time="400" delay="100">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
-            <visible>Control.IsVisible(528) + [Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)]</visible>
         </control>
         <control type="image" id="5999">
             <include>FullscreenDimensions</include>

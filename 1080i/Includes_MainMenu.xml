@@ -1590,7 +1590,7 @@
         <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
     </include>
     <include name="MainMenuListContent">
-        <hitrect x="75" y="75" w="495" h="930" />
+        <hitrect x="-238" y="475" w="2400" h="130" />
         <posx>-338</posx>
         <posy>450</posy>
         <width>3069</width>
@@ -1951,6 +1951,7 @@
         <viewtype>list</viewtype>
         <orientation>horizontal</orientation>
         <focusposition>2</focusposition>
+        <hitrect x="-238" y="0" w="2400" h="130" />
         <scrolltime tween="quadratic" easing="out">300</scrolltime>
         <onup>9000</onup>
         <onback>SetFocus(9000)</onback>
@@ -2085,7 +2086,6 @@
         <height>225</height>
         <onleft>9000</onleft>
         <onright>9000</onright>
-        <onup condition="!Player.HasAudio">Notification($LOCALIZE[42002],$LOCALIZE[42015])</onup>
         <onup>ActivateWindow(1120)</onup>
         <ondown condition="Control.IsVisible(9001)">9010</ondown>
         <pagecontrol>-</pagecontrol>
@@ -2447,7 +2447,6 @@
             <item id="101">
                 <label fallback="CUSTOM1">$INFO[Skin.String(CustomHomeItem1.Label)]</label>
                 <onclick>Skin.SetString(MenuItem,CustomHomeItem1)</onclick>
-                <onclick>Skin.SetBool(CustomHomeItem1.Enable)</onclick>
                 <onclick>ActivateWindow(1122)</onclick>
                 <icon fallback="special://skin/backgrounds/playlist/">$INFO[Skin.String(CustomHomeItem1.MultiFanart)]</icon>
                 <property name="Widget">$INFO[Skin.String(CustomHomeItem1.Widget)]</property>
@@ -2460,6 +2459,7 @@
             <item id="101">
                 <label fallback="CUSTOM1">$INFO[Skin.String(CustomHomeItem1.Label)]</label>
                 <onclick>Skin.SetString(MenuItem,CustomHomeItem1)</onclick>
+                <onclick>Skin.SetBool(CustomHomeItem1.Enable)</onclick>
                 <onclick>ActivateWindow(1122)</onclick>
                 <icon fallback="special://skin/backgrounds/playlist/">$INFO[Skin.String(CustomHomeItem1.MultiFanart)]</icon>
                 <property name="DisableIcon">close.png</property>

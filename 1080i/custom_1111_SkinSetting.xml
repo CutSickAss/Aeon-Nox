@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="1111">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
+    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include><include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
     <animation type="WindowOpen" reversible="false" condition="![Window.Previous(10004)|Window.Previous(1116)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
         <effect type="fade" start="0" end="100" time="300" />
@@ -195,6 +195,12 @@
                         <label>$LOCALIZE[31600]</label>
                         <onclick>ActivateWindow(1124)</onclick>
                     </control>
+                    <control type="button" id="457">
+                        <description>Timepanel high</description>
+                        <label>42277</label>
+                        <include>Default_SettingButton</include>
+                        <onclick>ActivateWindow(1158)</onclick>
+                    </control>
                     <control type="button" id="453">
                         <description>Color selector</description>
                         <label>$LOCALIZE[31610]</label>
@@ -256,7 +262,8 @@
                         <focusedcolor>white</focusedcolor>
                         <textoffsetx>30</textoffsetx>
                         <aligny>center</aligny>
-                        <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=Aeon Nox Git 3.something How-to/Demo,return)</onclick>                    <visible>Container(9000).Hasfocus(8)</visible>
+                    <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search="Aeon Nox 3.5 Tutorial",return)</onclick>
+                        <visible>Container(9000).Hasfocus(8)</visible>
                     </control>
                <control type="grouplist" id="9004">
                     <visible>Container(9000).Hasfocus(8)</visible>
@@ -382,6 +389,20 @@
                         <onclick>Addon.OpenSettings(script.tv.show.next.aired)</onclick>
                         <visible>System.HasAddon(script.tv.show.next.aired)</visible>
                     </control>
+                    <control type="button" id="436">
+                        <label>script.rssclient</label>
+                        <label2>[COLOR FFFF0000]$LOCALIZE[106][/COLOR]</label2>
+                        <include>Default_SettingRadioButtonShort</include>
+                        <onclick>-</onclick>
+                        <visible>!System.HasAddon(script.rssclient)</visible>
+                    </control>
+                    <control type="button" id="437">
+                        <label>script.rssclient</label>
+                        <label2>[COLOR FF00FF00]$LOCALIZE[107][/COLOR]</label2>
+                        <include>Default_SettingRadioButtonShort</include>
+                        <onclick>Addon.OpenSettings(script.rssclient)</onclick>
+                        <visible>System.HasAddon(script.rssclient)</visible>
+                    </control>
                  </control>
                <control type="grouplist" id="9009">
                     <visible>Container(9000).Hasfocus(8)</visible>
@@ -492,6 +513,20 @@
                         <include>Default_SettingRadioButtonShort</include>
                         <onclick>Addon.OpenSettings(script.moviesets)</onclick>
                         <visible>System.HasAddon(script.moviesets)</visible>
+                    </control>
+                  <control type="button" id="425">
+                        <label>script.song-to-musicvideo</label>
+                        <label2>[COLOR FFFF0000]$LOCALIZE[106][/COLOR]</label2>
+                        <include>Default_SettingRadioButtonShort</include>
+                        <onclick>-</onclick>
+                        <visible>!System.HasAddon(script.song-to-musicvideo)</visible>
+                    </control>
+                    <control type="button" id="426">
+                        <label>script.song-to-musicvideo</label>
+                        <label2>[COLOR FF00FF00]$LOCALIZE[107][/COLOR]</label2>
+                        <include>Default_SettingRadioButtonShort</include>
+                        <onclick>Addon.OpenSettings(script.song-to-musicvideo)</onclick>
+                        <visible>System.HasAddon(script.song-to-musicvideo)</visible>
                     </control>
                 </control>
                 

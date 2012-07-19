@@ -553,6 +553,7 @@
                 <include>Media_Menu_NowPlaying</include>
             </control>
         </control>
+
         <control type="button" id="9000">
             <include>HiddenObject</include>
             <visible>Skin.HasSetting(kioskmode)</visible>
@@ -564,6 +565,18 @@
             <onfocus condition="!Skin.HasSetting(fstrailer)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
             <onfocus condition="Skin.HasSetting(fstrailer)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
             <onfocus>SetFocus(50)</onfocus>
+        </control>
+        <control type="button">
+            <include>HiddenObject</include>
+            <visible>!Skin.HasSetting(kioskmode)</visible>
+               <hitrect x="0" y="0" w="50" h="1080" />
+            <onfocus>SetFocus(9000)</onfocus>
+        </control>
+        <control type="button">
+            <include>HiddenObject</include>
+            <visible>!Skin.HasSetting(kioskmode)</visible>
+               <hitrect x="50" y="0" w="1870" h="10" />
+            <onfocus>ActivateWindow(playercontrols)</onfocus>
         </control>
     </include>
     <include name="Media_Menu_NowPlaying">
@@ -712,7 +725,7 @@
                 <height>75</height>
                 <label>210</label>
                 <font>-</font>
-                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
                 <texturefocus>special://skin/extras/BigIcons/ButtonFirst.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <onclick>PlayerControl(Previous)</onclick>
@@ -721,7 +734,7 @@
                 <width>75</width>
                 <height>75</height>
                 <label>31354</label>
-                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
                 <font>-</font>
                 <texturefocus>special://skin/extras/BigIcons/ButtonFRW.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
@@ -738,7 +751,7 @@
                 <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
                 <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
                 <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
                 <onclick>PlayerControl(Play)</onclick>
             </control>
             <control type="button" id="603">
@@ -748,7 +761,7 @@
                 <font>-</font>
                 <texturefocus>special://skin/extras/BigIcons/ButtonStop.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
-                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
                 <onclick>down</onclick>
                 <onclick>PlayerControl(Stop)</onclick>
             </control>
@@ -756,7 +769,7 @@
                 <width>75</width>
                 <height>75</height>
                 <label>31353</label>
-                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
                 <font>-</font>
                 <texturefocus>special://skin/extras/BigIcons/ButtonFFW.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
@@ -766,7 +779,7 @@
                 <width>75</width>
                 <height>75</height>
                 <label>209</label>
-                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
                 <font>-</font>
                 <texturefocus>special://skin/extras/BigIcons/ButtonEnd.png</texturefocus>
                 <texturenofocus>-</texturenofocus>

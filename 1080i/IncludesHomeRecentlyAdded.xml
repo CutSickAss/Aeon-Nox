@@ -140,15 +140,7 @@
             <visible>![Skin.HasSetting(DisableWidgets) + Window.IsActive(home)]</visible>
             <visible>![IsEmpty(Control.GetLabel(4323)) + Window.IsActive(home) + Substring(Control.GetLabel(4321),custom) + [Container(9000).HasFocus(101) | Container(9000).HasFocus(102) | Container(9000).HasFocus(103) | Container(9000).HasFocus(104) | Container(9000).HasFocus(105) | Container(9000).HasFocus(106) | Container(9000).HasFocus(107) | Container(9000).HasFocus(108) | Container(9000).HasFocus(109)]]</visible>
             <visible>!Substring(Control.GetLabel(4321),weather) + !Substring(Control.GetLabel(4321),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4321),panel) + !IsEmpty(Control.GetLabel(4321))</visible>
-            <animation type="Visible" reversible="true">
-                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="300" />
-            </animation>
-            <animation type="Hidden" reversible="true">
-                <effect type="fade" start="100" end="0" time="300" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
-            </animation>
-            <include>VisibleFadeEffect</include>
+            <include>Animation_Widgets</include>
             <animation effect="slide" start="0,0" end="0,-270" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" time="200" start="0,0" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
             <!--Unfocused widget-->
@@ -327,7 +319,7 @@
                         <fadetime>800</fadetime>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
-                        <visible>Substring(Control.GetLabel(4321),tv)</visible>
+                        <visible>Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),rss)</visible>
                     </control>
                     <control type="image">
                         <texture background="true" fallback="DefaultVideoCover.png">$INFO[Container(8000).ListItem.Property(Fanart)]</texture>
@@ -346,7 +338,7 @@
                 </control>
                 <control type="group">
                     <visible>Stringcompare(Control.GetLabel(4321),system)</visible>
-                    <include condition="Substring(Skin.String(widgetlist),system) | Window.IsActive(1124)">HomeSystemWidget</include>
+                    <include condition="Substring(Skin.String(widgetlist),system)">HomeSystemWidget</include>
                 </control>
                 <control type="label">
                     <description>Title label</description>
@@ -507,7 +499,7 @@
             <control type="group">
                 <description>Recently Added Widget Series</description>
                 <visible>Control.HasFocus(8000)</visible>
-                <visible>Substring(Control.GetLabel(4321),tv)</visible>
+                <visible>Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),rss)</visible>
                 <posx>-3050</posx>
                 <posy>-16</posy>
                 <animation effect="slide" start="0,0" end="1530,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(8000)">Conditional</animation>
@@ -596,6 +588,19 @@
                     <height>287</height>
                     <fadetime>IconCrossfadeTime</fadetime>
                     <info>Container(8000).ListItem.Thumb</info>
+                    <visible>!Substring(Control.GetLabel(4321),rss)</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" diffuse="thumbs/multiplex_tvmask.png">DefaultVideoCover.png</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <bordersize>9</bordersize>
+                    <posx>-9</posx>
+                    <posy>77</posy>
+                    <width>498</width>
+                    <height>287</height>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <info>Container(8000).ListItem.Icon</info>
+                    <visible>Substring(Control.GetLabel(4321),rss)</visible>
                 </control>
                 <control type="image">
                     <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
@@ -808,13 +813,11 @@
                     <onleft>8993</onleft>
                     <onright condition="SubString(Control.GetLabel(4321),random) + IsEmpty(Container(8000).ListItem.Property(Trailer))">XBMC.RunScript(script.randomitems,limit=16&amp;unplayed=True)</onright>
                     <onright condition="!IsEmpty(Container(8000).ListItem.Property(Trailer))">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onright>
-                    <onup condition="Substring(Container(9000).ListItem.Property(Widget),weather) + Skin.HasSetting(lowermainmenu)">ActivateWindow(weather)</onup>
-                    <onup condition="Substring(Container(9000).ListItem.Property(Widget),system) + Skin.HasSetting(lowermainmenu)">ActivateWindow(settings)</onup>
-                    <onup condition="Control.IsVisible(6000)">6000</onup>
-                    <onup condition="Control.IsVisible(7998) + Skin.HasSetting(lowermainmenu)">CancelAlarm(Widget2Move,true)</onup>
-                    <onup condition="Control.IsVisible(7998) + Skin.HasSetting(lowermainmenu)">SetFocus(7000,0)</onup>
-                    <onup condition="Control.IsVisible(7998) + Skin.HasSetting(lowermainmenu)">7000</onup>
-                    <onup>8000</onup>
+                    <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(4445)</onup>
+                    <onup condition="!Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
+                    <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu) + IsEmpty(Window(Home).Property(PanelWidgetInfo))">SetProperty(PanelWidgetInfo,True,Home)</onup>
+                    <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu) + IsEmpty(Window(Home).Property(PanelWidgetInfo))">SetFocus(5014)</onup>
+                    <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(Home).Property(PanelWidgetInfo))">ClearProperty(PanelWidgetInfo,Home)</onup>
                     <ondown>8000</ondown>
                     <onback>8993</onback>
                     <viewtype label="535">list</viewtype>
@@ -870,51 +873,57 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <include condition="Substring(Skin.String(widgetlist),recentmovies ) | Window.IsActive(1124)">LatestMoviesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randommovies ) | Window.IsActive(1124)">RandomMoviesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentmusicvideos ) | Window.IsActive(1124)">MusicvideoLatestItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randommusicvideos ) | Window.IsActive(1124)">MusicvideoRandomItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),inprogressmovies ) | Window.IsActive(1124)">WatchlistMoviesItems</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem1.Enable)] | Window.IsActive(1124)">Custom1WidgetPoster</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem2.Enable)] | Window.IsActive(1124)">Custom2WidgetPoster</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem3.Enable)] | Window.IsActive(1124)">Custom3WidgetPoster</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem4.Enable)] | Window.IsActive(1124)">Custom4WidgetPoster</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem5.Enable)] | Window.IsActive(1124)">Custom5WidgetPoster</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem6.Enable)] | Window.IsActive(1124)">Custom6WidgetPoster</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem7.Enable)] | Window.IsActive(1124)">Custom7WidgetPoster</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem8.Enable)] | Window.IsActive(1124)">Custom8WidgetPoster</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem9.Enable)] | Window.IsActive(1124)">Custom9WidgetPoster</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomsongs ) | Window.IsActive(1124)">RandomSongsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentsongs ) | Window.IsActive(1124)">LatestSongsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomalbums ) | Window.IsActive(1124)">RandomAlbumsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomartists ) | Window.IsActive(1124)">RandomArtistsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentalbums ) | Window.IsActive(1124)">LatestAlbumsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),watchlistmusic ) | Window.IsActive(1124)">WatchlistMusicItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),actors ) | Window.IsActive(1124)">BornActorsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomaddons ) | Window.IsActive(1124)">RandomAddonsItems</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem1.Enable)] | Window.IsActive(1124)">Custom1WidgetSquare</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem2.Enable)] | Window.IsActive(1124)">Custom2WidgetSquare</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem3.Enable)] | Window.IsActive(1124)">Custom3WidgetSquare</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem4.Enable)] | Window.IsActive(1124)">Custom4WidgetSquare</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem5.Enable)] | Window.IsActive(1124)">Custom5WidgetSquare</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem6.Enable)] | Window.IsActive(1124)">Custom6WidgetSquare</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem7.Enable)] | Window.IsActive(1124)">Custom7WidgetSquare</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem8.Enable)] | Window.IsActive(1124)">Custom8WidgetSquare</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem9.Enable)] | Window.IsActive(1124)">Custom9WidgetSquare</include>
-                        <include condition="Substring(Skin.String(widgetlist),recenttv ) | Window.IsActive(1124)">LatestEpisodesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomtv ) | Window.IsActive(1124)">RandomEpisodesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),watchlisttv ) | Window.IsActive(1124)">WatchListTVItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randompics) | Window.IsActive(1124)">RandomPicturesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentpics) | Window.IsActive(1124)">LatestPicturesItems</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem1.Enable)] | Window.IsActive(1124)">Custom1WidgetEpisode</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem2.Enable)] | Window.IsActive(1124)">Custom2WidgetEpisode</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem3.Enable)] | Window.IsActive(1124)">Custom3WidgetEpisode</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem4.Enable)] | Window.IsActive(1124)">Custom4WidgetEpisode</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem5.Enable)] | Window.IsActive(1124)">Custom5WidgetEpisode</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem6.Enable)] | Window.IsActive(1124)">Custom6WidgetEpisode</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem7.Enable)] | Window.IsActive(1124)">Custom7WidgetEpisode</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem8.Enable)] | Window.IsActive(1124)">Custom8WidgetEpisode</include>
-                        <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem9.Enable)] | Window.IsActive(1124)">Custom9WidgetEpisode</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentmovies )">LatestMoviesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randommovies )">RandomMoviesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentmusicvideos )">MusicvideoLatestItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randommusicvideos )">MusicvideoRandomItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),inprogressmovies )">WatchlistMoviesItems</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem1.Enable)]">Custom1WidgetPoster</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem2.Enable)]">Custom2WidgetPoster</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem3.Enable)]">Custom3WidgetPoster</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem4.Enable)]">Custom4WidgetPoster</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem5.Enable)]">Custom5WidgetPoster</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem6.Enable)]">Custom6WidgetPoster</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem7.Enable)]">Custom7WidgetPoster</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem8.Enable)]">Custom8WidgetPoster</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),moviescustom ) + Skin.HasSetting(CustomHomeItem9.Enable)]">Custom9WidgetPoster</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomsongs )">RandomSongsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentsongs )">LatestSongsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomalbums )">RandomAlbumsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomartists )">RandomArtistsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentalbums )">LatestAlbumsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),watchlistmusic )">WatchlistMusicItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),actors )">BornActorsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomaddons )">RandomAddonsItems</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem1.Enable)]">Custom1WidgetSquare</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem2.Enable)]">Custom2WidgetSquare</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem3.Enable)]">Custom3WidgetSquare</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem4.Enable)]">Custom4WidgetSquare</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem5.Enable)]">Custom5WidgetSquare</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem6.Enable)]">Custom6WidgetSquare</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem7.Enable)]">Custom7WidgetSquare</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem8.Enable)]">Custom8WidgetSquare</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),albumscustom ) + Skin.HasSetting(CustomHomeItem9.Enable)]">Custom9WidgetSquare</include>
+                        <include condition="Substring(Skin.String(widgetlist),recenttv )">LatestEpisodesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomtv )">RandomEpisodesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),watchlisttv )">WatchListTVItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randompics )">RandomPicturesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentpics )">LatestPicturesItems</include>
+                            <include condition="Substring(Skin.String(widgetlist),rss1 )">RSS1WidgetContent1124</include>
+                            <include condition="Substring(Skin.String(widgetlist),rss1 )">RSS1WidgetContent</include>
+                            <include condition="Substring(Skin.String(widgetlist),rss2 )">RSS2WidgetContent1124</include>
+                            <include condition="Substring(Skin.String(widgetlist),rss2 )">RSS2WidgetContent</include>
+                            <include condition="Substring(Skin.String(widgetlist),rss3 )">RSS3WidgetContent1124</include>
+                            <include condition="Substring(Skin.String(widgetlist),rss3 )">RSS3WidgetContent</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem1.Enable)]">Custom1WidgetEpisode</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem2.Enable)]">Custom2WidgetEpisode</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem3.Enable)]">Custom3WidgetEpisode</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem4.Enable)]">Custom4WidgetEpisode</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem5.Enable)]">Custom5WidgetEpisode</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem6.Enable)]">Custom6WidgetEpisode</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem7.Enable)]">Custom7WidgetEpisode</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem8.Enable)]">Custom8WidgetEpisode</include>
+                        <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),tvcustom ) + Skin.HasSetting(CustomHomeItem9.Enable)]">Custom9WidgetEpisode</include>
                     </content>
                 </control>
             </control>
@@ -3820,7 +3829,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.1.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.1.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.1.Path)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.2.Title)]</label>
@@ -3833,7 +3842,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.2.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.2.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.2.Path)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.3.Title)]</label>
@@ -3846,7 +3855,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.3.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.3.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.3.Path)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.4.Title)]</label>
@@ -3859,7 +3868,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.4.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.4.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.4.Path)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.5.Title)]</label>
@@ -3872,7 +3881,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.5.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.5.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.5.Path)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.6.Title)]</label>
@@ -3885,7 +3894,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.6.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.6.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.6.Path)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.7.Title)]</label>
@@ -3898,7 +3907,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.7.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.7.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.7.Path)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.8.Title)]</label>
@@ -3911,7 +3920,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.8.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.8.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.8.Path)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
     </include>
     <include name="MusicvideoRandomItems">
@@ -4527,7 +4536,7 @@
             <thumb>$INFO[Window(Home).Property(WatchList_Album.1.Thumb)]</thumb>
             <property name="NavItem">item1.png</property>
             <property name="Album">$INFO[Window(Home).Property(WatchList_Album.1.Label)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(WatchList_Album.1.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(WatchList_Album.1.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.1.Rating)]</property>
             <property name="Year">$INFO[Window(Home).Property(WatchList_Album.1.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.1.Fanart)]</property>
@@ -4543,7 +4552,7 @@
             <thumb>$INFO[Window(Home).Property(WatchList_Album.2.Thumb)]</thumb>
             <property name="NavItem">item2.png</property>
             <property name="Album">$INFO[Window(Home).Property(WatchList_Album.2.Label)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(WatchList_Album.2.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(WatchList_Album.2.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.2.Rating)]</property>
             <property name="Year">$INFO[Window(Home).Property(WatchList_Album.2.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.2.Fanart)]</property>
@@ -4559,7 +4568,7 @@
             <thumb>$INFO[Window(Home).Property(WatchList_Album.3.Thumb)]</thumb>
             <property name="NavItem">item3.png</property>
             <property name="Album">$INFO[Window(Home).Property(WatchList_Album.3.Label)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(WatchList_Album.3.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(WatchList_Album.3.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.3.Rating)]</property>
             <property name="Year">$INFO[Window(Home).Property(WatchList_Album.3.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.3.Fanart)]</property>
@@ -4574,7 +4583,7 @@
             <icon>$INFO[Window(Home).Property(WatchList_Album.4.Thumb)]</icon>
             <thumb>$INFO[Window(Home).Property(WatchList_Album.4.Thumb)]</thumb>
             <property name="NavItem">item4.png</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(WatchList_Album.4.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(WatchList_Album.4.Album_Description)]</property>
             <property name="Album">$INFO[Window(Home).Property(WatchList_Album.4.Label)]</property>
             <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.4.Rating)]</property>
             <property name="Year">$INFO[Window(Home).Property(WatchList_Album.4.Year)]</property>
@@ -4591,7 +4600,7 @@
             <thumb>$INFO[Window(Home).Property(WatchList_Album.5.Thumb)]</thumb>
             <property name="Album">$INFO[Window(Home).Property(WatchList_Album.5.Label)]</property>
             <property name="NavItem">item5.png</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(WatchList_Album.5.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(WatchList_Album.5.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.5.Rating)]</property>
             <property name="Year">$INFO[Window(Home).Property(WatchList_Album.5.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.5.Fanart)]</property>
@@ -4607,7 +4616,7 @@
             <thumb>$INFO[Window(Home).Property(WatchList_Album.6.Thumb)]</thumb>
             <property name="NavItem">item6.png</property>
             <property name="Album">$INFO[Window(Home).Property(WatchList_Album.6.Label)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(WatchList_Album.6.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(WatchList_Album.6.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.6.Rating)]</property>
             <property name="Year">$INFO[Window(Home).Property(WatchList_Album.6.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.6.Fanart)]</property>
@@ -4623,7 +4632,7 @@
             <thumb>$INFO[Window(Home).Property(WatchList_Album.7.Thumb)]</thumb>
             <property name="NavItem">item7.png</property>
             <property name="Album">$INFO[Window(Home).Property(WatchList_Album.7.Label)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(WatchList_Album.7.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(WatchList_Album.7.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.7.Rating)]</property>
             <property name="Year">$INFO[Window(Home).Property(WatchList_Album.7.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.7.Fanart)]</property>
@@ -4639,7 +4648,7 @@
             <thumb>$INFO[Window(Home).Property(WatchList_Album.8.Thumb)]</thumb>
             <property name="NavItem">item8.png</property>
             <property name="Album">$INFO[Window(Home).Property(WatchList_Album.8.Label)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(WatchList_Album.8.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(WatchList_Album.8.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.8.Rating)]</property>
             <property name="Year">$INFO[Window(Home).Property(WatchList_Album.8.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.8.Fanart)]</property>
@@ -4659,7 +4668,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.1.Year)]</property>
             <property name="Album">$INFO[Window(Home).Property(RandomAlbum.1.Album)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.1.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.1.Album_Description)]</property>
             <onclick>PlayList.Clear</onclick>
             <onclick>$INFO[Window(Home).Property(RandomAlbum.1.Path)]</onclick>
             <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
@@ -4674,7 +4683,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.2.Year)]</property>
             <property name="Album">$INFO[Window(Home).Property(RandomAlbum.2.Album)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Fanart)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.2.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.2.Album_Description)]</property>
             <onclick>PlayList.Clear</onclick>
             <onclick>$INFO[Window(Home).Property(RandomAlbum.2.Path)]</onclick>
             <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
@@ -4689,7 +4698,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.3.Year)]</property>
             <property name="Album">$INFO[Window(Home).Property(RandomAlbum.3.Album)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.3.Fanart)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.3.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.3.Album_Description)]</property>
             <onclick>PlayList.Clear</onclick>
             <onclick>$INFO[Window(Home).Property(RandomAlbum.3.Path)]</onclick>
             <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
@@ -4704,7 +4713,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.4.Year)]</property>
             <property name="Album">$INFO[Window(Home).Property(RandomAlbum.4.Album)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.4.Fanart)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.4.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.4.Album_Description)]</property>
             <onclick>PlayList.Clear</onclick>
             <onclick>$INFO[Window(Home).Property(RandomAlbum.4.Path)]</onclick>
             <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
@@ -4719,7 +4728,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.5.Year)]</property>
             <property name="Album">$INFO[Window(Home).Property(RandomAlbum.5.Album)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.5.Fanart)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.5.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.5.Album_Description)]</property>
             <onclick>PlayList.Clear</onclick>
             <onclick>$INFO[Window(Home).Property(RandomAlbum.5.Path)]</onclick>
             <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
@@ -4734,7 +4743,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.6.Year)]</property>
             <property name="Album">$INFO[Window(Home).Property(RandomAlbum.6.Album)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.6.Fanart)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.6.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.6.Album_Description)]</property>
             <onclick>PlayList.Clear</onclick>
             <onclick>$INFO[Window(Home).Property(RandomAlbum.6.Path)]</onclick>
             <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
@@ -4749,7 +4758,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.7.Year)]</property>
             <property name="Album">$INFO[Window(Home).Property(RandomAlbum.7.Album)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.7.Fanart)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.7.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.7.Album_Description)]</property>
             <onclick>PlayList.Clear</onclick>
             <onclick>$INFO[Window(Home).Property(RandomAlbum.7.Path)]</onclick>
             <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
@@ -4764,7 +4773,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.8.Year)]</property>
             <property name="Album">$INFO[Window(Home).Property(RandomAlbum.8.Album)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.8.Fanart)]</property>
-            <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.8.Album_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.8.Album_Description)]</property>
             <onclick>PlayList.Clear</onclick>
             <onclick>$INFO[Window(Home).Property(RandomAlbum.8.Path)]</onclick>
             <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
@@ -4776,88 +4785,88 @@
             <thumb>$INFO[Window(Home).Property(RandomArtist.1.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.1.Genre)]</label2>
-            <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.1.Artist_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomArtist.1.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.1.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.1.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.1.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.2.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.2.Genre)]</label2>
-            <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.2.Artist_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomArtist.2.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.2.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.2.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.2.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.3.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.3.Genre)]</label2>
-            <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.3.Artist_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomArtist.3.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.3.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.3.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.3.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.4.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.4.Genre)]</label2>
-            <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.4.Artist_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomArtist.4.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.4.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.4.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.4.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.5.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.5.Genre)]</label2>
-            <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.5.Artist_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomArtist.5.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.5.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.5.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.5.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.6.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.6.Genre)]</label2>
-            <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.6.Artist_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomArtist.6.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.6.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.6.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.6.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.7.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.7.Genre)]</label2>
-            <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.7.Artist_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomArtist.7.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.7.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.7.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.7.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.8.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.8.Genre)]</label2>
-            <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.8.Artist_Description)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomArtist.8.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.8.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.8.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.8.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
     </include>
     <include name="LatestAlbumsItems">
