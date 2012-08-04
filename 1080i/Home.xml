@@ -164,7 +164,7 @@
                 <width>1920</width>
                 <height>945</height>
                 <texture>home/nowplaying_shadow.png</texture>
-                <visible>[Control.HasFocus(8000) | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)] + !Skin.HasSetting(DisableWidgets)</visible>
+                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo) + [IsEmpty(Control.GetLabel(4325)) | Skin.HasSetting(DisableWidgets)]] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)] | [[Control.HasFocus(7000) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)] + !Skin.HasSetting(DisableWidgets)]</visible>
                 <include>Animation_VisibleChangeDelayed</include>
                 <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             </control>
@@ -191,7 +191,7 @@
                 <width>1920</width>
                 <height>694</height>
                 <texture>home/nowplaying_shadow.png</texture>
-                <visible>[Control.HasFocus(8000) | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)] + !Skin.HasSetting(DisableWidgets)</visible>
+                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo) + [IsEmpty(Control.GetLabel(4325)) | Skin.HasSetting(DisableWidgets)]] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)] | [[Control.HasFocus(7000) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)] + !Skin.HasSetting(DisableWidgets)]</visible>
                 <include>Animation_VisibleChangeDelayed</include>
             </control>
             <control type="image">
