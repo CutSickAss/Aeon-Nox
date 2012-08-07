@@ -240,13 +240,11 @@
             <onclick condition="Control.IsVisible(517)">Skin.SetString(actualViewtype,stripshow)</onclick>
             <onclick condition="Control.IsVisible(518)">Skin.SetString(actualViewtype,fspanel)</onclick>
             <onclick condition="Control.IsVisible(550)">Skin.SetString(actualViewtype,panel)</onclick>
-            <onclick condition="Control.IsVisible(528)">Skin.SetString(actualViewtype,posterlite)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
 <!--             <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + Control.IsVisible(3000)">3000</ondown>
  -->        </control>
     </include>
     <include name="Media_Menu_Tooltip">
-        <animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(528109)">Conditional</animation>
         <control type="group">
             <posx>-12</posx>
             <posy>-38</posy>
@@ -281,7 +279,7 @@
                     <posy>527</posy>
                     <width>25</width>
                     <height>25</height>
-                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(script-NextAired-TVGuide.xml) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | Control.IsVisible(528) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
+                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(script-NextAired-TVGuide.xml) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
                     <animation effect="rotate" start="0" end="-180" center="auto" delay="300" time="800" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                     <animation effect="rotate" start="-90" end="180" center="auto" delay="300" time="800" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
                     <texture>common/arrowleft.png</texture>
@@ -428,7 +426,7 @@
                         <include>Animation_CommonFade</include>
                         <label>[B]$LOCALIZE[31484][/B]</label>
                         <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
-                        <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500) + !Control.IsVisible(528)">SetFocus(50)</onclick>
+                        <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onclick>
                         <onclick condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
 <!--                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
  -->                        <visible>!IsEmpty(ListItem.Trailer)</visible>

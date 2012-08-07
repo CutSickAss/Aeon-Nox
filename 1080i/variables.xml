@@ -2179,41 +2179,4 @@
         <value condition="Substring(Control.GetLabel(4322),googleweather)">$INFO[Window(Weather).Property(Current.Earth.Phase.LargeImage)]</value>
         <value>$INFO[Skin.String(MusicViz.MultiFanart)]</value>
     </variable>
-
-    <!-- PosterLite -->
-    <variable name="PLPlot">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$INFO[Container(3000).ListItem.Plot]</value>
-        <value condition="Container.Content(movies) + !Skin.HasSetting(preferplot) + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
-        <value>$INFO[ListItem.Plot]</value>
-    </variable>
-    <variable name="PLGenre">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$LOCALIZE[515]: [COLOR=$VAR[PLColorVar]]$INFO[Container(3000).ListItem.Genre][/COLOR]</value>
-        <value>$LOCALIZE[515]: [COLOR=$VAR[PLColorVar]]$INFO[ListItem.Genre][/COLOR]</value>
-    </variable>
-    <variable name="PLDuration">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$LOCALIZE[20161]: [COLOR=$VAR[PLColorVar]]$INFO[Container(3000).ListItem.Duration] $LOCALIZE[12391][/COLOR]</value>
-        <value>$INFO[ListItem.Duration] $LOCALIZE[12391]</value>
-    </variable>
-    <variable name="PLTotal">
-        <value condition="!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)">$LOCALIZE[16102]: [COLOR=$VAR[PLColorVar]]$INFO[Container(3000).ListItem.Property(WatchedMovies)][/COLOR] / [COLOR=$VAR[PLColorVar]]$INFO[Container(3000).ListItem.Property(TotalMovies)][/COLOR]</value>
-        <value condition="Container.Content(tvshows)">$LOCALIZE[20360]: [COLOR=$VAR[PLColorVar]]$INFO[ListItem.Episode][/COLOR]  ($LOCALIZE[16101]: [COLOR=$VAR[PLColorVar]]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR])</value>
-    </variable>
-    <variable name="PLIconVar">
-        <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$INFO[ListItem.Path,,logo.png]</value>
-        <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$INFO[ListItem.Path,,clearart.png]</value>
-        <value condition="Container.Content(tvshows)+Skin.HasSetting(pllandtv)">$INFO[ListItem.Path,,landscape.jpg]</value>
-        <value>$INFO[ListItem.Property(Fanart_Image)]</value>
-    </variable>
-    <variable name="PLIconLabelVar">
-        <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$LOCALIZE[31059]</value>
-        <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$LOCALIZE[31086]</value>
-        <value condition="[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]">$LOCALIZE[31150]</value>
-        <value>$LOCALIZE[31060]</value>
-    </variable>
-    <variable name="PLColorVar">
-        <value condition="!Skin.HasSetting(colortext)">FFD8D8D8</value>
-        <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
-        <value>$VAR[AreaColorVar]</value>
-    </variable>
-
 </includes>
