@@ -5605,7 +5605,7 @@
                         <fadetime>600</fadetime>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case1Var]</texture>
                     </control>
                     <control type="image">
@@ -5630,7 +5630,7 @@
                         <fadetime>600</fadetime>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case2Var]</texture>
                     </control>
                     <control type="image">
@@ -5655,7 +5655,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case3Var]</texture>
                     </control>
                     <control type="image">
@@ -5680,7 +5680,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case4Var]</texture>
                     </control>
                     <control type="image">
@@ -5705,7 +5705,7 @@
                         <height>334</height>
                         <fadetime>600</fadetime>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case5Var]</texture>
                     </control>
                     <control type="image">
@@ -5730,7 +5730,7 @@
                         <height>334</height>
                         <fadetime>600</fadetime>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case6Var]</texture>
                     </control>
                     <control type="image">
@@ -5755,7 +5755,7 @@
                         <height>334</height>
                         <fadetime>600</fadetime>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case7Var]</texture>
                     </control>
                     <control type="image">
@@ -5780,7 +5780,7 @@
                         <height>334</height>
                         <fadetime>600</fadetime>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case8Var]</texture>
                     </control>
                     <control type="image">
@@ -5805,7 +5805,7 @@
                         <fadetime>600</fadetime>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case9Var]</texture>
                     </control>
                     <control type="image">
@@ -5830,7 +5830,7 @@
                         <fadetime>600</fadetime>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case10Var]</texture>
                     </control>
                     <control type="image">
@@ -5865,7 +5865,7 @@
                         <height>302</height>
                         <fadetime>600</fadetime>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase1Var]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -5890,7 +5890,7 @@
                         <height>302</height>
                         <fadetime>600</fadetime>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase2Var]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -5915,7 +5915,7 @@
                         <height>302</height>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase3Var]</texture>
                         <fadetime>600</fadetime>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -5940,7 +5940,7 @@
                         <height>302</height>
                         <fadetime>600</fadetime>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase4Var]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -5965,7 +5965,7 @@
                         <height>302</height>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase5Var]</texture>
                         <fadetime>600</fadetime>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -5990,7 +5990,7 @@
                         <height>302</height>
                         <fadetime>600</fadetime>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase6Var]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -6015,7 +6015,7 @@
                         <height>302</height>
                         <fadetime>600</fadetime>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase7Var]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -6040,7 +6040,7 @@
                         <fadetime>600</fadetime>
                         <height>302</height>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase8Var]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -6065,7 +6065,7 @@
                         <height>302</height>
                         <fadetime>600</fadetime>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase9Var]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -6090,7 +6090,7 @@
                         <height>302</height>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase10Var]</texture>
                         <fadetime>600</fadetime>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <description>Glass overlay</description>
@@ -6275,7 +6275,6 @@
             </control>
         </control>
     </include>
-
     <include name="DailyBabesContent">
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2012.jpg</property>
