@@ -251,7 +251,7 @@
         <include>Dialogs_LabelVars</include>
     </include>
     <include name="Objects_MediaMenuButtonAlt">
-        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+        <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
         <height>60</height>
         <width>400</width>
         <texturenofocus>settings/listselect_nf.png</texturenofocus>
@@ -274,7 +274,7 @@
         <radioposx>308</radioposx>
     </include>
     <include name="Objects_MediaMenuButtonIcons">
-        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+        <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
         <height>100</height>
         <width>500</width>
         <texturenofocus>settings/listselect_nf2.png</texturenofocus>
@@ -297,7 +297,7 @@
         <radioposx>308</radioposx>
     </include>
     <include name="Objects_MediaMenuButtonAround">
-        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+        <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
         <height>60</height>
         <width>400</width>
         <texturenofocus>settings/listselect_nf.png</texturenofocus>
@@ -349,9 +349,9 @@
         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
         <alttexturenofocus>settings/listselect_nf3.png</alttexturenofocus>
         <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
-        <textcolor>$VAR[SpotColorVar]</textcolor>
+        <textcolor>$VAR[FontColorVar]</textcolor>
         <focusedcolor>white6</focusedcolor>
-        <disabledcolor>$VAR[SpotColorVar]</disabledcolor>
+        <disabledcolor>$VAR[FontColorVar]</disabledcolor>
         <textoffsetx>15</textoffsetx>
         <textoffsety>0</textoffsety>
         <align>left</align>
@@ -385,8 +385,8 @@
         <width>462</width>
         <textcolor>context</textcolor>
         <focusedcolor>white2</focusedcolor>
-        <disabledcolor>$VAR[DialogColorVar]</disabledcolor>
-        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+        <disabledcolor>$VAR[SpotColorVar2]</disabledcolor>
+        <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
         <align>center</align>
         <aligny>top</aligny>
         <font>Font_Reg19_Caps</font>
@@ -502,7 +502,6 @@
                 <width>1819</width>
                 <height>1038</height>
                 <texture>wall/wall_bg_reflection.png</texture>
-                <animation effect="fade" start="100" end="50" time="50" condition="Skin.HasTheme(Lite_Floor)">Conditional</animation>
                 <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
             </control>
             <include>Neon_Floor</include>
@@ -1116,7 +1115,7 @@
             <focusedcolor>white2</focusedcolor>
             <texturenofocus>dialogs/context_nofocus.png</texturenofocus>
             <texturefocus>dialogs/shutdown_focus.png</texturefocus>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
             <align>center</align>
             <font>Font_Reg19</font>
             <textoffsety>12</textoffsety>
