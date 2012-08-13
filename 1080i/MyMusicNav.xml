@@ -5,13 +5,12 @@
     <views>50,53,57,500,503,509,506,512,513,514</views>
     <backgroundcolor>black</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    <include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
+    
     <onload condition="System.HasAddon(script.song-to-musicvideo)">RunScript(script.song-to-musicvideo)</onload>
     <controls>
         <control type="group">
             <control type="group">
                 <control type="multiimage">
-                    <description>(extra)fanart</description>
                     <fadetime>FanartCrossfadeTime</fadetime>
                     <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                     <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
@@ -65,12 +64,12 @@
                 <visible>[!Container.OnNext + !Container.OnPrevious + Skin.HasSetting(infopaneautomusic)] | !Skin.HasSetting(infopaneautomusic)</visible>
                 <include>DelayAnimations</include>
             </control>
-            <include>Furniture_Showcase</include>
-            <include>WallPanel</include>
-            <control type="group">
-                <visible>Control.IsVisible(513) | Control.IsVisible(509)</visible>
+           <control type="group">
+                <visible>Control.IsVisible(513) | Control.IsVisible(509) | Control.IsVisible(503)</visible>
                 <include>ShowcaseInfoPaneMusic</include>
             </control>
+            <include>Furniture_Showcase</include>
+            <include>WallPanel</include>
             <control type="group">
                 <include>CommonRootView</include>
                 <!-- view id = 50 -->
@@ -122,7 +121,6 @@
             <include>FloorLabels</include>
             <include>Furniture_DarkGradient</include>
             <control type="image" id="8822">
-                <description>ClearART</description>
                 <posx>817.5</posx>
                 <posy>958</posy>
                 <width>300</width>
@@ -142,7 +140,6 @@
                 <visible>![Container.OnNext | Container.OnPrevious] + Container.Content(artists)</visible>
             </control>
             <control type="group">
-                <description>Breadcrumbs</description>
                 <include>Animation_HideBreadCrumbs</include>
                 <include>Breadcrumbs_BackBar</include>
                 <control type="group">
@@ -151,13 +148,11 @@
                         <posy>0</posy>
                         <include condition="!Skin.HasSetting(ClassicTopBar)">TopBarWidthLeftSide</include>
                         <include condition="Skin.HasSetting(ClassicTopBar)">ClassicTopBarWidthLeftSide</include>
-                        <align>left</align>
                         <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                         <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
                         <itemgap>0</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="image">
-                            <description>Items Icon</description>
                             <width>54</width>
                             <height>38</height>
                             <texture>common/logo_music.png</texture>
