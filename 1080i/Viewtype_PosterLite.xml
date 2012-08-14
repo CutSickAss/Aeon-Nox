@@ -23,7 +23,7 @@
         <width>1028</width>
         <height>590</height>
         <texture>home/nowplaying/OverlayDialogBackground.png</texture>
-		<colordiffuse>$VAR[PLColorVar]</colordiffuse>
+		<colordiffuse>$VAR[AreaColorVar]</colordiffuse>
 		<bordertexture>common/black.png</bordertexture>
 		<bordersize>-37</bordersize>
       </control>
@@ -226,7 +226,7 @@
       <height>75</height>
       <align>center</align>
       <aligny>center</aligny>
-      <font>Font_Condensed28_Caps</font>
+      <font>Font_Bold28_Caps</font>
 	  <textcolor>$VAR[PLColorVar]</textcolor>
       <scrollspeed>20</scrollspeed>
 	  <include>PLFadeL</include>
@@ -240,7 +240,7 @@
 	  <include>FullscreenDimensions</include>
 	  <fadetime>300</fadetime>
       <texture>views/logo_back.png</texture>
-      <colordiffuse>FF000000</colordiffuse>
+      <colordiffuse>black</colordiffuse>
       <animation effect="fade" start="100" end="95" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvlinp)]">Conditional</animation>
       <animation effect="fade" start="100" end="80" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
     </control>
@@ -287,6 +287,17 @@
 	    <fadetime>300</fadetime>
         <texture>$VAR[ListImage2Var]</texture>
         <colordiffuse>ffffff00</colordiffuse>
+		<visible>!Skin.HasTheme(White)</visible>
+      </control>
+      <control type="image">
+        <posx>-381</posx>
+        <posy>245</posy>
+        <width>207</width>
+        <height>38</height>
+	    <fadetime>300</fadetime>
+        <texture>$VAR[ListImage2Var]</texture>
+        <colordiffuse>white</colordiffuse>
+        <visible>Skin.HasTheme(White)</visible>
       </control>
       <!-- Labels -->
 	  <control type="group" id="528200">
@@ -391,7 +402,7 @@
 			<width>528</width>
 			<height>98</height>
 			<aspectratio>stretch</aspectratio>
-			<texture diffuse="thumbs/banner_wall_mask.png">$INFO[ListItem.Path,,banner.jpg]</texture>
+			<texture diffuse="thumbs/banner_mask.png">$INFO[ListItem.Path,,banner.jpg]</texture>
 		  </control>
 		  <control type="image">
 			<posx>-10</posx>
@@ -401,7 +412,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture diffuse="thumbs/banner_mask.png">common/blank.png</texture>
 			<bordertexture border="12">thumbs/banner_shadow.png</bordertexture>
-			<colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+			<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 			<visible>!IsEmpty(Control.GetLabel(528901))</visible>
 		  </control>
 		</control>
@@ -417,6 +428,7 @@
         <control type="image">
           <include>CuFlVa</include>
           <texture>flags/music/year/year.png</texture>
+		  <colordiffuse>white</colordiffuse>
           <visible>!IsEmpty(ListItem.Year)+!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="label">
@@ -424,6 +436,7 @@
 		  <posy>23</posy>
           <include>CuFlVa</include>
           <label>$INFO[ListItem.Year]</label>
+		  <colordiffuse>white</colordiffuse>
           <visible>!IsEmpty(ListItem.Year)+!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="label">
@@ -433,6 +446,7 @@
 		  <align>left</align>
 		  <include>CuFlVa</include>
 		  <label>$VAR[PLDuration]</label>
+		  <colordiffuse>white</colordiffuse>
           <visible>!IsEmpty(Container(3000).ListItem.Duration)+SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="label">
@@ -441,6 +455,7 @@
           <width>202</width>
           <include>CuFlVa</include>
           <label>$VAR[PLDuration]</label>
+		  <colordiffuse>white</colordiffuse>
           <visible>!IsEmpty(ListItem.Duration)+!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="image">
@@ -464,6 +479,7 @@
 		  <posy>-2</posy>
           <include>CuFlVa</include>
           <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
+		  <colordiffuse>white</colordiffuse>
 		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="image">
@@ -473,24 +489,28 @@
 		  <height>84</height>
 		  <include>CuFlVa</include>
           <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+		  <colordiffuse>white</colordiffuse>
 		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="image">
           <posx>873</posx>
           <include>CuFlVa</include>
           <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+		  <colordiffuse>white</colordiffuse>
 		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="image">
           <posx>1030</posx>
           <include>CuFlVa</include>
           <texture fallback="flags/resolution/defaultscreen.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+		  <colordiffuse>white</colordiffuse>
 		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="image">
           <posx>1194</posx>
           <include>CuFlVa</include>
           <texture fallback="flags/audio/defaultsound.png">$INFO[ListItem.AudioCodec,flags/info/]$INFO[ListItem.AudioChannels,,.png]</texture>
+		  <colordiffuse>white</colordiffuse>
 		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
         <control type="label">
@@ -522,6 +542,7 @@
           <posy>-22</posy>
           <include>CuFlVa</include>
           <texture>flags/music/year/year.png</texture>
+		  <colordiffuse>white</colordiffuse>
         </control>
         <control type="label">
 		  <posx>0</posx>
@@ -536,6 +557,7 @@
 		  <height>84</height>
 		  <include>CuFlVa</include>
           <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+		  <colordiffuse>white</colordiffuse>
         </control>
         <control type="image">
           <posx>408</posx>

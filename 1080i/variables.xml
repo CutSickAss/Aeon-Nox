@@ -2224,7 +2224,7 @@
     <variable name="PLColorVar">
         <value condition="!Skin.HasSetting(colortext)">FFD8D8D8</value>
         <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
-        <value>$VAR[AreaColorVar]</value>
+        <value>$VAR[FontColorVar]</value>
     </variable>
 
 </includes>
