@@ -65,7 +65,7 @@
                                 <posy>10</posy>
                                 <width>165</width>
                                 <height>246</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <fadetime>IconCrossfadeTime2</fadetime>
                                 <texture background="true" diffuse="wall/wall_movie_mask.png">$INFO[ListItem.Icon]</texture>
                                 <visible>IsEmpty(ListItem.Thumb)</visible>
@@ -106,7 +106,7 @@
                                 <posy>0</posy>
                                 <width>189</width>
                                 <height>268</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <fadetime>IconCrossfadeTime2</fadetime>
                                 <texture background="true">$VAR[ListPosterVar]</texture>
                                 <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
@@ -135,7 +135,7 @@
                                 <posy>10</posy>
                                 <width>165</width>
                                 <height>246</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <fadetime>IconCrossfadeTime2</fadetime>
                                 <texture background="true" diffuse="wall/wall_movie_mask.png">$INFO[ListItem.Icon]</texture>
                                 <visible>IsEmpty(ListItem.Thumb)</visible>
@@ -190,7 +190,7 @@
                                 <posy>0</posy>
                                 <width>189</width>
                                 <height>268</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <fadetime>IconCrossfadeTime2</fadetime>
                                 <texture background="true">$VAR[ListPosterVar]</texture>
                                 <bordersize>5</bordersize>
@@ -226,7 +226,7 @@
                                 <posy>36</posy>
                                 <width>150</width>
                                 <height>225</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <fadetime>IconCrossfadeTime2</fadetime>
                                 <texture background="true" diffuse="thumbs/boxes/case_mask.png">$INFO[ListItem.Icon]</texture>
                                 <visible>IsEmpty(ListItem.Thumb)</visible>
@@ -277,7 +277,7 @@
                                 <posy>36</posy>
                                 <width>150</width>
                                 <height>225</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <fadetime>IconCrossfadeTime2</fadetime>
                                 <texture background="true" diffuse="thumbs/boxes/case_mask.png">$INFO[ListItem.Icon]</texture>
                                 <visible>IsEmpty(ListItem.Thumb)</visible>
@@ -321,7 +321,7 @@
                                     <width>285</width>
                                     <height>161</height>
                                     <fadetime>IconCrossfadeTime2</fadetime>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <texture background="true">$INFO[ListItem.Icon]</texture>
                                     <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                                     <bordersize>5</bordersize>
@@ -382,7 +382,7 @@
                                     <width>285</width>
                                     <height>161</height>
                                     <fadetime>IconCrossfadeTime2</fadetime>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
                                     <texture background="true">$INFO[ListItem.Icon]</texture>
                                     <bordersize>5</bordersize>
                                 </control>

@@ -66,7 +66,7 @@
         <width>223</width>
         <height>334</height>
         <colordiffuse>d1FFFFFF</colordiffuse>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
         <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
     </include>
     <include name="MovieShowcaseThumbReflectionDVD">
@@ -78,7 +78,7 @@
             <colordiffuse>d1FFFFFF</colordiffuse>
             <bordertexture>thumbs/boxes/poster_shadow_reflect.png</bordertexture>
             <texture background="true">thumbs/boxes/poster_glass_reflect.png</texture>
-            <aspectratio scalediffuse="false">scale</aspectratio>
+            <aspectratio scalediffuse="false">stretch</aspectratio>
             <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
         </control>
     </include>
@@ -384,7 +384,7 @@
     </include>
     <!-- Music Showcase Variables: Main thumbs -->
     <include name="MusicShowcaseThumbAspectRatio">
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
     </include>
     <include name="MusicShowcaseThumbDVD">
         <include>MusicShowcaseThumbDimensionsCDCover</include>

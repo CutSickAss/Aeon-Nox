@@ -36,17 +36,17 @@
         <align>center</align>
         <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
         <bordersize>18</bordersize>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
     </include>
     <include name="MovieShowcaseThumbReflectionMain">
         <include>MovieShowcaseThumbReflectionDimensions</include>
         <colordiffuse>52FFFFFF</colordiffuse>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
     </include>
     <include name="MovieShowcaseThumbReflection">
         <include>MovieShowcaseThumbReflectionDimensions</include>
         <colordiffuse>d1FFFFFF</colordiffuse>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
         <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
     </include>
     <include name="WatchedOverlayShowCase">
@@ -97,7 +97,7 @@
     <include name="MusicShowcaseThumb">
         <include>MusicShowcaseThumbDimensions</include>
         <bordertexture border="16">thumbs/cd_shadow.png</bordertexture>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
     </include>
     <include name="MusicShowcaseGlow">
         <control type="image">
@@ -116,13 +116,13 @@
     <include name="MusicShowcaseThumbReflection">
         <include>MusicShowcaseThumbReflectionDimensions</include>
         <colordiffuse>d1FFFFFF</colordiffuse>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
         <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
     </include>
     <include name="MusicShowcaseThumbReflectionMain">
         <include>MusicShowcaseThumbReflectionDimensions</include>
         <colordiffuse>52FFFFFF</colordiffuse>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
     </include>
     <!-- Music Showcase Variables: Thumb glass overlays -->
     <include name="MusicShowcaseGlassOverlayAngled">
@@ -131,7 +131,7 @@
             <posy>27</posy>
             <width>351</width>
             <height>351</height>
-            <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+            <aspectratio scalediffuse="false" align="right">stretch</aspectratio>
             <texture diffuse="thumbs/cdcover_mask_aa.png">thumbs/cdcover_glass_aa.png</texture>
         </control>
     </include>
@@ -141,7 +141,7 @@
             <posy>27</posy>
             <width>351</width>
             <height>351</height>
-            <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+            <aspectratio scalediffuse="false" align="right">stretch</aspectratio>
             <texture diffuse="thumbs/cdcover_mask_aa.png">thumbs/cdcover_glass_aa.png</texture>
         </control>
     </include>
