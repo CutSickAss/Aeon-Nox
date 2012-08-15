@@ -147,13 +147,15 @@
       <texture background="true">thumbs/thumb_glass.png</texture>
     </control>
     <control type="image">
-      <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
-      <posy>685</posy>
+      <!--visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible-->
+      <posy>684</posy>
       <width>464</width>
       <height>683</height>
 	  <fadetime>300</fadetime>
       <texture flipy="true" background="true" diffuse="thumbs/movieposter_mask_reflect.png">$VAR[ListPosterVar]</texture>
       <aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
+	  <animation effect="fade" start="100" end="0" time="500">Focus</animation>
+	  <animation effect="fade" start="0" end="100" time="500">Unfocus</animation>
     </control>
     <control type="image">
       <posx>315</posx>
@@ -177,7 +179,7 @@
       <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
     </control>
 	<control type="image">
-	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
+	  <!--visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible-->
       <posy>205</posy>
       <width>525</width>
       <height>204</height>
@@ -185,6 +187,8 @@
       <aspectratio aligny="top">keep</aspectratio>
       <texture flipy="true" background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+	  <animation effect="fade" start="100" end="0" time="500">Focus</animation>
+	  <animation effect="fade" start="0" end="100" time="500">Unfocus</animation>
     </control>
     <control type="group">
 	  <visible>[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+!StringCompare(ListItem.Label,..)</visible>
@@ -216,7 +220,8 @@
 	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture flipy="true">osd/osd_progress_bar_back.png</texture>
-	  <animation effect="fade" start="60" end="60" time="0" condition="true">Conditional</animation>
+      <animation effect="fade" start="100" end="85" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvlinp)]">Conditional</animation>
+      <animation effect="fade" start="100" end="65" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
       <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
     </control>
     <control type="fadelabel">
@@ -242,7 +247,7 @@
       <texture>views/logo_back.png</texture>
       <colordiffuse>black</colordiffuse>
       <animation effect="fade" start="100" end="95" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvlinp)]">Conditional</animation>
-      <animation effect="fade" start="100" end="80" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
+      <animation effect="fade" start="100" end="70" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
     </control>
     <control type="image">
 	  <visible>[Container.Content(movies)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
@@ -412,7 +417,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture diffuse="thumbs/banner_mask.png">common/blank.png</texture>
 			<bordertexture border="12">thumbs/banner_shadow.png</bordertexture>
-			<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+			<colordiffuse>$VAR[AreaColorVar]</colordiffuse>
 			<visible>!IsEmpty(Control.GetLabel(528901))</visible>
 		  </control>
 		</control>
@@ -462,7 +467,7 @@
           <posx>368</posx>
           <posy>-2</posy>
           <include>CuFlVa</include>
-          <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+          <texture>$VAR[RatingFlagVar,flags/rating/,.png]</texture>
 		  <visible>![IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)]</visible>
         </control>
 		<control type="label">
@@ -563,7 +568,7 @@
           <posx>408</posx>
           <posy>-25</posy>
           <include>CuFlVa</include>
-          <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+          <texture>$VAR[RatingFlagVar,flags/rating/,.png]</texture>
         </control>
       </control>
     </control>
