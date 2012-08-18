@@ -341,6 +341,7 @@
                     <control type="image">
                         <posx>1770</posx>
                         <posy>987</posy>
+						<colordiffuse>-</colordiffuse>
                         <include>OSDFlagVars</include>
                         <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                         <visible>Container.Content(tvshows) | [Container.Content(seasons) + !IsEmpty(ListItem.TVShowTitle)]</visible>

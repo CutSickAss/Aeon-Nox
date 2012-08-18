@@ -467,7 +467,8 @@
           <posx>368</posx>
           <posy>-2</posy>
           <include>CuFlVa</include>
-          <texture>$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+		  <!--colordiffuse>white</colordiffuse-->
+          <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
 		  <visible>![IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)]</visible>
         </control>
 		<control type="label">
@@ -568,7 +569,8 @@
           <posx>408</posx>
           <posy>-25</posy>
           <include>CuFlVa</include>
-          <texture>$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+		  <!--colordiffuse>white</colordiffuse-->
+          <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
         </control>
       </control>
     </control>
