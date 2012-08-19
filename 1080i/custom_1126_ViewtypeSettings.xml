@@ -823,6 +823,14 @@
                 <visible>stringcompare(Skin.String(actualViewtype),panel)</visible>
                 <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
             </control>
+            <control type="radiobutton" id="16838">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>31172</label>
+                <onclick>Skin.ToggleSetting(panelinfo)</onclick>
+                <selected>Skin.HasSetting(panelinfo)</selected>
+                <visible>stringcompare(Skin.String(actualViewtype),panel)</visible>
+                <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+            </control>
             <!--List Options-->
             <control type="radiobutton" id="1656">
                 <include>Objects_MediaMenuButtonAlt2</include>
@@ -930,7 +938,7 @@
                 <label>$LOCALIZE[31477] [LOWERCASE]$LOCALIZE[31069][/LOWERCASE]</label>
                 <onclick>Skin.ToggleSetting(tripanelextrafanart)</onclick>
                 <selected>Skin.HasSetting(tripanelextrafanart)</selected>
-                <visible>stringcompare(Skin.String(actualViewtype),tripanel)</visible>
+                <visible>stringcompare(Skin.String(actualViewtype),tripanel) + Window.IsActive(videos)</visible>
             </control>
             <control type="radiobutton" id="1631">
                 <include>Objects_MediaMenuButtonAlt2</include>
