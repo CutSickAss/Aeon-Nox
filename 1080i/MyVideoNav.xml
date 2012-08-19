@@ -111,6 +111,11 @@
                 <visible>Control.IsVisible(528194)+SubString(ListItem.Path,videodb://1/7/)</visible>
                 <include>PLDelAn</include>
             </control>
+            <control type="button" id="528199">
+                <description>Infopanel: Off</description>
+                <include>HiddenObject</include>
+                <visible>[Container.Content(movies)+Skin.HasSetting(infopaneoff)]|[Container.Content(tvshows)+Skin.HasSetting(infopaneofftv)]</visible>
+            </control>
         </control>
         <include>Furniture_Showcase</include>
         <include condition="!Skin.HasSetting(DisableInfoWallVL) | !Skin.HasSetting(DisableWallVL)">WallPanel</include>

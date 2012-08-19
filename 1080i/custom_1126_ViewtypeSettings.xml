@@ -185,21 +185,12 @@
                 <usealttexture>!Skin.HasSetting(pliteback1)</usealttexture>
                 <visible>Container.Content(movies)+stringcompare(Skin.String(actualViewtype),posterlite)</visible>
             </control>
-            <control type="radiobutton" id="1763">
-                <description>Toggle Transparency (TV)</description>
+            <control type="button" id="1763">
+                <description>Toggle Transparency</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[13324]</label>
-                <onclick>Skin.ToggleSetting(plitetvlinp)</onclick>
-                <selected>Skin.HasSetting(plitetvlinp)</selected>
-                <visible>Container.Content(tvshows)+stringcompare(Skin.String(actualViewtype),posterlite)</visible>
-            </control>
-            <control type="radiobutton" id="1764">
-                <description>Toggle Transparency (Movies)</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[13324]</label>
-                <onclick>Skin.ToggleSetting(plitelinp)</onclick>
-                <selected>Skin.HasSetting(plitelinp)</selected>
-                <visible>Container.Content(movies)+stringcompare(Skin.String(actualViewtype),posterlite)</visible>
+                <onclick>RunScript(script.color.picker,Skin.SetString(BackgroundDarkness,$INFO[Skin.String(BackgroundDarkness)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+                <visible>StringCompare(Skin.String(actualViewtype),posterlite)</visible>
             </control>
             <control type="radiobutton" id="1615">
                 <!-- Toggle Fanart -->
@@ -212,7 +203,7 @@
                 <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
                 <textureradiofocus>common/arrowright.png</textureradiofocus>
                 <textureradionofocus></textureradionofocus>
-                <selected>Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv)</selected>
+                <selected>Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv) + !Skin.HasSetting(infopaneofftv)</selected>
                 <textcolor>grey2</textcolor>
                 <focusedcolor>white6</focusedcolor>
                 <disabledcolor>grey3</disabledcolor>
@@ -226,26 +217,16 @@
                 <radioheight>30</radioheight>
                 <radioposx>542</radioposx>
                 <label>$LOCALIZE[31166]: [COLOR $VAR[FontColorVar]]$VAR[InfoPanelToggleLabelVar][/COLOR]</label>
-                <onright condition="![Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv)]">Dialog.Close(1126)</onright>
-                <onright condition="![Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv)]">SetFocus(50)</onright>
-                <onright condition="Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv)">ActivateWindow(1114)</onright>
-                
-                
-                
+                <onright condition="![Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv)] | Skin.HasSetting(infopaneofftv)">Dialog.Close(1126)</onright>
+                <onright condition="![Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv)] | Skin.HasSetting(infopaneofftv)">SetFocus(50)</onright>
+                <onright condition="Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv) + !Skin.HasSetting(infopaneofftv)">ActivateWindow(1114)</onright>
                 <onclick condition="Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv) + Skin.HasSetting(infopaneofftv)">Skin.Reset(showcaseinfoontv)</onclick>
                 <onclick condition="Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv) + Skin.HasSetting(infopaneofftv)">Skin.Reset(infopaneautotv)</onclick>
                 <onclick condition="Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv) + Skin.HasSetting(infopaneofftv)">Skin.Reset(infopaneofftv)</onclick>
-                
-                
                 <onclick condition="!Skin.HasSetting(showcaseinfoontv) + !Skin.HasSetting(infopaneautotv) + !Skin.HasSetting(infopaneofftv)">Skin.SetBool(showcaseinfoontv)</onclick>
-                
-                
                 <onclick condition="Skin.HasSetting(showcaseinfoontv) + !Skin.HasSetting(infopaneautotv) + !Skin.HasSetting(infopaneofftv)">Notification($LOCALIZE[42002],$LOCALIZE[42001])</onclick>
                 <onclick condition="Skin.HasSetting(showcaseinfoontv) + !Skin.HasSetting(infopaneautotv) + !Skin.HasSetting(infopaneofftv)">Skin.SetBool(infopaneautotv)</onclick>
-                
-                                <onclick condition="Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv) + !Skin.HasSetting(infopaneofftv)">Skin.SetBool(infopaneofftv)</onclick>
-
-                
+                <onclick condition="Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv) + !Skin.HasSetting(infopaneofftv)">Skin.SetBool(infopaneofftv)</onclick>
                 <visible>[Container.Content(tvshows) | Container.Content(seasons)] + !stringcompare(Skin.String(actualViewtype),bigfan)</visible>
                 <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | Stringcompare(Skin.String(actualViewtype),banners) | Stringcompare(Skin.String(actualViewtype),posterlite)</visible>
             </control>
@@ -260,7 +241,7 @@
                 <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
                 <textureradiofocus>common/arrowright.png</textureradiofocus>
                 <textureradionofocus></textureradionofocus>
-                <selected>Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)</selected>
+                <selected>Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto) + !Skin.HasSetting(infopaneoff)</selected>
                 <textcolor>grey2</textcolor>
                 <focusedcolor>white6</focusedcolor>
                 <disabledcolor>grey3</disabledcolor>
@@ -274,34 +255,16 @@
                 <radioheight>30</radioheight>
                 <radioposx>542</radioposx>
                 <label>$LOCALIZE[31166]: [COLOR $VAR[FontColorVar]]$VAR[InfoPanelToggleLabelVar][/COLOR]</label>
-                <onright condition="![Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)]">Dialog.Close(1126)</onright>
-                <onright condition="![Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)]">SetFocus(50)</onright>
-                <onright condition="Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)">ActivateWindow(1114)</onright>
-              
-
-
-
-
-
-              
+                <onright condition="![Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)] | Skin.HasSetting(infopaneoff)">Dialog.Close(1126)</onright>
+                <onright condition="![Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)] | Skin.HasSetting(infopaneoff)">SetFocus(50)</onright>
+                <onright condition="Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto) + !Skin.HasSetting(infopaneoff)">ActivateWindow(1114)</onright>
                 <onclick condition="Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto) + Skin.HasSetting(infopaneoff)">Skin.Reset(showcaseinfoon)</onclick>
                 <onclick condition="Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto) + Skin.HasSetting(infopaneoff)">Skin.Reset(infopaneauto)</onclick>
                 <onclick condition="Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto) + Skin.HasSetting(infopaneoff)">Skin.Reset(infopaneoff)</onclick>
-                
                 <onclick condition="!Skin.HasSetting(showcaseinfoon) + !Skin.HasSetting(infopaneauto) + !Skin.HasSetting(infopaneoff)">Skin.SetBool(showcaseinfoon)</onclick>
-                
                 <onclick condition="Skin.HasSetting(showcaseinfoon) + !Skin.HasSetting(infopaneauto) + !Skin.HasSetting(infopaneoff)">Notification($LOCALIZE[42002],$LOCALIZE[42001])</onclick>
                 <onclick condition="Skin.HasSetting(showcaseinfoon) + !Skin.HasSetting(infopaneauto) + !Skin.HasSetting(infopaneoff)">Skin.SetBool(infopaneauto)</onclick>
-                
-                
                 <onclick condition="Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto) + !Skin.HasSetting(infopaneoff)">Skin.SetBool(infopaneoff)</onclick>
-
-                
-                
-                
-                
-                
-                
                 <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | Stringcompare(Skin.String(actualViewtype),posterlite)</visible>
                 <visible>[Container.Content(movies) | Container.Content(musicvideos)] + !stringcompare(Skin.String(actualViewtype),bigfan)</visible>
             </control>

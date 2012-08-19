@@ -12,7 +12,7 @@
     <control type="scrollbar" id="63">
       <animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(63)">Conditional</animation>
       <onup>528</onup>
-	  <ondown condition="!Player.HasVideo">SetFocus(528109)</ondown>
+	  <ondown condition="!Player.HasVideo">528109</ondown>
     </control>
     <control type="group">
       <posx>700</posx>
@@ -78,20 +78,22 @@
 		<animation effect="zoom" center="auto" start="39" end="39" time="0" condition="true">Conditional</animation>
 		<include>PosFade</include>
 		<include>PLPosters</include>
+		<visible>!Control.IsVisible(528199)</visible>
 	  </control>
     </itemlayout>
     <focusedlayout width="478" height="768" condition="![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
       <control type="group">
         <posx>8</posx>
         <posy>330</posy>
-		<animation effect="fade" time="200" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
+		<animation effect="fade" time="200" delay="100" reversible="false" condition="[Control.IsVisible(528196)|Control.IsVisible(528199)]">Focus</animation>
+		<animation effect="fade" end="0" time="0" reversible="false" condition="[Control.IsVisible(528196)|Control.IsVisible(528199)]+[Container.OnNext|Container.OnPrevious]">Unfocus</animation>
 	    <animation effect="zoom" center="475,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnNext">Focus</animation>
 		<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="!Control.IsVisible(528196)+Container.OnPrevious">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
-		<animation effect="zoom" center="0,978" start="100" end="39" time="300" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnNext">Unfocus</animation>
+		<animation effect="zoom" center="5,978" start="100" end="39" time="300" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnNext">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)+Container.OnPrevious">
-		  <effect type="zoom" center="300,978" start="100" end="39" time="300" />
-		  <effect type="slide" end="-460" time="0" />
+		  <effect type="zoom" center="300,978" start="98" end="39" time="300" />
+		  <effect type="slide" end="-463" time="0" />
 	    </animation>
 		<include>PLPosters</include>
       </control>
@@ -103,13 +105,15 @@
 		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
       	<include>PosFade</include>
 		<include>PLLogos</include>
+		<visible>!Control.IsVisible(528199)</visible>
 	  </control>
     </itemlayout>
     <focusedlayout width="570" height="224" condition="[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]">
 	  <control type="group">
 		<posx>-484</posx>
 		<posy>810</posy>
-		<animation effect="fade" time="200" delay="100" reversible="false" condition="Control.IsVisible(528196)">Focus</animation>
+		<animation effect="fade" time="200" delay="100" reversible="false" condition="[Control.IsVisible(528196)|Control.IsVisible(528199)]">Focus</animation>
+		<animation effect="fade" end="0" time="0" reversible="false" condition="[Control.IsVisible(528196)|Control.IsVisible(528199)]+[Container.OnNext|Container.OnPrevious]">Unfocus</animation>
 		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false" condition="!Control.IsVisible(528196)">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+!Control.IsVisible(528196)">
@@ -147,7 +151,6 @@
       <texture background="true">thumbs/thumb_glass.png</texture>
     </control>
     <control type="image">
-      <!--visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible-->
       <posy>684</posy>
       <width>464</width>
       <height>683</height>
@@ -179,7 +182,6 @@
       <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
     </control>
 	<control type="image">
-	  <!--visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible-->
       <posy>205</posy>
       <width>525</width>
       <height>204</height>
@@ -220,8 +222,7 @@
 	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture flipy="true">osd/osd_progress_bar_back.png</texture>
-      <animation effect="fade" start="100" end="85" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvlinp)]">Conditional</animation>
-      <animation effect="fade" start="100" end="65" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
+      <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
       <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
     </control>
     <control type="fadelabel">
@@ -245,9 +246,9 @@
 	  <include>FullscreenDimensions</include>
 	  <fadetime>300</fadetime>
       <texture>views/logo_back.png</texture>
-      <colordiffuse>black</colordiffuse>
-      <animation effect="fade" start="100" end="95" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvlinp)]">Conditional</animation>
-      <animation effect="fade" start="100" end="70" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
+      <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+	  <animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+	  <animation effect="slide" end="0,320" time="200" condition="Control.IsVisible(528199)">Conditional</animation>
     </control>
     <control type="image">
 	  <visible>[Container.Content(movies)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
@@ -257,12 +258,18 @@
 	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture>views/lowlist_panelback.png</texture>
-      <animation effect="fade" start="100" end="90" time="50" condition="[Container.Content(movies)+!Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvlinp)]">Conditional</animation>
-      <animation effect="fade" start="100" end="50" time="50" condition="[Container.Content(movies)+Skin.HasSetting(plitelinp)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvlinp)]">Conditional</animation>
+      <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+	  <animation effect="slide" end="0,198" time="200" condition="Control.IsVisible(528199)">Conditional</animation>
     </control>
 	<control type="group">
 	  <posy>755</posy>
 	  <include>Neon_Topbar</include>
+	  <visible>!Control.IsVisible(528199)</visible>
+	</control>
+	<control type="group">
+	  <posy>953</posy>
+	  <include>Neon_Topbar</include>
+	  <visible>Control.IsVisible(528199)</visible>
 	</control>
   </include>
   <include name="CuFlVa">
@@ -306,7 +313,7 @@
       </control>
       <!-- Labels -->
 	  <control type="group" id="528200">
-		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(528109)+!Control.HasFocus(63)]]+!Window.IsVisible(1126)]|Control.IsVisible(528196)|Control.IsVisible(528193)]</visible>
+		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(528109)+!Control.HasFocus(63)]]+!Window.IsVisible(1126)]|Control.IsVisible(528196)|Control.IsVisible(528193)] + !Control.IsVisible(528199)</visible>
 		<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
@@ -356,6 +363,7 @@
 		  <animation effect="fade" time="10" condition="![Container.OnNext|Container.OnPrevious]">Visible</animation>
           <aspectratio>stretch</aspectratio>
           <texture background="true">osd/osd_bottom_bar.png</texture>
+          <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
           <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
         </control>
         <control type="fadelabel">
