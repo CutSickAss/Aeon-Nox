@@ -981,6 +981,7 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pliteback1)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(infopaneauto)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(infopaneautotv)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(IncludeWatchedCVPL,False)</onload>
         <onload>Skin.SetBool(firstrun)</onload>
     </include>

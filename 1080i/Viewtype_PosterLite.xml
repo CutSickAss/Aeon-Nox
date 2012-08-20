@@ -222,7 +222,7 @@
 	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture flipy="true">osd/osd_progress_bar_back.png</texture>
-      <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+      <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
       <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
     </control>
     <control type="fadelabel">
@@ -246,7 +246,7 @@
 	  <include>FullscreenDimensions</include>
 	  <fadetime>300</fadetime>
       <texture>views/logo_back.png</texture>
-      <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+      <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
 	  <animation effect="slide" end="0,320" time="200" condition="Control.IsVisible(528199)">Conditional</animation>
     </control>
@@ -258,7 +258,7 @@
 	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
       <texture>views/lowlist_panelback.png</texture>
-      <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+      <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <animation effect="slide" end="0,198" time="200" condition="Control.IsVisible(528199)">Conditional</animation>
     </control>
 	<control type="group">
@@ -363,7 +363,7 @@
 		  <animation effect="fade" time="10" condition="![Container.OnNext|Container.OnPrevious]">Visible</animation>
           <aspectratio>stretch</aspectratio>
           <texture background="true">osd/osd_bottom_bar.png</texture>
-          <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+          <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
           <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
         </control>
         <control type="fadelabel">
