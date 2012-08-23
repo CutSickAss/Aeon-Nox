@@ -163,7 +163,7 @@
             <width>776</width>
             <height>147</height>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <visible>[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]</visible>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
             <include>Animation_VisibleChange400</include>
             <texture>dialogs/scan_backg_shadow.png</texture>
@@ -191,13 +191,13 @@
     </include>
     <include name="Dialogs_HardDrive">
         <control type="image">
-            <posx>4</posx>
-            <posy>18</posy>
-            <width>133</width>
+            <posx>21</posx>
+            <posy>20</posy>
+            <width>100</width>
             <height>100</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <texture>special://skin/extras/BigIcons/Search.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <texture>dialogs/scan.png</texture>
+            <colordiffuse>white2</colordiffuse>
+            <animation effect="rotate" start="360" end="0" center="auto" time="2500" loop="true" condition="true">conditional</animation>
         </control>
     </include>
     <include name="Dialogs_VolumeIcon">
@@ -380,8 +380,8 @@
         <font>Font_Reg19_Caps</font>
         <textoffsety>8</textoffsety>
         <textoffsetx>30</textoffsetx>
-        <include condition="[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">ShutdownGlow</include>
-        <include condition="![[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]]">ShutdownNoGlow</include>
+        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlow</include>
+        <include condition="![!Skin.HasSetting(DisableGlowbar)]">ShutdownNoGlow</include>
     </include>
     <include name="HiddenObject">
         <posx>-300</posx>
@@ -394,7 +394,7 @@
         <font>-</font>
     </include>
     <include name="subcolornofocus">
-        <textcolor>ff969696</textcolor>
+        <textcolor>grey</textcolor>
     </include>
     <include name="listcolornofocus">
         <textcolor>white2</textcolor>
@@ -412,7 +412,7 @@
     </include>
     <include name="Objects_KeyOffVars">
         <textcolor>grey2</textcolor>
-        <focusedcolor>FFFFFFFF</focusedcolor>
+        <focusedcolor>white</focusedcolor>
         <selectedcolor>grey2</selectedcolor>
         <align>center</align>
         <aligny>top</aligny>
@@ -1081,7 +1081,7 @@
         <posy>0</posy>
         <width>254.5</width>
         <height>50</height>
-        <textcolor>FF868686</textcolor>
+        <textcolor>grey</textcolor>
         <focusedcolor>white2</focusedcolor>
         <disabledcolor>66868686</disabledcolor>
         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
@@ -1431,7 +1431,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>VideoPlayer.Content(episodes)</visible>
+                    <visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(LiveTV)</visible>
                     <animation type="WindowOpen">
                         <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
                     </animation>
@@ -1478,7 +1478,7 @@
                         <height>207</height>
                         <texture>$INFO[VideoPlayer.Cover]</texture>
                         <aspectratio>keep</aspectratio>
-                        <visible>VideoPlayer.Content(LiveTV)</visible>
+                        <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Cover)</visible>
                     </control>
                     <control type="label">
                         <posx>-255</posx>
@@ -1586,14 +1586,6 @@
                 <control type="group">
                     <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)</visible>
                     <animation effect="slide" start="0,0" end="0,30" reversible="true" condition="IsEmpty(VideoPlayer.Rating)">Conditional</animation>
-                    <control type="image">
-                        <posx>98</posx>
-                        <posy>105</posy>
-                        <width>180</width>
-                        <height>36</height>
-                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                        <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
-                    </control>
                     <control type="label">
                         <posx>98</posx>
                         <posy>56</posy>
@@ -1602,7 +1594,15 @@
                         <align>center</align>
                         <aligny>center</aligny>
                         <font>Font_OSDTitle2</font>
-                        <label>$INFO[VideoPlayer.Year]$INFO[VideoPlayer.Season,S] $INFO[VideoPlayer.Episode,E]</label>
+                        <label>$INFO[VideoPlayer.Year]$VAR[VideoSeasonVar,S]$VAR[VideoEpisodeVar,E]</label>
+                    </control>
+                    <control type="image">
+                        <posx>98</posx>
+                        <posy>110</posy>
+                        <width>180</width>
+                        <height>36</height>
+                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                        <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
                     </control>
                 </control>
             </control>
@@ -1651,4 +1651,11 @@
                 </control>
             </control>
             </include>
+    <include name="ClassicOSDButton">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>115</width>
+        <height>115</height>
+        <font>-</font>
+    </include>
 </includes>
