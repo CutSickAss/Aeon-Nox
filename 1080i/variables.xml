@@ -2221,8 +2221,12 @@
     </variable>
     <variable name="PLColorVar">
         <value condition="!Skin.HasSetting(colortext)">FFD8D8D8</value>
-        <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
         <value>$VAR[FontColorVar]</value>
     </variable>
-
+    <variable name="PLColorDiffuseVar">
+        <value condition="Skin.HasSetting(randomcolor) + Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)">$VAR[DayTimeColorVar]</value>
+        <value condition="Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)">$VAR[AreaColorVar]</value>
+        <value>FF1C1C1C</value>
+    </variable>
+	
 </includes>
