@@ -1217,11 +1217,11 @@
                     <bordersize>7</bordersize>
                 </control>
             </control>
-            <control type="label">
+            <control type="fadelabel">
                 <posx>825</posx>
-                <posy>1042</posy>
+                <posy>1020</posy>
                 <width>1050</width>
-                <scroll>true</scroll>
+                <height>50</height>
                 <haspath>true</haspath>
                 <font>Font_Info</font>
                 <aligny>center</aligny>
