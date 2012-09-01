@@ -665,7 +665,7 @@
         </control>
         <control type="image">
             <posx>0</posx>
-            <posy>1026</posy>
+            <posy>1024</posy>
             <width>1920</width>
             <height>58</height>
             <texture>views/showcase_gradient.png</texture>

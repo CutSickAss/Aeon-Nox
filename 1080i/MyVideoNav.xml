@@ -81,6 +81,7 @@
         <control type="group">
             <!-- view id = 528 PosterLite -->
             <include condition="!Skin.HasSetting(DisablePosterLiteVL)">PosterLite</include>
+			<include>Furniture_DarkGradient</include>
             <visible>Control.IsVisible(528)</visible>
             <control type="button" id="528193">
                 <include>HiddenObject</include>
