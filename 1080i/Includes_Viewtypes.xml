@@ -670,7 +670,7 @@
             <height>58</height>
             <texture>views/showcase_gradient.png</texture>
             <include>Animation_CommonFade</include>
-            <visible>Control.IsVisible(528)+!Control.HasFocus(528109)</visible>
+            <visible>Control.IsVisible(528)</visible>
         </control>
         <control type="image" id="4050">
             <texture>-</texture>
@@ -708,7 +708,7 @@
             <texture flipy="true">views/showcase_glow.png</texture>
             <colordiffuse>$VAR[ExtendedColorDiffuseVar]</colordiffuse>
             <include>Animation_VisibleChange400</include>
-            <visible>Skin.HasSetting(ExtendedGlowMode) + ![Control.IsVisible(518) + Skin.HasSetting(fspanelbackground)]</visible>
+            <visible>Skin.HasSetting(ExtendedGlowMode) + ![Control.IsVisible(518) + Skin.HasSetting(fspanelbackground)] + !Control.HasFocus(528109)</visible>
         </control>
     </include>
     <include name="WallPanel">
