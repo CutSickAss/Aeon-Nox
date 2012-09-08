@@ -480,7 +480,7 @@
             <control type="button" id="1765">
                 <description>Toggle Logo (TV)</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[41159]: [COLOR $VAR[FontColorVar]]$VAR[PLIconLabelVar][/COLOR]</label>
+                <label>$LOCALIZE[41159]: [COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label>
                 <onclick condition="!Skin.HasSetting(plcleartv) + !Skin.HasSetting(pllandtv) + !Skin.HasSetting(pllogotv)">Skin.SetBool(pllandtv)</onclick>
                 <onclick condition="Skin.HasSetting(pllandtv)">Skin.SetBool(pllogotv)</onclick>
                 <onclick condition="Skin.HasSetting(pllandtv)">Skin.Reset(pllandtv)</onclick>
@@ -493,7 +493,7 @@
             <control type="button" id="1766">
                 <description>Toggle Logo (Movies)</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[41159]: [COLOR $VAR[FontColorVar]]$VAR[PLIconLabelVar][/COLOR]</label>
+                <label>$LOCALIZE[41159]: [COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label>
                 <onclick condition="!Skin.HasSetting(plclear) + !Skin.HasSetting(plland) + !Skin.HasSetting(pllogo)">Skin.SetBool(plland)</onclick>
                 <onclick condition="Skin.HasSetting(plland)">Skin.SetBool(pllogo)</onclick>
                 <onclick condition="Skin.HasSetting(plland)">Skin.Reset(plland)</onclick>

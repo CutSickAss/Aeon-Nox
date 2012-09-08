@@ -669,9 +669,9 @@
         </control>
         <control type="image">
             <posx>0</posx>
-            <posy>1024</posy>
+            <posy>1029</posy>
             <width>1920</width>
-            <height>58</height>
+            <height>60</height>
             <texture>views/showcase_gradient.png</texture>
             <include>Animation_CommonFade</include>
             <visible>Control.IsVisible(528)</visible>
@@ -708,8 +708,10 @@
 	  		<font>-</font>
 	  		<onup>50</onup>				
 	  		<ondown>50</ondown>				
-	  		<onleft>50</onleft>				
-	  		<onright>50</onright>				
+	  		<onleft condition="Control.IsVisible(528)">Control.Move(528,-1)</onleft>				
+	  		<onright condition="Control.IsVisible(528)">Control.Move(528,1)</onright>
+			<onleft condition="!Control.IsVisible(528)">50</onleft>
+			<onright condition="!Control.IsVisible(528)">50</onright>				
 	  		<onclick>SetFocus(50)</onclick>				
 	  		<onback>50</onback>				
 	  		<texturenofocus>-</texturenofocus>
@@ -717,7 +719,7 @@
 			</control>	
             
                    <control type="group">
-            <visible>Control.HasFocus(109)</visible>
+            <visible>Control.HasFocus(109) + !Control.IsVisible(528)</visible>
             <include>Animation_WindowFade200</include>
             <animation type="Visible" reversible="true">
                 <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />

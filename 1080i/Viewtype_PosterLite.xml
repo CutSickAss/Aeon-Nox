@@ -4,17 +4,11 @@
     <include>Animation_CommonFade</include>
 	<include>PLiteBack</include>
 	<include>PLLabFl</include>
-	<animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(528109)">Conditional</animation>
-	<control type="button" id="528109">
-	  <include>HiddenObject</include>
-	  <onleft>Control.Move(528,-1)</onleft>
-	  <onright>Control.Move(528,1)</onright>
-	  <onup>528</onup>
-	</control>
+	<animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(109)">Conditional</animation>
     <control type="scrollbar" id="63">
       <animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(63)">Conditional</animation>
       <onup>528</onup>
-	  <ondown condition="!Player.HasVideo">528109</ondown>
+	  <ondown condition="!Player.HasVideo">109</ondown>
     </control>
     <control type="group">
       <posx>700</posx>
@@ -43,11 +37,11 @@
       <include condition="Skin.HasSetting(showcasewrap)">plwrap</include>
       <!-- Title -->
       <control type="group">
-        <posx>570</posx>
+        <posx>534</posx>
         <posy>0</posy>
 		<control type="group">
           <visible>!Skin.HasSetting(ClassicTopBar)+!Skin.HasSetting(disabletopbar)</visible>
-          <posy>42</posy>
+          <posy>41</posy>
 		  <include>PLTopT</include>
         </control>
         <control type="group">
@@ -147,7 +141,7 @@
       <height>780</height>
       <bordersize>17</bordersize>
       <include>PanelGlowFade</include>
-      <colordiffuse>$VAR[PLColorDiffuseVar]</colordiffuse>
+      <colordiffuse>$VAR[PLColorDiffuse]</colordiffuse>
       <texture>thumbs/thumb_glass_shadow.png</texture>
     </control>
     <control type="image">
@@ -193,7 +187,7 @@
       <height>204</height>
 	  <fadetime>300</fadetime>
       <aspectratio aligny="bottom">keep</aspectratio>
-      <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
+      <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIcon]</texture>
     </control>
 	<control type="image">
       <posy>205</posy>
@@ -201,7 +195,7 @@
       <height>204</height>
 	  <fadetime>300</fadetime>
       <aspectratio aligny="top">keep</aspectratio>
-      <texture flipy="true" background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIconVar]</texture>
+      <texture flipy="true" background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIcon]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
 	  <animation effect="fade" start="100" end="0" time="500">Focus</animation>
 	  <animation effect="fade" start="0" end="100" time="500">Unfocus</animation>
@@ -231,23 +225,23 @@
   </include>
   <include name="PLTopT">
     <control type="image">
-      <width>780</width>
+      <width>854</width>
       <height>126</height>
 	  <fadetime>300</fadetime>
       <aspectratio>stretch</aspectratio>
-      <texture flipy="true">osd/osd_progress_bar_back.png</texture>
-      <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
+      <texture flipy="true">osd/osd_top_bar.png</texture>
+      <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
       <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
     </control>
     <control type="fadelabel">
-      <posx>65</posx>
+      <posx>114</posx>
       <posy>-10</posy>
-      <width>651</width>
+      <width>624</width>
       <height>75</height>
       <align>center</align>
       <aligny>center</aligny>
       <font>Font_Bold28_Caps</font>
-	  <textcolor>$VAR[PLColorVar]</textcolor>
+	  <textcolor>$VAR[PLTitleColor]</textcolor>
       <scrollspeed>20</scrollspeed>
 	  <include>PLFadeL</include>
       <label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
@@ -327,7 +321,7 @@
       </control>
       <!-- Labels -->
 	  <control type="group" id="528200">
-		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(528109)+!Control.HasFocus(63)]]+!Window.IsVisible(1126)]|Control.IsVisible(528196)|Control.IsVisible(528193)] + !Control.IsVisible(528199)</visible>
+		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(63)]]+!Window.IsVisible(1126)]|Control.IsVisible(528196)|Control.IsVisible(528193)] + !Control.IsVisible(528199)</visible>
 		<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
@@ -363,7 +357,7 @@
           <aligny>justify</aligny>
 		  <include>PLFadeL</include>
           <font>Font_OSDTitle2</font>
-		  <textcolor>$VAR[PLColorVar]</textcolor>
+		  <textcolor>$VAR[TitleColorVar]</textcolor>
           <label>$INFO[ListItem.Label]</label>
   		  <animation effect="fade" time="10">Visible</animation>
           <visible>Container.Content(movies)+ListItem.IsFolder+!StringCompare(ListItem.Label,..)+![!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)]</visible>
@@ -377,7 +371,7 @@
 		  <animation effect="fade" time="10" condition="![Container.OnNext|Container.OnPrevious]">Visible</animation>
           <aspectratio>stretch</aspectratio>
           <texture background="true">osd/osd_bottom_bar.png</texture>
-          <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
+          <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
           <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
         </control>
         <control type="fadelabel">
@@ -390,7 +384,7 @@
 		  <aligny>center</aligny>
 		  <scrollspeed>15</scrollspeed>
 		  <include>PLFadeL</include>
-          <textcolor>FF363636</textcolor>
+          <textcolor>$VAR[PLTitleColor]</textcolor>
           <label>[I]$INFO[ListItem.Tagline][/I]</label>
 		  <animation effect="fade" time="10">Visible</animation>
           <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
@@ -404,7 +398,7 @@
           <align>right</align>
 		  <aligny>center</aligny>
 		  <include>PLFadeL</include>
-          <label>$LOCALIZE[20339]: [COLOR=$VAR[PLColorVar]]$INFO[ListItem.Director][/COLOR]</label>
+          <label>$LOCALIZE[20339]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Director][/COLOR]</label>
           <visible>Container.Content(movies)+!IsEmpty(ListItem.Director)</visible>
         </control>
 		<!-- Movie Sets -->
@@ -448,7 +442,7 @@
 	</control>
     <control type="group">
 	  <!-- Flags -->
-      <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(63)+!Control.HasFocus(528109)</visible>
+      <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(63)+!Control.HasFocus(109)</visible>
       <control type="group">
         <visible>Container.Content(movies)</visible>
         <posx>548</posx>
@@ -548,7 +542,7 @@
           <width>370</width>
 		  <align>right</align>
 		  <font>Font_Bold22_Caps</font>
-		  <textcolor>$VAR[PLColorVar]</textcolor>
+		  <textcolor>$VAR[TitleColorVar]</textcolor>
 		  <label>$LOCALIZE[20457]</label>
           <visible>SubString(ListItem.Path,videodb://1/7/)</visible>
         </control>
@@ -599,7 +593,7 @@
     </control>
   </include>
   <include name="PosFade">
-	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(528109)|Control.HasFocus(63)|Window.IsVisible(1126)]+![[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]</visible>
+	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(109)|Control.HasFocus(63)|Window.IsVisible(1126)]+![[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]</visible>
     <animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(1sec)">Conditional</animation>
     <animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(2sec)">Conditional</animation>
     <animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+Skin.HasSetting(3sec)">Conditional</animation>
