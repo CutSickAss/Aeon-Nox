@@ -593,7 +593,7 @@
                         <colordiffuse>FF7c7c7c</colordiffuse>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
-                        <visible>IsEmpty(Control.GetLabel(900011))]</visible>
+                        <visible>IsEmpty(Control.GetLabel(900011))</visible>
                         <animation effect="slide" start="0,0" end="0,-10" reversible="true" condition="true">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(900012))</visible>
                     </control>
@@ -829,7 +829,7 @@
                 <onup condition="!System.HasAddon(script.metadata.actors)">13</onup>
                 <onup condition="System.HasAddon(script.metadata.actors)">131</onup>
                 <ondown>50</ondown>
-                <viewtype label="">list</viewtype>
+                
                 <scrolltime>200</scrolltime>
                 <orientation>vertical</orientation>
                 <itemlayout height="35" width="555">

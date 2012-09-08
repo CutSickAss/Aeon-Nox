@@ -200,16 +200,6 @@
             <animation effect="rotate" start="360" end="0" center="auto" time="2500" loop="true" condition="true">conditional</animation>
         </control>
     </include>
-    <include name="Dialogs_VolumeIcon">
-        <control type="image">
-            <posx>21</posx>
-            <posy>20</posy>
-            <width>100</width>
-            <height>100</height>
-            <texture>dialogs/volume.png</texture>
-            <colordiffuse>white2</colordiffuse>
-        </control>
-    </include>
     <include name="Dialogs_Settings">
         <control type="image">
             <posx>4</posx>
@@ -1022,12 +1012,12 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(1sec)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(GlobalNowPlaying)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(altoverlayinfowall)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(IncludeWatchedCVPL,False)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pllogotv)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pliteback1)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(infopaneauto)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(infopaneautotv)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(IncludeWatchedCVPL,False)</onload>
         <onload>Skin.SetBool(firstrun)</onload>
     </include>
     <include name="PVR_Settings">
