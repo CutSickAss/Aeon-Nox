@@ -481,26 +481,29 @@
                 <description>Toggle Logo (TV)</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[41159]: [COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label>
-                <onclick condition="!Skin.HasSetting(plcleartv) + !Skin.HasSetting(pllandtv) + !Skin.HasSetting(pllogotv)">Skin.SetBool(pllandtv)</onclick>
+                <onclick condition="!Skin.HasSetting(plcleartv) + !Skin.HasSetting(pllandtv) + !Skin.HasSetting(pllogotv) + !Skin.HasSetting(plnoicontv)">Skin.SetBool(pllandtv)</onclick>
                 <onclick condition="Skin.HasSetting(pllandtv)">Skin.SetBool(pllogotv)</onclick>
                 <onclick condition="Skin.HasSetting(pllandtv)">Skin.Reset(pllandtv)</onclick>
                 <onclick condition="Skin.HasSetting(pllogotv)">Skin.SetBool(plcleartv)</onclick>
                 <onclick condition="Skin.HasSetting(pllogotv)">Skin.Reset(pllogotv)</onclick>
-                <onclick condition="Skin.HasSetting(pllandtv)|Skin.HasSetting(pllogotv)">Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
-                <onclick condition="Skin.HasSetting(plcleartv) + !Skin.HasSetting(pllogotv) + !Skin.HasSetting(pllandtv)">Skin.Reset(plcleartv)</onclick>
+                <onclick condition="Skin.HasSetting(plcleartv)">Skin.SetBool(plnoicontv)</onclick>
+                <onclick condition="Skin.HasSetting(plcleartv)">Skin.Reset(plcleartv)</onclick>
+                <onclick condition="Skin.HasSetting(plnoicontv) + !Skin.HasSetting(plcleartv) + !Skin.HasSetting(pllogotv) + !Skin.HasSetting(pllandtv)">Skin.Reset(plnoicontv)</onclick>
                 <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(actualViewtype),posterlite) + Container.Content(tvshows)</visible>
             </control>
             <control type="button" id="1766">
                 <description>Toggle Logo (Movies)</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[41159]: [COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label>
-                <onclick condition="!Skin.HasSetting(plclear) + !Skin.HasSetting(plland) + !Skin.HasSetting(pllogo)">Skin.SetBool(plland)</onclick>
+                <onclick condition="!Skin.HasSetting(plclear) + !Skin.HasSetting(plland) + !Skin.HasSetting(pllogo) + !Skin.HasSetting(plnoicon)">Skin.SetBool(plland)</onclick>
                 <onclick condition="Skin.HasSetting(plland)">Skin.SetBool(pllogo)</onclick>
                 <onclick condition="Skin.HasSetting(plland)">Skin.Reset(plland)</onclick>
                 <onclick condition="Skin.HasSetting(pllogo)">Skin.SetBool(plclear)</onclick>
                 <onclick condition="Skin.HasSetting(pllogo)">Skin.Reset(pllogo)</onclick>
-                <onclick condition="Skin.HasSetting(plland)|Skin.HasSetting(pllogo)">Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
-                <onclick condition="Skin.HasSetting(plclear) + !Skin.HasSetting(pllogo) + !Skin.HasSetting(plland)">Skin.Reset(plclear)</onclick>
+                <onclick condition="Skin.HasSetting(plclear)">Skin.SetBool(plnoicon)</onclick>
+                <onclick condition="Skin.HasSetting(plclear)">Skin.Reset(plclear)</onclick>
+                <onclick condition="Skin.HasSetting(plnoicon) + !Skin.HasSetting(plclear) + !Skin.HasSetting(pllogo) + !Skin.HasSetting(plland)">Skin.Reset(plnoicon)</onclick>
+
                 <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(actualViewtype),posterlite) + Container.Content(movies)</visible>
             </control>
             <control type="togglebutton" id="1767">
