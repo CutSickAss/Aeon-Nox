@@ -83,19 +83,15 @@
             <include condition="!Skin.HasSetting(DisablePosterLiteVL)">PosterLite</include>
 			<include>Furniture_DarkGradient</include>
             <visible>Control.IsVisible(528)</visible>
-            <control type="button" id="528193">
-                <include>HiddenObject</include>
-                <visible>Window.IsVisible(contextmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(shutdownmenu)|Window.IsVisible(playercontrols)|Window.IsVisible(1128)|Window.IsVisible(busydialog)|Window.IsVisible(DialogBusy.xml)|Window.IsVisible(progressdialog)|Window.IsVisible(selectdialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(filebrowser)|Window.IsVisible(yesnodialog)</visible>
-            </control>
             <control type="button" id="528195">
                 <description>Infopanel: Manual</description>
                 <include>HiddenObject</include>
                 <visible>[[Container.Content(movies)+!Skin.HasSetting(showcaseinfoon)]|[Container.Content(tvshows)+!Skin.HasSetting(showcaseinfoontv)]]+!StringCompare(ListItem.Label,..)</visible>
             </control>
             <control type="button" id="528196">
-                <description>Infopanel: On</description>
+                <description>Infopanel: On/Off</description>
                 <include>HiddenObject</include>
-                <visible>[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]]+!StringCompare(ListItem.Label,..)</visible>
+                <visible>[[Container.Content(movies)+[[Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|Skin.HasSetting(infopaneoff)]]|[Container.Content(tvshows)+[[Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]|Skin.HasSetting(infopaneofftv)]]]+!StringCompare(ListItem.Label,..)</visible>
             </control>
             <control type="button" id="528194">
                 <include>HiddenObject</include>
@@ -112,11 +108,6 @@
                 <include>HiddenObject</include>
                 <visible>Control.IsVisible(528194)+SubString(ListItem.Path,videodb://1/7/)</visible>
                 <include>PLDelAn</include>
-            </control>
-            <control type="button" id="528199">
-                <description>Infopanel: Off</description>
-                <include>HiddenObject</include>
-                <visible>[Container.Content(movies)+Skin.HasSetting(infopaneoff)]|[Container.Content(tvshows)+Skin.HasSetting(infopaneofftv)]</visible>
             </control>
         </control>
         <include>Furniture_Showcase</include>
