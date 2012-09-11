@@ -503,7 +503,6 @@
                 <onclick condition="Skin.HasSetting(plclear)">Skin.SetBool(plnoicon)</onclick>
                 <onclick condition="Skin.HasSetting(plclear)">Skin.Reset(plclear)</onclick>
                 <onclick condition="Skin.HasSetting(plnoicon) + !Skin.HasSetting(plclear) + !Skin.HasSetting(pllogo) + !Skin.HasSetting(plland)">Skin.Reset(plnoicon)</onclick>
-
                 <visible>Window.IsActive(videolibrary) + stringcompare(Skin.String(actualViewtype),posterlite) + Container.Content(movies)</visible>
             </control>
             <control type="togglebutton" id="1767">
