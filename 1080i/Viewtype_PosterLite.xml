@@ -349,7 +349,7 @@
       </control>
       <!-- Labels -->
 	  <control type="group" id="528200">
-		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(63)]]]|Control.IsVisible(528196)|Control.IsVisible(528193)|Window.IsVisible(contextmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(shutdownmenu)Window.IsVisible(playercontrols)|Window.IsVisible(1128)|Window.IsVisible(busydialog)|Window.IsVisible(DialogBusy.xml)|Window.IsVisible(progressdialog)|Window.IsVisible(selectdialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(filebrowser)|Window.IsVisible(yesnodialog)] + ![[Container.Content(movies)+Skin.HasSetting(infopaneoff)]|[Container.Content(tvshows)+Skin.HasSetting(infopaneofftv)]]</visible>
+		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(63)]]]|Control.IsVisible(528196)|Window.IsVisible(contextmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(shutdownmenu)|Window.IsVisible(playercontrols)|Window.IsVisible(1128)|Window.IsVisible(busydialog)|Window.IsVisible(DialogBusy.xml)|Window.IsVisible(progressdialog)|Window.IsVisible(selectdialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(filebrowser)|Window.IsVisible(yesnodialog)] + ![[Container.Content(movies)+Skin.HasSetting(infopaneoff)]|[Container.Content(tvshows)+Skin.HasSetting(infopaneofftv)]]</visible>
 		<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
@@ -512,7 +512,7 @@
           <posx>368</posx>
           <posy>-2</posy>
           <include>CuFlVa</include>
-		  <!--colordiffuse>white</colordiffuse-->
+		  <!--colordiffuse>white</colordiffuse--> <!-- Not white for Greek ratings -->
           <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
 		  <visible>![IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)]</visible>
         </control>
@@ -614,7 +614,7 @@
           <posx>408</posx>
           <posy>-25</posy>
           <include>CuFlVa</include>
-		  <!--colordiffuse>white</colordiffuse-->
+		  <!--colordiffuse>white</colordiffuse--> <!-- Not white for Greek ratings -->
           <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
         </control>
       </control>
