@@ -15,12 +15,11 @@
     <control type="group">
       <posx>700</posx>
       <posy>124</posy>
-      <animation effect="slide" start="1000,0" end="0,0" time="500" delay="800" tween="quadratic" easing="out" reversible="false">Visible</animation>
-      <visible>Player.HasVideo+!Window.IsVisible(busydialog)+!Window.IsVisible(DialogBusy.xml)+!Window.IsVisible(progressdialog)+!VideoPlayer.IsFullscreen+!Skin.HasSetting(fstrailer)</visible>
+      <animation effect="slide" start="1000,0" end="0,0" time="500" delay="1000" tween="quadratic" easing="out" reversible="false">Visible</animation>
+      <visible>Player.HasVideo+!VideoPlayer.IsFullscreen+!Skin.HasSetting(fstrailer)</visible>
       <control type="image">
         <width>1028</width>
         <height>590</height>
-        <include>PanelGlowFade</include>
         <texture>home/nowplaying/OverlayDialogBackground.png</texture>
 		<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 		<bordertexture>common/black.png</bordertexture>
@@ -349,7 +348,7 @@
       </control>
       <!-- Labels -->
 	  <control type="group" id="528200">
-		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(63)]]]|Control.IsVisible(528196)|Window.IsVisible(contextmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(shutdownmenu)|Window.IsVisible(playercontrols)|Window.IsVisible(1128)|Window.IsVisible(busydialog)|Window.IsVisible(DialogBusy.xml)|Window.IsVisible(progressdialog)|Window.IsVisible(selectdialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(filebrowser)|Window.IsVisible(yesnodialog)] + ![[Container.Content(movies)+Skin.HasSetting(infopaneoff)]|[Container.Content(tvshows)+Skin.HasSetting(infopaneofftv)]]</visible>
+		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Control.IsVisible(528195)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(63)]]]|Control.IsVisible(528196)]+![[Container.Content(movies)+Skin.HasSetting(infopaneoff)]|[Container.Content(tvshows)+Skin.HasSetting(infopaneofftv)]]</visible>
 		<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
