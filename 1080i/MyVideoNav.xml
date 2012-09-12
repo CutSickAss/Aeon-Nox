@@ -90,7 +90,7 @@
             <control type="button" id="528196">
                 <description>Infopanel: On/Off</description>
                 <include>HiddenObject</include>
-                <visible>[[Container.Content(movies)+[[Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|Skin.HasSetting(infopaneoff)]]|[Container.Content(tvshows)+[[Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]|Skin.HasSetting(infopaneofftv)]]]+!StringCompare(ListItem.Label,..)</visible>
+                <visible>[[Container.Content(movies)+[[Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|Skin.HasSetting(infopaneoff)]]|[Container.Content(tvshows)+[[Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]|Skin.HasSetting(infopaneofftv)]]]</visible>
             </control>
             <control type="button" id="528194">
                 <include>HiddenObject</include>
@@ -107,6 +107,10 @@
                 <include>HiddenObject</include>
                 <visible>Control.IsVisible(528194)+SubString(ListItem.Path,videodb://1/7/)</visible>
                 <include>PLDelAn</include>
+            </control>
+            <control type="button" id="528199">
+                <include>HiddenObject</include>
+                <visible>[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]</visible>
             </control>
         </control>
         <include>Furniture_Showcase</include>
