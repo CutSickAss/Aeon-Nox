@@ -6,6 +6,8 @@
 	<include>PLLabFl</include>
 	<animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(109)">Conditional</animation>
     <control type="scrollbar" id="63">
+	  <posx>570</posx>
+	  <posy>1070</posy>
       <animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(63)">Conditional</animation>
       <onup>528</onup>
 	  <ondown condition="!Player.HasVideo">109</ondown>
@@ -585,7 +587,7 @@
           <align>left</align>
           <include>CuFlVa</include>
           <label>$VAR[PLTotal]</label>
-          <visible>!IsEmpty(ListItem.Episode)+[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)]]|[[[Container.Content(movies)+!Skin.HasSetting(plclear)+!Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+!Skin.HasSetting(plcleartv)+!Skin.HasSetting(pllogotv)]]+!Skin.HasSetting(UnwatchedIcon)]]</visible>
+          <visible>!IsEmpty(ListItem.Episode)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(plnoicontv)|!Skin.HasSetting(UnwatchedIcon)]</visible>
         </control>
         <control type="image">
           <posy>-22</posy>

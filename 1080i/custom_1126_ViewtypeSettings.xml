@@ -582,7 +582,7 @@
                 <label>$LOCALIZE[31184]</label>
                 <onclick>Skin.ToggleSetting(unwatchedicon)</onclick>
                 <selected>Skin.HasSetting(unwatchedicon)</selected>
-                <enable>![stringcompare(Skin.String(actualViewtype),posterlite) + [[Container.Content(tvshows) + [Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)]]|[Container.Content(movies) + [Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)]]]]</enable>
+                <enable>![stringcompare(Skin.String(actualViewtype),posterlite) + Container.Content(tvshows) + [Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(plnoicontv)]]</enable>
                 <visible>![stringcompare(Skin.String(actualViewtype),landscape) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
                 <visible>[[stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),wall) | Stringcompare(Skin.String(actualViewtype),addonwall) | Stringcompare(Skin.String(actualViewtype),episode) | Stringcompare(Skin.String(actualViewtype),banners) | Stringcompare(Skin.String(actualViewtype),posterlite) |  [Stringcompare(Skin.String(actualViewtype),panel) + Skin.HasSetting(panellogo)]] + [Container.Content(tvshows) | Container.Content(seasons)] | [Container.Content(tvshows) + Skin.HasSetting(tripanelbanner) + StringCompare(Skin.String(actualViewtype),tripanel)]]</visible>
             </control>
@@ -955,7 +955,7 @@
                 <onclick>Skin.ToggleSetting(TVShowsUsePoster)</onclick>
                 <selected>Skin.HasSetting(TVShowsUsePoster)</selected>
                 <onclick>Notification($LOCALIZE[42002],$LOCALIZE[42003])</onclick>
-                <enable>![StringCompare(Skin.String(actualViewtype),posterlite)+[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]]</enable>
+                <enable>![StringCompare(Skin.String(actualViewtype),posterlite)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)|Skin.HasSetting(plnoicontv)]]</enable>
                 <visible>[Container.Content(tvshows) | Container.Content(seasons)] + !stringcompare(Skin.String(actualViewtype),banners)</visible>
             </control>
             <control type="radiobutton" id="111">
