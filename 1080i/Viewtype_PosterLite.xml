@@ -99,11 +99,11 @@
 	    <animation effect="zoom" center="475,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
 		<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
-		<animation effect="zoom" center="5,978" start="100" end="39" time="300" reversible="false" condition="Control.HasFocus(528)+Container.OnNext">Unfocus</animation>
+		<!--animation effect="zoom" center="5,978" start="100" end="39" time="300" reversible="false" condition="Control.HasFocus(528)+Container.OnNext">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+Container.OnPrevious">
 		  <effect type="zoom" center="300,978" start="97" end="39" time="300" />
 		  <effect type="slide" end="-463" time="0" />
-	    </animation>
+	    </animation-->
 		<include>PLPosters</include>
       </control>
     </focusedlayout>
@@ -156,14 +156,20 @@
     <control type="image">
       <width>464</width>
       <height>683</height>
-	  <fadetime>250</fadetime>
-      <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[ListPosterVar]</texture>
+      <texture diffuse="thumbs/movieposter_mask.png">common/black.png</texture>
       <aspectratio scalediffuse="false">stretch</aspectratio>
     </control>
     <control type="image">
       <width>464</width>
       <height>683</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
+      <texture diffuse="thumbs/movieposter_mask.png">$VAR[ListPosterVar]</texture>
+      <aspectratio scalediffuse="false">stretch</aspectratio>
+    </control>
+    <control type="image">
+      <width>464</width>
+      <height>683</height>
+	  <fadetime>300</fadetime>
       <texture>thumbs/thumb_glass.png</texture>
       <aspectratio scalediffuse="false">stretch</aspectratio>
     </control>
@@ -171,7 +177,7 @@
       <posy>684</posy>
       <width>464</width>
       <height>683</height>
-	  <fadetime>250</fadetime>
+	  <fadetime>300</fadetime>
       <texture flipy="true" background="true" diffuse="thumbs/movieposter_mask_reflect.png">$VAR[ListPosterVar]</texture>
       <aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
 	  <visible>!Control.IsVisible(528196)</visible>
