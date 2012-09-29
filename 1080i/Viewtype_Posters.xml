@@ -25,7 +25,7 @@
                             <posy>24</posy>
                             <width>160</width>
                             <height>242</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem9Var]</texture>
                         </control>
                         <control type="image">
@@ -33,13 +33,13 @@
                             <posy>264</posy>
                             <width>160</width>
                             <height>242</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem9Var]</texture>
                         </control>
                         <control type="image">
                             <width>216</width>
                             <height>352</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture>thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -67,7 +67,7 @@
                             <posy>28</posy>
                             <width>194</width>
                             <height>291</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                         </control>
                         <control type="image">
@@ -75,13 +75,13 @@
                             <posy>318</posy>
                             <width>194</width>
                             <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                         </control>
                         <control type="image">
                             <width>260</width>
                             <height>424</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -109,7 +109,7 @@
                             <posy>33</posy>
                             <width>226</width>
                             <height>340</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                         </control>
                         <control type="image">
@@ -117,13 +117,13 @@
                             <posy>372</posy>
                             <width>226</width>
                             <height>339</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                         </control>
                         <control type="image">
                             <width>304</width>
                             <height>496</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -151,7 +151,7 @@
                             <posy>39</posy>
                             <width>260</width>
                             <height>387</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                         </control>
                         <control type="image">
@@ -159,13 +159,13 @@
                             <posy>426</posy>
                             <width>260</width>
                             <height>387</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                         </control>
                         <control type="image">
                             <width>348</width>
                             <height>568</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -193,7 +193,7 @@
                             <posy>44</posy>
                             <width>292</width>
                             <height>438</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                         </control>
                         <control type="image">
@@ -201,13 +201,13 @@
                             <posy>480</posy>
                             <width>292</width>
                             <height>438</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                         </control>
                         <control type="image">
                             <width>393</width>
                             <height>640</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -235,7 +235,7 @@
                             <posy>48</posy>
                             <width>326</width>
                             <height>488</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                         </control>
                         <control type="image">
@@ -243,13 +243,13 @@
                             <posy>534</posy>
                             <width>326</width>
                             <height>488</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                         </control>
                         <control type="image">
                             <width>436</width>
                             <height>712</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -277,7 +277,7 @@
                             <posy>52</posy>
                             <width>358</width>
                             <height>537</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                         </control>
                         <control type="image">
@@ -285,13 +285,13 @@
                             <posy>588</posy>
                             <width>358</width>
                             <height>537</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                         </control>
                         <control type="image">
                             <width>482</width>
                             <height>784</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -319,7 +319,7 @@
                             <posy>57</posy>
                             <width>392</width>
                             <height>586</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                         </control>
                         <control type="image">
@@ -327,13 +327,13 @@
                             <posy>642</posy>
                             <width>392</width>
                             <height>586</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                         </control>
                         <control type="image">
                             <width>525</width>
                             <height>856</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -361,7 +361,7 @@
                             <posy>62</posy>
                             <width>426</width>
                             <height>636</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                         </control>
                         <control type="image">
@@ -369,13 +369,13 @@
                             <posy>698</posy>
                             <width>426</width>
                             <height>636</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                         </control>
                         <control type="image">
                             <width>570</width>
                             <height>930</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -404,7 +404,7 @@
                         <control type="image">
                             <width>570</width>
                             <height>930</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay-focus.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -429,7 +429,7 @@
                         <control type="image">
                             <width>570</width>
                             <height>930</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -454,7 +454,7 @@
                             <posy>62</posy>
                             <width>426</width>
                             <height>636</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                         </control>
                         <control type="image">
@@ -462,13 +462,13 @@
                             <posy>698</posy>
                             <width>426</width>
                             <height>636</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                         </control>
                         <control type="image">
                             <width>570</width>
                             <height>930</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay-focus.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -504,7 +504,7 @@
                             <posy>24</posy>
                             <width>160</width>
                             <height>242</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                         </control>
                         <control type="image">
@@ -512,13 +512,13 @@
                             <posy>264</posy>
                             <width>160</width>
                             <height>242</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                         </control>
                         <control type="image">
                             <width>216</width>
                             <height>352</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -546,7 +546,7 @@
                             <posy>24</posy>
                             <width>160</width>
                             <height>242</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                         </control>
                         <control type="image">
@@ -554,13 +554,13 @@
                             <posy>264</posy>
                             <width>160</width>
                             <height>242</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                         </control>
                         <control type="image">
                             <width>216</width>
                             <height>352</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -588,7 +588,7 @@
                             <posy>28</posy>
                             <width>194</width>
                             <height>291</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                         </control>
                         <control type="image">
@@ -596,13 +596,13 @@
                             <posy>318</posy>
                             <width>194</width>
                             <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                         </control>
                         <control type="image">
                             <width>260</width>
                             <height>424</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -630,7 +630,7 @@
                             <posy>33</posy>
                             <width>226</width>
                             <height>340</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                         </control>
                         <control type="image">
@@ -638,13 +638,13 @@
                             <posy>372</posy>
                             <width>226</width>
                             <height>339</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                         </control>
                         <control type="image">
                             <width>304</width>
                             <height>496</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -672,7 +672,7 @@
                             <posy>39</posy>
                             <width>260</width>
                             <height>387</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                         </control>
                         <control type="image">
@@ -680,13 +680,13 @@
                             <posy>426</posy>
                             <width>260</width>
                             <height>387</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                         </control>
                         <control type="image">
                             <width>348</width>
                             <height>568</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -714,7 +714,7 @@
                             <posy>44</posy>
                             <width>292</width>
                             <height>438</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                         </control>
                         <control type="image">
@@ -722,13 +722,13 @@
                             <posy>480</posy>
                             <width>292</width>
                             <height>438</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                         </control>
                         <control type="image">
                             <width>393</width>
                             <height>640</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -756,7 +756,7 @@
                             <posy>48</posy>
                             <width>326</width>
                             <height>488</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                         </control>
                         <control type="image">
@@ -764,13 +764,13 @@
                             <posy>534</posy>
                             <width>326</width>
                             <height>488</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                         </control>
                         <control type="image">
                             <width>436</width>
                             <height>712</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -798,7 +798,7 @@
                             <posy>52</posy>
                             <width>358</width>
                             <height>537</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                         </control>
                         <control type="image">
@@ -806,13 +806,13 @@
                             <posy>588</posy>
                             <width>358</width>
                             <height>537</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                         </control>
                         <control type="image">
                             <width>482</width>
                             <height>784</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -840,7 +840,7 @@
                             <posy>57</posy>
                             <width>392</width>
                             <height>586</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                         </control>
                         <control type="image">
@@ -848,7 +848,7 @@
                             <posy>642</posy>
                             <width>392</width>
                             <height>586</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                         </control>
                         <control type="image">
@@ -879,7 +879,7 @@
                         <control type="image">
                             <width>525</width>
                             <height>856</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay-focus.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -901,7 +901,7 @@
                         <control type="image">
                             <width>525</width>
                             <height>856</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -924,7 +924,7 @@
                             <posx>30</posx>
                             <width>426</width>
                             <height>636</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
                         </control>
                         <control type="image">
@@ -932,14 +932,14 @@
                             <posy>636</posy>
                             <width>426</width>
                             <height>636</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
                         </control>
                         <control type="image">
                             <posy>624</posy>
                             <width>484</width>
                             <height>60</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay-focus.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -983,7 +983,7 @@
                             <posy>24</posy>
                             <width>160</width>
                             <height>242</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                         </control>
                         <control type="image">
@@ -991,13 +991,13 @@
                             <posy>264</posy>
                             <width>160</width>
                             <height>242</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                         </control>
                         <control type="image">
                             <width>216</width>
                             <height>352</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -1037,7 +1037,7 @@
                             <posy>28</posy>
                             <width>194</width>
                             <height>291</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                         </control>
                         <control type="image">
@@ -1045,13 +1045,13 @@
                             <posy>318</posy>
                             <width>194</width>
                             <height>290</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                         </control>
                         <control type="image">
                             <width>260</width>
                             <height>424</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -1091,7 +1091,7 @@
                             <posy>33</posy>
                             <width>226</width>
                             <height>340</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                         </control>
                         <control type="image">
@@ -1099,13 +1099,13 @@
                             <posy>372</posy>
                             <width>226</width>
                             <height>339</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                         </control>
                         <control type="image">
                             <width>304</width>
                             <height>496</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -1145,7 +1145,7 @@
                             <posy>39</posy>
                             <width>260</width>
                             <height>387</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                         </control>
                         <control type="image">
@@ -1153,13 +1153,13 @@
                             <posy>426</posy>
                             <width>260</width>
                             <height>387</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                         </control>
                         <control type="image">
                             <width>348</width>
                             <height>568</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -1199,7 +1199,7 @@
                             <posy>44</posy>
                             <width>292</width>
                             <height>438</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                         </control>
                         <control type="image">
@@ -1207,13 +1207,13 @@
                             <posy>480</posy>
                             <width>292</width>
                             <height>438</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                         </control>
                         <control type="image">
                             <width>393</width>
                             <height>640</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -1253,7 +1253,7 @@
                             <posy>48</posy>
                             <width>326</width>
                             <height>488</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                         </control>
                         <control type="image">
@@ -1261,13 +1261,13 @@
                             <posy>534</posy>
                             <width>326</width>
                             <height>488</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                         </control>
                         <control type="image">
                             <width>436</width>
                             <height>712</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -1307,7 +1307,7 @@
                             <posy>52</posy>
                             <width>358</width>
                             <height>537</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                         </control>
                         <control type="image">
@@ -1315,13 +1315,13 @@
                             <posy>588</posy>
                             <width>358</width>
                             <height>537</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                         </control>
                         <control type="image">
                             <width>482</width>
                             <height>784</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -1361,7 +1361,7 @@
                             <posy>57</posy>
                             <width>392</width>
                             <height>586</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                         </control>
                         <control type="image">
@@ -1369,13 +1369,13 @@
                             <posy>642</posy>
                             <width>392</width>
                             <height>586</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                         </control>
                         <control type="image">
                             <width>525</width>
                             <height>856</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
@@ -1415,7 +1415,7 @@
                             <posy>62</posy>
                             <width>426</width>
                             <height>636</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                         </control>
                         <control type="image">
@@ -1423,13 +1423,13 @@
                             <posy>698</posy>
                             <width>426</width>
                             <height>636</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                         </control>
                         <control type="image">
                             <width>570</width>
                             <height>930</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture background="false">thumbs/poster_overlay-focus.png</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>

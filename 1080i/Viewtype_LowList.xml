@@ -561,7 +561,7 @@
                         <posy>-130</posy>
                         <width>399</width>
                         <height>600</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[PosterVar2]</texture>
                         <fadetime>400</fadetime>
                     </control>
@@ -632,7 +632,7 @@
                         <width>420</width>
                         <height>237</height>
                         <texture diffuse="thumbs/multiplex_tvmask.png" background="true">$INFO[ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                     </control>
                     <control type="image">
                         <width>420</width>
@@ -645,7 +645,7 @@
                         <width>420</width>
                         <height>237</height>
                         <texture background="true" flipy="true" diffuse="thumbs/multiplex_tvmaskreflect.png">$INFO[ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                     </control>
                     <control type="group">
                         <visible>!Skin.HasSetting(Nox.nohighlist)</visible>

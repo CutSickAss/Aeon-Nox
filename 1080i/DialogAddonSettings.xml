@@ -28,7 +28,7 @@
                 <posy>34</posy>
                 <width>925</width>
                 <height>1010</height>
-                <aspectratio align="left">scale</aspectratio>
+                <aspectratio align="left">stretch</aspectratio>
                 <texture>settings/settings_panelback.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
@@ -37,7 +37,7 @@
                 <posy>34</posy>
                 <width>925</width>
                 <height>1010</height>
-                <aspectratio align="right">scale</aspectratio>
+                <aspectratio align="right">stretch</aspectratio>
                 <texture flipx="true">settings/settings_panelback.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
