@@ -643,6 +643,12 @@
                         <onclick>Skin.ToggleSetting(Nox.DisableInfoPanelVL)</onclick>
                         <selected>!Skin.HasSetting(Nox.DisableInfoPanelVL)</selected>
                     </control>
+                    <control type="radiobutton" id="599">
+                        <label>$LOCALIZE[31972]</label>
+                        <include>Default_SettingRadioButtonShort</include>
+                        <onclick>Skin.ToggleSetting(Nox.DisablePosterLiteVL)</onclick>
+                        <selected>!Skin.HasSetting(Nox.DisablePosterLiteVL)</selected>
+                    </control>
                 </control>
                 <control type="grouplist" id="9005">
                     <visible>Container(9000).Hasfocus(9)</visible>

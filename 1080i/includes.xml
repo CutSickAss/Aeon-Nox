@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include file="defaults.xml" />
     <include file="variables.xml" />
@@ -41,9 +41,10 @@
     <include file="Includes_CustomizerWindow.xml" />
     <include file="includesWeatherWorldCommonValues.xml" />
     <include file="Viewtype_FullscreenPanel.xml" />
+    <include file="Viewtype_PosterLite.xml" />
     <include name="VideoBackground">
         <control type="group">
-            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
+            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(528) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]] + ![Control.IsVisible(528)+!Skin.HasSetting(Nox.fstrailer)]</visible>
             <include>Animation_VisibleChange200</include>
             <control type="image">
                 <include>FullscreenDimensions</include>
@@ -911,6 +912,12 @@
         <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.GlobalNowPlaying)</onload>
         <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.altoverlayinfowall)</onload>
         <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.IncludeWatchedCVPL,False)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.pllogotv)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.pliteback1)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.infopaneauto)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.infopaneautotv)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetBool(Nox.PLPAn)</onload>
+        <onload condition="!Skin.HasSetting(Nox.firstrun)">Skin.SetString(Nox.PLBackDarkness,D9FFFFFF)</onload>
         <onload>Skin.SetBool(Nox.firstrun)</onload>
     </include>
     <include name="PVR_Settings">
@@ -928,6 +935,18 @@
         <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Skin.HasSetting(Nox.3sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="5333" condition="Skin.HasSetting(Nox.4sec)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="6666" condition="Skin.HasSetting(Nox.5sec)">Visible</animation>
+    </include>
+    <include name="PLDelAn">
+        <animation effect="fade" delay="1500" condition="Skin.HasSetting(Nox.1sec)">WindowOpen</animation>
+        <animation effect="fade" delay="1500" condition="Skin.HasSetting(Nox.1sec)">Visible</animation>
+        <animation effect="fade" delay="2500" condition="Skin.HasSetting(Nox.2sec)">WindowOpen</animation>
+        <animation effect="fade" delay="2500" condition="Skin.HasSetting(Nox.2sec)">Visible</animation>
+        <animation effect="fade" delay="3500" condition="Skin.HasSetting(Nox.3sec)">WindowOpen</animation>
+        <animation effect="fade" delay="3500" condition="Skin.HasSetting(Nox.3sec)">Visible</animation>
+        <animation effect="fade" delay="4500" condition="Skin.HasSetting(Nox.4sec)">WindowOpen</animation>
+        <animation effect="fade" delay="4500" condition="Skin.HasSetting(Nox.4sec)">Visible</animation>
+        <animation effect="fade" delay="5500" condition="Skin.HasSetting(Nox.5sec)">WindowOpen</animation>
+        <animation effect="fade" delay="5500" condition="Skin.HasSetting(Nox.5sec)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
@@ -1589,7 +1608,7 @@
         <font>-</font>
     </include>
     <include name="ColorConfigDefaultTheme">
-        <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(Nox.diffuse_color,$INFO[Skin.String(Nox.diffuse_music)])</onload>
+    <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(Nox.diffuse_color,$INFO[Skin.String(Nox.diffuse_music)])</onload>
     <onload condition="Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)">Skin.SetString(Nox.diffuse_color,$INFO[Skin.String(Nox.diffuse_videolibrary)])</onload>
     <onload condition="Window.IsActive(PVR)">Skin.SetString(Nox.diffuse_color,$INFO[Skin.String(Nox.diffuse_PVR)])</onload>
     <onload condition="Window.IsActive(pictures)">Skin.SetString(Nox.diffuse_color,$INFO[Skin.String(Nox.diffuse_pictures)])</onload>

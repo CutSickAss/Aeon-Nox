@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window id="25">
     <defaultcontrol always="true">50</defaultcontrol>
     <onload condition="System.HasAddon(script.metadata.actors) + !IsEmpty(Window(home).Property(BrowseActors))">RunScript(script.metadata.actors,backend)</onload>
@@ -10,7 +10,7 @@
     <onload>ClearProperty(BrowseActors,home)</onload>
     <include condition="!Skin.HasSetting(Nox.firstrun)">AutoConfig</include>
     <allowoverlay>no</allowoverlay>
-    <views>50,52,53,57,500,501,503,504,550,508,509,510,511,512,514,516,518</views>
+    <views>50,52,53,57,500,501,503,504,550,508,509,510,511,512,514,516,518,528</views>
     <controls>
         <!--         <include condition="[System.GetBool(videolibrary.groupmoviesets) | SubString(Container.FolderPath,videodb://1/7/)] + System.HasAddon(script.moviesets)">MovieSetsList</include>
  -->
@@ -78,6 +78,42 @@
             <include>ShowcaseInfoPaneMovies</include>
             <animation effect="slide" end="0,45" time="400" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
         </control>
+        <control type="group">
+            <!-- view id = 528 PosterLite -->
+            <include condition="!Skin.HasSetting(Nox.DisablePosterLiteVL)">PosterLite</include>
+            <include>Furniture_DarkGradient</include>
+            <visible>Control.IsVisible(528)</visible>
+            <control type="button" id="528195">
+                <description>Infopanel: Manual</description>
+                <include>HiddenObject</include>
+                <visible>[[Container.Content(movies)+!Skin.HasSetting(Nox.showcaseinfoon)]|[Container.Content(tvshows)+!Skin.HasSetting(Nox.showcaseinfoontv)]]+!StringCompare(ListItem.Label,..)</visible>
+            </control>
+            <control type="button" id="528196">
+                <description>Infopanel: On/Off</description>
+                <include>HiddenObject</include>
+                <visible>[[Container.Content(movies)+[[Skin.HasSetting(Nox.showcaseinfoon)+!Skin.HasSetting(Nox.infopaneauto)]|Skin.HasSetting(Nox.infopaneoff)]]|[Container.Content(tvshows)+[[Skin.HasSetting(Nox.showcaseinfoontv)+!Skin.HasSetting(Nox.infopaneautotv)]|Skin.HasSetting(Nox.infopaneofftv)]]]</visible>
+            </control>
+            <control type="button" id="528194">
+                <include>HiddenObject</include>
+                <visible>[[Container.Content(movies)+Skin.HasSetting(Nox.showcaseinfoon)+Skin.HasSetting(Nox.infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(Nox.showcaseinfoontv)+Skin.HasSetting(Nox.infopaneautotv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
+            </control>
+            <control type="button" id="528197">
+                <description>Infopanel: Delayed</description>
+                <include>HiddenObject</include>
+                <visible>Control.IsVisible(528194)+!SubString(ListItem.Path,videodb://1/7/)</visible>
+                <include>PLDelAn</include>
+            </control>
+            <control type="button" id="528198">
+                <description>Infopanel: Delayed - MovieSets</description>
+                <include>HiddenObject</include>
+                <visible>Control.IsVisible(528194)+SubString(ListItem.Path,videodb://1/7/)</visible>
+                <include>PLDelAn</include>
+            </control>
+            <control type="button" id="528199">
+                <include>HiddenObject</include>
+                <visible>[[Container.Content(movies)+[Skin.HasSetting(Nox.plclear)|Skin.HasSetting(Nox.pllogo)|Skin.HasSetting(Nox.plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(Nox.plcleartv)|Skin.HasSetting(Nox.pllogotv)|Skin.HasSetting(Nox.pllandtv)]]]</visible>
+            </control>
+        </control>
         <include>Furniture_Showcase</include>
         <include condition="!Skin.HasSetting(Nox.DisableInfoWallVL) | !Skin.HasSetting(Nox.DisableWallVL)">WallPanel</include>
         <control type="group">
@@ -117,8 +153,8 @@
             <control type="group">
                 <control type="button" id="7000">
                     <include>HiddenObject</include>
-                    <onfocus condition="[[Skin.HasSetting(Nox.showcaseinfoon) + Container.Content(movies) + IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(Nox.showcaseinfoonep) + Container.Content(episodes)] | [Skin.HasSetting(Nox.showcaseinfoontv)+[Container.Content(tvshows) | Container.Content(seasons)]] | Control.IsVisible(508)] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)]">SetFocus(9000)</onfocus>
-                    <onfocus condition="[Skin.HasSetting(Nox.showcaseinfoon) + Container.Content(movies) + !IsEmpty(ListItem.Trailer)] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503)] + !Skin.HasSetting(Nox.trailerincontextmenu)">SetFocus(1801)</onfocus>
+                    <onfocus condition="[[Skin.HasSetting(Nox.showcaseinfoon) + Container.Content(movies) + IsEmpty(ListItem.Trailer)] | [Skin.HasSetting(Nox.showcaseinfoonep) + Container.Content(episodes)] | [Skin.HasSetting(Nox.showcaseinfoontv)+[Container.Content(tvshows) | Container.Content(seasons)]] | Control.IsVisible(508)] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508) | Control.IsVisible(528)]">SetFocus(9000)</onfocus>
+                    <onfocus condition="[Skin.HasSetting(Nox.showcaseinfoon) + Container.Content(movies) + !IsEmpty(ListItem.Trailer)] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(528)] + !Skin.HasSetting(Nox.trailerincontextmenu)">SetFocus(1801)</onfocus>
                     <onfocus condition="[Skin.HasSetting(Nox.showcaseinfoon) + Container.Content(movies) + !IsEmpty(ListItem.Trailer)] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503)] + Skin.HasSetting(Nox.trailerincontextmenu)">SetFocus(9000)</onfocus>
                     <onup condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(Nox.trailerincontextmenu)">9000</onup>
                     <onup condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(Nox.trailerincontextmenu)">1801</onup>
@@ -126,6 +162,8 @@
                     <onleft condition="Control.IsVisible(504)">Control.Move(504,-1)</onleft>
                     <onleft condition="Control.IsVisible(503)">Control.Move(503,-1)</onleft>
                     <onleft condition="Control.IsVisible(508)">Control.Move(508,-1)</onleft>
+                    <onleft condition="Control.IsVisible(528)">Control.Move(528,-1)</onleft>
+                    <onright condition="Control.IsVisible(528)">Control.Move(528,1)</onright>
                     <onright condition="Control.IsVisible(501)">Control.Move(501,1)</onright>
                     <onright condition="Control.IsVisible(504)">Control.Move(504,1)</onright>
                     <onright condition="Control.IsVisible(503)">Control.Move(503,1)</onright>
@@ -222,10 +260,17 @@
                     <control type="label">
                         <include>BreadcrumbsLabel</include>
                         <label>$VAR[BreadcrumbsVideoVar]</label>
+                        <visible>Substring(Container.FolderPath,videodb://,left)</visible>
                     </control>
                     <control type="label">
                         <include>BreadcrumbsLabel</include>
                         <label>$INFO[Container.FolderName, / ]</label>
+                        <visible>Substring(Container.FolderPath,videodb://,left)</visible>
+                    </control>
+                    <control type="label">
+                        <include>BreadcrumbsLabel</include>
+                        <label>$INFO[ListItem.Path]</label>
+                        <visible>!Substring(Container.FolderPath,videodb://,left)</visible>
                     </control>
                 </control>
             </control>

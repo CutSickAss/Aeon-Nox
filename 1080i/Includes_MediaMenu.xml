@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <!--Max: 1707 -->
     <include name="PlaylistEditorButtons">
@@ -206,6 +206,7 @@
             <onclick condition="Control.IsVisible(517)">Skin.SetString(Nox.actualViewtype,stripshow)</onclick>
             <onclick condition="Control.IsVisible(518)">Skin.SetString(Nox.actualViewtype,fspanel)</onclick>
             <onclick condition="Control.IsVisible(550)">Skin.SetString(Nox.actualViewtype,panel)</onclick>
+            <onclick condition="Control.IsVisible(528)">Skin.SetString(Nox.actualViewtype,posterlite)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
             <!--             <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + Control.IsVisible(3000)">3000</ondown>
  -->
@@ -230,13 +231,13 @@
                 <include>Animation_CommonFade</include>
             </control>
             <control type="group">
-                <animation effect="slide" start="0,0" end="0,-15" time="400" easing="out" tween="cubic" reversible="true" condition="[[!IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]] + !Container.Scrolling">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-17" time="400" easing="out" tween="cubic" reversible="true" condition="[[!IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]] + !Container.Scrolling">Conditional</animation>
                 <control type="image">
                     <posx>415</posx>
-                    <posy>532</posy>
+                    <posy>518</posy>
                     <width>25</width>
                     <height>25</height>
-                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(513) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(Nox.WallVertical)]">Conditional</animation>
+                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(513) | Control.IsVisible(509) | Control.IsVisible(528) | [Control.IsVisible(500) + !Skin.HasSetting(Nox.WallVertical)]">Conditional</animation>
                     <animation effect="rotate" start="0" end="-180" center="auto" delay="300" time="800" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                     <animation effect="rotate" start="-90" end="180" center="auto" delay="300" time="800" condition="Control.IsVisible(503) + [Skin.HasSetting(Nox.landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
                     <texture>common/arrowleft.png</texture>
@@ -247,7 +248,7 @@
             </control>
             <control type="image">
                 <posx>415</posx>
-                <posy>532</posy>
+                <posy>518</posy>
                 <width>25</width>
                 <height>25</height>
                 <texture>common/arrowright.png</texture>
@@ -257,7 +258,7 @@
             </control>
             <control type="image">
                 <posx>412</posx>
-                <posy>550</posy>
+                <posy>537</posy>
                 <width>32</width>
                 <height>32</height>
                 <aspectratio>keep</aspectratio>
@@ -373,7 +374,7 @@
                         <include>Animation_CommonFade</include>
                         <label>[B]$LOCALIZE[31484][/B]</label>
                         <onclick condition="!Skin.HasSetting(Nox.fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
-                        <onclick condition="!Skin.HasSetting(Nox.fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onclick>
+                        <onclick condition="!Skin.HasSetting(Nox.fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500) + !Control.IsVisible(528)">SetFocus(50)</onclick>
                         <onclick condition="Skin.HasSetting(Nox.fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
                         <!--                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
  -->
