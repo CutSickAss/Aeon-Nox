@@ -116,7 +116,6 @@
                         <label>42284</label>
                         <include>Default_SettingRadioButton</include>
                         <onclick>Skin.ToggleSetting(Nox.trailerincontextmenu)</onclick>
-                        <onclick>Skin.SetBool(Nox.fstrailer)</onclick>
                         <selected>Skin.HasSetting(Nox.trailerincontextmenu)</selected>
                     </control>
                     <control type="radiobutton" id="298">
@@ -124,7 +123,6 @@
                         <include>Default_SettingRadioButton</include>
                         <onclick>Skin.ToggleSetting(Nox.fstrailer)</onclick>
                         <selected>Skin.HasSetting(Nox.fstrailer)</selected>
-                        <enable>!Skin.HasSetting(Nox.trailerincontextmenu)</enable>
                     </control>
                     <control type="radiobutton" id="290">
                         <label>31265</label>
@@ -136,7 +134,7 @@
                         <label>$LOCALIZE[31378]</label>
                         <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(Nox.ArtistsLogosPath)][/COLOR]</label2>
                         <include>Default_SettingButton</include>
-                        <onclick>Skin.Reset(Nox.(ArtistsLogosPath)</onclick>
+                        <onclick>Skin.Reset(Nox.ArtistsLogosPath)</onclick>
                         <onclick>Skin.SetPath(Nox.ArtistsLogosPath)</onclick>
                     </control>
                     <control type="button" id="261">
@@ -145,8 +143,8 @@
                         <include>Default_SettingButton</include>
                         <onclick condition="!Skin.HasSetting(Nox.kioskmode) + !Skin.HasSetting(Nox.hideoptions)">Skin.SetBool(Nox.hideoptions)</onclick>
                         <onclick condition="Skin.HasSetting(Nox.hideoptions)">Skin.SetBool(Nox.kioskmode)</onclick>
-                        <onclick condition="Skin.HasSetting(Nox.hideoptions)">Skin.Reset(Nox.(hideoptions)</onclick>
-                        <onclick condition="Skin.HasSetting(Nox.kioskmode)">Skin.Reset(Nox.(kioskmode)</onclick>
+                        <onclick condition="Skin.HasSetting(Nox.hideoptions)">Skin.Reset(Nox.hideoptions)</onclick>
+                        <onclick condition="Skin.HasSetting(Nox.kioskmode)">Skin.Reset(Nox.kioskmode)</onclick>
                     </control>
                     <control type="radiobutton" id="262">
                         <label>31269</label>
@@ -206,21 +204,18 @@
                     <control type="button" id="453">
                         <label>$LOCALIZE[31610]</label>
                         <include>Default_SettingButton</include>
-                        <onclick>SetProperty(Selector.Shortcut,1,home)</onclick>
                         <onclick>ActivateWindow(home)</onclick>
                         <onclick>ActivateWindow(1128)</onclick>
                     </control>
                     <control type="button" id="455">
                         <label>$LOCALIZE[42100]</label>
                         <include>Default_SettingButton</include>
-                        <onclick>SetProperty(Selector.Shortcut,1,1115)</onclick>
                         <onclick>ActivateWindow(1115)</onclick>
                         <onclick>ActivateWindow(1128)</onclick>
                     </control>
                     <control type="button" id="454">
                         <label>$LOCALIZE[42101]</label>
                         <include>Default_SettingButton</include>
-                        <onclick>SetProperty(Selector.Shortcut,1,1111)</onclick>
                         <onclick>ActivateWindow(1128)</onclick>
                     </control>
                     <control type="button" id="516">

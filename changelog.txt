@@ -1,3 +1,13 @@
+[B]3.6.1[/B]
+- Fixed custom startup focus.
+- Fixed plot/outline toggle.
+- Fixed label2 in Addonbrowser TriPanel view.
+- Fixed background overlay glow mode in "Featured" window.
+- Fixed dark background in LowList, BigFan, Episode and Shift view when alternative InfoPanel layout was selected.
+- Fixed cutoff bordertexture in InfoWall episodes.
+- Fixed missing timepanel on music osd.
+- Reverted extra info on Panel view list.
+
 [B]3.6.0[/B]
 - Added "White" theme
 - Option for seperate font color
