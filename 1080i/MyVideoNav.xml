@@ -21,6 +21,7 @@
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(Nox.animatedbg)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(Nox.animatedbg)">Conditional</animation>
                 <imagepath background="true" fallback="special://skin/backgrounds/videos/">$VAR[VideoFanartVar]</imagepath>
+				<aspectratio>stretch</aspectratio>
                 <animation effect="fade" start="100" end="50" time="800">Hidden</animation>
                 <visible>!Window.IsActive(movieinformation)</visible>
             </control>
@@ -29,6 +30,7 @@
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(Nox.animatedbg)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(Nox.animatedbg)">Conditional</animation>
                 <imagepath background="true">$VAR[VideoExtraFanartVar]</imagepath>
+				<aspectratio>stretch</aspectratio>
                 <visible>[Container.Content(movies) + Skin.HasSetting(Nox.extrafanartmovies)] | [Container.Content(tvshows) + Skin.HasSetting(Nox.extrafanartseries)] | [Container.Content(seasons) + [Skin.HasSetting(Nox.extrafanartseasons) | Skin.HasSetting(Nox.SeasonFanart)]] | [Container.Content(episodes) + [Skin.HasSetting(Nox.extrafanartepisodes) | Skin.HasSetting(Nox.SeasonFanart)]]</visible>
                 <visible>!SubString(ListItem.Label,*,left) + [Substring(Container.FolderPath,videodb://,left) | Substring(Container.FolderPath,special://profile/playlist,left)]</visible>
             </control>
