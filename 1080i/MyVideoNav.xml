@@ -5,15 +5,11 @@
     <onload condition="System.HasAddon(script.tvtunes) + IsEmpty(Window(Home).Property(DontRunTVShowScripts))">XBMC.RunScript(script.tvtunes,backend=True)</onload>
     <backgroundcolor>black</backgroundcolor>
     <onload condition="System.HasAddon(script.tv.show.next.aired) + IsEmpty(Window(Home).Property(DontRunTVShowScripts)) + !Skin.HasSetting(Nox.NextAiredInfo)">RunScript(script.tv.show.next.aired,backend=True)</onload>
-    <!--     <onload condition="[System.GetBool(videolibrary.groupmoviesets) | SubString(Container.FolderPath,videodb://1/7/)] + System.HasAddon(script.moviesets)">XBMC.RunScript(script.moviesets,containerId=3000)</onload>
- -->
     <onload>ClearProperty(BrowseActors,home)</onload>
     <include condition="!Skin.HasSetting(Nox.firstrun)">AutoConfig</include>
     <allowoverlay>no</allowoverlay>
     <views>50,52,53,57,500,501,503,504,550,508,509,510,511,512,514,516,518,528</views>
     <controls>
-        <!--         <include condition="[System.GetBool(videolibrary.groupmoviesets) | SubString(Container.FolderPath,videodb://1/7/)] + System.HasAddon(script.moviesets)">MovieSetsList</include>
- -->
         <control type="group">
             <visible>!Control.IsVisible(516)</visible>
             <control type="multiimage">
@@ -59,7 +55,6 @@
             <animation effect="fade" start="0" end="100" time="400" delay="100">Visible</animation>
             <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
             <visible>!Control.IsVisible(5999) + !Control.HasFocus(109)</visible>
-            <visible>!Control.IsVisible(514) + !Control.IsVisible(516) + !Control.IsVisible(511) + !Control.IsVisible(57)</visible>
             <visible>[Skin.HasSetting(Nox.darkinfopane) | !Skin.HasSetting(Nox.DisableGlowbar)] +  [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(Nox.wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550)]</visible>
         </control>
         <control type="image" id="5999">
@@ -71,14 +66,11 @@
             <animation effect="fade" time="250">WindowClose</animation>
             <animation effect="fade" start="0" end="100" time="550" delay="200">Visible</animation>
             <animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-            <visible>!Control.IsVisible(514) + !Control.IsVisible(516) + !Control.IsVisible(511) + !Control.IsVisible(57)</visible>
             <visible>[Control.IsVisible(512) + Skin.HasSetting(Nox.addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(Nox.wallfullscreen)] | [Skin.HasSetting(Nox.no_infopane_panel) + Control.IsVisible(7550)]</visible>
         </control>
         <include>Furniture_Glow</include>
         <control type="group">
-            <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(504) | Control.IsVisible(501)</visible>
             <include>ShowcaseInfoPaneMovies</include>
-            <animation effect="slide" end="0,45" time="400" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
         </control>
         <control type="group">
             <!-- view id = 528 PosterLite -->

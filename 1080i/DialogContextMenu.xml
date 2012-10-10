@@ -4,6 +4,8 @@
     <zorder>6</zorder>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <include>Animation_DialogZoom</include>
     <controls>
@@ -120,7 +122,7 @@
                 <label>$LOCALIZE[24007]</label>
                 <onclick>RunScript(script.moviesets,moviesetinfo)</onclick>
                 <visible>Window.IsActive(videos) + System.HasAddon(script.moviesets)</visible>
-                <visible>[System.GetBool(videolibrary.groupmoviesets) + SubString(ListItem.Path,videodb://1/7/)] | SubString(Container.FolderPath,videodb://1/7/)</visible>
+                <visible>SubString(Container.FolderPath,videodb://1/7/)</visible>
             </control>
         </control>
         <control type="image" id="997">
