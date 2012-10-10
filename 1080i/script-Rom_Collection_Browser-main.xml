@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
     <allowoverlay>yes</allowoverlay>
-    <backgroundcolor>black</backgroundcolor>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
     <defaultcontrol always="false">2</defaultcontrol>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <controls>
         <!-- background -->
@@ -75,7 +77,6 @@
                     <height>42</height>
                     <scroll>true</scroll>
                     <font>Font_Reg15</font>
-                    <aligny>center</aligny>
                     <align>center</align>
                     <label>$INFO[ListItem.Tagline]</label>
                     <textcolor>white3</textcolor>
@@ -112,7 +113,6 @@
                             <posy>30</posy>
                             <height>20</height>
                             <width>300</width>
-                            <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(genre)]</label>
                         </control>
                         <control type="label">
@@ -127,7 +127,6 @@
                             <posy>30</posy>
                             <height>20</height>
                             <width>300</width>
-                            <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(console)]</label>
                         </control>
                         <control type="label">
@@ -141,7 +140,6 @@
                             <posy>105</posy>
                             <height>20</height>
                             <width>300</width>
-                            <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(developer)]</label>
                         </control>
                         <control type="label">
@@ -157,7 +155,6 @@
                             <posy>105</posy>
                             <height>20</height>
                             <width>300</width>
-                            <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(year)]</label>
                         </control>
                         <control type="label">
@@ -171,7 +168,6 @@
                             <posy>177</posy>
                             <height>20</height>
                             <width>300</width>
-                            <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(publisher)]</label>
                         </control>
                         <control type="group">
@@ -189,7 +185,6 @@
                                 <posy>177</posy>
                                 <height>20</height>
                                 <width>300</width>
-                                <textcolor>white2</textcolor>
                                 <label fallback="312577">$INFO[ListItem.Property(rating)]$INFO[ListItem.Property(votes)]</label>
                             </control>
                         </control>
@@ -208,7 +203,6 @@
                                 <posy>177</posy>
                                 <height>20</height>
                                 <width>300</width>
-                                <textcolor>white2</textcolor>
                                 <label fallback="312577">$INFO[ListItem.Property(playcount)]</label>
                             </control>
                         </control>
@@ -218,7 +212,6 @@
                             <height>220</height>
                             <label fallback="312577">$INFO[ListItem.Property(plot)]</label>
                             <textcolor>white6</textcolor>
-                            <align>justify</align>
                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
                     </control>
@@ -293,13 +286,11 @@
                 <height>1080</height>
                 <texture>views/showcase_vignette.png</texture>
                 <colordiffuse>vignette</colordiffuse>
-                <visible>true</visible>
             </control>
             <control type="image">
                 <posx>1224</posx>
                 <width>696</width>
                 <height>1080</height>
-                <visible>true</visible>
                 <colordiffuse>vignette</colordiffuse>
                 <texture flipx="true">views/showcase_vignette.png</texture>
             </control>
@@ -364,7 +355,6 @@
                             <posy>67</posy>
                             <width>500</width>
                             <height>375</height>
-                            <fadetime>IconCrossfadeTime2</fadetime>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
                             <bordersize>9</bordersize>
@@ -374,7 +364,6 @@
                             <posy>426</posy>
                             <width>500</width>
                             <height>375</height>
-                            <fadetime>IconCrossfadeTime2</fadetime>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture flipy="true" background="true" diffuse="thumbs/multiplex_tvmaskreflect.png" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
                             <bordersize>9</bordersize>
@@ -386,7 +375,6 @@
                             <posy>67</posy>
                             <width>500</width>
                             <height>375</height>
-                            <fadetime>IconCrossfadeTime2</fadetime>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                             <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass_reflect.png</texture>
                             <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
@@ -406,7 +394,6 @@
                                 <posy>67</posy>
                                 <width>500</width>
                                 <height>375</height>
-                                <fadetime>IconCrossfadeTime2</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
                                 <bordersize>9</bordersize>
@@ -416,7 +403,6 @@
                                 <posy>426</posy>
                                 <width>500</width>
                                 <height>375</height>
-                                <fadetime>IconCrossfadeTime2</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture flipy="true" background="true" diffuse="thumbs/multiplex_tvmaskreflect.png" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
                                 <bordersize>9</bordersize>
@@ -428,7 +414,6 @@
                                 <posy>67</posy>
                                 <width>500</width>
                                 <height>375</height>
-                                <fadetime>IconCrossfadeTime2</fadetime>
                                 <aspectratio scalediffuse="false">stretch</aspectratio>
                                 <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass_reflect.png</texture>
                                 <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
@@ -1198,7 +1183,6 @@
                         <control type="image">
                             <width>261</width>
                             <height>261</height>
-                            <fadetime>IconCrossfadeTime2</fadetime>
                             <aspectratio>keep</aspectratio>
                             <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                             <bordersize>5</bordersize>
@@ -1210,7 +1194,6 @@
                         <control type="image">
                             <width>261</width>
                             <height>261</height>
-                            <fadetime>IconCrossfadeTime2</fadetime>
                             <aspectratio>keep</aspectratio>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <texture border="5">views/addonwall_select.png</texture>
@@ -1219,7 +1202,6 @@
                         <control type="image">
                             <width>261</width>
                             <height>261</height>
-                            <fadetime>IconCrossfadeTime2</fadetime>
                             <aspectratio>keep</aspectratio>
                             <bordersize>5</bordersize>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -1243,9 +1225,8 @@
                         <height>20</height>
                         <width>570</width>
                         <font>Font_Bold25_Caps</font>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="image">
                         <posx>1245</posx>
@@ -1293,7 +1274,6 @@
                             <width>570</width>
                             <height>350</height>
                             <font>Font_Reg19</font>
-                            <align>justify</align>
                             <label fallback="312577">$INFO[ListItem.Property(plot)]</label>
                             <textcolor>white6</textcolor>
                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -2109,7 +2089,6 @@
                             <posy>300</posy>
                             <width>300</width>
                             <height>225</height>
-                            <fadetime>200</fadetime>
                             <texture background="true" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
@@ -2118,7 +2097,6 @@
                             <posy>280</posy>
                             <width>340</width>
                             <height>265</height>
-                            <fadetime>200</fadetime>
                             <aspectratio scalediffuse="false" align="right">stretch</aspectratio>
                             <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_aa.png</texture>
                             <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
@@ -2129,7 +2107,6 @@
                             <posy>528</posy>
                             <width>300</width>
                             <height>225</height>
-                            <fadetime>200</fadetime>
                             <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">$INFO[ListItem.Icon]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <animation effect="fade" start="100" end="30" time="200" reversible="true">Focus</animation>
@@ -2145,7 +2122,6 @@
                                 <posy>300</posy>
                                 <width>300</width>
                                 <height>225</height>
-                                <fadetime>200</fadetime>
                                 <texture background="true" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
@@ -2154,7 +2130,6 @@
                                 <posy>280</posy>
                                 <width>340</width>
                                 <height>265</height>
-                                <fadetime>200</fadetime>
                                 <aspectratio scalediffuse="false" align="right">stretch</aspectratio>
                                 <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_aa.png</texture>
                                 <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
@@ -2165,7 +2140,6 @@
                                 <posy>528</posy>
                                 <width>300</width>
                                 <height>225</height>
-                                <fadetime>200</fadetime>
                                 <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">$INFO[ListItem.Icon]</texture>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <animation effect="fade" start="100" end="30" time="200" reversible="true">Focus</animation>
@@ -2183,23 +2157,21 @@
                         <posx>195</posx>
                         <posy>1005</posy>
                         <width>1245</width>
-                        <aligny>center</aligny>
                         <font>Font_Info_Caps</font>
                         <textcolor>floor</textcolor>
                         <shadowcolor>floorshadow</shadowcolor>
-                        <label>[UPPERCASE]$INFO[ListItem.Property(genre)][/UPPERCASE]</label>
+                        <label>$INFO[ListItem.Property(genre)]</label>
                     </control>
                     <control type="label">
                         <posx>195</posx>
                         <posy>1040</posy>
                         <width>1245</width>
-                        <aligny>center</aligny>
                         <font>Font_ShowcaseMainLabel2_Caps</font>
                         <scroll>true</scroll>
                         <scrollspeed>30</scrollspeed>
                         <textcolor>floor</textcolor>
                         <shadowcolor>floorshadow</shadowcolor>
-                        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                 </control>
                 <control type="image">
@@ -2259,8 +2231,7 @@
                                 <width>800</width>
                                 <height>48</height>
                                 <font>Font_Reg22</font>
-                                <aligny>center</aligny>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
@@ -2268,8 +2239,7 @@
                                 <posy>54</posy>
                                 <width>800</width>
                                 <height>36</height>
-                                <aligny>center</aligny>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Property(genre)]</label>
                             </control>
                             <control type="label">
@@ -2279,8 +2249,7 @@
                                 <height>48</height>
                                 <font>Font_Info</font>
                                 <align>center</align>
-                                <aligny>center</aligny>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Property(year)]</label>
                             </control>
                             <control type="image">
@@ -2314,8 +2283,6 @@
                                 <width>800</width>
                                 <height>48</height>
                                 <font>Font_Reg22</font>
-                                <aligny>center</aligny>
-                                <include>listcolornofocus</include>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
@@ -2323,8 +2290,6 @@
                                 <posy>54</posy>
                                 <width>800</width>
                                 <height>36</height>
-                                <aligny>center</aligny>
-                                <include>listcolornofocus</include>
                                 <label>$INFO[ListItem.Property(genre)]</label>
                             </control>
                             <control type="label">
@@ -2334,8 +2299,6 @@
                                 <height>48</height>
                                 <font>Font_Info</font>
                                 <align>center</align>
-                                <aligny>center</aligny>
-                                <include>listcolornofocus</include>
                                 <label>$INFO[ListItem.Property(year)]</label>
                             </control>
                             <control type="image">
@@ -2358,8 +2321,7 @@
                                 <width>810</width>
                                 <height>60</height>
                                 <font>Font_Reg19</font>
-                                <aligny>center</aligny>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <info>ListItem.Label</info>
                             </control>
                             <control type="label">
@@ -2367,9 +2329,8 @@
                                 <width>123</width>
                                 <height>60</height>
                                 <font>Font_Reg19</font>
-                                <aligny>center</aligny>
                                 <align>center</align>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Property(year)]</label>
                             </control>
                             <control type="image">
@@ -2400,8 +2361,6 @@
                                 <width>810</width>
                                 <height>60</height>
                                 <font>Font_Reg19</font>
-                                <aligny>center</aligny>
-                                <include>listcolornofocus</include>
                                 <info>ListItem.Label</info>
                             </control>
                             <control type="label">
@@ -2409,9 +2368,7 @@
                                 <width>123</width>
                                 <height>60</height>
                                 <font>Font_Reg19</font>
-                                <aligny>center</aligny>
                                 <align>center</align>
-                                <include>listcolornofocus</include>
                                 <label>$INFO[ListItem.Property(year)]</label>
                             </control>
                             <control type="image">
@@ -2428,13 +2385,6 @@
                         <posy>158</posy>
                         <width>46</width>
                         <height>780</height>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <texturesliderbackground>-</texturesliderbackground>
-                        <texturesliderbar>-</texturesliderbar>
-                        <texturesliderbarfocus>-</texturesliderbarfocus>
-                        <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-                        <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-                        <orientation>vertical</orientation>
                         <onup>2201</onup>
                         <ondown>2201</ondown>
                         <onleft>58</onleft>
@@ -2488,11 +2438,10 @@
                     <posy>1005</posy>
                     <width>900</width>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <font>Font_Info_Caps</font>
                     <textcolor>floor</textcolor>
                     <shadowcolor>floorshadow</shadowcolor>
-                    <label>[UPPERCASE]$INFO[ListItem.Property(genre)][/UPPERCASE]</label>
+                    <label>$INFO[ListItem.Property(genre)]</label>
                     <visible>Control.IsVisible(51) | Control.IsVisible(53)</visible>
                 </control>
                 <control type="label">
@@ -2500,27 +2449,31 @@
                     <posy>1040</posy>
                     <width>900</width>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <include>Animation_CommonFade</include>
                     <font>Font_ShowcaseMainLabel2_Caps</font>
                     <scroll>true</scroll>
                     <scrollspeed>30</scrollspeed>
                     <textcolor>floor</textcolor>
                     <shadowcolor>floorshadow</shadowcolor>
-                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                    <label>$INFO[ListItem.Label]</label>
                 </control>
             </control>
             <control type="image" id="4050">
-                <texture>-</texture>
-                <visible>![Container.Scrolling|Container.OnScrollNext|Container.OnScrollPrevious]</visible>
-                <animation effect="fade" start="0" end="100" time="0">Visible</animation>
+                <visible>Container.Scrolling</visible>
+                <animation effect="fade" start="0" end="100" time="0" delay="3000">Visible</animation>
                 <animation effect="fade" time="1000">Hidden</animation>
             </control>
             <control type="scrollbar" id="2200">
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(2200) + Control.IsVisible(4050)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="500" condition="![Control.HasFocus(2200) | Control.IsVisible(4050)]">Conditional</animation>
+                <textureslidernib>-</textureslidernib>
+                <textureslidernibfocus>-</textureslidernibfocus>
+                <orientation>horizontal</orientation>
+                <texturesliderbackground>-</texturesliderbackground>
+                <texturesliderbar border="6,0,6,0">views/texturesliderbar_hor.png</texturesliderbar>
+                <texturesliderbarfocus border="6,0,6,0">views/texturesliderbarfocus_hor.png</texturesliderbarfocus>
                 <onup>50</onup>
-                <ondown></ondown>
+                <ondown condition="!Control.IsVisible(500)">109</ondown>
+                <ondown condition="Control.IsVisible(500)">50</ondown>
             </control>
         </control>
         <control type="image">
@@ -2560,7 +2513,6 @@
                             <width>190</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>FF000000</textcolor>
                             <selectedcolor>FF000000</selectedcolor>
                             <info>ListItem.Label</info>
@@ -2584,7 +2536,6 @@
                             <width>190</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>white</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2615,7 +2566,6 @@
                             <width>190</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>FF000000</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2638,7 +2588,6 @@
                             <width>190</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>white</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2669,7 +2618,6 @@
                             <width>190</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>FF000000</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2692,7 +2640,6 @@
                             <width>190</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>white</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2723,7 +2670,6 @@
                             <width>190</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>FF000000</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2746,7 +2692,6 @@
                             <width>190</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>white</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2776,7 +2721,6 @@
                             <width>60</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>FF000000</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2799,7 +2743,6 @@
                             <width>50</width>
                             <height>30</height>
                             <font>Font_Reg18</font>
-                            <aligny>center</aligny>
                             <textcolor>white</textcolor>
                             <info>ListItem.Label</info>
                         </control>
@@ -2816,7 +2759,6 @@
                     <width>750</width>
                     <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                     <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <itemgap>0</itemgap>
                     <orientation>horizontal</orientation>
                     <control type="image">
                         <width>54</width>
@@ -2964,7 +2906,6 @@
                 <control type="grouplist" id="9003">
                     <width>450</width>
                     <height>1080</height>
-                    <itemgap>0</itemgap>
                     <orientation>vertical</orientation>
                     <scroll>true</scroll>
                     <onleft>200</onleft>
@@ -3058,5 +2999,6 @@
             <label></label>
             <font>font10</font>
         </control>
+        <include>ContextMenuOverlay</include>
     </controls>
 </window>

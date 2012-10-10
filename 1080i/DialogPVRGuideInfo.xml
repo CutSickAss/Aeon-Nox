@@ -5,7 +5,7 @@
         <system>1</system>
         <posx>120</posx>
         <posy>45</posy>
-        <origin x="300" y="30">![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</origin>
+        <origin x="450" y="0">![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</origin>
     </coordinates>
     <include>Animation_DialogPopup</include>
     <include>Animation_DialogZoom</include>
@@ -39,7 +39,6 @@
                 <height>45</height>
                 <label>$LOCALIZE[52016]</label>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Reg24</font>
             </control>
             <control type="image">
@@ -54,22 +53,18 @@
                 <posy>240</posy>
                 <width>705</width>
                 <height>38</height>
-                <aligny>center</aligny>
-                <font>Font_Reg24</font>
-                <shadowcolor>-</shadowcolor>
+                <font>Font_Bold22</font>
                 <scroll>true</scroll>
-                <label>[B]$INFO[ListItem.Title][/B]</label>
+                <label>$INFO[ListItem.Title]</label>
             </control>
             <control type="label">
                 <posx>300</posx>
-                <posy>275</posy>
+                <posy>270</posy>
                 <height>45</height>
                 <width>750</width>
                 <label>$INFO[ListItem.ChannelName]</label>
-                <aligny>center</aligny>
                 <font>Font_Reg20</font>
-                <textcolor>white2</textcolor>
-                <shadowcolor>-</shadowcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
                 <scroll>true</scroll>
             </control>
             <control type="group">
@@ -78,25 +73,20 @@
                     <posy>170</posy>
                     <control type="label">
                         <posx>278</posx>
-                        <posy>170</posy>
+                        <posy>150</posy>
                         <width>705</width>
-                        <label fallback="161">$INFO[ListItem.Genre]</label>
-                        <aligny>center</aligny>
-                        <font>Font_Reg16</font>
-                        <textcolor>grey2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <scroll>true</scroll>
+                        <height>38</height>
+                        <font>Font_Reg15</font>
+                        <textcolor>grey</textcolor>
+                        <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] ($LOCALIZE[52017]: $INFO[ListItem.Duration])</label>
                     </control>
-                     <control type="label">
+                    <control type="label">
                         <posx>278</posx>
                         <posy>200</posy>
                         <width>705</width>
-                        <height>38</height>
-                        <aligny>center</aligny>
-                        <font>Font_Reg16</font>
-                        <textcolor>grey</textcolor>
-                        <textcolor>osdseek</textcolor>
-                        <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] ($LOCALIZE[52017]: $INFO[ListItem.Duration])</label>
+                        <label fallback="161">$INFO[ListItem.Genre]</label>
+                        <font>Font_Reg15</font>
+                        <scroll>true</scroll>
                     </control>
                     <control type="image">
                         <posx>-90</posx>
@@ -114,8 +104,7 @@
                     <width>780</width>
                     <height>320</height>
                     <label>$INFO[ListItem.Plot]</label>
-                    <textcolor>white2</textcolor>
-                    <align>justify</align>
+                    <font>Font_Reg17</font>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="grouplist" id="9000">
@@ -135,7 +124,6 @@
                         <height>52</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <align>center</align>
-                        <aligny>center</aligny>
                         <label>19165</label>
                     </control>
                     <control type="button" id="6">
@@ -143,15 +131,13 @@
                         <height>52</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <align>center</align>
-                        <aligny>center</aligny>
-                        <label>264</label>
+                        <label>-</label>
                     </control>
                     <control type="button" id="7">
                         <width>300</width>
                         <height>52</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <align>center</align>
-                        <aligny>center</aligny>
                         <label>186</label>
                     </control>
                 </control>

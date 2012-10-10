@@ -39,8 +39,8 @@
   <string id="31713">Playlist-Einträge</string>
   <string id="31714">Aktuelle Position</string>
   <string id="31149">XBMC wird beendet! [CR]Fortfahren?</string>
-  <string id="31156">Regisseur:</string>
-  <string id="31157">Autor:</string>
+  <string id="31156">Regisseur</string>
+  <string id="31157">Autor</string>
   <string id="31162">Trailer</string>
   <string id="31163">Featured</string>
   <string id="31164">Sortierung</string>
@@ -247,7 +247,7 @@
   <string id="31382">Suchtext</string>
   <string id="31383">Hintergrund</string>
   <string id="31387">Verdunkeln</string>
-  <string id="31388">Infozeile:</string>
+  <string id="31388">Infozeile</string>
   <string id="31396">BannerList</string>
   <string id="31397">Beendet</string>
   <string id="31398">Style</string>
@@ -273,12 +273,12 @@
   <string id="31482">Cases</string>
   <string id="31483">Titel unter Icon zeigen</string>
   <string id="31484">Trailer abspielen</string>
-  <string id="31158">Aktuelle Zeit:</string>
+  <string id="31158">Aktuelle Zeit</string>
   <string id="31627">Hide OSD player controls</string>
   <string id="31628">Alle Künstler</string>
   <string id="31629">Alle Videos</string>
   <string id="31630">Benutzerdef.</string>
-  <string id="31631">Logo.png anstatt Titel zeigen</string>
+  <string id="31631">Logo anstatt Titel zeigen</string>
     <string id="31633">QuickNav</string>
 
     
@@ -303,7 +303,7 @@
 
   <!--Skin Settings-->
   <string id="31600">Menüeinträge / Hintergründe / Widgets einrichten</string>
-  <string id="31602">Hautmenü-Style:</string>
+  <string id="31602">Hautmenü-Stil</string>
   <string id="31610">Farbeinstellungen für das Hauptmenü</string>
   <string id="31611">Vollbild-Video aktivieren</string>
   <string id="31613">Standard-Hauptmenüpunkt ändern</string>
@@ -345,7 +345,7 @@
     <string id="31691">Position wechseln</string>
     <string id="31692">Kürzere DB- und Zeitpanel</string>
     <string id="31693">Mehr Abstand zwischen Hauptmenüpunkten</string>
-    <string id="31694">Fixed List für</string>
+    <string id="31694">Fixed List</string>
     <string id="31695">Untermenü</string>
     <string id="31696">Alternatives Layout</string>
     <string id="31697">Navigationshinweise zeigen</string>
@@ -371,7 +371,7 @@
   <string id="52013">Suchbegriff</string>
   <string id="52014">Timer</string>
   <string id="52015">Kanal</string>
-  <string id="52016">ProgrammInfo</string>
+  <string id="52016">Programm-Information</string>
   <string id="52017">Dauer</string>
   <string id="52018">Aufnahme-Information</string>
   <string id="52019">Gruppe hinzufügen</string>
@@ -427,7 +427,7 @@
   <string id="42014">Menüpunkte auswählen um Optionen zu sehen</string> 
   <string id="42015">Musik abspielen um eine Vorschau sehen zu können</string>
     <string id="42016">"Additional Artist Info" Option vom Artistslideshow Plugin muss aktiviert sein</string>
-    <string id="42017">Willkommen zu Aeon Nox 3.6</string>
+    <string id="42017">Willkommen zu Aeon Nox 4.0</string>
     <string id="42018">Besuche das XBMC.org Forum für Support</string>
   
   
@@ -528,5 +528,6 @@
     <string id="42290">Kollektionen</string>
     <string id="42291">Ordner</string>
     <string id="42292">Kategorien</string>
+
 </strings>
     

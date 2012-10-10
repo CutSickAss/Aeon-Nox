@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="1115" type="window">
     <defaultcontrol>40</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
-    <onload>XBMC.RunScript(script.randomitems,limit=16&amp;unplayed=True)</onload>
-    <onload condition="System.HasAddon(script.watchlist) + IsEmpty(Window(Home).Property(WatchList_Running))">RunScript(script.watchlist,movies=true&amp;episodes=true&amp;albums=true&amp;limit=10)</onload>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
     <onload condition="ControlGroup(5000).HasFocus">AlarmClock(Tile,Control.Move(5002,1),00:04,silent,loop)</onload>
     <onload condition="ControlGroup(5000).HasFocus">AlarmClock(TileTwo,Control.Move(5003,1),00:07,silent,loop)</onload>
     <onload condition="ControlGroup(6000).HasFocus">AlarmClock(Tile,Control.Move(6002,1),00:04,silent,loop)</onload>
@@ -20,18 +18,20 @@
     <onunload>CancelAlarm(TileTwo,true)</onunload>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <controls>
         <!-- Fanart -->
-        <control type="image">
-            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-            <texture background="true" fallback="special://skin/backgrounds/featured/featured.jpg">special://skin/backgrounds/featured/featured.jpg</texture>
+        <control type="multiimage">
+            <imagepath background="true">special://skin/backgrounds/featured/</imagepath>
+            <fadetime>FanartCrossfadeTime</fadetime>
         </control>
         <include>CommonMediaPlayingBackground</include>
         <control type="image">
             <include>FullscreenDimensions</include>
             <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
-            <texture>common/white.png</texture>
+            <texture>common/black.png</texture>
             <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <visible>!Skin.HasTheme(White)</visible>
@@ -87,13 +87,11 @@
                 <height>1080</height>
                 <texture>views/showcase_vignette.png</texture>
                 <colordiffuse>vignette</colordiffuse>
-                <visible>true</visible>
             </control>
             <control type="image">
                 <posx>1224</posx>
                 <width>696</width>
                 <height>1080</height>
-                <visible>true</visible>
                 <colordiffuse>vignette</colordiffuse>
                 <texture flipx="true">views/showcase_vignette.png</texture>
             </control>
@@ -123,7 +121,6 @@
                 <effect type="fade" start="100" end="0" time="300" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
             </animation>
-            <pagecontrol>-</pagecontrol>
             <!-- Search -->
             <control type="group" id="3000">
                 <width>2325</width>
@@ -178,16 +175,13 @@
                         <control type="label">
                             <width min="0" max="700">auto</width>
                             <height>118</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg38</font>
-                            <textcolor>white2</textcolor>
                             <label>$LOCALIZE[31021]</label>
                         </control>
                         <control type="fadelabel">
                             <width>479</width>
                             <height>118</height>
                             <scroll>false</scroll>
-                            <scrollout>false</scrollout>
                             <pauseatend>5000</pauseatend>
                             <label>$LOCALIZE[342]...</label>
                             <label>$LOCALIZE[20343]...</label>
@@ -197,9 +191,7 @@
                             <label>$LOCALIZE[133]...</label>
                             <label>$LOCALIZE[132]...</label>
                             <label>$LOCALIZE[134]...</label>
-                            <aligny>center</aligny>
                             <font>Font_Reg38</font>
-                            <textcolor>white2</textcolor>
                         </control>
                     </control>
                     <control type="image">
@@ -504,10 +496,7 @@
                             <posy>510</posy>
                             <width>746</width>
                             <height>40</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <label>$INFO[Container(5002).ListItem.Label2,,: ]$INFO[Container(5002).ListItem.Property(EpisodeNo),, - ]$INFO[Container(5002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -666,10 +655,7 @@
                             <posy>510</posy>
                             <width>272</width>
                             <height>40</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <label>$INFO[Container(5003).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -949,10 +935,7 @@
                             <posy>510</posy>
                             <width>746</width>
                             <height>40</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <label>$INFO[Container(6002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -1100,10 +1083,7 @@
                             <posy>510</posy>
                             <width>272</width>
                             <height>40</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <label>$INFO[Container(6003).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -1375,10 +1355,7 @@
                             <posy>510</posy>
                             <width>746</width>
                             <height>40</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <label>$INFO[Container(7002).ListItem.Label2,,: ]$INFO[Container(7002).ListItem.Property(EpisodeNumber),, - ]$INFO[Container(7002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -1424,10 +1401,8 @@
                                         <posy>5</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1435,10 +1410,8 @@
                                         <posy>40</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(NextNumber),, - ]$INFO[ListItem.Property(NextTitle)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1446,10 +1419,8 @@
                                         <posy>75</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1480,10 +1451,8 @@
                                         <posy>5</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1491,10 +1460,8 @@
                                         <posy>40</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(NextNumber),, - ]$INFO[ListItem.Property(NextTitle)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1502,10 +1469,8 @@
                                         <posy>75</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1518,10 +1483,8 @@
                                         <posy>5</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1529,10 +1492,8 @@
                                         <posy>40</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(NextNumber),, - ]$INFO[ListItem.Property(NextTitle)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1540,176 +1501,15 @@
                                         <posy>75</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
                                 </control>
                             </focusedlayout>
                             <content>
-                                <item id="1">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.1.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.1.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.1.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.1.ShortTime)]</label2>
-                                    <property name="NavItem">item1.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.1.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.1.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.1.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.1.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.1.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.1.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.1.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.1.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.1.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.1.Label))</visible>
-                                </item>
-                                <item id="2">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.2.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.2.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.2.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.2.ShortTime)]</label2>
-                                    <property name="NavItem">item2.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.2.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.2.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.2.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.2.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.2.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.2.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.2.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.2.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.2.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.2.Label))</visible>
-                                </item>
-                                <item id="3">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.3.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.3.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.3.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.3.ShortTime)]</label2>
-                                    <property name="NavItem">item3.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.3.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.3.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.3.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.3.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.3.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.3.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.3.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.3.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.3.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.3.Label))</visible>
-                                </item>
-                                <item id="4">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.4.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.4.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.4.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.4.ShortTime)]</label2>
-                                    <property name="NavItem">item4.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.4.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.4.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.4.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.4.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.4.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.4.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.4.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.4.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.4.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.4.Label))</visible>
-                                </item>
-                                <item id="5">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.5.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.5.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.5.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.5.ShortTime)]</label2>
-                                    <property name="NavItem">item5.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.5.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.5.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.5.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.5.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.5.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.5.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.5.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.5.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.5.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.5.Label))</visible>
-                                </item>
-                                <item id="6">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.6.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.6.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.6.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.6.ShortTime)]</label2>
-                                    <property name="NavItem">item6.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.6.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.6.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.6.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.6.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.6.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.6.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.6.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.6.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.6.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.6.Label))</visible>
-                                </item>
-                                <item id="7">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.7.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.7.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.7.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.7.ShortTime)]</label2>
-                                    <property name="NavItem">item7.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.7.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.7.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.7.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.7.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.7.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.7.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.7.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.7.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.7.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.7.Label))</visible>
-                                </item>
-                                <item id="8">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.8.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.8.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.8.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.8.ShortTime)]</label2>
-                                    <property name="NavItem">item8.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.8.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.8.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.8.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.8.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.8.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.8.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.8.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.8.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.8.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.8.Label))</visible>
-                                </item>
-                                <item id="9">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.9.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.9.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.9.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.9.ShortTime)]</label2>
-                                    <property name="NavItem">item9.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.9.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.9.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.9.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.9.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.9.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.9.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.9.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.9.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.9.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.9.Label))</visible>
-                                </item>
-                                <item id="10">
-                                    <thumb>$INFO[Window(Home).Property(NextAired.10.Thumb)]</thumb>
-                                    <label>$INFO[Window(Home).Property(NextAired.10.Label)]</label>
-                                    <label2>$INFO[Window(Home).Property(NextAired.10.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.10.ShortTime)]</label2>
-                                    <property name="NavItem">item10.png</property>
-                                    <property name="Status">$INFO[Window(Home).Property(NextAired.10.Status)]</property>
-                                    <property name="NextTitle">$INFO[Window(Home).Property(NextAired.10.NextTitle)]</property>
-                                    <property name="Fanart">$INFO[Window(Home).Property(NextAired.10.Fanart)]</property>
-                                    <property name="NextNumber">$INFO[Window(Home).Property(NextAired.10.NextNumber)]</property>
-                                    <property name="Network">$INFO[Window(Home).Property(NextAired.10.Network)]</property>
-                                    <property name="LatestDate">$INFO[Window(Home).Property(NextAired.10.LatestDate)]</property>
-                                    <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.10.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.10.Runtime)]</property>
-                                    <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.10.Library)],return)</onclick>
-                                    <visible>!IsEmpty(Window(Home).Property(NextAired.10.Label))</visible>
-                                </item>
+                                <include>NextAiredWidgetContent</include>
                             </content>
                         </control>
                     </control>
@@ -1747,10 +1547,8 @@
                                         <posy>5</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1758,10 +1556,8 @@
                                         <posy>40</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1769,10 +1565,8 @@
                                         <posy>75</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1803,10 +1597,8 @@
                                         <posy>5</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <scroll>true</scroll>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
@@ -1815,10 +1607,8 @@
                                         <posy>40</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <scroll>true</scroll>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
@@ -1827,10 +1617,8 @@
                                         <posy>75</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1843,10 +1631,8 @@
                                         <posy>5</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1854,10 +1640,8 @@
                                         <posy>40</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -1865,10 +1649,8 @@
                                         <posy>75</posy>
                                         <width>360</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(EpisodeNumber)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2132,8 +1914,8 @@
                                     <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</property>
                                     <property name="Year">$INFO[Window(Home).Property(RandomAlbum.1.Year)]</property>
                                     <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.1.Album_Description)]</property>
-                                    <onclick>PlayList.Clear</onclick>
                                     <property name="Path">$INFO[Window(Home).Property(RandomAlbum.1.Path)]</property>
+                                    <onclick>-</onclick>
                                 </item>
                                 <item id="2">
                                     <icon>DefaultMusicAlbum.png</icon>
@@ -2146,8 +1928,8 @@
                                     <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Fanart)]</property>
                                     <property name="Year">$INFO[Window(Home).Property(RandomAlbum.2.Year)]</property>
                                     <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.2.Album_Description)]</property>
-                                    <onclick>PlayList.Clear</onclick>
                                     <property name="Path">$INFO[Window(Home).Property(RandomAlbum.2.Path)]</property>
+                                    <onclick>-</onclick>
                                 </item>
                                 <item id="3">
                                     <icon>DefaultMusicAlbum.png</icon>
@@ -2160,8 +1942,8 @@
                                     <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.3.Fanart)]</property>
                                     <property name="Year">$INFO[Window(Home).Property(RandomAlbum.3.Year)]</property>
                                     <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.3.Album_Description)]</property>
-                                    <onclick>PlayList.Clear</onclick>
                                     <property name="Path">$INFO[Window(Home).Property(RandomAlbum.3.Path)]</property>
+                                    <onclick>-</onclick>
                                 </item>
                                 <item id="4">
                                     <icon>DefaultMusicAlbum.png</icon>
@@ -2174,8 +1956,8 @@
                                     <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.4.Fanart)]</property>
                                     <property name="Year">$INFO[Window(Home).Property(RandomAlbum.4.Year)]</property>
                                     <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.4.Album_Description)]</property>
-                                    <onclick>PlayList.Clear</onclick>
                                     <property name="Path">$INFO[Window(Home).Property(RandomAlbum.4.Path)]</property>
+                                    <onclick>-</onclick>
                                 </item>
                                 <item id="5">
                                     <icon>DefaultMusicAlbum.png</icon>
@@ -2188,8 +1970,8 @@
                                     <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.5.Fanart)]</property>
                                     <property name="Year">$INFO[Window(Home).Property(RandomAlbum.5.Year)]</property>
                                     <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.5.Album_Description)]</property>
-                                    <onclick>PlayList.Clear</onclick>
                                     <property name="Path">$INFO[Window(Home).Property(RandomAlbum.5.Path)]</property>
+                                    <onclick>-</onclick>
                                 </item>
                                 <item id="6">
                                     <icon>DefaultMusicAlbum.png</icon>
@@ -2202,8 +1984,8 @@
                                     <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.6.Fanart)]</property>
                                     <property name="Year">$INFO[Window(Home).Property(RandomAlbum.6.Year)]</property>
                                     <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.6.Album_Description)]</property>
-                                    <onclick>PlayList.Clear</onclick>
                                     <property name="Path">$INFO[Window(Home).Property(RandomAlbum.6.Path)]</property>
+                                    <onclick>-</onclick>
                                 </item>
                                 <item id="7">
                                     <icon>DefaultMusicAlbum.png</icon>
@@ -2216,8 +1998,8 @@
                                     <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.7.Fanart)]</property>
                                     <property name="Year">$INFO[Window(Home).Property(RandomAlbum.7.Year)]</property>
                                     <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.7.Album_Description)]</property>
-                                    <onclick>PlayList.Clear</onclick>
                                     <property name="Path">$INFO[Window(Home).Property(RandomAlbum.7.Path)]</property>
+                                    <onclick>-</onclick>
                                 </item>
                                 <item id="8">
                                     <icon>DefaultMusicAlbum.png</icon>
@@ -2230,8 +2012,8 @@
                                     <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.8.Fanart)]</property>
                                     <property name="Year">$INFO[Window(Home).Property(RandomAlbum.8.Year)]</property>
                                     <property name="Album_Description">$INFO[Window(Home).Property(RandomAlbum.8.Album_Description)]</property>
-                                    <onclick>PlayList.Clear</onclick>
                                     <property name="Path">$INFO[Window(Home).Property(RandomAlbum.8.Path)]</property>
+                                    <onclick>-</onclick>
                                 </item>
                             </content>
                         </control>
@@ -2239,10 +2021,7 @@
                             <posy>510</posy>
                             <width>402</width>
                             <height>40</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <label>$INFO[Container(8002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -2287,10 +2066,8 @@
                                         <posy>5</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2298,10 +2075,8 @@
                                         <posy>40</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2309,10 +2084,8 @@
                                         <posy>75</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(Year)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2343,10 +2116,8 @@
                                         <posy>5</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2354,10 +2125,8 @@
                                         <posy>40</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2365,10 +2134,8 @@
                                         <posy>75</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(Year)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2381,10 +2148,8 @@
                                         <posy>5</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2392,10 +2157,8 @@
                                         <posy>40</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2403,10 +2166,8 @@
                                         <posy>75</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(Year)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2762,10 +2523,7 @@
                             <posy>510</posy>
                             <width>402</width>
                             <height>40</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <label>$INFO[Container(9002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -2809,10 +2567,8 @@
                                         <posy>5</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2820,10 +2576,8 @@
                                         <posy>40</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2831,10 +2585,8 @@
                                         <posy>75</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(Album)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2865,10 +2617,8 @@
                                         <posy>5</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2876,10 +2626,8 @@
                                         <posy>40</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2887,10 +2635,8 @@
                                         <posy>75</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(Album)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2903,10 +2649,8 @@
                                         <posy>5</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2914,10 +2658,8 @@
                                         <posy>40</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Label2]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -2925,10 +2667,8 @@
                                         <posy>75</posy>
                                         <width>710</width>
                                         <height>45</height>
-                                        <aligny>center</aligny>
                                         <font>Font_Reg15</font>
                                         <textcolor>FFe5e5e5</textcolor>
-                                        <shadowcolor>-</shadowcolor>
                                         <label>$INFO[ListItem.Property(Album)]</label>
                                         <textoffsetx>15</textoffsetx>
                                     </control>
@@ -3135,7 +2875,7 @@
                 <height>550</height>
                 <fadetime>200</fadetime>
                 <aspectratio aligny="top" align="left">keep</aspectratio>
-                <texture>$VAR[FeaturedInfoDialogIconVar]</texture>
+                <texture fallback="XBMC_Logo.png">$VAR[FeaturedInfoDialogIconVar]</texture>
             </control>
             <control type="group">
                 <posx>396</posx>
@@ -3147,38 +2887,27 @@
                     <width>894</width>
                     <height>45</height>
                     <font>Font_Reg24_Caps</font>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <textcolor>white2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <textoffsetx>30</textoffsetx>
                     <label>$VAR[FeaturedInfoDialogLabel1Var]</label>
                 </control>
                 <control type="label">
-                    <description>Title label</description>
+                    
                     <posy>45</posy>
                     <height>45</height>
                     <width>894</width>
                     <label>$VAR[FeaturedInfoDialogLabel2Var]</label>
-                    <align>left</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg19</font>
                     <textcolor>grey2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <scroll>true</scroll>
                     <textoffsetx>30</textoffsetx>
                 </control>
                 <control type="label">
-                    <description>Title label</description>
+                    
                     <posy>90</posy>
                     <height>45</height>
                     <width>894</width>
                     <label>$VAR[FeaturedInfoDialogLabel3Var]</label>
-                    <align>left</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg19</font>
-                    <textcolor>white2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <scroll>true</scroll>
                     <textoffsetx>30</textoffsetx>
                 </control>
@@ -3188,9 +2917,6 @@
                     <width>834</width>
                     <height>313</height>
                     <font>Font_Reg19</font>
-                    <align>justify</align>
-                    <textcolor>white2</textcolor>
-                    <pagecontrol>-</pagecontrol>
                     <label>$VAR[FeaturedInfoDialogPlotVar]</label>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
@@ -3205,38 +2931,27 @@
                     <width>684</width>
                     <height>45</height>
                     <font>Font_Reg24_Caps</font>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <textcolor>white2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <textoffsetx>30</textoffsetx>
                     <label>$VAR[FeaturedInfoDialogLabel1Var]</label>
                 </control>
                 <control type="label">
-                    <description>Title label</description>
+                    
                     <posy>45</posy>
                     <height>45</height>
                     <width>684</width>
                     <label>$VAR[FeaturedInfoDialogLabel2Var]</label>
-                    <align>left</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg19</font>
                     <textcolor>grey2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <scroll>true</scroll>
                     <textoffsetx>30</textoffsetx>
                 </control>
                 <control type="label">
-                    <description>Title label</description>
+                    
                     <posy>90</posy>
                     <height>45</height>
                     <width>684</width>
                     <label>$VAR[FeaturedInfoDialogLabel3Var]</label>
-                    <align>left</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg19</font>
-                    <textcolor>white2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <scroll>true</scroll>
                     <textoffsetx>30</textoffsetx>
                 </control>
@@ -3246,9 +2961,6 @@
                     <width>674</width>
                     <height>313</height>
                     <font>Font_Reg19</font>
-                    <align>justify</align>
-                    <textcolor>white2</textcolor>
-                    <pagecontrol>-</pagecontrol>
                     <label>$VAR[FeaturedInfoDialogPlotVar]</label>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
@@ -3258,7 +2970,6 @@
                 <posy>194</posy>
                 <width>894</width>
                 <height>45</height>
-                <itemgap>0</itemgap>
                 <align>left</align>
                 <orientation>horizontal</orientation>
                 <onleft>190</onleft>
@@ -3277,8 +2988,8 @@
                     <onclick condition="StringCompare(Window(1115).Property(InfoDialog),6003)">PlayMedia($ESCINFO[Container(6003).ListItem.Property(Path)])</onclick>
                     <onclick condition="StringCompare(Window(1115).Property(InfoDialog),7002)">PlayMedia($ESCINFO[Container(7002).ListItem.Property(Path)])</onclick>
                     <onclick condition="StringCompare(Window(1115).Property(InfoDialog),7003)">PlayMedia($ESCINFO[Container(7003).ListItem.Property(Path)])</onclick>
-                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),8002)">PlayMedia($ESCINFO[Container(8002).ListItem.Property(Path)])</onclick>
-                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),8003)">PlayMedia($ESCINFO[Container(8003).ListItem.Property(Path)])</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),8002)">$INFO[Container(8002).ListItem.Property(Path)]</onclick>
+                    <onclick condition="StringCompare(Window(1115).Property(InfoDialog),8003)">$INFO[Container(8003).ListItem.Property(Path)]</onclick>
                     <onclick condition="StringCompare(Window(1115).Property(InfoDialog),9003)">PlayMedia($ESCINFO[Container(9003).ListItem.Property(Path)])</onclick>
                     <onclick>ClearProperty(InfoDialog,1115)</onclick>
                     <onclick>SetFocus(40)</onclick>
@@ -3352,42 +3063,36 @@
                         <animation effect="slide" start="0,0" end="0,6" time="0" condition="true">Conditional</animation>
                     </control>
                     <control type="label">
-                        <textcolor>white2</textcolor>
                         <font>Font_Reg19_Caps</font>
                         <include>BreadcrumbsLabel</include>
                         <label>$LOCALIZE[137]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
                     </control>
                     <control type="label">
-                        <textcolor>white2</textcolor>
                         <font>Font_Reg19_Caps</font>
                         <include>BreadcrumbsLabel</include>
                         <label>$LOCALIZE[31464]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(5000).HasFocus">Conditional</animation>
                     </control>
                     <control type="label">
-                        <textcolor>white2</textcolor>
                         <font>Font_Reg19_Caps</font>
                         <include>BreadcrumbsLabel</include>
                         <label>$LOCALIZE[31502]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(6000).HasFocus">Conditional</animation>
                     </control>
                     <control type="label">
-                        <textcolor>white2</textcolor>
                         <font>Font_Reg19_Caps</font>
                         <include>BreadcrumbsLabel</include>
                         <label>$LOCALIZE[31503]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(7000).HasFocus">Conditional</animation>
                     </control>
                     <control type="label">
-                        <textcolor>white2</textcolor>
                         <font>Font_Reg19_Caps</font>
                         <include>BreadcrumbsLabel</include>
                         <label>$LOCALIZE[132]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(8000).HasFocus">Conditional</animation>
                     </control>
                     <control type="label">
-                        <textcolor>white2</textcolor>
                         <font>Font_Reg19_Caps</font>
                         <include>BreadcrumbsLabel</include>
                         <label>$LOCALIZE[31501]</label>
@@ -3396,17 +3101,13 @@
                 </control>
             </control>
             <control type="group">
-                <posx>20</posx>
                 <control type="grouplist">
-                    <visible>true</visible>
-                    <width>1882</width>
+                    <width>1900</width>
                     <align>right</align>
                     <aligny>center</aligny>
-                    <itemgap>0</itemgap>
                     <orientation>horizontal</orientation>
                     <control type="label">
                         <height>38</height>
-                        <aligny>center</aligny>
                         <width min="15" max="1920">auto</width>
                         <font>Font_Reg19_Caps</font>
                         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
@@ -3419,13 +3120,12 @@
                     </control>
                     <control type="label">
                         <height>38</height>
-                        <aligny>center</aligny>
                         <width min="15" max="1920">auto</width>
                         <font>Font_Reg19_Caps</font>
                         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
                         <shadowcolor>bcshadow</shadowcolor>
                         <scroll>false</scroll>
-                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]       </label>
+                        <label>[COLOR $VAR[BreadCrumbsContentColorVar]] $INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •  [/COLOR][COLOR=$VAR[TitleColorVar]]$INFO[System.Time][/COLOR]</label>
                     </control>
                 </control>
             </control>
@@ -3469,9 +3169,7 @@
                     <width>110</width>
                     <height>110</height>
                     <texture>common/white.png</texture>
-                    <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-                    <animation effect="fade" time="200">Visible</animation>
-                    <animation effect="fade" time="200">Hidden</animation>
+                    <include>Animation_VisibleChange200</include>
                     <animation effect="fade" start="20" end="20" time="0" condition="true">Conditional</animation>
                     <visible>Player.Paused</visible>
                 </control>
@@ -3481,8 +3179,7 @@
                     <width>110</width>
                     <height>110</height>
                     <texture>osd/buttons/button_pause.png</texture>
-                    <animation effect="fade" time="200">Visible</animation>
-                    <animation effect="fade" time="200">Hidden</animation>
+                    <include>Animation_VisibleChange200</include>
                     <visible>Player.Paused</visible>
                 </control>
                 <control type="label">
@@ -3523,12 +3220,6 @@
                     <posy>96</posy>
                     <width>420</width>
                     <height>21</height>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturebg>dialogs/progress/progress_back.png</texturebg>
-                    <lefttexture>dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture>dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture>dialogs/progress/progress_right.png</righttexture>
-                    <overlaytexture>-</overlaytexture>
                     <info>Player.Progress</info>
                 </control>
                 <control type="label">
@@ -3560,9 +3251,7 @@
                     <width>110</width>
                     <height>110</height>
                     <texture>common/white.png</texture>
-                    <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-                    <animation effect="fade" time="200">Visible</animation>
-                    <animation effect="fade" time="200">Hidden</animation>
+                    <include>Animation_VisibleChange200</include>
                     <animation effect="fade" start="20" end="20" time="0" condition="true">Conditional</animation>
                     <visible>Player.Paused</visible>
                 </control>
@@ -3572,8 +3261,7 @@
                     <width>110</width>
                     <height>110</height>
                     <texture>osd/buttons/button_pause.png</texture>
-                    <animation effect="fade" time="200">Visible</animation>
-                    <animation effect="fade" time="200">Hidden</animation>
+                    <include>Animation_VisibleChange200</include>
                     <visible>Player.Paused</visible>
                 </control>
                 <control type="label">
@@ -3614,12 +3302,10 @@
                     <posy>96</posy>
                     <width>360</width>
                     <height>21</height>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <texturebg>dialogs/progress/progress_back.png</texturebg>
                     <lefttexture>osd/seek/progresscache_left.png</lefttexture>
                     <midtexture>osd/seek/progresscache_mid.png</midtexture>
                     <righttexture>osd/seek/progresscache_right.png</righttexture>
-                    <overlaytexture>-</overlaytexture>
                     <info>Player.ProgressCache</info>
                 </control>
                 <control type="progress">
@@ -3627,12 +3313,6 @@
                     <posy>96</posy>
                     <width>360</width>
                     <height>21</height>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturebg>osd/seek/progresscache_back.png</texturebg>
-                    <lefttexture>dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture>dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture>dialogs/progress/progress_right.png</righttexture>
-                    <overlaytexture>-</overlaytexture>
                     <info>Player.Progress</info>
                 </control>
                 <control type="label">

@@ -9,9 +9,9 @@
         <animation effect="fade" time="250">VisibleChange</animation>
     </include>
     <include name="Furniture_FlagUpright">
-        <width>1</width>
+        <width>2</width>
         <height>71</height>
-        <texture>info/info_flagupright.png</texture>
+        <texture>views/tripanel/upright.png</texture>
         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
     </include>
     <include name="AudioFlagsVars">
@@ -124,7 +124,7 @@
     <include name="MusicMediaFlags">
         <control type="group">
             <visible>[Control.IsVisible(50) | Control.IsVisible(509) | Control.IsVisible(513) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(57)] + [Container.Content(Albums) | Container.Content(Songs)]</visible>
-            <include>dialogeffect</include>
+            <include>Animation_WindowFade200</include>
             <posy>8</posy>
             <!-- Rating -->
             <control type="image">
@@ -308,7 +308,6 @@
                     <width>135</width>
                     <height>38</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <font>Font_Bold24</font>
                     <textcolor>floor</textcolor>
                     <label>$INFO[ListItem.Top250]</label>
@@ -331,7 +330,6 @@
                         <width>135</width>
                         <height>38</height>
                         <align>center</align>
-                        <aligny>center</aligny>
                         <font>Font_Bold24</font>
                         <textcolor>floor</textcolor>
                         <label fallback="?">$INFO[ListItem.Rating]</label>
@@ -360,13 +358,23 @@
                 <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                 <visible>Container.Content(tvshows) | SubString(Container.FolderPath,plugin.video.the.trailers)</visible>
             </control>
+            <control type="image">
+                <posx>1530</posx>
+                <posy>12</posy>
+                <width>170</width>
+                <aspectratio>keep</aspectratio>
+                <height>70</height>
+                <aspectratio>keep</aspectratio>
+                <texture fallback="rating0.png">$INFO[ListItem.Rating,stars/,.png]</texture>
+                <colordiffuse>FF7c7c7c</colordiffuse>
+                <visible>Container.Content(tvshows)</visible>
+            </control>
             <control type="label">
                 <posx>1890</posx>
                 <posy>27</posy>
                 <width>450</width>
                 <height>38</height>
                 <align>right</align>
-                <aligny>center</aligny>
                 <font>Font_Bold24</font>
                 <textcolor>floor</textcolor>
                 <label>$INFO[ListItem.Label]$INFO[ListItem.Property(WatchedEpisodes), (,/]$INFO[ListItem.Property(TotalEpisodes),,)]</label>
