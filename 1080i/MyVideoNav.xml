@@ -62,7 +62,7 @@
             <include>HiddenObject</include>
             <texture>-</texture>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] +  [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550)]</visible>
+            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] +  [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550) | Control.IsVisible(528)]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
@@ -84,19 +84,14 @@
             <include condition="!Skin.HasSetting(DisablePosterLiteVL)">PosterLite</include>
 			<include>Furniture_DarkGradient</include>
             <visible>Control.IsVisible(528)</visible>
-            <control type="button" id="528195">
-                <description>Infopanel: Manual</description>
-                <include>HiddenObject</include>
-                <visible>[[Container.Content(movies)+!Skin.HasSetting(showcaseinfoon)]|[Container.Content(tvshows)+!Skin.HasSetting(showcaseinfoontv)]]+!StringCompare(ListItem.Label,..)</visible>
-            </control>
             <control type="button" id="528196">
                 <description>Infopanel: On/Off</description>
                 <include>HiddenObject</include>
-                <visible>[[Container.Content(movies)+[[Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|Skin.HasSetting(infopaneoff)]]|[Container.Content(tvshows)+[[Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]|Skin.HasSetting(infopaneofftv)]]]</visible>
+                <visible>[Stringcompare(Control.GetLabel(4421),infopanelon) | Stringcompare(Control.GetLabel(4421),infopaneloff)]</visible>
             </control>
             <control type="button" id="528194">
                 <include>HiddenObject</include>
-                <visible>[[Container.Content(movies)+Skin.HasSetting(showcaseinfoon)+Skin.HasSetting(infopaneauto)]|[Container.Content(tvshows)+Skin.HasSetting(showcaseinfoontv)+Skin.HasSetting(infopaneautotv)]]+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
+                <visible>Stringcompare(Control.GetLabel(4421),infopanelonauto)+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
             </control>
             <control type="button" id="528197">
                 <description>Infopanel: Delayed</description>
@@ -163,8 +158,8 @@
                     <onleft condition="Control.IsVisible(504)">Control.Move(504,-1)</onleft>
                     <onleft condition="Control.IsVisible(503)">Control.Move(503,-1)</onleft>
                     <onleft condition="Control.IsVisible(508)">Control.Move(508,-1)</onleft>
-                <onleft condition="Control.IsVisible(528)">Control.Move(528,-1)</onleft>
-                <onright condition="Control.IsVisible(528)">Control.Move(528,1)</onright>
+                    <onleft condition="Control.IsVisible(528)">Control.Move(528,-1)</onleft>
+                    <onright condition="Control.IsVisible(528)">Control.Move(528,1)</onright>
                     <onright condition="Control.IsVisible(501)">Control.Move(501,1)</onright>
                     <onright condition="Control.IsVisible(504)">Control.Move(504,1)</onright>
                     <onright condition="Control.IsVisible(503)">Control.Move(503,1)</onright>

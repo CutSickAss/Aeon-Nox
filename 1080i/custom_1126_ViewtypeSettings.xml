@@ -53,7 +53,7 @@
                 <!--Info panel options-->
                 <include>Objects_MediaMenuLabelAlt2</include>
                 <label>$LOCALIZE[31166]</label>
-                <visible>[stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),banners)] + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies) | Container.Content(episodes)]</visible>
+                <visible>[stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),banners) | Stringcompare(Skin.String(actualViewtype),posterlite)] + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies) | Container.Content(episodes)]</visible>
                 <enable>no</enable>
             </control>
             <control type="button" id="1614">
@@ -73,7 +73,7 @@
                 <onclick condition="stringcompare(Control.GetLabel(4421),infopaneloff)">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopanelonmanual)</onclick>
                 <onclick condition="stringcompare(Control.GetLabel(4421),infopanelon)">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopaneloff)</onclick>
                 <onclick condition="stringcompare(Control.GetLabel(4421),infopanelonauto)">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopanelon)</onclick>
-                <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare)</visible>
+                <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | Stringcompare(Skin.String(actualViewtype),posterlite)</visible>
             </control>
 
             <!-- PosterLite -->
@@ -301,7 +301,7 @@
                 <label>20079</label>
                 <onclick>Skin.ToggleSetting(PLPAn)</onclick>
                 <selected>Skin.HasSetting(PLPAn)</selected>
-				<enable>stringcompare(Skin.String(actualViewtype),posterlite) + ![[Container.Content(movies)+[[Skin.HasSetting(showcaseinfoon)+!Skin.HasSetting(infopaneauto)]|Skin.HasSetting(infopaneoff)]]|[Container.Content(tvshows)+[[Skin.HasSetting(showcaseinfoontv)+!Skin.HasSetting(infopaneautotv)]|Skin.HasSetting(infopaneofftv)]]]</enable>
+				<enable>stringcompare(Skin.String(actualViewtype),posterlite) + ![Stringcompare(Control.GetLabel(4421),infopanelon) | Stringcompare(Control.GetLabel(4421),infopaneloff)]</enable>
                 <visible>stringcompare(Skin.String(actualViewtype),posterlite) + ![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)|Skin.HasSetting(plnoicon)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)|Skin.HasSetting(plnoicontv)]]]</visible>
             </control>
             <control type="togglebutton" id="1767">
