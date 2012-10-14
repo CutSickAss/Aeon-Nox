@@ -1522,6 +1522,11 @@
             <size>30</size>
         </font>
         <font>
+            <name>Font_Reg19_Caps</name>
+            <filename>Ubuntu-C.ttf</filename>
+            <size>32</size>
+        </font>
+        <font>
             <name>Font_Reg18_Caps</name>
             <filename>BebasNeue.ttf</filename>
             <style>uppercase</style>
@@ -1540,18 +1545,6 @@
             <size>34</size>
         </font>
         <font>
-            <name>Font_Bold20_Caps</name>
-            <filename>Ubuntu-C.ttf</filename>
-            <style>uppercase bold</style>
-            <size>34</size>
-        </font>
-        <font>
-            <name>Font_Reg19_Caps</name>
-            <filename>BebasNeue.ttf</filename>
-            <style>uppercase</style>
-            <size>35</size>
-        </font>
-        <font>
             <name>Font_Reg21_Caps</name>
             <filename>Ubuntu-C.ttf</filename>
             <style>uppercase</style>
@@ -1561,6 +1554,12 @@
             <name>Font_Reg22_Caps</name>
             <filename>Ubuntu-C.ttf</filename>
             <style>uppercase</style>
+            <size>37</size>
+        </font>
+        <font>
+            <name>Font_Bold20_Caps</name>
+            <filename>BebasNeue.ttf</filename>
+            <style>uppercase bold</style>
             <size>37</size>
         </font>
         <font>

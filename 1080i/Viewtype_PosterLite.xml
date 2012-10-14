@@ -414,14 +414,14 @@
 		</control>
 		<!-- TV Show Banner -->
 		<control type="group">
-		  <visible>Container.Content(tvshows)+!IsEmpty(ListItem.Path,,banner.jpg)</visible>
+		  <visible>Container.Content(tvshows)+!IsEmpty(ListItem.Art(banner))</visible>
 		  <posx>795</posx>
 		  <posy>-42</posy>
 		  <control type="image" id="528901">
 			<width>528</width>
 			<height>98</height>
 			<aspectratio>stretch</aspectratio>
-			<texture background="true" diffuse="thumbs/banner_mask.png">$INFO[ListItem.Path,,banner.jpg]</texture>
+			<texture background="true" diffuse="thumbs/banner_mask.png">$INFO[ListItem.Art(banner)]</texture>
 		  </control>
 		  <control type="image">
 			<posx>-10</posx>
