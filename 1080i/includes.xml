@@ -816,9 +816,6 @@
             </control>
         </control>
     </include>
-    <include name="CommonVerticalScrollbar">
-        <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-    </include>
     <include name="AutoConfig">
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_programs,FF6db9e5)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(diffuse_music,FF6db9e5)</onload>
@@ -998,8 +995,6 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(submenulist,music tv movies pvr    custom1 custom2 custom3 custom4 custom5 custom6 videos programs settings  shutdown   weather)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pllogotv)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pliteback1)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(infopaneauto)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(infopaneautotv)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(PLPAn)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
         <onload>Skin.SetBool(firstrun)</onload>
@@ -1505,7 +1500,7 @@
             <visible>!Skin.HasSetting(DisableVideoThumb) + !substring(Control.GetLabel(888777),defaultvideo)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
-                <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | [VideoPlayer.Content(episodes) + !Skin.HasSetting(TVShowsUsePoster)]</visible>
+                <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)</visible>
                 <animation type="WindowOpen">
                     <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
                 </animation>
@@ -1538,7 +1533,7 @@
                     <posy>600</posy>
                     <width>310</width>
                     <height>465</height>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$INFO[Player.Property(TVShowThumb)]</texture>
+                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$INFO[Player.Art(TVShowThumb)]</texture>
                     <aspectratio aligny="bottom">stretch</aspectratio>
                     <visible>VideoPlayer.Content(episodes)</visible>
                 </control>
@@ -1550,46 +1545,6 @@
                     <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                     <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>19</bordersize>
-                </control>
-            </control>
-            <control type="group">
-                <visible>VideoPlayer.Content(episodes) + Skin.HasSetting(TVShowsUsePoster)</visible>
-                <posx>-1536</posx>
-                <animation type="WindowOpen">
-                    <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
-                </animation>
-                <animation type="WindowClose">
-                    <effect type="slide" start="0,0" end="-450,0" time="600" tween="cubic" easing="out" />
-                    <effect type="fade" start="100" end="0" time="600" />
-                </animation>
-                <control type="image">
-                    <texture>thumbs/multiplex_tvmask_shadow.png</texture>
-                    <posx>1528</posx>
-                    <posy>853</posy>
-                    <width>400</width>
-                    <height>225</height>
-                    <include>PanelGlowFade</include>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <include>Animation_VisibleChange400</include>
-                </control>
-                <control type="image">
-                    <posx>1545</posx>
-                    <posy>862</posy>
-                    <width>368</width>
-                    <height>207</height>
-                    <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[VideoPlayer.Cover]</texture>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                </control>
-                <control type="image">
-                    <posx>1536</posx>
-                    <posy>853</posy>
-                    <width>386</width>
-                    <height>225</height>
-                    <texture background="true" diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass_reflect.png</texture>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
-                    <bordersize>9</bordersize>
                 </control>
             </control>
             <control type="group">
@@ -1640,6 +1595,7 @@
             <posy>956</posy>
             <width>1140</width>
             <height>8</height>
+            <aligny>top</aligny>
             <align>center</align>
             <font>Font_Reg19</font>
             <textcolor>$VAR[TitleColorVar]</textcolor>
@@ -1659,6 +1615,7 @@
             <posy>956</posy>
             <width>1140</width>
             <height>8</height>
+            <aligny>top</aligny>
             <align>center</align>
             <font>Font_Reg19</font>
             <textcolor>$VAR[TitleColorVar]</textcolor>

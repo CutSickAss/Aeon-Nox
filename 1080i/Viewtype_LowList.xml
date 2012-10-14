@@ -151,7 +151,7 @@
                         <height>360</height>
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
-                        <texture background="true">$INFO[ListItem.property(fanart_image)]</texture>
+                        <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
                         <visible>!Container.Content(episodes)</visible>
@@ -899,7 +899,8 @@
                 <animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(69)">Conditional</animation>
                 <visible>Control.IsVisible(511)</visible>
                 <visible>!Skin.HasSetting(nohighlist)</visible>
-                <include>CommonVerticalScrollbar</include>
+                <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(69)">Conditional</animation>
+               <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
                 <onleft condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onleft>
                 <onleft condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onleft>
                 <onright>511</onright>
@@ -912,9 +913,10 @@
                 <width>46</width>
                 <height>270</height>
                 <animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(69)">Conditional</animation>
+                <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(69)">Conditional</animation>
                 <visible>Control.IsVisible(511)</visible>
                 <visible>Skin.HasSetting(nohighlist)</visible>
-                <include>CommonVerticalScrollbar</include>
+                <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
                 <onleft condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onleft>
                 <onleft condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onleft>
                 <onright>511</onright>

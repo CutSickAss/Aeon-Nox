@@ -16,7 +16,7 @@
     <controls>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
+            <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Art(fanart)]</texture>
             <aspectratio>scale</aspectratio>
         </control>
         <control type="multiimage">
@@ -246,6 +246,7 @@
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>-80</posy>
+                        <itemgap>10</itemgap>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
@@ -263,11 +264,13 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>-40</posy>
+                        <itemgap>10</itemgap>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
@@ -285,11 +288,13 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -306,12 +311,14 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>40</posy>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -328,12 +335,14 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>80</posy>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -350,6 +359,7 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -360,6 +370,7 @@
                         <posx>500</posx>
                         <posy>-80</posy>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -376,12 +387,14 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>-40</posy>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -398,11 +411,13 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -419,6 +434,7 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -426,6 +442,7 @@
                         <posy>40</posy>
                         <width>778</width>
                         <orientation>horizontal</orientation>
+                        <itemgap>10</itemgap>
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
@@ -441,6 +458,7 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -449,6 +467,7 @@
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <visible>!IsEmpty(ListItem.Property(Artist_Died))</visible>
+                        <itemgap>10</itemgap>
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
@@ -464,6 +483,7 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -472,6 +492,7 @@
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <visible>!IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
+                        <itemgap>10</itemgap>
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
@@ -487,6 +508,7 @@
                             <textcolor>white3</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
