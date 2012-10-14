@@ -245,16 +245,16 @@
 	</control>
 	<control type="fadelabel">
 	  <posx>114</posx>
-	  <posy>-10</posy>
+	  <posy>-8</posy>
 	  <width>624</width>
 	  <height>75</height>
 	  <align>center</align>
 	  <aligny>center</aligny>
-	  <font>Font_Bold28_Caps</font>
+	  <font>Font_ShowcaseMainLabel2_Caps</font>
 	  <textcolor>$VAR[PLTitleColor]</textcolor>
 	  <scrollspeed>20</scrollspeed>
 	  <include>PLFadeL</include>
-	  <label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+	  <label>[B]$INFO[ListItem.Label][/B]</label>
 	  <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)+!IsEmpty(ListItem.Label)</visible>
 	</control>
   </include>
@@ -536,7 +536,7 @@
 		</control>
 		<control type="label">
 		  <posx>1330</posx>
-		  <posy>23</posy>
+		  <posy>45</posy>
 		  <width>370</width>
 		  <align>right</align>
 		  <font>Font_Bold22_Caps</font>
