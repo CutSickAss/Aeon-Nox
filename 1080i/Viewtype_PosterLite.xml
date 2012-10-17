@@ -142,6 +142,7 @@
 	  <posy>-49</posy>
 	  <width>540</width>
 	  <height>780</height>
+	  <fadetime>250</fadetime>
 	  <bordersize>17</bordersize>
 	  <include>PanelGlowFade</include>
 	  <colordiffuse>$VAR[PLColorDiffuse]</colordiffuse>
@@ -150,20 +151,14 @@
 	<control type="image">
 	  <width>464</width>
 	  <height>683</height>
-	  <texture diffuse="thumbs/movieposter_mask.png">common/black.png</texture>
+	  <fadetime>250</fadetime>
+	  <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
 	  <aspectratio scalediffuse="false">stretch</aspectratio>
 	</control>
 	<control type="image">
 	  <width>464</width>
 	  <height>683</height>
-	  <fadetime>300</fadetime>
-	  <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[ListPosterVar]</texture>
-	  <aspectratio scalediffuse="false">stretch</aspectratio>
-	</control>
-	<control type="image">
-	  <width>464</width>
-	  <height>683</height>
-	  <fadetime>300</fadetime>
+	  <fadetime>250</fadetime>
 	  <texture>thumbs/thumb_glass.png</texture>
 	  <aspectratio scalediffuse="false">stretch</aspectratio>
 	</control>
@@ -171,8 +166,8 @@
 	  <posy>684</posy>
 	  <width>464</width>
 	  <height>683</height>
-	  <fadetime>300</fadetime>
-	  <texture flipy="true" background="true" diffuse="thumbs/movieposter_mask_reflect.png">$VAR[ListPosterVar]</texture>
+	  <fadetime>250</fadetime>
+	  <texture flipy="true" background="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
 	  <aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
