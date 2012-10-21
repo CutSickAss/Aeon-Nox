@@ -2,9 +2,287 @@
 <includes>
   <include name="PosterLite">
 	<include>Animation_CommonFade</include>
-	<include>PLiteBack</include>
-	<include>PLLabFl</include>
-	<animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(109)">Conditional</animation>
+	<control type="image">
+	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
+	  <include>FullscreenDimensions</include>
+	  <fadetime>250</fadetime>
+	  <texture>views/logo_back.png</texture>
+	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
+	  <animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+	  <animation effect="slide" end="0,320" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
+	</control>
+	<control type="image">
+	  <visible>[Container.Content(movies)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
+	  <posy>770</posy>
+	  <width>1920</width>
+	  <height>400</height>
+	  <fadetime>250</fadetime>
+	  <aspectratio>stretch</aspectratio>
+	  <texture>views/lowlist_panelback.png</texture>
+	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
+	  <animation effect="slide" end="0,198" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
+	</control>
+	<control type="group">
+	  <posy>755</posy>
+	  <include>Neon_Topbar</include>
+	  <visible>!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+	</control>
+	<control type="group">
+	  <posy>953</posy>
+	  <include>Neon_Topbar</include>
+	  <visible>Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+	</control>
+	<control type="group">
+	  <posx>557</posx>
+	  <posy>780</posy>
+	  <!-- Rating -->
+	  <control type="image">
+		<posx>-381</posx>
+		<posy>245</posy>
+		<width>207</width>
+		<height>38</height>
+		<fadetime>250</fadetime>
+		<texture>$VAR[ListImage2Var]</texture>
+		<colordiffuse>$VAR[PLRatingColor]</colordiffuse>
+	  </control>
+	  <!-- Labels -->
+	  <control type="group" id="528200">
+		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(61)]]]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+		<animation effect="fade" time="300" reversible="false">Visible</animation>
+		<!-- Movies and TV shows -->
+		<control type="textbox">
+		  <posx>0</posx>
+		  <posy>66</posy>
+		  <width>1321</width>
+		  <height>150</height>
+		  <align>justify</align>
+		  <aligny>justify</aligny>
+		  <font>Font_Reg24</font>
+		  <label>$VAR[PLPlot]</label>
+		  <autoscroll time="4000" delay="10000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+		</control>
+		<control type="fadelabel">
+		  <posx>0</posx>
+		  <posy>0</posy>
+		  <width>750</width>
+		  <height>75</height>
+		  <align>left</align>
+		  <aligny>center</aligny>
+		  <scrollout>false</scrollout>
+		  <pauseatend>2000</pauseatend>
+		  <scrollspeed>10</scrollspeed>
+		  <font>Font_Bold19</font>
+		  <label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Genre][/COLOR]</label>
+		  <visible>!IsEmpty(ListItem.Genre)</visible>
+		</control>
+		<!-- Movies only -->
+		<control type="fadelabel">
+		  <posx>0</posx>
+		  <posy>90</posy>
+		  <width>1321</width>
+		  <height>135</height>
+		  <align>justify</align>
+		  <aligny>justify</aligny>
+		  <scrollout>false</scrollout>
+		  <pauseatend>2000</pauseatend>
+		  <scrollspeed>10</scrollspeed>
+		  <font>Font_OSDTitle2</font>
+		  <textcolor>$VAR[TitleColorVar]</textcolor>
+		  <label>$INFO[ListItem.Label]</label>
+  		  <animation effect="fade" time="10">Visible</animation>
+		  <visible>Container.Content(movies)+SubString(ListItem.Path,videodb://1/7/)+!StringCompare(ListItem.Label,..)</visible>
+		</control>
+		<control type="image">
+		  <posx>364</posx>
+		  <posy>-69</posy>
+		  <width>1056</width>
+		  <height>86</height>
+		  <fadetime>250</fadetime>
+		  <aspectratio>stretch</aspectratio>
+		  <texture>osd/osd_bottom_bar.png</texture>
+		  <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+		  <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
+		</control>
+		<control type="fadelabel">
+		  <posx>508</posx>
+		  <posy>-43</posy>
+		  <width>765</width>
+		  <height>75</height>
+		  <font>Font_Bold19</font>
+		  <align>center</align>
+		  <aligny>center</aligny>
+		  <scrollspeed>15</scrollspeed>
+		  <scrollout>false</scrollout>
+		  <pauseatend>2000</pauseatend>
+		  <textcolor>$VAR[PLTitleColor]</textcolor>
+		  <label>[I]$INFO[ListItem.Tagline][/I]</label>
+		  <animation effect="fade" time="10">Visible</animation>
+		  <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
+		</control>
+		<control type="fadelabel">
+		  <posx>789</posx>
+		  <posy>0</posy>
+		  <width>531</width>
+		  <height>75</height>
+		  <font>Font_Bold19</font>
+		  <align>right</align>
+		  <aligny>center</aligny>
+		  <scrollout>false</scrollout>
+		  <pauseatend>2000</pauseatend>
+		  <scrollspeed>10</scrollspeed>
+		  <label>$LOCALIZE[20339]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Director][/COLOR]</label>
+		  <visible>Container.Content(movies)+!IsEmpty(ListItem.Director)</visible>
+		</control>
+		<!-- TV Show Banner -->
+		<control type="group">
+		  <visible>Container.Content(tvshows)+!IsEmpty(ListItem.Art(banner))</visible>
+		  <posx>795</posx>
+		  <posy>-42</posy>
+		  <control type="image" id="528901">
+			<width>528</width>
+			<height>98</height>
+			<aspectratio>stretch</aspectratio>
+			<texture diffuse="thumbs/banner_mask.png">$INFO[ListItem.Art(banner)]</texture>
+		  </control>
+		  <control type="image">
+			<posx>-10</posx>
+			<posy>-9</posy>
+			<width>548</width>
+			<height>116</height>
+			<include>PanelGlowFade</include>
+			<aspectratio>stretch</aspectratio>
+			<texture diffuse="thumbs/banner_mask.png">common/blank.png</texture>
+			<bordertexture border="12">thumbs/banner_shadow.png</bordertexture>
+			<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+			<visible>!IsEmpty(Control.GetLabel(528901))</visible>
+		  </control>
+		</control>
+	  </control>
+	</control>
+	<control type="group">
+	  <!-- Flags -->
+	  <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(61)+!Control.HasFocus(109)</visible>
+	  <control type="label">
+		<posx>1858</posx>
+		<posy>1039</posy>
+		<width>370</width>
+		<align>right</align>
+		<font>Font_Bold22_Caps</font>
+		<textcolor>$VAR[TitleColorVar]</textcolor>
+		<label>$LOCALIZE[20457]</label>
+		<visible>SubString(ListItem.Path,videodb://1/7/)</visible>
+	  </control>
+	  <control type="group">
+		<visible>Container.Content(movies)+!SubString(ListItem.Path,videodb://1/7/)</visible>
+		<posx>548</posx>
+		<posy>994</posy>
+		<control type="image">
+		  <include>CuFlVa</include>
+		  <texture>flags/music/year/year.png</texture>
+		  <visible>!IsEmpty(ListItem.Year)</visible>
+		</control>
+		<control type="label">
+		  <posx>0</posx>
+		  <posy>23</posy>
+		  <include>CuFlVa</include>
+		  <label>$INFO[ListItem.Year]</label>
+		  <visible>!IsEmpty(ListItem.Year)</visible>
+		</control>
+		<control type="label">
+		  <posx>159</posx>
+		  <posy>23</posy>
+		  <width>202</width>
+		  <include>CuFlVa</include>
+		  <label>$INFO[ListItem.Duration] $LOCALIZE[12391]</label>
+		  <visible>!IsEmpty(ListItem.Duration)</visible>
+		</control>
+		<control type="image">
+		  <posx>368</posx>
+		  <posy>-2</posy>
+		  <width>136</width>
+		  <height>92</height>
+		  <aspectratio>keep</aspectratio>
+		  <fadetime>250</fadetime>
+		  <!--colordiffuse>white</colordiffuse><!-- "White" for original MPAA ratings -->
+		  <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+		</control>
+		<control type="image">
+		  <posx>533</posx>
+		  <posy>-2</posy>
+		  <include>CuFlVa</include>
+		  <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
+		</control>
+		<control type="image">
+		  <posx>722</posx>
+		  <posy>2</posy>
+		  <width>124</width>
+		  <height>84</height>
+		  <include>CuFlVa</include>
+		  <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+		</control>
+		<control type="image">
+		  <posx>873</posx>
+		  <include>CuFlVa</include>
+		  <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+		</control>
+		<control type="image">
+		  <posx>1030</posx>
+		  <include>CuFlVa</include>
+		  <texture fallback="flags/resolution/defaultscreen.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+		</control>
+		<control type="image">
+		  <posx>1194</posx>
+		  <include>CuFlVa</include>
+		  <texture fallback="flags/audio/defaultsound.png">$INFO[ListItem.AudioCodec,flags/info/]$INFO[ListItem.AudioChannels,,.png]</texture>
+		</control>
+	  </control>
+	  <control type="group">
+		<visible>Container.Content(tvshows)</visible>
+		<posx>1357</posx>
+		<posy>1021</posy>
+		<control type="label">
+		  <posx>-800</posx>
+		  <posy>0</posy>
+		  <width>750</width>
+		  <height>75</height>
+		  <align>left</align>
+		  <include>CuFlVa</include>
+		  <label>$LOCALIZE[20360]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Episode][/COLOR]  ($LOCALIZE[16101]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR])</label>
+		  <visible>!IsEmpty(ListItem.Episode)</visible>
+		</control>
+		<control type="image">
+		  <posy>-22</posy>
+		  <include>CuFlVa</include>
+		  <texture>flags/music/year/year.png</texture>
+		</control>
+		<control type="label">
+		  <posx>0</posx>
+		  <posy>1</posy>
+		  <include>CuFlVa</include>
+		  <label>$INFO[ListItem.Year]</label>
+		</control>
+		<control type="image">
+		  <posx>222</posx>
+		  <posy>-20</posy>
+		  <width>124</width>
+		  <height>84</height>
+		  <include>CuFlVa</include>
+		  <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+		</control>
+		<control type="image">
+		  <posx>408</posx>
+		  <posy>-25</posy>
+		  <posx>368</posx>
+		  <posy>-2</posy>
+		  <width>136</width>
+		  <height>92</height>
+		  <aspectratio>keep</aspectratio>
+		  <fadetime>250</fadetime>
+		  <!--colordiffuse>white</colordiffuse><!-- "White" for original MPAA ratings -->
+		  <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+		</control>
+	  </control>
+	</control>
 	<control type="group">
 	  <posx>700</posx>
 	  <posy>124</posy>
@@ -13,7 +291,7 @@
 	  <control type="image">
 		<width>1028</width>
 		<height>590</height>
-		<texture background="true">home/nowplaying/OverlayDialogBackground.png</texture>
+		<texture>home/nowplaying/OverlayDialogBackground.png</texture>
 		<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 		<bordertexture>common/black.png</bordertexture>
 		<bordersize>-37</bordersize>
@@ -58,6 +336,7 @@
 		</control>
 	  </control>
 	</control>
+	<animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(109)">Conditional</animation>
   </include>
 
   <include name="contents528list">
@@ -74,7 +353,7 @@
 	<viewtype label="31972">BigWrap</viewtype>
 	<pagecontrol>61</pagecontrol>
 	<focusposition>2</focusposition>
-	<preloaditems>3</preloaditems>
+	<preloaditems>2</preloaditems>
 	<scrolltime tween="quadratic" easing="out">300</scrolltime>
 	<include>Animation_OpenCloseZoom_New</include>
 	<itemlayout width="190" height="1000" condition="!Control.IsVisible(528199)+!Control.IsVisible(528196)">
@@ -93,11 +372,6 @@
 		<animation effect="zoom" center="475,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
 		<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
-		<!--animation effect="zoom" center="5,978" start="100" end="39" time="300" reversible="false" condition="Control.HasFocus(528)+Container.OnNext">Unfocus</animation>
-		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)+Container.OnPrevious">
-		  <effect type="zoom" center="300,978" start="97" end="39" time="300" />
-		  <effect type="slide" end="-463" time="0" />
-		</animation-->
 		<include>PLPosters</include>
 	  </control>
 	</focusedlayout>
@@ -152,7 +426,7 @@
 	  <width>464</width>
 	  <height>683</height>
 	  <fadetime>250</fadetime>
-	  <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
+	  <texture diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
 	  <aspectratio scalediffuse="false">stretch</aspectratio>
 	</control>
 	<control type="image">
@@ -167,7 +441,7 @@
 	  <width>464</width>
 	  <height>683</height>
 	  <fadetime>250</fadetime>
-	  <texture flipy="true" background="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
+	  <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
 	  <aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
@@ -186,7 +460,7 @@
 	  <height>204</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="bottom">keep</aspectratio>
-	  <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIcon]</texture>
+	  <texture diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIcon]</texture>
 	</control>
 	<control type="image">
 	  <posy>205</posy>
@@ -194,7 +468,7 @@
 	  <height>204</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="top">keep</aspectratio>
-	  <texture flipy="true" background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIcon]</texture>
+	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIcon]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
@@ -248,41 +522,10 @@
 	  <font>Font_ShowcaseMainLabel2_Caps</font>
 	  <textcolor>$VAR[PLTitleColor]</textcolor>
 	  <scrollspeed>20</scrollspeed>
-	  <include>PLFadeL</include>
+	  <scrollout>false</scrollout>
+	  <pauseatend>2000</pauseatend>
 	  <label>[B]$INFO[ListItem.Label][/B]</label>
 	  <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)+!IsEmpty(ListItem.Label)</visible>
-	</control>
-  </include>
-  <include name="PLiteBack">
-	<control type="image">
-	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
-	  <include>FullscreenDimensions</include>
-	  <fadetime>250</fadetime>
-	  <texture background="true">views/logo_back.png</texture>
-	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
-	  <animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
-	  <animation effect="slide" end="0,320" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
-	</control>
-	<control type="image">
-	  <visible>[Container.Content(movies)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
-	  <posy>770</posy>
-	  <width>1920</width>
-	  <height>400</height>
-	  <fadetime>250</fadetime>
-	  <aspectratio>stretch</aspectratio>
-	  <texture background="true">views/lowlist_panelback.png</texture>
-	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
-	  <animation effect="slide" end="0,198" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
-	</control>
-	<control type="group">
-	  <posy>755</posy>
-	  <include>Neon_Topbar</include>
-	  <visible>!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
-	</control>
-	<control type="group">
-	  <posy>953</posy>
-	  <include>Neon_Topbar</include>
-	  <visible>Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
 	</control>
   </include>
   <include name="CuFlVa">
@@ -293,297 +536,7 @@
 	<aligny>justify</aligny>
 	<aspectratio>keep</aspectratio>
 	<fadetime>250</fadetime>
-  </include>
-  <include name="PLFadeL">
-	<scrollout>false</scrollout>
-	<pauseatend>2000</pauseatend>
-	<scrollspeed>10</scrollspeed>
-  </include>
-  <include name="PLLabFl">
-	<control type="group">
-	  <posx>557</posx>
-	  <posy>780</posy>
-	  <!-- Rating -->
-	  <control type="image">
-		<posx>-381</posx>
-		<posy>245</posy>
-		<width>207</width>
-		<height>38</height>
-		<fadetime>250</fadetime>
-		<texture background="true">$VAR[ListImage2Var]</texture>
-		<colordiffuse>$VAR[PLRatingColor]</colordiffuse>
-	  </control>
-	  <!-- Labels -->
-	  <control type="group" id="528200">
-		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(61)]]]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
-		<animation effect="fade" time="300" reversible="false">Visible</animation>
-		<!-- Movies and TV shows -->
-		<control type="textbox">
-		  <posx>0</posx>
-		  <posy>66</posy>
-		  <width>1321</width>
-		  <height>150</height>
-		  <align>justify</align>
-		  <aligny>justify</aligny>
-		  <font>Font_Reg24</font>
-		  <label>$VAR[PLPlot]</label>
-		  <autoscroll time="4000" delay="10000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-		</control>
-		<control type="fadelabel">
-		  <posx>0</posx>
-		  <posy>0</posy>
-		  <width>750</width>
-		  <height>75</height>
-		  <align>left</align>
-		  <aligny>center</aligny>
-		  <include>PLFadeL</include>
-		  <font>Font_Bold19</font>
-		  <label>$VAR[PLGenre]</label>
-		  <visible>!IsEmpty(ListItem.Genre)</visible>
-		</control>
-		<!-- Movies only -->
-		<control type="fadelabel">
-		  <posx>0</posx>
-		  <posy>90</posy>
-		  <width>1321</width>
-		  <height>135</height>
-		  <align>justify</align>
-		  <aligny>justify</aligny>
-		  <include>PLFadeL</include>
-		  <font>Font_OSDTitle2</font>
-		  <textcolor>$VAR[TitleColorVar]</textcolor>
-		  <label>$INFO[ListItem.Label]</label>
-  		  <animation effect="fade" time="10">Visible</animation>
-		  <visible>Container.Content(movies)+ListItem.IsFolder+!StringCompare(ListItem.Label,..)+![!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)]</visible>
-		</control>
-		<control type="image">
-		  <posx>364</posx>
-		  <posy>-69</posy>
-		  <width>1056</width>
-		  <height>86</height>
-		  <fadetime>250</fadetime>
-		  <aspectratio>stretch</aspectratio>
-		  <texture>osd/osd_bottom_bar.png</texture>
-		  <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-		  <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
-		</control>
-		<control type="fadelabel">
-		  <posx>508</posx>
-		  <posy>-43</posy>
-		  <width>765</width>
-		  <height>75</height>
-		  <font>Font_Bold19</font>
-		  <align>center</align>
-		  <aligny>center</aligny>
-		  <scrollspeed>15</scrollspeed>
-		  <include>PLFadeL</include>
-		  <textcolor>$VAR[PLTitleColor]</textcolor>
-		  <label>[I]$INFO[ListItem.Tagline][/I]</label>
-		  <animation effect="fade" time="10">Visible</animation>
-		  <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
-		</control>
-		<control type="fadelabel">
-		  <posx>789</posx>
-		  <posy>0</posy>
-		  <width>531</width>
-		  <height>75</height>
-		  <font>Font_Bold19</font>
-		  <align>right</align>
-		  <aligny>center</aligny>
-		  <include>PLFadeL</include>
-		  <label>$LOCALIZE[20339]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Director][/COLOR]</label>
-		  <visible>Container.Content(movies)+!IsEmpty(ListItem.Director)</visible>
-		</control>
-		<!-- Movie Sets -->
-		<control type="fadelabel">
-		  <posx>0</posx>
-		  <posy>0</posy>
-		  <width>1321</width>
-		  <height>75</height>
-		  <font>Font_Bold19</font>
-		  <align>left</align>
-		  <aligny>center</aligny>
-		  <include>PLFadeL</include>
-		  <label>$VAR[PLGenre]</label>
-		  <visible>!IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)+!IsEmpty(Container(3000).ListItem.Genre)</visible>
-		</control>
-		<!-- TV Show Banner -->
-		<control type="group">
-		  <visible>Container.Content(tvshows)+!IsEmpty(ListItem.Art(banner))</visible>
-		  <posx>795</posx>
-		  <posy>-42</posy>
-		  <control type="image" id="528901">
-			<width>528</width>
-			<height>98</height>
-			<aspectratio>stretch</aspectratio>
-			<texture background="true" diffuse="thumbs/banner_mask.png">$INFO[ListItem.Art(banner)]</texture>
-		  </control>
-		  <control type="image">
-			<posx>-10</posx>
-			<posy>-9</posy>
-			<width>548</width>
-			<height>116</height>
-			<include>PanelGlowFade</include>
-			<aspectratio>stretch</aspectratio>
-			<texture background="true" diffuse="thumbs/banner_mask.png">common/blank.png</texture>
-			<bordertexture border="12">thumbs/banner_shadow.png</bordertexture>
-			<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-			<visible>!IsEmpty(Control.GetLabel(528901))</visible>
-		  </control>
-		</control>
-	  </control>
-	</control>
-	<control type="group">
-	  <!-- Flags -->
-	  <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(61)+!Control.HasFocus(109)</visible>
-	  <control type="group">
-		<visible>Container.Content(movies)</visible>
-		<posx>548</posx>
-		<posy>994</posy>
-		<control type="image">
-		  <include>CuFlVa</include>
-		  <texture>flags/music/year/year.png</texture>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!IsEmpty(ListItem.Year)+!SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="label">
-		  <posx>0</posx>
-		  <posy>23</posy>
-		  <include>CuFlVa</include>
-		  <label>$INFO[ListItem.Year]</label>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!IsEmpty(ListItem.Year)+!SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="label">
-		  <posx>10</posx>
-		  <posy>23</posy>
-		  <width>380</width>
-		  <align>left</align>
-		  <include>CuFlVa</include>
-		  <label>$VAR[PLDuration]</label>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!IsEmpty(Container(3000).ListItem.Duration)+SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="label">
-		  <posx>159</posx>
-		  <posy>23</posy>
-		  <width>202</width>
-		  <include>CuFlVa</include>
-		  <label>$VAR[PLDuration]</label>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!IsEmpty(ListItem.Duration)+!SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="image">
-		  <posx>368</posx>
-		  <posy>-2</posy>
-		  <include>CuFlVa</include>
-		  <!--colordiffuse>white</colordiffuse--><!-- "White" for original MPAA ratings -->
-		  <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
-		  <visible>![IsEmpty(Window.Property(MovieSets.IsAlive))+SubString(ListItem.Path,videodb://1/7/)]</visible>
-		</control>
-		<control type="label">
-		  <posx>560</posx>
-		  <posy>23</posy>
-		  <width>400</width>
-		  <align>left</align>
-		  <include>CuFlVa</include>
-		  <label>$VAR[PLTotal]</label>
-		  <visible>!IsEmpty(Container(3000).ListItem.Property(TotalMovies))+SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="image">
-		  <posx>533</posx>
-		  <posy>-2</posy>
-		  <include>CuFlVa</include>
-		  <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="image">
-		  <posx>722</posx>
-		  <posy>2</posy>
-		  <width>124</width>
-		  <height>84</height>
-		  <include>CuFlVa</include>
-		  <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="image">
-		  <posx>873</posx>
-		  <include>CuFlVa</include>
-		  <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="image">
-		  <posx>1030</posx>
-		  <include>CuFlVa</include>
-		  <texture fallback="flags/resolution/defaultscreen.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="image">
-		  <posx>1194</posx>
-		  <include>CuFlVa</include>
-		  <texture fallback="flags/audio/defaultsound.png">$INFO[ListItem.AudioCodec,flags/info/]$INFO[ListItem.AudioChannels,,.png]</texture>
-		  <colordiffuse>white</colordiffuse>
-		  <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-		<control type="label">
-		  <posx>1330</posx>
-		  <posy>45</posy>
-		  <width>370</width>
-		  <align>right</align>
-		  <font>Font_Bold22_Caps</font>
-		  <textcolor>$VAR[TitleColorVar]</textcolor>
-		  <label>$LOCALIZE[20457]</label>
-		  <visible>SubString(ListItem.Path,videodb://1/7/)</visible>
-		</control>
-	  </control>
-	  <control type="group">
-		<visible>Container.Content(tvshows)</visible>
-		<posx>1357</posx>
-		<posy>1021</posy>
-		<control type="label">
-		  <posx>-800</posx>
-		  <posy>0</posy>
-		  <width>750</width>
-		  <height>75</height>
-		  <align>left</align>
-		  <include>CuFlVa</include>
-		  <label>$VAR[PLTotal]</label>
-		  <visible>!IsEmpty(ListItem.Episode)</visible>
-		</control>
-		<control type="image">
-		  <posy>-22</posy>
-		  <include>CuFlVa</include>
-		  <texture>flags/music/year/year.png</texture>
-		  <colordiffuse>white</colordiffuse>
-		</control>
-		<control type="label">
-		  <posx>0</posx>
-		  <posy>1</posy>
-		  <include>CuFlVa</include>
-		  <label>$INFO[ListItem.Year]</label>
-		</control>
-		<control type="image">
-		  <posx>222</posx>
-		  <posy>-20</posy>
-		  <width>124</width>
-		  <height>84</height>
-		  <include>CuFlVa</include>
-		  <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
-		  <colordiffuse>white</colordiffuse>
-		</control>
-		<control type="image">
-		  <posx>408</posx>
-		  <posy>-25</posy>
-		  <include>CuFlVa</include>
-		  <!--colordiffuse>white</colordiffuse--><!-- "White" for original MPAA ratings -->
-		  <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
-		</control>
-	  </control>
-	</control>
+	<colordiffuse>white</colordiffuse>
   </include>
   <include name="PosFade">
 	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(109)|Control.HasFocus(61)]+!Control.IsVisible(528196)</visible>
