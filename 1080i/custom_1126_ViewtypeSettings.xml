@@ -427,7 +427,7 @@
                 <label>$LOCALIZE[202]:</label>
                 <label2>[COLOR $VAR[FontColorVar]]$VAR[InfoWallTagLineSettingsVar][/COLOR]</label2>
                 <onclick>Skin.ToggleSetting(InfoWallTagLine)</onclick>
-                <visible>stringcompare(Skin.String(actualViewtype),addonwall) + Container.Content(movies)</visible>
+                <visible>[stringcompare(Skin.String(actualViewtype),addonwall) | stringcompare(Skin.String(actualViewtype),posterlite)] + Container.Content(movies)</visible>
             </control>
             <control type="radiobutton" id="1701">
                 <include>Objects_MediaMenuButtonAlt2</include>
