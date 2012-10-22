@@ -47,7 +47,7 @@
 	  </control>
 	  <!-- Labels -->
 	  <control type="group" id="528200">
-		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(61)]]]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(528061)]]]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
 		<animation effect="fade" time="300" reversible="false">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
@@ -161,7 +161,8 @@
 	</control>
 	<control type="group">
 	  <!-- Flags -->
-	  <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(61)+!Control.HasFocus(109)</visible>
+	  <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(528061)+!Control.IsVisible(4050)+!Control.HasFocus(109)</visible>
+	  <animation effect="fade" start="0" end="100" time="600" delay="200">Visible</animation>
 	  <control type="label">
 		<posx>1858</posx>
 		<posy>1039</posy>
@@ -347,11 +348,11 @@
 	<onleft>528</onleft>
 	<onright>528</onright>
 	<onup>7000</onup>
-	<ondown condition="Control.IsVisible(61)">61</ondown>
-	<ondown condition="!Control.IsVisible(61)">109</ondown>
+	<ondown condition="!Control.HasFocus(528061)">528061</ondown>
+	<ondown condition="Control.HasFocus(528061)">109</ondown>
 	<orientation>horizontal</orientation>
 	<viewtype label="31972">BigWrap</viewtype>
-	<pagecontrol>61</pagecontrol>
+	<pagecontrol>528061</pagecontrol>
 	<focusposition>2</focusposition>
 	<preloaditems>2</preloaditems>
 	<scrolltime tween="quadratic" easing="out">300</scrolltime>
@@ -539,7 +540,7 @@
 	<colordiffuse>white</colordiffuse>
   </include>
   <include name="PosFade">
-	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(109)|Control.HasFocus(61)]+!Control.IsVisible(528196)</visible>
+	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(109)|Control.HasFocus(528061)]+!Control.IsVisible(528196)</visible>
 	<animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),1)">Conditional</animation>
 	<animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),2)">Conditional</animation>
 	<animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),3)">Conditional</animation>
