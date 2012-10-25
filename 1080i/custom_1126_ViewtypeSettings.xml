@@ -76,6 +76,17 @@
                 <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | stringcompare(Skin.String(actualViewtype),showcasecd) | stringcompare(Skin.String(actualViewtype),banners) | Stringcompare(Skin.String(actualViewtype),posterlite)</visible>
                 <visible>![Stringcompare(Skin.String(actualViewtype),shift) + !Skin.HasSetting(smallshiftview) + Window.IsActive(videos)]</visible>
             </control>
+            <control type="button" id="1615">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>42309</label>
+                <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(InfopanelDelay)] seconds[/COLOR]</label2>
+                <onclick>Dialog.Close(1126)</onclick>
+                <onclick>SetFocus(50)</onclick>
+                <onclick>ActivateWindow(1114)</onclick>
+                <enable>stringcompare(Control.GetLabel(4421),infopanelonauto)</enable>
+                <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | stringcompare(Skin.String(actualViewtype),showcasecd) | stringcompare(Skin.String(actualViewtype),banners) | Stringcompare(Skin.String(actualViewtype),posterlite)</visible>
+                <visible>![Stringcompare(Skin.String(actualViewtype),shift) + !Skin.HasSetting(smallshiftview) + Window.IsActive(videos)]</visible>
+            </control>
 
             <!-- PosterLite -->
             <control type="togglebutton" id="1761">
@@ -96,26 +107,7 @@
                 <usealttexture>!Skin.HasSetting(pliteback1)</usealttexture>
                 <visible>Container.Content(movies)+stringcompare(Skin.String(actualViewtype),posterlite)</visible>
             </control>
-            <control type="button" id="1763">
-                <description>Toggle Transparency</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[13324]</label>
-                <onclick>RunScript(script.color.picker,Skin.SetString(PLBackDarkness,$INFO[Skin.String(PLBackDarkness)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
-				<onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[42002],$LOCALIZE[42010])</onclick>
-                <visible>StringCompare(Skin.String(actualViewtype),posterlite)</visible>
-            </control>
-            
-            <control type="button" id="1615">
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>42309</label>
-                <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(InfopanelDelay)] seconds[/COLOR]</label2>
-                <onclick>Dialog.Close(1126)</onclick>
-                <onclick>SetFocus(50)</onclick>
-                <onclick>ActivateWindow(1114)</onclick>
-                <enable>stringcompare(Control.GetLabel(4421),infopanelonauto)</enable>
-                <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | stringcompare(Skin.String(actualViewtype),showcasecd) | stringcompare(Skin.String(actualViewtype),banners) | Stringcompare(Skin.String(actualViewtype),posterlite)</visible>
-                <visible>![Stringcompare(Skin.String(actualViewtype),shift) + !Skin.HasSetting(smallshiftview) + Window.IsActive(videos)]</visible>
-            </control>
+
             <control type="button" id="1624">
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>31272</label>

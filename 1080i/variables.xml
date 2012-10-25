@@ -200,7 +200,7 @@
         <value>grey</value>
     </variable>
     <variable name="ExtendedColorVar">
-        <value condition="Skin.HasSetting(ExtendedGlowMode)">$VAR[ColorDiffuseVar]</value>
+        <value condition="[Skin.HasSetting(ExtendedGlowMode) | Skin.HasSetting(colordialogs)]">$VAR[ColorDiffuseVar]</value>
         <value>FFFFFFFF</value>
     </variable>
     <variable name="QuickNavButtonLabelVar">
