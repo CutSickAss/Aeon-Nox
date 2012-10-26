@@ -106,6 +106,14 @@
                 <usealttexture>!Skin.HasSetting(pliteback1)</usealttexture>
                 <visible>Container.Content(movies)+stringcompare(Skin.String(actualViewtype),posterlite)</visible>
             </control>
+            <control type="button" id="1763">
+                <description>Toggle Transparency</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[13324]</label>
+                <onclick>RunScript(script.color.picker,Skin.SetString(PLBackDarkness,$INFO[Skin.String(PLBackDarkness)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+                <onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[42002],$LOCALIZE[42010])</onclick>
+                <visible>StringCompare(Skin.String(actualViewtype),posterlite)</visible>
+            </control>
 
             <control type="button" id="1624">
                 <include>Objects_MediaMenuButtonAlt2</include>

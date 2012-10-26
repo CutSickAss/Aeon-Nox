@@ -82,7 +82,7 @@
                     <label>$LOCALIZE[31182] $LOCALIZE[31084]</label>
                     <onclick>Skin.ToggleSetting(colordialogs)</onclick>
                     <selected>Skin.HasSetting(colordialogs)</selected>
-					<enable>!Skin.HasSetting(ExtendedGlowMode)</enable>
+                    <enable>!Skin.HasSetting(ExtendedGlowMode)</enable>
                 </control>
                 <control type="button" id="1603">
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>

@@ -5,9 +5,9 @@
 	<control type="image">
 	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
 	  <include>FullscreenDimensions</include>
-	  <fadetime>250</fadetime>
+	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
+	  <animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
 	  <texture>views/logo_back.png</texture>
-	  <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
 	  <animation effect="slide" end="0,320" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
 	</control>
 	<control type="image">
@@ -15,10 +15,9 @@
 	  <posy>770</posy>
 	  <width>1920</width>
 	  <height>400</height>
-	  <fadetime>250</fadetime>
 	  <aspectratio>stretch</aspectratio>
+	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <texture>views/lowlist_panelback.png</texture>
-	  <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
 	  <animation effect="slide" end="0,198" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
 	</control>
 	<control type="group">
