@@ -119,7 +119,7 @@
                 <label>31272</label>
                 <onclick>Dialog.Close(1126)</onclick>
                 <onclick>ActivateWindow(1119)</onclick>
-                <visible>Control.IsVisible(1614)</visible>
+                <visible>Control.IsVisible(1614) + !StringCompare(Skin.String(actualViewtype),posterlite)</visible>
             </control>
             <control type="button" id="1667">
                 <include>Objects_MediaMenuButtonAlt2</include>
@@ -192,7 +192,7 @@
                 <label>$LOCALIZE[42212]</label>
                 <onclick>Skin.ToggleSetting(lowlistcdart)</onclick>
                 <selected>Skin.HasSetting(lowlistcdart)</selected>
-                <visible>Container.Content(movies)</visible>
+                <visible>Container.Content(movies) + stringcompare(Skin.String(actualViewtype),lowlist)</visible>
             </control>
             <!--LowList Options-->
             <control type="radiobutton" id="16300">
