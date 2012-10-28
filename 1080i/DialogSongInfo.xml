@@ -302,7 +302,6 @@
                                 <textcolor>grey2</textcolor>
                                 <align>center</align>
                                 <label>[B]$INFO[ListItem.Year][/B]</label>
-                                <fadetime>250</fadetime>
                                 <animation effect="slide" start="0,0" end="-145,23" time="0" condition="true">Conditional</animation>
                                 <aligny>bottom</aligny>
                                 <visible>!IsEmpty(ListItem.Year)</visible>
@@ -373,10 +372,6 @@
                 </control>
             </control>
             <control type="grouplist" id="5000">
-                <posx>-100</posx>
-                <posy>-150</posy>
-                <width>0</width>
-                <height>0</height>
                 <onleft>5000</onleft>
                 <onright>50</onright>
                 <onup>IncreaseRating</onup>
@@ -428,7 +423,6 @@
                 <textcolor>grey2</textcolor>
                 <align>right</align>
                 <label>$LOCALIZE[31458]</label>
-                <fadetime>250</fadetime>
                 <visible>!System.idleTime(5)</visible>
             </control>
         </control>

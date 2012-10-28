@@ -15,6 +15,7 @@
         <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
         <include condition="Skin.HasSetting(quicklistmenu)">QuickList</include>
         <control type="group">
+            <posx>40</posx>
             <visible>!Skin.HasSetting(quicklistmenu)</visible>
             <control type="grouplist" id="800">
                 <posx>685</posx>
@@ -117,7 +118,8 @@
                     <visible>!System.CanPowerDown</visible>
                 </control>
                 <control type="image" id="19">
-                    <width>550</width>
+                    <posy>699</posy>
+                    <width>488</width>
                     <height>41</height>
                     <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
                     <texture>$VAR[ContextBottomVar]</texture>

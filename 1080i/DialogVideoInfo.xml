@@ -50,7 +50,6 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
             </control>
@@ -58,7 +57,6 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true">$INFO[ListItem.FileNameAndPath]season$INFO[ListItem.Season]-fanart.jpg</texture>
                 <visible>Container.Content(tvshows)</visible>
@@ -67,7 +65,6 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true">$INFO[ListItem.Path]../season$INFO[ListItem.Season]-fanart.jpg</texture>
                 <visible>Container.Content(episodes)</visible>
@@ -138,7 +135,7 @@
                     <width>1018</width>
                     <font>Font_Reg38_Caps</font>
                     <label>$INFO[ListItem.Title]</label>
-            <aligny>bottom</aligny>
+                    <aligny>bottom</aligny>
                     <scroll>true</scroll>
                     <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="[!IsEmpty(ListItem.Tagline) + Container.Content(movies)] | Container.Content(episodes) | Container.Content(musicvideos)">Conditional</animation>
                 </control>
@@ -149,7 +146,7 @@
                     <font>Font_Reg20</font>
                     <label>$INFO[ListItem.Tagline]</label>
                     <scroll>true</scroll>
-            <aligny>bottom</aligny>
+                    <aligny>bottom</aligny>
                     <textcolor>grey</textcolor>
                     <visible>Container.Content(movies)</visible>
                 </control>
@@ -161,8 +158,8 @@
                     <label>$INFO[ListItem.Artist]</label>
                     <scroll>true</scroll>
                     <textcolor>grey</textcolor>
-             <aligny>bottom</aligny>
-                   <visible>Container.Content(musicvideos)</visible>
+                    <aligny>bottom</aligny>
+                    <visible>Container.Content(musicvideos)</visible>
                 </control>
                 <control type="label">
                     <posx>2</posx>
@@ -170,8 +167,8 @@
                     <width>1018</width>
                     <font>Font_Reg20</font>
                     <label>$INFO[ListItem.TvShowTitle]</label>
-             <aligny>bottom</aligny>
-                   <textcolor>grey</textcolor>
+                    <aligny>bottom</aligny>
+                    <textcolor>grey</textcolor>
                     <visible>Container.Content(episodes)</visible>
                 </control>
                 <!-- First Row -->
@@ -858,7 +855,6 @@
                 <control type="image">
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.Path,,logo.png]</texture>
                     <bordersize>7</bordersize>
@@ -867,7 +863,6 @@
                     <posx>341</posx>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.Path,,clearart.png]</texture>
                     <bordersize>7</bordersize>
@@ -876,7 +871,6 @@
                     <posx>682</posx>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.Path,,disc.png]</texture>
                     <bordersize>7</bordersize>
@@ -952,7 +946,6 @@
                     <posy>678</posy>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="center">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.FileNameAndPath,,/landscape.jpg]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -963,7 +956,6 @@
                     <posy>513</posy>
                     <width>615</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="top">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.Art(banner)]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -974,7 +966,6 @@
                     <posy>678</posy>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.FileNameAndPath,,/logo.png]</texture>
                     <bordersize>7</bordersize>
@@ -984,7 +975,6 @@
                     <posy>678</posy>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.FileNameAndPath,,/clearart.png]</texture>
                     <bordersize>7</bordersize>
@@ -1059,10 +1049,36 @@
                     <animation effect="slide" start="0" end="-200" reversible="true" condition="ControlGroup(5000).HasFocus(21) | ControlGroup(5000).HasFocus(24)">Conditional</animation>
                     <animation type="Conditional" reversible="true" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">
                         <effect type="zoom" start="1267,610,550,314" end="-5,-5,1930,1090" time="800" tween="cubic" easing="out" />
-                        <effect type="fade" start="100" end="0" time="200"/>
+                        <effect type="fade" start="100" end="0" time="200" />
                     </animation>
                 </control>
             </control>
+            
+                <control type="image">
+                    <posx>780</posx>
+                    <posy>555</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texture flipx="true">arrowright.png</texture>
+                    <include>Animation_VisibleChange200</include>
+                    <colordiffuse>white2</colordiffuse>
+                    <animation effect="slide" start="-150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+                    <visible>Container(5000).HasPrevious+ ControlGroup(5000).HasFocus</visible>
+                </control>
+                <control type="image">
+                    <posx>1860</posx>
+                    <posy>555</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texture>arrowright.png</texture>
+                    <colordiffuse>white2</colordiffuse>
+                    <include>Animation_VisibleChange200</include>
+                    <animation effect="slide" start="150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+                    <visible>Container(5000).HasNext+ ControlGroup(5000).HasFocus</visible>
+                </control>
+            
         </control>
     </controls>
 </window>
