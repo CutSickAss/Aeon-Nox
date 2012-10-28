@@ -1625,6 +1625,7 @@
             <filename>BebasNeue.ttf</filename>
 			<aspect>1.12</aspect>
             <style>uppercase</style>
+			<linespacing>0.70</linespacing>
             <size>39</size>
         </font>
         <font>
