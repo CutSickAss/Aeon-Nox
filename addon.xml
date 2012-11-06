@@ -31,7 +31,7 @@
     <summary lang="hu">Aeon Nox 4.0, készítette: Big_Noid &amp; phil65 (Val's personal fork)</summary>
     <summary lang="is">Aeon Nox 4.0 eftir BigNoid &amp; phil65 (Val's personal fork)</summary>
     <summary lang="nl">Aeon Nox 4.0 door Big_Noid &amp; phil65 (Val's personal fork)</summary>
-    <summary lang="ru">Aeon Nox 4.0. Авторы: Big_Noid и phil65< (Val's personal fork)</summary>
+    <summary lang="ru">Aeon Nox 4.0. Авторы: Big_Noid и phil65 (Val's personal fork)</summary>
     <summary lang="zh">Big_Noid &amp; phil65开发的Aeon Nox 4.0皮肤 (Val's personal fork)</summary>
     <description lang="el">Το Aeon Nox αντιπροσωπεύει την ομορφιά και την εύκολη παραμετροποίηση. Υπάρχουν πολλοί τύποι προβολής και επιλογές προκειμένου να παρουσιάζονται τα πολυμέσα σας με τον τρόπο που επιθυμείτε. Η Αρχική Οθόνη είναι πλήρως προσαρμόσιμη. Μπορείτε να προσθέσετε μέχρι και εννιά προσωπικά αντικείμενα στο κεντρικό μενού, το καθένα με πέντε προσωπικά υπο-αντικείμενα. Μπορείτε να αλλάξετε την εμφάνιση με διαφορετικά στυλ και μοτίβα, να προσθέσετε ή να αφαιρέσετε widgets και να απενεργοποιήσετε τα μενού και τα υπομενού που δεν χρησιμοποιείτε. Ελέγχετε το αρχείο με τις αλλαγές (changelog) για νέες προσθήκες και μεταβολές!</description>
     <description lang="en">Aeon Nox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. The Home window is fully customizable. You can add up to nine custom main menu items, each with five custom sub-menu items. You can change the look with different styles and themes, add or remove widgets and disable menu and sub-menu items you don't use. Be sure to checkout the changelog to find everything that was added or changed!</description>
@@ -52,3 +52,4 @@
     <platform>all</platform>
   </extension>
 </addon>
+
