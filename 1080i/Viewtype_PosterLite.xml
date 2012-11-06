@@ -6,8 +6,8 @@
 	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
 	  <include>FullscreenDimensions</include>
 	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
-	  <animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
 	  <texture>views/logo_back.png</texture>
+	  <animation effect="fade" end="70" time="0" condition="Skin.HasTheme(White)">Conditional</animation>
 	  <animation effect="slide" end="0,320" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
 	</control>
 	<control type="image">
@@ -53,7 +53,6 @@
 		  <posy>66</posy>
 		  <width>1321</width>
 		  <height>150</height>
-		  <align>justify</align>
 		  <aligny>justify</aligny>
 		  <font>Font_Reg24</font>
 		  <label>$VAR[PLPlot]</label>

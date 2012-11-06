@@ -2382,9 +2382,9 @@
         <value>$INFO[ListItem.Plot]</value>
     </variable>
     <variable name="PLIcon">
-        <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$INFO[ListItem.Path,,logo.png]</value>
-        <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$INFO[ListItem.Path,,clearart.png]</value>
-        <value condition="Container.Content(tvshows)+Skin.HasSetting(pllandtv)">$INFO[ListItem.Path,,landscape.jpg]</value>
+        <value condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$INFO[ListItem.Art(clearart)]</value>
+        <value condition="Container.Content(tvshows)+Skin.HasSetting(pllandtv)">$INFO[ListItem.Art(landscape)]</value>
         <value>$INFO[ListItem.Art(fanart)]</value>
     </variable>
     <variable name="PLIconLabel">
