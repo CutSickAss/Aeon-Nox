@@ -1357,6 +1357,10 @@ msgctxt "#31948"
 msgid "Chance Precip"
 msgstr "Πιθανότητα Υετού"
 
+msgctxt "#31972"
+msgid "PosterLite"
+msgstr "Αφίσες Lite"
+
 msgctxt "#32502"
 msgid "TV"
 msgstr "Τηλεόραση"
