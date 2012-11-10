@@ -59,6 +59,14 @@
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[31166]:</label>
                 <label2>[COLOR $VAR[FontColorVar]]$VAR[InfoPanelToggleLabelVar][/COLOR]</label2>
+                <onclick condition="Container.Content(episodes)">SetProperty(Area,Episodes)</onclick>
+                <onclick condition="Container.Content(movies)">SetProperty(Area,Movies)</onclick>
+                <onclick condition="Container.Content(TVShows)">SetProperty(Area,TVShows)</onclick>
+                <onclick condition="Container.Content(seasons)">SetProperty(Area,Seasons)</onclick>
+                <onclick condition="Container.Content(musicvideos)">SetProperty(Area,MusicVideos)</onclick>
+                <onclick condition="Container.Content(albums)">SetProperty(Area,Albums)</onclick>
+                <onclick condition="Container.Content(artists)">SetProperty(Area,Artists)</onclick>
+                <onclick condition="Container.Content(addons)">SetProperty(Area,Addons)</onclick>
                 <onclick condition="Stringcompare(Control.GetLabel(4421),infopanelonauto) | IsEmpty(Control.GetLabel(4421))">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopanelon)</onclick>
                 <onclick condition="Stringcompare(Control.GetLabel(4421),infopanelonmanual)">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopanelonauto)</onclick>
                 <onclick condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopanelonmanual)</onclick>
