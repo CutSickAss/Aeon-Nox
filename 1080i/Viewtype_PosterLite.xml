@@ -102,7 +102,7 @@
 		</control>
 		<control type="fadelabel">
 		  <posx>508</posx>
-		  <posy>-43</posy>
+		  <posy>-42</posy>
 		  <width>765</width>
 		  <height>75</height>
 		  <font>Font_Bold19</font>
@@ -453,12 +453,24 @@
   </include>
   <include name="PLLogos">
 	<visible>![[Container.Content(movies)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]]</visible>
+	<control type="textbox">
+	  <posy>20</posy>
+	  <width>518</width>
+	  <height>200</height>
+	  <align>center</align>
+	  <font>Font_MainClassic3</font>
+	  <textcolor>FFE00000</textcolor>
+	  <shadowcolor>black</shadowcolor>
+	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <autoscroll time="2000" delay="4000" repeat="4000">true</autoscroll>
+	  <visible>[[[Container.Content(movies)+[Skin.HasSetting(pllogo)|Skin.HasSetting(plclear)]]|[Container.Content(tvshows)+[Skin.HasSetting(pllogotv)|Skin.HasSetting(plcleartv)]]]+IsEmpty(ListItem.Art(clearlogo))]|[[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+IsEmpty(ListItem.Art(landscape))+IsEmpty(ListItem.Art(fanart))]</visible>
+	</control>
 	<control type="image">
 	  <width>525</width>
 	  <height>204</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="bottom">keep</aspectratio>
-	  <texture diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIcon]</texture>
+	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[PLIcon]</texture>
 	</control>
 	<control type="image">
 	  <posy>205</posy>
@@ -466,12 +478,12 @@
 	  <height>204</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="top">keep</aspectratio>
-	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png" fallback="fallback.png">$VAR[PLIcon]</texture>
+	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[PLIcon]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
 	<control type="group">
-	  <visible>[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+!StringCompare(ListItem.Label,..)</visible>
+	  <visible>[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+!IsEmpty(ListItem.Art(landscape))+!StringCompare(ListItem.Label,..)</visible>
 	  <control type="image">
 		<width>525</width>
 		<height>204</height>
