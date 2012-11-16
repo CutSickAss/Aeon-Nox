@@ -14,19 +14,13 @@
         <control type="label" id="4420">
             <label fallback="fanart">$VAR[InfoPanelStyleVar]</label>
             <include>HiddenObject</include>
-            <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
-            <visible>Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(508)</visible>
         </control>
         <control type="label" id="4421">
             <label>$VAR[InfoPanelVar]</label>
-            <posy>100</posy>
             <include>HiddenObject</include>
-            <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
-            <visible>Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(508)</visible>
         </control>
         <control type="label" id="4422">
             <label>$VAR[MediaBackgroundVar]</label>
-            <posy>100</posy>
             <include>HiddenObject</include>
         </control>
         <control type="group">
@@ -45,7 +39,6 @@
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <imagepath background="true">$VAR[VideoExtraFanartVar]</imagepath>
-				<aspectratio>stretch</aspectratio>
                 <visible>[Container.Content(movies) + Skin.HasSetting(extrafanartmovies)] | [Container.Content(tvshows) + Skin.HasSetting(extrafanartseries)] | [Container.Content(seasons) + Skin.HasSetting(extrafanartseasons)] | [Container.Content(episodes) + Skin.HasSetting(extrafanartepisodes)]</visible>
                 <visible>!SubString(ListItem.Label,*,left) + [Substring(Container.FolderPath,videodb://,left) | Substring(Container.FolderPath,special://profile/playlist,left)]</visible>
             </control>
@@ -77,9 +70,8 @@
             <visible>[Control.IsVisible(512) + Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | [Skin.HasSetting(no_infopane_panel) + Control.IsVisible(7550)] | Control.IsVisible(5999)</visible>
         </control>
         <include>Furniture_Glow</include>
-        <control type="group">
-            <include>ShowcaseInfoPaneMovies</include>
-        </control>
+        <include>ShowcaseInfoPaneMovies</include>
+
         <control type="group">
             <!-- view id = 528 PosterLite -->
             <include condition="!Skin.HasSetting(DisablePosterLiteVL)">PosterLite</include>
@@ -110,6 +102,7 @@
                 <visible>[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]</visible>
             </control>
         </control>
+
         <include>Furniture_Showcase</include>
         <include condition="!Skin.HasSetting(DisableInfoWallVL) | !Skin.HasSetting(DisableWallVL)">WallPanel</include>
         <control type="group">
@@ -236,38 +229,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible></visible>
-                    <orientation>horizontal</orientation>
-                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying) + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
-                    <control type="image">
-                        <width>54</width>
-                        <height>38</height>
-                        <texture>common/logo_movies.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,0" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$VAR[BreadcrumbsVideoVar]</label>
-                        <visible>Substring(Container.FolderPath,videodb://,left)</visible>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$INFO[Container.FolderName, / ]</label>
-                        <visible>Substring(Container.FolderPath,videodb://,left)</visible>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$INFO[ListItem.Path]</label>
-                        <visible>!Substring(Container.FolderPath,videodb://,left)</visible>
-                    </control>
-                </control>
-            </control>
+            <include>BreadcrumbsContent</include>
             <include>Breadcrumbs_Furniture</include>
         </control>
         <include>Furniture_NowPlayingWidget</include>
