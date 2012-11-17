@@ -279,11 +279,19 @@
             <control type="radiobutton" id="1769">
 				<description>Poster Animation</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>20079</label>
+                <label>$LOCALIZE[20079]</label>
                 <onclick>Skin.ToggleSetting(PLPAn)</onclick>
                 <selected>Skin.HasSetting(PLPAn)</selected>
 				<enable>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![Stringcompare(Control.GetLabel(4421),infopanelon) | Stringcompare(Control.GetLabel(4421),infopaneloff)]</enable>
                 <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)|Skin.HasSetting(plnoicon)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)|Skin.HasSetting(plnoicontv)]]]</visible>
+            </control>
+            <control type="radiobutton" id="1770">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[42212]</label>
+                <onclick>Skin.ToggleSetting(PLcdART)</onclick>
+                <selected>Skin.HasSetting(PLcdART)</selected>
+				<enable>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![Stringcompare(Control.GetLabel(4421),infopanelon) | Stringcompare(Control.GetLabel(4421),infopaneloff)]</enable>
+                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + Container.Content(movies) +![Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)|Skin.HasSetting(plnoicon)]</visible>
             </control>
             <control type="togglebutton" id="1767">
                 <description>Toggle Title (TV)</description>

@@ -309,6 +309,7 @@
 		<control type="group">
 		  <posx>50</posx>
 		  <posy>330</posy>
+		  <include>PLcdART</include>
 		  <include>PLPosters</include>
 		  <visible>!Control.IsVisible(528199)+[Control.IsVisible(528196)|!Skin.HasSetting(PLPAn)]</visible>
 		</control>
@@ -370,6 +371,7 @@
 		<animation effect="zoom" center="475,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
 		<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<include>PLcdART</include>
 		<include>PLPosters</include>
 	  </control>
 	</focusedlayout>
@@ -424,7 +426,7 @@
 	  <width>464</width>
 	  <height>683</height>
 	  <fadetime>250</fadetime>
-	  <texture diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
+	  <texture diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
 	  <aspectratio scalediffuse="false">stretch</aspectratio>
 	</control>
 	<control type="image">
@@ -439,7 +441,7 @@
 	  <width>464</width>
 	  <height>683</height>
 	  <fadetime>250</fadetime>
-	  <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
+	  <texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
 	  <aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
@@ -510,6 +512,21 @@
 		<effect type="slide" end="-150,4" time="0" />
 	  </animation>
 	  <include>PLLogos</include>
+	</control>
+  </include>
+  <include name="PLcdART">
+	<control type="group">
+	  <visible>Skin.HasSetting(PLcdART)</visible>
+	  <visible>Container.Content(movies)</visible>
+	  <control type="image">
+		<posy>-233</posy>
+		<width>464</width>
+		<height>464</height>
+		<animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="false" reversible="false" tween="cubic" easing="inout" condition="![Container.OnNext|Container.OnPrevious]">Conditional</animation>
+		<aspectratio align="right">keep</aspectratio>
+		<texture background="true">$VAR[cdArtVar]</texture>
+		<bordersize>7</bordersize>
+	  </control>
 	</control>
   </include>
   <include name="PLTopT">
