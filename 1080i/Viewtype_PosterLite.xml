@@ -516,13 +516,16 @@
   </include>
   <include name="PLcdART">
 	<control type="group">
-	  <visible>Skin.HasSetting(PLcdART)</visible>
+	  <visible>Skin.HasSetting(PLcdART)+!IsEmpty(ListItem.Art(discart))</visible>
 	  <visible>Container.Content(movies)</visible>
 	  <control type="image">
-		<posy>-233</posy>
 		<width>464</width>
 		<height>464</height>
-		<animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="false" reversible="false" tween="cubic" easing="inout" condition="![Container.OnNext|Container.OnPrevious]">Conditional</animation>
+		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
+		  <effect type="fade" start="0" end="100" delay="500" />
+		  <effect type="slide" start="0,0" end="0,-233" time="1200" />
+		  <effect type="rotate" end="-360" center="auto" time="8000" delay="1700" loop="false" tween="cubic" easing="inout" />
+		</animation>
 		<aspectratio align="right">keep</aspectratio>
 		<texture background="true">$VAR[cdArtVar]</texture>
 		<bordersize>7</bordersize>
