@@ -3,42 +3,19 @@
 # Addon id: skin.aeon.nox
 # Addon version: 4.0.0
 # Addon Provider: Big_Noid & phil65
-# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
-"POT-Creation-Date: 2012-11-04 14:35+0000\n"
-"PO-Revision-Date: 2012-11-04 15:07+0000\n"
-"Last-Translator: TeamXBMC <xbmctranslations@gmail.com>\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: XBMC Translation Team\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/xbmc-skins/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgctxt "Addon Summary"
-msgid "Aeon Nox 4.0 by Big_Noid & phil65"
-msgstr "Aeon Nox 4.0 από τους Big_Noid & phil65"
-
-msgctxt "Addon Description"
-msgid ""
-"Aeon Nox stands for eye candy and customization. There are many different "
-"views and options to present your media in the way you want it. The Home "
-"window is fully customizable. You can add up to nine custom main menu items,"
-" each with five custom sub-menu items. You can change the look with "
-"different styles and themes, add or remove widgets and disable menu and sub-"
-"menu items you don't use. Be sure to checkout the changelog to find "
-"everything that was added or changed!"
-msgstr "Το Aeon Nox αντιπροσωπεύει την ομορφιά και την εύκολη παραμετροποίηση. Υπάρχουν πολλοί τύποι προβολής και επιλογές προκειμένου να παρουσιάζονται τα πολυμέσα σας με τον τρόπο που επιθυμείτε. Η Αρχική Οθόνη είναι πλήρως προσαρμόσιμη. Μπορείτε να προσθέσετε μέχρι και εννιά προσωπικά αντικείμενα στο κεντρικό μενού, το καθένα με πέντε προσωπικά υπο-αντικείμενα. Μπορείτε να αλλάξετε την εμφάνιση με διαφορετικά στυλ και μοτίβα, να προσθέσετε ή να αφαιρέσετε widgets και να απενεργοποιήσετε τα μενού και τα υπομενού που δεν χρησιμοποιείτε. Ελέγχετε το αρχείο με τις αλλαγές (changelog) για νέες προσθήκες και μεταβολές!"
-
-msgctxt "Addon Disclaimer"
-msgid ""
-"Aeon Nox is a skin based on the design of Aeon by djh_. A great deal of "
-"textures used are from Aeon and it's mods. All credits to the makers of "
-"these skins and mods."
-msgstr "Το Aeon Nox είναι ένα κέλυφος βασισμένο στο σχεδιασμό του Aeon από τον djh_. Πολλά από τα γραφικά του προέρχονται από το Aeon και τα διάφορα mods του. Αποδίδεται αναγνώριση στους δημιουργούς αυτών των κελύφων και mods."
 
 msgctxt "#31001"
 msgid "Love"
@@ -258,7 +235,7 @@ msgstr "Φιλμογραφία"
 
 msgctxt "#31075"
 msgid "Press SELECT to switch between now/next EPG"
-msgstr "Πιέστε ΕΠΙΛΟΓΗ για εναλλαγή μεταξύ τωρινού/επομένου EPG"
+msgstr "Πιέστε ΕΠΙΛΟΓΗ για εναλλαγή μεταξύ τωρινού/επόμενου EPG"
 
 msgctxt "#31078"
 msgid "Trailer"
@@ -889,15 +866,10 @@ msgid "Style"
 msgstr "Στυλ"
 
 msgctxt "#31400"
-msgid ""
-"[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin · Set language "
-"and region · Change file listing options[CR]Set up a screensaver · Activate "
-"different themes and fontsets for the current skin"
+msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Change file listing options[CR]Set up a screensaver · Activate different themes and fontsets for the current skin"
 msgstr "[B]ΡΥΘΜΙΣΕΙΣ ΕΞΑΤΟΜΙΚΕΥΣΗΣ[/B][CR][CR]Αλλαγή κελύφους · Αλλαγή χώρας και γλώσσας συστήματος · Επιλογές καταλόγου αρχείων[CR]Προσαρμογή της προφύλαξης οθόνης · Επιλογή θεμάτων και γραμματοσειρών για αυτό το κέλυφος"
 
-msgctxt "#31401"
-msgid ""
-"[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR]Manage your video library · Set video"
+msgid "[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR]Manage your video library · Set video playback options · Change video listing options[CR]Set subtitle fonts"
 " playback options · Change video listing options[CR]Set subtitle fonts"
 msgstr "[B]ΡΥΘΜΙΣΕΙΣ ΒΙΝΤΕΟ[/B][CR][CR]Διαχείριση της συλλογής βίντεο · Ρύθμιση αναπαραγωγής βίντεο · Επιλογές καταλόγου ταινιών · Ρύθμιση γραμματοσειράς υποτίτλων"
 
