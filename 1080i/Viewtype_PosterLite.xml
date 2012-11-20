@@ -456,9 +456,9 @@
   <include name="PLLogos">
 	<visible>![[Container.Content(movies)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]]</visible>
 	<control type="textbox">
-	  <posy>20</posy>
+	  <posy>10</posy>
 	  <width>518</width>
-	  <height>200</height>
+	  <height>210</height>
 	  <align>center</align>
 	  <font>Font_MainClassic3</font>
 	  <textcolor>FFE00000</textcolor>
@@ -485,7 +485,7 @@
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
 	<control type="group">
-	  <visible>[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+!IsEmpty(ListItem.Art(landscape))+!StringCompare(ListItem.Label,..)</visible>
+	  <visible>[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+[!IsEmpty(ListItem.Art(landscape))|[IsEmpty(ListItem.Art(landscape))+!IsEmpty(ListItem.Art(fanart))]]+!StringCompare(ListItem.Label,..)</visible>
 	  <control type="image">
 		<width>525</width>
 		<height>204</height>
