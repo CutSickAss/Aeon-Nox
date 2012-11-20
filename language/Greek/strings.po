@@ -869,8 +869,8 @@ msgctxt "#31400"
 msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Change file listing options[CR]Set up a screensaver · Activate different themes and fontsets for the current skin"
 msgstr "[B]ΡΥΘΜΙΣΕΙΣ ΕΞΑΤΟΜΙΚΕΥΣΗΣ[/B][CR][CR]Αλλαγή κελύφους · Αλλαγή χώρας και γλώσσας συστήματος · Επιλογές καταλόγου αρχείων[CR]Προσαρμογή της προφύλαξης οθόνης · Επιλογή θεμάτων και γραμματοσειρών για αυτό το κέλυφος"
 
+msgctxt "#31401"
 msgid "[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR]Manage your video library · Set video playback options · Change video listing options[CR]Set subtitle fonts"
-" playback options · Change video listing options[CR]Set subtitle fonts"
 msgstr "[B]ΡΥΘΜΙΣΕΙΣ ΒΙΝΤΕΟ[/B][CR][CR]Διαχείριση της συλλογής βίντεο · Ρύθμιση αναπαραγωγής βίντεο · Επιλογές καταλόγου ταινιών · Ρύθμιση γραμματοσειράς υποτίτλων"
 
 msgctxt "#31402"
