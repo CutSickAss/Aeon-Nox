@@ -56,7 +56,7 @@
             <include>HiddenObject</include>
             <texture>-</texture>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] +  [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550)]</visible>
+            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] +  [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550) | Control.IsVisible(528)]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
@@ -79,7 +79,7 @@
             <control type="button" id="528196">
                 <description>Infopanel: On/Off</description>
                 <include>HiddenObject</include>
-                <visible>[Stringcompare(Control.GetLabel(4421),infopanelon) | Stringcompare(Control.GetLabel(4421),infopaneloff)]</visible>
+                <visible>[Stringcompare(Control.GetLabel(4421),infopanelon)|Stringcompare(Control.GetLabel(4421),infopaneloff)]</visible>
             </control>
             <control type="button" id="528194">
                 <include>HiddenObject</include>
@@ -99,7 +99,7 @@
             </control>
             <control type="button" id="528199">
                 <include>HiddenObject</include>
-                <visible>[[Container.Content(movies)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]</visible>
+                <visible>[[!Container.Content(tvshows)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]</visible>
             </control>
         </control>
 

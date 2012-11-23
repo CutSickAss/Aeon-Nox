@@ -3,7 +3,7 @@
   <include name="PosterLite">
 	<include>Animation_CommonFade</include>
 	<control type="image">
-	  <visible>[Container.Content(movies)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
+	  <visible>[!Container.Content(tvshows)+!Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvback1)]</visible>
 	  <include>FullscreenDimensions</include>
 	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <texture>views/logo_back.png</texture>
@@ -11,7 +11,7 @@
 	  <animation effect="slide" end="0,320" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
 	</control>
 	<control type="image">
-	  <visible>[Container.Content(movies)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
+	  <visible>[!Container.Content(tvshows)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
 	  <posy>770</posy>
 	  <width>1920</width>
 	  <height>400</height>
@@ -45,7 +45,7 @@
 	  </control>
 	  <!-- Labels -->
 	  <control type="group" id="528200">
-		<visible>[[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+!Control.HasFocus(528)+!Control.HasFocus(109)+!Control.HasFocus(528061)]]]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+		<visible>[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+[Control.HasFocus(7000)|Window.IsVisible(shutdownmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(contextmenu)|Window.IsVisible(custom_1121_MediaMenu.xml)|Window.IsVisible(playercontrols)|Window.IsVisible(mediafilter)|Window.IsVisible(progressdialog)|Window.IsVisible(busydialog)|Window.IsVisible(custom_1127_MediaBackgroundCustomizer.xml)|Window.IsVisible(filebrowser)|Window.IsVisible(script-ColorPicker-transparency.xml)|Window.IsVisible(custom_1128_ColorSelect.xml)|Window.IsVisible(custom_1138_ColorPicker.xml)|Window.IsVisible(selectdialog)|Window.IsVisible(yesnodialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(favourites)]]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
 		<animation effect="fade" time="300" reversible="false">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
@@ -87,7 +87,7 @@
 		  <textcolor>$VAR[TitleColorVar]</textcolor>
 		  <label>$INFO[ListItem.Label]</label>
   		  <animation effect="fade" time="10">Visible</animation>
-		  <visible>Container.Content(movies)+SubString(ListItem.Path,videodb://1/7/)+!StringCompare(ListItem.Label,..)</visible>
+		  <visible>!Container.Content(tvshows)+SubString(ListItem.Path,videodb://1/7/)+!StringCompare(ListItem.Label,..)</visible>
 		</control>
 		<control type="image">
 		  <posx>364</posx>
@@ -98,7 +98,7 @@
 		  <aspectratio>stretch</aspectratio>
 		  <texture>osd/osd_bottom_bar.png</texture>
 		  <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-		  <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
+		  <visible>!Container.Content(tvshows)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
 		</control>
 		<control type="fadelabel">
 		  <posx>508</posx>
@@ -114,7 +114,7 @@
 		  <textcolor>$VAR[PLTitleColor]</textcolor>
 		  <label>[I]$INFO[ListItem.Tagline][/I]</label>
 		  <animation effect="fade" time="10">Visible</animation>
-		  <visible>Container.Content(movies)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
+		  <visible>!Container.Content(tvshows)+!Skin.HasSetting(InfoWallTagLine)+!IsEmpty(ListItem.Tagline)</visible>
 		</control>
 		<control type="fadelabel">
 		  <posx>789</posx>
@@ -128,7 +128,7 @@
 		  <pauseatend>2000</pauseatend>
 		  <scrollspeed>10</scrollspeed>
 		  <label>$LOCALIZE[20339]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Director][/COLOR]</label>
-		  <visible>Container.Content(movies)+!IsEmpty(ListItem.Director)</visible>
+		  <visible>!Container.Content(tvshows)+!IsEmpty(ListItem.Director)</visible>
 		</control>
 		<!-- TV Show Banner -->
 		<control type="group">
@@ -171,7 +171,7 @@
 		<visible>SubString(ListItem.Path,videodb://1/7/)</visible>
 	  </control>
 	  <control type="group">
-		<visible>Container.Content(movies)+!SubString(ListItem.Path,videodb://1/7/)</visible>
+		<visible>!Container.Content(tvshows)+!SubString(ListItem.Path,videodb://1/7/)</visible>
 		<posx>548</posx>
 		<posy>994</posy>
 		<control type="image">
@@ -387,13 +387,13 @@
 		<include>PLLogos</include>
 	  </control>
 	</itemlayout>
-	<focusedlayout width="570" height="224" condition="[Container.Content(movies)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]+!Control.IsVisible(528196)">
+	<focusedlayout width="570" height="224" condition="[!Container.Content(tvshows)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]+!Control.IsVisible(528196)">
 	  <include>PLLogosAn</include>
 	</focusedlayout>
-	<focusedlayout width="570" height="224" condition="[Container.Content(movies)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]+!Control.IsVisible(528196)">
+	<focusedlayout width="570" height="224" condition="[!Container.Content(tvshows)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]+!Control.IsVisible(528196)">
 	  <include>PLLogosAn</include>
 	</focusedlayout>
-	<focusedlayout width="570" height="224" condition="[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]+!Control.IsVisible(528196)">
+	<focusedlayout width="570" height="224" condition="[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]+!Control.IsVisible(528196)">
 	  <include>PLLogosAn</include>
 	</focusedlayout>
   </include>
@@ -410,7 +410,7 @@
   </include>
   
   <include name="PLPosters">
-	<visible>![[Container.Content(movies)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]]</visible>
+	<visible>![[!Container.Content(tvshows)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]]</visible>
 	<control type="image">
 	  <posx>-39</posx>
 	  <posy>-49</posy>
@@ -454,7 +454,7 @@
 	</control>
   </include>
   <include name="PLLogos">
-	<visible>![[Container.Content(movies)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]]</visible>
+	<visible>![[!Container.Content(tvshows)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]]</visible>
 	<control type="textbox">
 	  <posy>10</posy>
 	  <width>518</width>
@@ -465,7 +465,7 @@
 	  <shadowcolor>black</shadowcolor>
 	  <label>[B]$INFO[ListItem.Label][/B]</label>
 	  <autoscroll time="2000" delay="4000" repeat="4000">true</autoscroll>
-	  <visible>[[[Container.Content(movies)+[Skin.HasSetting(pllogo)|Skin.HasSetting(plclear)]]|[Container.Content(tvshows)+[Skin.HasSetting(pllogotv)|Skin.HasSetting(plcleartv)]]]+IsEmpty(ListItem.Art(clearlogo))]|[[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+IsEmpty(ListItem.Art(landscape))+IsEmpty(ListItem.Art(fanart))]</visible>
+	  <visible>[[[!Container.Content(tvshows)+[Skin.HasSetting(pllogo)|Skin.HasSetting(plclear)]]|[Container.Content(tvshows)+[Skin.HasSetting(pllogotv)|Skin.HasSetting(plcleartv)]]]+IsEmpty(ListItem.Art(clearlogo))]|[[[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+IsEmpty(ListItem.Art(landscape))+IsEmpty(ListItem.Art(fanart))]</visible>
 	</control>
 	<control type="image">
 	  <width>525</width>
@@ -485,7 +485,7 @@
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
 	<control type="group">
-	  <visible>[[Container.Content(movies)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+[!IsEmpty(ListItem.Art(landscape))|[IsEmpty(ListItem.Art(landscape))+!IsEmpty(ListItem.Art(fanart))]]+!StringCompare(ListItem.Label,..)</visible>
+	  <visible>[[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+[!IsEmpty(ListItem.Art(landscape))|[IsEmpty(ListItem.Art(landscape))+!IsEmpty(ListItem.Art(fanart))]]+!StringCompare(ListItem.Label,..)</visible>
 	  <control type="image">
 		<width>525</width>
 		<height>204</height>
@@ -517,7 +517,7 @@
   <include name="PLcdART">
 	<control type="group">
 	  <visible>Skin.HasSetting(PLcdART)+!IsEmpty(ListItem.Art(discart))</visible>
-	  <visible>Container.Content(movies)</visible>
+	  <visible>!Container.Content(tvshows)</visible>
 	  <control type="image">
 		<width>464</width>
 		<height>464</height>
@@ -540,7 +540,7 @@
 	  <aspectratio>stretch</aspectratio>
 	  <texture flipy="true">osd/osd_top_bar.png</texture>
 	  <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-	  <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
+	  <visible>[[!Container.Content(tvshows)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)</visible>
 	</control>
 	<control type="fadelabel">
 	  <posx>114</posx>
@@ -555,7 +555,7 @@
 	  <scrollout>false</scrollout>
 	  <pauseatend>2000</pauseatend>
 	  <label>[B]$INFO[ListItem.Label][/B]</label>
-	  <visible>[[Container.Content(movies)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)+!IsEmpty(ListItem.Label)</visible>
+	  <visible>[[!Container.Content(tvshows)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)+!IsEmpty(ListItem.Label)</visible>
 	</control>
   </include>
   <include name="CuFlVa">
@@ -569,7 +569,7 @@
 	<colordiffuse>white</colordiffuse>
   </include>
   <include name="PosFade">
-	<visible>!Control.IsVisible(528200)+[Control.IsVisible(528)|Control.HasFocus(109)|Control.HasFocus(528061)]+!Control.IsVisible(528196)</visible>
+	<visible>[Control.IsVisible(528)|Stringcompare(Control.GetLabel(4421),infopanelonmanual)]+!Control.IsVisible(528200)</visible>
 	<animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),1)">Conditional</animation>
 	<animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),2)">Conditional</animation>
 	<animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),3)">Conditional</animation>
