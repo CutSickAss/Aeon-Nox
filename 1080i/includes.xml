@@ -1235,7 +1235,7 @@
             <width>1132</width>
             <height>1056</height>
             <texture>wall/wall_bg.png</texture>
-            <icolordiffuse>$VAR[DialogColorVar]</icolordiffuse>
+            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
         </control>
     </include>
     <include name="FullScreenInfoBarLiveTV">
