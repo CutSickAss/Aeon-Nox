@@ -1536,6 +1536,10 @@ msgctxt "#31948"
 msgid "Chance Precip"
 msgstr ""
 
+msgctxt "#31972"
+msgid "PosterLite"
+msgstr ""
+
 #empty strings from id 31949 to 32501
 
 msgctxt "#32502"

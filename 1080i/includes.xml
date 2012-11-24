@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include file="defaults.xml" />
     <include file="variables.xml" />
@@ -41,9 +41,10 @@
     <include file="Includes_CustomizerWindow.xml" />
     <include file="includesWeatherWorldCommonValues.xml" />
     <include file="Viewtype_FullscreenPanel.xml" />
+    <include file="Viewtype_PosterLite.xml" />
     <include name="VideoBackground">
         <control type="group">
-            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
+            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(528) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]] + ![Control.IsVisible(528)+!Skin.HasSetting(fstrailer)]</visible>
             <include>Animation_VisibleChange200</include>
             <control type="image">
                 <include>FullscreenDimensions</include>
@@ -335,18 +336,6 @@
         <alttexturefocus>dialogs/shutdown_focus_glow.png</alttexturefocus>
         <alttexturenofocus>dialogs/shutdown_nofocus_glow.png</alttexturenofocus>
     </include>
-    <include name="ShutdownNoGlowAlt">
-        <texturenofocus>dialogs/shutdown_nofocus2.png</texturenofocus>
-        <texturefocus>dialogs/shutdown_focus2.png</texturefocus>
-        <alttexturefocus>dialogs/shutdown_focus2.png</alttexturefocus>
-        <alttexturenofocus>dialogs/shutdown_nofocus2.png</alttexturenofocus>
-    </include>
-    <include name="ShutdownGlowAlt">
-        <texturenofocus>dialogs/shutdown_nofocus_glow2.png</texturenofocus>
-        <texturefocus>dialogs/shutdown_focus_glow2.png</texturefocus>
-        <alttexturefocus>dialogs/shutdown_focus_glow2.png</alttexturefocus>
-        <alttexturenofocus>dialogs/shutdown_nofocus_glow2.png</alttexturenofocus>
-    </include>
     <include name="Objects_ContextMenuButton">
         <height>59</height>
         <width>462</width>
@@ -359,8 +348,8 @@
         <font>Font_Reg19_Caps</font>
         <textoffsety>8</textoffsety>
         <textoffsetx>30</textoffsetx>
-        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlowAlt</include>
-        <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlowAlt</include>
+        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlow</include>
+        <include condition="![!Skin.HasSetting(DisableGlowbar)]">ShutdownNoGlow</include>
     </include>
     <include name="Objects_ShutdownMenuButton">
         <height>75</height>
@@ -381,7 +370,6 @@
         <height>63</height>
         <width>67</width>
         <aspectratio aligny="top">scale</aspectratio>
-		<colordiffuse>white2</colordiffuse>
     </include>
     <include name="HiddenObject">
         <posx>-300</posx>
@@ -990,6 +978,10 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem5.SubMenu,custom5)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem6.SubMenu,custom6)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(submenulist,music tv movies pvr    custom1 custom2 custom3 custom4 custom5 custom6 videos programs settings  shutdown   weather)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pllogotv)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(pliteback1)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(PLPAn)</onload>
+		<onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
         <onload>Skin.SetBool(firstrun)</onload>
     </include>
     <include name="DelayAnimations">
@@ -998,6 +990,18 @@
         <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="5333" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
         <animation effect="fade" start="0" end="100" time="150" delay="6666" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
+    </include>
+    <include name="PLDelAn">
+        <animation effect="fade" delay="1500" condition="Stringcompare(Skin.String(InfopanelDelay),1)">WindowOpen</animation>
+        <animation effect="fade" delay="1500" condition="Stringcompare(Skin.String(InfopanelDelay),1)">Visible</animation>
+        <animation effect="fade" delay="2500" condition="Stringcompare(Skin.String(InfopanelDelay),2)">WindowOpen</animation>
+        <animation effect="fade" delay="2500" condition="Stringcompare(Skin.String(InfopanelDelay),2)">Visible</animation>
+        <animation effect="fade" delay="3500" condition="Stringcompare(Skin.String(InfopanelDelay),3)">WindowOpen</animation>
+        <animation effect="fade" delay="3500" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
+        <animation effect="fade" delay="4500" condition="Stringcompare(Skin.String(InfopanelDelay),4)">WindowOpen</animation>
+        <animation effect="fade" delay="4500" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
+        <animation effect="fade" delay="5500" condition="Stringcompare(Skin.String(InfopanelDelay),5)">WindowOpen</animation>
+        <animation effect="fade" delay="5500" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
@@ -1649,7 +1653,6 @@
                 <width>2080</width>
                 <height>87</height>
                 <texture border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             </control>
             <control type="progress" id="23">
                 <posx>150</posx>

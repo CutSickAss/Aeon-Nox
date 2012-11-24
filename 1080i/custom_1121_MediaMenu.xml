@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1121">
     <defaultcontrol always="true">9011</defaultcontrol>
     <onload>ClearProperty(QuickNavSetup,home)</onload>
@@ -222,6 +222,12 @@
                     <label>$LOCALIZE[31029]</label>
                     <onclick>Container.SetViewMode(509)</onclick>
                     <visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(programs) | [Window.IsActive(pictures) + Skin.HasSetting(pictures)] | Container.Content(addons) | Window.IsActive(addonbrowser) | Window.IsActive(musicplaylist)] + !Container.Content(years)</visible>
+                </item>
+                <item>
+                    <label>$LOCALIZE[31972]</label>
+                    <onclick>Container.SetViewMode(528)</onclick>
+                    <visible>[Container.Content(movies) | Container.Content(tvshows)]</visible>
+                    <visible>![Window.IsActive(videos)+Skin.HasSetting(DisablePosterLiteVL)]</visible>
                 </item>
             </content>
         </control>

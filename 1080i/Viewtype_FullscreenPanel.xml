@@ -208,7 +208,7 @@
                             <width>223</width>
                             <height>335</height>
                             <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                         </control>
                         <control type="image">
                             <posx>1.5</posx>
@@ -348,7 +348,7 @@
                                 <width>223</width>
                                 <height>335</height>
                                 <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
                             </control>
                             <control type="image">
                                 <posx>1.5</posx>
@@ -458,7 +458,7 @@
                             <height>210</height>
                             <bordersize>5</bordersize>
                             <texture background="true" border="5">$INFO[ListItem.Icon]</texture>
-                            <aspectratio>scale</aspectratio>
+                            <aspectratio>stretch</aspectratio>
                             <visible>!Container.Content(tvshows)</visible>
                         </control>
                         <control type="image">
@@ -569,7 +569,7 @@
                             <height>210</height>
                             <bordersize>5</bordersize>
                             <texture background="true" border="5">$INFO[ListItem.Icon]</texture>
-                            <aspectratio>scale</aspectratio>
+                            <aspectratio>stretch</aspectratio>
                             <visible>!Container.Content(tvshows)</visible>
                         </control>
                         <control type="image">
@@ -721,7 +721,7 @@
                 <width>223</width>
                 <height>335</height>
                 <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
             <control type="image">
                 <posx>1.5</posx>
@@ -861,7 +861,7 @@
             <width>223</width>
             <height>335</height>
             <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-            <aspectratio scalediffuse="false">scale</aspectratio>
+            <aspectratio scalediffuse="false">stretch</aspectratio>
         </control>
         <control type="image">
             <posx>1.5</posx>
@@ -1113,7 +1113,7 @@
             <height>210</height>
             <bordersize>5</bordersize>
             <texture background="true" border="5">$INFO[ListItem.Icon]</texture>
-            <aspectratio>scale</aspectratio>
+            <aspectratio>stretch</aspectratio>
             <visible>!Container.Content(tvshows)</visible>
         </control>
         <control type="image">
@@ -1188,7 +1188,7 @@
             <height>210</height>
             <bordersize>5</bordersize>
             <texture background="true" border="5">$INFO[ListItem.Icon]</texture>
-            <aspectratio>scale</aspectratio>
+            <aspectratio>stretch</aspectratio>
             <visible>!Container.Content(tvshows)</visible>
         </control>
         <control type="image">
