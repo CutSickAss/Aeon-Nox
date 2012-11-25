@@ -438,7 +438,6 @@
         <value condition="Skin.HasSetting(NoVideoLibraryFanart)  + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]">special://skin/backgrounds/videos/</value>
         <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem.Label,special://skin/extras/year/video/fanart/,.jpg]</value>
-        <value condition="Skin.HasSetting(SeasonFanart) + [Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(ListItem.Art(season.fanart))">$INFO[ListItem.Art(season.fanart)]</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="Container.Content(movies)+ IsEmpty(Skin.String(MoviesBackground))">special://skin/backgrounds/movies/</value>
         <value condition="Container.Content(movies) + !IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MoviesBackground)]</value>
@@ -455,7 +454,6 @@
     <variable name="BigFanListVar">
         <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem.Label,special://skin/extras/year/video/fanart/,.jpg]</value>
-        <value condition="Container.Content(seasons) + !SubString(ListItem.Label,*,left)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-fanart.jpg]</value>
         <value>$INFO[ListItem.Art(fanart)]</value>
     </variable>
     <!--Infopanel variables-->
@@ -605,8 +603,7 @@
         <value condition="[Container.Content(tvshows) + !Control.isVisible(503)]">$INFO[ListItem.Property(TotalSeasons)]</value>
     </variable>
     <variable name="TVShowLogoVar">
-        <value condition="Container.Content(episodes) + Skin.HasSetting(extraartwork)">$INFO[ListItem.path,,../logo.png]</value>
-        <value condition="Container.Content(seasons) + Skin.HasSetting(extraartwork)">$INFO[ListItem.path,,logo.png]</value>
+        <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
         <value condition="Container.Content(albums) + Substring(Container.FolderPath,musicdb://2/,left)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container.FolderName,,/logo.png]</value>
         <value condition="Container.Content(artists) | Container.Content(albums) | Container.Content(songs)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</value>
         <value>$INFO[ListItem.Art(clearlogo)]</value>
@@ -631,10 +628,9 @@
     </variable>
     
     <variable name="TVShowClearArtVar">
-        <value condition="Container.Content(episodes) + Skin.HasSetting(extraartwork)">$INFO[ListItem.path,,../clearart.png]</value>
-        <value condition="Container.Content(seasons) + Skin.HasSetting(extraartwork)">$INFO[ListItem.path,,clearart.png]</value>
-        <value condition="!IsEmpty(ListItem.Art(clearart)">$INFO[ListItem.Art(clearart)]</value>
-        <value condition="!IsEmpty(ListItem.Art(clearlogo)">$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.clearart)]</value>
+        <value condition="!IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+        <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.characterart)]</value>
     </variable>
     <variable name="InfoPanelCharacterArtVar">
         <value condition="Container.Content(episodes) + Skin.HasSetting(extraartwork)">$INFO[ListItem.path,,../character.png]</value>
@@ -1272,7 +1268,7 @@
         <value condition="Container.Content(musicvideos)">$LOCALIZE[20389]</value>
         <value condition="Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(episodes) + !SubString(Container.FolderName,$LOCALIZE[20373])]">$LOCALIZE[20343]</value>
         <value condition="Container.Content(episodes) + !SubString(Container.FolderPath,videodb://5/) + SubString(Container.FolderName,$LOCALIZE[20373])">$INFO[ListItem.TVShowTitle,$LOCALIZE[20343] / ]</value>
-        <value condition="Window.IsActive(addonbrower)">$LOCALIZE[24001]</value>
+        <value condition="Window.IsActive(addonbrowser)">$LOCALIZE[24001]</value>
         <value condition="Window.IsActive(programs)">$LOCALIZE[10001]</value>
         <value condition="Window.IsActive(videoplaylist)">$LOCALIZE[10522]</value>
         <value condition="Window.IsActive(musicplaylisteditor)">$LOCALIZE[10503]</value>
@@ -1297,7 +1293,7 @@
     <variable name="BreadcrumbsIconVar">
         <value condition="Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes) | Window.IsActive(script-NextAired-TVGuide.xml)">common/tv_icon.png</value>
         <value condition="Window.IsActive(videos) | Window.IsActive(videoplaylist)">common/logo_movies.png</value>
-        <value condition="Window.IsActive(addonbrower)">common/puzzle_icon.png</value>
+        <value condition="Window.IsActive(addonbrowser)">common/puzzle_icon.png</value>
         <value condition="Window.IsActive(musicplaylisteditor) | Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(musicplaylist)">common/logo_music.png</value>
         <value condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">common/logo_games.png</value>
         <value condition="Window.IsActive(filemanager)">common/logo_playlist.png</value>
@@ -1470,16 +1466,16 @@
         <value condition="StringCompare(Window(1115).Property(InfoDialog),9003)">$INFO[Container(9003).ListItem.Property(Path)]</value>
     </variable>
     <variable name="FeaturedInfoDialogLogoVar">
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),5002)">$INFO[Container(5002).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),5003)">$INFO[Container(5003).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),6002)">$INFO[Container(6002).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),6003)">$INFO[Container(6003).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),7002)">$INFO[Container(7002).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),7003)">$INFO[Container(7003).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),8002)">$INFO[Container(8002).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),8003)">$INFO[Container(8003).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),9002)">$INFO[Container(9002).$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="StringCompare(Window(1115).Property(InfoDialog),9003)">$INFO[Container(9003).$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),5002)">$INFO[Container(5002).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),5003)">$INFO[Container(5003).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),6002)">$INFO[Container(6002).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),6003)">$INFO[Container(6003).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),7002)">$INFO[Container(7002).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),7003)">$INFO[Container(7003).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),8002)">$INFO[Container(8002).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),8003)">$INFO[Container(8003).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),9002)">$INFO[Container(9002).ListItem.Art(clearlogo)]</value>
+        <value condition="StringCompare(Window(1115).Property(InfoDialog),9003)">$INFO[Container(9003).ListItem.Art(clearlogo)]</value>
     </variable>
     <!-- Global Search -->
     <variable name="GlobalSearchFanartVar">
