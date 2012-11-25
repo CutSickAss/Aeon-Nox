@@ -630,11 +630,10 @@
     <variable name="TVShowClearArtVar">
         <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.clearart)]</value>
         <value condition="!IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
-        <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.characterart)]</value>
+        <value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
     </variable>
     <variable name="InfoPanelCharacterArtVar">
-        <value condition="Container.Content(episodes) + Skin.HasSetting(extraartwork)">$INFO[ListItem.path,,../character.png]</value>
-        <value condition="Container.Content(seasons) + Skin.HasSetting(extraartwork)">$INFO[ListItem.path,,character.png]</value>
+        <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.characterart)]</value>
         <value condition="!IsEmpty(ListItem.Art(characterart))">$INFO[ListItem.Art(characterart)]</value>
         <value>$INFO[ListItem.Art(clearlogo)]</value>
     </variable>
@@ -798,6 +797,7 @@
         <value>$INFO[ListItem.Property(Logo)]</value>
     </variable>
     <variable name="Widget2RootPathVar">
+		<value condition="Window.IsActive(1137) + Control.HasFocus(14)">$INFO[ListItem.Property(Clearart)]</value>
         <value condition="Substring(Control.GetLabel(4325),clearart,right)">$INFO[ListItem.Property(Clearart)]</value>
         <value>$INFO[ListItem.Property(Logo)]</value>
     </variable>
@@ -1313,6 +1313,7 @@
         <value condition="Stringcompare(Skin.String(LibraryStructure),1)">ARTIST/ALBUMNAME/</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),2)">ARTIST/YEAR - ALBUMNAME/</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),3)">ARTIST/ALBUMNAME (YEAR)/</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),4)">ARTIST - ALBUMNAME (YEAR)/</value>
     </variable>
     <variable name="ListPosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
@@ -1642,7 +1643,6 @@
     </variable>
     <variable name="VideoFanArtLabelVar">
         <value condition="[Container.Content(seasons) + Skin.HasSetting(extrafanartseasons)] | [Container.Content(tvshows) + Skin.HasSetting(extrafanartseries)] | [Container.Content(episodes) + Skin.HasSetting(extrafanartepisodes)] | [Container.Content(movies) + Skin.HasSetting(extrafanartmovies)]">$LOCALIZE[31047]</value>
-        <value condition="Skin.HasSetting(SeasonFanart) + !Container.Content(movies)">$LOCALIZE[31054]</value>
         <value condition="[Skin.HasSetting(NoVideoLibraryFanartTVShows)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(NoVideoLibraryFanart)  + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]]">$LOCALIZE[106]</value>
         <value>$LOCALIZE[107]</value>
     </variable>
@@ -1848,6 +1848,7 @@
         <value condition="[Window.IsActive(musicfiles) + IsEmpty(ListItem.FileExtension)]">$INFO[ListItem.Path]$INFO[ListItem.Label,,/cdart.png]</value>
         <value condition="Container.Content(albums) + Stringcompare(Skin.String(LibraryStructure),2)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist]\$INFO[ListItem.Year] - $INFO[ListItem.Album,,\cdart.png]</value>
         <value condition="Container.Content(albums) + Stringcompare(Skin.String(LibraryStructure),3)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist]\$INFO[ListItem.Album] $INFO[ListItem.Year,(,)\cdart.png]</value>
+        <value condition="Container.Content(albums) + Stringcompare(Skin.String(LibraryStructure),4)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist] - $INFO[ListItem.Album] $INFO[ListItem.Year,(,)\cdart.png]</value>
         <value condition="Container.Content(albums)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist]\$INFO[ListItem.Album,,\cdart.png]</value>
         <value condition="Window.IsActive(musicinformation)">$INFO[ListItem.FileNameAndPath,,/cdart.png]</value>
         <value>$INFO[ListItem.Path,,cdart.png]</value>
