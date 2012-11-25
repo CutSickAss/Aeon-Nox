@@ -537,6 +537,7 @@
 	  <control type="image">
 		<width>464</width>
 		<height>464</height>
+		<fadetime>0</fadetime>
 		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
 		  <effect type="fade" start="0" end="100" delay="500" />
 		  <effect type="slide" start="0,0" end="0,-233" time="1200" />
