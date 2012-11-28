@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="1127" type="dialog">
+            <onload condition="Container.Content(movies)">SetProperty(BackgroundArea,Movies,home)</onload>
+            <onload condition="Container.Content(TVShows) | Container.Content(seasons) | Container.Content(episodes)">SetProperty(BackgroundArea,TVShows,home)</onload>
+            <onload condition="Window.IsActive(videos) + [Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums)]">SetProperty(BackgroundArea,MusicVideos,home)</onload>
+            <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">SetProperty(BackgroundArea,Music,home)</onload>
+            <onload condition="Window.IsActive(pictures)">SetProperty(BackgroundArea,Pictures,home)</onload>
+            <onload condition="Window.IsActive(addonbrowser)">SetProperty(BackgroundArea,AddonBrowser,home)</onload>
+            <onload condition="Container.Content(addons)">SetProperty(BackgroundArea,Addons,home)</onload>
     <defaultcontrol always="true">450</defaultcontrol>
     <zorder>4</zorder>
     <coordinates>
@@ -7,15 +14,15 @@
         <posx>0</posx>
         <posy>0</posy>
     </coordinates>
-    <onunload>Skin.SetString($INFO[Window(home).Property(BackgroundArea)],$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
-    <include>Animation_DialogPopup</include>
+<!--     <onunload>Skin.SetString($INFO[Window(home).Property(BackgroundArea)],$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
+ -->    <include>Animation_DialogPopup</include>
     <controls>
         <control type="group">
             <posy>-130</posy>
             <control type="image">
                 <posx>356</posx>
                 <posy>200</posy>
-                <width>1210</width>
+                <width>510</width>
                 <height>620</height>
                 <texture border="50">osd/osd_settings_back_glow.png</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
@@ -26,7 +33,7 @@
             <control type="image">
                 <posx>356</posx>
                 <posy>200</posy>
-                <width>1210</width>
+                <width>510</width>
                 <height>620</height>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <texture border="50">osd/osd_settings_back.png</texture>
@@ -34,7 +41,7 @@
             <control type="image">
                 <posx>375</posx>
                 <posy>232</posy>
-                <width>1172</width>
+                <width>472</width>
                 <height>60</height>
                 <texture>osd/osd_settings_buttonnf.png</texture>
             </control>
@@ -44,7 +51,7 @@
                 <width>600</width>
                 <height>60</height>
                 <font>Font_Bold19</font>
-                <label>$LOCALIZE[31687]</label>
+                <label>$LOCALIZE[42308]</label>
             </control>
             <control type="grouplist" id="450">
                 <posx>375</posx>
@@ -57,24 +64,11 @@
                 <onright>60</onright>
                 <onup>450</onup>
                 <ondown>450</ondown>
-                <control type="radiobutton" id="460">
-                    <include>Objects_CommonSettingsButton</include>
-                    <label>$LOCALIZE[31688]</label>
-                    <onclick>Skin.Reset(ItemToEdit.MultiFanart)</onclick>
-                    <onclick>Dialog.Close(1127)</onclick>
-                </control>
-                <control type="radiobutton" id="461">
-                    <include>Objects_CommonSettingsButton</include>
-                    <label>$LOCALIZE[31113]</label>
-                    <onclick>Skin.SetImage(ItemToEdit.MultiFanart)</onclick>
-                    <onclick>Dialog.Close(1127)</onclick>
-                </control>
-                <control type="radiobutton" id="462">
-                    <include>Objects_CommonSettingsButton</include>
-                    <label>$LOCALIZE[31114]</label>
-                    <onclick>Skin.SetPath(ItemToEdit.MultiFanart)</onclick>
-                    <onclick>Dialog.Close(1127)</onclick>
-                </control>
+            <control type="button" id="1602">
+                <include>Objects_MediaMenuLabelAlt2</include>
+                <label>Background Setup</label>
+                <enable>no</enable>
+            </control>
                 <control type="button" id="1674">
                     <!-- Toggle Fanart -->
                     <include>Objects_MediaMenuButtonAlt2</include>
@@ -164,6 +158,32 @@
                     <visible>!Skin.HasSetting(hideoptions)</visible>
                     <enable>!stringcompare(Window(home).Property(actualViewtype),BigFan)</enable>
                 </control>
+            <control type="button" id="1601">
+                <include>Objects_MediaMenuLabelAlt2</include>
+                <label>Fallback Settings</label>
+                <enable>no</enable>
+            </control>
+                <control type="button" id="460">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31023]</label>
+                    <onclick>Skin.Reset($INFO[Window(home).Property(BackgroundArea)]Background)</onclick>
+                    <onclick>Dialog.Close(1127)</onclick>
+                </control>
+                <control type="button" id="461">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31113]</label>
+                    <onclick>Skin.SetImage($INFO[Window(home).Property(BackgroundArea)]Background)</onclick>
+                    <onclick>Dialog.Close(1127)</onclick>
+                </control>
+                <control type="button" id="462">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31114]</label>
+                    <onclick>Skin.SetPath($INFO[Window(home).Property(BackgroundArea)]Background)</onclick>
+                    <onclick>Dialog.Close(1127)</onclick>
+                </control>
+                
+                
+                
             </control>
         </control>
     </controls>
