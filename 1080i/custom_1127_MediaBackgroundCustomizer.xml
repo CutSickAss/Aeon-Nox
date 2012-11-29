@@ -3,10 +3,13 @@
             <onload condition="Container.Content(movies)">SetProperty(BackgroundArea,Movies,home)</onload>
             <onload condition="Container.Content(TVShows) | Container.Content(seasons) | Container.Content(episodes)">SetProperty(BackgroundArea,TVShows,home)</onload>
             <onload condition="Window.IsActive(videos) + [Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums)]">SetProperty(BackgroundArea,MusicVideos,home)</onload>
-            <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">SetProperty(BackgroundArea,Music,home)</onload>
+            <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(musicplaylist)">SetProperty(BackgroundArea,Music,home)</onload>
             <onload condition="Window.IsActive(pictures)">SetProperty(BackgroundArea,Pictures,home)</onload>
-            <onload condition="Window.IsActive(addonbrowser)">SetProperty(BackgroundArea,AddonBrowser,home)</onload>
-            <onload condition="Container.Content(addons)">SetProperty(BackgroundArea,Addons,home)</onload>
+            <onload condition="Window.IsActive(addonbrowser) | Window.IsActive(programs)">SetProperty(BackgroundArea,AddonBrowser,home)</onload>
+            <onload condition="Window.IsActive(skinsettings)">SetProperty(BackgroundArea,Settings,home)</onload>
+            <onload condition="Window.IsActive(weather)">SetProperty(BackgroundArea,Weather,home)</onload>
+            <onload condition="Window.IsActive(1115)">SetProperty(BackgroundArea,Featured,home)</onload>
+            <onload condition="Window.IsActive(PVR)">SetProperty(BackgroundArea,LiveTV,home)</onload>
     <defaultcontrol always="true">450</defaultcontrol>
     <zorder>4</zorder>
     <coordinates>
@@ -19,6 +22,7 @@
     <controls>
         <control type="group">
             <posy>-130</posy>
+            <posx>349</posx>
             <control type="image">
                 <posx>356</posx>
                 <posy>200</posy>
@@ -72,7 +76,8 @@
                 <control type="button" id="1674">
                     <!-- Toggle Fanart -->
                     <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>$LOCALIZE[20445]: [COLOR $VAR[FontColorVar]]$VAR[MusicFanArtLabelVar][/COLOR]</label>
+                    <label>$LOCALIZE[20445]:</label>
+                    <label2>[COLOR $VAR[FontColorVar]]$VAR[MusicFanArtLabelVar][/COLOR]</label2>
                     <onclick condition="!Skin.HasSetting(NoMusicLibraryFanart) + !Skin.HasSetting(musicextrafanart)">Skin.SetBool(musicextrafanart)</onclick>
                     <onclick condition="Skin.HasSetting(musicextrafanart)">Skin.SetBool(NoMusicLibraryFanart)</onclick>
                     <onclick condition="Skin.HasSetting(musicextrafanart)">Skin.Reset(musicextrafanart)</onclick>
@@ -82,33 +87,32 @@
                 <control type="button" id="1675">
                     <!-- Toggle Fanart -->
                     <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>$LOCALIZE[20445]: [COLOR $VAR[FontColorVar]]$VAR[VideoFanArtLabelVar][/COLOR]</label>
-                    <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartseasons) + !Skin.HasSetting(SeasonFanart)">Skin.SetBool(extrafanartseasons)</onclick>
-                    <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartseasons) + !Skin.HasSetting(SeasonFanart)">Notification($LOCALIZE[42002],$LOCALIZE[42004])</onclick>
-                    <onclick condition="Skin.HasSetting(extrafanartseasons)">Skin.SetBool(SeasonFanart)</onclick>
+                    <label>$LOCALIZE[20445]:</label>
+                    <label2>[COLOR $VAR[FontColorVar]]$VAR[VideoFanArtLabelVar][/COLOR]</label2>
+                    <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartseasons)">Skin.SetBool(extrafanartseasons)</onclick>
+                    <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartseasons)">Notification($LOCALIZE[42002],$LOCALIZE[42004])</onclick>
+                    <onclick condition="Skin.HasSetting(extrafanartseasons)">Skin.SetBool(NoVideoLibraryFanartTVShows)</onclick>
                     <onclick condition="Skin.HasSetting(extrafanartseasons)">Skin.Reset(extrafanartseasons)</onclick>
-                    <onclick condition="Skin.HasSetting(SeasonFanart)">Skin.SetBool(NoVideoLibraryFanartTVShows)</onclick>
-                    <onclick condition="Skin.HasSetting(SeasonFanart)">Skin.Reset(SeasonFanart)</onclick>
                     <onclick condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)">Skin.Reset(NoVideoLibraryFanartTVShows)</onclick>
                     <visible>Container.Content(seasons)</visible>
                 </control>
                 <control type="button" id="1692">
                     <!-- Toggle Fanart -->
                     <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>$LOCALIZE[20445]: [COLOR $VAR[FontColorVar]]$VAR[VideoFanArtLabelVar][/COLOR]</label>
-                    <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartepisodes) + !Skin.HasSetting(SeasonFanart)">Skin.SetBool(extrafanartepisodes)</onclick>
-                    <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartepisodes) + !Skin.HasSetting(SeasonFanart)">Notification($LOCALIZE[42002],$LOCALIZE[42004])</onclick>
-                    <onclick condition="Skin.HasSetting(extrafanartepisodes)">Skin.SetBool(SeasonFanart)</onclick>
+                    <label>$LOCALIZE[20445]:</label>
+                    <label2>[COLOR $VAR[FontColorVar]]$VAR[VideoFanArtLabelVar][/COLOR]</label2>
+                    <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartepisodes)">Skin.SetBool(extrafanartepisodes)</onclick>
+                    <onclick condition="!Skin.HasSetting(NoVideoLibraryFanartTVShows) + !Skin.HasSetting(extrafanartepisodes)">Notification($LOCALIZE[42002],$LOCALIZE[42004])</onclick>
+                    <onclick condition="Skin.HasSetting(extrafanartepisodes)">Skin.SetBool(NoVideoLibraryFanartTVShows)</onclick>
                     <onclick condition="Skin.HasSetting(extrafanartepisodes)">Skin.Reset(extrafanartepisodes)</onclick>
-                    <onclick condition="Skin.HasSetting(SeasonFanart)">Skin.SetBool(NoVideoLibraryFanartTVShows)</onclick>
-                    <onclick condition="Skin.HasSetting(SeasonFanart)">Skin.Reset(SeasonFanart)</onclick>
                     <onclick condition="Skin.HasSetting(NoVideoLibraryFanartTVShows)">Skin.Reset(NoVideoLibraryFanartTVShows)</onclick>
                     <visible>Container.Content(episodes)</visible>
                 </control>
                 <control type="button" id="1672">
                     <!-- Toggle Fanart -->
                     <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>$LOCALIZE[20445]: [COLOR $VAR[FontColorVar]]$VAR[VideoFanArtLabelVar][/COLOR]</label>
+                    <label>$LOCALIZE[20445]:</label>
+                    <label2>[COLOR $VAR[FontColorVar]]$VAR[VideoFanArtLabelVar][/COLOR]</label2>
                     <onclick condition="!Skin.HasSetting(NoVideoLibraryFanart) + !Skin.HasSetting(extrafanartmovies)">Skin.SetBool(extrafanartmovies)</onclick>
                     <onclick condition="!Skin.HasSetting(NoVideoLibraryFanart) + !Skin.HasSetting(extrafanartmovies)">Notification($LOCALIZE[42002],$LOCALIZE[42004]</onclick>
                     <onclick condition="Skin.HasSetting(extrafanartmovies)">Skin.SetBool(NoVideoLibraryFanart)</onclick>
@@ -116,7 +120,7 @@
                     <onclick condition="Skin.HasSetting(NoVideoLibraryFanart)">Skin.Reset(NoVideoLibraryFanart)</onclick>
                     <visible>Container.Content(movies)</visible>
                 </control>
-                <control type="radiobutton" id="1602">
+                <control type="radiobutton" id="1603">
                     <!--Media_Menu_BackdropVideo-->
                     <label>$LOCALIZE[31307]</label>
                     <onclick>Skin.ToggleSetting(NoVideoLibraryFanart)</onclick>
@@ -160,7 +164,7 @@
                 </control>
             <control type="button" id="1601">
                 <include>Objects_MediaMenuLabelAlt2</include>
-                <label>Fallback Settings</label>
+                <label>42103</label>
                 <enable>no</enable>
             </control>
                 <control type="button" id="460">
@@ -181,8 +185,20 @@
                     <onclick>Skin.SetPath($INFO[Window(home).Property(BackgroundArea)]Background)</onclick>
                     <onclick>Dialog.Close(1127)</onclick>
                 </control>
-                
-                
+                <control type="button" id="463">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>31035</label>
+                    <onclick>Skin.SetString($INFO[Window(home).Property(BackgroundArea)]Background,weather)</onclick>
+                    <visible>Window.IsActive(weather) + !IsEmpty(Skin.String(WeatherFanartDir))</visible>
+                    <onclick>Dialog.Close(1127)</onclick>
+                </control>
+                <control type="button" id="464">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>42221</label>
+                    <onclick>Skin.SetString($INFO[Window(home).Property(BackgroundArea)]Background,googleweather)</onclick>
+                    <visible>Window.IsActive(weather) + SubString(Weather.Plugin,weather.google)</visible>
+                    <onclick>Dialog.Close(1127)</onclick>
+                </control>
                 
             </control>
         </control>

@@ -460,6 +460,12 @@
         <value condition="!IsEmpty(Skin.String(AddonBrowserBackground))">$INFO[Skin.String(AddonBrowserBackground)]</value>
         <value>special://skin/backgrounds/programs/</value>
     </variable>
+    <variable name="WeatherFanartVar">
+        <value condition="StringCompare(Skin.String(WeatherBackground),weather)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Weather.FanartCode]</value>
+        <value condition="SubString(Skin.String(WeatherBackground),googleweather)">$INFO[Window(Weather).Property(Current.Earth.Phase.LargeImage)]</value>
+        <value condition="!IsEmpty(Skin.String(WeatherBackground))">$INFO[Skin.String(WeatherBackground)]</value>
+        <value>special://skin/backgrounds/weather/</value>
+    </variable>
     <variable name="LiveTVFanartVar">
         <value condition="!IsEmpty(Skin.String(LiveTVBackground))">$INFO[Skin.String(LiveTVBackground)]</value>
         <value>special://skin/backgrounds/livetv/</value>
@@ -935,9 +941,14 @@
         <value condition="IsEmpty(Skin.String(MusicBackground))">special://skin/backgrounds/music/</value>
         <value>$INFO[Skin.String(MusicBackground)]</value>
     </variable>
+
     <variable name="SettingsFanartVar">
         <value condition="IsEmpty(Skin.String(SettingsBackground))">special://skin/backgrounds/system/</value>
         <value>$INFO[Skin.String(SettingsBackground)]</value>
+    </variable>
+    <variable name="FeaturedFanartVar">
+        <value condition="IsEmpty(Skin.String(FeaturedBackground))">special://skin/backgrounds/featured/</value>
+        <value>$INFO[Skin.String(FeaturedBackground)]</value>
     </variable>
     <variable name="PicturesFanartVar">
         <value condition="Skin.HasSetting(comics) + IsEmpty(Skin.String(ComicsBackground))">special://skin/backgrounds/comics/</value>
