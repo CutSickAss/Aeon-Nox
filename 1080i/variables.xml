@@ -138,28 +138,9 @@
         <value condition="Skin.HasTheme(White)">$VAR[WhiteFontColorVar]</value>
         <value>$VAR[DefaultFontColorVar]</value>
     </variable>
-    <variable name="SpotColorVar">
-        <value condition="Skin.HasTheme(White)">$VAR[ColorDiffuseVar]</value>
-        <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
-        <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + StringCompare(Skin.String(diffuse_color),FFFFFFFF)">diffuse_white</value>
-        <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + !StringCompare(Skin.String(diffuse_color),FFFFFFFF)">$VAR[ColorDiffuseVar]</value>
-        <value condition="[Window.IsActive(fullscreeninfo) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)| Window.IsActive(videobookmarks)] + StringCompare(Skin.String(diffuse_videolibrary),FFFFFFFF)">diffuse_white</value>
-        <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + StringCompare(Skin.String(diffuse_music),FFFFFFFF)">diffuse_white</value>
-        <value condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)] + StringCompare(Skin.String(diffuse_programs),FFFFFFFF)">diffuse_white</value>
-        <value condition="Window.IsActive(pictures) + StringCompare(Skin.String(diffuse_pictures),FFFFFFFF)">diffuse_white</value>
-        <value condition="[Window.IsActive(startup) | Window.IsActive(home) | Window.IsActive(1124) | Window.IsActive(1158)] + StringCompare(Skin.String(diffuse_mainmenu),FFFFFFFF)">diffuse_white</value>
-        <value condition="Window.IsActive(addonbrowser) + StringCompare(Skin.String(diffuse_addons),FFFFFFFF)">diffuse_white</value>
-        <value condition="Window.IsActive(musicplaylist) + StringCompare(Skin.String(diffuse_musicplaylist),FFFFFFFF)">diffuse_white</value>
-        <value condition="Window.IsActive(videoplaylist) + StringCompare(Skin.String(diffuse_videoplaylist),FFFFFFFF)">diffuse_white</value>
-        <value condition="[Window.IsActive(weather) | Window.IsActive(1153)] + StringCompare(Skin.String(diffuse_weather),FFFFFFFF)">diffuse_white</value>
-        <value condition="[Window.IsActive(1115) | Window.IsActive(script-globalsearch-main.xml)] + StringCompare(Skin.String(diffuse_featured),FFFFFFFF)">diffuse_white</value>
-        <value condition="[Window.IsActive(skinsettings) | Window.IsActive(settings) | Window.IsActive(picturessettings) | Window.IsActive(programssettings) | Window.IsActive(weathersettings) | Window.IsActive(musicsettings) | Window.IsActive(systemsettings) | Window.IsActive(videossettings) | Window.IsActive(networksettings) | Window.IsActive(appearancesettings) | Window.IsActive(profiles) | Window.IsActive(filemanager)] + StringCompare(Skin.String(diffuse_settings),FFFFFFFF)">diffuse_white</value>
-        <value condition="Window.IsActive(PVR) + StringCompare(Skin.String(diffuse_PVR),FFFFFFFF)">diffuse_white</value>
-        <value>$VAR[AreaColorVar]</value>
-    </variable>
     <variable name="SpotColorVar2">
         <value condition="Skin.HasTheme(White)">FFAAAAAA</value>
-        <value>$VAR[SpotColorVar]</value>
+        <value>$VAR[ColorDiffuseVar]</value>
     </variable>
     <variable name="ColorDiffuseVar">
         <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
@@ -193,7 +174,7 @@
         <value>black</value>
     </variable>
     <variable name="FocusTextureColorVar">
-        <value>$VAR[SpotColorVar]</value>
+        <value>$VAR[ColorDiffuseVar]</value>
     </variable>
     <variable name="TitleColorVar">
         <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
@@ -342,10 +323,6 @@
         <value condition="substring(ListItem.AudioCodec,ac3,left) + Stringcompare(ListItem.AudioChannels,2)">dolbypro</value>
         <value>$INFO[ListItem.AudioCodec]</value>
     </variable>
-    <variable name="CaseTypeVar">
-        <value condition="Skin.HasSetting(usecases)">tvshows</value>
-        <value>movies</value>
-    </variable>
     <variable name="NextEpisodeVar">
         <value condition="!IsEmpty(Window(Home).Property(NextAired.Label)) + !IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextDate)]</value>
         <value>$LOCALIZE[312581]</value>
@@ -390,10 +367,10 @@
         <value condition="Container.Content(addons) + IsEmpty(ListItem.Art(fanart))">special://skin/backgrounds/programs/programs.jpg</value>
         <value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">special://skin/backgrounds/fallback_movies.jpg</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + IsEmpty(ListItem.Art(fanart))">special://skin/backgrounds/fallback_tvshows.jpg</value>
-        <value condition="[Window.IsActive(pictures) + Skin.HasSetting(pictures)] + IsEmpty(Listitem.Thumb)">special://skin/backgrounds/pictures/pictures.jpg</value>
-        <value condition="[Window.IsActive(pictures) + Skin.HasSetting(comics)] + IsEmpty(ListItem.Art(fanart))">special://skin/backgrounds/comics/comics.jpg</value>
+        <value condition="[Window.IsActive(pictures) + !Substring(Container.FolderPath,\comics\)] + IsEmpty(Listitem.Thumb)">special://skin/backgrounds/pictures/pictures.jpg</value>
+        <value condition="[Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)] + IsEmpty(ListItem.Art(fanart))">special://skin/backgrounds/comics/comics.jpg</value>
         <value condition="[Window.IsActive(programs) + [Window.IsActive(programs) + !Container.Content(addons)]] + IsEmpty(ListItem.Art(fanart))">special://skin/backgrounds/programs/programs.jpg</value>
-        <value condition="Window.IsActive(pictures) + Skin.HasSetting(pictures)">$INFO[Listitem.Thumb]</value>
+        <value condition="Window.IsActive(pictures) + !Substring(Container.FolderPath,\comics\)">$INFO[Listitem.Thumb]</value>
         <value condition="Control.IsVisible(52) + Container.Content(episodes)">$INFO[Listitem.Thumb]</value>
         <value>$INFO[ListItem.Art(fanart)]</value>
     </variable>
@@ -951,8 +928,8 @@
         <value>$INFO[Skin.String(FeaturedBackground)]</value>
     </variable>
     <variable name="PicturesFanartVar">
-        <value condition="Skin.HasSetting(comics) + IsEmpty(Skin.String(ComicsBackground))">special://skin/backgrounds/comics/</value>
-        <value condition="Skin.HasSetting(comics)">$INFO[Skin.String(ComicsBackground)]</value>
+        <value condition="Substring(Container.FolderPath,\comics\) + IsEmpty(Skin.String(ComicsBackground))">special://skin/backgrounds/comics/</value>
+        <value condition="Substring(Container.FolderPath,\comics\)">$INFO[Skin.String(ComicsBackground)]</value>
         <value condition="IsEmpty(Skin.String(PicturesBackground))">special://skin/backgrounds/pictures/</value>
         <value>$INFO[Skin.String(PicturesBackground)]</value>
     </variable>
@@ -1124,72 +1101,64 @@
         <value>$INFO[ListItem(9).Icon]</value>
     </variable>
     <variable name="ShowcaseCase-7Var">
-        <value condition="SubString(Container(504).ListItem(-7).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-7).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-7).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-7).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-6Var">
-        <value condition="SubString(Container(504).ListItem(-6).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-6).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-6).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-6).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-5Var">
-        <value condition="SubString(Container(504).ListItem(-5).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-5).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-5).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-5).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-4Var">
-        <value condition="SubString(Container(504).ListItem(-4).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-4).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-4).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-4).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-3Var">
-        <value condition="SubString(Container(504).ListItem(-3).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-3).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-3).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-3).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-2Var">
-        <value condition="SubString(Container(504).ListItem(-2).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-2).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-2).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-2).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-1Var">
-        <value condition="SubString(Container(504).ListItem(-1).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-1).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-1).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-1).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase0Var">
-        <value condition="SubString(Container(504).ListItem(0).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem.VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(0).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem.VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase1Var">
-        <value condition="SubString(Container(504).ListItem(1).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(1).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(1).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(1).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase2Var">
-        <value condition="SubString(Container(504).ListItem(2).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(2).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(2).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(2).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase3Var">
-        <value condition="SubString(Container(504).ListItem(3).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(3).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(3).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(3).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase4Var">
-        <value condition="SubString(Container(504).ListItem(4).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(4).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(4).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(4).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase5Var">
-        <value condition="SubString(Container(504).ListItem(5).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(5).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(5).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(5).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase6Var">
-        <value condition="SubString(Container(504).ListItem(6).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(6).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(6).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(6).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase7Var">
-        <value condition="SubString(Container(504).ListItem(7).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(7).VideoResolution]p.png</value>
-    </variable>
-    <variable name="ShowcaseCase8Var">
-        <value condition="SubString(Container(504).ListItem(8).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(8).VideoResolution]p.png</value>
-    </variable>
-    <variable name="ShowcaseCase9Var">
-        <value condition="SubString(Container(504).ListItem(9).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(9).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(7).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(7).VideoResolution]p.png</value>
     </variable>
     <variable name="GlobalCaseVar">
         <value condition="SubString(ListItem.Filename,.3D.)">3d.png</value>
@@ -2328,11 +2297,9 @@
     <variable name="InfoPanelStyleVar">
         <value condition="Control.IsVisible(501) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseMovies)]</value>
         <value condition="Control.IsVisible(503) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesLandscape)]</value>
-        <value condition="Control.IsVisible(504) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseDVD)]</value>
         <value condition="Control.IsVisible(508) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesBanners)]</value>
         <value condition="Control.IsVisible(501) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShowcaseMovies)]</value>
         <value condition="Control.IsVisible(503) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsLandscape)]</value>
-        <value condition="Control.IsVisible(504) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShowcaseDVD)]</value>
         <value condition="Control.IsVisible(508) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsBanners)]</value>
     </variable>
     <variable name="LandscapeThumbSettingsVar">
@@ -2391,6 +2358,33 @@
         <value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
         <value>$INFO[Player.Art(clearlogo)]</value>
     </variable>
+
+  <variable name="HomeCustomStartupFocus">
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(1).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,1)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(2).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,2)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(3).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,3)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(4).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,4)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(5).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,5)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(6).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,6)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(7).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,7)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(8).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,8)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(9).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,9)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(10).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,10)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(11).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,11)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(12).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,12)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(13).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,13)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(14).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,14)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(15).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,15)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(16).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,16)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(17).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,17)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(18).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,18)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(19).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,19)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(20).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,20)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(21).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,21)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(22).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,22)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(23).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,23)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(24).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,24)</value>
+  </variable>
 
     <!-- PosterLite -->
     <variable name="PLPlot">
