@@ -45,7 +45,7 @@
 	  </control>
 	  <!-- Labels -->
 	  <control type="group" id="528200">
-		<visible>[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+[Control.HasFocus(7000)|Window.IsVisible(shutdownmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(contextmenu)|Window.IsVisible(custom_1121_MediaMenu.xml)|Window.IsVisible(playercontrols)|Window.IsVisible(mediafilter)|Window.IsVisible(progressdialog)|Window.IsVisible(busydialog)|Window.IsVisible(custom_1127_MediaBackgroundCustomizer.xml)|Window.IsVisible(filebrowser)|Window.IsVisible(script-ColorPicker-transparency.xml)|Window.IsVisible(custom_1128_ColorSelect.xml)|Window.IsVisible(custom_1138_ColorPicker.xml)|Window.IsVisible(selectdialog)|Window.IsVisible(yesnodialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(favourites)]]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+		<visible>[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]+!Control.IsVisible(528195)]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+Control.HasFocus(7000)+!Control.IsVisible(528195)]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
 		<animation effect="fade" time="300" reversible="false">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
@@ -73,22 +73,6 @@
 		  <visible>!IsEmpty(ListItem.Genre)</visible>
 		</control>
 		<!-- Movies only -->
-		<control type="fadelabel">
-		  <posx>0</posx>
-		  <posy>90</posy>
-		  <width>1321</width>
-		  <height>135</height>
-		  <align>justify</align>
-		  <aligny>justify</aligny>
-		  <scrollout>false</scrollout>
-		  <pauseatend>2000</pauseatend>
-		  <scrollspeed>10</scrollspeed>
-		  <font>Font_OSDTitle2</font>
-		  <textcolor>$VAR[TitleColorVar]</textcolor>
-		  <label>$INFO[ListItem.Label]</label>
-  		  <animation effect="fade" time="10">Visible</animation>
-		  <visible>!Container.Content(tvshows)+SubString(ListItem.Path,videodb://1/7/)+!StringCompare(ListItem.Label,..)</visible>
-		</control>
 		<control type="image">
 		  <posx>364</posx>
 		  <posy>-69</posy>
@@ -160,15 +144,14 @@
 	  <!-- Flags -->
 	  <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(528061)+!Control.IsVisible(4050)+!Control.HasFocus(109)</visible>
 	  <animation effect="fade" start="0" end="100" time="600" delay="200">Visible</animation>
-	  <control type="label">
-		<posx>1858</posx>
+	  <control type="fadelabel">
+		<posx>550</posx>
 		<posy>1039</posy>
-		<width>370</width>
-		<align>right</align>
+		<width>1320</width>
 		<font>Font_Bold22_Caps</font>
 		<textcolor>$VAR[TitleColorVar]</textcolor>
-		<label>$LOCALIZE[20457]</label>
-		<visible>SubString(ListItem.Path,videodb://1/7/)</visible>
+		<label>$LOCALIZE[20457]:  $INFO[ListItem.Label]</label>
+		<visible>!Control.IsVisible(9900)</visible>
 	  </control>
 	  <control type="group">
 		<visible>!Container.Content(tvshows)+!SubString(ListItem.Path,videodb://1/7/)</visible>
@@ -454,8 +437,10 @@
 	</control>
 	<control type="image">
 	  <posx>415</posx>
-	  <width>50</width>
-	  <height>50</height>
+	  <posy>3</posy>
+	  <width>45</width>
+	  <height>45</height>
+	  <fadetime>0</fadetime>
 	  <texture>$VAR[WatchedIconVar]</texture>
 	  <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 	</control>
@@ -510,6 +495,7 @@
 		<posx>415</posx>
 		<width>30</width>
 		<height>30</height>
+		<fadetime>0</fadetime>
 		<texture>$VAR[WatchedIconVar]</texture>
 		<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 	  </control>
@@ -584,7 +570,7 @@
 	<colordiffuse>white</colordiffuse>
   </include>
   <include name="PosFade">
-	<visible>[Control.IsVisible(528)|Stringcompare(Control.GetLabel(4421),infopanelonmanual)]+!Control.IsVisible(528200)</visible>
+	<visible>!Control.IsVisible(528200)</visible>
 	<animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),1)">Conditional</animation>
 	<animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),2)">Conditional</animation>
 	<animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),3)">Conditional</animation>

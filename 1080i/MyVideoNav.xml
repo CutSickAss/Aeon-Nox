@@ -90,7 +90,11 @@
             </control>
             <control type="button" id="528194">
                 <include>HiddenObject</include>
-                <visible>Stringcompare(Control.GetLabel(4421),infopanelonauto)+![Container.OnNext|Container.OnPrevious]+!StringCompare(ListItem.Label,..)</visible>
+                <visible>Stringcompare(Control.GetLabel(4421),infopanelonauto)+![Container.OnNext|Container.OnPrevious]+Control.IsVisible(9900)</visible>
+            </control>
+            <control type="button" id="528195">
+                <include>HiddenObject</include>
+                <visible>[Window.IsVisible(shutdownmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(contextmenu)|Window.IsVisible(custom_1121_MediaMenu.xml)|Window.IsVisible(custom_1126_ViewtypeSettings.xml)|Window.IsVisible(playercontrols)|Window.IsVisible(mediafilter)|Window.IsVisible(progressdialog)|Window.IsVisible(busydialog)|Window.IsVisible(custom_1127_MediaBackgroundCustomizer.xml)|Window.IsVisible(filebrowser)|Window.IsVisible(script-ColorPicker-transparency.xml)|Window.IsVisible(custom_1128_ColorSelect.xml)|Window.IsVisible(custom_1138_ColorPicker.xml)|Window.IsVisible(selectdialog)|Window.IsVisible(yesnodialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(favourites)]</visible>
             </control>
             <control type="button" id="528197">
                 <description>Infopanel: Delayed</description>
