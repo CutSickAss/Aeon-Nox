@@ -441,7 +441,7 @@
 	  <width>45</width>
 	  <height>45</height>
 	  <fadetime>0</fadetime>
-	  <texture>$VAR[WatchedIconVar]</texture>
+	  <texture>$VAR[PLWatchedIcon]</texture>
 	  <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 	</control>
   </include>
@@ -496,7 +496,7 @@
 		<width>30</width>
 		<height>30</height>
 		<fadetime>0</fadetime>
-		<texture>$VAR[WatchedIconVar]</texture>
+		<texture>$VAR[PLWatchedIcon]</texture>
 		<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 	  </control>
 	</control>
