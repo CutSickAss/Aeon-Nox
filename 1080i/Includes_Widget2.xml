@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="RecentWidget2">
         <control type="group" id="7998">
@@ -911,7 +911,7 @@
                             <width>466</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-							<textcolor>FFe5e5e5</textcolor>
+    						<textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(6001).ListItem.Label]$INFO[Container(6001).ListItem.Label2, - ]</label>
                             <textoffsetx>15</textoffsetx>
                             <visible>!Control.HasFocus(6010) + !Control.HasFocus(6001)</visible>
