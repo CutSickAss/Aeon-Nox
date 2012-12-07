@@ -411,7 +411,7 @@ msgstr "Διαφημιστικό"
 
 msgctxt "#31163"
 msgid "Featured"
-msgstr "Τυχαία"
+msgstr "Προτάσεις"
 
 msgctxt "#31164"
 msgid "Sort"
@@ -1723,7 +1723,7 @@ msgstr "Περιοχή PVR"
 
 msgctxt "#42255"
 msgid "Featured Area"
-msgstr "Περιοχή Τυχαίων"
+msgstr "Περιοχή Προτάσεων"
 
 msgctxt "#42256"
 msgid "NowPlaying"
