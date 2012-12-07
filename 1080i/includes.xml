@@ -28,13 +28,11 @@
     <include file="Includes_HomeWidgets.xml" />
     <include file="Includes_Visualization.xml" />
     <include file="Includes_Breadcrumbs.xml" />
-    <include file="Includes_Theme.xml" />
     <include file="Includes_Weather.xml" />
     <include file="Includes_MainMenu.xml" />
     <include file="Includes_PVR.xml" />
     <include file="Includes_Widget2.xml" />
     <include file="Includes_CustomizerWindow.xml" />
-    <include file="includesWeatherWorldCommonValues.xml" />
     <include file="Viewtype_FullscreenPanel.xml" />
     <include file="Viewtype_PosterLite.xml" />
     <include name="VideoBackground">
@@ -405,14 +403,6 @@
                 <texture>views/panel_spot.png</texture>
                 <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
             </control>
-            <control type="image">
-                <posx>49</posx>
-                <posy>112</posy>
-                <width>1819</width>
-                <height>1038</height>
-                <texture>wall/wall_bg_reflection.png</texture>
-                <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
-            </control>
             <include>Neon_Floor</include>
             <control type="image">
                 <posy>-100</posy>
@@ -452,6 +442,13 @@
             <colordiffuse>white</colordiffuse>
             <texture>XBMC_Logo.png</texture>
         </control>
+                    <control type="image">
+                <posx>49</posx>
+                <posy>112</posy>
+                <width>1819</width>
+                <height>1038</height>
+                <texture>wall/wall_bg_reflection.png</texture>
+            </control>
     </include>
     <include name="Furniture_SettingsBackPanel2">
         <control type="image">
@@ -482,6 +479,13 @@
             <colordiffuse>white</colordiffuse>
             <texture>XBMC_Logo.png</texture>
         </control>
+                    <control type="image">
+                <posx>49</posx>
+                <posy>112</posy>
+                <width>1819</width>
+                <height>1038</height>
+                <texture>wall/wall_bg_reflection.png</texture>
+            </control>
     </include>
     <include name="Furniture_SettingsInternalBackPanel">
         <control type="image">
@@ -926,6 +930,7 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(LiveTVHomeItem.SubMenu,pvr)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(ShutdownHomeItem.SubMenu,shutdown)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(SettingsHomeItem.SubMenu,settings)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(ProgramssHomeItem.SubMenu,programs)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem1.SubMenu,custom1)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem2.SubMenu,custom2)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem3.SubMenu,custom3)</onload>
