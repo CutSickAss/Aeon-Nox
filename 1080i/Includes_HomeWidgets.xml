@@ -325,7 +325,7 @@
         <control type="group">
             <posx>1436</posx>
             <posy>672</posy>
-            <animation effect="slide" start="575" end="0" time="700" tween="cubic" easing="out" delay="400" condition="!Skin.HasSetting(nowplayingpanel)">WindowOpen</animation>
+            <animation effect="slide" start="575" end="0" time="700" tween="cubic" delay="400" condition="!Skin.HasSetting(nowplayingpanel)">WindowOpen</animation>
             <visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))</visible>
             <animation effect="fade" time="400">VisibleChange</animation>
             <control type="image">
@@ -358,7 +358,7 @@
         <control type="group">
             <visible>Player.HasAudio</visible>
             <animation type="Visible">
-                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
+                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" />
                 <effect type="fade" end="100" time="300" />
             </animation>
             <animation type="Hidden">
@@ -392,7 +392,7 @@
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="group">
-                    <animation effect="slide" start="-150" end="0" time="700" tween="cubic" easing="out" delay="400">WindowOpen</animation>
+                    <animation effect="slide" start="-150" end="0" time="700" tween="cubic" delay="400">WindowOpen</animation>
                     <animation type="WindowClose">
                         <effect type="slide" end="-180" time="400" tween="cubic" easing="in" delay="0" />
                         <effect type="fade" start="100" end="0" time="0" delay="400" />
@@ -608,7 +608,7 @@
                     <include>Animation_PanelFlipUp1</include>
                 </animation>
                 <animation type="Visible">
-                    <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
+                    <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" />
                     <effect type="fade" end="100" time="300" />
                 </animation>
                 <animation type="Hidden">
@@ -1242,7 +1242,7 @@
             <include>Animation_Widgets</include>
             <animation type="Conditional" condition="true">
                 <effect type="fade" start="100" end="90" time="500" tween="cubic" easing="inout" />
-                <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" easing="out" />
+                <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" />
             </animation>
             <animation effect="slide" end="0,-285" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" end="0,18" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
@@ -2133,7 +2133,7 @@
                 <onleft>5010</onleft>
                 <onright>5010</onright>
                 <include>NavigationWidget1</include>
-                <scrolltime tween="quadratic" easing="out">400</scrolltime>
+                <scrolltime tween="quadratic">400</scrolltime>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),landscape)">
                     <include condition="Substring(Skin.String(widgetlist),landscape) | Window.IsActive(1124)">WidgetLandscapeLayout</include>
                     <control type="image">
@@ -3307,7 +3307,7 @@
                 <control type="group">
                     <posx>1170</posx>
                     <posy>1030</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-65" end="-65" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3328,7 +3328,7 @@
                 </control>
                 <control type="group">
                     <posx>800</posx>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3350,7 +3350,7 @@
                 <control type="group">
                     <posx>500</posx>
                     <posy>150</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3372,7 +3372,7 @@
                 <control type="group">
                     <posx>1550</posx>
                     <posy>300</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3394,7 +3394,7 @@
                 <control type="group">
                     <posx>1000</posx>
                     <posy>170</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3416,7 +3416,7 @@
                 <control type="group">
                     <posx>1900</posx>
                     <posy>-100</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3438,7 +3438,7 @@
                 <control type="group">
                     <posx>1500</posx>
                     <posy>800</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3460,7 +3460,7 @@
                 <control type="group">
                     <posx>1450</posx>
                     <posy>650</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-35" end="-35" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3482,7 +3482,7 @@
                 <control type="group">
                     <posx>1100</posx>
                     <posy>400</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3504,7 +3504,7 @@
                 <control type="group">
                     <posx>700</posx>
                     <posy>400</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
@@ -3536,7 +3536,7 @@
                 <control type="group">
                     <posx>1120</posx>
                     <posy>700</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3556,7 +3556,7 @@
                 </control>
                 <control type="group">
                     <posx>700</posx>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3577,7 +3577,7 @@
                 <control type="group">
                     <posx>430</posx>
                     <posy>150</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3598,7 +3598,7 @@
                 <control type="group">
                     <posx>1600</posx>
                     <posy>200</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3619,7 +3619,7 @@
                 <control type="group">
                     <posx>1000</posx>
                     <posy>100</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3640,7 +3640,7 @@
                 <control type="group">
                     <posx>1950</posx>
                     <posy>-100</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3661,7 +3661,7 @@
                 <control type="group">
                     <posx>1700</posx>
                     <posy>800</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3682,7 +3682,7 @@
                 <control type="group">
                     <posx>1470</posx>
                     <posy>510</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3703,7 +3703,7 @@
                 <control type="group">
                     <posx>1050</posx>
                     <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3724,7 +3724,7 @@
                 <control type="group">
                     <posx>600</posx>
                     <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3755,7 +3755,7 @@
                 <control type="group">
                     <posx>1120</posx>
                     <posy>700</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3769,7 +3769,7 @@
                 </control>
                 <control type="group">
                     <posx>700</posx>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3784,7 +3784,7 @@
                 <control type="group">
                     <posx>430</posx>
                     <posy>150</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3799,7 +3799,7 @@
                 <control type="group">
                     <posx>1600</posx>
                     <posy>200</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3814,7 +3814,7 @@
                 <control type="group">
                     <posx>1000</posx>
                     <posy>100</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3829,7 +3829,7 @@
                 <control type="group">
                     <posx>1950</posx>
                     <posy>-100</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3844,7 +3844,7 @@
                 <control type="group">
                     <posx>1700</posx>
                     <posy>800</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3859,7 +3859,7 @@
                 <control type="group">
                     <posx>1470</posx>
                     <posy>510</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3874,7 +3874,7 @@
                 <control type="group">
                     <posx>1050</posx>
                     <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -3889,7 +3889,7 @@
                 <control type="group">
                     <posx>600</posx>
                     <posy>400</posy>
-                    <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>54</posx>
@@ -4026,8 +4026,8 @@
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">keep</aspectratio>
             <include>Animation_VisibleChange400</include>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),dailybabe)</visible>
         </control>
     </include>
@@ -4668,7 +4668,7 @@
     <include name="Panel2WidgetSquareLayout">
         <control type="group">
             <control type="group">
-                <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+                <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" reversible="false">Focus</animation>
                 <control type="image">
                     <posx>20</posx>
                     <posy>15</posy>
@@ -4729,7 +4729,7 @@
     <include name="Panel2WidgetEpisodeLayout">
         <control type="group">
             <control type="group">
-                <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+                <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" reversible="false">Focus</animation>
                 <control type="image">
                     <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
                     <aspectratio scalediffuse="false">scale</aspectratio>
@@ -4812,7 +4812,7 @@
     </include>
     <include name="Panel2WidgetPosterLayout">
         <control type="group">
-            <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+            <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" reversible="false">Focus</animation>
             <control type="image">
                 <posx>11</posx>
                 <posy>32</posy>
@@ -4975,7 +4975,7 @@
     </include>
     <include name="WidgetBannerLayout">
         <control type="image">
-            <animation effect="zoom" center="379,70" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+            <animation effect="zoom" center="379,70" start="95" end="100" time="600" tween="back" reversible="false">Focus</animation>
             <posx>20</posx>
             <posy>8</posy>
             <width>758</width>
@@ -4984,7 +4984,7 @@
             <texture diffuse="thumbs/banner_mask.png">common/black.png</texture>
         </control>
         <control type="image">
-            <animation effect="zoom" center="379,70" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+            <animation effect="zoom" center="379,70" start="95" end="100" time="600" tween="back" reversible="false">Focus</animation>
             <posx>20</posx>
             <posy>8</posy>
             <width>758</width>
@@ -5109,46 +5109,46 @@
     <include name="IconPanel1Items">
         <item id="1">
             <label>$INFO[Skin.String(IconPanelItem1.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem1.Type),4) + !stringcompare(Skin.String(IconPanelItem1.Type),5) + !stringcompare(Skin.String(IconPanelItem1.Type),6) + !stringcompare(Skin.String(IconPanelItem1.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem1.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem1.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem1.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem1.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem1.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem1.Type),6) | Stringcompare(Skin.String(IconPanelItem1.Type),7)">$INFO[Skin.String(IconPanelItem1.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem1.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem1.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem1,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem1.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
         <item id="2">
             <label>$INFO[Skin.String(IconPanelItem2.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem2.Type),4) + !stringcompare(Skin.String(IconPanelItem2.Type),5) + !stringcompare(Skin.String(IconPanelItem2.Type),6) + !stringcompare(Skin.String(IconPanelItem2.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem2.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem2.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem2.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem2.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem2.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem2.Type),6) | Stringcompare(Skin.String(IconPanelItem2.Type),7)">$INFO[Skin.String(IconPanelItem2.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem2.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem2.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem2,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem2.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
         <item id="3">
             <label>$INFO[Skin.String(IconPanelItem3.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem3.Type),4) + !stringcompare(Skin.String(IconPanelItem3.Type),5) + !stringcompare(Skin.String(IconPanelItem3.Type),6) + !stringcompare(Skin.String(IconPanelItem3.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem3.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem3.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem3.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem3.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem3.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem3.Type),6) | Stringcompare(Skin.String(IconPanelItem3.Type),7)">$INFO[Skin.String(IconPanelItem3.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem3.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem3.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem3,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem3.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
         <item id="4">
             <label>$INFO[Skin.String(IconPanelItem4.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem4.Type),4) + !stringcompare(Skin.String(IconPanelItem4.Type),5) + !stringcompare(Skin.String(IconPanelItem4.Type),6) + !stringcompare(Skin.String(IconPanelItem4.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem4.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem4.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem4.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem4.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem4.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem4.Type),6) | Stringcompare(Skin.String(IconPanelItem4.Type),7)">$INFO[Skin.String(IconPanelItem4.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem4.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem4.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem4,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem4.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
         <item id="5">
             <label>$INFO[Skin.String(IconPanelItem5.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem5.Type),4) + !stringcompare(Skin.String(IconPanelItem5.Type),5) + !stringcompare(Skin.String(IconPanelItem5.Type),6) + !stringcompare(Skin.String(IconPanelItem5.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem5.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem5.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem5.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem5.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem5.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem5.Type),6) | Stringcompare(Skin.String(IconPanelItem5.Type),7)">$INFO[Skin.String(IconPanelItem5.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem5.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem5.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem5,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem5.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
@@ -5156,46 +5156,46 @@
     <include name="IconPanel2Items">
         <item id="6">
             <label>$INFO[Skin.String(IconPanelItem6.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem6.Type),4) + !stringcompare(Skin.String(IconPanelItem6.Type),5) + !stringcompare(Skin.String(IconPanelItem6.Type),6) + !stringcompare(Skin.String(IconPanelItem6.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem6.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem6.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem6.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem6.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem6.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem6.Type),6) | Stringcompare(Skin.String(IconPanelItem6.Type),7)">$INFO[Skin.String(IconPanelItem6.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem6.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem6.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem6,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem6.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
         <item id="7">
             <label>$INFO[Skin.String(IconPanelItem7.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem7.Type),4) + !stringcompare(Skin.String(IconPanelItem7.Type),5) + !stringcompare(Skin.String(IconPanelItem7.Type),6) + !stringcompare(Skin.String(IconPanelItem7.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem7.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem7.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem7.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem7.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem7.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem7.Type),6) | Stringcompare(Skin.String(IconPanelItem7.Type),7)">$INFO[Skin.String(IconPanelItem7.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem7.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem7.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem7,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem7.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
         <item id="8">
             <label>$INFO[Skin.String(IconPanelItem8.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem8.Type),4) + !stringcompare(Skin.String(IconPanelItem8.Type),5) + !stringcompare(Skin.String(IconPanelItem8.Type),6) + !stringcompare(Skin.String(IconPanelItem8.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem8.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem8.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem8.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem8.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem8.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem8.Type),6) | Stringcompare(Skin.String(IconPanelItem8.Type),7)">$INFO[Skin.String(IconPanelItem8.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem8.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem8.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem8,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem8.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
         <item id="9">
             <label>$INFO[Skin.String(IconPanelItem9.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem9.Type),4) + !stringcompare(Skin.String(IconPanelItem9.Type),5) + !stringcompare(Skin.String(IconPanelItem9.Type),6) + !stringcompare(Skin.String(IconPanelItem9.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem9.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem9.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem9.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem9.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem9.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem9.Type),6) | Stringcompare(Skin.String(IconPanelItem9.Type),7)">$INFO[Skin.String(IconPanelItem9.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem9.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem9.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem9,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem9.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
         <item id="10">
             <label>$INFO[Skin.String(IconPanelItem10.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem10.Type),4) + !stringcompare(Skin.String(IconPanelItem10.Type),5) + !stringcompare(Skin.String(IconPanelItem10.Type),6) + !stringcompare(Skin.String(IconPanelItem10.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem10.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem10.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem10.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem10.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem10.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem10.Type),6) | Stringcompare(Skin.String(IconPanelItem10.Type),7)">$INFO[Skin.String(IconPanelItem10.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem10.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem10.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem10,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem10.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
@@ -5206,46 +5206,46 @@
     <include name="IconPanel1Items2">
         <item id="1">
             <label>$INFO[Skin.String(IconPanelItem11.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem11.Type),4) + !stringcompare(Skin.String(IconPanelItem11.Type),5) + !stringcompare(Skin.String(IconPanelItem11.Type),6) + !stringcompare(Skin.String(IconPanelItem11.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem11.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem11.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem11.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem11.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem11.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem11.Type),6) | Stringcompare(Skin.String(IconPanelItem11.Type),7)">$INFO[Skin.String(IconPanelItem11.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem11.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem11.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem11,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem11.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
         </item>
         <item id="2">
             <label>$INFO[Skin.String(IconPanelItem12.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem12.Type),4) + !stringcompare(Skin.String(IconPanelItem12.Type),5) + !stringcompare(Skin.String(IconPanelItem12.Type),6) + !stringcompare(Skin.String(IconPanelItem12.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem12.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem12.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem12.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem12.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem12.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem12.Type),6) | Stringcompare(Skin.String(IconPanelItem12.Type),7)">$INFO[Skin.String(IconPanelItem12.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem12.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem12.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem12,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem12.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
         </item>
         <item id="3">
             <label>$INFO[Skin.String(IconPanelItem13.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem13.Type),4) + !stringcompare(Skin.String(IconPanelItem13.Type),5) + !stringcompare(Skin.String(IconPanelItem13.Type),6) + !stringcompare(Skin.String(IconPanelItem13.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem13.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem13.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem13.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem13.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem13.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem13.Type),6) | Stringcompare(Skin.String(IconPanelItem13.Type),7)">$INFO[Skin.String(IconPanelItem13.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem13.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem13.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem13,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem13.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
         </item>
         <item id="4">
             <label>$INFO[Skin.String(IconPanelItem14.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem14.Type),4) + !stringcompare(Skin.String(IconPanelItem14.Type),5) + !stringcompare(Skin.String(IconPanelItem14.Type),6) + !stringcompare(Skin.String(IconPanelItem14.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem14.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem14.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem14.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem14.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem14.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem14.Type),6) | Stringcompare(Skin.String(IconPanelItem14.Type),7)">$INFO[Skin.String(IconPanelItem14.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem14.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem14.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem14,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem14.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
         </item>
         <item id="5">
             <label>$INFO[Skin.String(IconPanelItem15.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem15.Type),4) + !stringcompare(Skin.String(IconPanelItem15.Type),5) + !stringcompare(Skin.String(IconPanelItem15.Type),6) + !stringcompare(Skin.String(IconPanelItem15.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem15.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem15.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem15.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem15.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem15.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem15.Type),6) | Stringcompare(Skin.String(IconPanelItem15.Type),7)">$INFO[Skin.String(IconPanelItem15.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem15.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem15.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem15,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem15.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
         </item>
@@ -5253,46 +5253,46 @@
     <include name="IconPanel2Items2">
         <item id="6">
             <label>$INFO[Skin.String(IconPanelItem16.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem16.Type),4) + !stringcompare(Skin.String(IconPanelItem16.Type),5) + !stringcompare(Skin.String(IconPanelItem16.Type),6) + !stringcompare(Skin.String(IconPanelItem16.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem16.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem16.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem16.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem16.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem16.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem16.Type),6) | Stringcompare(Skin.String(IconPanelItem16.Type),7)">$INFO[Skin.String(IconPanelItem16.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem16.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem16.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem16,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem16.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
         </item>
         <item id="7">
             <label>$INFO[Skin.String(IconPanelItem17.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem17.Type),4) + !stringcompare(Skin.String(IconPanelItem17.Type),5) + !stringcompare(Skin.String(IconPanelItem17.Type),6) + !stringcompare(Skin.String(IconPanelItem17.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem17.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem17.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem17.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem17.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem17.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem17.Type),6) | Stringcompare(Skin.String(IconPanelItem17.Type),7)">$INFO[Skin.String(IconPanelItem17.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem17.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem17.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem17,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem17.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
         </item>
         <item id="8">
             <label>$INFO[Skin.String(IconPanelItem18.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem18.Type),4) + !stringcompare(Skin.String(IconPanelItem18.Type),5) + !stringcompare(Skin.String(IconPanelItem18.Type),6) + !stringcompare(Skin.String(IconPanelItem18.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem18.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem18.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem18.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem18.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem18.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem18.Type),6) | Stringcompare(Skin.String(IconPanelItem18.Type),7)">$INFO[Skin.String(IconPanelItem18.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem18.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem18.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem18,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem18.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
         </item>
         <item id="9">
             <label>$INFO[Skin.String(IconPanelItem19.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem19.Type),4) + !stringcompare(Skin.String(IconPanelItem19.Type),5) + !stringcompare(Skin.String(IconPanelItem19.Type),6) + !stringcompare(Skin.String(IconPanelItem19.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem19.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem19.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem19.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem19.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem19.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem19.Type),6) | Stringcompare(Skin.String(IconPanelItem19.Type),7)">$INFO[Skin.String(IconPanelItem19.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem19.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem19.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem19,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem19.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
         </item>
         <item id="10">
             <label>$INFO[Skin.String(IconPanelItem20.Label)]</label>
-            <onclick condition="!stringcompare(Skin.String(IconPanelItem20.Type),4) + !stringcompare(Skin.String(IconPanelItem20.Type),5) + !stringcompare(Skin.String(IconPanelItem20.Type),6) + !stringcompare(Skin.String(IconPanelItem20.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem20.Path)])</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem20.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem20.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem20.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem20.Path)],return)</onclick>
-            <onclick condition="stringcompare(Skin.String(IconPanelItem20.Type),6) | Stringcompare(Skin.String(IconPanelItem20.Type),7)">$INFO[Skin.String(IconPanelItem20.Path)]</onclick>
+            <property name="Path">$INFO[Skin.String(IconPanelItem20.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem20.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem20,home)</onclick>
+            <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem20.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
         </item>      

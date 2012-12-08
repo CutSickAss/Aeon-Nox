@@ -69,15 +69,15 @@
     <include name="CommonFanartVarsSingle">
         <include>FullscreenDimensions</include>
         <fadetime>FanartCrossfadeTime</fadetime>
-        <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-        <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+        <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+        <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <aspectratio align="center" aligny="top">scale</aspectratio>
         <include>Animation_WindowFade250</include>
     </include>
     <include name="CommonSettingsBackground">
         <control type="multiimage">
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <imagepath background="true">$VAR[SettingsFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">scale</aspectratio>
         </control>
@@ -89,8 +89,8 @@
             <aspectratio align="center" aligny="top">scale</aspectratio>
             <visible>Player.HasAudio + Skin.HasSetting(musicfanarthome)</visible>
             <include>Animation_VisibleChange400</include>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
         </control>
     </include>
     <include name="MusicArtistSlideshowHome">
@@ -100,8 +100,8 @@
             <visible>Player.HasAudio + Skin.HasSetting(artistslideshowhome)</visible>
             <include>Animation_VisibleChange400</include>
             <aspectratio align="center" aligny="top">scale</aspectratio>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
         </control>
     </include>
     <include name="Dialogs_Group">
@@ -1213,10 +1213,10 @@
         <control type="group" id="1">
             <posx>-1536</posx>
             <animation type="WindowOpen">
-                <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" />
             </animation>
             <animation type="WindowClose">
-                <effect type="slide" end="-450,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" end="-450,0" time="600" tween="cubic" />
                 <effect type="fade" start="100" end="0" time="600" />
             </animation>
             <control type="image" id="1">
@@ -1230,10 +1230,10 @@
         </control>
         <control type="group" id="1">
             <animation type="WindowOpen">
-                <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" />
             </animation>
             <animation type="WindowClose">
-                <effect type="slide" end="450,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" end="450,0" time="600" tween="cubic" />
                 <effect type="fade" start="100" end="0" time="600" />
             </animation>
             <control type="label" id="1">
@@ -1343,11 +1343,11 @@
             <posy>789</posy>
             <visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(movies)</visible>
             <animation type="WindowOpen">
-                <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" />
                 <effect type="fade" end="100" time="600" />
             </animation>
             <animation type="WindowClose">
-                <effect type="slide" end="450,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" end="450,0" time="600" tween="cubic" />
                 <effect type="fade" start="100" end="0" time="600" />
             </animation>
             <control type="image">
@@ -1400,10 +1400,10 @@
             <control type="group">
                 <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)</visible>
                 <animation type="WindowOpen">
-                    <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
+                    <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="slide" end="-450,0" time="600" tween="cubic" easing="out" />
+                    <effect type="slide" end="-450,0" time="600" tween="cubic" />
                     <effect type="fade" start="100" end="0" time="600" />
                 </animation>
                 <control type="image">
@@ -1439,10 +1439,10 @@
             <control type="group">
                 <visible>VideoPlayer.Content(files)</visible>
                 <animation type="WindowOpen">
-                    <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
+                    <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="slide" end="450,0" time="600" tween="cubic" easing="out" />
+                    <effect type="slide" end="450,0" time="600" tween="cubic" />
                     <effect type="fade" start="100" end="0" time="600" />
                 </animation>
                 <control type="image">
@@ -1602,7 +1602,7 @@
             <posy>993</posy>
             <animation type="WindowOpen">
                 <effect type="fade" time="200" end="100" />
-                <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
+                <effect type="slide" time="200" start="0,98" end="0,0" tween="cubic" />
             </animation>
             <animation type="WindowClose">
                 <effect type="fade" time="200" start="100" end="0" />
@@ -2163,7 +2163,7 @@
                 <width>960</width>
                 <height>135</height>
                 <itemgap>-18</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <onleft>70013</onleft>
                 <onright>70004</onright>
@@ -2188,7 +2188,7 @@
                 <width>960</width>
                 <height>135</height>
                 <itemgap>-18</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>center</align>
                 <onleft>70002</onleft>
@@ -2262,7 +2262,7 @@
                 <width>960</width>
                 <height>135</height>
                 <itemgap>-18</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>right</align>
                 <onleft>70009</onleft>
@@ -2296,7 +2296,7 @@
                     <width>960</width>
                     <height>135</height>
                     <itemgap>-18</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
+                    <scrolltime tween="sine">200</scrolltime>
                     <orientation>horizontal</orientation>
                     <onup>-</onup>
                     <ondown>-</ondown>
@@ -2329,7 +2329,7 @@
                     <width>960</width>
                     <height>135</height>
                     <itemgap>-18</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
+                    <scrolltime tween="sine">200</scrolltime>
                     <orientation>horizontal</orientation>
                     <align>center</align>
                     <onup>-</onup>
@@ -2437,7 +2437,7 @@
                     <width>960</width>
                     <height>135</height>
                     <itemgap>-18</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
+                    <scrolltime tween="sine">200</scrolltime>
                     <orientation>horizontal</orientation>
                     <align>right</align>
                     <onup>-</onup>
@@ -2493,7 +2493,7 @@
                 <onup>-</onup>
                 <ondown>-</ondown>
                 <itemgap>-18</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <control type="button" id="70031">
                     <width>100</width>
@@ -2520,7 +2520,7 @@
                 <onright>70043</onright>
                 <onup>-</onup>
                 <ondown>-</ondown>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>center</align>
                 <control type="button" id="70034">
@@ -2602,7 +2602,7 @@
                 <onright>70031</onright>
                 <onup>-</onup>
                 <ondown>-</ondown>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>right</align>
                 <animation effect="slide" end="412" time="200" condition="Skin.HasSetting(RemoveVideoPlayerControls)">Conditional</animation>
@@ -2644,7 +2644,7 @@
                 <width>960</width>
                 <height>135</height>
                 <itemgap>7</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
                 <control type="button">
@@ -2684,7 +2684,7 @@
                 <posy>11</posy>
                 <width>960</width>
                 <height>135</height>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>center</align>
                 <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
@@ -2734,7 +2734,7 @@
                 <height>135</height>
                 <itemgap>7</itemgap>
                 <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>right</align>
                 <control type="togglebutton">
@@ -2766,7 +2766,7 @@
                 <width>960</width>
                 <height>135</height>
                 <itemgap>7</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <onup>703</onup>
                 <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
@@ -2810,7 +2810,7 @@
                 <posy>11</posy>
                 <width>960</width>
                 <height>135</height>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>center</align>
                 <onup>703</onup>
@@ -2889,7 +2889,7 @@
                 <width>960</width>
                 <height>135</height>
                 <itemgap>7</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>right</align>
                 <onup>703</onup>
@@ -2945,7 +2945,7 @@
                 <width>1920</width>
                 <height>135</height>
                 <itemgap>7</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <onup>703</onup>
                 <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
@@ -2981,7 +2981,7 @@
                 <width>1920</width>
                 <height>135</height>
                 <itemgap>7</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <onup>703</onup>
                 <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
@@ -3041,7 +3041,7 @@
                 <width>1920</width>
                 <height>135</height>
                 <itemgap>7</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <onup>703</onup>
                 <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
@@ -3089,7 +3089,7 @@
                 <width>640</width>
                 <height>150</height>
                 <itemgap>-25</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>left</align>
                 <onup>707</onup>
@@ -3148,7 +3148,7 @@
                 <width>1920</width>
                 <height>150</height>
                 <itemgap>-25</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>center</align>
                 <onup>707</onup>
@@ -3217,7 +3217,7 @@
                 <width>1920</width>
                 <height>150</height>
                 <itemgap>-25</itemgap>
-                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
                 <align>right</align>
                 <onup>707</onup>
@@ -3287,7 +3287,7 @@
             <width>960</width>
             <height>135</height>
             <itemgap>7</itemgap>
-            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
             <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
             <control type="button">
@@ -3335,7 +3335,7 @@
             <width>960</width>
             <height>135</height>
             <itemgap>7</itemgap>
-            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
             <onup>707</onup>
             <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
@@ -3417,7 +3417,7 @@
             <posy>21</posy>
             <width>960</width>
             <height>135</height>
-            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
             <align>center</align>
             <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
@@ -3473,7 +3473,7 @@
             <posy>21</posy>
             <width>960</width>
             <height>135</height>
-            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
             <align>center</align>
             <onup>707</onup>
@@ -3564,7 +3564,7 @@
             <width>960</width>
             <height>135</height>
             <itemgap>7</itemgap>
-            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
             <align>right</align>
             <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
@@ -3610,7 +3610,7 @@
             <width>960</width>
             <height>135</height>
             <itemgap>7</itemgap>
-            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <scrolltime tween="sine">200</scrolltime>
             <orientation>horizontal</orientation>
             <align>right</align>
             <onup>707</onup>
