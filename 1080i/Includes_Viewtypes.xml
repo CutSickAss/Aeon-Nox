@@ -221,10 +221,10 @@
             <include>HiddenObject</include>
             <onup>50</onup>
             <ondown>50</ondown>
-            <onleft condition="Control.IsVisible(528)">Control.Move(528,-1)</onleft>				
+            <onleft condition="Control.IsVisible(528)">Control.Move(528,-1)</onleft>
             <onright condition="Control.IsVisible(528)">Control.Move(528,1)</onright>
             <onleft condition="!Control.IsVisible(528)">50</onleft>
-            <onright condition="!Control.IsVisible(528)">50</onright>				
+            <onright condition="!Control.IsVisible(528)">50</onright>
             <onclick>SetFocus(50)</onclick>
             <onback>50</onback>
         </control>

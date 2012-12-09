@@ -172,7 +172,7 @@
 		<control type="label">
 		  <posx>159</posx>
 		  <posy>23</posy>
-		  <width>202</width>
+		  <width>210</width>
 		  <include>CuFlVa</include>
 		  <label>$INFO[ListItem.Duration] $LOCALIZE[12391]</label>
 		  <visible>!IsEmpty(ListItem.Duration)</visible>
