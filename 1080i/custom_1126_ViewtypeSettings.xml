@@ -746,7 +746,7 @@
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <onclick>Skin.ToggleSetting(NextAiredInfo)</onclick>
                 <selected>!Skin.HasSetting(NextAiredInfo)</selected>
-                <visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+                <visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
             </control>
             <control type="button" id="1664">
                 <include>Objects_MediaMenuButtonAlt2</include>
