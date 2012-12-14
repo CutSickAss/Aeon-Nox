@@ -1,7 +1,7 @@
 # XBMC Media Center language file
 # Addon Name: Aeon Nox
 # Addon id: skin.aeon.nox
-# Addon version: 4.0.0
+# Addon version: 4.0.1
 # Addon Provider: Big_Noid & phil65
 msgid ""
 msgstr ""
@@ -221,7 +221,10 @@ msgctxt "#31053"
 msgid "Fullscreen"
 msgstr ""
 
-#empty string with id 31054
+msgctxt "#31054"
+msgid "Shadow"
+msgstr ""
+
 #Playlist Editor labels
 
 msgctxt "#31055"
@@ -401,7 +404,6 @@ msgctxt "#31102"
 msgid "Background"
 msgstr ""
 
-
 msgctxt "#31103"
 msgid "Available Groups"
 msgstr ""
@@ -438,7 +440,9 @@ msgctxt "#31111"
 msgid "Recording"
 msgstr ""
 
-#empty string with id 31112
+msgctxt "#31112"
+msgid "Coloured"
+msgstr ""
 
 msgctxt "#31113"
 msgid "Single Image"
@@ -690,7 +694,9 @@ msgctxt "#31220"
 msgid "Random episodes"
 msgstr ""
 
-#empty string with id 31221
+msgctxt "#31221"
+msgid "Default"
+msgstr ""
 
 msgctxt "#31222"
 msgid "Random movies"
@@ -1373,7 +1379,15 @@ msgctxt "#31621"
 msgid "Use Alaska paused label for video OSD"
 msgstr ""
 
-#empty strings from id 31622 to 31626
+msgctxt "#31622"
+msgid "Label"
+msgstr ""
+
+msgctxt "#31623"
+msgid "Slot"
+msgstr ""
+
+#empty strings from id 31624 to 31626
 
 msgctxt "#31627"
 msgid "Hide OSD player controls"
@@ -2412,6 +2426,3 @@ msgstr ""
 msgctxt "#42342"
 msgid "Enter The exact name of the main menu item"
 msgstr ""
-
-
-
