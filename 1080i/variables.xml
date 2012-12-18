@@ -431,7 +431,7 @@
         <value condition="Skin.HasSetting(NoVideoLibraryFanart)">special://skin/backgrounds/movies/</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="!IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MoviesBackground)]</value>
-        <value>special://skin/backgrounds/movies/</value>
+        <value>special://skin/backgrounds/fallback_movies.jpg</value>
     </variable>
     <variable name="TVShowFanartVar">
         <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows) + IsEmpty(Skin.String(TVShowsBackground))">special://skin/backgrounds/tvshows/</value>
