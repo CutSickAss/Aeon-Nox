@@ -23,7 +23,7 @@
             <posx>40</posx>
             <visible>!Skin.HasSetting(quicklistmenu)</visible>
             <control type="grouplist" id="800">
-                <posx>685</posx>
+                <posx>670</posx>
                 <width>550</width>
                 <height>1080</height>
                 <onleft>800</onleft>
@@ -33,7 +33,8 @@
                 <orientation>vertical</orientation>
                 <align>center</align>
                 <control type="image" id="18">
-                    <width>550</width>
+                    <posy>-39</posy>
+                    <width>488</width>
                     <height>39</height>
                     <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
                     <texture>$VAR[ShutdownTopVar]</texture>

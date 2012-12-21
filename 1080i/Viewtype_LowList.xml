@@ -365,7 +365,6 @@
                     <control type="image">
                         <posx>1770</posx>
                         <posy>987</posy>
-						<colordiffuse>-</colordiffuse>
                         <include>OSDFlagVars</include>
                         <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                         <visible>Container.Content(tvshows) | [Container.Content(seasons) + !IsEmpty(ListItem.TVShowTitle)]</visible>
@@ -661,20 +660,20 @@
                         <width>420</width>
                         <height>237</height>
                         <texture diffuse="thumbs/multiplex_tvmask.png" background="true">$INFO[ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>420</width>
                         <height>237</height>
                         <texture diffuse="thumbs/multiplex_tvmask.png" background="true">thumbs/multiplex_tv_glass.png</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <posy>240</posy>
                         <width>420</width>
                         <height>237</height>
                         <texture background="true" flipy="true" diffuse="thumbs/multiplex_tvmaskreflect.png">$INFO[ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="group">
                         <visible>!Skin.HasSetting(nohighlist)</visible>

@@ -165,7 +165,7 @@
                     <height>795</height>
                     <fadetime>400</fadetime>
                     <texture background="true" flipy="true" diffuse="views/tripanel/poster_diffuse_ref.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
                     <posx>55</posx>
@@ -174,13 +174,13 @@
                     <height>795</height>
                     <fadetime>400</fadetime>
                     <texture background="true" diffuse="views/tripanel/poster_diffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
                     <width>640</width>
                     <height>980</height>
                     <texture>views/tripanel/poster_overlay.png</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
             </control>
             <control type="group" id="5203">
@@ -210,7 +210,7 @@
                     <height>732</height>
                     <fadetime>400</fadetime>
                     <texture background="true" flipy="true" diffuse="views/tripanel/poster_diffuse_ref.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
                     <posx>52</posx>
@@ -219,13 +219,13 @@
                     <height>732</height>
                     <fadetime>400</fadetime>
                     <texture background="true" diffuse="views/tripanel/poster_diffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
                 <control type="image">
                     <width>590</width>
                     <height>903</height>
                     <texture>views/tripanel/poster_overlay.png</texture>
-                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
                 </control>
             </control>
             <control type="group" id="5204">

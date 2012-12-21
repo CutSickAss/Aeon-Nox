@@ -62,7 +62,6 @@
                 <control type="image">
                     <posx>1665</posx>
                     <posy>987</posy>
-					<colordiffuse>-</colordiffuse>
                     <include>AudioFlagsVars</include>
                     <animation effect="slide" end="-45" condition="Control.IsVisible(550)">Conditional</animation>
                     <animation effect="slide" end="-2205" condition="Control.IsVisible(514)">Conditional</animation>
@@ -86,7 +85,6 @@
                 <control type="image">
                     <posx>315</posx>
                     <posy>987</posy>
-					<colordiffuse>-</colordiffuse>
                     <include>AudioFlagsVars</include>
                     <visible>!Control.IsVisible(516)</visible>
                     <animation effect="slide" end="450" condition="Control.IsVisible(550)">Conditional</animation>
