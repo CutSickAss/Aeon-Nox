@@ -86,7 +86,7 @@
 		</control>
 		<control type="fadelabel">
 		  <posx>508</posx>
-		  <posy>-42</posy>
+		  <posy>-43</posy>
 		  <width>765</width>
 		  <height>75</height>
 		  <font>Font_Bold19</font>
