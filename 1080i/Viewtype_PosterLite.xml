@@ -305,7 +305,7 @@
 	  </control>
 	  <!-- Title -->
 	  <control type="group">
-		<posx>534</posx>
+		<posx>530</posx>
 		<posy>0</posy>
 		<control type="group">
 		  <visible>!Skin.HasSetting(ClassicTopBar)+!Skin.HasSetting(disabletopbar)</visible>
@@ -535,7 +535,7 @@
   </include>
   <include name="PLTopT">
 	<control type="image">
-	  <width>854</width>
+	  <width>841</width>
 	  <height>126</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio>stretch</aspectratio>
@@ -545,8 +545,8 @@
 	</control>
 	<control type="fadelabel">
 	  <posx>114</posx>
-	  <posy>-8</posy>
-	  <width>624</width>
+	  <posy>-7</posy>
+	  <width>611</width>
 	  <height>75</height>
 	  <align>center</align>
 	  <aligny>center</aligny>
