@@ -4,10 +4,10 @@
         <control type="group">
             <posy>472</posy>
             <visible>Skin.HasSetting(AlternateTimeStats) + [!Skin.HasSetting(DisableLibraryStats) | !Skin.HasSetting(DisableTimePanel)]</visible>
-            <animation effect="slide" end="-1860,0" time="300">WindowClose</animation>
-            <animation effect="slide" start="-1860,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
-            <animation effect="slide" start="-1860" end="0" time="300">VisibleChange</animation>
-            <animation effect="slide" start="-1860,0" end="0,0" delay="1000" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
+            <animation effect="slide" end="-1920,0" time="300">WindowClose</animation>
+            <animation effect="slide" start="-1920,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
+            <animation effect="slide" start="-1920" end="0" time="300">VisibleChange</animation>
+            <animation effect="slide" start="-1920,0" end="0,0" delay="1000" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
             <animation effect="slide" end="0,338" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + ![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
             <animation effect="slide" end="0,-472" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)">Conditional</animation>
             <control type="image">
@@ -16,6 +16,15 @@
                 <texture flipy="true" flipx="true" border="0,0,80,0">$VAR[TimePanelImageVar]</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 <animation effect="rotatex" end="180" time="400" center="20" tween="cubic" easing="inout" condition="![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
+                <visible>!Skin.HasSetting(alternativerss)</visible>
+            </control>
+            <control type="image">
+                <width>1920</width>
+                <height>87</height>
+                <texture flipy="true" flipx="true">$VAR[NavBarImageVar]</texture>
+                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                <animation effect="rotatex" end="180" time="400" center="20" tween="cubic" easing="inout" condition="![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
+                <visible>Skin.HasSetting(alternativerss)</visible>
             </control>
             <control type="label">
                 <posx>15</posx>
@@ -47,7 +56,7 @@
 				<label>$INFO[Window(Weather).Property(Location),[COLOR grey], • $LOCALIZE[402]: [/COLOR]]$INFO[Window(weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits,,[COLOR grey] • $LOCALIZE[406]:[/COLOR] ]$INFO[Window(weather).Property(Current.Humidity)]</label>
 				<label>$INFO[Window(Home).Property(RandomAddon.Count),[COLOR grey]$LOCALIZE[20161] $LOCALIZE[24001]:[/COLOR] ]</label>
 				<label>$INFO[Window(Home).Property(favourite.count),[COLOR grey]$LOCALIZE[31509]:[/COLOR] ]</label>
-				<label>$INFO[System.CPUUsage,[COLOR grey]$LOCALIZE[13271][/COLOR] ]$INFO[System.memory(used.percent),[COLOR grey] • $LOCALIZE[31309][/COLOR] ]</label>
+				<label>$INFO[System.memory(used.percent),[COLOR grey]$LOCALIZE[31309][/COLOR] ]$INFO[System.CPUUsage,[COLOR grey] • $LOCALIZE[13271][/COLOR] ]</label>
                 <visible>!Skin.HasSetting(DisableLibraryStats) + StringCompare(Control.GetLabel(4326),mixed)</visible>
             </control>
             <control type="label">
@@ -58,8 +67,9 @@
                 <align>right</align>
                 <font>Font_Info_Caps</font>
                 <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                <label>[COLOR grey]$INFO[Window(Weather).Property(Current.Condition)]  •  [/COLOR]$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] •  $INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
+                <label>$VAR[AlternateTimeAndStatsLabelVar]</label>
 				<visible>!Skin.HasSetting(DisableTimePanel)</visible>
+				<animation effect="slide" start="0" end="130" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(alternativerss)">Conditional</animation>
             </control>
         </control>
     </include>
@@ -5118,10 +5128,10 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster,right)">
+                <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                 </itemlayout>
-                <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster,right)">
+                <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                     <control type="image">
                         <posy>10</posy>
@@ -5132,10 +5142,10 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode,right)">
+                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode,right)">
+                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                     <control type="image">
                         <width>798</width>
@@ -5145,10 +5155,10 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square,right)">
+                <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square,right)">
+                <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                     <control type="image">
                         <width>798</width>
@@ -5540,10 +5550,10 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster,right)">
+                <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                 </itemlayout>
-                <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster,right)">
+                <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                     <control type="image">
                         <posy>10</posy>
@@ -5554,10 +5564,10 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode,right)">
+                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode,right)">
+                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                     <control type="image">
                         <width>798</width>
@@ -5567,10 +5577,10 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square,right)">
+                <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square,right)">
+                <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                     <control type="image">
                         <width>798</width>
