@@ -725,10 +725,6 @@
         <value condition="Skin.HasSetting(biggergap)">$LOCALIZE[42261]</value>
         <value>$LOCALIZE[31083]</value>
     </variable>
-    <variable name="Window1137Label1Var">
-        <value condition="Window.IsActive(1124)">$LOCALIZE[31063]</value>
-        <value>$LOCALIZE[31062]?</value>
-    </variable>
     <variable name="LibraryStatsVar">
         <value condition="Stringcompare(Control.GetLabel(4326),movies)">[COLOR grey]$LOCALIZE[31502]:[/COLOR] $INFO[Window(Home).Property(Movies.Count)][COLOR grey]  •  $LOCALIZE[16102]:[/COLOR] $INFO[Window(Home).Property(Movies.Watched)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Movies.UnWatched)]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),tvshows)">[COLOR grey]$LOCALIZE[20343]:[/COLOR] $INFO[Window(Home).Property(TVShows.Count)][COLOR grey]  •  $LOCALIZE[20360]:[/COLOR] $INFO[Window(Home).Property(Episodes.Count)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Episodes.UnWatched)]</value>
@@ -990,12 +986,39 @@
         <value>-</value>
     </variable>
     <variable name="WidgetBackVar">
-        <value condition="StringCompare(Skin.String(WidgetStyle),glass)">keyboard/keyboard_back_classic.png</value>
-        <value>keyboard/keyboard_back.png</value>
+        <value condition="Substring(Control.GetLabel(4321),glass)">keyboard/keyboard_back_classic.png</value>
+        <value condition="Substring(Control.GetLabel(4321),default) | Control.HasFocus(8000)">keyboard/keyboard_back.png</value>
+        <value>-</value>
+    </variable>
+    <variable name="Widget2BackVar">
+        <value condition="Substring(Control.GetLabel(4325),glass)">keyboard/keyboard_back_classic.png</value>
+        <value condition="Substring(Control.GetLabel(4325),default) | Control.HasFocus(7000)">keyboard/keyboard_back.png</value>
+        <value>-</value>
     </variable>
     <variable name="WeatherWidgetBackVar">
-        <value condition="StringCompare(Skin.String(WeatherWidgetStyle),glass)">keyboard/numeric_back_classic.png</value>
-        <value>keyboard/numeric_back.png</value>
+        <value condition="Substring(Control.GetLabel(4321),glass)">keyboard/numeric_back_classic.png</value>
+        <value condition="Substring(Control.GetLabel(4321),default)">keyboard/numeric_back.png</value>
+        <value>-</value>
+    </variable>
+    <variable name="WeatherWidget2BackVar">
+        <value condition="Substring(Control.GetLabel(4325),glass)">keyboard/numeric_back_classic.png</value>
+        <value condition="Substring(Control.GetLabel(4325),default)">keyboard/numeric_back.png</value>
+        <value>-</value>
+    </variable>
+    <variable name="PanelWidgetBackVar">
+        <value condition="Substring(Control.GetLabel(4321),glass)">featured/featured_classic.png</value>
+        <value condition="Substring(Control.GetLabel(4321),default)">featured/panel_featured.png</value>
+        <value>-</value>
+    </variable>
+    <variable name="WidgetStyleLabelVar">
+        <value condition="Stringcompare(Window(1124).Property(Transparency),glass)">$LOCALIZE[31684]</value>
+        <value condition="Stringcompare(Window(1124).Property(Transparency),default)">$LOCALIZE[31221]</value>
+        <value>$LOCALIZE[31195]</value>
+    </variable>
+    <variable name="PanelWidget2BackVar">
+        <value condition="Substring(Control.GetLabel(4325),glass)">featured/featured_classic.png</value>
+        <value condition="Substring(Control.GetLabel(4325),default)">featured/panel_featured.png</value>
+        <value>-</value>
     </variable>
     <variable name="MusicFanartVar">
         <value condition="!Skin.HasSetting(NoMusicLibraryFanart) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
@@ -2352,9 +2375,11 @@
         <value condition="Control.IsVisible(501) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseMovies)]</value>
         <value condition="Control.IsVisible(503) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesLandscape)]</value>
         <value condition="Control.IsVisible(508) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesBanners)]</value>
+        <value condition="Control.IsVisible(57) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShift)]</value>
         <value condition="Control.IsVisible(501) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShowcaseMovies)]</value>
         <value condition="Control.IsVisible(503) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsLandscape)]</value>
         <value condition="Control.IsVisible(508) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsBanners)]</value>
+        <value condition="Control.IsVisible(57) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShift)]</value>
     </variable>
     <variable name="LandscapeThumbSettingsVar">
         <value condition="Skin.HasSetting(LandscapeThumb)">$LOCALIZE[21371]</value>
