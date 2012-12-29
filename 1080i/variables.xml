@@ -2470,7 +2470,7 @@
         <value>FF1C1C1C</value>
     </variable>
     <variable name="PLRatingColor">
-        <value condition="Skin.HasTheme(White)">white</value>
+        <value condition="Substring(Skin.CurrentTheme,whit)">white</value>
         <value>FFFFFF00</value>
     </variable>
     <variable name="PLWatchedIcon">

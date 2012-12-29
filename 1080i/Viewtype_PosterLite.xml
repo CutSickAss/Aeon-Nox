@@ -7,7 +7,7 @@
 	  <include>FullscreenDimensions</include>
 	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <texture>views/logo_back.png</texture>
-	  <animation effect="fade" end="70" time="0" condition="Skin.HasTheme(White)">Conditional</animation>
+	  <animation effect="fade" end="70" time="0" condition="Substring(Skin.CurrentTheme,whit)">Conditional</animation>
 	  <animation effect="slide" end="0,320" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
 	</control>
 	<control type="image">
