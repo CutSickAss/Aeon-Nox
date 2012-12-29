@@ -239,33 +239,21 @@
                 </control>
 
             <!-- PosterLite -->
-            <control type="button" id="1765">
-                <description>Toggle Logo (TV)</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[41159]: [COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label>
-                <onclick condition="!Skin.HasSetting(plcleartv) + !Skin.HasSetting(pllandtv) + !Skin.HasSetting(pllogotv) + !Skin.HasSetting(plnoicontv)">Skin.SetBool(pllandtv)</onclick>
-                <onclick condition="Skin.HasSetting(pllandtv)">Skin.SetBool(pllogotv)</onclick>
-                <onclick condition="Skin.HasSetting(pllandtv)">Skin.Reset(pllandtv)</onclick>
-                <onclick condition="Skin.HasSetting(pllogotv)">Skin.SetBool(plcleartv)</onclick>
-                <onclick condition="Skin.HasSetting(pllogotv)">Skin.Reset(pllogotv)</onclick>
-                <onclick condition="Skin.HasSetting(plcleartv)">Skin.SetBool(plnoicontv)</onclick>
-                <onclick condition="Skin.HasSetting(plcleartv)">Skin.Reset(plcleartv)</onclick>
-                <onclick condition="Skin.HasSetting(plnoicontv) + !Skin.HasSetting(plcleartv) + !Skin.HasSetting(pllogotv) + !Skin.HasSetting(pllandtv)">Skin.Reset(plnoicontv)</onclick>
-                <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+            <control type="label" id="528707">
+                <label>$VAR[PLIconVar]</label>
+                <include>HiddenObject</include>
             </control>
-            <control type="button" id="1766">
-                <description>Toggle Logo (Movies)</description>
+            <control type="button" id="528765">
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[41159]: [COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label>
-                <onclick condition="!Skin.HasSetting(plclear) + !Skin.HasSetting(plland) + !Skin.HasSetting(pllogo) + !Skin.HasSetting(plnoicon)">Skin.SetBool(plland)</onclick>
-                <onclick condition="Skin.HasSetting(plland)">Skin.SetBool(pllogo)</onclick>
-                <onclick condition="Skin.HasSetting(plland)">Skin.Reset(plland)</onclick>
-                <onclick condition="Skin.HasSetting(pllogo)">Skin.SetBool(plclear)</onclick>
-                <onclick condition="Skin.HasSetting(pllogo)">Skin.Reset(pllogo)</onclick>
-                <onclick condition="Skin.HasSetting(plclear)">Skin.SetBool(plnoicon)</onclick>
-                <onclick condition="Skin.HasSetting(plclear)">Skin.Reset(plclear)</onclick>
-                <onclick condition="Skin.HasSetting(plnoicon) + !Skin.HasSetting(plclear) + !Skin.HasSetting(pllogo) + !Skin.HasSetting(plland)">Skin.Reset(plnoicon)</onclick>
-                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+                <label>$LOCALIZE[41159]:</label>
+                <label2>[COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label2>
+                <onclick condition="StringCompare(Control.GetLabel(528707),noicon) | IsEmpty(Control.GetLabel(528707))">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528707),clearart)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],noicon)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528707),logo)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],clearart)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528707),landscape)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],logo)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528707),poster)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],landscape)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528707),noicon)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
+                <visible>StringCompare(Window(home).Property(actualViewtype),PosterLite)</visible>
             </control>
             <control type="radiobutton" id="1769">
 				<description>Poster Animation</description>
@@ -274,14 +262,14 @@
                 <onclick>Skin.ToggleSetting(PLPAn)</onclick>
                 <selected>Skin.HasSetting(PLPAn)</selected>
 				<enable>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![Stringcompare(Control.GetLabel(4421),infopanelon) | Stringcompare(Control.GetLabel(4421),infopaneloff)]</enable>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![[!Container.Content(tvshows)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)|Skin.HasSetting(plnoicon)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)|Skin.HasSetting(plnoicontv)]]]</visible>
+                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + StringCompare(Control.GetLabel(528707),poster)</visible>
             </control>
             <control type="radiobutton" id="1770">
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[42212]</label>
                 <onclick>Skin.ToggleSetting(PLcdART)</onclick>
                 <selected>Skin.HasSetting(PLcdART)</selected>
-                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)|Skin.HasSetting(plnoicon)]</visible>
+                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + StringCompare(Control.GetLabel(528707),poster)</visible>
             </control>
             <control type="togglebutton" id="1767">
                 <description>Toggle Title (TV)</description>
@@ -738,7 +726,7 @@
                     <onclick condition="Skin.HasSetting(watchedoverlay) + Skin.HasSetting(newstatus)">Skin.Reset(watchedoverlay)</onclick>
                     <onclick condition="Skin.HasSetting(watchedoverlay) + Skin.HasSetting(newstatus)">Skin.Reset(newstatus)</onclick>
                     <onclick condition="!Skin.HasSetting(watchedoverlay) + !Skin.HasSetting(newstatus)">Skin.SetBool(watchedoverlay)</onclick>
-                    <visible>[Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),posters) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Substring(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Shift) | [Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![[!Container.Content(tvshows)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plnoicon)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(plnoicontv)]]]]] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+                <visible>[Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),posters) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Substring(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Shift) | [Stringcompare(Window(home).Property(actualViewtype),PosterLite) + [StringCompare(Control.GetLabel(528707),poster) | StringCompare(Control.GetLabel(528707),landscape)]]] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
                 </control>
                 <control type="button" id="266">
                     <label>$LOCALIZE[207]:</label>

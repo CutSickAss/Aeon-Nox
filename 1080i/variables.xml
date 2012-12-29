@@ -2435,24 +2435,6 @@
     </variable>
 
     <!-- PosterLite -->
-    <variable name="PLPlot">
-        <value condition="!Container.Content(tvshows) + !Skin.HasSetting(preferplot) + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
-        <value>$INFO[ListItem.Plot]</value>
-    </variable>
-    <variable name="PLIcon">
-        <value condition="[!Container.Content(tvshows)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$VAR[TVShowLogoVar]</value>
-        <value condition="[!Container.Content(tvshows)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$VAR[TVShowClearArtVar]</value>
-        <value condition="[[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
-        <value condition="[[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(fanart)]</value>
-        <value>$INFO[ListItem.Art(fanart)]</value>
-    </variable>
-    <variable name="PLIconLabel">
-        <value condition="[!Container.Content(tvshows)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]">$LOCALIZE[31059]</value>
-        <value condition="[!Container.Content(tvshows)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]">$LOCALIZE[31086]</value>
-        <value condition="[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]">$LOCALIZE[31150]</value>
-        <value condition="[!Container.Content(tvshows)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]">$LOCALIZE[106]</value>
-        <value>$LOCALIZE[31060]</value>
-    </variable>
     <variable name="PLTitleColor">
         <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
         <value>FF111111</value>
@@ -2470,6 +2452,17 @@
         <value condition="Container.Content(movies) + ListItem.IsFolder + !Stringcompare(ListItem.Label,..)">common/logo_set.png</value>
         <value condition="Container.ListItem.IsResumable + Skin.HasSetting(watchedoverlay)">dialogs/circle/$INFO[ListItem.PercentPlayed].png</value>
         <value condition="!IsEmpty(ListItem.Top250)">common/imdb.png</value>
+    </variable>
+    <variable name="PLIconVar">
+        <value condition="Container.Content(movies)">$INFO[Skin.String(PosterLiteMovies)]</value>
+        <value condition="Container.Content(tvshows)">$INFO[Skin.String(PosterLiteTVShows)]</value>
+    </variable>
+    <variable name="PLIconLabel">
+        <value condition="StringCompare(Control.GetLabel(528707),poster)">$LOCALIZE[31060]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),landscape)">$LOCALIZE[31150]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),logo)">$LOCALIZE[31059]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),clearart)">$LOCALIZE[31086]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),noicon)">$LOCALIZE[106]</value>
     </variable>
 
 </includes>

@@ -55,7 +55,7 @@
 		  <height>175</height>
 		  <aligny>justify</aligny>
 		  <font>Font_Reg24</font>
-		  <label>$VAR[PLPlot]</label>
+		  <label>$VAR[GlobalPlotVar]</label>
 		  <autoscroll time="6000" delay="10000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 		</control>
 		<!-- Movies only -->
@@ -289,14 +289,29 @@
 		  <posx>50</posx>
 		  <posy>330</posy>
 		  <include>PLcdART</include>
-		  <include>PLPosters</include>
-		  <visible>!Control.IsVisible(528199)+[Control.IsVisible(528196)|!Skin.HasSetting(PLPAn)]</visible>
+		  <include>PLPoster</include>
+		  <visible>StringCompare(Control.GetLabel(528707),poster)+[Control.IsVisible(528196)|!Skin.HasSetting(PLPAn)]</visible>
 		</control>
 		<control type="group">
 		  <posx>18</posx>
 		  <posy>810</posy>
-		  <include>PLLogos</include>
-		  <visible>Control.IsVisible(528199)+Control.IsVisible(528196)</visible>
+		  <include>PLLand</include>
+		  <visible>StringCompare(Control.GetLabel(528707),landscape)+Control.IsVisible(528196)</visible>
+		</control>
+		<control type="group">
+		  <posx>18</posx>
+		  <posy>810</posy>
+		  <include>PLLogo</include>
+		  <visible>StringCompare(Control.GetLabel(528707),logo)+Control.IsVisible(528196)</visible>
+		</control>
+		<control type="group">
+		  <posx>18</posx>
+		  <posy>810</posy>
+		  <include>PLClear</include>
+		  <visible>StringCompare(Control.GetLabel(528707),clearart)+Control.IsVisible(528196)</visible>
+		</control>
+		<control type="group">
+		  <visible>StringCompare(Control.GetLabel(528707),noicon)</visible>
 		</control>
 	  </control>
 	  <!-- Title -->
@@ -334,16 +349,16 @@
 	<preloaditems>2</preloaditems>
 	<scrolltime tween="quadratic" easing="out">300</scrolltime>
 	<include>Animation_OpenCloseZoom_New</include>
-	<itemlayout width="190" height="1000" condition="!Control.IsVisible(528199)+!Control.IsVisible(528196)">
+	<itemlayout width="190" height="1000" condition="StringCompare(Control.GetLabel(528707),poster)+!Control.IsVisible(528196)">
 	  <control type="group">
 		<posx>-75</posx>
 		<posy>605</posy>
 		<animation effect="zoom" center="auto" start="39" end="39" time="0" condition="true">Conditional</animation>
 		<include>PosFade</include>
-		<include>PLPosters</include>
+		<include>PLPoster</include>
 	  </control>
 	</itemlayout>
-	<focusedlayout width="478" height="768" condition="!Control.IsVisible(528199)+!Control.IsVisible(528196)+Skin.HasSetting(PLPAn)">
+	<focusedlayout width="478" height="768" condition="StringCompare(Control.GetLabel(528707),poster)+!Control.IsVisible(528196)+Skin.HasSetting(PLPAn)">
 	  <control type="group">
 		<posx>8</posx>
 		<posy>330</posy>
@@ -351,29 +366,77 @@
 		<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<include>PLcdART</include>
-		<include>PLPosters</include>
+		<include>PLPoster</include>
 	  </control>
 	</focusedlayout>
-	<focusedlayout width="478" height="768" condition="!Control.IsVisible(528199)+!Control.IsVisible(528196)+!Skin.HasSetting(PLPAn)"></focusedlayout>
-	<itemlayout width="420" height="1000" condition="Control.IsVisible(528196)"></itemlayout>
-	<focusedlayout width="570" height="768" condition="Control.IsVisible(528196)"></focusedlayout>
-	<itemlayout width="420" height="164" condition="Control.IsVisible(528199)+!Control.IsVisible(528196)">
+	<focusedlayout width="478" height="768" condition="StringCompare(Control.GetLabel(528707),poster)+!Control.IsVisible(528196)+!Skin.HasSetting(PLPAn)"></focusedlayout>
+	<itemlayout width="420" height="1000" condition="[StringCompare(Control.GetLabel(528707),noicon)|Control.IsVisible(528196)]"></itemlayout>
+	<focusedlayout width="570" height="768" condition="[StringCompare(Control.GetLabel(528707),noicon)|Control.IsVisible(528196)]"></focusedlayout>
+	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),landscape)+!Control.IsVisible(528196)">
 	  <control type="group">
 		<posx>-605</posx>
 		<posy>836</posy>
 		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
-		<include>PLLogos</include>
+		<include>PLLand</include>
 	  </control>
 	</itemlayout>
-	<focusedlayout width="570" height="224" condition="[!Container.Content(tvshows)+Skin.HasSetting(plclear)]|[Container.Content(tvshows)+Skin.HasSetting(plcleartv)]+!Control.IsVisible(528196)">
-	  <include>PLLogosAn</include>
+	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),landscape)">
+	  <control type="group">
+		<posx>-484</posx>
+		<posy>810</posy>
+		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
+		  <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
+		  <effect type="slide" end="-150,4" time="0" />
+		</animation>
+		<include>PLLand</include>
+	  </control>
 	</focusedlayout>
-	<focusedlayout width="570" height="224" condition="[!Container.Content(tvshows)+Skin.HasSetting(pllogo)]|[Container.Content(tvshows)+Skin.HasSetting(pllogotv)]+!Control.IsVisible(528196)">
-	  <include>PLLogosAn</include>
+	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),logo)+!Control.IsVisible(528196)">
+	  <control type="group">
+		<posx>-605</posx>
+		<posy>836</posy>
+		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
+	  	<include>PosFade</include>
+		<include>PLLogo</include>
+	  </control>
+	</itemlayout>
+	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),logo)">
+	  <control type="group">
+		<posx>-484</posx>
+		<posy>810</posy>
+		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
+		  <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
+		  <effect type="slide" end="-150,4" time="0" />
+		</animation>
+		<include>PLLogo</include>
+	  </control>
 	</focusedlayout>
-	<focusedlayout width="570" height="224" condition="[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]+!Control.IsVisible(528196)">
-	  <include>PLLogosAn</include>
+	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),clearart)+!Control.IsVisible(528196)">
+	  <control type="group">
+		<posx>-605</posx>
+		<posy>836</posy>
+		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
+	  	<include>PosFade</include>
+		<include>PLClear</include>
+	  </control>
+	</itemlayout>
+	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),clearart)">
+	  <control type="group">
+		<posx>-484</posx>
+		<posy>810</posy>
+		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
+		  <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
+		  <effect type="slide" end="-150,4" time="0" />
+		</animation>
+		<include>PLClear</include>
+	  </control>
 	</focusedlayout>
   </include>
   
@@ -388,8 +451,7 @@
 	</control>
   </include>
   
-  <include name="PLPosters">
-	<visible>![[!Container.Content(tvshows)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]]</visible>
+  <include name="PLPoster">
 	<control type="image">
 	  <posx>-39</posx>
 	  <posy>-49</posy>
@@ -441,26 +503,13 @@
 	  <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
 	</control>
   </include>
-  <include name="PLLogos">
-	<visible>![[!Container.Content(tvshows)+Skin.HasSetting(plnoicon)]|[Container.Content(tvshows)+Skin.HasSetting(plnoicontv)]]</visible>
-	<control type="textbox">
-	  <posy>10</posy>
-	  <width>518</width>
-	  <height>210</height>
-	  <align>center</align>
-	  <font>Font_MainClassic3</font>
-	  <textcolor>FFE00000</textcolor>
-	  <shadowcolor>black</shadowcolor>
-	  <label>[B]$INFO[ListItem.Label][/B]</label>
-	  <autoscroll time="2000" delay="4000" repeat="4000">true</autoscroll>
-	  <visible>[[[!Container.Content(tvshows)+[Skin.HasSetting(pllogo)|Skin.HasSetting(plclear)]]|[Container.Content(tvshows)+[Skin.HasSetting(pllogotv)|Skin.HasSetting(plcleartv)]]]+IsEmpty(ListItem.Art(clearlogo))]|[[[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+IsEmpty(ListItem.Art(landscape))+IsEmpty(ListItem.Art(fanart))]</visible>
-	</control>
+  <include name="PLLand">
 	<control type="image">
 	  <width>525</width>
 	  <height>204</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="bottom">keep</aspectratio>
-	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[PLIcon]</texture>
+	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[LandscapeThumbVar]</texture>
 	</control>
 	<control type="image">
 	  <posy>205</posy>
@@ -468,12 +517,12 @@
 	  <height>204</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="top">keep</aspectratio>
-	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[PLIcon]</texture>
+	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[LandscapeThumbVar]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
 	<control type="group">
-	  <visible>[[!Container.Content(tvshows)+Skin.HasSetting(plland)]|[Container.Content(tvshows)+Skin.HasSetting(pllandtv)]]+[!IsEmpty(ListItem.Art(landscape))|[IsEmpty(ListItem.Art(landscape))+!IsEmpty(ListItem.Art(fanart))]]+!StringCompare(ListItem.Label,..)</visible>
+	  <visible>[!IsEmpty(ListItem.Art(landscape))|[IsEmpty(ListItem.Art(landscape))+!IsEmpty(ListItem.Art(fanart))]]+!StringCompare(ListItem.Label,..)</visible>
 	  <control type="image">
 		<width>525</width>
 		<height>204</height>
@@ -497,17 +546,66 @@
 	  </control>
 	</control>
   </include>
-  <include name="PLLogosAn">
-	<control type="group">
-	  <posx>-484</posx>
-	  <posy>810</posy>
-	  <animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
-	  <animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
-	  <animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
-		<effect type="zoom" center="-10,900" start="100" end="74" time="300" />
-		<effect type="slide" end="-150,4" time="0" />
-	  </animation>
-	  <include>PLLogos</include>
+  <include name="PLLogo">
+	<control type="textbox">
+	  <posy>10</posy>
+	  <width>518</width>
+	  <height>210</height>
+	  <align>center</align>
+	  <font>Font_MainClassic3</font>
+	  <textcolor>FFE00000</textcolor>
+	  <shadowcolor>black</shadowcolor>
+	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <autoscroll time="2000" delay="4000" repeat="4000">true</autoscroll>
+	  <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
+	</control>
+	<control type="image">
+	  <width>525</width>
+	  <height>204</height>
+	  <fadetime>250</fadetime>
+	  <aspectratio aligny="bottom">keep</aspectratio>
+	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
+	</control>
+	<control type="image">
+	  <posy>205</posy>
+	  <width>525</width>
+	  <height>204</height>
+	  <fadetime>250</fadetime>
+	  <aspectratio aligny="top">keep</aspectratio>
+	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
+	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+	  <visible>!Control.IsVisible(528196)</visible>
+	</control>
+  </include>
+  <include name="PLClear">
+	<control type="textbox">
+	  <posy>10</posy>
+	  <width>518</width>
+	  <height>210</height>
+	  <align>center</align>
+	  <font>Font_MainClassic3</font>
+	  <textcolor>FFE00000</textcolor>
+	  <shadowcolor>black</shadowcolor>
+	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <autoscroll time="2000" delay="4000" repeat="4000">true</autoscroll>
+	  <visible>IsEmpty(ListItem.Art(clearlogo))+IsEmpty(ListItem.Art(clearlogo))</visible>
+	</control>
+	<control type="image">
+	  <width>525</width>
+	  <height>204</height>
+	  <fadetime>250</fadetime>
+	  <aspectratio aligny="bottom">keep</aspectratio>
+	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowClearArtVar]</texture>
+	</control>
+	<control type="image">
+	  <posy>205</posy>
+	  <width>525</width>
+	  <height>204</height>
+	  <fadetime>250</fadetime>
+	  <aspectratio aligny="top">keep</aspectratio>
+	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowClearArtVar]</texture>
+	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
   </include>
   <include name="PLcdART">

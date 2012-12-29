@@ -109,9 +109,9 @@
                 <visible>Control.IsVisible(528194)+SubString(ListItem.Path,videodb://1/7/)</visible>
                 <include>PLDelAn</include>
             </control>
-            <control type="button" id="528199">
+            <control type="label" id="528707">
+                <label>$VAR[PLIconVar]</label>
                 <include>HiddenObject</include>
-                <visible>[[!Container.Content(tvshows)+[Skin.HasSetting(plclear)|Skin.HasSetting(pllogo)|Skin.HasSetting(plland)]]|[Container.Content(tvshows)+[Skin.HasSetting(plcleartv)|Skin.HasSetting(pllogotv)|Skin.HasSetting(pllandtv)]]]</visible>
             </control>
         </control>
 

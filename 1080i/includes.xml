@@ -970,10 +970,11 @@
         <onload>Skin.SetString(CustomHomeItem5.SubMenu,custom5)</onload>
         <onload>Skin.SetString(CustomHomeItem6.SubMenu,custom6)</onload>
         <onload>Skin.SetString(submenulist,music tv movies pvr    custom1 custom2 custom3 custom4 custom5 custom6 videos programs settings  shutdown   weather)</onload>
-        <onload>Skin.SetBool(pllogotv)</onload>
         <onload>Skin.SetBool(pliteback1)</onload>
         <onload>Skin.SetBool(PLPAn)</onload>
-		<onload>Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
+        <onload>Skin.SetString(PosterLiteMovies,poster)</onload>
+        <onload>Skin.SetString(PosterLiteTVShows,poster)</onload>
+        <onload>Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
         <onload>Skin.SetBool(firstrun4.0)</onload>
     </include>
     <include name="DelayAnimations">
