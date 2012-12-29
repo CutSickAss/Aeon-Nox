@@ -293,7 +293,7 @@
 		  <visible>StringCompare(Control.GetLabel(528707),poster)+[Control.IsVisible(528196)|!Skin.HasSetting(PLPAn)]</visible>
 		</control>
 		<control type="group">
-		  <posx>18</posx>
+		  <posx>97</posx>
 		  <posy>810</posy>
 		  <include>PLLand</include>
 		  <visible>StringCompare(Control.GetLabel(528707),landscape)+Control.IsVisible(528196)</visible>
@@ -374,7 +374,7 @@
 	<focusedlayout width="570" height="768" condition="[StringCompare(Control.GetLabel(528707),noicon)|Control.IsVisible(528196)]"></focusedlayout>
 	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),landscape)+!Control.IsVisible(528196)">
 	  <control type="group">
-		<posx>-605</posx>
+		<posx>-526</posx>
 		<posy>836</posy>
 		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
@@ -383,13 +383,13 @@
 	</itemlayout>
 	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),landscape)">
 	  <control type="group">
-		<posx>-484</posx>
+		<posx>-405</posx>
 		<posy>810</posy>
 		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
-		  <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
-		  <effect type="slide" end="-150,4" time="0" />
+		  <effect type="zoom" center="-167,900" start="100" end="74" time="300" />
+		  <effect type="slide" end="-80,4" time="0" />
 		</animation>
 		<include>PLLand</include>
 	  </control>
@@ -504,19 +504,32 @@
 	</control>
   </include>
   <include name="PLLand">
+	<control type="textbox">
+	  <posx>-79</posx>
+	  <posy>10</posy>
+	  <width>518</width>
+	  <height>210</height>
+	  <align>center</align>
+	  <font>Font_MainClassic3</font>
+	  <textcolor>FFE00000</textcolor>
+	  <shadowcolor>black</shadowcolor>
+	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <autoscroll time="2000" delay="4000" repeat="4000">true</autoscroll>
+	  <visible>IsEmpty(ListItem.Art(landscape))+IsEmpty(ListItem.Art(fanart))</visible>
+	</control>
 	<control type="image">
-	  <width>525</width>
-	  <height>204</height>
+	  <width>368</width>
+	  <height>207</height>
 	  <fadetime>250</fadetime>
-	  <aspectratio aligny="bottom">keep</aspectratio>
+	  <aspectratio aligny="bottom">stretch</aspectratio>
 	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[LandscapeThumbVar]</texture>
 	</control>
 	<control type="image">
 	  <posy>205</posy>
-	  <width>525</width>
-	  <height>204</height>
+	  <width>368</width>
+	  <height>207</height>
 	  <fadetime>250</fadetime>
-	  <aspectratio aligny="top">keep</aspectratio>
+	  <aspectratio aligny="top">stretch</aspectratio>
 	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[LandscapeThumbVar]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
 	  <visible>!Control.IsVisible(528196)</visible>
@@ -524,20 +537,20 @@
 	<control type="group">
 	  <visible>[!IsEmpty(ListItem.Art(landscape))|[IsEmpty(ListItem.Art(landscape))+!IsEmpty(ListItem.Art(fanart))]]+!StringCompare(ListItem.Label,..)</visible>
 	  <control type="image">
-		<width>525</width>
-		<height>204</height>
+		<width>368</width>
+		<height>207</height>
 		<fadetime>250</fadetime>
-		<aspectratio>keep</aspectratio>
+		<aspectratio>stretch</aspectratio>
 		<texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass_reflect.png</texture>
 	  </control>
 	  <control type="image">
-		<posx>354</posx>
+		<posx>278</posx>
 		<width>90</width>
 		<height>90</height>
 		<include>OverlayVisibility0</include>
 	  </control>
 	  <control type="image">
-		<posx>415</posx>
+		<posx>338</posx>
 		<width>30</width>
 		<height>30</height>
 		<fadetime>0</fadetime>

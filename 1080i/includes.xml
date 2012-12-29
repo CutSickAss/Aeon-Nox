@@ -974,6 +974,8 @@
         <onload>Skin.SetBool(PLPAn)</onload>
         <onload>Skin.SetString(PosterLiteMovies,poster)</onload>
         <onload>Skin.SetString(PosterLiteTVShows,poster)</onload>
+        <onload>Skin.SetString(PosterLiteGenres,poster)</onload>
+        <onload>Skin.SetString(PosterLiteSets,poster)</onload>
         <onload>Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
         <onload>Skin.SetBool(firstrun4.0)</onload>
     </include>

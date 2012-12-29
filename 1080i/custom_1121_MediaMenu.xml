@@ -214,8 +214,8 @@
                 <item>
                     <label>$LOCALIZE[31972]</label>
                     <onclick>Container.SetViewMode(528)</onclick>
-                    <visible>[Container.Content(movies) | Container.Content(sets) | Container.Content(genres) | Container.Content(tvshows)]</visible>
-                    <visible>![Window.IsActive(videos)+Skin.HasSetting(DisablePosterLiteVL)]</visible>
+                    <visible>Window.IsActive(videos) + [Container.Content(movies) | Container.Content(sets) | Container.Content(genres) | Container.Content(tvshows)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisablePosterLiteVL)]</visible>
                 </item>
             </content>
         </control>
