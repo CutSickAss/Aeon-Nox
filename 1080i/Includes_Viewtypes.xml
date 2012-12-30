@@ -524,7 +524,7 @@
                 <posy>69</posy>
                 <width>798</width>
                 <height>454</height>
-                <aspectratio align="center">scale</aspectratio>
+                <aspectratio align="center">stretch</aspectratio>
                 <fadetime>FanartCrossfadeTime</fadetime>
                 <texture background="true" fallback="special://skin/backgrounds/fallback_movies.jpg">$VAR[FanartTextureVar]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -681,7 +681,7 @@
                     <height>470</height>
                     <fadetime>200</fadetime>
                     <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                    <aspectratio scalediffuse="false" align="center">stretch</aspectratio>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                     <bordersize>7</bordersize>
                     <visible>StringCompare(Control.GetLabel(4420),poster)</visible>
@@ -848,7 +848,7 @@
                         <posy>62</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">scale</aspectratio>
+                        <aspectratio aligny="top">stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb3.jpg]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -858,7 +858,7 @@
                         <posy>315</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">scale</aspectratio>
+                        <aspectratio aligny="top">stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb4.jpg]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -875,7 +875,7 @@
                         <posy>62</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">scale</aspectratio>
+                        <aspectratio aligny="top">stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -885,7 +885,7 @@
                         <posy>315</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">scale</aspectratio>
+                        <aspectratio aligny="top">stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -912,7 +912,7 @@
                         <posy>315</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">scale</aspectratio>
+                        <aspectratio aligny="top">stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>

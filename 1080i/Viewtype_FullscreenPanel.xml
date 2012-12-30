@@ -477,7 +477,7 @@
                             <height>210</height>
                             <bordersize>5</bordersize>
                             <texture background="true" border="5">$VAR[LandscapeThumbVar]</texture>
-                            <aspectratio>scale</aspectratio>
+                            <aspectratio>stretch</aspectratio>
                             <visible>Container.Content(tvshows)</visible>
                         </control>
                         <control type="image">
@@ -588,7 +588,7 @@
                             <height>210</height>
                             <bordersize>5</bordersize>
                             <texture background="true" border="5">$VAR[LandscapeThumbVar]</texture>
-                            <aspectratio>scale</aspectratio>
+                            <aspectratio>stretch</aspectratio>
                             <visible>Container.Content(tvshows)</visible>
                         </control>
                         <control type="image">
@@ -1145,7 +1145,7 @@
             <height>210</height>
             <bordersize>5</bordersize>
             <texture background="true" border="5">$VAR[LandscapeThumbVar]</texture>
-            <aspectratio>scale</aspectratio>
+            <aspectratio>stretch</aspectratio>
             <visible>Container.Content(tvshows)</visible>
         </control>
         <control type="image">
@@ -1220,7 +1220,7 @@
             <height>210</height>
             <bordersize>5</bordersize>
             <texture background="true" border="5">$VAR[LandscapeThumbVar]</texture>
-            <aspectratio>scale</aspectratio>
+            <aspectratio>stretch</aspectratio>
             <visible>Container.Content(tvshows)</visible>
         </control>
         <control type="image">

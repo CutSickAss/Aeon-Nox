@@ -244,7 +244,7 @@
                 <width>212</width>
                 <height>296</height>
                 <texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
                 <bordersize>18</bordersize>
             </control>
             <include>MovieWallIcons</include>
@@ -275,7 +275,7 @@
                     <width>212</width>
                     <height>296</height>
                     <texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>18</bordersize>
                 </control>

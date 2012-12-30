@@ -471,7 +471,7 @@
                 <control type="image">
                     <posx>315</posx>
                     <posy>12</posy>
-                    <include>OSDFlagVars</include>
+                    <include>OSDFlagVarsMPAA</include>
                     <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[VideoRatingFlagVar,flags/rating/,.png]</texture>
                     <visible>!VideoPlayer.Content(files)</visible>
                 </control>

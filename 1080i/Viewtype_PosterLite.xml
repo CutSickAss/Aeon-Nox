@@ -174,18 +174,13 @@
 		  <visible>!IsEmpty(ListItem.Duration)</visible>
 		</control>
 		<control type="image">
-		  <posx>368</posx>
-		  <posy>-2</posy>
-		  <width>136</width>
-		  <height>92</height>
-		  <aspectratio>keep</aspectratio>
-		  <fadetime>250</fadetime>
-		  <!--colordiffuse>white</colordiffuse><!-- "White" for original MPAA ratings -->
+		  <posx>369</posx>
+		  <include>AudioFlagsVarsMPAA</include>
 		  <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
 		</control>
 		<control type="image">
 		  <posx>533</posx>
-		  <posy>-2</posy>
+		  <posy>-1</posy>
 		  <include>CuFlVa</include>
 		  <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
 		</control>
@@ -247,15 +242,9 @@
 		  <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
 		</control>
 		<control type="image">
-		  <posx>408</posx>
+		  <posx>369</posx>
 		  <posy>-25</posy>
-		  <posx>368</posx>
-		  <posy>-2</posy>
-		  <width>136</width>
-		  <height>92</height>
-		  <aspectratio>keep</aspectratio>
-		  <fadetime>250</fadetime>
-		  <!--colordiffuse>white</colordiffuse><!-- "White" for original MPAA ratings -->
+		  <include>AudioFlagsVarsMPAA</include>
 		  <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
 		</control>
 	  </control>
