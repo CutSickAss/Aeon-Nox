@@ -6287,7 +6287,6 @@
                     <aspectratio>keep</aspectratio>
                 </control>
             </control>
-        </control>
     </include>
     <include name="InteractiveCasesBackground">
         <control type="group">
