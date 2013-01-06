@@ -159,33 +159,33 @@
             <animation effect="slide" time="200" end="-770" tween="cubic" condition="Control.IsVisible(512)">Conditional</animation>
         </control>
 		
-		<!-- PosterLite -->
-		<control type="group">
-		  <visible>Control.IsVisible(528)</visible>
-		  <control type="image">
-            <posx>0</posx>
-			<posy>1029</posy>
-			<width>1920</width>
-			<height>60</height>
-			<texture>views/showcase_gradient.png</texture>
-			<include>Animation_CommonFade</include>
-          </control>
-          <control type="scrollbar" id="528061">
-            <posx>712</posx>
-            <posy>1025</posy>
-            <height>40</height>
-            <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(528061) | Control.IsVisible(4050)]">Conditional</animation>
-            <textureslidernib>-</textureslidernib>
-            <textureslidernibfocus>-</textureslidernibfocus>
-            <orientation>horizontal</orientation>
-            <animation effect="zoom" start="70,70" end="125,100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(528061) | Control.IsVisible(4050)">Conditional</animation>
-            <texturesliderbar border="20,0,20,0">views/scrollbarnub-nofocus.png</texturesliderbar>
-            <texturesliderbarfocus border="20,0,20,0">views/scrollbarnub-focus.png</texturesliderbarfocus>
-            <texturesliderbackground border="12,0,12,0">views/scrollbarbacklist2.png</texturesliderbackground>
-            <ondown>109</ondown>
-            <onup>528</onup>
-          </control>
-		</control>
+        <!-- PosterLite -->
+        <control type="group">
+            <visible>Control.IsVisible(528)</visible>
+            <control type="image">
+              <posx>0</posx>
+              <posy>1029</posy>
+              <width>1920</width>
+              <height>60</height>
+              <texture>views/showcase_gradient.png</texture>
+              <include>Animation_CommonFade</include>
+            </control>
+            <control type="scrollbar" id="528061">
+              <posx>712</posx>
+              <posy>1025</posy>
+              <height>40</height>
+              <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(528061) | Control.IsVisible(4050)]">Conditional</animation>
+              <textureslidernib>-</textureslidernib>
+              <textureslidernibfocus>-</textureslidernibfocus>
+              <orientation>horizontal</orientation>
+              <animation effect="zoom" start="70,70" end="125,100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(528061) | Control.IsVisible(4050)">Conditional</animation>
+              <texturesliderbar border="20,0,20,0">views/scrollbarnub-nofocus.png</texturesliderbar>
+              <texturesliderbarfocus border="20,0,20,0">views/scrollbarnub-focus.png</texturesliderbarfocus>
+              <texturesliderbackground border="12,0,12,0">views/scrollbarbacklist2.png</texturesliderbackground>
+              <ondown>109</ondown>
+              <onup>528</onup>
+            </control>
+        </control>
 
         <control type="image" id="4050">
             <visible>Container.Scrolling</visible>

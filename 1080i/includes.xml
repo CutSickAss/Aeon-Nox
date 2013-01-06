@@ -979,6 +979,9 @@
         <onload>Skin.SetString(PosterLiteGenres,poster)</onload>
         <onload>Skin.SetString(PosterLiteSets,poster)</onload>
         <onload>Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
+        <onload>Skin.SetString(InfoPanelMovies,infopanelonmanual)</onload>
+        <onload>Skin.SetString(InfoPanelTVShows,infopanelonmanual)</onload>
+        <onload>Skin.SetString(plextraicon)</onload>
         <onload>Skin.SetBool(firstrun4.0)</onload>
     </include>
     <include name="DelayAnimations">

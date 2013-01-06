@@ -193,7 +193,7 @@
         <value>grey</value>
     </variable>
     <variable name="ExtendedColorVar">
-        <value condition="[Skin.HasSetting(ExtendedGlowMode) | Skin.HasSetting(colordialogs)]">$VAR[ColorDiffuseVar]</value>
+        <value condition="[Skin.HasSetting(ExtendedGlowMode) | Skin.HasSetting(colorpanels)]">$VAR[ColorDiffuseVar]</value>
         <value>FFFFFFFF</value>
     </variable>
     <variable name="QuickNavButtonLabelVar">
@@ -953,7 +953,7 @@
     </variable>
     <variable name="MultiFanartVar">
         <value condition="Window.IsActive(1124) + [Window.IsActive(1122) | Window.IsActive(1136)]">$INFO[Skin.String(ItemToEdit.MultiFanart)]</value>
-        <value condition="Control.HasFocus(9010) + !IsEmpty(Container(9010).ListItem.Thumb)">$INFO[Container(9010).ListItem.Icon]</value>
+        <value condition="Control.HasFocus(9010) + !IsEmpty(Container(9010).ListItem.Icon)">$INFO[Container(9010).ListItem.Icon]</value>
         <value condition="!IsEmpty(Container(9000).ListItem.Icon)">$INFO[Container(9000).ListItem.Icon]</value>
         <value condition="Window.IsActive(1128)">special://skin/backgrounds/color.jpg</value>
         <value condition="Window.IsActive(1131)">special://skin/backgrounds/system/</value>
@@ -2458,6 +2458,10 @@
         <value condition="Stringcompare(Container(9000).ListItem(22).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,22)</value>
         <value condition="Stringcompare(Container(9000).ListItem(23).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,23)</value>
     </variable>
+    <variable name="AlternateTimeAndStatsLabelVar">
+        <value condition="Window.IsActive(1124) + ![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] •  $INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</value>
+        <value>[COLOR grey]$INFO[Window(Weather).Property(Current.Condition)]  •  [/COLOR]$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] •  $INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</value>
+    </variable>
 
     <!-- PosterLite -->
     <variable name="PLTitleColor">
@@ -2489,6 +2493,7 @@
         <value condition="StringCompare(Control.GetLabel(528707),landscape)">$LOCALIZE[31150]</value>
         <value condition="StringCompare(Control.GetLabel(528707),logo)">$LOCALIZE[31059]</value>
         <value condition="StringCompare(Control.GetLabel(528707),clearart)">$LOCALIZE[31086]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),banner)">$LOCALIZE[31058]</value>
         <value condition="StringCompare(Control.GetLabel(528707),noicon)">$LOCALIZE[106]</value>
     </variable>
 
