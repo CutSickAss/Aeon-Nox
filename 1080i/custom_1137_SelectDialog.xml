@@ -1,63 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window id="1137" type="dialog">
-    <defaultcontrol>11</defaultcontrol>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem1) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem1)]</onload>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem2) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem2)]</onload>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem3) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem3)]</onload>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem4) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem4)]</onload>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem5) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem5)]</onload>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem6) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem6)]</onload>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem7) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem7)]</onload>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem8) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem8)]</onload>
-    <onload condition="!Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem9) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupCustomHomeItem9)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem1) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem1)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem2) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem2)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem3) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem3)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem4) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem4)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem5) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem5)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem6) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem6)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem7) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem7)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem8) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem8)]</onload>
-    <onload condition="Skin.HasSetting(Nox.widget2) + Stringcompare(Skin.String(Nox.MenuItem),CustomHomeItem9) + [Stringcompare(Skin.String(Nox.ItemToEdit.Type),4) | Stringcompare(Skin.String(Nox.ItemToEdit.Type),5)]">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem9)]</onload>
-    <onunload>ClearProperty(CustomYesNoDialog,home)</onunload>
-    <onunload>ClearProperty(CustomYesNoDialog,1124)</onunload>
+    <defaultcontrol>5400</defaultcontrol>
     <onload>Dialog.Close(1133)</onload>
-    <zorder>4</zorder>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+<!--     <onunload>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)]Title)</onunload>
+ -->    <zorder>4</zorder>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
     <include>Animation_DialogPopup</include>
     <controls>
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <colordiffuse>black</colordiffuse>
-            <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-            <texture>common/white.png</texture>
-            <animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
-            <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-            <visible>Substring(Window(home).Property(CustomYesNoDialog),Icon)</visible>
+        <control type="label" id="12112">
+            <label>$INFO[Window(1124).Property(CustomYesNoDialog)]$INFO[Window(1124).Property(WidgetType)]default </label>
+            <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
         </control>
         <control type="group">
-            <animation effect="slide" start="0,0" end="0,-338" time="0" condition="Window.IsActive(1124)">Conditional</animation>
+            <animation effect="slide" end="0,-338" time="0" condition="Window.IsActive(1124)">Conditional</animation>
             <control type="group">
                 <posx>570</posx>
                 <posy>375</posy>
-                <control type="image">
-                    <width>780</width>
-                    <height>330</height>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                    <texture>dialogs/dialog_back.png</texture>
-                </control>
-                <control type="image">
-                    <width>780</width>
-                    <height>330</height>
-                    <texture>dialogs/dialog_back_shadow.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
-                    <include>PanelGlowFade</include>
-                    <include>Animation_VisibleChange400</include>
+                <control type="group">
+                    <animation effect="zoom" end="100,130" center="960,0" time="0" condition="SubString(Window(1124).Property(CustomYesNoDialog),movie) | SubString(Window(1124).Property(CustomYesNoDialog),tv)">Conditional</animation>
+                    <control type="image">
+                        <width>780</width>
+                        <height>330</height>
+                        <texture>dialogs/dialog_back_shadow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>PanelGlowFade</include>
+                    </control>
+                    <control type="image">
+                        <width>780</width>
+                        <height>330</height>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <texture>dialogs/dialog_back.png</texture>
+                    </control>
                 </control>
                 <control type="image">
                     <posx>15</posx>
@@ -71,325 +49,143 @@
                     <height>45</height>
                     <textcolor>white3</textcolor>
                     <align>center</align>
-                    <label>$VAR[Window1137Label1Var]</label>
+                    <label>$LOCALIZE[31272]</label>
                     <scroll>true</scroll>
-                    <textoffsetx>45</textoffsetx>
                 </control>
-                <control type="button" id="10">
-                    <posx>510</posx>
-                    <posy>258</posy>
-                    <width>175</width>
-                    <height>45</height>
-                    <label>$VAR[Window1137RightButtonLabelVar]</label>
-                    <textcolor>grey2</textcolor>
-                    <focusedcolor>white3</focusedcolor>
-                    <disabledcolor>80FFFFFF</disabledcolor>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmovies)">Skin.SetString(Nox.ItemToEdit.Widget,recentmoviespanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommovies)">Skin.SetString(Nox.ItemToEdit.Widget,randommoviespanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmovies)">Skin.SetString(Nox.ItemToEdit.Widget,inprogressmoviespanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttv)">Skin.SetString(Nox.ItemToEdit.Widget,recenttvpanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtv)">Skin.SetString(Nox.ItemToEdit.Widget,randomtvpanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttv)">Skin.SetString(Nox.ItemToEdit.Widget,watchlisttvpanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentsongs)">Skin.SetString(Nox.ItemToEdit.Widget,recentsongspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomsongs)">Skin.SetString(Nox.ItemToEdit.Widget,randomsongspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbums)">Skin.SetString(Nox.ItemToEdit.Widget,randomalbumspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomartists)">Skin.SetString(Nox.ItemToEdit.Widget,randomartistspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbums)">Skin.SetString(Nox.ItemToEdit.Widget,recentalbumspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbumscustom)">Skin.SetString(Nox.ItemToEdit.Widget,randomalbumscustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom)">Skin.SetString(Nox.ItemToEdit.Widget,recentalbumscustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,recentmoviescustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,randommoviescustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,inprogressmoviescustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,watchlisttvcustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,recenttvcustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,randomtvcustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons)">Skin.SetString(Nox.ItemToEdit.Widget,randomaddonspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmusicvideos)">Skin.SetString(Nox.ItemToEdit.Widget,recentmusicvideospanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),actors)">Skin.SetString(Nox.ItemToEdit.Widget,actorspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlistmusic)">Skin.SetString(Nox.ItemToEdit.Widget,watchlistmusicpanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommusicvideos)">Skin.SetString(Nox.ItemToEdit.Widget,randommusicvideospanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randompics)">Skin.SetString(Nox.ItemToEdit.Widget,randompicspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentpics)">Skin.SetString(Nox.ItemToEdit.Widget,recentpicspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss1)">Skin.SetString(Nox.ItemToEdit.Widget,rss1panel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss2)">Skin.SetString(Nox.ItemToEdit.Widget,rss2panel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss3)">Skin.SetString(Nox.ItemToEdit.Widget,rss3panel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmoviespanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommoviespanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,inprogressmoviespanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttv2)">Skin.SetString(Nox.ItemToEdit.Widget2,recenttvpanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtv2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomtvpanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttv2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlisttvpanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentsongs2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentsongspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomsongs2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomsongspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbums2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomalbumspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomartists2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomartistspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbums2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentalbumspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbumscustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomalbumscustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentalbumscustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmoviescustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommoviescustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,inprogressmoviescustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlisttvcustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recenttvcustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomtvcustompanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomaddonspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmusicvideos2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmusicvideospanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),actors2)">Skin.SetString(Nox.ItemToEdit.Widget2,actorspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlistmusic2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlistmusicpanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommusicvideos2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommusicvideospanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randompics2)">Skin.SetString(Nox.ItemToEdit.Widget2,randompicspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentpics2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentpicspanel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss1_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss1panel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss2_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss2panel)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss3_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss3panel)</onfocus>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recentmovies)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recentmovies)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randommovies)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randommovies)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),inprogressmovies)">Skin.SetString(Nox.ItemToEdit.MultiFanart,inprogressmovies)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recenttv)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recenttv)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randomtv)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randomtv)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),watchlisttv)">Skin.SetString(Nox.ItemToEdit.MultiFanart,watchlisttv)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randomalbums)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randomalbums)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recentalbums)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recentalbums)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recentmusicvideos)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recentmusicvideos)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randommusicvideos)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randommusicvideos)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),watchlistmusic)">Skin.SetString(Nox.ItemToEdit.MultiFanart,watchlistmusic)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randompics)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randompics)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recentpics)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recentpics)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart)">Skin.Reset(Nox.ItemToEdit.MultiFanart)</onclick>
-                    <onclick>Dialog.Close(1137)</onclick>
+                <control type="grouplist" id="5400">
+                    <onleft>5400</onleft>
+                    <onright>5400</onright>
+                    <posy>180</posy>
+                    <ondown>5401</ondown>
+                    <onup>5401</onup>
+                    <width>740</width>
+                    <height>200</height>
                     <align>center</align>
-                    <textoffsetx>30</textoffsetx>
-                    <textoffsety />
-                    <onup>10</onup>
-                    <ondown>10</ondown>
-                    <onleft>12</onleft>
-                    <onright>11</onright>
+                    <orientation>horizontal</orientation>
+                    <control type="button" id="10">
+                        <width>175</width>
+                        <height>45</height>
+                        <label>31700</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <onfocus condition="Substring(Window(1124).Property(CustomYesNoDialog),movie) | Substring(Window(1124).Property(CustomYesNoDialog),musicvideo) | Substring(Window(1124).Property(CustomYesNoDialog),actors)">SetProperty(WidgetType,panelcoverposter,1124)</onfocus>
+                        <onfocus condition="Substring(Window(1124).Property(CustomYesNoDialog),babe) | Substring(Window(1124).Property(CustomYesNoDialog),addons) | Substring(Window(1124).Property(CustomYesNoDialog),albums) | Substring(Window(1124).Property(CustomYesNoDialog),artists)">SetProperty(WidgetType,panelcoversquare,1124)</onfocus>
+                        <onfocus condition="Substring(Window(1124).Property(CustomYesNoDialog),tv) | Substring(Window(1124).Property(CustomYesNoDialog),babes) | Substring(Window(1124).Property(CustomYesNoDialog),rss)">SetProperty(WidgetType,panelcoverepisode,1124)</onfocus>
+                        <onfocus condition="Substring(Window(1124).Property(CustomYesNoDialog),roms)">SetProperty(WidgetType,panel,1124)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <onclick>Dialog.Close(1137)</onclick>
+                        <onclick>ActivateWindow(1146)</onclick>
+                        <align>center</align>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+                    <control type="button" id="11">
+                        <width>175</width>
+                        <height>45</height>
+                        <label>31685</label>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <align>center</align>
+                        <textoffsetx>15</textoffsetx>
+                        <onfocus>SetProperty(WidgetType,classic,1124)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <onclick>Dialog.Close(1137)</onclick>
+                        <onclick>ActivateWindow(1146)</onclick>
+                    </control>
+                    <control type="button" id="12">
+                        <width>175</width>
+                        <height>45</height>
+                        <label>31065</label>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <align>center</align>
+                        <textoffsetx>15</textoffsetx>
+                        <!-- widget style -->
+                        <onfocus condition="Substring(Window(1124).Property(CustomYesNoDialog),movie) | Substring(Window(1124).Property(CustomYesNoDialog),musicvideo) | Substring(Window(1124).Property(CustomYesNoDialog),actors)">SetProperty(WidgetType,panel2poster,1124)</onfocus>
+                        <onfocus condition="Substring(Window(1124).Property(CustomYesNoDialog),babe) | Substring(Window(1124).Property(CustomYesNoDialog),addons) | Substring(Window(1124).Property(CustomYesNoDialog),albums) | Substring(Window(1124).Property(CustomYesNoDialog),artists)">SetProperty(WidgetType,panel2square,1124)</onfocus>
+                        <onfocus condition="Substring(Window(1124).Property(CustomYesNoDialog),tv) | Substring(Window(1124).Property(CustomYesNoDialog),babes) | Substring(Window(1124).Property(CustomYesNoDialog),rss)">SetProperty(WidgetType,panel2episode,1124)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <onclick>Dialog.Close(1137)</onclick>
+                        <onclick>ActivateWindow(1146)</onclick>
+                        <visible>!SubString(Window(1124).Property(CustomYesNoDialog),roms)</visible>
+                    </control>
                 </control>
-                <control type="button" id="11">
-                    <posx>100</posx>
-                    <posy>258</posy>
-                    <width>175</width>
-                    <height>45</height>
-                    <label>$VAR[Window1137LeftButtonLabelVar]</label>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <textcolor>grey2</textcolor>
-                    <focusedcolor>white3</focusedcolor>
-                    <disabledcolor>80FFFFFF</disabledcolor>
+                <control type="grouplist" id="5401">
+                    <onleft>5401</onleft>
+                    <onright>5401</onright>
+                    <posy>230</posy>
+                    <ondown>18</ondown>
+                    <onup>5400</onup>
+                    <width>740</width>
+                    <height>200</height>
                     <align>center</align>
-                    <textoffsetx>30</textoffsetx>
-                    <textoffsety />
-                    <onclick>Dialog.Close(1137)</onclick>
-                    <!-- iconpanel -->
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon1)">Skin.Reset(Nox.IconPanelItem1.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon1)">Skin.Reset(Nox.IconPanelItem1.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon1)">Skin.Reset(Nox.IconPanelItem1.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon1)">Skin.Reset(Nox.IconPanelItem1.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon2)">Skin.Reset(Nox.IconPanelItem2.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon2)">Skin.Reset(Nox.IconPanelItem2.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon2)">Skin.Reset(Nox.IconPanelItem2.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon2)">Skin.Reset(Nox.IconPanelItem2.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon3)">Skin.Reset(Nox.IconPanelItem3.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon3)">Skin.Reset(Nox.IconPanelItem3.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon3)">Skin.Reset(Nox.IconPanelItem3.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon3)">Skin.Reset(Nox.IconPanelItem3.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon4)">Skin.Reset(Nox.IconPanelItem4.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon4)">Skin.Reset(Nox.IconPanelItem4.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon4)">Skin.Reset(Nox.IconPanelItem4.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon4)">Skin.Reset(Nox.IconPanelItem4.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon5)">Skin.Reset(Nox.IconPanelItem5.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon5)">Skin.Reset(Nox.IconPanelItem5.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon5)">Skin.Reset(Nox.IconPanelItem5.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon5)">Skin.Reset(Nox.IconPanelItem5.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon6)">Skin.Reset(Nox.IconPanelItem6.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon6)">Skin.Reset(Nox.IconPanelItem6.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon6)">Skin.Reset(Nox.IconPanelItem6.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon6)">Skin.Reset(Nox.IconPanelItem6.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon7)">Skin.Reset(Nox.IconPanelItem7.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon7)">Skin.Reset(Nox.IconPanelItem7.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon7)">Skin.Reset(Nox.IconPanelItem7.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon7)">Skin.Reset(Nox.IconPanelItem7.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon8)">Skin.Reset(Nox.IconPanelItem8.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon8)">Skin.Reset(Nox.IconPanelItem8.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon8)">Skin.Reset(Nox.IconPanelItem8.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon8)">Skin.Reset(Nox.IconPanelItem8.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon9)">Skin.Reset(Nox.IconPanelItem9.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon9)">Skin.Reset(Nox.IconPanelItem9.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon9)">Skin.Reset(Nox.IconPanelItem9.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon9)">Skin.Reset(Nox.IconPanelItem9.Type)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon10)">Skin.Reset(Nox.IconPanelItem10.Label)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon10)">Skin.Reset(Nox.IconPanelItem10.Icon)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon10)">Skin.Reset(Nox.IconPanelItem10.Path)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon10)">Skin.Reset(Nox.IconPanelItem10.Type)</onclick>
-                    <!-- widget style -->
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmovies)">Skin.SetString(Nox.ItemToEdit.Widget,recentmovies)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommovies)">Skin.SetString(Nox.ItemToEdit.Widget,randommovies)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmovies)">Skin.SetString(Nox.ItemToEdit.Widget,inprogressmovies)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttv)">Skin.SetString(Nox.ItemToEdit.Widget,recenttv)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtv)">Skin.SetString(Nox.ItemToEdit.Widget,randomtv)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttv)">Skin.SetString(Nox.ItemToEdit.Widget,watchlisttv)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentsongs)">Skin.SetString(Nox.ItemToEdit.Widget,recentsongs)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomsongs)">Skin.SetString(Nox.ItemToEdit.Widget,randomsongs)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbums)">Skin.SetString(Nox.ItemToEdit.Widget,randomalbums)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomartists)">Skin.SetString(Nox.ItemToEdit.Widget,randomartists)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbums)">Skin.SetString(Nox.ItemToEdit.Widget,recentalbums)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbumscustom)">Skin.SetString(Nox.ItemToEdit.Widget,randomalbumscustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom)">Skin.SetString(Nox.ItemToEdit.Widget,recentalbumscustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,recentmoviescustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,randommoviescustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,inprogressmoviescustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,watchlisttvcustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,recenttvcustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,randomtvcustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons)">Skin.SetString(Nox.ItemToEdit.Widget,randomaddons)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmusicvideos)">Skin.SetString(Nox.ItemToEdit.Widget,recentmusicvideos)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),actors)">Skin.SetString(Nox.ItemToEdit.Widget,actors)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlistmusic)">Skin.SetString(Nox.ItemToEdit.Widget,watchlistmusic)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommusicvideos)">Skin.SetString(Nox.ItemToEdit.Widget,randommusicvideos)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randompics)">Skin.SetString(Nox.ItemToEdit.Widget,randompics)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentpics)">Skin.SetString(Nox.ItemToEdit.Widget,recentpics)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss1)">Skin.SetString(Nox.ItemToEdit.Widget,rss1)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss2)">Skin.SetString(Nox.ItemToEdit.Widget,rss2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss3)">Skin.SetString(Nox.ItemToEdit.Widget,rss3)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmovies)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommovies)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,inprogressmovies)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttv2)">Skin.SetString(Nox.ItemToEdit.Widget2,recenttv)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtv2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomtv)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttv2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlisttv)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentsongs2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentsongs)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomsongs2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomsongs)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbums2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomalbums)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomartists2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomartists)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbums2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentalbums)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbumscustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomalbumscustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentalbumscustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmoviescustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommoviescustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,inprogressmoviescustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlisttvcustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recenttvcustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomtvcustom)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomaddons)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmusicvideos2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmusicvideos)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),actors2)">Skin.SetString(Nox.ItemToEdit.Widget2,actors)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlistmusic2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlistmusic)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommusicvideos2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommusicvideos)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randompics2)">Skin.SetString(Nox.ItemToEdit.Widget2,randompics)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentpics2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentpics)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss1_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss1)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss2_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss3_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss3)</onfocus>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recentmovies) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recentmovies)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randommovies) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randommovies)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),inprogressmovies) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),inprogressmovies)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recenttv) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recenttv)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randomtv) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randomtv)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),watchlisttv) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),watchlisttv)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randomalbums) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randomalbums)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recentalbums) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recentalbums)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recentmusicvideos) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recentmusicvideos)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randommusicvideos) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randommusicvideos)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),watchlistmusic) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),watchlistmusic)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randompics) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),randompics)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recentpics) + Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),recentpics)">Skin.SetString(Nox.ItemToEdit.MultiFanart,widgetfanart)</onclick>
-                    <onup>11</onup>
-                    <ondown>11</ondown>
-                    <onleft>10</onleft>
-                    <onright>12</onright>
-                </control>
-                <control type="button" id="12">
-                    <posx>305</posx>
-                    <posy>258</posy>
-                    <width>175</width>
-                    <height>45</height>
-                    <label>31065</label>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <textcolor>grey2</textcolor>
-                    <focusedcolor>white3</focusedcolor>
-                    <disabledcolor>80FFFFFF</disabledcolor>
-                    <align>center</align>
-                    <textoffsetx>30</textoffsetx>
-                    <textoffsety />
-                    <visible>!Substring(Window(Home).Property(CustomYesNoDialog),Icon)</visible>
-                    <!-- widget style -->
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmovies)">Skin.SetString(Nox.ItemToEdit.Widget,recentmoviespanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommovies)">Skin.SetString(Nox.ItemToEdit.Widget,randommoviespanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmovies)">Skin.SetString(Nox.ItemToEdit.Widget,inprogressmoviespanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttv)">Skin.SetString(Nox.ItemToEdit.Widget,recenttvpanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtv)">Skin.SetString(Nox.ItemToEdit.Widget,randomtvpanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttv)">Skin.SetString(Nox.ItemToEdit.Widget,watchlisttvpanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentsongs)">Skin.SetString(Nox.ItemToEdit.Widget,recentsongspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomsongs)">Skin.SetString(Nox.ItemToEdit.Widget,randomsongspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbums)">Skin.SetString(Nox.ItemToEdit.Widget,randomalbumspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomartists)">Skin.SetString(Nox.ItemToEdit.Widget,randomartistspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbums)">Skin.SetString(Nox.ItemToEdit.Widget,recentalbumspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbumscustom)">Skin.SetString(Nox.ItemToEdit.Widget,randomalbumscustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom)">Skin.SetString(Nox.ItemToEdit.Widget,recentalbumscustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,recentmoviescustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,randommoviescustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom)">Skin.SetString(Nox.ItemToEdit.Widget,inprogressmoviescustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,watchlisttvcustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,recenttvcustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom)">Skin.SetString(Nox.ItemToEdit.Widget,randomtvcustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons)">Skin.SetString(Nox.ItemToEdit.Widget,randomaddonspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmusicvideos)">Skin.SetString(Nox.ItemToEdit.Widget,recentmusicvideospanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),actors)">Skin.SetString(Nox.ItemToEdit.Widget,actorspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlistmusic)">Skin.SetString(Nox.ItemToEdit.Widget,watchlistmusicpanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommusicvideos)">Skin.SetString(Nox.ItemToEdit.Widget,randommusicvideospanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randompics)">Skin.SetString(Nox.ItemToEdit.Widget,randompicspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentpics)">Skin.SetString(Nox.ItemToEdit.Widget,recentpicspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss1)">Skin.SetString(Nox.ItemToEdit.Widget,rss1panel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss2)">Skin.SetString(Nox.ItemToEdit.Widget,rss2panel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss3)">Skin.SetString(Nox.ItemToEdit.Widget,rss3panel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmoviespanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommoviespanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmovies2)">Skin.SetString(Nox.ItemToEdit.Widget2,inprogressmoviespanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttv2)">Skin.SetString(Nox.ItemToEdit.Widget2,recenttvpanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtv2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomtvpanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttv2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlisttvpanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentsongs2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentsongspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomsongs2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomsongspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbums2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomalbumspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomartists2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomartistspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbums2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentalbumspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomalbumscustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomalbumscustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentalbumscustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmoviescustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommoviescustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,inprogressmoviescustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlisttvcustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,recenttvcustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomtvcustompanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons2)">Skin.SetString(Nox.ItemToEdit.Widget2,randomaddonspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmusicvideos2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentmusicvideospanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),actors2)">Skin.SetString(Nox.ItemToEdit.Widget2,actorspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlistmusic2)">Skin.SetString(Nox.ItemToEdit.Widget2,watchlistmusicpanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommusicvideos2)">Skin.SetString(Nox.ItemToEdit.Widget2,randommusicvideospanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randompics2)">Skin.SetString(Nox.ItemToEdit.Widget2,randompicspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentpics2)">Skin.SetString(Nox.ItemToEdit.Widget2,recentpicspanel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss1_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss1panel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss2_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss2panel2)</onfocus>
-                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),rss3_2)">Skin.SetString(Nox.ItemToEdit.Widget2,rss3panel2)</onfocus>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recentmovies2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recentmovies)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randommovies2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randommovies)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),inprogressmovies2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,inprogressmovies)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recenttv2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recenttv)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randomtv2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randomtv)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),watchlisttv2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,watchlisttv)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randomalbums2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randomalbums)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recentalbums2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recentalbums)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),recentmusicvideos2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,recentmusicvideos)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),randommusicvideos2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,randommusicvideos)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),watchlistmusic2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,watchlistmusic)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),watchlistmusic2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,watchlistmusic)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart) + Stringcompare(Skin.String(Nox.ItemToEdit.Widget),watchlistmusic2)">Skin.SetString(Nox.ItemToEdit.MultiFanart,watchlistmusic)</onclick>
-                    <onclick condition="Stringcompare(Skin.String(Nox.ItemToEdit.MultiFanart),widgetfanart)">Skin.Reset(Nox.ItemToEdit.MultiFanart)</onclick>
-                    <onclick>Dialog.Close(1137)</onclick>
-                    <onup>12</onup>
-                    <ondown>12</ondown>
-                    <onleft>11</onleft>
-                    <onright>10</onright>
+                    <orientation>horizontal</orientation>
+                    <control type="button" id="13">
+                        <width>175</width>
+                        <height>45</height>
+                        <label>31059</label>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <align>center</align>
+                        <textoffsetx>15</textoffsetx>
+                        <!-- widget style -->
+                        <onfocus>SetProperty(WidgetType,panellogolayout,1124)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <onclick>Dialog.Close(1137)</onclick>
+                        <onclick>ActivateWindow(1146)</onclick>
+                        <visible>SubString(Window(1124).Property(CustomYesNoDialog),movie) | SubString(Window(1124).Property(CustomYesNoDialog),tv)</visible>
+                    </control>
+                    <control type="button" id="14">
+                        <width>175</width>
+                        <height>45</height>
+                        <label>31086</label>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <align>center</align>
+                        <textoffsetx>15</textoffsetx>
+                        <!-- widget style -->
+                        <onfocus>SetProperty(WidgetType,panelclearartlayout,1124)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <onclick>Dialog.Close(1137)</onclick>
+                        <onclick>ActivateWindow(1146)</onclick>
+                        <visible>SubString(Window(1124).Property(CustomYesNoDialog),movie) | SubString(Window(1124).Property(CustomYesNoDialog),tv)</visible>
+                    </control>
+                    <control type="button" id="17">
+                        <width>175</width>
+                        <height>45</height>
+                        <label>31058</label>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <align>center</align>
+                        <textoffsetx>15</textoffsetx>
+                        <!-- widget style -->
+                        <onfocus>SetProperty(WidgetType,panelbannerlayout,1124)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <onclick>Dialog.Close(1137)</onclick>
+                        <onclick>ActivateWindow(1146)</onclick>
+                        <visible>SubString(Window(1124).Property(CustomYesNoDialog),movie) | SubString(Window(1124).Property(CustomYesNoDialog),tv)</visible>
+                    </control>
+                    <control type="button" id="171">
+                        <width>175</width>
+                        <height>45</height>
+                        <label>31150</label>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white3</focusedcolor>
+                        <align>center</align>
+                        <textoffsetx>15</textoffsetx>
+                        <!-- widget style -->
+                        <onfocus>SetProperty(WidgetType,panellandscape,1124)</onfocus>
+                        <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
+                        <onclick>Dialog.Close(1137)</onclick>
+                        <onclick>ActivateWindow(1146)</onclick>
+                        <visible>SubString(Window(1124).Property(CustomYesNoDialog),movie) | SubString(Window(1124).Property(CustomYesNoDialog),tv)</visible>
+                    </control>
                 </control>
             </control>
         </control>

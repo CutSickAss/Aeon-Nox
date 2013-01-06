@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <allowoverlay>no</allowoverlay>
     <controls>
@@ -29,12 +29,11 @@
                 <posy>-207</posy>
                 <width>1920</width>
                 <height>1080</height>
-                <texture>common/white.png</texture>
-                <colordiffuse>black</colordiffuse>
+                <texture>common/bgcolor.png</texture>
                 <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-                <animation effect="fade" start="0" end="100" time="550" delay="200">Visible</animation>
+                <animation effect="fade" end="100" time="550" delay="200">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-                <visible>Skin.HasSetting(Nox.darkinfopane)</visible>
+                <visible>Skin.HasSetting(darkinfopane)</visible>
             </control>
             <control type="image">
                 <posx>-105</posx>
@@ -42,13 +41,11 @@
                 <height>1080</height>
                 <texture>views/showcase_vignette.png</texture>
                 <colordiffuse>vignette</colordiffuse>
-                <visible>true</visible>
             </control>
             <control type="image">
                 <posx>1329</posx>
                 <width>696</width>
                 <height>1080</height>
-                <visible>true</visible>
                 <colordiffuse>vignette</colordiffuse>
                 <texture flipx="true">views/showcase_vignette.png</texture>
             </control>
@@ -57,8 +54,8 @@
         </control>
         <control type="group">
             <animation type="WindowOpen" reversible="false">
-                <effect type="zoom" start="150" end="100" center="960,540" time="600" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="100" />
+                <effect type="zoom" start="150" end="100" center="960,540" time="600" tween="cubic" />
+                <effect type="fade" end="100" time="100" />
             </animation>
             <animation type="WindowClose" reversible="false">
                 <effect type="fade" start="100" end="0" time="300" />
@@ -74,7 +71,7 @@
                     <texture>wall/wall_bg_glow.png</texture>
                     <include>PanelGlowFade</include>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
                     <posx>112</posx>
@@ -94,12 +91,12 @@
                 </control>
                 <control type="image">
                     <posx>112</posx>
-                    <posy>112</posy>
+                    <posy>108</posy>
                     <width>1695</width>
                     <height>1012</height>
                     <texture>wall/wall_bg_reflection.png</texture>
                 </control>
-                <include condition="Skin.HasSetting(Nox.effect_bg)">BG_Effect_NextAired_Panel</include>
+                <include condition="Skin.HasSetting(effect_bg)">BG_Effect_NextAired_Panel</include>
                 <control type="label">
                     <posx>132</posx>
                     <posy>100</posy>
@@ -108,8 +105,6 @@
                     <font>Font_Reg22_Caps</font>
                     <label>$LOCALIZE[41]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[41])">Conditional</animation>
                 </control>
                 <control type="label">
@@ -118,11 +113,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg22_Caps</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[42])">Conditional</animation>
                     <label>$LOCALIZE[42]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>477</posx>
@@ -130,11 +123,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg22_Caps</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[43])">Conditional</animation>
                     <label>$LOCALIZE[43]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>650</posx>
@@ -142,11 +133,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg22_Caps</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[44])">Conditional</animation>
                     <label>$LOCALIZE[44]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>822</posx>
@@ -154,11 +143,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg22_Caps</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[45])">Conditional</animation>
                     <label>$LOCALIZE[45]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>994</posx>
@@ -166,11 +153,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg22_Caps</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[46])">Conditional</animation>
                     <label>$LOCALIZE[46]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>1167</posx>
@@ -178,11 +163,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg22_Caps</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[47])">Conditional</animation>
                     <label>$LOCALIZE[47]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>132</posx>
@@ -192,8 +175,6 @@
                     <font>Font_Reg17</font>
                     <label>$INFO[Window(Home).Property(NextAired.1.Date)]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[41])">Conditional</animation>
                 </control>
                 <control type="label">
@@ -202,11 +183,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg17</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[42])">Conditional</animation>
                     <label>$INFO[Window(Home).Property(NextAired.2.Date)]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>477</posx>
@@ -214,11 +193,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg17</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[43])">Conditional</animation>
                     <label>$INFO[Window(Home).Property(NextAired.3.Date)]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>650</posx>
@@ -226,11 +203,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg17</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[44])">Conditional</animation>
                     <label>$INFO[Window(Home).Property(NextAired.4.Date)]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>822</posx>
@@ -238,11 +213,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg17</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[45])">Conditional</animation>
                     <label>$INFO[Window(Home).Property(NextAired.5.Date)]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>994</posx>
@@ -250,11 +223,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg17</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[46])">Conditional</animation>
                     <label>$INFO[Window(Home).Property(NextAired.6.Date)]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="label">
                     <posx>1167</posx>
@@ -262,11 +233,9 @@
                     <width>172</width>
                     <height>38</height>
                     <font>Font_Reg17</font>
-                    <textcolor>white2</textcolor>
                     <animation effect="fade" start="100" end="65" time="0" condition="!StringCompare(System.Date(ddd),$LOCALIZE[47])">Conditional</animation>
                     <label>$INFO[Window(Home).Property(NextAired.7.Date)]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                 </control>
                 <control type="group" id="9002">
                     <control type="list" id="200">
@@ -689,7 +658,6 @@
                         <height>90</height>
                         <label>$INFO[Container(200).ListItem.Label]</label>
                         <align>right</align>
-                        <aligny>center</aligny>
                         <textcolor>floor</textcolor>
                         <font>Font_Bold22_Caps</font>
                         <scroll>true</scroll>
@@ -723,7 +691,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31190]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -731,9 +698,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(200).ListItem.Property(NextNumber)]: $INFO[Container(200).ListItem.Property(NextTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -742,7 +707,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31189]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -750,9 +714,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(200).ListItem.Property(LatestNumber)]: $INFO[Container(200).ListItem.Property(LatestTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -761,7 +723,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31322]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -770,8 +731,6 @@
                         <height>30</height>
                         <label>$INFO[Container(200).ListItem.Property(LatestDate)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -780,7 +739,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31188]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -789,8 +747,6 @@
                         <height>30</height>
                         <label>$INFO[Container(200).ListItem.Property(Status)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -799,7 +755,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[515]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -808,8 +763,6 @@
                         <height>30</height>
                         <label>$INFO[Container(200).ListItem.Property(Genre)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -818,7 +771,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31453]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -826,9 +778,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(200).ListItem.Property(AirTime)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -837,7 +787,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[2050]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -846,17 +795,14 @@
                         <height>30</height>
                         <label>$INFO[Container(200).ListItem.Property(Runtime),, $LOCALIZE[12391]]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
@@ -865,8 +811,6 @@
                         <height>30</height>
                         <label>$INFO[Container(200).ListItem.Property(Premiered)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="image">
                         <posx>-1119</posx>
@@ -889,7 +833,6 @@
                         <height>90</height>
                         <label>$INFO[Container(201).ListItem.Label]</label>
                         <align>right</align>
-                        <aligny>center</aligny>
                         <textcolor>floor</textcolor>
                         <font>Font_Bold22_Caps</font>
                         <scroll>true</scroll>
@@ -923,7 +866,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31190]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -931,9 +873,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(201).ListItem.Property(NextNumber)]: $INFO[Container(201).ListItem.Property(NextTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -942,7 +882,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31189]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -950,9 +889,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(201).ListItem.Property(LatestNumber)]: $INFO[Container(201).ListItem.Property(LatestTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -961,7 +898,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31322]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -970,8 +906,6 @@
                         <height>30</height>
                         <label>$INFO[Container(201).ListItem.Property(LatestDate)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -980,7 +914,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31188]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -989,8 +922,6 @@
                         <height>30</height>
                         <label>$INFO[Container(201).ListItem.Property(Status)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -999,7 +930,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[515]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1008,8 +938,6 @@
                         <height>30</height>
                         <label>$INFO[Container(201).ListItem.Property(Genre)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1018,7 +946,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31453]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1026,9 +953,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(201).ListItem.Property(AirTime)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1037,7 +962,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[2050]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1046,17 +970,14 @@
                         <height>30</height>
                         <label>$INFO[Container(201).ListItem.Property(Runtime),, $LOCALIZE[12391]]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
@@ -1065,8 +986,6 @@
                         <height>30</height>
                         <label>$INFO[Container(201).ListItem.Property(Premiered)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="image">
                         <posx>-1119</posx>
@@ -1089,7 +1008,6 @@
                         <height>90</height>
                         <label>$INFO[Container(202).ListItem.Label]</label>
                         <align>right</align>
-                        <aligny>center</aligny>
                         <textcolor>floor</textcolor>
                         <font>Font_Bold22_Caps</font>
                         <scroll>true</scroll>
@@ -1123,7 +1041,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31190]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1131,9 +1048,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(202).ListItem.Property(NextNumber)]: $INFO[Container(202).ListItem.Property(NextTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1142,7 +1057,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31189]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1150,9 +1064,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(202).ListItem.Property(LatestNumber)]: $INFO[Container(202).ListItem.Property(LatestTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1161,7 +1073,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31322]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1170,8 +1081,6 @@
                         <height>30</height>
                         <label>$INFO[Container(202).ListItem.Property(LatestDate)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1180,7 +1089,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31188]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1189,8 +1097,6 @@
                         <height>30</height>
                         <label>$INFO[Container(202).ListItem.Property(Status)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1199,7 +1105,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[515]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1208,8 +1113,6 @@
                         <height>30</height>
                         <label>$INFO[Container(202).ListItem.Property(Genre)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1218,7 +1121,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31453]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1226,9 +1128,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(202).ListItem.Property(AirTime)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1237,7 +1137,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[2050]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1246,17 +1145,14 @@
                         <height>30</height>
                         <label>$INFO[Container(202).ListItem.Property(Runtime),, $LOCALIZE[12391]]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
@@ -1265,8 +1161,6 @@
                         <height>30</height>
                         <label>$INFO[Container(202).ListItem.Property(Premiered)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="image">
                         <posx>-1119</posx>
@@ -1289,7 +1183,6 @@
                         <height>90</height>
                         <label>$INFO[Container(203).ListItem.Label]</label>
                         <align>right</align>
-                        <aligny>center</aligny>
                         <textcolor>floor</textcolor>
                         <font>Font_Bold22_Caps</font>
                         <scroll>true</scroll>
@@ -1323,7 +1216,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31190]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1331,9 +1223,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(203).ListItem.Property(NextNumber)]: $INFO[Container(203).ListItem.Property(NextTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1342,7 +1232,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31189]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1350,9 +1239,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(203).ListItem.Property(LatestNumber)]: $INFO[Container(203).ListItem.Property(LatestTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1361,7 +1248,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31322]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1370,8 +1256,6 @@
                         <height>30</height>
                         <label>$INFO[Container(203).ListItem.Property(LatestDate)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1380,7 +1264,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31188]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1389,8 +1272,6 @@
                         <height>30</height>
                         <label>$INFO[Container(203).ListItem.Property(Status)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1399,7 +1280,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[515]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1408,8 +1288,6 @@
                         <height>30</height>
                         <label>$INFO[Container(203).ListItem.Property(Genre)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1418,7 +1296,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31453]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1426,9 +1303,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(203).ListItem.Property(AirTime)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1437,7 +1312,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[2050]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1446,17 +1320,14 @@
                         <height>30</height>
                         <label>$INFO[Container(203).ListItem.Property(Runtime),, $LOCALIZE[12391]]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
@@ -1465,8 +1336,6 @@
                         <height>30</height>
                         <label>$INFO[Container(203).ListItem.Property(Premiered)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="image">
                         <posx>-1119</posx>
@@ -1489,7 +1358,6 @@
                         <height>90</height>
                         <label>$INFO[Container(204).ListItem.Label]</label>
                         <align>right</align>
-                        <aligny>center</aligny>
                         <textcolor>floor</textcolor>
                         <font>Font_Bold22_Caps</font>
                         <scroll>true</scroll>
@@ -1523,7 +1391,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31190]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1531,9 +1398,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(204).ListItem.Property(NextNumber)]: $INFO[Container(204).ListItem.Property(NextTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1542,7 +1407,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31189]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1550,9 +1414,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(204).ListItem.Property(LatestNumber)]: $INFO[Container(204).ListItem.Property(LatestTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1561,7 +1423,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31322]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1570,8 +1431,6 @@
                         <height>30</height>
                         <label>$INFO[Container(204).ListItem.Property(LatestDate)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1580,7 +1439,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31188]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1589,8 +1447,6 @@
                         <height>30</height>
                         <label>$INFO[Container(204).ListItem.Property(Status)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1599,7 +1455,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[515]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1608,8 +1463,6 @@
                         <height>30</height>
                         <label>$INFO[Container(204).ListItem.Property(Genre)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1618,7 +1471,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31453]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1626,9 +1478,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(204).ListItem.Property(AirTime)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1637,7 +1487,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[2050]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1646,17 +1495,14 @@
                         <height>30</height>
                         <label>$INFO[Container(204).ListItem.Property(Runtime),, $LOCALIZE[12391]]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
@@ -1665,8 +1511,6 @@
                         <height>30</height>
                         <label>$INFO[Container(204).ListItem.Property(Premiered)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="image">
                         <posx>-1119</posx>
@@ -1689,7 +1533,6 @@
                         <height>90</height>
                         <label>$INFO[Container(205).ListItem.Label]</label>
                         <align>right</align>
-                        <aligny>center</aligny>
                         <textcolor>floor</textcolor>
                         <font>Font_Bold22_Caps</font>
                         <scroll>true</scroll>
@@ -1723,7 +1566,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31190]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1731,9 +1573,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(205).ListItem.Property(NextNumber)]: $INFO[Container(205).ListItem.Property(NextTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1742,7 +1582,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31189]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1750,9 +1589,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(205).ListItem.Property(LatestNumber)]: $INFO[Container(205).ListItem.Property(LatestTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1761,7 +1598,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31322]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1770,8 +1606,6 @@
                         <height>30</height>
                         <label>$INFO[Container(205).ListItem.Property(LatestDate)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1780,7 +1614,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31188]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1789,8 +1622,6 @@
                         <height>30</height>
                         <label>$INFO[Container(205).ListItem.Property(Status)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1799,7 +1630,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[515]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1808,8 +1638,6 @@
                         <height>30</height>
                         <label>$INFO[Container(205).ListItem.Property(Genre)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1818,7 +1646,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31453]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1826,9 +1653,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(205).ListItem.Property(AirTime)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1837,7 +1662,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[2050]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1846,17 +1670,14 @@
                         <height>30</height>
                         <label>$INFO[Container(205).ListItem.Property(Runtime),, $LOCALIZE[12391]]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
@@ -1865,8 +1686,6 @@
                         <height>30</height>
                         <label>$INFO[Container(205).ListItem.Property(Premiered)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="image">
                         <posx>-1119</posx>
@@ -1889,7 +1708,6 @@
                         <height>90</height>
                         <label>$INFO[Container(206).ListItem.Label]</label>
                         <align>right</align>
-                        <aligny>center</aligny>
                         <textcolor>floor</textcolor>
                         <font>Font_Bold22_Caps</font>
                         <scroll>true</scroll>
@@ -1923,7 +1741,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31190]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1931,9 +1748,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(206).ListItem.Property(NextNumber)]: $INFO[Container(206).ListItem.Property(NextTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1942,7 +1757,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31189]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1950,9 +1764,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(206).ListItem.Property(LatestNumber)]: $INFO[Container(206).ListItem.Property(LatestTitle)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1961,7 +1773,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31322]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1970,8 +1781,6 @@
                         <height>30</height>
                         <label>$INFO[Container(206).ListItem.Property(LatestDate)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1980,7 +1789,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31188]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1989,8 +1797,6 @@
                         <height>30</height>
                         <label>$INFO[Container(206).ListItem.Property(Status)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -1999,7 +1805,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[515]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -2008,8 +1813,6 @@
                         <height>30</height>
                         <label>$INFO[Container(206).ListItem.Property(Genre)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -2018,7 +1821,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[31453]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -2026,9 +1828,7 @@
                         <width>435</width>
                         <height>30</height>
                         <label>$INFO[Container(206).ListItem.Property(AirTime)]</label>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -2037,7 +1837,6 @@
                         <height>30</height>
                         <label>$LOCALIZE[2050]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>117</posx>
@@ -2046,17 +1845,14 @@
                         <height>30</height>
                         <label>$INFO[Container(206).ListItem.Property(Runtime),, $LOCALIZE[12391]]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label">
                         <posx>350</posx>
@@ -2065,8 +1861,6 @@
                         <height>30</height>
                         <label>$INFO[Container(206).ListItem.Property(Premiered)]</label>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                     </control>
                     <control type="image">
                         <posx>-1119</posx>
@@ -2087,53 +1881,31 @@
             <width>1920</width>
             <height>72</height>
             <texture>views/showcase_gradient.png</texture>
-            <include>Animation_CommonFade</include>
         </control>
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible>Skin.HasSetting(Nox.breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(Nox.GlobalNowPlaying)]</visible>
-                    <itemgap>0</itemgap>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>54</width>
-                        <height>48</height>
-                        <texture>common/tv_icon.png</texture>
-                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,2" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$LOCALIZE[31290]</label>
-                    </control>
+            <include>BreadcrumbsContent</include>
+            <control type="grouplist">
+                <width>1920</width>
+                <align>center</align>
+                <aligny>center</aligny>
+                <itemgap>10</itemgap>
+                <orientation>horizontal</orientation>
+                <animation effect="fade" time="400" delay="400">Visible</animation>
+                <animation effect="fade" time="400">Hidden</animation>
+                <control type="image">
+                    <width>34</width>
+                    <height>42</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>breadcrumbs/items.png</texture>
+                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                    <include>Animation_WindowFade200</include>
+                    <animation effect="slide" end="0,-2" time="0" condition="true">Conditional</animation>
                 </control>
-                <control type="grouplist">
-                    <width>1920</width>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <itemgap>10</itemgap>
-                    <orientation>horizontal</orientation>
-                    <animation effect="fade" time="400" delay="400">Visible</animation>
-                    <animation effect="fade" time="400">Hidden</animation>
-                    <control type="image">
-                        <width>34</width>
-                        <height>42</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>breadcrumbs/items.png</texture>
-                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                        <include>dialogeffect</include>
-                        <animation effect="slide" start="0,0" end="0,-2" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$INFO[Window(Home).Property(NextAired.Total),, $LOCALIZE[20343]]</label>
-                    </control>
+                <control type="label">
+                    <include>BreadcrumbsLabel</include>
+                    <label>$INFO[Window(Home).Property(NextAired.Total),, $LOCALIZE[20343]]</label>
                 </control>
             </control>
             <include>Breadcrumbs_Furniture</include>
@@ -2141,73 +1913,79 @@
         <include>Furniture_NowPlayingWidget</include>
         <!---MEDIA MENU-->
         <control type="group" id="9000">
-            <visible>!Skin.HasSetting(Nox.kioskmode)</visible>
+            <visible>!Skin.HasSetting(kioskmode)</visible>
+            <animation type="Conditional" condition="Window.IsActive(1128) | Window.IsActive(1127)">
+                <effect type="slide" end="-600" time="400" easing="in" tween="cubic" />
+            </animation>
+            <include>Media_Menu_Furniture</include>
             <control type="group">
-                <include>Media_Menu_Furniture</include>
-                <control type="group">
-                    <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119) | Window.IsActive(1126)">
-                        <effect type="fade" start="100" end="0" time="500" reversible="true" />
-                    </animation>
-                    <animation type="Conditional" condition="Window.IsActive(1126)">
-                        <effect type="zoom" end="150,100" time="400" easing="in" tween="cubic" />
-                    </animation>
-                    <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119)">
-                        <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />
-                        <effect type="slide" end="-49" time="400" easing="in" tween="cubic" />
-                    </animation>
-                    <include>Animation_MediaMenuSlide2</include>
-                    <control type="grouplist" id="9003">
-                        <width>450</width>
-                        <height>1080</height>
-                        <itemgap>0</itemgap>
-                        <orientation>vertical</orientation>
-                        <scroll>true</scroll>
-                        <onleft>9002</onleft>
-                        <onright>9002</onright>
-                        <onup>9002</onup>
-                        <ondown>9002</ondown>
-                        <onback>9002</onback>
-                        <control type="button" id="8">
-                            <include>Objects_MediaMenuButtonAlt</include>
-                            <label>5</label>
-                        </control>
-                        <control type="button" id="1601">
-                            <disabledcolor>$VAR[FontColorVar]</disabledcolor>
-                            <font>Font_Reg19_Caps</font>
-                            <include>Objects_MediaMenuButtonAlt</include>
-                            <label>$LOCALIZE[31383]</label>
-                            <enable>no</enable>
-                            <visible>!Skin.HasSetting(Nox.hideoptions) + Skin.HasSetting(Nox.DisableGlowbar)</visible>
-                        </control>
-                        <control type="radiobutton" id="1663">
-                            <include>Objects_MediaMenuButtonAlt</include>
-                            <label>$LOCALIZE[31387]</label>
-                            <onclick>Skin.ToggleSetting(Nox.darkinfopane)</onclick>
-                            <selected>Skin.HasSetting(Nox.darkinfopane)</selected>
-                            <visible>!Skin.HasSetting(Nox.hideoptions) + Skin.HasSetting(Nox.DisableGlowbar)</visible>
-                        </control>
-                        <control type="button" id="1604">
-                            <disabledcolor>$VAR[FontColorVar]</disabledcolor>
-                            <font>Font_Reg19_Caps</font>
-                            <include>Objects_MediaMenuButtonAlt</include>
-                            <label>$LOCALIZE[31185]</label>
-                            <enable>no</enable>
-                        </control>
-                        <control type="button" id="1664">
-                            <include>Objects_MediaMenuButtonAlt</include>
-                            <label>31298</label>
-                            <onclick>ActivateWindow(1128)</onclick>
-                        </control>
+                <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119) | Window.IsActive(1126)">
+                    <effect type="fade" start="100" end="0" time="500" />
+                </animation>
+                <animation type="Conditional" condition="Window.IsActive(1126)">
+                    <effect type="zoom" end="150,100" time="400" easing="in" tween="cubic" />
+                </animation>
+                <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119)">
+                    <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />
+                    <effect type="slide" end="-49" time="400" easing="in" tween="cubic" />
+                </animation>
+                <include>Animation_MediaMenuSlide2</include>
+                <control type="grouplist" id="9003">
+                    <width>450</width>
+                    <height>1080</height>
+                    <orientation>vertical</orientation>
+                    <scroll>true</scroll>
+                    <onleft>9002</onleft>
+                    <onright>9002</onright>
+                    <onup>9002</onup>
+                    <ondown>9002</ondown>
+                    <onback>9002</onback>
+                    <control type="button" id="8">
+                        <include>Objects_MediaMenuButtonAlt</include>
+                        <label>5</label>
                     </control>
-                    <include>QuickNavLabel</include>
+                    <control type="button" id="1601">
+                        <disabledcolor>$VAR[FontColorVar]</disabledcolor>
+                        <font>Font_Bold15_Caps</font>
+                        <include>Objects_MediaMenuButtonAlt</include>
+                        <label>$LOCALIZE[31383]</label>
+                        <enable>no</enable>
+                        <visible>!Skin.HasSetting(hideoptions) + Skin.HasSetting(DisableGlowbar)</visible>
+                    </control>
+                    <control type="radiobutton" id="1663">
+                        <include>Objects_MediaMenuButtonAlt</include>
+                        <label>$LOCALIZE[31387]</label>
+                        <onclick>Skin.ToggleSetting(darkinfopane)</onclick>
+                        <selected>Skin.HasSetting(darkinfopane)</selected>
+                        <visible>!Skin.HasSetting(hideoptions) + Skin.HasSetting(DisableGlowbar)</visible>
+                    </control>
+                    <control type="button" id="1604">
+                        <disabledcolor>$VAR[FontColorVar]</disabledcolor>
+                        <font>Font_Bold15_Caps</font>
+                        <include>Objects_MediaMenuButtonAlt</include>
+                        <label>$LOCALIZE[31185]</label>
+                        <enable>no</enable>
+                    </control>
+                    <control type="button" id="1664">
+                        <include>Objects_MediaMenuButtonAlt</include>
+                        <label>31298</label>
+                        <onclick>ActivateWindow(1128)</onclick>
+                    </control>
                 </control>
+                <include>QuickNavLabel</include>
             </control>
         </control>
         <control type="button" id="9000">
             <include>HiddenObject</include>
-            <enable>Skin.HasSetting(Nox.kioskmode)</enable>
-            <visible>Skin.HasSetting(Nox.kioskmode)</visible>
+            <enable>Skin.HasSetting(kioskmode)</enable>
+            <visible>Skin.HasSetting(kioskmode)</visible>
             <onfocus>SetFocus(50)</onfocus>
+        </control>
+        <control type="button">
+            <include>HiddenObject</include>
+            <visible>!Skin.HasSetting(kioskmode)</visible>
+            <hitrect x="-1" y="0" w="50" h="1080" />
+            <onfocus>SetFocus(9000)</onfocus>
         </control>
     </controls>
 </window>

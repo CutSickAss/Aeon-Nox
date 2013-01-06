@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <allowoverlay>no</allowoverlay>
     <zorder>1</zorder>
     <defaultcontrol>120</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
     <controls>
         <control type="image">
             <include>FullscreenDimensions</include>
             <colordiffuse>white3</colordiffuse>
             <texture>common/black.png</texture>
-            <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+            <animation effect="fade" end="100" time="300">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         </control>
         <control type="image">
@@ -21,9 +21,8 @@
             <posy>23</posy>
             <width>1233</width>
             <height>673</height>
-            <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <include>Animation_VisibleChange400</include>
             <texture>settings/settings_panelback_shadow.png</texture>
         </control>
         <control type="image">
@@ -41,7 +40,6 @@
             <font>Font_ShowcaseMainLabel2</font>
             <label>Channel Rules</label>
             <align>center</align>
-            <aligny>center</aligny>
             <shadowcolor>black</shadowcolor>
         </control>
         <control type="group" id="105">
@@ -53,7 +51,6 @@
                     <posy>120</posy>
                     <width>936</width>
                     <height>494</height>
-                    <itemgap>0</itemgap>
                     <pagecontrol>30</pagecontrol>
                     <onup>2</onup>
                     <ondown>102</ondown>
@@ -68,10 +65,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <visible allowhiddenfocus="true">Control.HasFocus(120) | ![StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)]</visible>
                         <onclick>SetProperty(itempress,120)</onclick>
                         <onclick>SetFocus(130)</onclick>
@@ -85,10 +80,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <visible>![StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)]</visible>
                         <onclick>SetProperty(itempress,121)</onclick>
                         <onclick>SetFocus(130)</onclick>
@@ -102,10 +95,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <visible>![StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)]</visible>
                         <onclick>SetProperty(itempress,122)</onclick>
                         <onclick>SetFocus(130)</onclick>
@@ -119,10 +110,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <visible>![StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)]</visible>
                         <onclick>SetProperty(itempress,123)</onclick>
                         <onclick>SetFocus(130)</onclick>
@@ -136,10 +125,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <visible>![StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)]</visible>
                         <onclick>SetProperty(itempress,124)</onclick>
                         <onclick>SetFocus(130)</onclick>
@@ -153,10 +140,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <visible>![StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)]</visible>
                         <onclick>SetProperty(itempress,125)</onclick>
                         <onclick>SetFocus(130)</onclick>
@@ -170,10 +155,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <visible>![StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)]</visible>
                         <onclick>SetProperty(itempress,126)</onclick>
                         <onclick>SetFocus(130)</onclick>
@@ -187,10 +170,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <onclick>SetProperty(itempress,100)</onclick>
                         <onclick>SetFocus(120)</onclick>
                         <visible allowhiddenfocus="true">Control.HasFocus(130) | StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)</visible>
@@ -203,40 +184,6 @@
                     <width>936</width>
                     <height>581</height>
                     <visible>StringCompare(Window.Property(itempress),120) | StringCompare(Window.Property(itempress),121) | StringCompare(Window.Property(itempress),122) | StringCompare(Window.Property(itempress),123) | StringCompare(Window.Property(itempress),124) | StringCompare(Window.Property(itempress),125) | StringCompare(Window.Property(itempress),126)</visible>
-                    <!--<animation condition="StringCompare(Window.Property(itempress),120)" reversible="false">
-            <effect type="slide" start="0,30" time="500" />
-            <effect type="zoom" start="100,0" time="500" />
-          </animation>
-
-          <animation condition="StringCompare(Window.Property(itempress),121)" reversible="false">
-            <effect type="slide" start="0,65" time="500" />
-            <effect type="zoom" start="100,0" time="500" />
-          </animation>
-
-          <animation condition="StringCompare(Window.Property(itempress),122)" reversible="false">
-            <effect type="slide" start="0,100" time="500" />
-            <effect type="zoom" start="100,0" time="500" />
-          </animation>
-
-          <animation condition="StringCompare(Window.Property(itempress),123)" reversible="false">
-            <effect type="slide" start="0,135" time="500" />
-            <effect type="zoom" start="100,0" time="500" />
-          </animation>
-
-          <animation condition="StringCompare(Window.Property(itempress),124)" reversible="false">
-            <effect type="slide" start="0,170" time="500" />
-            <effect type="zoom" start="100,0" time="500" />
-          </animation>
-
-          <animation condition="StringCompare(Window.Property(itempress),125)" reversible="false">
-            <effect type="slide" start="0,205" time="500" />
-            <effect type="zoom" start="100,0" time="500" />
-          </animation>
-
-          <animation condition="StringCompare(Window.Property(itempress),126)" reversible="false">
-            <effect type="slide" start="0,240" time="500" />
-            <effect type="zoom" start="100,0" time="500" />
-          </animation>-->
                     <control type="group">
                         <width>936</width>
                         <height>49</height>
@@ -250,10 +197,8 @@
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                             <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                             <textcolor>grey2</textcolor>
-                            <focusedcolor>white</focusedcolor>
                             <pulseonselect>false</pulseonselect>
                             <textoffsetx>20</textoffsetx>
-                            <aligny>center</aligny>
                             <onup>130</onup>
                             <ondown>160</ondown>
                             <onleft>9</onleft>
@@ -266,7 +211,6 @@
                         <height>49</height>
                         <font>Font_Reg20</font>
                         <align>center</align>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label" id="151">
                         <posx>448</posx>
@@ -275,7 +219,6 @@
                         <height>49</height>
                         <font>Font_Reg20</font>
                         <align>center</align>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label" id="152">
                         <posx>20</posx>
@@ -284,7 +227,6 @@
                         <height>49</height>
                         <font>Font_Reg20</font>
                         <align>center</align>
-                        <aligny>center</aligny>
                     </control>
                     <control type="label" id="153">
                         <posx>448</posx>
@@ -293,7 +235,6 @@
                         <height>49</height>
                         <font>Font_Reg20</font>
                         <align>center</align>
-                        <aligny>center</aligny>
                     </control>
                     <control type="button" id="160">
                         <posy>98</posy>
@@ -301,7 +242,7 @@
                         <height>49</height>
                         <textoffsetx>20</textoffsetx>
                         <align>center</align>
-                        <texturefocus>settings/settings_radiobuttonofffocus3.png</texturefocus>
+                        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>settings/settings_radiobuttonoff3.png</texturenofocus>
                         <width>936</width>
                         <height>49</height>
@@ -310,10 +251,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <onup>131</onup>
                         <ondown>162</ondown>
                         <onright>161</onright>
@@ -325,7 +264,7 @@
                         <width>448</width>
                         <height>49</height>
                         <align>center</align>
-                        <texturefocus>settings/settings_radiobuttonofffocus3.png</texturefocus>
+                        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>settings/settings_radiobuttonoff3.png</texturenofocus>
                         <width>936</width>
                         <height>49</height>
@@ -334,10 +273,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <onup>131</onup>
                         <ondown>163</ondown>
                         <onleft>160</onleft>
@@ -349,7 +286,7 @@
                         <width>448</width>
                         <height>49</height>
                         <align>center</align>
-                        <texturefocus>settings/settings_radiobuttonofffocus3.png</texturefocus>
+                        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>settings/settings_radiobuttonoff3.png</texturenofocus>
                         <width>936</width>
                         <height>49</height>
@@ -358,10 +295,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <onup>160</onup>
                         <onright>163</onright>
                         <onleft>161</onleft>
@@ -373,7 +308,7 @@
                         <width>448</width>
                         <height>49</height>
                         <align>center</align>
-                        <texturefocus>settings/settings_radiobuttonofffocus3.png</texturefocus>
+                        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>settings/settings_radiobuttonoff3.png</texturenofocus>
                         <width>936</width>
                         <height>49</height>
@@ -382,10 +317,8 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <pulseonselect>false</pulseonselect>
                         <textoffsetx>20</textoffsetx>
-                        <aligny>center</aligny>
                         <onup>161</onup>
                         <onleft>162</onleft>
                     </control>

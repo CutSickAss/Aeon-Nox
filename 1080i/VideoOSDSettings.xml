@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="123">
+<?xml version="1.0" encoding="utf-8"?>
+<window>
     <defaultcontrol>5</defaultcontrol>
     <coordinates>
         <system>1</system>
@@ -16,9 +16,8 @@
                 <height>852</height>
                 <texture>osd/osd_settings_back_glow.png</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
-                <include>Animation_VisibleChange400</include>
             </control>
             <control type="image">
                 <posx>4</posx>
@@ -27,22 +26,48 @@
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <texture>osd/osd_settings_back.png</texture>
             </control>
+            <control type="image">
+                <posx>22</posx>
+                <posy>42</posy>
+                <width>1078</width>
+                <height>60</height>
+                <texture>osd/osd_settings_buttonnf.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
+            <control type="label">
+                <posx>60</posx>
+                <posy>35</posy>
+                <width>1080</width>
+                <height>60</height>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <font>Font_Bold22</font>
+                <label>$LOCALIZE[13396]</label>
+                <visible>Window.IsActive(OSDAudioSettings)</visible>
+            </control>
+            <control type="label">
+                <posx>60</posx>
+                <posy>35</posy>
+                <width>1080</width>
+                <height>60</height>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <font>Font_Bold22</font>
+                <label>$LOCALIZE[13395]</label>
+                <visible>Window.IsActive(OSDVideoSettings)</visible>
+            </control>
             <control type="label" id="3">
                 <posx>120</posx>
                 <posy>45</posy>
-                <width>1322</width>
+                <width>1080</width>
                 <height>45</height>
-                <aligny>center</aligny>
                 <label>$LOCALIZE[13390]</label>
                 <font>Font_Bold19</font>
                 <shadowcolor>black</shadowcolor>
             </control>
             <control type="grouplist" id="5">
                 <posx>21</posx>
-                <posy>37</posy>
+                <posy>110</posy>
                 <width>1080</width>
-                <height>780</height>
-                <itemgap>0</itemgap>
+                <height>700</height>
                 <aligny>center</aligny>
                 <pagecontrol>60</pagecontrol>
                 <onleft>60</onleft>
@@ -57,13 +82,6 @@
                 <posx>1080</posx>
                 <width>46</width>
                 <height>540</height>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <texturesliderbackground>-</texturesliderbackground>
-                <texturesliderbar>-</texturesliderbar>
-                <texturesliderbarfocus>-</texturesliderbarfocus>
-                <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-                <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-                <orientation>vertical</orientation>
                 <onleft>5</onleft>
                 <onright>5</onright>
                 <ondown>61</ondown>
@@ -72,17 +90,9 @@
         </control>
         <control type="sliderex" id="10">
             <width>1272</width>
-            <height>60</height>
-            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-            <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-            <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
-            <texturesliderbar>osd/osd_slider_bg_settings.png</texturesliderbar>
-            <textureslidernib>osd/osd_slider_nib_nf.png</textureslidernib>
-            <textureslidernibfocus>osd/osd_slider_nib.png</textureslidernibfocus>
             <font>Font_Reg20</font>
             <textcolor>grey2</textcolor>
             <textoffsetx>45</textoffsetx>
-            <focusedcolor>white</focusedcolor>
         </control>
         <control type="button" id="7">
             <width>1172</width>
@@ -90,7 +100,6 @@
             <font>Font_Reg20</font>
             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
@@ -102,7 +111,6 @@
             <font>Font_Reg20</font>
             <textcolor>grey2</textcolor>
             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-            <focusedcolor>white</focusedcolor>
             <textoffsetx>45</textoffsetx>
             <radioposx>934</radioposx>
             <colordiffuse>FFFFFFFF</colordiffuse>
@@ -113,19 +121,10 @@
             <height>60</height>
             <font>Font_Reg20</font>
             <textoffsetx>45</textoffsetx>
-            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
-            <colordiffuse>FFFFFFFF</colordiffuse>
             <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
-            <textureup>settings/spin-up.png</textureup>
-            <texturedown>settings/spin-down.png</texturedown>
-            <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-            <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
             <spinposx>13</spinposx>
-            <aligny>center</aligny>
-            <reverse>yes</reverse>
         </control>
     </controls>
 </window>

@@ -1,19 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="3002">
+<?xml version="1.0" encoding="utf-8"?>
+<window>
     <defaultcontrol always="true">450</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
     <controls>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <colordiffuse>black</colordiffuse>
-            <texture>common/white.png</texture>
+            <texture>common/bgcolor.png</texture>
             <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-            <animation effect="fade" start="0" end="100" time="2700" reversible="false">WindowOpen</animation>
+            <animation effect="fade" end="100" time="2700" reversible="false">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         </control>
         <control type="group">
@@ -21,7 +20,7 @@
             <control type="group">
                 <width>609</width>
                 <height>834</height>
-                <animation effect="slide" start="-615,0" end="0,0" time="400" delay="500" tween="cubic" easing="out">WindowOpen</animation>
+                <animation effect="slide" start="-615,0" end="0,0" time="400" delay="500" tween="cubic">WindowOpen</animation>
                 <control type="image">
                     <posx>1214</posx>
                     <posy>154</posy>
@@ -69,13 +68,6 @@
                 <posy>158</posy>
                 <width>46</width>
                 <height>728</height>
-                <texturesliderbackground>-</texturesliderbackground>
-                <texturesliderbar>-</texturesliderbar>
-                <texturesliderbarfocus>-</texturesliderbarfocus>
-                <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-                <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-                <orientation>vertical</orientation>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <onup>60</onup>
                 <ondown>60</ondown>
                 <onleft>451</onleft>
@@ -88,7 +80,7 @@
                 <height>728</height>
                 <pagecontrol>60</pagecontrol>
                 <enable>!StringCompare(Window.Property(dialogprogress),1)</enable>
-                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <scrolltime tween="quadratic">200</scrolltime>
                 <onleft>413</onleft>
                 <onright>60</onright>
                 <onup>450</onup>
@@ -104,7 +96,6 @@
                         <width>810</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
-                        <aligny>center</aligny>
                         <textcolor>bcicon</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -113,7 +104,6 @@
                         <width>795</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
-                        <aligny>center</aligny>
                         <align>right</align>
                         <textcolor>bcicon</textcolor>
                         <info>ListItem.Label2</info>
@@ -145,7 +135,6 @@
                         <width>810</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
-                        <aligny>center</aligny>
                         <textcolor>white6</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -154,7 +143,6 @@
                         <width>795</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
-                        <aligny>center</aligny>
                         <align>right</align>
                         <textcolor>white6</textcolor>
                         <info>ListItem.Label2</info>
@@ -175,7 +163,7 @@
                 <height>728</height>
                 <pagecontrol>60</pagecontrol>
                 <enable>!StringCompare(Window.Property(dialogprogress),1)</enable>
-                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <scrolltime tween="quadratic">200</scrolltime>
                 <onleft>413</onleft>
                 <onright>60</onright>
                 <onup>451</onup>
@@ -191,7 +179,6 @@
                         <width>810</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
-                        <aligny>center</aligny>
                         <textcolor>bcicon</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -200,7 +187,6 @@
                         <width>795</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
-                        <aligny>center</aligny>
                         <align>right</align>
                         <textcolor>bcicon</textcolor>
                         <info>ListItem.Label2</info>
@@ -232,7 +218,6 @@
                         <width>810</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
-                        <aligny>center</aligny>
                         <textcolor>white6</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -241,7 +226,6 @@
                         <width>795</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
-                        <aligny>center</aligny>
                         <align>right</align>
                         <textcolor>white6</textcolor>
                         <info>ListItem.Label2</info>
@@ -264,8 +248,7 @@
                 <onright>9000</onright>
                 <onup>450</onup>
                 <ondown>450</ondown>
-                <itemgap>0</itemgap>
-                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <scrolltime tween="quadratic">200</scrolltime>
                 <enable>!StringCompare(Window.Property(dialogprogress),1)</enable>
                 <orientation>horizontal</orientation>
                 <control type="button" id="413">
@@ -278,9 +261,6 @@
                     <align>center</align>
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
-                    <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
-                    <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="button" id="414">
                     <width>279</width>
@@ -292,9 +272,6 @@
                     <align>center</align>
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
-                    <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
-                    <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="button" id="415">
                     <width>279</width>
@@ -306,9 +283,6 @@
                     <align>center</align>
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
-                    <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
-                    <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="radiobutton" id="416">
                     <width>279</width>
@@ -320,10 +294,7 @@
                     <align>center</align>
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
-                    <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <selectedcolor>FF7b7b7b</selectedcolor>
-                    <disabledcolor>grey</disabledcolor>
                     <textureradiofocus>-</textureradiofocus>
                     <textureradionofocus>-</textureradionofocus>
                 </control>
@@ -332,8 +303,8 @@
         <control type="group">
             <visible>StringCompare(Window.Property(dialogprogress),1)</visible>
             <animation type="Visible" reversible="false">
-                <effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300" />
-                <effect type="fade" start="0" end="100" time="300" />
+                <effect type="zoom" start="80" end="100" center="960,540" tween="back" time="300" />
+                <effect type="fade" end="100" time="300" />
             </animation>
             <animation type="Hidden" reversible="false">
                 <effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="300" />
@@ -354,7 +325,7 @@
                     <include>PanelGlowFade</include>
                     <texture>dialogs/dialog_back_shadow.png</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
                     <posx>15</posx>
@@ -363,44 +334,35 @@
                     <texture>osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="label" id="1011">
-                    <width>0</width>
-                    <height>0</height>
-                    <font>-</font>
-                    <visible>false</visible>
+                    <include>HiddenObject</include>
                 </control>
                 <control type="label">
                     <width>780</width>
                     <height>78</height>
                     <textcolor>$VAR[FontColorVar]</textcolor>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <scroll>true</scroll>
-                    <textoffsetx>45</textoffsetx>
                     <label>$INFO[Control.GetLabel(1011)] $INFO[Control.GetLabel(1015),- ,%]</label>
                 </control>
                 <control type="grouplist">
                     <posy>68</posy>
-                    <itemgap>0</itemgap>
                     <control type="label" id="1012">
                         <width>780</width>
                         <height>45</height>
                         <textcolor>white3</textcolor>
                         <scroll>true</scroll>
-                        <textoffsetx>45</textoffsetx>
                     </control>
                     <control type="label" id="1013">
                         <width>780</width>
                         <height>45</height>
                         <textcolor>white3</textcolor>
                         <scroll>true</scroll>
-                        <textoffsetx>45</textoffsetx>
                     </control>
                     <control type="label" id="1014">
                         <width>780</width>
                         <height>45</height>
                         <textcolor>white3</textcolor>
                         <scroll>true</scroll>
-                        <textoffsetx>45</textoffsetx>
                     </control>
                 </control>
                 <control type="progress" id="1015">
@@ -408,12 +370,6 @@
                     <posy>225</posy>
                     <width>690</width>
                     <height>21</height>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturebg>dialogs/progress/progress_back.png</texturebg>
-                    <lefttexture>dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture>dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture>dialogs/progress/progress_right.png</righttexture>
-                    <overlaytexture>-</overlaytexture>
                 </control>
                 <control type="button" id="1010">
                     <posx>278</posx>
@@ -424,7 +380,6 @@
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white3</focusedcolor>
-                    <disabledcolor>80FFFFFF</disabledcolor>
                     <align>center</align>
                     <textoffsetx>30</textoffsetx>
                     <textoffsety></textoffsety>

@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">101</defaultcontrol>
     <animation effect="fade" time="250">WindowOpen</animation>
     <animation effect="fade" time="250">WindowClose</animation>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
     <controls>
         <control type="list" id="100">
             <posx>-10</posx>
@@ -24,8 +24,6 @@
             <width>1160</width>
             <font>Font_Reg38_Caps</font>
             <label>$INFO[Container(100).ListItem.Label]</label>
-            <align>left</align>
-            <aligny>center</aligny>
         </control>
         <control type="image">
             <posx>1350</posx>
@@ -56,6 +54,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Tagline)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -74,6 +73,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Genre)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -92,6 +92,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Director)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -110,6 +111,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Writer)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -128,6 +130,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Rating)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -146,6 +149,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Year)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -164,6 +168,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Duration),, $LOCALIZE[12391]]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -182,6 +187,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Studio)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -200,6 +206,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Mpaa)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -222,6 +229,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Episode)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -240,6 +248,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Genre)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -249,7 +258,7 @@
                         <itemgap>10</itemgap>
                         <control type="label">
                             <width min="50" max="400">auto</width>
-                            <label>$LOCALIZE[312576]:</label>
+                            <label>$LOCALIZE[31005]:</label>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <aligny>bottom</aligny>
                         </control>
@@ -258,6 +267,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Premiered)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -276,6 +286,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Studio)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -294,6 +305,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Rating)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -312,6 +324,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Mpaa)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -334,6 +347,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(TvShowTitle)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -352,6 +366,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Episode)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -374,6 +389,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(TvShowTitle)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -392,6 +408,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Season)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -410,6 +427,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Episode)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -428,6 +446,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Director)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -446,6 +465,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Rating)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -455,7 +475,7 @@
                         <itemgap>10</itemgap>
                         <control type="label">
                             <width min="50" max="400">auto</width>
-                            <label>$LOCALIZE[312576]:</label>
+                            <label>$LOCALIZE[31005]:</label>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <aligny>bottom</aligny>
                         </control>
@@ -464,6 +484,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Premiered)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -482,6 +503,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Duration),, $LOCALIZE[12391]]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -504,6 +526,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -522,6 +545,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Genre)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -540,6 +564,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Album)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -558,6 +583,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Director)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -576,6 +602,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Year)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -594,6 +621,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Studio)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -612,6 +640,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Duration),, $LOCALIZE[12391]]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -630,6 +659,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Studio)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -652,6 +682,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist_Born)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -670,6 +701,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist_Died)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -688,6 +720,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist_Formed)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -706,6 +739,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist_Disbanded)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -724,6 +758,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist_YearsActive)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -742,6 +777,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist_Genre)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -760,6 +796,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist_Mood)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -778,6 +815,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist_Style)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -800,6 +838,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -818,6 +857,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Genre)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -836,6 +876,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Year)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -854,6 +895,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Album_Label)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -872,6 +914,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Album_Type)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -890,6 +933,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Album_Style)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -908,6 +952,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Album_Mood)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -945,6 +990,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Album_Theme)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -967,6 +1013,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Artist)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -985,6 +1032,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Album)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -1003,6 +1051,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Genre)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -1021,6 +1070,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Track)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -1039,6 +1089,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Duration)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -1057,6 +1108,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Year)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -1075,6 +1127,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Playcount)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -1112,6 +1165,7 @@
                             <label fallback="N/A">$INFO[Container(100).ListItem.Property(Path)]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
@@ -1160,55 +1214,45 @@
                 <posy>397</posy>
                 <width>1160</width>
                 <height>260</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Plot),$LOCALIZE[207]: [COLOR white2],[/COLOR]]</label>
-                <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(Nox.AutoScroll)</autoscroll>
+                <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(150)</visible>
             </control>
             <control type="textbox">
                 <posy>307</posy>
                 <width>1160</width>
                 <height>330</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Plot),$LOCALIZE[207]: [COLOR white2],[/COLOR]]</label>
-                <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(Nox.AutoScroll)</autoscroll>
+                <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(140)</visible>
             </control>
             <control type="textbox">
                 <posy>396</posy>
                 <width>1160</width>
                 <height>330</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Artist_Description),$LOCALIZE[207]: [COLOR white2],[/COLOR]]</label>
-                <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(Nox.AutoScroll)</autoscroll>
+                <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(160)</visible>
             </control>
             <control type="textbox">
                 <posy>396</posy>
                 <width>1160</width>
                 <height>330</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Comment),$LOCALIZE[569]: [COLOR white2],[/COLOR]]</label>
-                <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(Nox.AutoScroll)</autoscroll>
+                <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(180)</visible>
             </control>
             <control type="textbox">
                 <posy>396</posy>
                 <width>1160</width>
                 <height>330</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Album_Description),$LOCALIZE[183]: [COLOR white2],[/COLOR]]</label>
-                <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(Nox.AutoScroll)</autoscroll>
+                <autoscroll delay="8000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(170)</visible>
             </control>
         </control>
@@ -1217,7 +1261,6 @@
             <posy>190</posy>
             <width>570</width>
             <height>768</height>
-            <itemgap>0</itemgap>
             <onleft>190</onleft>
             <onright>190</onright>
             <onup>195</onup>
@@ -1235,7 +1278,6 @@
                 <focusedcolor>white2</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>20</textoffsetx>
-                <aligny>center</aligny>
             </control>
             <control type="button" id="192">
                 <label>-</label>
@@ -1249,7 +1291,6 @@
                 <focusedcolor>white2</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>20</textoffsetx>
-                <aligny>center</aligny>
             </control>
             <control type="button" id="193">
                 <label>-</label>
@@ -1263,7 +1304,6 @@
                 <focusedcolor>white2</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>20</textoffsetx>
-                <aligny>center</aligny>
             </control>
         </control>
     </controls>

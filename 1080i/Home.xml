@@ -1,12 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="0">
-    <defaultcontrol always="true">9000</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
-    <include condition="!Skin.HasSetting(Nox.firstrun)">AutoConfig</include>
-    <onload condition="Window.Previous(startup) + !IsEmpty(Skin.String(Nox.CustomFocusOffset))">Control.Move(9000,$INFO[Skin.String(Nox.CustomFocusOffset)])</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome)">XBMC.RunScript(script.randomitems,limit=16&amp;unplayed=True)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + [Substring(Skin.String(Nox.widgetlist),recentpics) | Substring(Skin.String(Nox.widget2list),recentpics) | Substring(Skin.String(Nox.backgroundlist),recentpics)]">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + [Substring(Skin.String(Nox.widgetlist),randompics) | Substring(Skin.String(Nox.widget2list),randompics) | Substring(Skin.String(Nox.backgroundlist),randompics)]">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <defaultcontrol always="true">9004</defaultcontrol>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
+    <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),recentpics) | Substring(Skin.String(widget2list),recentpics) | Substring(Skin.String(backgroundlist),recentpics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),random) | Substring(Skin.String(widget2list),random) | Substring(Skin.String(backgroundlist),random)]">SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
     <onload>ClearProperty(DontRunTVShowScripts,Home)</onload>
     <onload>AlarmClock(BGMove,Control.Move(4324,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onload>
@@ -17,24 +16,18 @@
     <onload>AlarmClock(HomeTile2Left,Control.Move(6001,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Right,Control.Move(6003,1),00:10,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Mid,Control.Move(6002,1),00:15,silent,loop)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem1.Enable) + [SubString(Skin.String(Nox.CustomHomeItem1.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem1.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem1)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem2.Enable) + [SubString(Skin.String(Nox.CustomHomeItem2.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem2.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem2)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem3.Enable) + [SubString(Skin.String(Nox.CustomHomeItem3.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem3.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem3)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem4.Enable) + [SubString(Skin.String(Nox.CustomHomeItem4.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem4.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem4)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem5.Enable) + [SubString(Skin.String(Nox.CustomHomeItem5.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem5.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem5)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem6.Enable) + [SubString(Skin.String(Nox.CustomHomeItem6.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem6.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem6)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem7.Enable) + [SubString(Skin.String(Nox.CustomHomeItem7.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem7.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem7)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem8.Enable) + [SubString(Skin.String(Nox.CustomHomeItem8.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem8.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem8)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem9.Enable) + [SubString(Skin.String(Nox.CustomHomeItem9.Widget),custom) | SubString(Skin.String(Nox.CustomHomeItem9.MultiFanart),custom,right)]">$INFO[Skin.String(Nox.StartupCustomHomeItem9)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem1.Enable) + SubString(Skin.String(Nox.CustomHomeItem1.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem1)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem2.Enable) + SubString(Skin.String(Nox.CustomHomeItem2.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem2)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem3.Enable) + SubString(Skin.String(Nox.CustomHomeItem3.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem3)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem4.Enable) + SubString(Skin.String(Nox.CustomHomeItem4.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem4)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem5.Enable) + SubString(Skin.String(Nox.CustomHomeItem5.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem5)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem6.Enable) + SubString(Skin.String(Nox.CustomHomeItem6.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem6)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem7.Enable) + SubString(Skin.String(Nox.CustomHomeItem7.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem7)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem8.Enable) + SubString(Skin.String(Nox.CustomHomeItem8.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem8)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(Nox.randomizehome) + Skin.HasSetting(Nox.CustomHomeItem9.Enable) + SubString(Skin.String(Nox.CustomHomeItem9.Widget2),custom)">$INFO[Skin.String(Nox.StartupSecondCustomHomeItem9)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist1.Call),random)">$INFO[Skin.String(SmartPlaylist1.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist2.Call),random)">$INFO[Skin.String(SmartPlaylist2.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist3.Call),random)">$INFO[Skin.String(SmartPlaylist3.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist4.Call),random)">$INFO[Skin.String(SmartPlaylist4.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist5.Call),random)">$INFO[Skin.String(SmartPlaylist5.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist6.Call),random)">$INFO[Skin.String(SmartPlaylist6.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist7.Call),random)">$INFO[Skin.String(SmartPlaylist7.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist8.Call),random)">$INFO[Skin.String(SmartPlaylist8.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist9.Call),random)">$INFO[Skin.String(SmartPlaylist9.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist10.Call),random)">$INFO[Skin.String(SmartPlaylist10.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist11.Call),random)">$INFO[Skin.String(SmartPlaylist11.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist12.Call),random)">$INFO[Skin.String(SmartPlaylist12.Call)]</onload>
     <onunload>CancelAlarm(HomeTileLeft,true)</onunload>
     <onunload>CancelAlarm(HomeTileRight,true)</onunload>
     <onunload>CancelAlarm(HomeTileMid,true)</onunload>
@@ -48,10 +41,63 @@
     <onunload>ClearProperty(PanelWidget2Info,Home)</onunload>
     <allowoverlay>yes</allowoverlay>
     <controls>
+        <control type="button" id="9004">
+            <include>HiddenObject</include>
+            <onfocus condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">$VAR[HomeCustomStartupFocus]</onfocus>
+            <onfocus>SetFocus(9000)</onfocus>
+            <onleft>SetFocus(9000)</onleft>
+            <onright>SetFocus(9000)</onright>
+            <ondown>SetFocus(9000)</ondown>
+            <onup>SetFocus(9000)</onup>
+            <onclick>SetFocus(9000)</onclick>
+        </control>
+        <control type="button" id="9006">
+            <include>HiddenObject</include>
+            <onfocus>SetFocus(9000)</onfocus>
+            <onfocus condition="Stringcompare(Container(9000).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(9000).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(9000).ListItem.Property(Path),videodb://1/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+            <!--             <onclick condition="IsEmpty(Skin.String(TVShowHomeItem.Type)) + !Library.HasContent(TVShows)">Notification($LOCALIZE[257],$LOCALIZE[42295])</onclick>
+ -->
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),0) | stringcompare(Container(9000).ListItem.Property(Type),1) | stringcompare(Container(9000).ListItem.Property(Type),2) | stringcompare(Container(9000).ListItem.Property(Type),3)">RunAddon($INFO[Container(9000).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(9000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(9000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),6) | Stringcompare(Container(9000).ListItem.Property(Type),7)  | Stringcompare(Container(9000).ListItem.Property(Type),custom)">$INFO[Container(9000).ListItem.Property(Path)]</onfocus>
+        </control>
+        <control type="button" id="9007">
+            <include>HiddenObject</include>
+            <onfocus>SetFocus(5010)</onfocus>
+            <onfocus condition="Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(5010).ListItem.Property(Path),videodb://1/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),0) | stringcompare(Container(5010).ListItem.Property(Type),1) | stringcompare(Container(5010).ListItem.Property(Type),2) | stringcompare(Container(5010).ListItem.Property(Type),3)">RunAddon($INFO[Container(5010).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),6) | Stringcompare(Container(5010).ListItem.Property(Type),7)  | Stringcompare(Container(5010).ListItem.Property(Type),custom)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
+            <onfocus condition="IsEmpty(Container(5010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
+        </control>
+        <control type="button" id="9008">
+            <include>HiddenObject</include>
+            <onfocus>SetFocus(6010)</onfocus>
+            <onfocus condition="Stringcompare(Container(6010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(6010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(6010).ListItem.Property(Path),videodb://1/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+            <onfocus condition="stringcompare(Container(6010).ListItem.Property(Type),0) | stringcompare(Container(6010).ListItem.Property(Type),1) | stringcompare(Container(6010).ListItem.Property(Type),2) | stringcompare(Container(6010).ListItem.Property(Type),3)">RunAddon($INFO[Container(6010).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="stringcompare(Container(6010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(6010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(6010).ListItem.Property(Type),6) | Stringcompare(Container(6010).ListItem.Property(Type),7)  | Stringcompare(Container(6010).ListItem.Property(Type),custom)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
+            <onfocus condition="IsEmpty(Container(6010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
+        </control>
+        <control type="button" id="9009">
+            <include>HiddenObject</include>
+            <onfocus>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onfocus>
+            <onfocus>AlarmClock(Widget2Move,Control.Move(7000,1),00:07,silent,loop)</onfocus>
+            <onfocus>SetFocus(9000)</onfocus>
+            <onfocus condition="Skin.HasSetting(featureddialog)">ActivateWindow(1115)</onfocus>
+        </control>
+        <control type="button" id="9011">
+            <include>HiddenObject</include>
+            <onfocus condition="Control.IsVisible(2020)">SetFocus(2020)</onfocus>
+            <onfocus condition="!Control.IsVisible(2020)">SetFocus(9000)</onfocus>
+        </control>
         <include>MainMenuCommonContent</include>
         <!-- Fanart -->
         <control type="group">
-            <!--              <visible>![[Player.HasVideo + !Skin.HasSetting(Nox.ShowBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(Nox.ShowBackgroundVis)]]</visible>
+            <!--              <visible>![[Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(ShowBackgroundVis)]]</visible>
  -->
             <control type="multiimage">
                 <fadetime>600</fadetime>
@@ -59,70 +105,52 @@
                 <aspectratio align="center" aligny="top">scale</aspectratio>
                 <animation effect="fade" time="600">Visible</animation>
                 <animation effect="fade" time="600">Hidden</animation>
-                <randomize>true</randomize>
-                <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" delay="600" reversible="true" condition="Skin.HasSetting(Nox.animatedbghome)">Conditional</animation>
-                <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" delay="600" reversible="true" condition="Skin.HasSetting(Nox.animatedbghome)">Conditional</animation>
-                <visible>!Control.IsVisible(2355) + ![Substring(Control.GetLabel(4322),case) | Substring(Control.GetLabel(4322),dailybabe)]</visible>
+                <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" delay="600" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" delay="600" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <visible>!Substring(Control.GetLabel(4322),case)</visible>
             </control>
-            <include condition="SubString(Skin.String(Nox.backgroundlist),dailybabe)">DailyBabeBG</include>
             <control type="image">
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
                 <include>Animation_WindowFade250</include>
                 <aspectratio align="center" aligny="top">scale</aspectratio>
-                <texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$INFO[Skin.String(Nox.LiveBG)]</texture>
+                <texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$INFO[Skin.String(LiveBG)]</texture>
                 <animation effect="fade" time="500">Visible</animation>
                 <animation effect="fade" time="500">Hidden</animation>
-                <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),case)</visible>
+                <visible>Substring(Control.GetLabel(4322),case)</visible>
             </control>
-            <include condition="SubString(Skin.String(Nox.backgroundlist),dvdcase)">InteractiveCasesBackground</include>
-            <include condition="SubString(Skin.String(Nox.backgroundlist), case)">LiveCDCasesbackground</include>
-            <include condition="SubString(Skin.String(Nox.backgroundlist), nocase)">LiveNoCasesbackground</include>
-            <include condition="Skin.HasSetting(Nox.homecdwall)">cdwall-musicvisualisation</include>
+            <include condition="SubString(Skin.String(backgroundlist),dvdcase)">InteractiveCasesBackground</include>
+            <include condition="SubString(Skin.String(backgroundlist), case)">LiveCDCasesbackground</include>
+            <include condition="SubString(Skin.String(backgroundlist), nocase)">LiveNoCasesbackground</include>
+            <include condition="[Skin.HasSetting(homecdwall) | SubString(Skin.String(backgroundlist),cdwall)] + !IsEmpty(Skin.String(CDWall_Folder_Path))">cdwall-musicvisualisation</include>
+            <include condition="SubString(Skin.String(backgroundlist),moviewall) + !IsEmpty(Skin.String(MovieWall_Folder_Path))">MovieWall</include>
             <control type="image">
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
                 <aspectratio align="center" aligny="top">scale</aspectratio>
                 <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
-                <visible>[Control.HasFocus(8000) | Control.HasFocus(7000) | Control.HasFocus(5010) | Control.HasFocus(5012) | ControlGroup(5014).HasFocus | ControlGroup(5020).HasFocus | ControlGroup(5021).HasFocus | ControlGroup(5030).HasFocus | ControlGroup(5040).HasFocus | Control.HasFocus(6010) | Control.HasFocus(6012) | ControlGroup(6014).HasFocus | ControlGroup(6020).HasFocus | ControlGroup(6021).HasFocus | ControlGroup(6030).HasFocus | ControlGroup(6040).HasFocus] | [Player.HasAudio + Skin.HasSetting(Nox.musicfanarthome)]</visible>
+                <visible>[Control.HasFocus(8000) | Control.HasFocus(7000) | ControlGroup(5000).HasFocus | ControlGroup(6000).HasFocus] | [Player.HasAudio + Skin.HasSetting(musicfanarthome)]</visible>
                 <animation effect="fade" time="600">Visible</animation>
                 <animation effect="fade" time="600">Hidden</animation>
-                <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(Nox.animatedbghome)">Conditional</animation>
-                <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(Nox.animatedbghome)">Conditional</animation>
+                <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             </control>
             <!-- Music ExtraFanart -->
-            <include condition="!IsEmpty(Skin.String(Nox.ArtistsLogosPath))">MusicExtraFanartHome</include>
-            <include condition="Skin.HasSetting(Nox.artistslideshowhome)">MusicArtistSlideshowHome</include>
+            <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
+            <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
             <include>CommonMediaPlayingBackground</include>
-        </control>
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <colordiffuse>$INFO[Skin.String(Nox.ColorLevel)]</colordiffuse>
-            <texture>$INFO[Container(9000).ListItem.Property(Color),common/,.png]</texture>
-            <include>Animation_WindowFade200</include>
-            <fadetime>600</fadetime>
+            <include condition="Substring(Skin.String(backgroundlist),weatherworldbackground) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         </control>
         <!-- Home Fullscreen Video -->
-        <include condition="!Skin.HasSetting(Nox.FadeHomeBG)">CommonMediaPlayingBackground</include>
-        <include condition="Substring(Skin.String(Nox.backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         <control type="group">
-            <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>Animation_VisibleChange400</include>
             <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + !Control.IsVisible(8995)]</visible>
-            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Player.HasVideo + Skin.HasSetting(Nox.ShowBackgroundVideo)]</visible>
+            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Player.HasVideo + Skin.HasSetting(ShowBackgroundVideo)]</visible>
             <control type="image">
                 <include>FullscreenDimensions</include>
-                <colordiffuse>$INFO[Skin.String(Nox.BackgroundDarkness)]</colordiffuse>
-                <texture>common/black.png</texture>
-                <include>Animation_VisibleChange400</include>
-                <visible>!Skin.HasTheme(White)</visible>
-            </control>
-            <control type="image">
-                <include>FullscreenDimensions</include>
-                <colordiffuse>$INFO[Skin.String(Nox.BackgroundDarkness)]</colordiffuse>
-                <texture>common/white.png</texture>
-                <include>Animation_VisibleChange400</include>
-                <visible>Skin.HasTheme(White)</visible>
+                <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+                <texture>common/bgcolor.png</texture>
             </control>
             <control type="image">
                 <posy>-150</posy>
@@ -133,7 +161,7 @@
                 <include>Animation_WindowFade200</include>
                 <include>Animation_VisibleChange400</include>
                 <animation effect="fade" start="100" end="80" time="5000" pulse="true" condition="true">conditional</animation>
-                <visible>Skin.HasSetting(Nox.ExtendedGlowMode)</visible>
+                <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
             </control>
             <control type="image">
                 <posy>622</posy>
@@ -144,208 +172,217 @@
                 <include>Animation_WindowFade200</include>
                 <include>Animation_VisibleChange400</include>
                 <animation effect="fade" start="100" end="80" time="5000" pulse="true" condition="true">conditional</animation>
-                <visible>Skin.HasSetting(Nox.ExtendedGlowMode)</visible>
+                <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
             </control>
         </control>
-        <include condition="Skin.HasSetting(Nox.effect_bg)">BG_Effect_Home</include>
+        <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
         <!-- LiveTV Info -->
         <control type="group">
-            <visible>!Skin.HasSetting(Nox.lowermainmenu) + Skin.HasSetting(Nox.DisableGlowbar)</visible>
+            <visible>Skin.HasSetting(DisableGlowbar) + IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <include>Animation_VisibleChangeDelayed</include>
             <include>Animation_WindowFade200</include>
             <control type="image">
-                <posy>360</posy>
+                <posy>480</posy>
                 <width>1920</width>
-                <height>945</height>
+                <height>600</height>
                 <texture>home/nowplaying_shadow.png</texture>
-                <visible>[Control.HasFocus(8000) | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)] + IsEmpty(Window(home).Property(DisableWidgets))</visible>
+                <visible>Control.HasFocus(8000) | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)</visible>
                 <include>Animation_VisibleChangeDelayed</include>
-                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(Nox.lowermainmenu)">Conditional</animation>
+                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             </control>
             <control type="image">
                 <width>1920</width>
-                <height>945</height>
+                <height>600</height>
                 <texture flipy="true">home/nowplaying_shadow.png</texture>
                 <include>Animation_VisibleChangeDelayed</include>
-                <visible>Control.IsVisible(8995) | [[Control.HasFocus(7000) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)] + IsEmpty(Window(home).Property(DisableWidgets))]</visible>
-                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(Nox.lowermainmenu)">Conditional</animation>
+                <visible>Control.IsVisible(8995) | Control.HasFocus(7000) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)</visible>
             </control>
         </control>
-        <control type="group">
-            <visible>Skin.HasSetting(Nox.lowermainmenu) + Skin.HasSetting(Nox.DisableGlowbar)</visible>
-            <include>Animation_WindowFade200</include>
-            <include>Animation_VisibleChangeDelayed</include>
-            <control type="image">
-                <posy>160</posy>
-                <width>1920</width>
-                <height>694</height>
-                <texture>home/nowplaying_shadow.png</texture>
-                <visible>[Control.HasFocus(8000) | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)] + IsEmpty(Window(home).Property(DisableWidgets))</visible>
-                <include>Animation_VisibleChangeDelayed</include>
-            </control>
-            <control type="image">
-                <width>1920</width>
-                <height>545</height>
-                <texture flipy="true">home/nowplaying_shadow.png</texture>
-                <include>Animation_VisibleChangeDelayed</include>
-                <visible>Control.IsVisible(8995) | [[Control.HasFocus(7000) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)] + IsEmpty(Window(home).Property(DisableWidgets))]</visible>
-            </control>
-        </control>
-        <!-- Featured widget -->
-        <include condition="Substring(Skin.String(Nox.widgetlist),featured) | Substring(Skin.String(Nox.widgetlist),panel)">HomePanelWidget</include>
-        <include condition="Substring(Skin.String(Nox.widget2list),featured) | Substring(Skin.String(Nox.widget2list),panel)">HomePanelWidget2</include>
-        <!-- Latest/Random Items -->
-        <control type="group">
-            <include>Animation_OpenCloseZoom</include>
-            <include>RecentWidget</include>
-            <include>RecentWidget2</include>
-        </control>
-        <include>PosterWidgetTrailerLabel</include>
-        <!-- Library Totals -->
-        <include>LibraryStats</include>
-        <!-- Time Panel-->
-        <include>TimePanel</include>
-        <!-- RSS -->
         <include>RSSPanel</include>
+        <include>MainMenuBottomBar</include>
         <control type="group">
-            <include>FullscreenDimensions</include>
-            <animation effect="slide" start="0,0" end="0,338" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(Nox.lowermainmenu)">Conditional</animation>
-            <include>Animation_OpenCloseZoom</include>
+            <animation effect="slide" end="0,330" time="700" tween="cubic" delay="200" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
+            <animation effect="slide" end="0,-330" time="700" tween="cubic" delay="200" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
+            <animation effect="slide" end="0,330" time="600" tween="cubic" delay="200" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Window.IsActive(1115)">Conditional</animation>
+            <!-- Library Totals -->
+            <include>LibraryStats</include>
+            <!-- Time Panel-->
+            <include>TimePanel</include>
+            <!-- Alternate Stats + Time -->
+            <include>AlternateTimeAndStats</include>
+            <!-- RSS -->
             <control type="group">
-                <animation effect="zoom" end="80" center="960,520" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(Nox.smallermainmenu)">Conditional</animation>
-                <!-- Submenu -->
-                <control type="group" id="9001">
-                    <posx>240</posx>
-                    <posy>609</posy>
-                    <animation effect="zoom" end="120" center="960,610" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(Nox.smallermainmenu)">Conditional</animation>
-                    <animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(Nox.showsubmenu)]">conditional</animation>
-                    <animation effect="slide" start="0,0" end="0,-60" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(Nox.showsubmenu)]">conditional</animation>
+                <include>FullscreenDimensions</include>
+                <animation effect="slide" end="0,338" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+                <include>Animation_OpenCloseZoom</include>
+                <control type="group">
+                    <animation effect="zoom" end="80" center="960,520" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+                    <!-- Submenu -->
                     <control type="image">
-                        <posx>70</posx>
-                        <posy>3</posy>
-                        <width>1300</width>
-                        <height>87</height>
-                        <texture>home/submenubar.png</texture>
-                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                        <posx>935</posx>
+                        <posy>613</posy>
+                        <width>50</width>
+                        <height>15</height>
+                        <colordiffuse>white</colordiffuse>
+                        <texture>arrowdown.png</texture>
+                        <!--                     <animation effect="slide" end="0,40" time="0" condition="[!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)]">Conditional</animation>
+ -->
+                        <visible>Control.HasFocus(9000) + !Skin.HasSetting(showsubmenu) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
+                        <animation effect="zoom" start="100,0" end="100,100" time="500" delay="200" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
                     </control>
-                    <include condition="Skin.HasSetting(Nox.submenufixedlist)">SubMenuFixedList</include>
-                    <include condition="!Skin.HasSetting(Nox.submenufixedlist)">SubMenuWrapList</include>
-                </control>
-                <!-- Home OSD -->
-                <control type="group">
-                    <visible>Player.HasMedia + System.IdleTime(8) + !Control.HasFocus(8003)</visible>
-                    <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(Nox.smallermainmenu)">Conditional</animation>
-                    <posy>62</posy>
-                    <width>1920</width>
-                    <height>1080</height>
-                    <animation effect="fade" start="0" end="100" time="750" condition="Player.HasAudio + System.IdleTime(8)">Conditional</animation>
-                    <control type="progress">
-                        <posy>452</posy>
+                    <control type="group" id="9001">
+                        <posx>240</posx>
+                        <posy>609</posy>
+                        <animation effect="zoom" end="120" center="960,610" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
+                        <animation effect="slide" end="0,-60" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
+                        <control type="image">
+                            <posx>70</posx>
+                            <posy>3</posy>
+                            <width>1300</width>
+                            <height>87</height>
+                            <texture>$VAR[SubMenuImageVar]</texture>
+                            <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                        </control>
+                        <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
+                        <include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
+                    </control>
+                    <!-- Home OSD -->
+                    <control type="group">
+                        <visible>Player.HasMedia + System.IdleTime(8)</visible>
+                        <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+                        <posy>62</posy>
                         <width>1920</width>
-                        <height>96</height>
-                        <info>Player.Progress</info>
-                        <texturebg>osd/osd_progress_clear.png</texturebg>
-                        <lefttexture>-</lefttexture>
-                        <midtexture>osd/osd_progressmid.png</midtexture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <righttexture>-</righttexture>
-                        <overlaytexture>-</overlaytexture>
+                        <height>1080</height>
+                        <animation effect="fade" end="100" time="750" condition="Player.HasAudio + System.IdleTime(8)">Conditional</animation>
+                        <control type="progress">
+                            <posy>452</posy>
+                            <width>1920</width>
+                            <height>96</height>
+                            <info>Player.Progress</info>
+                            <texturebg>osd/osd_progress_clear.png</texturebg>
+                            <lefttexture>-</lefttexture>
+                            <midtexture>osd/osd_progressmid.png</midtexture>
+                            <righttexture>-</righttexture>
+                        </control>
                     </control>
-                </control>
-                <!-- Home Menu Bar -->
-                <control type="image">
-                    <posy>453</posy>
-                    <width>1920</width>
-                    <height>225</height>
-                    <texture>$VAR[HomeMenuBackVar]</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                    <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(Nox.smallermainmenu)">Conditional</animation>
-                    <animation effect="fade" start="100" end="90" time="50" condition="Skin.HasSetting(Nox.glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
-                </control>
-                <control type="image">
-                    <posy>453</posy>
-                    <width>1920</width>
-                    <height>225</height>
-                    <texture>home/homemenu_back_glow.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(Nox.smallermainmenu)">Conditional</animation>
-                    <include>PanelGlowFade</include>
-                    <include>Animation_VisibleChange400</include>
-                    <visible>!Skin.HasSetting(Nox.DisableGlowbar) | [Skin.HasSetting(Nox.ExtendedGlowMode) + Skin.HasSetting(Nox.glasshome)] | Skin.HasSetting(Nox.classichome)</visible>
-                </control>
-                <!-- Home OSD -->
-                <control type="group">
-                    <visible>Player.HasMedia + System.IdleTime(8)</visible>
-                    <animation effect="fade" start="0" end="100" time="1050">Visible</animation>
+                    <!-- Home Menu Bar -->
+                    <control type="image">
+                        <posy>453</posy>
+                        <width>1920</width>
+                        <height>225</height>
+                        <texture>$VAR[HomeMenuBackVar]</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                        <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+                        <animation effect="fade" start="100" end="90" time="50" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posy>453</posy>
+                        <width>1920</width>
+                        <height>225</height>
+                        <texture>home/homemenu_back_glow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+                        <include>PanelGlowFade</include>
+                        <include>Animation_VisibleChange400</include>
+                        <visible>!Skin.HasSetting(DisableGlowbar) | [Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(glasshome)] | Skin.HasSetting(classichome)</visible>
+                    </control>
+                    <!-- Home OSD -->
                     <control type="label">
-                        <posy>448</posy>
+                        <posy>445</posy>
                         <width>1920</width>
                         <height>225</height>
                         <align>center</align>
-                        <aligny>center</aligny>
                         <font>Font_MainClassic</font>
                         <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
-                        <shadowcolor>-</shadowcolor>
                         <label>$VAR[HomeOSDLabelVar]</label>
+                        <visible>Player.HasMedia + System.IdleTime(8)</visible>
+                        <animation effect="fade" end="100" time="1050">Visible</animation>
+                    </control>
+                    <!-- Home Menu -->
+                    <control type="button" id="8993">
+                        <include>HiddenObject</include>
+                        <onfocus>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onfocus>
+                        <onfocus>ClearProperty(PanelWidgetInfo,Home)</onfocus>
+                        <onfocus>SetFocus(9000)</onfocus>
+                    </control>
+                    <control type="button" id="7993">
+                        <include>HiddenObject</include>
+                        <onfocus>AlarmClock(Widget2Move,Control.Move(7000,1),00:07,silent,loop)</onfocus>
+                        <onfocus>SetFocus(9000)</onfocus>
+                    </control>
+                    <!--focus first widget-->
+                    <control type="button" id="4444">
+                        <include>HiddenObject</include>
+                        <onfocus condition="Control.IsVisible(5000)">SetFocus(5000)</onfocus>
+                        <onfocus condition="Control.IsVisible(8998)">CancelAlarm(WidgetMove,true)</onfocus>
+                        <onfocus condition="Control.IsVisible(8998)">SetFocus(8000,0)</onfocus>
+                        <onfocus condition="Control.IsVisible(8998)">SetFocus(8000)</onfocus>
+                        <visible>Control.IsVisible(5000) | Control.IsVisible(8998)</visible>
+                        <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
+                        <visible>!Substring(Control.GetLabel(4321),system)</visible>
+                    </control>
+                    <!--focus second widget-->
+                    <control type="button" id="4445">
+                        <include>HiddenObject</include>
+                        <onfocus condition="Control.IsVisible(6000)">SetFocus(6000)</onfocus>
+                        <onfocus condition="Control.IsVisible(7998)">CancelAlarm(Widget2Move,true)</onfocus>
+                        <onfocus condition="Control.IsVisible(7998)">SetFocus(7000,0)</onfocus>
+                        <onfocus condition="Control.IsVisible(7998)">SetFocus(7000)</onfocus>
+                        <visible>Control.IsVisible(6000) | Control.IsVisible(7998)</visible>
+                        <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
+                        <visible>!Substring(Control.GetLabel(4325),system)</visible>
+                    </control>
+                    <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
+                    <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
+                    <control type="group">
+                        <animation effect="zoom" end="125,99" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+                        <include>Furniture_ClassicHomeGradient</include>
+                        <include>Neon_Home</include>
                     </control>
                 </control>
-                <!-- Home Menu -->
-                <control type="button" id="8993">
-                    <include>HiddenObject</include>
-                    <onfocus>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onfocus>
-                    <onfocus>SetFocus(9000)</onfocus>
-                </control>
-                <control type="button" id="7993">
-                    <include>HiddenObject</include>
-                    <onfocus>AlarmClock(Widget2Move,Control.Move(7000,1),00:07,silent,loop)</onfocus>
-                    <onfocus>SetFocus(9000)</onfocus>
-                </control>
-                <!--focus first widget-->
-                <control type="button" id="4444">
-                    <include>HiddenObject</include>
-                    <onfocus condition="Control.IsVisible(5000)">SetFocus(5000)</onfocus>
-                    <onfocus condition="Control.IsVisible(8998)">CancelAlarm(WidgetMove,true)</onfocus>
-                    <onfocus condition="Control.IsVisible(8998)">SetFocus(8000,0)</onfocus>
-                    <onfocus condition="Control.IsVisible(8998)">SetFocus(8000)</onfocus>
-                    <onfocus condition="Substring(Container(9000).ListItem.Property(Widget),weather)">ActivateWindow(weather)</onfocus>
-                    <onfocus condition="Substring(Container(9000).ListItem.Property(Widget),system)">ActivateWindow(settings)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4321),nextairedpanel)]">SetFocus(9000)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(WatchList_Movie.1.Label)) + Substring(Control.GetLabel(4321),inprogressmovies)]">SetFocus(9000)</onfocus>
-                </control>
-                <!--focus second widget-->
-                <control type="button" id="4445">
-                    <include>HiddenObject</include>
-                    <onfocus condition="Control.IsVisible(6000)">SetFocus(6000)</onfocus>
-                    <onfocus condition="Control.IsVisible(7998)">CancelAlarm(Widget2Move,true)</onfocus>
-                    <onfocus condition="Control.IsVisible(7998)">SetFocus(7000,0)</onfocus>
-                    <onfocus condition="Control.IsVisible(7998)">SetFocus(7000)</onfocus>
-                    <onfocus condition="Substring(Container(9000).ListItem.Property(Widget2),weather)">ActivateWindow(weather)</onfocus>
-                    <onfocus condition="Substring(Container(9000).ListItem.Property(Widget2),system)">ActivateWindow(settings)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4325),nextairedpanel)]">SetFocus(9000)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(WatchList_Movie.1.Label)) + Substring(Control.GetLabel(4325),inprogressmovies)]">SetFocus(9000)</onfocus>
-                </control>
-                <include condition="Skin.HasSetting(Nox.mainmenufixedlist)">MainMenuFixedList</include>
-                <include condition="!Skin.HasSetting(Nox.mainmenufixedlist)">MainMenuWrapList</include>
-                <control type="group">
-                    <animation effect="zoom" end="125,99" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(Nox.smallermainmenu)">Conditional</animation>
-                    <include>Furniture_ClassicHomeGradient</include>
-                    <include>Neon_Home</include>
-                </control>
             </control>
+            <!--Weather info-->
+            <!-- Music Info -->
         </control>
-        <!--Weather info-->
-        <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(Nox.widgetlist),weather)">Weather_Widget</include>
-        <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(Nox.widget2list),weather)">Weather_Widget2</include>
-        <!-- Music Info -->
-        <include condition="!Skin.HasSetting(Nox.nohomepageMusicinfo) | !Skin.HasSetting(Nox.homepageVideoinfo)">Furniture_HomeNowPlaying</include>
+        <!-- Featured widget -->
         <control type="group">
-            <visible>!IsEmpty(Window(home).Property(DisableWidgets))</visible>
-            <include>Animation_WindowFade200</include>
-            <animation type="Visible" reversible="true">
-                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="300" />
+            <visible>IsEmpty(Window(home).Property(PanelWidget2Info))</visible>
+            <animation type="Visible">
+                <effect type="zoom" delay="500" start="150" end="100" center="960,540" time="500" tween="cubic" />
+                <effect type="fade" delay="500" end="100" time="300" />
             </animation>
-            <animation type="Hidden" reversible="true">
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="300" />
+                <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
+            </animation>
+            <include condition="Substring(Skin.String(widgetlist),featured) | Substring(Skin.String(widgetlist),panel)">HomePanelWidget</include>
+            <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(widgetlist),weather)">Weather_Widget</include>
+            <include>RecentWidget</include>
+        </control>
+        <control type="group">
+            <visible>IsEmpty(Window(home).Property(PanelWidgetInfo))</visible>
+            <animation type="Visible">
+                <effect type="zoom" delay="500" start="150" end="100" center="960,540" time="500" tween="cubic" />
+                <effect type="fade" delay="500" end="100" time="300" />
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="300" />
+                <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
+            </animation>
+            <include condition="Substring(Skin.String(widget2list),featured) | Substring(Skin.String(widget2list),panel)">HomePanelWidget2</include>
+            <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(widget2list),weather)">Weather_Widget2</include>
+            <include>RecentWidget2</include>
+        </control>
+        <include condition="!Skin.HasSetting(nohomepageMusicinfo) | !Skin.HasSetting(homepageVideoinfo)">Furniture_HomeNowPlaying</include>
+        <control type="group">
+            <visible>!IsEmpty(Window(home).Property(DisableWidgets)) + !Player.HasMedia + !Window.IsActive(1115)</visible>
+            <include>Animation_WindowFade200</include>
+            <animation type="Visible">
+                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" />
+                <effect type="fade" end="100" time="300" />
+            </animation>
+            <animation type="Hidden">
                 <effect type="fade" start="100" end="0" time="300" />
                 <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
             </animation>
@@ -356,7 +393,7 @@
                 <height>80</height>
                 <include>PanelGlowFade</include>
                 <texture>dialogs/dialog_back_shadow.png</texture>
-                <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             </control>
             <control type="image">
@@ -381,7 +418,6 @@
                 <height>74</height>
                 <font>Font_Reg14</font>
                 <textcolor>grey2</textcolor>
-                <aligny>center</aligny>
                 <align>center</align>
                 <label>$LOCALIZE[42264]</label>
                 <fontcolor>white</fontcolor>
@@ -400,7 +436,6 @@
             <control type="image">
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
-                <include>Animation_WindowFade250</include>
                 <aspectratio align="center" aligny="top">keep</aspectratio>
                 <texture background="true">$VAR[HomeFSImageVar]</texture>
                 <animation effect="fade" time="500">Visible</animation>

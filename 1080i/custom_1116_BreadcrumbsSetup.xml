@@ -1,29 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1116">
     <defaultcontrol>450</defaultcontrol>
     <zorder>4</zorder>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
     <include>Animation_DialogPopup</include>
     <controls>
-        <control type="group">
-            <control type="grouplist">
-                <posx>22</posx>
-                <width>1950</width>
-                <itemgap>0</itemgap>
-                <orientation>horizontal</orientation>
-                <control type="image">
-                    <width>54</width>
-                    <height>34</height>
-                    <texture>common/settings_logo.png</texture>
-                    <include>BreadcrumbsIcon</include>
-                    <animation effect="slide" start="0,0" end="-9,2" time="0" condition="true">Conditional</animation>
-                </control>
-            </control>
-        </control>
         <control type="group">
             <posy>-100</posy>
             <control type="image">
@@ -32,7 +17,7 @@
                 <width>1210</width>
                 <height>642</height>
                 <texture>osd/osd_settings_back_glow.png</texture>
-                <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             </control>
@@ -59,7 +44,6 @@
                 <font>Font_Bold22</font>
                 <label>$LOCALIZE[513]</label>
                 <align>center</align>
-                <aligny>center</aligny>
                 <visible>Window.IsActive(home)</visible>
             </control>
             <control type="label">
@@ -70,15 +54,13 @@
                 <font>Font_Bold22</font>
                 <label>$LOCALIZE[31676] [LOWERCASE]$LOCALIZE[5][/LOWERCASE]</label>
                 <align>center</align>
-                <aligny>center</aligny>
-                <visible>Window.IsActive(1111)</visible>
+                <visible>Window.IsActive(skinsettings)</visible>
             </control>
             <control type="grouplist" id="450">
                 <posx>375</posx>
                 <posy>292</posy>
                 <width>1172</width>
                 <height>610</height>
-                <itemgap>0</itemgap>
                 <aligny>center</aligny>
                 <onleft>60</onleft>
                 <onright>60</onright>
@@ -88,49 +70,48 @@
                 <control type="radiobutton" id="460">
                     <label>$LOCALIZE[24021] $LOCALIZE[31676]</label>
                     <include>Objects_CommonSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(Nox.disabletopbar)</onclick>
-                    <onclick>Skin.Reset(Nox.ClassicTopBar)</onclick>
-                    <onclick>Skin.Reset(Nox.GlobalNowPlaying)</onclick>
-                    <onclick>Skin.Reset(Nox.GlobalRSS)</onclick>
-                    <onclick>Skin.Reset(Nox.breadcrumbslabel)</onclick>
-                    <onclick>Skin.Reset(Nox.breadcrumbsweather)</onclick>
-                    <selected>Skin.HasSetting(Nox.disabletopbar)</selected>
+                    <onclick>Skin.ToggleSetting(disabletopbar)</onclick>
+                    <onclick>Skin.Reset(ClassicTopBar)</onclick>
+                    <onclick>Skin.Reset(GlobalNowPlaying)</onclick>
+                    <onclick>Skin.Reset(breadcrumbslabel)</onclick>
+                    <onclick>Skin.Reset(breadcrumbsweather)</onclick>
+                    <selected>Skin.HasSetting(disabletopbar)</selected>
                 </control>
                 <control type="button" id="461">
-                    <label>$LOCALIZE[31676] [LOWERCASE]$LOCALIZE[31398][/LOWERCASE]:</label>
+                    <label>$LOCALIZE[31099]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[TopBarTypeLabelVar][/COLOR]</label2>
                     <include>Objects_CommonSettingsButton</include>
-                    <onclick condition="!Skin.HasSetting(Nox.ClassicTopBar) + !Skin.HasSetting(Nox.altbreadcrumbstexture)">Skin.SetBool(Nox.altbreadcrumbstexture)</onclick>
-                    <onclick condition="Skin.HasSetting(Nox.altbreadcrumbstexture)">Skin.SetBool(Nox.ClassicTopBar)</onclick>
-                    <onclick condition="Skin.HasSetting(Nox.altbreadcrumbstexture)">Skin.Reset(Nox.altbreadcrumbstexture)</onclick>
-                    <onclick condition="Skin.HasSetting(Nox.ClassicTopBar)">Skin.Reset(Nox.ClassicTopBar)</onclick>
-                    <visible>!Skin.HasSetting(Nox.disabletopbar)</visible>
+                    <onclick condition="!Skin.HasSetting(ClassicTopBar) + !Skin.HasSetting(altbreadcrumbstexture) + !Skin.HasSetting(FadedTopBar)">Skin.SetBool(altbreadcrumbstexture)</onclick>
+                    <onclick condition="Skin.HasSetting(altbreadcrumbstexture)">Skin.SetBool(ClassicTopBar)</onclick>
+                    <onclick condition="Skin.HasSetting(altbreadcrumbstexture)">Skin.Reset(altbreadcrumbstexture)</onclick>
+                    <onclick condition="Skin.HasSetting(ClassicTopBar)">Skin.SetBool(FadedTopBar)</onclick>
+                    <onclick condition="Skin.HasSetting(ClassicTopBar)">Skin.Reset(ClassicTopBar)</onclick>
+                    <onclick condition="Skin.HasSetting(FadedTopBar)">Skin.Reset(FadedTopBar)</onclick>
+                    <visible>!Skin.HasSetting(disabletopbar)</visible>
                 </control>
                 <control type="button" id="462">
                     <include>Objects_CommonSettingsButton</include>
                     <label>$LOCALIZE[31677]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[TopBarLeftSideLabelVar][/COLOR]</label2>
-                    <onclick condition="!Skin.HasSetting(Nox.breadcrumbslabel) + !Skin.HasSetting(Nox.GlobalRSS)">Skin.SetBool(Nox.GlobalRSS)</onclick>
-                    <onclick condition="Skin.HasSetting(Nox.GlobalRSS)">Skin.SetBool(Nox.breadcrumbslabel)</onclick>
-                    <onclick condition="Skin.HasSetting(Nox.GlobalRSS)">Skin.Reset(Nox.GlobalRSS)</onclick>
-                    <onclick condition="Skin.HasSetting(Nox.breadcrumbslabel)">Skin.Reset(Nox.GlobalNowPlaying)</onclick>
-                    <onclick condition="Skin.HasSetting(Nox.breadcrumbslabel)">Skin.Reset(Nox.breadcrumbslabel)</onclick>
-                    <visible>!Skin.HasSetting(Nox.disabletopbar)</visible>
+                    <onclick condition="!Skin.HasSetting(breadcrumbslabel)">Skin.SetBool(breadcrumbslabel)</onclick>
+                    <onclick condition="Skin.HasSetting(breadcrumbslabel)">Skin.Reset(GlobalNowPlaying)</onclick>
+                    <onclick condition="Skin.HasSetting(breadcrumbslabel)">Skin.Reset(breadcrumbslabel)</onclick>
+                    <visible>!Skin.HasSetting(disabletopbar)</visible>
                 </control>
                 <control type="radiobutton" id="463">
                     <label>$LOCALIZE[31116] '$LOCALIZE[31040]'</label>
                     <include>Objects_CommonSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(Nox.GlobalNowPlaying)</onclick>
-                    <selected>Skin.HasSetting(Nox.GlobalNowPlaying)</selected>
-                    <enable>[Skin.HasSetting(Nox.breadcrumbslabel) | Skin.HasSetting(Nox.GlobalRSS)]</enable>
-                    <visible>!Skin.HasSetting(Nox.disabletopbar)</visible>
+                    <onclick>Skin.ToggleSetting(GlobalNowPlaying)</onclick>
+                    <selected>Skin.HasSetting(GlobalNowPlaying)</selected>
+                    <enable>Skin.HasSetting(breadcrumbslabel)</enable>
+                    <visible>!Skin.HasSetting(disabletopbar)</visible>
                 </control>
                 <control type="radiobutton" id="464">
                     <label>$LOCALIZE[31116] $LOCALIZE[20088]</label>
                     <include>Objects_CommonSettingsButton</include>
-                    <onclick>Skin.ToggleSetting(Nox.breadcrumbsweather)</onclick>
-                    <selected>Skin.HasSetting(Nox.breadcrumbsweather)</selected>
-                    <visible>!Skin.HasSetting(Nox.disabletopbar)</visible>
+                    <onclick>Skin.ToggleSetting(breadcrumbsweather)</onclick>
+                    <selected>Skin.HasSetting(breadcrumbsweather)</selected>
+                    <visible>!Skin.HasSetting(disabletopbar)</visible>
                 </control>
                 <control type="button" id="465">
                     <label>13012</label>

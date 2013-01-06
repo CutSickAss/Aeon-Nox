@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <allowoverlay>yes</allowoverlay>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
     <animation type="WindowOpen" reversible="false">
-        <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
-        <effect type="fade" start="0" end="100" time="250" />
+        <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" />
+        <effect type="fade" end="100" time="250" />
     </animation>
     <animation type="WindowClose" reversible="false">
         <effect type="fade" start="100" end="0" time="300" />
@@ -18,8 +18,7 @@
         <!-- gameinfoviewgamelist -->
         <control type="group" id="1000">
             <control type="wraplist" id="59">
-                <width>0</width>
-                <height>0</height>
+                <include>HiddenObject</include>
                 <onleft>3000</onleft>
                 <onright>3000</onright>
                 <onup>3000</onup>
@@ -31,7 +30,6 @@
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <fadetime>600</fadetime>
             <texture background="true">$INFO[ListItem.Property(background)]</texture>
             <aspectratio>scale</aspectratio>
         </control>
@@ -58,9 +56,7 @@
             <height>608</height>
             <texture>views/showcase_glow.png</texture>
             <colordiffuse>$VAR[ExtendedColorDiffuseVar]</colordiffuse>
-            <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
-            <include>Animation_VisibleChange400</include>
-            <include>Animation_WindowFade200</include>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
         </control>
         <control type="group">
             <posx>30</posx>
@@ -68,7 +64,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfoupperleft)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -78,7 +73,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfolowerleft)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -90,7 +84,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfoupperright)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -100,7 +93,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfolowerright)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -113,7 +105,6 @@
             <itemgap>40</itemgap>
             <orientation>horizontal</orientation>
             <control type="label">
-                <textcolor>white2</textcolor>
                 <font>Font_Reg19_Caps</font>
                 <shadowcolor>black</shadowcolor>
                 <include>BreadcrumbsLabel</include>
@@ -122,7 +113,6 @@
                 <visible>Control.IsEnabled(3000) + Control.IsVisible(3000)</visible>
             </control>
             <control type="label">
-                <textcolor>white2</textcolor>
                 <font>Font_Reg19_Caps</font>
                 <shadowcolor>black</shadowcolor>
                 <include>BreadcrumbsLabel</include>
@@ -132,10 +122,6 @@
             </control>
         </control>
         <control type="grouplist" id="5000">
-            <posx>-100</posx>
-            <posy>-150</posy>
-            <width>0</width>
-            <height>0</height>
             <onleft>5000</onleft>
             <onright>50</onright>
             <onup>IncreaseRating</onup>
@@ -143,14 +129,14 @@
             <orientation>horizontal</orientation>
             <itemgap>50</itemgap>
             <control type="button" id="3000">
-                <label>Play Game</label>
+                <label>$ADDON[script.games.rom.collection.browser 54006]</label>
                 <include>HiddenObject</include>
             </control>
             <control type="button" id="3001">
-                <label>Play video</label>
+                <label>31332</label>
                 <include>HiddenObject</include>
-                <onclick>XBMC.PlayMedia($INFO[ListItem.Property(gameplayinfo)],1)</onclick>
-                <visible>!IsEmpty(ListItem.Property(autoplayvideoinfo)) + !IsEmpty(ListItem.Property(gameplayinfo))</visible>
+                <onclick>PlayMedia($INFO[ListItem.Property(gameplayinfo)],1)</onclick>
+                <visible>!IsEmpty(ListItem.Property(gameplayinfo))</visible>
             </control>
         </control>
         <control type="group">
@@ -167,7 +153,7 @@
             </control>
             <control type="group">
                 <control type="image">
-                    <animation effect="slide" start="1950" end="0" time="700" tween="cubic" easing="out" delay="1100">WindowOpen</animation>
+                    <animation effect="slide" start="1950" end="0" time="700" tween="cubic" delay="1100">WindowOpen</animation>
                     <posx>500</posx>
                     <posy>-136</posy>
                     <width>900</width>
@@ -184,7 +170,6 @@
                         <scroll>true</scroll>
                         <font>Font_Reg38</font>
                         <label>$INFO[Listitem.Label]</label>
-                        <textcolor>white2</textcolor>
                         <shadowcolor>black</shadowcolor>
                     </control>
                     <control type="label">
@@ -205,10 +190,9 @@
                     <posy>-134</posy>
                     <width>485</width>
                     <height>312</height>
-                    <align>justify</align>
                     <font>Font_Reg19</font>
                     <pagecontrol>60</pagecontrol>
-                    <autoscroll delay="15000" time="5000" repeat="10000">Skin.HasSetting(Nox.AutoScroll)</autoscroll>
+                    <autoscroll delay="15000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                     <textcolor>grey2</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <label>$INFO[ListItem.Property(plot)]</label>
@@ -217,12 +201,13 @@
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>-80</posy>
+                        <itemgap>10</itemgap>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
-                            <label>Publisher:</label>
+                            <label>$ADDON[script.games.rom.collection.browser 50002]:</label>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <aligny>bottom</aligny>
@@ -233,19 +218,20 @@
                             <label fallback="N/A">$INFO[ListItem.Property(publisher)]</label>
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
-                            <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>-32</posy>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
-                            <label>Developer:</label>
+                            <label>$ADDON[script.games.rom.collection.browser 50003]:</label>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <aligny>bottom</aligny>
@@ -256,19 +242,20 @@
                             <label fallback="N/A">$INFO[ListItem.Property(developer)]</label>
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
-                            <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>16</posy>
+                        <itemgap>10</itemgap>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
-                            <label>Players:</label>
+                            <label>$ADDON[script.games.rom.collection.browser 54004]:</label>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <aligny>bottom</aligny>
@@ -279,14 +266,15 @@
                             <label fallback="N/A">$INFO[ListItem.Property(maxplayers)]</label>
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
-                            <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>64</posy>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -302,13 +290,14 @@
                             <label fallback="N/A">$INFO[ListItem.Property(rating)]$INFO[ListItem.Property(votes), (,)]</label>
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
-                            <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>112</posy>
+                        <itemgap>10</itemgap>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
@@ -325,8 +314,8 @@
                             <label fallback="13170">$INFO[ListItem.Property(playcount)]</label>
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
-                            <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>
