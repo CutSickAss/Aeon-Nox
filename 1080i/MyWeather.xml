@@ -245,10 +245,10 @@
                             <font>Font_Reg20</font>
                             <info>Window.Property(Current.Pressure)</info>
                         </control>
-                        <control type="fadelabel">
+                        <control type="label">
                             <posx>278</posx>
                             <posy>780</posy>
-                            <width>410</width>
+                            <width>450</width>
                             <height>52</height>
                             <font>Font_Reg20</font>
                             <info>Window.Property(Current.Wind)</info>
@@ -2168,10 +2168,10 @@
                             <font>Font_Reg20</font>
                             <info>Window.Property(Current.Humidity)</info>
                         </control>
-                        <control type="fadelabel">
+                        <control type="label">
                             <posx>278</posx>
                             <posy>735</posy>
-                            <width>410</width>
+                            <width>450</width>
                             <height>52</height>
                             <font>Font_Reg20</font>
                             <info>Window.Property(Current.Wind)</info>

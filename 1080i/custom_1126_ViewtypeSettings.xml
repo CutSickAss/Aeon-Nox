@@ -78,8 +78,7 @@
                     <label>42309</label>
                     <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(InfopanelDelay)] seconds[/COLOR]</label2>
                     <onclick>ActivateWindow(1114)</onclick>
-                    <enable>Stringcompare(Control.GetLabel(4421),infopanelonauto)</enable>
-                    <visible>Control.IsVisible(1614)</visible>
+                    <visible>Control.IsVisible(1614) + Stringcompare(Control.GetLabel(4421),infopanelonauto)</visible>
                 </control>
 
             <!-- PosterLite -->
@@ -248,7 +247,8 @@
                 <label>$LOCALIZE[41159]:</label>
                 <label2>[COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label2>
                 <onclick condition="StringCompare(Control.GetLabel(528707),noicon) | IsEmpty(Control.GetLabel(528707))">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528707),clearart)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],noicon)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528707),banner)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],noicon)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528707),clearart)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],banner)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528707),logo)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],clearart)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528707),landscape)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],logo)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528707),poster)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],landscape)</onclick>
@@ -271,25 +271,35 @@
                 <selected>Skin.HasSetting(PLcdART)</selected>
                 <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + StringCompare(Control.GetLabel(528707),poster)</visible>
             </control>
-            <control type="togglebutton" id="1767">
+            <control type="radiobutton" id="1767">
                 <description>Toggle Title (TV)</description>
-                <pulseonselect>yes</pulseonselect>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[369]: [COLOR $VAR[FontColorVar]]$LOCALIZE[13106][/COLOR]</label>
-                <altlabel>$LOCALIZE[369]: [COLOR $VAR[FontColorVar]]$LOCALIZE[13108][/COLOR]</altlabel>
+                <label>$LOCALIZE[369]</label>
                 <onclick>Skin.ToggleSetting(plitetvtitle)</onclick>
-                <usealttexture>!Skin.HasSetting(plitetvtitle)</usealttexture>
+				<selected>!Skin.HasSetting(plitetvtitle)</selected>
                 <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
             </control>
-            <control type="togglebutton" id="1768">
+            <control type="radiobutton" id="1768">
                 <description>Toggle Title (Movies)</description>
-                <pulseonselect>yes</pulseonselect>
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[369]: [COLOR $VAR[FontColorVar]]$LOCALIZE[13106][/COLOR]</label>
-                <altlabel>$LOCALIZE[369]: [COLOR $VAR[FontColorVar]]$LOCALIZE[13108][/COLOR]</altlabel>
+                <label>$LOCALIZE[369]</label>
                 <onclick>Skin.ToggleSetting(plitetitle)</onclick>
-                <usealttexture>!Skin.HasSetting(plitetitle)</usealttexture>
+				<selected>!Skin.HasSetting(plitetitle)</selected>
                 <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+            </control>
+            <control type="radiobutton" id="1771">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[202]</label>
+                <onclick>Skin.ToggleSetting(pltagline)</onclick>
+				<selected>!Skin.HasSetting(pltagline)</selected>
+                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !Container.Content(tvshows)</visible>
+            </control>
+            <control type="radiobutton" id="1772">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>+1 $LOCALIZE[41159]</label>
+                <onclick>Skin.ToggleSetting(plextraicon)</onclick>
+				<selected>Skin.HasSetting(plextraicon)</selected>
+                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
             </control>
 
                 <!--Landscape Options-->
@@ -379,7 +389,7 @@
                     <label>$LOCALIZE[202]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[InfoWallTagLineSettingsVar][/COLOR]</label2>
                     <onclick>Skin.ToggleSetting(InfoWallTagLine)</onclick>
-                    <visible>[Stringcompare(Window(home).Property(actualViewtype),AddonWall) | [Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Stringcompare(Control.GetLabel(4421),infopaneloff)]] + Container.Content(movies)</visible>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),AddonWall) + Container.Content(movies)</visible>
                 </control>
                 <control type="radiobutton" id="1701">
                     <include>Objects_MediaMenuButtonAlt2</include>

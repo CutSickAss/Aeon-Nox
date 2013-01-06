@@ -38,7 +38,7 @@
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <imagepath background="true" fallback="special://skin/backgrounds/videos/">$VAR[VideoFanartVar]</imagepath>
-				<aspectratio>stretch</aspectratio>
+                <aspectratio>stretch</aspectratio>
                 <animation effect="fade" start="100" end="50" time="800">Hidden</animation>
                 <visible>!Window.IsActive(movieinformation)</visible>
             </control>
