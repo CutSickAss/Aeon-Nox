@@ -7,8 +7,9 @@
 	  <include>FullscreenDimensions</include>
 	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <texture>views/logo_back.png</texture>
-	  <animation effect="fade" end="70" time="0" condition="Substring(Skin.CurrentTheme,whit)">Conditional</animation>
-	  <animation effect="slide" end="0,320" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
+	  <animation effect="fade" end="80" time="0" condition="Substring(Skin.CurrentTheme,whit)">Conditional</animation>
+	  <animation effect="slide" end="0,320" time="300" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
+	  <animation effect="slide" end="0,-320" time="200" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
 	</control>
 	<control type="image">
 	  <visible>[!Container.Content(tvshows)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
@@ -18,17 +19,14 @@
 	  <aspectratio>stretch</aspectratio>
 	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <texture>views/lowlist_panelback.png</texture>
-	  <animation effect="slide" end="0,198" time="300" condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Conditional</animation>
+	  <animation effect="slide" end="0,198" time="300" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
+	  <animation effect="slide" end="0,-198" time="200" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
 	</control>
 	<control type="group">
 	  <posy>755</posy>
 	  <include>Neon_Topbar</include>
-	  <visible>!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
-	</control>
-	<control type="group">
-	  <posy>953</posy>
-	  <include>Neon_Topbar</include>
-	  <visible>Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+	  <animation effect="slide" end="0,198" time="300" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
+	  <animation effect="slide" end="0,-198" time="200" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
 	</control>
 	<control type="group">
 	  <posx>557</posx>
@@ -45,7 +43,7 @@
 	  </control>
 	  <!-- Labels -->
 	  <control type="group" id="528200">
-		<visible>[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]+!Control.IsVisible(528195)]|[Stringcompare(Control.GetLabel(4421),infopanelonmanual)+Control.HasFocus(7000)+!Control.IsVisible(528195)]|Stringcompare(Control.GetLabel(4421),infopanelon)]+!Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+		<visible>[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]+!Control.IsVisible(528195)]|[StringCompare(Control.GetLabel(4421),infopanelonmanual)+Control.HasFocus(7000)+!Control.IsVisible(528195)]|StringCompare(Control.GetLabel(4421),infopanelon)]+!StringCompare(Control.GetLabel(4421),infopaneloff)</visible>
 		<animation effect="fade" time="300" reversible="false">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
@@ -667,10 +665,10 @@
   </include>
   <include name="PosFade">
 	<visible>!Control.IsVisible(528200)</visible>
-	<animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),1)">Conditional</animation>
-	<animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),2)">Conditional</animation>
-	<animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),3)">Conditional</animation>
-	<animation effect="fade" start="100" end="0" time="500" delay="4000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),4)">Conditional</animation>
-	<animation effect="fade" start="100" end="0" time="500" delay="5000" reversible="false" condition="Control.IsVisible(528194)+Stringcompare(Skin.String(InfopanelDelay),5)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),1)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),2)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),3)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="500" delay="4000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),4)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="500" delay="5000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),5)">Conditional</animation>
   </include>
 </includes>
