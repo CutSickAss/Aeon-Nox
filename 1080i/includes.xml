@@ -980,6 +980,8 @@
         <onload>Skin.SetString(PosterLiteTVShows,poster)</onload>
         <onload>Skin.SetString(PosterLiteGenres,poster)</onload>
         <onload>Skin.SetString(PosterLiteSets,poster)</onload>
+        <onload>Skin.SetString(PosterLitePlusMovies,noicon)</onload>
+        <onload>Skin.SetString(PosterLitePlusTVShows,banner)</onload>
         <onload>Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
         <onload>Skin.SetBool(firstrun4.0)</onload>
     </include>

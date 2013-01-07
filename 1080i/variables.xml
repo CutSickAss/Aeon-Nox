@@ -2496,5 +2496,15 @@
         <value condition="StringCompare(Control.GetLabel(528707),banner)">$LOCALIZE[31058]</value>
         <value condition="StringCompare(Control.GetLabel(528707),noicon)">$LOCALIZE[106]</value>
     </variable>
+    <variable name="PLPlusIconVar">
+        <value condition="Container.Content(movies)">$INFO[Skin.String(PosterLitePlusMovies)]</value>
+        <value condition="Container.Content(tvshows)">$INFO[Skin.String(PosterLitePlusTVShows)]</value>
+    </variable>
+    <variable name="PLPlusIconLabel">
+        <value condition="StringCompare(Control.GetLabel(528708),logo)">$LOCALIZE[31059]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),clearart)">$LOCALIZE[31086]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),banner)">$LOCALIZE[31058]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),noicon)">$LOCALIZE[106]</value>
+    </variable>
 
 </includes>
