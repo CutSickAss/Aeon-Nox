@@ -370,6 +370,7 @@
 		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
 		<include>PLLogo</include>
+		<include>PLLogoShadow</include>
 	  </control>
 	</itemlayout>
 	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),logo)">
@@ -383,6 +384,7 @@
 		  <effect type="slide" end="-150,4" time="0" />
 		</animation>
 		<include>PLLogo</include>
+		<include>PLLogoShadow</include>
 	  </control>
 	</focusedlayout>
 	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),clearart)+!Control.IsVisible(528196)">
@@ -392,6 +394,7 @@
 		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
 		<include>PLClear</include>
+		<include>PLClearShadow</include>
 	  </control>
 	</itemlayout>
 	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),clearart)">
@@ -405,6 +408,7 @@
 		  <effect type="slide" end="-150,4" time="0" />
 		</animation>
 		<include>PLClear</include>
+		<include>PLClearShadow</include>
 	  </control>
 	</focusedlayout>
 	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),banner)+!Control.IsVisible(528196)">
@@ -516,6 +520,15 @@
 	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[LandscapeThumbVar]</texture>
 	</control>
 	<control type="image">
+	  <posx>14</posx>
+	  <posy>37</posy>
+	  <width>340</width>
+	  <height>133</height>
+	  <aspectratio>keep</aspectratio>
+	  <texture>$INFO[ListItem.Art(clearlogo)]</texture>
+	  <visible>IsEmpty(ListItem.Art(landscape))</visible>
+	</control>
+	<control type="image">
 	  <posy>205</posy>
 	  <width>368</width>
 	  <height>207</height>
@@ -570,6 +583,8 @@
 	  <aspectratio aligny="bottom">keep</aspectratio>
 	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
 	</control>
+  </include>
+  <include name="PLLogoShadow">
 	<control type="image">
 	  <posy>205</posy>
 	  <width>525</width>
@@ -578,7 +593,6 @@
 	  <aspectratio aligny="top">keep</aspectratio>
 	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
-	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
   </include>
   <include name="PLClear">
@@ -601,6 +615,8 @@
 	  <aspectratio aligny="bottom">keep</aspectratio>
 	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowClearArtVar]</texture>
 	</control>
+  </include>
+  <include name="PLClearShadow">
 	<control type="image">
 	  <posy>205</posy>
 	  <width>525</width>
@@ -609,7 +625,6 @@
 	  <aspectratio aligny="top">keep</aspectratio>
 	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowClearArtVar]</texture>
 	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
-	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
   </include>
   <include name="PLBanner">
