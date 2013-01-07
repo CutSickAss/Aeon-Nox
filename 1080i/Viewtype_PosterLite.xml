@@ -64,7 +64,7 @@
 		  <scrollspeed>10</scrollspeed>
 		  <font>Font_Bold19</font>
 		  <label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Genre][/COLOR]</label>
-		  <visible>!IsEmpty(ListItem.Genre)+Skin.HasSetting(plextraicon)+!StringCompare(Control.GetLabel(528707),banner)+!StringCompare(Control.GetLabel(528707),noicon)</visible>
+		  <visible>!IsEmpty(ListItem.Genre)+StringCompare(Control.GetLabel(528708),banner)</visible>
 		</control>
 		<control type="fadelabel">
 		  <posy>-5</posy>
@@ -75,31 +75,38 @@
 		  <scrollspeed>10</scrollspeed>
 		  <font>Font_Bold19</font>
 		  <label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Genre][/COLOR]</label>
-		  <visible>!IsEmpty(ListItem.Genre)+[!Skin.HasSetting(plextraicon)|StringCompare(Control.GetLabel(528707),banner)|StringCompare(Control.GetLabel(528707),noicon)]</visible>
-		</control>
-		<control type="group">
-		  <posx>795</posx>
-		  <posy>-44</posy>
-		  <include>PLBanner</include>
-		  <visible>Skin.HasSetting(plextraicon)+!StringCompare(Control.GetLabel(528707),banner)+!StringCompare(Control.GetLabel(528707),noicon)</visible>
+		  <visible>!IsEmpty(ListItem.Genre)+!StringCompare(Control.GetLabel(528708),banner)</visible>
 		</control>
 		<control type="group">
 		  <posx>915</posx>
 		  <posy>-148</posy>
 		  <include>PLLogo</include>
 		  <animation effect="zoom" end="77" time="0" condition="true">Conditional</animation>
-		  <visible>Skin.HasSetting(plextraicon)+StringCompare(Control.GetLabel(528707),banner)+!StringCompare(Control.GetLabel(528707),noicon)+!IsEmpty(ListItem.Art(clearlogo))</visible>
+		  <visible>StringCompare(Control.GetLabel(528708),logo)+!IsEmpty(ListItem.Art(clearlogo))</visible>
+		</control>
+		<control type="group">
+		  <posx>915</posx>
+		  <posy>-148</posy>
+		  <include>PLClear</include>
+		  <animation effect="zoom" end="77" time="0" condition="true">Conditional</animation>
+		  <visible>StringCompare(Control.GetLabel(528708),clearart)+[!IsEmpty(ListItem.Art(clearart))|!IsEmpty(ListItem.Art(clearlogo))]</visible>
+		</control>
+		<control type="group">
+		  <posx>795</posx>
+		  <posy>-44</posy>
+		  <include>PLBanner</include>
+		  <visible>StringCompare(Control.GetLabel(528708),banner)</visible>
 		</control>
 		<!-- Movies only -->
 		<control type="group">
 		  <posx>0</posx>
 		  <include>PLTagl</include>
-		  <visible>Skin.HasSetting(plextraicon)+!StringCompare(Control.GetLabel(528707),noicon)</visible>
+		  <visible>!StringCompare(Control.GetLabel(528708),noicon)</visible>
 		</control>
 		<control type="group">
 		  <posx>540</posx>
 		  <include>PLTagl</include>
-		  <visible>[!Skin.HasSetting(plextraicon)|StringCompare(Control.GetLabel(528707),noicon)]</visible>
+		  <visible>StringCompare(Control.GetLabel(528708),noicon)</visible>
 		</control>
 	  </control>
 	</control>
@@ -585,7 +592,7 @@
 	  <shadowcolor>black</shadowcolor>
 	  <label>[B]$INFO[ListItem.Label][/B]</label>
 	  <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
-	  <visible>IsEmpty(ListItem.Art(clearlogo))+IsEmpty(ListItem.Art(clearlogo))</visible>
+	  <visible>IsEmpty(ListItem.Art(clearart))+IsEmpty(ListItem.Art(clearlogo))</visible>
 	</control>
 	<control type="image">
 	  <width>525</width>

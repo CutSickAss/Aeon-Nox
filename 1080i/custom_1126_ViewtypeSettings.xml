@@ -253,7 +253,22 @@
                 <onclick condition="StringCompare(Control.GetLabel(528707),landscape)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],logo)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528707),poster)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],landscape)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528707),noicon)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
-                <visible>StringCompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+                <visible>StringCompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets)</visible>
+            </control>
+            <control type="label" id="528708">
+                <label>$VAR[PLPlusIconVar]</label>
+                <include>HiddenObject</include>
+            </control>
+            <control type="button" id="528766">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>+1 $LOCALIZE[41159]:</label>
+                <label2>[COLOR $VAR[FontColorVar]]$VAR[PLPlusIconLabel][/COLOR]</label2>
+                <onclick condition="StringCompare(Control.GetLabel(528708),noicon) | IsEmpty(Control.GetLabel(528708))">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528708),banner)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],noicon)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528708),clearart)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],banner)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528708),logo)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],clearart)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528708),noicon)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
+                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
             </control>
             <control type="radiobutton" id="1769">
 				<description>Poster Animation</description>
@@ -269,7 +284,7 @@
                 <label>$LOCALIZE[42212]</label>
                 <onclick>Skin.ToggleSetting(PLcdART)</onclick>
                 <selected>Skin.HasSetting(PLcdART)</selected>
-                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + StringCompare(Control.GetLabel(528707),poster)</visible>
+                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + StringCompare(Control.GetLabel(528707),poster)</visible>
             </control>
             <control type="radiobutton" id="1767">
                 <description>Toggle Title (TV)</description>
@@ -292,14 +307,7 @@
                 <label>$LOCALIZE[202]</label>
                 <onclick>Skin.ToggleSetting(pltagline)</onclick>
 				<selected>!Skin.HasSetting(pltagline)</selected>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !Container.Content(tvshows)</visible>
-            </control>
-            <control type="radiobutton" id="1772">
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>+1 $LOCALIZE[41159]</label>
-                <onclick>Skin.ToggleSetting(plextraicon)</onclick>
-				<selected>Skin.HasSetting(plextraicon)</selected>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
+                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !Container.Content(tvshows)</visible>
             </control>
 
                 <!--Landscape Options-->

@@ -113,6 +113,10 @@
                 <label>$VAR[PLIconVar]</label>
                 <include>HiddenObject</include>
             </control>
+            <control type="label" id="528708">
+                <label>$VAR[PLPlusIconVar]</label>
+                <include>HiddenObject</include>
+            </control>
         </control>
 
         <include>Furniture_Showcase</include>
