@@ -980,7 +980,7 @@
         <value>$INFO[Container(9000).ListItem.Property(InfoLine)]</value>
     </variable>
     <variable name="SubMenuVar">
-        <value condition="Window.IsActive(1150)">$INFO[Window(1124).Property(SubmenuType)]$INFO[Window(1124).Property(custom1)]$INFO[Window(1124).Property(custom2)]$INFO[Window(1124).Property(custom3)]$INFO[Window(1124).Property(custom4)]$INFO[Window(1124).Property(custom5)]$INFO[Window(1124).Property(custom6)]$INFO[Window(1124).Property(custom7)]$INFO[Window(1124).Property(custom8)]$INFO[Window(1124).Property(custom9)]$INFO[Window(1124).Property(custom10)]</value>
+        <value condition="Window.IsActive(1150)">$INFO[Window(1124).Property(SubmenuType)]$INFO[Window(1124).Property(custom1)]$INFO[Window(1124).Property(custom2)]$INFO[Window(1124).Property(custom3)]$INFO[Window(1124).Property(custom4)]$INFO[Window(1124).Property(custom5)]$INFO[Window(1124).Property(custom6)]$INFO[Window(1124).Property(custom7)]$INFO[Window(1124).Property(custom8)]$INFO[Window(1124).Property(custom9)]$INFO[Window(1124).Property(custom0)]</value>
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.SubMenu)]</value>
         <value>$INFO[Container(9000).ListItem.Property(SubMenu)]</value>
     </variable>
@@ -1435,10 +1435,10 @@
         <value>$INFO[ListItem.Art(poster)]</value>
     </variable>
     <variable name="LibraryStructureVar">
-        <value condition="Stringcompare(Skin.String(LibraryStructure),1)">ARTIST/ALBUMNAME/</value>
-        <value condition="Stringcompare(Skin.String(LibraryStructure),2)">ARTIST/YEAR - ALBUMNAME/</value>
-        <value condition="Stringcompare(Skin.String(LibraryStructure),3)">ARTIST/ALBUMNAME (YEAR)/</value>
-        <value condition="Stringcompare(Skin.String(LibraryStructure),4)">ARTIST - ALBUMNAME (YEAR)/</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),1)">[UPPERCASE]$LOCALIZE[557]/$LOCALIZE[558]/[/UPPERCASE]</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),2)">[UPPERCASE]$LOCALIZE[557]/$LOCALIZE[562] - $LOCALIZE[558]/[/UPPERCASE]</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),3)">[UPPERCASE]$LOCALIZE[557]/$LOCALIZE[558] ($LOCALIZE[562])/[/UPPERCASE]</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),4)">[UPPERCASE]$LOCALIZE[557] - $LOCALIZE[558] ($LOCALIZE[562])/[/UPPERCASE]</value>
     </variable>
     <variable name="FavoritesListTypeVar">
         <value condition="Stringcompare(Skin.String(FavoritesListType),1) | IsEmpty(Skin.String(FavoritesListType))">$LOCALIZE[31165]</value>
