@@ -1,3 +1,11 @@
+[B]4.0.9[/B]
+- Removed image
+- New Aeon Nox logo.
+- Several fixes --> https://github.com/BigNoid/Aeon-Nox/commits/master
+
+[B]4.0.8[/B]
+- Updated language files from Transifex
+
 [B]4.0.5[/B]
 - Updated language files from Transifex
 
@@ -145,9 +153,9 @@
 [B]By applying this update all settings from previous version are lost! This includes custom backgrounds and assigned favorites to the main menu. You can set them again in the skin settings customizer windows. Please use the rollback function if you need to check your previous settings[/B]
 - Changed skin codebase to 1080 - thx to Phil65 for his great conversion program!
 - Reworked custom items on Home screen: 
-  •	It's now possible to have 9 custom items with 5 custom submenu items, all which can be fully customizable.
-  • Over 25 different widgets, most with 2 modes, which can be attached to every menu item.
-  • Background customizer has been moved to 'Main menu item customizer'. Every menu item can have all available background types.
+  ï¿½	It's now possible to have 9 custom items with 5 custom submenu items, all which can be fully customizable.
+  ï¿½ Over 25 different widgets, most with 2 modes, which can be attached to every menu item.
+  ï¿½ Background customizer has been moved to 'Main menu item customizer'. Every menu item can have all available background types.
 - Reworked Music visualisation screen.
 - Added options to show logos instead of labels, whenever available, in Showcase view and Shift view.
 - Wall view now only has clear case thumbs.
@@ -305,7 +313,7 @@
 - Updated audio flags.
 - New aspect ratio flags.
 - Updated Dutch languages strings - thx Machine-Sanctum
-- Fixed: Uppercase labels with glyphs were forced lowercase (e.g. DJ TIëSTO instead of DJ TIËSTO)
+- Fixed: Uppercase labels with glyphs were forced lowercase (e.g. DJ TIï¿½STO instead of DJ TIï¿½STO)
 - Playlist widget now shows instead of Recent/Random widgets when playing music on Home window. Widgets are still accessible.
 - New InfoWall layout + added banner style for tv shows.
 - Restored ClearART in pause osd.

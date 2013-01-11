@@ -508,7 +508,7 @@
 	  <font>Font_MainClassic3</font>
 	  <textcolor>FFE00000</textcolor>
 	  <shadowcolor>black</shadowcolor>
-	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <label>$INFO[ListItem.Label]</label>
 	  <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
 	  <visible>IsEmpty(ListItem.Art(landscape))+IsEmpty(ListItem.Art(fanart))</visible>
 	</control>
@@ -572,7 +572,7 @@
 	  <font>Font_MainClassic3</font>
 	  <textcolor>FFE00000</textcolor>
 	  <shadowcolor>black</shadowcolor>
-	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <label>$INFO[ListItem.Label]</label>
 	  <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
 	  <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
 	</control>
@@ -604,7 +604,7 @@
 	  <font>Font_MainClassic3</font>
 	  <textcolor>FFE00000</textcolor>
 	  <shadowcolor>black</shadowcolor>
-	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <label>$INFO[ListItem.Label]</label>
 	  <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
 	  <visible>IsEmpty(ListItem.Art(clearart))+IsEmpty(ListItem.Art(clearlogo))</visible>
 	</control>
@@ -670,7 +670,7 @@
 	  <textcolor>FFE00000</textcolor>
 	  <shadowcolor>black</shadowcolor>
 	  <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
-	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <label>$INFO[ListItem.Label]</label>
 	  <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
 	</control>
 	<control type="image">
@@ -731,7 +731,7 @@
 	  <scrollspeed>20</scrollspeed>
 	  <scrollout>false</scrollout>
 	  <pauseatend>2000</pauseatend>
-	  <label>[B]$INFO[ListItem.Label][/B]</label>
+	  <label>$INFO[ListItem.Label]</label>
 	  <visible>[[!Container.Content(tvshows)+!Skin.HasSetting(plitetitle)]|[Container.Content(tvshows)+!Skin.HasSetting(plitetvtitle)]]+!StringCompare(ListItem.Label,..)+!IsEmpty(ListItem.Label)</visible>
 	</control>
   </include>
