@@ -306,7 +306,7 @@
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[202]</label>
                 <onclick>Skin.ToggleSetting(pltagline)</onclick>
-				<selected>!Skin.HasSetting(pltagline)</selected>
+				<selected>Skin.HasSetting(pltagline)</selected>
                 <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !Container.Content(tvshows)</visible>
             </control>
 
