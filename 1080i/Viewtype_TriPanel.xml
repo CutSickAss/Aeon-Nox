@@ -407,8 +407,8 @@
                     <width>842</width>
                     <height>765</height>
                     <pagecontrol>70</pagecontrol>
-                    <onright>70</onright>
-                    <onleft>9000</onleft>
+                    <onright>5211</onright>
+                    <onleft>70</onleft>
                     <onup>52</onup>
                     <ondown>52</ondown>
                     <viewtype label="31477">list</viewtype>
@@ -437,7 +437,7 @@
                                 <posx>398</posx>
                                 <width>792</width>
                                 <height>147</height>
-                        <shadowcolor>black</shadowcolor>
+                                <shadowcolor>black</shadowcolor>
                                 <align>center</align>
                                 <label>$INFO[ListItem.Label]</label>
                                 <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -497,7 +497,7 @@
                                 <width>792</width>
                                 <height>147</height>
                                 <align>center</align>
-                        <shadowcolor>black</shadowcolor>
+                                <shadowcolor>black</shadowcolor>
                                 <label>$INFO[ListItem.Label]</label>
                                 <font>Font_Bold24</font>
                                 <visible>IsEmpty(ListItem.Art(banner)) + IsEmpty(ListItem.Art(tvshow.banner)) + IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -800,14 +800,15 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="70">
-                    <posx>872</posx>
+                    <posx>30</posx>
+                    <include>Animation_VerticalScrollBar</include>
                     <posy>126</posy>
                     <width>46</width>
                     <height>725</height>
                     <onup>70</onup>
                     <ondown>70</ondown>
-                    <onright>9000</onright>
-                    <onleft>52</onleft>
+                    <onright>52</onright>
+                    <onleft>9000</onleft>
                     <!--<animation effect="fade" time="0" start="100" end="20" condition="!Control.HasFocus(70)">Conditional</animation>-->
                 </control>
             </control>
