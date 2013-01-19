@@ -502,7 +502,7 @@
 	</control>
 	<control type="image">
 	  <posx>315</posx>
-	  <posy>-1</posy>
+	  <posy>-2</posy>
 	  <width>150</width>
 	  <height>150</height>
 	  <include>OverlayVisibility0</include>
