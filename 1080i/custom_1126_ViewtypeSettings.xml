@@ -244,7 +244,7 @@
             </control>
             <control type="button" id="528765">
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[41159]:</label>
+                <label>$LOCALIZE[31959]:</label>
                 <label2>[COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label2>
                 <onclick condition="StringCompare(Control.GetLabel(528707),noicon) | IsEmpty(Control.GetLabel(528707))">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528707),banner)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],noicon)</onclick>
@@ -261,7 +261,7 @@
             </control>
             <control type="button" id="528766">
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>+1 $LOCALIZE[41159]:</label>
+                <label>+1 $LOCALIZE[31959]:</label>
                 <label2>[COLOR $VAR[FontColorVar]]$VAR[PLPlusIconLabel][/COLOR]</label2>
                 <onclick condition="StringCompare(Control.GetLabel(528708),noicon) | IsEmpty(Control.GetLabel(528708))">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528708),banner)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],noicon)</onclick>
@@ -281,7 +281,7 @@
             </control>
             <control type="radiobutton" id="1770">
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[42212]</label>
+                <label>$LOCALIZE[31812]</label>
                 <onclick>Skin.ToggleSetting(PLcdART)</onclick>
                 <selected>Skin.HasSetting(PLcdART)</selected>
                 <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + StringCompare(Control.GetLabel(528707),poster)</visible>
