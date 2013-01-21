@@ -95,7 +95,7 @@
             </control>
             <control type="button" id="528195">
                 <include>HiddenObject</include>
-                <visible>[Window.IsVisible(shutdownmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(contextmenu)|Window.IsVisible(custom_1121_MediaMenu.xml)|Window.IsVisible(custom_1126_ViewtypeSettings.xml)|Window.IsVisible(playercontrols)|Window.IsVisible(DialogMediaFilter.xml)|Window.IsVisible(progressdialog)|Window.IsVisible(busydialog)|Window.IsVisible(custom_1127_MediaBackgroundCustomizer.xml)|Window.IsVisible(filebrowser)|Window.IsVisible(custom_1114_TimeOutPopup.xml)|Window.IsVisible(custom_1128_ColorSelect.xml)|Window.IsVisible(custom_1138_ColorPicker.xml)|Window.IsVisible(selectdialog)|Window.IsVisible(yesnodialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(favourites)]</visible>
+                <visible>[Window.IsVisible(shutdownmenu)|Window.IsVisible(movieinformation)|Window.IsVisible(contextmenu)|Window.IsVisible(custom_1121_LeftSideMenu.xml)|Window.IsVisible(custom_1126_ViewtypeSettings.xml)|Window.IsVisible(playercontrols)|Window.IsVisible(DialogMediaFilter.xml)|Window.IsVisible(progressdialog)|Window.IsVisible(busydialog)|Window.IsVisible(custom_1127_MediaBackgroundCustomizer.xml)|Window.IsVisible(filebrowser)|Window.IsVisible(custom_1114_TimeOutPopup.xml)|Window.IsVisible(custom_1128_ColorConfig.xml)|Window.IsVisible(custom_1138_ColorPicker.xml)|Window.IsVisible(selectdialog)|Window.IsVisible(yesnodialog)|Window.IsVisible(virtualkeyboard)|Window.IsVisible(favourites)]</visible>
             </control>
             <control type="button" id="528197">
                 <description>Infopanel: Delayed</description>
