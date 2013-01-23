@@ -30,7 +30,7 @@
 	</control>
 	<control type="image">
 	  <posx>200r</posx>
-	  <posy>0</posy>
+	  <posy>-1</posy>
 	  <width>200</width>
 	  <height>200</height>
 	  <visible>[StringCompare(Control.GetLabel(528707),logo) | StringCompare(Control.GetLabel(528707),clearart) | StringCompare(Control.GetLabel(528707),noicon)]</visible>
@@ -510,8 +510,8 @@
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
 	<control type="image">
-	  <posx>315</posx>
-	  <posy>-2</posy>
+	  <posx>314</posx>
+	  <posy>-1</posy>
 	  <width>150</width>
 	  <height>150</height>
 	  <include>OverlayVisibility0</include>
