@@ -8,8 +8,8 @@
 	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <texture>views/logo_back.png</texture>
 	  <animation effect="fade" end="80" time="0" condition="Substring(Skin.CurrentTheme,whit)">Conditional</animation>
-	  <animation effect="slide" end="0,320" time="300" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
-	  <animation effect="slide" end="0,-320" time="200" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
+	  <animation effect="slide" end="0,320" time="240" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
+	  <animation effect="slide" end="0,-320" time="160" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
 	</control>
 	<control type="image">
 	  <visible>[!Container.Content(tvshows)+Skin.HasSetting(pliteback1)]|[Container.Content(tvshows)+Skin.HasSetting(plitetvback1)]</visible>
@@ -19,14 +19,14 @@
 	  <aspectratio>stretch</aspectratio>
 	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <texture>views/lowlist_panelback.png</texture>
-	  <animation effect="slide" end="0,198" time="300" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
-	  <animation effect="slide" end="0,-198" time="200" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
+	  <animation effect="slide" end="0,198" time="240" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
+	  <animation effect="slide" end="0,-198" time="160" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
 	</control>
 	<control type="group">
 	  <posy>755</posy>
 	  <include>Neon_Topbar</include>
-	  <animation effect="slide" end="0,198" time="300" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
-	  <animation effect="slide" end="0,-198" time="200" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
+	  <animation effect="slide" end="0,198" time="240" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
+	  <animation effect="slide" end="0,-198" time="160" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
 	</control>
 	<control type="image">
 	  <posx>200r</posx>
@@ -53,7 +53,7 @@
 	  <!-- Labels -->
 	  <control type="group" id="528200">
 		<visible>[[[Control.IsVisible(528197)|Control.IsVisible(528198)]+![Container.OnNext|Container.OnPrevious]+!Control.IsVisible(528195)]|[StringCompare(Control.GetLabel(4421),infopanelonmanual)+Control.HasFocus(7000)+!Control.IsVisible(528195)]|StringCompare(Control.GetLabel(4421),infopanelon)]+!StringCompare(Control.GetLabel(4421),infopaneloff)</visible>
-		<animation effect="fade" time="300" reversible="false">Visible</animation>
+		<animation effect="fade" time="240" reversible="false">Visible</animation>
 		<!-- Movies and TV shows -->
 		<control type="textbox">
 		  <posy>52</posy>
@@ -111,7 +111,7 @@
 		  <posx>-90</posx>
 		  <posy>-69</posy>
 		  <visible>!Container.Content(tvshows)+Skin.HasSetting(pltagline)+!IsEmpty(ListItem.Tagline)</visible>
-		  <animation effect="slide" end="540" time="300" condition="StringCompare(Control.GetLabel(528708),noicon)">Conditional</animation>
+		  <animation effect="slide" end="540" time="240" condition="StringCompare(Control.GetLabel(528708),noicon)">Conditional</animation>
 		  <control type="image">
 			<width>960</width>
 			<height>86</height>
@@ -141,7 +141,7 @@
 	<control type="group">
 	  <!-- Flags -->
 	  <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(528061)+!Control.IsVisible(4050)+!Control.HasFocus(109)</visible>
-	  <animation effect="fade" start="0" end="100" time="600" delay="200">Visible</animation>
+	  <animation effect="fade" start="0" end="100" time="480" delay="200">Visible</animation>
 	  <control type="fadelabel">
 		<posx>550</posx>
 		<posy>1039</posy>
@@ -254,7 +254,7 @@
 	<control type="group">
 	  <posx>700</posx>
 	  <posy>124</posy>
-	  <animation effect="slide" start="1000,0" end="0,0" time="500" delay="1000" tween="quadratic" easing="out" reversible="false">Visible</animation>
+	  <animation effect="slide" start="1000,0" end="0,0" time="400" delay="1000" tween="quadratic" easing="out" reversible="false">Visible</animation>
 	  <visible>Player.HasVideo+!VideoPlayer.IsFullscreen+!Skin.HasSetting(fstrailer)</visible>
 	  <control type="image">
 		<width>1028</width>
@@ -326,7 +326,7 @@
 		</control>
 	  </control>
 	</control>
-	<animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(109)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="320" condition="Control.HasFocus(109)">Conditional</animation>
   </include>
 
   <include name="contents528list">
@@ -359,8 +359,8 @@
 	  <control type="group">
 		<posx>4</posx>
 		<posy>330</posy>
-		<animation effect="zoom" center="475,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
-		<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
+		<animation effect="zoom" center="475,978" start="39" end="100" time="320" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
+		<animation effect="zoom" center="6,978" start="39" end="100" time="320" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<include>PLcdART</include>
 		<include>PLPoster</include>
@@ -382,10 +382,10 @@
 	  <control type="group">
 		<posx>-409</posx>
 		<posy>810</posy>
-		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
-		  <effect type="zoom" center="-167,900" start="100" end="74" time="300" />
+		  <effect type="zoom" center="-167,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-80,4" time="0" />
 		</animation>
 		<include>PLLand</include>
@@ -405,10 +405,10 @@
 	  <control type="group">
 		<posx>-488</posx>
 		<posy>810</posy>
-		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
-		  <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
+		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-150,4" time="0" />
 		</animation>
 		<include>PLLogo</include>
@@ -429,10 +429,10 @@
 	  <control type="group">
 		<posx>-488</posx>
 		<posy>810</posy>
-		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
-		  <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
+		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-150,4" time="0" />
 		</animation>
 		<include>PLClear</include>
@@ -452,10 +452,10 @@
 	  <control type="group">
 		<posx>-488</posx>
 		<posy>860</posy>
-		<animation effect="zoom" center="0,910" start="74" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
 		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
-		  <effect type="zoom" center="-10,900" start="100" end="74" time="300" />
+		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-163,0" time="0" />
 		</animation>
 		<include>PLBanner</include>
@@ -728,8 +728,8 @@
 		<fadetime>0</fadetime>
 		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
 		  <effect type="fade" start="0" end="100" delay="500" />
-		  <effect type="slide" start="0,0" end="0,-233" time="1200" />
-		  <effect type="rotate" end="-360" center="auto" time="8000" delay="1700" loop="false" tween="cubic" easing="inout" />
+		  <effect type="slide" start="0,0" end="0,-233" time="960" />
+		  <effect type="rotate" end="-360" center="auto" time="6400" delay="1700" loop="false" tween="cubic" easing="inout" />
 		</animation>
 		<aspectratio align="right">keep</aspectratio>
 		<texture background="true">$VAR[cdArtVar]</texture>
@@ -775,10 +775,10 @@
   </include>
   <include name="PosFade">
 	<visible>!Control.IsVisible(528200)</visible>
-	<animation effect="fade" start="100" end="0" time="500" delay="1000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),1)">Conditional</animation>
-	<animation effect="fade" start="100" end="0" time="500" delay="2000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),2)">Conditional</animation>
-	<animation effect="fade" start="100" end="0" time="500" delay="3000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),3)">Conditional</animation>
-	<animation effect="fade" start="100" end="0" time="500" delay="4000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),4)">Conditional</animation>
-	<animation effect="fade" start="100" end="0" time="500" delay="5000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),5)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="400" delay="1000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),1)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="400" delay="2000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),2)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="400" delay="3000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),3)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="400" delay="4000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),4)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="400" delay="5000" reversible="false" condition="Control.IsVisible(528194)+StringCompare(Skin.String(InfopanelDelay),5)">Conditional</animation>
   </include>
 </includes>
