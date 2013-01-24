@@ -7,7 +7,7 @@
 	  <include>FullscreenDimensions</include>
 	  <colordiffuse>$INFO[Skin.String(PLBackDarkness)]</colordiffuse>
 	  <texture>views/logo_back.png</texture>
-	  <animation effect="fade" end="80" time="0" condition="Substring(Skin.CurrentTheme,whit)">Conditional</animation>
+	  <animation effect="fade" end="80" condition="Substring(Skin.CurrentTheme,whit)">Conditional</animation>
 	  <animation effect="slide" end="0,320" time="240" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
 	  <animation effect="slide" end="0,-320" time="160" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
 	</control>
@@ -90,14 +90,14 @@
 		  <posx>915</posx>
 		  <posy>-148</posy>
 		  <include>PLLogo</include>
-		  <animation effect="zoom" end="77" time="0" condition="true">Conditional</animation>
+		  <animation effect="zoom" end="77" condition="true">Conditional</animation>
 		  <visible>StringCompare(Control.GetLabel(528708),logo)+!IsEmpty(ListItem.Art(clearlogo))</visible>
 		</control>
 		<control type="group">
 		  <posx>915</posx>
 		  <posy>-148</posy>
 		  <include>PLClear</include>
-		  <animation effect="zoom" end="77" time="0" condition="true">Conditional</animation>
+		  <animation effect="zoom" end="77" condition="true">Conditional</animation>
 		  <visible>StringCompare(Control.GetLabel(528708),clearart)+[!IsEmpty(ListItem.Art(clearart))|!IsEmpty(ListItem.Art(clearlogo))]</visible>
 		</control>
 		<control type="group">
@@ -350,7 +350,7 @@
 	  <control type="group">
 		<posx>-75</posx>
 		<posy>605</posy>
-		<animation effect="zoom" center="auto" start="39" end="39" time="0" condition="true">Conditional</animation>
+		<animation effect="zoom" center="auto" start="39" end="39" condition="true">Conditional</animation>
 		<include>PosFade</include>
 		<include>PLPoster</include>
 	  </control>
@@ -361,7 +361,7 @@
 		<posy>330</posy>
 		<animation effect="zoom" center="475,978" start="39" end="100" time="320" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
 		<animation effect="zoom" center="6,978" start="39" end="100" time="320" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
-		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation effect="zoom" start="100" end="100" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<include>PLcdART</include>
 		<include>PLPoster</include>
 	  </control>
@@ -373,7 +373,7 @@
 	  <control type="group">
 		<posx>-526</posx>
 		<posy>836</posy>
-		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
+		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
 		<include>PLLand</include>
 	  </control>
@@ -383,10 +383,10 @@
 		<posx>-409</posx>
 		<posy>810</posy>
 		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
-		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation effect="zoom" start="100" end="100" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
 		  <effect type="zoom" center="-167,900" start="100" end="74" time="240" />
-		  <effect type="slide" end="-80,4" time="0" />
+		  <effect type="slide" end="-80,4" />
 		</animation>
 		<include>PLLand</include>
 	  </control>
@@ -395,7 +395,7 @@
 	  <control type="group">
 		<posx>-605</posx>
 		<posy>836</posy>
-		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
+		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
 		<include>PLLogo</include>
 		<include>PLLogoShadow</include>
@@ -406,10 +406,10 @@
 		<posx>-488</posx>
 		<posy>810</posy>
 		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
-		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation effect="zoom" start="100" end="100" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
-		  <effect type="slide" end="-150,4" time="0" />
+		  <effect type="slide" end="-150,4" />
 		</animation>
 		<include>PLLogo</include>
 		<include>PLLogoShadow</include>
@@ -419,7 +419,7 @@
 	  <control type="group">
 		<posx>-605</posx>
 		<posy>836</posy>
-		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
+		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
 		<include>PLClear</include>
 		<include>PLClearShadow</include>
@@ -430,10 +430,10 @@
 		<posx>-488</posx>
 		<posy>810</posy>
 		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
-		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation effect="zoom" start="100" end="100" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
-		  <effect type="slide" end="-150,4" time="0" />
+		  <effect type="slide" end="-150,4" />
 		</animation>
 		<include>PLClear</include>
 		<include>PLClearShadow</include>
@@ -443,7 +443,7 @@
 	  <control type="group">
 		<posx>-620</posx>
 		<posy>870</posy>
-		<animation effect="zoom" center="auto" start="74" end="74" time="0" condition="true">Conditional</animation>
+		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
 		<include>PLBanner</include>
 	  </control>
@@ -453,10 +453,10 @@
 		<posx>-488</posx>
 		<posy>860</posy>
 		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
-		<animation effect="zoom" start="100" end="100" time="0" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation effect="zoom" start="100" end="100" condition="!Control.HasFocus(528)">Unfocus</animation>
 		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
-		  <effect type="slide" end="-163,0" time="0" />
+		  <effect type="slide" end="-163,0" />
 		</animation>
 		<include>PLBanner</include>
 	  </control>
@@ -563,7 +563,7 @@
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="top">stretch</aspectratio>
 	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[LandscapeThumbVar]</texture>
-	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+	  <animation effect="fade" start="10" end="10" condition="true">Conditional</animation>
 	  <visible>!Control.IsVisible(528196)</visible>
 	</control>
 	<control type="group">
@@ -620,7 +620,7 @@
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="top">keep</aspectratio>
 	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
-	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+	  <animation effect="fade" start="10" end="10" condition="true">Conditional</animation>
 	</control>
   </include>
   <include name="PLClear">
@@ -652,7 +652,7 @@
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="top">keep</aspectratio>
 	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowClearArtVar]</texture>
-	  <animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+	  <animation effect="fade" start="10" end="10" condition="true">Conditional</animation>
 	</control>
   </include>
   <include name="PLBanner">

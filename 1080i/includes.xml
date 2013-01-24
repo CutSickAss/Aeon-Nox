@@ -1075,16 +1075,16 @@
         <animation effect="fade" end="100" time="120" delay="5333" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
     </include>
     <include name="PLDelAn">
-        <animation effect="fade" delay="1500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),1)">WindowOpen</animation>
-        <animation effect="fade" delay="1500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),1)">Visible</animation>
-        <animation effect="fade" delay="2500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),2)">WindowOpen</animation>
-        <animation effect="fade" delay="2500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),2)">Visible</animation>
-        <animation effect="fade" delay="3500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),3)">WindowOpen</animation>
-        <animation effect="fade" delay="3500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
-        <animation effect="fade" delay="4500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),4)">WindowOpen</animation>
-        <animation effect="fade" delay="4500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
-        <animation effect="fade" delay="5500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),5)">WindowOpen</animation>
-        <animation effect="fade" delay="5500" time="120" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
+        <animation effect="fade" delay="1500" condition="Stringcompare(Skin.String(InfopanelDelay),1)">WindowOpen</animation>
+        <animation effect="fade" delay="1500" condition="Stringcompare(Skin.String(InfopanelDelay),1)">Visible</animation>
+        <animation effect="fade" delay="2500" condition="Stringcompare(Skin.String(InfopanelDelay),2)">WindowOpen</animation>
+        <animation effect="fade" delay="2500" condition="Stringcompare(Skin.String(InfopanelDelay),2)">Visible</animation>
+        <animation effect="fade" delay="3500" condition="Stringcompare(Skin.String(InfopanelDelay),3)">WindowOpen</animation>
+        <animation effect="fade" delay="3500" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
+        <animation effect="fade" delay="4500" condition="Stringcompare(Skin.String(InfopanelDelay),4)">WindowOpen</animation>
+        <animation effect="fade" delay="4500" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
+        <animation effect="fade" delay="5500" condition="Stringcompare(Skin.String(InfopanelDelay),5)">WindowOpen</animation>
+        <animation effect="fade" delay="5500" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
