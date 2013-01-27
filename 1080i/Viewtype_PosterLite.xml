@@ -286,24 +286,28 @@
 		<control type="group">
 		  <posx>93</posx>
 		  <posy>810</posy>
+		  <include>PLcdART</include>
 		  <include>PLLand</include>
 		  <visible>StringCompare(Control.GetLabel(528707),landscape)+Control.IsVisible(528196)</visible>
 		</control>
 		<control type="group">
 		  <posx>14</posx>
 		  <posy>810</posy>
+		  <include>PLcdART</include>
 		  <include>PLLogo</include>
 		  <visible>StringCompare(Control.GetLabel(528707),logo)+Control.IsVisible(528196)</visible>
 		</control>
 		<control type="group">
 		  <posx>14</posx>
 		  <posy>810</posy>
+		  <include>PLcdART</include>
 		  <include>PLClear</include>
 		  <visible>StringCompare(Control.GetLabel(528707),clearart)+Control.IsVisible(528196)</visible>
 		</control>
 		<control type="group">
 		  <posx>14</posx>
 		  <posy>860</posy>
+		  <include>PLcdART</include>
 		  <include>PLBanner</include>
 		  <visible>StringCompare(Control.GetLabel(528707),banner)+Control.IsVisible(528196)</visible>
 		</control>
@@ -388,6 +392,7 @@
 		  <effect type="zoom" center="-167,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-80,4" />
 		</animation>
+		<include>PLcdART</include>
 		<include>PLLand</include>
 	  </control>
 	</focusedlayout>
@@ -411,6 +416,7 @@
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-150,4" />
 		</animation>
+		<include>PLcdART</include>
 		<include>PLLogo</include>
 		<include>PLLogoShadow</include>
 	  </control>
@@ -435,6 +441,7 @@
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-150,4" />
 		</animation>
+		<include>PLcdART</include>
 		<include>PLClear</include>
 		<include>PLClearShadow</include>
 	  </control>
@@ -458,6 +465,7 @@
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-163,0" />
 		</animation>
+		<include>PLcdART</include>
 		<include>PLBanner</include>
 	  </control>
 	</focusedlayout>
@@ -723,11 +731,26 @@
 	  <width>464</width>
 	  <height>464</height>
 	  <fadetime>0</fadetime>
-	  <animation effect="fade" start="0" end="100" time="300" delay="500" reversible="false" condition="[Container.OnNext|Container.OnPrevious]">Conditional</animation>
-	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
-		<effect type="fade" start="0" end="100" time="300" delay="500" />
+	  <animation effect="fade" start="0" end="100" time="520" delay="280" reversible="false" condition="[Container.OnNext|Container.OnPrevious]">Conditional</animation>
+	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+StringCompare(Control.GetLabel(528707),poster)">
+		<effect type="fade" start="0" end="100" time="520" delay="280" />
 		<effect type="slide" start="0,0" end="0,-233" time="960" delay="800" />
 		<effect type="rotate" end="-360" center="auto" time="6400" delay="2000" loop="false" tween="cubic" easing="inout" />
+	  </animation>
+	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+StringCompare(Control.GetLabel(528707),landscape)">
+		<effect type="fade" start="0" end="100" time="520" delay="280" />
+		<effect type="slide" start="-640,-480" end="-47,-480" time="960" delay="800" tween="cubic" />
+		<effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
+	  </animation>
+	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+[StringCompare(Control.GetLabel(528707),logo)|StringCompare(Control.GetLabel(528707),clearart)]">
+		<effect type="fade" start="0" end="100" time="520" delay="280" />
+		<effect type="slide" start="-640,-480" end="32,-480" time="960" delay="800" tween="cubic" />
+		<effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
+	  </animation>
+	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+StringCompare(Control.GetLabel(528707),banner)">
+		<effect type="fade" start="0" end="100" time="520" delay="280" />
+		<effect type="slide" start="-640,-530" end="32,-530" time="960" delay="800" tween="cubic" />
+		<effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
 	  </animation>
 	  <aspectratio align="right">keep</aspectratio>
 	  <texture background="true">$VAR[cdArtVar]</texture>

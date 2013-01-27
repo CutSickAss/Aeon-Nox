@@ -284,7 +284,7 @@
                 <label>$LOCALIZE[31812]</label>
                 <onclick>Skin.ToggleSetting(PLcdART)</onclick>
                 <selected>Skin.HasSetting(PLcdART)</selected>
-                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + StringCompare(Control.GetLabel(528707),poster)</visible>
+                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
             </control>
             <control type="radiobutton" id="1767">
                 <description>Toggle Title (TV)</description>
