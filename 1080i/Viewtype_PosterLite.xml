@@ -734,8 +734,8 @@
 	  <animation effect="fade" start="0" end="100" time="520" delay="280" reversible="false" condition="[Container.OnNext|Container.OnPrevious]">Conditional</animation>
 	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+StringCompare(Control.GetLabel(528707),poster)">
 		<effect type="fade" start="0" end="100" time="520" delay="280" />
-		<effect type="slide" start="0,0" end="0,-233" time="960" delay="800" />
-		<effect type="rotate" end="-360" center="auto" time="6400" delay="2000" loop="false" tween="cubic" easing="inout" />
+		<effect type="slide" start="0,0" end="0,-233" time="800" delay="800" tween="quadratic" />
+		<effect type="rotate" end="-360" center="auto" time="4800" delay="1760" loop="false" tween="cubic" easing="inout" />
 	  </animation>
 	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+StringCompare(Control.GetLabel(528707),landscape)">
 		<effect type="fade" start="0" end="100" time="520" delay="280" />

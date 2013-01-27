@@ -2508,6 +2508,8 @@
     <variable name="PLColorDiffuse">
         <value condition="Skin.HasSetting(randomcolor) + Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)">$VAR[DayTimeColorVar]</value>
         <value condition="Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)">$VAR[AreaColorVar]</value>
+        <value condition="Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(DisableGlowbar) + Substring(Skin.CurrentTheme,whit)">black</value>
+        <value condition="Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(DisableGlowbar) + !Substring(Skin.CurrentTheme,whit)">white</value>
         <value>FF1C1C1C</value>
     </variable>
     <variable name="PLRatingColor">
