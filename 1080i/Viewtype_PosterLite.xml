@@ -28,14 +28,24 @@
 	  <animation effect="slide" end="0,198" time="240" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[[StringCompare(Control.GetLabel(4421),infopanelonmanual)|StringCompare(Control.GetLabel(4421),infopanelonauto)]+StringCompare(Control.GetLabel(528707),noicon)]]">Conditional</animation>
 	  <animation effect="slide" end="0,-198" time="160" condition="Control.IsVisible(528200)+StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(4421),infopanelon)">Conditional</animation>
 	</control>
-	<control type="image">
-	  <posx>200r</posx>
-	  <posy>-1</posy>
-	  <width>200</width>
-	  <height>200</height>
+	<control type="group">
 	  <visible>[StringCompare(Control.GetLabel(528707),logo) | StringCompare(Control.GetLabel(528707),clearart) | StringCompare(Control.GetLabel(528707),noicon)]</visible>
 	  <visible>[Skin.HasSetting(watchedoverlay)+SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus)+SubString(ListItem(0).Overlay,OverlayUnWatched.png)+[[Container.Content(movies)+[StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)]+[StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes)+[StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
-	  <texture>$INFO[ListItem.Overlay,thumbs/]</texture>
+	  <posx>200r</posx>
+	  <posy>-1</posy>
+	  <control type="image">
+		<width>200</width>
+		<height>200</height>
+		<texture>$INFO[ListItem.Overlay,thumbs/]</texture>
+	  </control>
+	  <control type="image">
+		<posx>137</posx>
+		<posy>7</posy>
+		<width>60</width>
+		<height>60</height>
+		<texture>$VAR[PLWatchedIcon]</texture>
+		<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+	  </control>
 	</control>
 	<control type="group">
 	  <posx>557</posx>
@@ -86,19 +96,27 @@
 		  <label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Genre][/COLOR]</label>
 		  <visible>!IsEmpty(ListItem.Genre)+!StringCompare(Control.GetLabel(528708),banner)</visible>
 		</control>
-		<control type="group">
+		<control type="image">
 		  <posx>915</posx>
 		  <posy>-148</posy>
-		  <include>PLLogo</include>
+		  <width>525</width>
+		  <height>204</height>
+		  <fadetime>0</fadetime>
+		  <aspectratio aligny="bottom">keep</aspectratio>
+		  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
 		  <animation effect="zoom" end="77" condition="true">Conditional</animation>
-		  <visible>StringCompare(Control.GetLabel(528708),logo)+!IsEmpty(ListItem.Art(clearlogo))</visible>
+		  <visible>StringCompare(Control.GetLabel(528708),logo)</visible>
 		</control>
-		<control type="group">
+		<control type="image">
 		  <posx>915</posx>
 		  <posy>-148</posy>
-		  <include>PLClear</include>
+		  <width>525</width>
+		  <height>204</height>
+		  <fadetime>0</fadetime>
+		  <aspectratio aligny="bottom">keep</aspectratio>
+		  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowClearArtVar]</texture>
 		  <animation effect="zoom" end="77" condition="true">Conditional</animation>
-		  <visible>StringCompare(Control.GetLabel(528708),clearart)+[!IsEmpty(ListItem.Art(clearart))|!IsEmpty(ListItem.Art(clearlogo))]</visible>
+		  <visible>StringCompare(Control.GetLabel(528708),clearart)</visible>
 		</control>
 		<control type="group">
 		  <posx>795</posx>
@@ -522,6 +540,7 @@
 	  <posy>-1</posy>
 	  <width>150</width>
 	  <height>150</height>
+	  <fadetime>0</fadetime>
 	  <include>OverlayVisibility0</include>
 	</control>
 	<control type="image">
@@ -587,6 +606,7 @@
 		<posx>278</posx>
 		<width>90</width>
 		<height>90</height>
+		<fadetime>0</fadetime>
 		<include>OverlayVisibility0</include>
 	  </control>
 	  <control type="image">
@@ -711,10 +731,10 @@
 	</control>
 	<control type="image">
 	  <posx>438</posx>
-	  <width>89</width>
+	  <width>90</width>
 	  <height>90</height>
+	  <fadetime>0</fadetime>
 	  <include>OverlayVisibility0</include>
-	  <visible>StringCompare(Control.GetLabel(528707),banner)</visible>
 	</control>
 	<control type="image">
 	  <posx>496</posx>
@@ -723,39 +743,72 @@
 	  <fadetime>0</fadetime>
 	  <texture>$VAR[PLWatchedIcon]</texture>
 	  <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-	  <visible>StringCompare(Control.GetLabel(528707),banner)</visible>
 	</control>
   </include>
   <include name="PLcdART">
-	<control type="image">
-	  <width>464</width>
-	  <height>464</height>
-	  <fadetime>0</fadetime>
-	  <animation effect="fade" start="0" end="100" time="520" delay="280" reversible="false" condition="[Container.OnNext|Container.OnPrevious]">Conditional</animation>
-	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+StringCompare(Control.GetLabel(528707),poster)">
-		<effect type="fade" start="0" end="100" time="520" delay="280" />
-		<effect type="slide" start="0,0" end="0,-233" time="800" delay="800" tween="quadratic" />
-		<effect type="rotate" end="-360" center="auto" time="4800" delay="1760" loop="false" tween="cubic" easing="inout" />
-	  </animation>
-	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+StringCompare(Control.GetLabel(528707),landscape)">
-		<effect type="fade" start="0" end="100" time="520" delay="280" />
-		<effect type="slide" start="-640,-480" end="-47,-480" time="960" delay="800" tween="cubic" />
-		<effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
-	  </animation>
-	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+[StringCompare(Control.GetLabel(528707),logo)|StringCompare(Control.GetLabel(528707),clearart)]">
-		<effect type="fade" start="0" end="100" time="520" delay="280" />
-		<effect type="slide" start="-640,-480" end="32,-480" time="960" delay="800" tween="cubic" />
-		<effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
-	  </animation>
-	  <animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]+StringCompare(Control.GetLabel(528707),banner)">
-		<effect type="fade" start="0" end="100" time="520" delay="280" />
-		<effect type="slide" start="-640,-530" end="32,-530" time="960" delay="800" tween="cubic" />
-		<effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
-	  </animation>
-	  <aspectratio align="right">keep</aspectratio>
-	  <texture background="true">$VAR[cdArtVar]</texture>
-	  <bordersize>7</bordersize>
+	<control type="group">
 	  <visible>!Container.Content(tvshows)+Skin.HasSetting(PLcdART)+!IsEmpty(ListItem.Art(discart))</visible>
+	  <animation effect="fade" start="0" end="100" time="520" delay="280" reversible="false" condition="[Container.OnNext|Container.OnPrevious]">Conditional</animation>
+	  <control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>464</width>
+		<height>464</height>
+		<aspectratio align="right">keep</aspectratio>
+		<texture background="true">$VAR[cdArtVar]</texture>
+		<bordersize>7</bordersize>
+		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
+		  <effect type="fade" start="0" end="100" time="520" delay="280" />
+		  <effect type="slide" start="0,0" end="0,-233" time="800" delay="800" tween="quadratic" />
+		  <effect type="rotate" end="-360" center="auto" time="4800" delay="1760" loop="false" tween="cubic" easing="inout" />
+		</animation>
+		<visible>StringCompare(Control.GetLabel(528707),poster)</visible>
+	  </control>
+	  <control type="image">
+		<posx>-47</posx>
+		<posy>-480</posy>
+		<width>464</width>
+		<height>464</height>
+		<aspectratio align="right">keep</aspectratio>
+		<texture background="true">$VAR[cdArtVar]</texture>
+		<bordersize>7</bordersize>
+		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
+		  <effect type="fade" start="0" end="100" time="520" delay="280" />
+		  <effect type="slide" start="-593" end="0" time="960" delay="800" tween="cubic" />
+		  <effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
+		</animation>
+		<visible>StringCompare(Control.GetLabel(528707),landscape)</visible>
+	  </control>
+	  <control type="image">
+		<posx>32</posx>
+		<posy>-480</posy>
+		<width>464</width>
+		<height>464</height>
+		<aspectratio align="right">keep</aspectratio>
+		<texture background="true">$VAR[cdArtVar]</texture>
+		<bordersize>7</bordersize>
+		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
+		  <effect type="fade" start="0" end="100" time="520" delay="280" />
+		  <effect type="slide" start="-672" end="0" time="960" delay="800" tween="cubic" />
+		  <effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
+		</animation>
+		<visible>[StringCompare(Control.GetLabel(528707),logo)|StringCompare(Control.GetLabel(528707),clearart)]</visible>
+	  </control>
+	  <control type="image">
+		<posx>32</posx>
+		<posy>-530</posy>
+		<width>464</width>
+		<height>464</height>
+		<aspectratio align="right">keep</aspectratio>
+		<texture background="true">$VAR[cdArtVar]</texture>
+		<bordersize>7</bordersize>
+		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
+		  <effect type="fade" start="0" end="100" time="520" delay="280" />
+		  <effect type="slide" start="-672" end="0" time="960" delay="800" tween="cubic" />
+		  <effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
+		</animation>
+		<visible>StringCompare(Control.GetLabel(528707),banner)</visible>
+	  </control>
 	</control>
   </include>
   <include name="PLTopT">
