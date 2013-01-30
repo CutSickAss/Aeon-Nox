@@ -822,7 +822,7 @@
                         <posy>62</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">stretch</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb3.jpg]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -832,7 +832,7 @@
                         <posy>315</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">stretch</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb4.jpg]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -849,7 +849,7 @@
                         <posy>62</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">stretch</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -859,7 +859,7 @@
                         <posy>315</posy>
                         <width>391</width>
                         <height>220</height>
-                        <aspectratio aligny="top">stretch</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
