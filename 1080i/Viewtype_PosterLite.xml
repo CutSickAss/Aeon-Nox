@@ -352,7 +352,7 @@
   </include>
 
   <include name="contents528list">
-	<posx>-338</posx>
+	<posx>-341</posx>
 	<posy>0</posy>
 	<width>2850</width>
 	<height>1500</height>
@@ -379,11 +379,15 @@
 	</itemlayout>
 	<focusedlayout width="478" height="768" condition="StringCompare(Control.GetLabel(528707),poster)+!Control.IsVisible(528196)+Skin.HasSetting(PLPAn)">
 	  <control type="group">
-		<posx>4</posx>
+		<posx>7</posx>
 		<posy>330</posy>
-		<animation effect="zoom" center="475,978" start="39" end="100" time="320" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
-		<animation effect="zoom" center="6,978" start="39" end="100" time="320" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
-		<animation effect="zoom" start="100" end="100" condition="!Control.HasFocus(528)">Unfocus</animation>
+		<animation effect="zoom" center="475,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
+		<animation effect="zoom" center="6,978" start="100" end="39" time="240" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Unfocus</animation>
+		<animation effect="zoom" center="6,978" start="39" end="100" time="400" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
+		<animation type="Unfocus" reversible="false" condition="Container.OnPrevious">
+		  <effect type="slide" end="-300" />
+		  <effect type="zoom" center="497,978" start="100" end="39" time="240" tween="quadratic" easing="out" />
+		</animation>
 		<include>PLcdART</include>
 		<include>PLPoster</include>
 	  </control>
