@@ -265,10 +265,12 @@
                 <label2>[COLOR $VAR[FontColorVar]]$VAR[PLPlusIconLabel][/COLOR]</label2>
                 <onclick condition="StringCompare(Control.GetLabel(528708),noicon) | IsEmpty(Control.GetLabel(528708))">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528708),banner)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],noicon)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528708),clearart)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],banner)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528708),extrathumbs)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],banner)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528708),cdart)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],extrathumbs)</onclick>
+                <onclick condition="StringCompare(Control.GetLabel(528708),clearart)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],cdart)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528708),logo)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],clearart)</onclick>
                 <onclick condition="StringCompare(Control.GetLabel(528708),noicon)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets)</visible>
             </control>
             <control type="radiobutton" id="1769">
 				<description>Poster Animation</description>

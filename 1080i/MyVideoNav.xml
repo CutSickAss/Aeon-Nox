@@ -100,13 +100,7 @@
             <control type="button" id="528197">
                 <description>Infopanel: Delayed</description>
                 <include>HiddenObject</include>
-                <visible>Control.IsVisible(528194)+!SubString(ListItem.Path,videodb://1/7/)</visible>
-                <include>PLDelAn</include>
-            </control>
-            <control type="button" id="528198">
-                <description>Infopanel: Delayed - MovieSets</description>
-                <include>HiddenObject</include>
-                <visible>Control.IsVisible(528194)+SubString(ListItem.Path,videodb://1/7/)</visible>
+                <visible>Control.IsVisible(528194)</visible>
                 <include>PLDelAn</include>
             </control>
             <control type="label" id="528707">

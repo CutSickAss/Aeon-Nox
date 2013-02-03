@@ -2542,6 +2542,8 @@
     <variable name="PLPlusIconLabel">
         <value condition="StringCompare(Control.GetLabel(528708),logo)">$LOCALIZE[31059]</value>
         <value condition="StringCompare(Control.GetLabel(528708),clearart)">$LOCALIZE[31086]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),cdart)">$LOCALIZE[31377]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),extrathumbs)">$LOCALIZE[31198]</value>
         <value condition="StringCompare(Control.GetLabel(528708),banner)">$LOCALIZE[31058]</value>
         <value condition="StringCompare(Control.GetLabel(528708),noicon)">$LOCALIZE[106]</value>
     </variable>
