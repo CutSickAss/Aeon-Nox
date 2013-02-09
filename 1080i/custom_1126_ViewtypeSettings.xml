@@ -81,33 +81,33 @@
                     <visible>Control.IsVisible(1614) + Stringcompare(Control.GetLabel(4421),infopanelonauto)</visible>
                 </control>
 
-            <!-- PosterLite -->
-            <control type="togglebutton" id="1761">
-                <description>Toggle Background (TV)</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[31102] [COLOR $VAR[FontColorVar]]1[/COLOR]</label>
-                <altlabel>$LOCALIZE[31102] [COLOR $VAR[FontColorVar]]2[/COLOR]</altlabel>
-                <onclick>Skin.ToggleSetting(plitetvback1)</onclick>
-                <usealttexture>!Skin.HasSetting(plitetvback1)</usealttexture>
-                <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
-            </control>
-            <control type="togglebutton" id="1762">
-                <description>Toggle Background (Movies)</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[31102] [COLOR $VAR[FontColorVar]]1[/COLOR]</label>
-                <altlabel>$LOCALIZE[31102] [COLOR $VAR[FontColorVar]]2[/COLOR]</altlabel>
-                <onclick>Skin.ToggleSetting(pliteback1)</onclick>
-                <usealttexture>!Skin.HasSetting(pliteback1)</usealttexture>
-                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
-            </control>
-            <control type="button" id="1763">
-                <description>Toggle Transparency</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[13324]</label>
-                <onclick>RunScript(script.color.picker,Skin.SetString(PLBackDarkness,$INFO[Skin.String(PLBackDarkness)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
-                <onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[42002],$LOCALIZE[42010])</onclick>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
-            </control>
+                <!-- PosterLite -->
+                <control type="togglebutton" id="1761">
+                    <description>Toggle Background (TV)</description>
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31102] [COLOR $VAR[FontColorVar]]1[/COLOR]</label>
+                    <altlabel>$LOCALIZE[31102] [COLOR $VAR[FontColorVar]]2[/COLOR]</altlabel>
+                    <onclick>Skin.ToggleSetting(plitetvback1)</onclick>
+                    <usealttexture>!Skin.HasSetting(plitetvback1)</usealttexture>
+                    <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+                </control>
+                <control type="togglebutton" id="1762">
+                    <description>Toggle Background (Movies)</description>
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31102] [COLOR $VAR[FontColorVar]]1[/COLOR]</label>
+                    <altlabel>$LOCALIZE[31102] [COLOR $VAR[FontColorVar]]2[/COLOR]</altlabel>
+                    <onclick>Skin.ToggleSetting(pliteback1)</onclick>
+                    <usealttexture>!Skin.HasSetting(pliteback1)</usealttexture>
+                    <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+                </control>
+                <control type="button" id="1763">
+                    <description>Toggle Transparency</description>
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[13324]</label>
+                    <onclick>RunScript(script.color.picker,Skin.SetString(PLBackDarkness,$INFO[Skin.String(PLBackDarkness)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+                    <onclick condition="!System.HasAddon(script.color.picker)">Notification($LOCALIZE[42002],$LOCALIZE[42010])</onclick>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+                </control>
 
                 <control type="button" id="1624">
                     <include>Objects_MediaMenuButtonAlt2</include>
@@ -171,13 +171,6 @@
                     <selected>Skin.HasSetting(nohighlist)</selected>
                     <visible>Window.IsActive(videolibrary) + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
                 </control>
-                <control type="radiobutton" id="16307">
-                    <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>$LOCALIZE[31812]</label>
-                    <onclick>Skin.ToggleSetting(lowlistcdart)</onclick>
-                    <selected>Skin.HasSetting(lowlistcdart)</selected>
-                    <visible>Container.Content(movies) + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
-                </control>
                 <control type="radiobutton" id="16300">
                     <include>Objects_MediaMenuButtonAlt2</include>
                     <label>31810</label>
@@ -216,6 +209,20 @@
                     <selected>Skin.HasSetting(lowlistbanner)</selected>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),LowList) + Container.Content(tvshows)</visible>
                 </control>
+                <control type="radiobutton" id="1683">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31169]</label>
+                    <onclick>Skin.ToggleSetting(listpanelthin)</onclick>
+                    <selected>Skin.HasSetting(listpanelthin)</selected>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
+                </control>
+                <control type="radiobutton" id="16307">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31812]</label>
+                    <onclick>Skin.ToggleSetting(lowlistcdart)</onclick>
+                    <selected>Skin.HasSetting(lowlistcdart)</selected>
+                    <visible>[Container.Content(movies) | Container.Content(tvshows)] + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
+                </control>
                 <!--BigFan Options-->
                 <control type="radiobutton" id="1689">
                     <include>Objects_MediaMenuButtonAlt2</include>
@@ -237,80 +244,80 @@
                     <visible>Window.IsActive(videolibrary) + Stringcompare(Window(home).Property(actualViewtype),BigFan) + !Container.Content(genres)</visible>
                 </control>
 
-            <!-- PosterLite -->
-            <control type="label" id="528707">
-                <label>$VAR[PLIconVar]</label>
-                <include>HiddenObject</include>
-            </control>
-            <control type="button" id="528765">
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[31959]:</label>
-                <label2>[COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label2>
-                <onclick condition="StringCompare(Control.GetLabel(528707),noicon) | IsEmpty(Control.GetLabel(528707))">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528707),banner)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],noicon)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528707),clearart)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],banner)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528707),logo)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],clearart)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528707),landscape)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],logo)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528707),poster)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],landscape)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528707),noicon)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
-                <visible>StringCompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets)</visible>
-            </control>
-            <control type="label" id="528708">
-                <label>$VAR[PLPlusIconVar]</label>
-                <include>HiddenObject</include>
-            </control>
-            <control type="button" id="528766">
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>+1 $LOCALIZE[31959]:</label>
-                <label2>[COLOR $VAR[FontColorVar]]$VAR[PLPlusIconLabel][/COLOR]</label2>
-                <onclick condition="StringCompare(Control.GetLabel(528708),noicon) | IsEmpty(Control.GetLabel(528708))">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528708),banner)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],noicon)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528708),extrathumbs)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],banner)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528708),cdart)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],extrathumbs)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528708),clearart)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],cdart)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528708),logo)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],clearart)</onclick>
-                <onclick condition="StringCompare(Control.GetLabel(528708),noicon)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets)</visible>
-            </control>
-            <control type="radiobutton" id="1769">
-				<description>Poster Animation</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[20079]</label>
-                <onclick>Skin.ToggleSetting(PLPAn)</onclick>
-                <selected>Skin.HasSetting(PLPAn)</selected>
-				<enable>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![Stringcompare(Control.GetLabel(4421),infopanelon) | Stringcompare(Control.GetLabel(4421),infopaneloff)]</enable>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + StringCompare(Control.GetLabel(528707),poster)</visible>
-            </control>
-            <control type="radiobutton" id="1770">
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[31812]</label>
-                <onclick>Skin.ToggleSetting(PLcdART)</onclick>
-                <selected>Skin.HasSetting(PLcdART)</selected>
-                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
-            </control>
-            <control type="radiobutton" id="1767">
-                <description>Toggle Title (TV)</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[369]</label>
-                <onclick>Skin.ToggleSetting(plitetvtitle)</onclick>
-				<selected>!Skin.HasSetting(plitetvtitle)</selected>
-                <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
-            </control>
-            <control type="radiobutton" id="1768">
-                <description>Toggle Title (Movies)</description>
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[369]</label>
-                <onclick>Skin.ToggleSetting(plitetitle)</onclick>
-				<selected>!Skin.HasSetting(plitetitle)</selected>
-                <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
-            </control>
-            <control type="radiobutton" id="1771">
-                <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[202]</label>
-                <onclick>Skin.ToggleSetting(pltagline)</onclick>
-				<selected>Skin.HasSetting(pltagline)</selected>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !Container.Content(tvshows)</visible>
-            </control>
+                <!-- PosterLite -->
+                <control type="label" id="528707">
+                    <label>$VAR[PLIconVar]</label>
+                    <include>HiddenObject</include>
+                </control>
+                <control type="button" id="528765">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31959]:</label>
+                    <label2>[COLOR $VAR[FontColorVar]]$VAR[PLIconLabel][/COLOR]</label2>
+                    <onclick condition="StringCompare(Control.GetLabel(528707),noicon) | IsEmpty(Control.GetLabel(528707))">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528707),banner)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],noicon)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528707),clearart)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],banner)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528707),logo)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],clearart)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528707),landscape)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],logo)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528707),poster)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],landscape)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528707),noicon)">Skin.SetString(PosterLite$INFO[Window(home).Property(Area)],poster)</onclick>
+                    <visible>StringCompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets)</visible>
+                </control>
+                <control type="label" id="528708">
+                    <label>$VAR[PLPlusIconVar]</label>
+                    <include>HiddenObject</include>
+                </control>
+                <control type="button" id="528766">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>+1 $LOCALIZE[31959]:</label>
+                    <label2>[COLOR $VAR[FontColorVar]]$VAR[PLPlusIconLabel][/COLOR]</label2>
+                    <onclick condition="StringCompare(Control.GetLabel(528708),noicon) | IsEmpty(Control.GetLabel(528708))">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528708),banner)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],noicon)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528708),extrathumbs)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],banner)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528708),cdart)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],extrathumbs)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528708),clearart)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],cdart)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528708),logo)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],clearart)</onclick>
+                    <onclick condition="StringCompare(Control.GetLabel(528708),noicon)">Skin.SetString(PosterLitePlus$INFO[Window(home).Property(Area)],logo)</onclick>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets)</visible>
+                </control>
+                <control type="radiobutton" id="1769">
+                    <description>Poster Animation</description>
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[20079]</label>
+                    <onclick>Skin.ToggleSetting(PLPAn)</onclick>
+                    <selected>Skin.HasSetting(PLPAn)</selected>
+                    <enable>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + ![Stringcompare(Control.GetLabel(4421),infopanelon) | Stringcompare(Control.GetLabel(4421),infopaneloff)]</enable>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + StringCompare(Control.GetLabel(528707),poster)</visible>
+                </control>
+                <control type="radiobutton" id="1770">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31812]</label>
+                    <onclick>Skin.ToggleSetting(PLcdART)</onclick>
+                    <selected>Skin.HasSetting(PLcdART)</selected>
+                    <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
+                </control>
+                <control type="radiobutton" id="1767">
+                    <description>Toggle Title (TV)</description>
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[369]</label>
+                    <onclick>Skin.ToggleSetting(plitetvtitle)</onclick>
+                    <selected>!Skin.HasSetting(plitetvtitle)</selected>
+                    <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+                </control>
+                <control type="radiobutton" id="1768">
+                    <description>Toggle Title (Movies)</description>
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[369]</label>
+                    <onclick>Skin.ToggleSetting(plitetitle)</onclick>
+                    <selected>!Skin.HasSetting(plitetitle)</selected>
+                    <visible>!Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
+                </control>
+                <control type="radiobutton" id="1771">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[202]</label>
+                    <onclick>Skin.ToggleSetting(pltagline)</onclick>
+                    <selected>Skin.HasSetting(pltagline)</selected>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !Container.Content(tvshows)</visible>
+                </control>
 
                 <!--Landscape Options-->
                 <control type="button" id="1639">
@@ -571,7 +578,7 @@
                     <label>31812</label>
                     <onclick>Skin.ToggleSetting(showcasecdart)</onclick>
                     <selected>Skin.HasSetting(showcasecdart)</selected>
-                    <visible>Substring(Window(home).Property(actualViewtype),Showcase) + Container.Content(movies)</visible>
+                    <visible>Substring(Window(home).Property(actualViewtype),Showcase) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
                 </control>
                 <control type="radiobutton" id="16840">
                     <include>Objects_MediaMenuButtonAlt2</include>
@@ -579,13 +586,6 @@
                     <onclick>Skin.ToggleSetting(showcasecdartmusic)</onclick>
                     <selected>Skin.HasSetting(showcasecdartmusic)</selected>
                     <visible>Substring(Window(home).Property(actualViewtype),Showcase) + Container.Content(albums)</visible>
-                </control>
-                <control type="radiobutton" id="1683">
-                    <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>$LOCALIZE[31169]</label>
-                    <onclick>Skin.ToggleSetting(listpanelthin)</onclick>
-                    <selected>Skin.HasSetting(listpanelthin)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
                 </control>
                 <control type="radiobutton" id="16837">
                     <include>Objects_MediaMenuButtonAlt2</include>
@@ -640,7 +640,7 @@
                     <label>31812</label>
                     <onclick>Skin.ToggleSetting(infopanelcdart)</onclick>
                     <selected>Skin.HasSetting(infopanelcdart)</selected>
-                    <visible>Container.Content(movies)</visible>
+                    <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),InfoPanel)</visible>
                 </control>
                 <control type="radiobutton" id="1662">
@@ -655,7 +655,14 @@
                     <label>$LOCALIZE[31812]</label>
                     <onclick>Skin.ToggleSetting(listcdart)</onclick>
                     <selected>Skin.HasSetting(listcdart)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),List) + Container.Content(movies)</visible>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),List) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
+                </control>
+                <control type="radiobutton" id="16999">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>[I]+ $LOCALIZE[31630] $LOCALIZE[31377][/I]</label>
+                    <onclick>Skin.ToggleSetting(customcdart)</onclick>
+                    <selected>Skin.HasSetting(customcdart)</selected>
+                    <visible>Container.Content(movies) + [[StringCompare(Window(home).Property(actualViewtype),List) + Skin.HasSetting(listcdart)] | [StringCompare(Window(home).Property(actualViewtype),LowList) + Skin.HasSetting(lowlistcdart)] | [StringCompare(Window(home).Property(actualViewtype),InfoPanel) + Skin.HasSetting(infopanelcdart)] | [StringCompare(Window(home).Property(actualViewtype),ShowcaseMovies) + Skin.HasSetting(showcasecdart)]]</visible>
                 </control>
                 <!--Wall Options-->
                 <control type="button" id="1652">
