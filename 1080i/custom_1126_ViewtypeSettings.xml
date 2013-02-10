@@ -209,20 +209,6 @@
                     <selected>Skin.HasSetting(lowlistbanner)</selected>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),LowList) + Container.Content(tvshows)</visible>
                 </control>
-                <control type="radiobutton" id="1683">
-                    <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>$LOCALIZE[31169]</label>
-                    <onclick>Skin.ToggleSetting(listpanelthin)</onclick>
-                    <selected>Skin.HasSetting(listpanelthin)</selected>
-                    <visible>Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
-                </control>
-                <control type="radiobutton" id="16307">
-                    <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>$LOCALIZE[31812]</label>
-                    <onclick>Skin.ToggleSetting(lowlistcdart)</onclick>
-                    <selected>Skin.HasSetting(lowlistcdart)</selected>
-                    <visible>[Container.Content(movies) | Container.Content(tvshows)] + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
-                </control>
                 <!--BigFan Options-->
                 <control type="radiobutton" id="1689">
                     <label>31710</label>
