@@ -512,52 +512,52 @@
                         <effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out" />
                         <effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out" />
                     </animation>
-					<animation effect="fade" start="100" end="0" time="3000" condition="IsEmpty(ListItem.Art(discart))">Conditional</animation>
-					<animation effect="fade" start="0" end="100" time="3000" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
-					<hidden>!Skin.HasSetting(customcdart)</hidden>
+                    <animation effect="fade" start="100" end="0" time="3000" condition="IsEmpty(ListItem.Art(discart))">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="3000" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
+                    <hidden>!Skin.HasSetting(customcdart)</hidden>
                 </control>
                 <control type="image">
                     <posx>2530</posx>
                     <posy>984</posy>
                     <width>280</width>
                     <height>280</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true" flipy="true">$VAR[cdArtVar]</texture>
                     <fadetime>4000</fadetime>
                     <colordiffuse>22FFFFFF</colordiffuse>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true" flipy="true">$VAR[cdArtVar]</texture>
                     <animation type="Conditional" condition="Control.IsVisible(1970)" reversible="true">
                         <effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out" />
                         <effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out" />
                     </animation>
-					<animation effect="fade" start="100" end="0" time="3000" condition="IsEmpty(ListItem.Art(discart))">Conditional</animation>
-					<animation effect="fade" start="0" end="100" time="3000" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
-					<hidden>!Skin.HasSetting(customcdart)</hidden>
+                    <animation effect="fade" start="100" end="0" time="3000" condition="IsEmpty(ListItem.Art(discart))">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="3000" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
+                    <hidden>!Skin.HasSetting(customcdart)</hidden>
                 </control>
                 <control type="group">
-					<posx>2424</posx>
-					<posy>704</posy>
-					<animation type="Conditional" condition="Control.IsVisible(1970)" reversible="true">
+                    <posx>2424</posx>
+                    <posy>704</posy>
+                    <animation type="Conditional" condition="Control.IsVisible(1970)" reversible="true">
                         <effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out" />
                         <effect type="rotate" start="0" center="2673,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out" />
-					</animation>
-					<animation effect="fade" start="100" end="0" time="3000" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
-					<animation effect="fade" start="0" end="100" time="3000" condition="IsEmpty(ListItem.Art(discart))">Conditional</animation>
-					<include>Custom_cdART_showcase</include>
-					<visible>Skin.HasSetting(customcdart) | Container.Content(tvshows)</visible>
+                    </animation>
+                    <animation effect="fade" start="100" end="0" time="3000" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="3000" condition="IsEmpty(ListItem.Art(discart))">Conditional</animation>
+                    <include>Custom_cdART_showcase</include>
+                    <visible>[[Container.Content(movies) + Skin.HasSetting(customcdart)] | Container.Content(tvshows)]</visible>
                 </control>
                 <control type="group">
-					<posx>2424</posx>
-					<posy>990</posy>
-					<animation type="Conditional" condition="Control.IsVisible(1970)" reversible="true">
+                    <posx>2424</posx>
+                    <posy>990</posy>
+                    <animation type="Conditional" condition="Control.IsVisible(1970)" reversible="true">
                         <effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out" />
                         <effect type="rotate" start="0" center="2673,1127" end="-900" delay="1200" time="1120" tween="quadratic" easing="out" />
                         <effect type="rotatey" start="0" center="2673,0" end="180" delay="1200" time="0" />
-					</animation>
-					<animation effect="fade" end="17" condition="true">Conditional</animation>
-					<animation effect="fade" start="100" end="0" time="3000" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
-					<animation effect="fade" start="0" end="100" time="3000" condition="IsEmpty(ListItem.Art(discart))">Conditional</animation>
-					<include>Custom_cdART_showcase</include>
-					<visible>Skin.HasSetting(customcdart) | Container.Content(tvshows)</visible>
+                    </animation>
+                    <animation effect="fade" end="17" condition="true">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="3000" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="3000" condition="IsEmpty(ListItem.Art(discart))">Conditional</animation>
+                    <include>Custom_cdART_showcase</include>
+                    <visible>[[Container.Content(movies) + Skin.HasSetting(customcdart)] | Container.Content(tvshows)]</visible>
                 </control>
             </control>
         </control>

@@ -587,6 +587,20 @@
                     <selected>Skin.HasSetting(showcasecdartmusic)</selected>
                     <visible>Substring(Window(home).Property(actualViewtype),Showcase) + Container.Content(albums)</visible>
                 </control>
+                <control type="radiobutton" id="1683">
+                    <label>$LOCALIZE[31169]</label>
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <onclick>Skin.ToggleSetting(listpanelthin)</onclick>
+                    <selected>Skin.HasSetting(listpanelthin)</selected>
+                    <visible>Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
+                </control>
+                <control type="radiobutton" id="16307">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31812]</label>
+                    <onclick>Skin.ToggleSetting(lowlistcdart)</onclick>
+                    <selected>Skin.HasSetting(lowlistcdart)</selected>
+                    <visible>[Container.Content(movies) | Container.Content(tvshows)] + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
+                </control>
                 <control type="radiobutton" id="16837">
                     <label>31059</label>
                     <include>Objects_MediaMenuButtonAlt2</include>
@@ -659,10 +673,10 @@
                 </control>
                 <control type="radiobutton" id="16999">
                     <include>Objects_MediaMenuButtonAlt2</include>
-                    <label>[I]+ $LOCALIZE[31630] $LOCALIZE[31377][/I]</label>
+                    <label>+ $LOCALIZE[31630] $LOCALIZE[31377]</label>
                     <onclick>Skin.ToggleSetting(customcdart)</onclick>
                     <selected>Skin.HasSetting(customcdart)</selected>
-                    <visible>Container.Content(movies) + [[StringCompare(Window(home).Property(actualViewtype),List) + Skin.HasSetting(listcdart)] | [StringCompare(Window(home).Property(actualViewtype),LowList) + Skin.HasSetting(lowlistcdart)] | [StringCompare(Window(home).Property(actualViewtype),InfoPanel) + Skin.HasSetting(infopanelcdart)] | [StringCompare(Window(home).Property(actualViewtype),ShowcaseMovies) + Skin.HasSetting(showcasecdart)]]</visible>
+                    <visible>[Container.Content(movies) + [[StringCompare(Window(home).Property(actualViewtype),List) + Skin.HasSetting(listcdart)] | [StringCompare(Window(home).Property(actualViewtype),LowList) + Skin.HasSetting(lowlistcdart)] | [StringCompare(Window(home).Property(actualViewtype),InfoPanel) + Skin.HasSetting(infopanelcdart)] | [StringCompare(Window(home).Property(actualViewtype),ShowcaseMovies) + Skin.HasSetting(showcasecdart)] | StringCompare(Window(home).Property(actualViewtype),Shift)]] | [Container.Content(tvshows) + StringCompare(Window(home).Property(actualViewtype),Shift)] </visible>
                 </control>
                 <!--Wall Options-->
                 <control type="button" id="1652">

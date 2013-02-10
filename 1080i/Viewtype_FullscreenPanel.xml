@@ -204,8 +204,8 @@
                         <control type="group">
                             <posx>-23</posx>
                             <posy>20</posy>
-							<include>Custom_cdART</include>
-							<include>Custom_cdART_IPtitle</include>
+                            <include>Custom_cdART</include>
+                            <include>Custom_cdART_IPtitle</include>
                             <visible>IsEmpty(ListItem.Art(discart)) + !SubString(ListItem.Path,videodb://1/7/) + Skin.HasSetting(infopanelcdart) + [Skin.HasSetting(customcdart) | Container.Content(tvshows)]</visible>
                         </control>
                         <control type="image">
@@ -349,8 +349,8 @@
                             <posx>-23</posx>
                             <posy>20</posy>
                             <animation effect="rotate" end="-360" center="244,170" time="6400" delay="800" reversible="false" tween="cubic" easing="inout">Focus</animation>
-							<include>Custom_cdART</include>
-							<include>Custom_cdART_IPtitle</include>
+                            <include>Custom_cdART</include>
+                            <include>Custom_cdART_IPtitle</include>
                             <visible>IsEmpty(ListItem.Art(discart)) + !SubString(ListItem.Path,videodb://1/7/) + Skin.HasSetting(infopanelcdart) + [Skin.HasSetting(customcdart) | Container.Content(tvshows)]</visible>
                         </control>
                         <control type="group">
@@ -745,8 +745,8 @@
             <posx>-23</posx>
             <posy>20</posy>
             <animation effect="rotate" end="-360" center="244,170" time="6400" delay="800" reversible="false" tween="cubic" easing="inout">Focus</animation>
-			<include>Custom_cdART</include>
-			<include>Custom_cdART_IPtitle</include>
+            <include>Custom_cdART</include>
+            <include>Custom_cdART_IPtitle</include>
             <visible>IsEmpty(ListItem.Art(discart)) + !SubString(ListItem.Path,videodb://1/7/) + Skin.HasSetting(infopanelcdart) + [Skin.HasSetting(customcdart) | Container.Content(tvshows)]</visible>
         </control>
         <control type="group">
@@ -895,8 +895,8 @@
         <control type="group">
             <posx>-23</posx>
             <posy>20</posy>
-			<include>Custom_cdART</include>
-			<include>Custom_cdART_IPtitle</include>
+            <include>Custom_cdART</include>
+            <include>Custom_cdART_IPtitle</include>
             <visible>IsEmpty(ListItem.Art(discart)) + !SubString(ListItem.Path,videodb://1/7/) + Skin.HasSetting(infopanelcdart) + [Skin.HasSetting(customcdart) | Container.Content(tvshows)]</visible>
         </control>
         <control type="image">
