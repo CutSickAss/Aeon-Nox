@@ -171,13 +171,6 @@
                     <selected>Skin.HasSetting(nohighlist)</selected>
                     <visible>Window.IsActive(videolibrary) + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
                 </control>
-                <control type="radiobutton" id="16307">
-                    <label>$LOCALIZE[31812]</label>
-                    <include>Objects_MediaMenuButtonAlt2</include>
-                    <onclick>Skin.ToggleSetting(lowlistcdart)</onclick>
-                    <selected>Skin.HasSetting(lowlistcdart)</selected>
-                    <visible>Container.Content(movies) + Stringcompare(Window(home).Property(actualViewtype),LowList)</visible>
-                </control>
                 <control type="radiobutton" id="16300">
                     <label>31810</label>
                     <include>Objects_MediaMenuButtonAlt2</include>
