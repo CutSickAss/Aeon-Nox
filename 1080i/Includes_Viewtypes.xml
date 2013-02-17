@@ -1053,6 +1053,15 @@
             <bordertexture diffuse="common/cdart/custom.png">common/white.png</bordertexture>
         </control>
         <control type="image">
+            <width>534</width>
+            <height>300</height>
+            <colordiffuse>FFE0E0E0</colordiffuse>
+            <aspectratio>keep</aspectratio>
+            <texture background="true">common/cdart/custom.png</texture>
+            <bordersize>5,3,5,3</bordersize>
+			<animation effect="fade" end="15" condition="true">Conditional</animation>
+        </control>
+        <control type="image">
             <posx>313</posx>
             <posy>126</posy>
             <width>70</width>
@@ -1111,6 +1120,15 @@
             <texture background="true" diffuse="common/cdart/custom.png">$INFO[ListItem.Art(fanart)]</texture>
             <bordersize>5,3,5,3</bordersize>
             <bordertexture diffuse="common/cdart/custom.png">common/white.png</bordertexture>
+        </control>
+        <control type="image">
+            <width>498</width>
+            <height>280</height>
+            <colordiffuse>FFE0E0E0</colordiffuse>
+            <aspectratio>keep</aspectratio>
+            <texture background="true">common/cdart/custom.png</texture>
+            <bordersize>5,3,5,3</bordersize>
+			<animation effect="fade" end="15" condition="true">Conditional</animation>
         </control>
         <control type="image">
             <posx>291</posx>

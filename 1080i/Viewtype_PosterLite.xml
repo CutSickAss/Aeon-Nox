@@ -126,10 +126,42 @@
 		  </control>
 		</control>
 	  </control>
+	  <!-- PLcdART -->
+	  <control type="group">
+		<visible>Skin.HasSetting(PLcdART)+!IsEmpty(ListItem.Art(fanart))+!StringCompare(Control.GetLabel(528707),noicon)</visible>
+		<posx>-509</posx>
+		<posy>-450</posy>
+		<control type="image">
+		  <width>464</width>
+		  <height>464</height>
+		  <aspectratio>keep</aspectratio>
+		  <texture background="true">$VAR[cdArtVar]</texture>
+		  <bordersize>3</bordersize>
+		  <visible>!IsEmpty(ListItem.Art(discart))</visible>
+		</control>
+		<control type="group">
+		  <posx>-175</posx>
+		  <posy>3</posy>
+		  <animation effect="zoom" end="152.7" condition="true">Conditional</animation>
+		  <include>Custom_cdART</include>
+		  <include>Custom_cdART_title</include>
+		  <visible>IsEmpty(ListItem.Art(discart))</visible>
+		</control>
+		<animation effect="fade" start="0" end="100" time="520" delay="280" reversible="false" condition="[Container.OnNext|Container.OnPrevious]">Conditional</animation>
+		<animation type="Conditional" reversible="false" condition="StringCompare(Control.GetLabel(528707),poster)+![Container.OnNext|Container.OnPrevious]">
+		  <effect type="fade" start="0" end="100" time="600" delay="160" />
+		  <effect type="slide" start="0,0" end="0,-233" time="800" delay="800" tween="quadratic" />
+		  <effect type="rotate" end="-360" center="-277,-218" time="4800" delay="1760" loop="false" tween="cubic" easing="inout" />
+		</animation>
+		<animation type="Conditional" reversible="false" condition="!StringCompare(Control.GetLabel(528707),poster)+![Container.OnNext|Container.OnPrevious]">
+		  <effect type="slide" start="-672" end="0" time="960" delay="800" tween="cubic" />
+		  <effect type="rotate" end="-360" center="-277,-218" time="960" delay="800" loop="false" tween="cubic" />
+		</animation>
+	  </control>
 	  <!-- +1 icons -->
 	  <control type="group">
 		<visible>[[Stringcompare(Control.GetLabel(4421),infopanelonauto)+StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528200)]|[Control.IsVisible(528197)+!Control.IsVisible(528195)]|[StringCompare(Control.GetLabel(4421),infopanelonmanual)+[[Control.HasFocus(7000)+!Control.IsVisible(528195)]|[StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528200)]]]|Control.IsVisible(528196)]</visible>
-		<!--animation effect="fade" time="80" delay="10" reversible="false" condition="StringCompare(Control.GetLabel(4421),infopanelonmanual)">Conditional</animation-->
+		<animation effect="fade" time="80" delay="10" reversible="false" condition="StringCompare(Control.GetLabel(4421),infopanelonmanual)">Conditional</animation>
 		<animation effect="fade" start="100" end="0" time="0" condition="Control.HasFocus(109)">Conditional</animation>
 		<control type="image">
 		  <posx>915</posx>
@@ -154,23 +186,24 @@
 		  <visible>StringCompare(Control.GetLabel(528708),clearart)</visible>
 		</control>
 		<control type="image">
-		  <posx>1025</posx>
-		  <posy>-243</posy>
-		  <width>300</width>
-		  <height>300</height>
+		  <posx>1015</posx>
+		  <posy>-254</posy>
+		  <width>308</width>
+		  <height>308</height>
 		  <fadetime>250</fadetime>
 		  <aspectratio>keep</aspectratio>
 		  <texture background="true">$VAR[cdArtVar]</texture>
-		  <bordersize>7</bordersize>
+		  <bordersize>3</bordersize>
 		  <animation effect="slide" end="0,160" time="160" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528200)]]">Conditional</animation>
 		  <visible>StringCompare(Control.GetLabel(528708),cdart)+!IsEmpty(ListItem.Art(discart))</visible>
 		</control>
 		<control type="group">
-		  <posx>1025</posx>
-		  <posy>-243</posy>
+		  <posx>902</posx>
+		  <posy>-250</posy>
 		  <animation effect="slide" end="0,160" time="160" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528200)]]">Conditional</animation>
 		  <include>Custom_cdART</include>
-		  <visible>StringCompare(Control.GetLabel(528708),cdart)+IsEmpty(ListItem.Art(discart))</visible>
+		  <include>Custom_cdART_title</include>
+		  <visible>StringCompare(Control.GetLabel(528708),cdart)+IsEmpty(ListItem.Art(discart))+!IsEmpty(ListItem.Art(fanart))</visible>
 		</control>
 		<control type="group">
 		  <visible>StringCompare(Control.GetLabel(528708),extrathumbs)+!StringCompare(ListItem.Label,..)</visible>
@@ -352,41 +385,32 @@
 		<control type="group">
 		  <posx>46</posx>
 		  <posy>330</posy>
-		  <include>PLcdART</include>
 		  <include>PLPoster</include>
 		  <visible>StringCompare(Control.GetLabel(528707),poster)+[Control.IsVisible(528196)|!Skin.HasSetting(PLPAn)]</visible>
 		</control>
 		<control type="group">
 		  <posx>93</posx>
 		  <posy>810</posy>
-		  <include>PLcdART</include>
 		  <include>PLLand</include>
-		  <animation effect="slide" end="0,-26" time="160" reversible="false" condition="StringCompare(Control.GetLabel(4421),infopaneloff)+!Control.HasFocus(109)">Conditional</animation>
 		  <visible>StringCompare(Control.GetLabel(528707),landscape)+Control.IsVisible(528196)</visible>
 		</control>
 		<control type="group">
 		  <posx>14</posx>
 		  <posy>810</posy>
-		  <include>PLcdART</include>
 		  <include>PLLogo</include>
-		  <animation effect="slide" end="0,-24" time="160" reversible="false" condition="StringCompare(Control.GetLabel(4421),infopaneloff)+!Control.HasFocus(109)">Conditional</animation>
 		  <visible>StringCompare(Control.GetLabel(528707),logo)+Control.IsVisible(528196)</visible>
 		</control>
 		<control type="group">
 		  <posx>14</posx>
 		  <posy>810</posy>
-		  <include>PLcdART</include>
 		  <include>PLClear</include>
-		  <animation effect="slide" end="0,-24" time="160" reversible="false" condition="StringCompare(Control.GetLabel(4421),infopaneloff)+!Control.HasFocus(109)">Conditional</animation>
 		  <visible>StringCompare(Control.GetLabel(528707),clearart)+Control.IsVisible(528196)</visible>
 		</control>
 		<control type="group">
 		  <posx>14</posx>
 		  <posy>860</posy>
-		  <include>PLcdART</include>
 		  <include>PLBanner</include>
 		  <include>PLBannerVis</include>
-		  <animation effect="slide" end="0,29" time="160" reversible="false" condition="StringCompare(Control.GetLabel(4421),infopaneloff)+!Control.HasFocus(109)">Conditional</animation>
 		  <visible>StringCompare(Control.GetLabel(528707),banner)+Control.IsVisible(528196)</visible>
 		</control>
 		<control type="group">
@@ -448,7 +472,6 @@
 		  <effect type="slide" end="-300" />
 		  <effect type="zoom" center="497,978" start="100" end="39" time="240" tween="quadratic" easing="out" />
 		</animation>
-		<include>PLcdART</include>
 		<include>PLPoster</include>
 	  </control>
 	</focusedlayout>
@@ -474,7 +497,6 @@
 		  <effect type="zoom" center="-167,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-80,4" />
 		</animation>
-		<include>PLcdART</include>
 		<include>PLLand</include>
 	  </control>
 	</focusedlayout>
@@ -498,7 +520,6 @@
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-150,4" />
 		</animation>
-		<include>PLcdART</include>
 		<include>PLLogo</include>
 		<include>PLLogoShadow</include>
 	  </control>
@@ -523,7 +544,6 @@
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-150,4" />
 		</animation>
-		<include>PLcdART</include>
 		<include>PLClear</include>
 		<include>PLClearShadow</include>
 	  </control>
@@ -548,7 +568,6 @@
 		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
 		  <effect type="slide" end="-166,-1" />
 		</animation>
-		<include>PLcdART</include>
 		<include>PLBanner</include>
 		<include>PLBannerVis</include>
 	  </control>
@@ -811,84 +830,6 @@
 	  <fadetime>0</fadetime>
 	  <texture>$VAR[PLWatchedIcon]</texture>
 	  <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-	</control>
-  </include>
-  <include name="PLcdART">
-	<control type="group">
-	  <visible>Skin.HasSetting(PLcdART)</visible>
-	  <animation effect="fade" start="0" end="100" time="520" delay="280" reversible="false" condition="[Container.OnNext|Container.OnPrevious]">Conditional</animation>
-	  <control type="image">
-		<posx>0</posx>
-		<posy>0</posy>
-		<width>464</width>
-		<height>464</height>
-		<aspectratio>keep</aspectratio>
-		<texture background="true">$VAR[cdArtVar]</texture>
-		<bordersize>7</bordersize>
-		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
-		  <effect type="fade" start="0" end="100" time="520" delay="280" />
-		  <effect type="slide" start="0,0" end="0,-233" time="800" delay="800" tween="quadratic" />
-		  <effect type="rotate" end="-360" center="auto" time="4800" delay="1760" loop="false" tween="cubic" easing="inout" />
-		</animation>
-		<visible>StringCompare(Control.GetLabel(528707),poster)+!IsEmpty(ListItem.Art(discart))</visible>
-	  </control>
-	  <control type="image">
-		<posx>-47</posx>
-		<posy>-480</posy>
-		<width>464</width>
-		<height>464</height>
-		<aspectratio>keep</aspectratio>
-		<texture background="true">$VAR[cdArtVar]</texture>
-		<bordersize>7</bordersize>
-		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
-		  <effect type="fade" start="0" end="100" time="520" delay="280" />
-		  <effect type="slide" start="-593" end="0" time="960" delay="800" tween="cubic" />
-		  <effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
-		</animation>
-		<visible>StringCompare(Control.GetLabel(528707),landscape)+!IsEmpty(ListItem.Art(discart))</visible>
-	  </control>
-	  <control type="image">
-		<posx>32</posx>
-		<posy>-480</posy>
-		<width>464</width>
-		<height>464</height>
-		<aspectratio>keep</aspectratio>
-		<texture background="true">$VAR[cdArtVar]</texture>
-		<bordersize>7</bordersize>
-		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
-		  <effect type="fade" start="0" end="100" time="520" delay="280" />
-		  <effect type="slide" start="-672" end="0" time="960" delay="800" tween="cubic" />
-		  <effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
-		</animation>
-		<visible>[StringCompare(Control.GetLabel(528707),logo)|StringCompare(Control.GetLabel(528707),clearart)]+!IsEmpty(ListItem.Art(discart))</visible>
-	  </control>
-	  <control type="image">
-		<posx>32</posx>
-		<posy>-530</posy>
-		<width>464</width>
-		<height>464</height>
-		<aspectratio>keep</aspectratio>
-		<texture background="true">$VAR[cdArtVar]</texture>
-		<bordersize>7</bordersize>
-		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
-		  <effect type="fade" start="0" end="100" time="520" delay="280" />
-		  <effect type="slide" start="-672" end="0" time="960" delay="800" tween="cubic" />
-		  <effect type="rotate" end="-360" center="auto" time="960" delay="800" loop="false" tween="cubic" />
-		</animation>
-		<visible>StringCompare(Control.GetLabel(528707),banner)+!IsEmpty(ListItem.Art(discart))</visible>
-	  </control>
-	  <control type="group">
-		<posx>27</posx>
-		<posy>-535</posy>
-		<animation type="Conditional" reversible="false" condition="![Container.OnNext|Container.OnPrevious]">
-		  <effect type="fade" start="0" end="100" time="520" delay="280" />
-		  <effect type="slide" start="-672" end="0" time="960" delay="800" tween="cubic" />
-		  <effect type="rotate" end="-360" center="264,-298" time="960" delay="800" loop="false" tween="cubic" />
-		</animation>
-		<animation effect="zoom" end="158" condition="true">Conditional</animation>
-		<include>Custom_cdART</include>
-		<visible>StringCompare(Control.GetLabel(528707),banner)+IsEmpty(ListItem.Art(discart))</visible>
-	  </control>
 	</control>
   </include>
   <include name="PLTopT">
