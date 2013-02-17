@@ -128,7 +128,7 @@
 	  </control>
 	  <!-- PLcdART -->
 	  <control type="group">
-		<visible>Skin.HasSetting(PLcdART)+!IsEmpty(ListItem.Art(fanart))+!StringCompare(Control.GetLabel(528707),noicon)</visible>
+		<visible>Skin.HasSetting(PLcdART)+!StringCompare(Control.GetLabel(528707),noicon)</visible>
 		<posx>-509</posx>
 		<posy>-450</posy>
 		<control type="image">
@@ -137,7 +137,6 @@
 		  <aspectratio>keep</aspectratio>
 		  <texture background="true">$VAR[cdArtVar]</texture>
 		  <bordersize>3</bordersize>
-		  <visible>!IsEmpty(ListItem.Art(discart))</visible>
 		</control>
 		<control type="group">
 		  <posx>-175</posx>
@@ -195,7 +194,7 @@
 		  <texture background="true">$VAR[cdArtVar]</texture>
 		  <bordersize>3</bordersize>
 		  <animation effect="slide" end="0,160" time="160" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528200)]]">Conditional</animation>
-		  <visible>StringCompare(Control.GetLabel(528708),cdart)+!IsEmpty(ListItem.Art(discart))</visible>
+		  <visible>StringCompare(Control.GetLabel(528708),cdart)</visible>
 		</control>
 		<control type="group">
 		  <posx>902</posx>
@@ -203,7 +202,7 @@
 		  <animation effect="slide" end="0,160" time="160" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528200)]]">Conditional</animation>
 		  <include>Custom_cdART</include>
 		  <include>Custom_cdART_title</include>
-		  <visible>StringCompare(Control.GetLabel(528708),cdart)+IsEmpty(ListItem.Art(discart))+!IsEmpty(ListItem.Art(fanart))</visible>
+		  <visible>StringCompare(Control.GetLabel(528708),cdart)+IsEmpty(ListItem.Art(discart))</visible>
 		</control>
 		<control type="group">
 		  <visible>StringCompare(Control.GetLabel(528708),extrathumbs)+!StringCompare(ListItem.Label,..)</visible>
