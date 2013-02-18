@@ -446,4 +446,159 @@
             </control>
         </control>
     </include>
+
+    <include name="PLFlags">
+        <control type="group">
+            <visible>[StringCompare(Control.GetLabel(528707),logo)|StringCompare(Control.GetLabel(528707),clearart)|StringCompare(Control.GetLabel(528707),noicon)]</visible>
+            <visible>[Skin.HasSetting(watchedoverlay) + SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus) + SubString(ListItem(0).Overlay,OverlayUnWatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
+            <include>Animation_VisibleChange200</include>
+            <posx>200r</posx>
+            <posy>-1</posy>
+            <control type="image">
+                <width>200</width>
+                <height>200</height>
+                <texture>$INFO[ListItem.Overlay,thumbs/]</texture>
+            </control>
+            <control type="image">
+                <posx>137</posx>
+                <posy>7</posy>
+                <width>60</width>
+                <height>60</height>
+                <texture>$VAR[PLWatchedIcon]</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
+        </control>
+        <!-- Rating -->
+        <control type="image">
+            <posx>176</posx>
+            <posy>1025</posy>
+            <width>207</width>
+            <height>38</height>
+            <fadetime>250</fadetime>
+            <texture>$VAR[ListImage2Var]</texture>
+            <colordiffuse>$VAR[PLRatingColor]</colordiffuse>
+        </control>
+        <!-- Bottom flags -->
+        <control type="group">
+            <visible>!IsEmpty(ListItem.Title)+!Control.HasFocus(528061)+!Control.IsVisible(4050)+!Control.HasFocus(109)</visible>
+            <control type="fadelabel">
+                <posx>550</posx>
+                <posy>1039</posy>
+                <width>1320</width>
+                <font>Font_Bold22_Caps</font>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <label>$LOCALIZE[20457]:  $INFO[ListItem.Label]</label>
+                <visible>!Control.IsVisible(9900)</visible>
+            </control>
+            <control type="group">
+                <visible>!Container.Content(tvshows)+!SubString(ListItem.Path,videodb://1/7/)</visible>
+                <posx>548</posx>
+                <posy>994</posy>
+                <control type="image">
+                    <include>CuFlVa</include>
+                    <texture>flags/music/year/year.png</texture>
+                    <visible>!IsEmpty(ListItem.Year)</visible>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>22</posy>
+                    <include>CuFlVa</include>
+                    <label>$INFO[ListItem.Year]</label>
+                    <visible>!IsEmpty(ListItem.Year)</visible>
+                </control>
+                <control type="label">
+                    <posx>159</posx>
+                    <posy>23</posy>
+                    <width>210</width>
+                    <include>CuFlVa</include>
+                    <label>$INFO[ListItem.Duration] $LOCALIZE[12391]</label>
+                    <visible>!IsEmpty(ListItem.Duration)</visible>
+                </control>
+                <control type="image">
+                    <posx>376</posx>
+                    <include>AudioFlagsVarsMPAA</include>
+                    <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>533</posx>
+                    <posy>-1</posy>
+                    <include>CuFlVa</include>
+                    <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>722</posx>
+                    <posy>4</posy>
+                    <width>120</width>
+                    <height>82</height>
+                    <include>CuFlVa</include>
+                    <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>873</posx>
+                    <include>CuFlVa</include>
+                    <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>1030</posx>
+                    <include>CuFlVa</include>
+                    <texture fallback="flags/resolution/defaultscreen.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>1194</posx>
+                    <include>CuFlVa</include>
+                    <texture fallback="flags/audio/defaultsound.png">$INFO[ListItem.AudioCodec,flags/info/]$INFO[ListItem.AudioChannels,,.png]</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>Container.Content(tvshows)</visible>
+                <posx>1357</posx>
+                <posy>1021</posy>
+                <control type="label">
+                    <posx>-800</posx>
+                    <posy>-2</posy>
+                    <width>750</width>
+                    <height>75</height>
+                    <align>left</align>
+                    <include>CuFlVa</include>
+                    <label>$LOCALIZE[20360]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Episode][/COLOR]  ($LOCALIZE[16101]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR])</label>
+                    <visible>!IsEmpty(ListItem.Episode)</visible>
+                </control>
+                <control type="image">
+                    <posy>-24</posy>
+                    <include>CuFlVa</include>
+                    <texture>flags/music/year/year.png</texture>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>-2</posy>
+                    <include>CuFlVa</include>
+                    <label>$INFO[ListItem.Year]</label>
+                </control>
+                <control type="image">
+                    <posx>222</posx>
+                    <posy>-20</posy>
+                    <width>124</width>
+                    <height>84</height>
+                    <include>CuFlVa</include>
+                    <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>376</posx>
+                    <posy>-25</posy>
+                    <include>AudioFlagsVarsMPAA</include>
+                    <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+                </control>
+            </control>
+        </control>
+    </include>
+    <include name="CuFlVa">
+        <width>136</width>
+        <height>92</height>
+        <font>Font_Bold22</font>
+        <align>center</align>
+        <aligny>justify</aligny>
+        <aspectratio>keep</aspectratio>
+        <fadetime>250</fadetime>
+        <colordiffuse>white</colordiffuse>
+    </include>
 </includes>

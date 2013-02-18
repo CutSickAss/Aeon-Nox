@@ -297,12 +297,19 @@
                     <selected>Skin.HasSetting(pltagline)</selected>
                     <visible>Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !Container.Content(genres) + !Container.Content(sets) + !Stringcompare(Control.GetLabel(4421),infopaneloff) + !Container.Content(tvshows)</visible>
                 </control>
-                <control type="radiobutton" id="1770">
+                <control type="radiobutton" id="1772">
                     <include>Objects_MediaMenuButtonAlt2</include>
                     <label>$LOCALIZE[31812]</label>
                     <onclick>Skin.ToggleSetting(PLcdART)</onclick>
                     <selected>Skin.HasSetting(PLcdART)</selected>
-                    <visible>[Container.Content(movies) | Container.Content(tvshows)] + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
+                    <visible>Container.Content(movies) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
+                </control>
+                <control type="radiobutton" id="1773">
+                    <include>Objects_MediaMenuButtonAlt2</include>
+                    <label>$LOCALIZE[31812]</label>
+                    <onclick>Skin.ToggleSetting(PLcdARTtv)</onclick>
+                    <selected>Skin.HasSetting(PLcdARTtv)</selected>
+                    <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
                 </control>
 
                 <!--Landscape Options-->
