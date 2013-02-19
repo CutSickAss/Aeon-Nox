@@ -336,16 +336,43 @@
 	<focusedlayout width="478" height="768" condition="StringCompare(Control.GetLabel(528707),poster)+!Control.IsVisible(528196)+!Skin.HasSetting(PLPAn)"></focusedlayout>
 	<itemlayout width="420" height="1000" condition="[StringCompare(Control.GetLabel(528707),noicon)|Control.IsVisible(528196)]"></itemlayout>
 	<focusedlayout width="570" height="768" condition="[StringCompare(Control.GetLabel(528707),noicon)|Control.IsVisible(528196)]"></focusedlayout>
-	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),landscape)+!Control.IsVisible(528196)">
+	<itemlayout width="420" height="164" condition="!StringCompare(Control.GetLabel(528707),poster)+!StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528196)">
 	  <control type="group">
 		<posx>-526</posx>
 		<posy>836</posy>
 		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
-	  	<include>PosFade</include>
 		<include>PLLand</include>
+		<visible>StringCompare(Control.GetLabel(528707),landscape)</visible>
+	  </control>
+	  <control type="group">
+		<posx>-605</posx>
+		<posy>836</posy>
+		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
+	  	<include>PosFade</include>
+		<include>PLLogo</include>
+		<include>PLLogoShadow</include>
+		<visible>StringCompare(Control.GetLabel(528707),logo)</visible>
+	  </control>
+	  <control type="group">
+		<posx>-605</posx>
+		<posy>836</posy>
+		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
+	  	<include>PosFade</include>
+		<include>PLClear</include>
+		<include>PLClearShadow</include>
+		<visible>StringCompare(Control.GetLabel(528707),clearart)</visible>
+	  </control>
+	  <control type="group">
+		<posx>-620</posx>
+		<posy>870</posy>
+		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
+	  	<include>PosFade</include>
+		<include>PLBanner</include>
+		<include>PLBannerVis</include>
+		<visible>StringCompare(Control.GetLabel(528707),banner)</visible>
 	  </control>
 	</itemlayout>
-	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),landscape)">
+	<focusedlayout width="570" height="224" condition="!StringCompare(Control.GetLabel(528707),poster)+!StringCompare(Control.GetLabel(528707),noicon)">
 	  <control type="group">
 		<posx>-406</posx>
 		<posy>810</posy>
@@ -356,19 +383,8 @@
 		  <effect type="slide" end="-80,4" />
 		</animation>
 		<include>PLLand</include>
+		<visible>StringCompare(Control.GetLabel(528707),landscape)</visible>
 	  </control>
-	</focusedlayout>
-	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),logo)+!Control.IsVisible(528196)">
-	  <control type="group">
-		<posx>-605</posx>
-		<posy>836</posy>
-		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
-	  	<include>PosFade</include>
-		<include>PLLogo</include>
-		<include>PLLogoShadow</include>
-	  </control>
-	</itemlayout>
-	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),logo)">
 	  <control type="group">
 		<posx>-485</posx>
 		<posy>810</posy>
@@ -380,19 +396,8 @@
 		</animation>
 		<include>PLLogo</include>
 		<include>PLLogoShadow</include>
+		<visible>StringCompare(Control.GetLabel(528707),logo)</visible>
 	  </control>
-	</focusedlayout>
-	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),clearart)+!Control.IsVisible(528196)">
-	  <control type="group">
-		<posx>-605</posx>
-		<posy>836</posy>
-		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
-	  	<include>PosFade</include>
-		<include>PLClear</include>
-		<include>PLClearShadow</include>
-	  </control>
-	</itemlayout>
-	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),clearart)">
 	  <control type="group">
 		<posx>-485</posx>
 		<posy>810</posy>
@@ -404,19 +409,8 @@
 		</animation>
 		<include>PLClear</include>
 		<include>PLClearShadow</include>
+		<visible>StringCompare(Control.GetLabel(528707),clearart)</visible>
 	  </control>
-	</focusedlayout>
-	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),banner)+!Control.IsVisible(528196)">
-	  <control type="group">
-		<posx>-620</posx>
-		<posy>870</posy>
-		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
-	  	<include>PosFade</include>
-		<include>PLBanner</include>
-		<include>PLBannerVis</include>
-	  </control>
-	</itemlayout>
-	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),banner)">
 	  <control type="group">
 		<posx>-485</posx>
 		<posy>860</posy>
@@ -428,6 +422,7 @@
 		</animation>
 		<include>PLBanner</include>
 		<include>PLBannerVis</include>
+		<visible>StringCompare(Control.GetLabel(528707),banner)</visible>
 	  </control>
 	</focusedlayout>
   </include>
