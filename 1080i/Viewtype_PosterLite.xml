@@ -174,7 +174,7 @@
 		  <animation effect="slide" end="0,160" time="160" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528200)]]">Conditional</animation>
 		  <include>Custom_cdART</include>
 		  <include>Custom_cdART_title</include>
-		  <visible>StringCompare(Control.GetLabel(528708),cdart)+IsEmpty(ListItem.Art(discart))</visible>
+		  <visible>StringCompare(Control.GetLabel(528708),cdart)+IsEmpty(ListItem.Art(discart))+!SubString(ListItem.Path,videodb://1/7/)</visible>
 		</control>
 		<control type="group">
 		  <visible>StringCompare(Control.GetLabel(528708),extrathumbs)+!StringCompare(ListItem.Label,..)</visible>

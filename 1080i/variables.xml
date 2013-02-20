@@ -2535,7 +2535,7 @@
         <value>FFFFFF00</value>
     </variable>
     <variable name="PLWatchedIcon">
-        <value condition="Container.Content(movies) + ListItem.IsFolder + !Stringcompare(ListItem.Label,..)">common/logo_set.png</value>
+        <value condition="Container.Content(movies) + ListItem.IsFolder + !Stringcompare(ListItem.Label,..)">common/set.png</value>
         <value condition="Container.ListItem.IsResumable + [Skin.HasSetting(watchedoverlay) | Skin.HasSetting(newstatus)]">dialogs/circle/$INFO[ListItem.PercentPlayed].png</value>
         <value condition="!IsEmpty(ListItem.Top250)">common/imdb.png</value>
     </variable>
