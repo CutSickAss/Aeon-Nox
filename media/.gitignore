@@ -1,4 +1,5 @@
 media/
+flags/
 *.dll
 *.bat
 *.exe
