@@ -164,6 +164,7 @@
                     <posy>-8</posy>
                     <width>55</width>
                     <height>55</height>
+                    <colordiffuse>white2</colordiffuse>
                     <texture>weather/small/$INFO[Weather.FanartCode].png</texture>
                 </control>
             </control>
@@ -1753,26 +1754,28 @@
                         <posy>330</posy>
                         <width>900</width>
                         <height>38</height>
-                        <label>$INFO[Container(8000).ListItem.Label]</label>
+                        <label>$INFO[Container(8000).ListItem.Label][COLOR=$VAR[HomeMenuWidgetTextVar]]$INFO[Container(8000).ListItem.Property(Year), [,]][/COLOR]</label>
                         <font>Font_Reg22_Caps</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="label">
-                        <posy>120</posy>
+                        <posy>125</posy>
                         <width>800</width>
-                        <height>150</height>
-                        <label fallback="-">$INFO[Container(8000).ListItem.Property(Year)]</label>
+                        <height>38</height>
+                        <label>$INFO[Container(8000).ListItem.Property(Genre)]</label>
                         <font>Font_Reg20_Caps</font>
                         <textcolor>white3</textcolor>
                         <wrapmultiline>true</wrapmultiline>
                     </control>
                     <control type="textbox">
-                        <posy>120</posy>
+                        <posy>125</posy>
                         <width>688</width>
-                        <height>150</height>
+                        <height>200</height>
                         <aligny>top</aligny>
                         <label fallback="-">$INFO[Container(8000).ListItem.Property(Description)]</label>
                         <textcolor>white3</textcolor>
+                        <visible>IsEmpty(Container(8000).ListItem.Property(Genre))</visible>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
@@ -2152,7 +2155,7 @@
                             <control type="image">
                                 <width>399</width>
                                 <height>116</height>
-                                <texture border="5">button-nofocus.png</texture>
+                                <texture border="6">button-nofocus.png</texture>
                             </control>
                             <control type="label">
                                 <posx>10</posx>
@@ -2529,7 +2532,7 @@
                         <posy>-5</posy>
                         <width>624</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(5010)</visible>
@@ -2539,7 +2542,7 @@
                         <posy>-5</posy>
                         <width>350</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(5011)</visible>
@@ -2549,7 +2552,7 @@
                         <posy>-5</posy>
                         <width>624</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(5012)</visible>
@@ -2822,13 +2825,12 @@
                             <width>1373</width>
                             <height>40</height>
                             <textoffsetx>15</textoffsetx>
-                            <label>$INFO[Container(5010).ListItem.Property(Year)]$INFO[Container(5010).ListItem.Property(RunningTime), • , $LOCALIZE[12391]]</label>
+                            <label>$INFO[Container(5010).ListItem.Property(Year),, • ]$INFO[Container(5010).ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
                         </control>
                     </control>
                     <control type="group">
-                        <visible>System.GetBool(videolibrary.showunwatchedplots)</visible>
                         <control type="textbox" id="5060">
                             <posx>482</posx>
                             <posy>-70</posy>
@@ -2881,11 +2883,16 @@
                             <include>HomeInfoWidgetVars</include>
                         </control>
                         <control type="image">
-                            <texture>$INFO[Container(5010).ListItem.Property(AudioChannels),flags/info/channels/,.png]</texture>
-                            <include>HomeInfoWidgetVars</include>
+                            <texture>$INFO[Container(5010).ListItem.Property(AudioChannels),flags/channels/,.png]</texture>
+        <width>150</width>
+        <height>90</height>
+        <aspectratio>keep</aspectratio>
+        <fadetime>IconCrossfadeTime2</fadetime>
+        <colordiffuse>white2</colordiffuse>
+        <animation effect="fade" time="200">VisibleChange</animation>
                         </control>
                         <control type="image">
-                            <texture>$INFO[Container(5010).ListItem.Property(VideoResolution),flags/info/,.png]</texture>
+                            <texture>$INFO[Container(5010).ListItem.Property(VideoResolution),flags/resolution/,.png]</texture>
                             <include>HomeInfoWidgetVars</include>
                         </control>
                         <control type="image">
@@ -3468,36 +3475,31 @@
                     <posx>430</posx>
                     <posy>-20</posy>
                     <control type="label">
-                        <posy>68</posy>
-                        <width>800</width>
-                        <height>38</height>
-                        <label>$INFO[Container(7000).ListItem.Label2]</label>
-                        <font>Font_Reg24_Caps</font>
-                    </control>
-                    <control type="label">
                         <posy>330</posy>
                         <width>900</width>
                         <height>38</height>
-                        <label>$INFO[Container(7000).ListItem.Label]</label>
+                        <label>$INFO[Container(7000).ListItem.Label][COLOR=$VAR[HomeMenuWidgetTextVar]]$INFO[Container(7000).ListItem.Property(Year), [,]][/COLOR]</label>
                         <font>Font_Reg22_Caps</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="label">
-                        <posy>120</posy>
+                        <posy>125</posy>
                         <width>800</width>
-                        <height>150</height>
-                        <label fallback="-">$INFO[Container(7000).ListItem.Property(Year)]</label>
+                        <height>38</height>
+                        <label>$INFO[Container(7000).ListItem.Property(Genre)]</label>
                         <font>Font_Reg20_Caps</font>
                         <textcolor>white3</textcolor>
                         <wrapmultiline>true</wrapmultiline>
                     </control>
                     <control type="textbox">
-                        <posy>120</posy>
+                        <posy>125</posy>
                         <width>688</width>
-                        <height>150</height>
+                        <height>200</height>
                         <aligny>top</aligny>
                         <label fallback="-">$INFO[Container(7000).ListItem.Property(Description)]</label>
                         <textcolor>white3</textcolor>
+                        <visible>IsEmpty(Container(7000).ListItem.Property(Genre))</visible>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
@@ -4232,7 +4234,7 @@
                         <posy>-5</posy>
                         <width>624</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6010)</visible>
@@ -4242,7 +4244,7 @@
                         <posy>-5</posy>
                         <width>350</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6011)</visible>
@@ -4252,7 +4254,7 @@
                         <posy>-5</posy>
                         <width>624</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6012)</visible>
@@ -4524,13 +4526,12 @@
                             <width>1373</width>
                             <height>40</height>
                             <textoffsetx>15</textoffsetx>
-                            <label>$INFO[Container(6010).ListItem.Property(Year)]$INFO[Container(6010).ListItem.Property(RunningTime), • , $LOCALIZE[12391]]</label>
+                            <label>$INFO[Container(6010).ListItem.Property(Year),, • ]$INFO[Container(6010).ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
                         </control>
                     </control>
                     <control type="group">
-                        <visible>System.GetBool(videolibrary.showunwatchedplots)</visible>
                         <control type="textbox" id="5060">
                             <posx>482</posx>
                             <posy>-70</posy>
@@ -4583,11 +4584,16 @@
                             <include>HomeInfoWidgetVars</include>
                         </control>
                         <control type="image">
-                            <texture>$INFO[Container(6010).ListItem.Property(AudioChannels),flags/info/channels/,.png]</texture>
-                            <include>HomeInfoWidgetVars</include>
+                            <texture>$INFO[Container(6010).ListItem.Property(AudioChannels),flags/channels/,.png]</texture>
+        <width>150</width>
+        <height>90</height>
+        <aspectratio>keep</aspectratio>
+        <fadetime>IconCrossfadeTime2</fadetime>
+        <colordiffuse>white2</colordiffuse>
+        <animation effect="fade" time="200">VisibleChange</animation>
                         </control>
                         <control type="image">
-                            <texture>$INFO[Container(6010).ListItem.Property(VideoResolution),flags/info/,.png]</texture>
+                            <texture>$INFO[Container(6010).ListItem.Property(VideoResolution),flags/resolution/,.png]</texture>
                             <include>HomeInfoWidgetVars</include>
                         </control>
                         <control type="image">
@@ -4795,7 +4801,7 @@
             </control>
         </control>
     </include>
-    <include name="5010List">
+   <include name="5010List">
         <control type="group">
             <visible>!Substring(Control.GetLabel(4321),concerts) + !Substring(Control.GetLabel(4321),weather)</visible>
             <include>Animation_VisibleChange400</include>
@@ -4815,7 +4821,7 @@
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -4828,7 +4834,7 @@
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -4868,7 +4874,7 @@
                     <control type="image">
                         <width>228</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -4881,7 +4887,7 @@
                     <control type="image">
                         <width>798</width>
                         <height>180</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -4894,7 +4900,7 @@
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -4907,7 +4913,7 @@
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -4985,7 +4991,7 @@
                     <control type="image">
                         <width>319</width>
                         <height>319</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -5082,7 +5088,7 @@
                     <control type="image">
                         <width>399</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -5096,7 +5102,7 @@
                         <posy>10</posy>
                         <width>532</width>
                         <height>334</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -5109,7 +5115,7 @@
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -5122,7 +5128,7 @@
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
@@ -5214,7 +5220,7 @@
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5227,7 +5233,7 @@
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5240,7 +5246,7 @@
                     <control type="image">
                         <width>798</width>
                         <height>180</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5256,7 +5262,7 @@
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5267,10 +5273,13 @@
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),clearartlayout)">
                     <include>WidgetClearArtLayout</include>
                     <control type="image">
-                        <width>532</width>
-                        <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <posx>4</posx>
+                        <posy>-2</posy>
+                        <width>524</width>
+                        <height>351</height>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <bordersize>6</bordersize>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
@@ -5306,7 +5315,7 @@
                     <control type="image">
                         <width>228</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5384,7 +5393,7 @@
                     <control type="image">
                         <width>319</width>
                         <height>319</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5481,7 +5490,7 @@
                     <control type="image">
                         <width>399</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5495,7 +5504,7 @@
                         <posy>10</posy>
                         <width>532</width>
                         <height>334</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5508,7 +5517,7 @@
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5521,7 +5530,7 @@
                     <control type="image">
                         <width>798</width>
                         <height>350</height>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="6">views/addonwall_select.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
@@ -5591,6 +5600,7 @@
             <visible>SubString(Control.GetLabel(4325),panel)</visible>
         </control>
     </include>
+
     <include name="ConcertsPanelContent1124">
         <item id="1">
             <label>$INFO[Window(Home).Property(NearEvents.1.Artists)]</label>
@@ -6923,7 +6933,7 @@
             <animation effect="zoom" center="100,150" start="95" end="100" time="480" tween="back" reversible="false">Focus</animation>
             <control type="image">
                 <posx>11</posx>
-                <posy>40</posy>
+                <posy>30</posy>
                 <width>193</width>
                 <height>290</height>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
@@ -6932,7 +6942,7 @@
             </control>
             <control type="image">
                 <posx>-8.5</posx>
-                <posy>20.5</posy>
+                <posy>10.5</posy>
                 <width>232</width>
                 <height>328</height>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
@@ -6943,7 +6953,7 @@
         </control>
         <control type="label">
             <posx>200</posx>
-            <posy>25</posy>
+            <posy>20</posy>
             <width>340</width>
             <height>50</height>
             <textoffsetx>15</textoffsetx>
@@ -6964,73 +6974,41 @@
         </control>
         <control type="label">
             <posx>202</posx>
-            <posy>77</posy>
+            <posy>68</posy>
             <width>340</width>
             <height>30</height>
             <textoffsetx>15</textoffsetx>
-            <label>$INFO[ListItem.Property(Year),, • ]</label>
-            <font>Font_Reg19</font>
+            <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Rating), • ]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]</label>
+            <font>Font_Reg18</font>
             <textcolor>grey2</textcolor>
-            <visible>!IsEmpty(ListItem.Property(Rating))</visible>
         </control>
         <control type="label">
             <posx>202</posx>
-            <posy>77</posy>
-            <width>340</width>
-            <height>30</height>
-            <textoffsetx>15</textoffsetx>
-            <label>$INFO[ListItem.Property(Year)]</label>
-            <font>Font_Reg19</font>
-            <textcolor>grey2</textcolor>
-            <visible>IsEmpty(ListItem.Property(Rating))</visible>
-        </control>
-        <control type="label">
-            <posx>202</posx>
-            <posy>107</posy>
+            <posy>95</posy>
             <width>340</width>
             <height>30</height>
             <textoffsetx>15</textoffsetx>
             <label>$INFO[ListItem.Property(Director)]</label>
-            <font>Font_Reg19</font>
+            <font>Font_Reg18</font>
             <textcolor>grey2</textcolor>
             <visible>!IsEmpty(ListItem.Property(Director))</visible>
         </control>
         <control type="label">
             <posx>202</posx>
-            <posy>140</posy>
-            <width>340</width>
-            <height>30</height>
-            <textoffsetx>15</textoffsetx>
-            <label>$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
-            <font>Font_Reg19</font>
-            <textcolor>grey2</textcolor>
-            <visible>!IsEmpty(ListItem.Property(RunningTime))</visible>
-        </control>
-        <control type="label">
-            <posx>202</posx>
-            <posy>170</posy>
+            <posy>122</posy>
             <width>340</width>
             <height>30</height>
             <textoffsetx>15</textoffsetx>
             <label>$INFO[ListItem.Property(Studio)]</label>
-            <font>Font_Reg19</font>
+            <font>Font_Reg18</font>
             <textcolor>grey2</textcolor>
             <visible>!IsEmpty(ListItem.Property(Studio))</visible>
         </control>
-        <control type="image">
-            <posx>298</posx>
-            <posy>78</posy>
-            <width>150</width>
-            <height>30</height>
-            <texture>$INFO[ListItem.Property(Rating),stars/,.png]</texture>
-            <colordiffuse>grey</colordiffuse>
-            <include>Animation_HomeWidget</include>
-        </control>
         <control type="textbox">
             <posx>215</posx>
-            <posy>205</posy>
+            <posy>150</posy>
             <width>300</width>
-            <height>140</height>
+            <height>170</height>
             <label>$INFO[ListItem.Property(Plot)]</label>
             <font>Font_Reg17</font>
             <autoscroll time="AutoScrollTime" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>

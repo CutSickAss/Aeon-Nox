@@ -332,15 +332,6 @@
                         <texture diffuse="thumbs/boxes/cdcover_mask.png">$INFO[MusicPlayer.Cover]</texture>
                     </control>
                     <control type="image">
-                        <posx>68</posx>
-                        <posy>180</posy>
-                        <width>398</width>
-                        <height>398</height>
-                        <aspectratio>scale</aspectratio>
-                        <texture flipy="true" diffuse="thumbs/boxes/cdcover_mask_reflect.png">$INFO[MusicPlayer.Cover]</texture>
-                        <colordiffuse>52FFFFFF</colordiffuse>
-                    </control>
-                    <control type="image">
                         <posy>-270</posy>
                         <width>490</width>
                         <height>450</height>
@@ -351,18 +342,6 @@
                         <width>490</width>
                         <height>450</height>
                         <texture>thumbs/boxes/cd_glass.png</texture>
-                    </control>
-                    <control type="image">
-                        <posy>150</posy>
-                        <width>490</width>
-                        <height>450</height>
-                        <texture>thumbs/boxes/cd_glass_reflect.png</texture>
-                    </control>
-                    <control type="image">
-                        <posy>150</posy>
-                        <width>490</width>
-                        <height>450</height>
-                        <texture>thumbs/boxes/cd_shadow_reflect.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -404,7 +383,7 @@
                     <posy>70</posy>
                     <control type="image">
                         <posx>525</posx>
-                        <posy>-188</posy>
+                        <posy>-151</posy>
                         <width>900</width>
                         <height>4</height>
                         <texture>views/list_divider.png</texture>
@@ -412,7 +391,7 @@
                     </control>
                     <control type="image">
                         <posx>525</posx>
-                        <posy>-83</posy>
+                        <posy>-68</posy>
                         <width>900</width>
                         <height>4</height>
                         <texture>views/list_divider.png</texture>
@@ -420,7 +399,7 @@
                     </control>
                     <control type="label">
                         <posx>650</posx>
-                        <posy>-156</posy>
+                        <posy>-129</posy>
                         <width>1425</width>
                         <height>36</height>
                         <label>[COLOR grey]$INFO[MusicPlayer.Album][/COLOR]$INFO[MusicPlayer.Year, [,] ]</label>
@@ -434,7 +413,7 @@
                     </control>
                     <control type="label">
                         <posx>650</posx>
-                        <posy>-156</posy>
+                        <posy>-129</posy>
                         <width>1230</width>
                         <height>36</height>
                         <label>[COLOR grey]$INFO[MusicPlayer.Album][/COLOR]$INFO[MusicPlayer.Year, [,] ]</label>
@@ -448,7 +427,7 @@
                     </control>
                     <control type="label">
                         <posx>645</posx>
-                        <posy>-60</posy>
+                        <posy>-52</posy>
                         <width>1410</width>
                         <height>45</height>
                         <label>$INFO[MusicPlayer.TrackNumber,,: ][COLOR=grey]$INFO[MusicPlayer.Title][/COLOR]</label>
@@ -462,7 +441,7 @@
                     </control>
                     <control type="label">
                         <posx>645</posx>
-                        <posy>-60</posy>
+                        <posy>-52</posy>
                         <width>1230</width>
                         <height>45</height>
                         <label>$INFO[MusicPlayer.TrackNumber,,: ][COLOR=grey]$INFO[MusicPlayer.Title][/COLOR]</label>
@@ -476,7 +455,7 @@
                     </control>
                     <control type="label">
                         <posx>628</posx>
-                        <posy>-270</posy>
+                        <posy>-227</posy>
                         <width>1275</width>
                         <height>38</height>
                         <label>$INFO[MusicPlayer.Artist]</label>
