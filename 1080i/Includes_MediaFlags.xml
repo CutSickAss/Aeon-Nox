@@ -599,13 +599,25 @@
                     <include>CuFlVa</include>
                     <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
                 </control>
-                <control type="image">
+                <control type="image" id="528076">
                     <posx>722</posx>
                     <posy>4</posy>
                     <width>120</width>
                     <height>82</height>
                     <include>CuFlVa</include>
                     <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                </control>
+                <control type="label">
+                    <posx>722</posx>
+                    <posy>-3</posy>
+                    <width>136</width>
+                    <height>92</height>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Studio]</label>
+                    <font>Font_Reg14_Caps</font>
+                    <textcolor>grey</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <visible>IsEmpty(Control.GetLabel(528076))</visible>
                 </control>
                 <control type="image">
                     <posx>873</posx>
@@ -648,13 +660,25 @@
                     <include>CuFlVa</include>
                     <label>$INFO[ListItem.Year]</label>
                 </control>
-                <control type="image">
+                <control type="image" id="528077">
                     <posx>222</posx>
                     <posy>-20</posy>
                     <width>124</width>
                     <height>84</height>
                     <include>CuFlVa</include>
                     <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                </control>
+                <control type="label">
+                    <posx>222</posx>
+                    <posy>-27</posy>
+                    <width>136</width>
+                    <height>92</height>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Studio]</label>
+                    <font>Font_Reg14_Caps</font>
+                    <textcolor>grey</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <visible>IsEmpty(Control.GetLabel(528077))</visible>
                 </control>
                 <control type="image">
                     <posx>376</posx>

@@ -1061,7 +1061,7 @@
             <bordersize>5,3,5,3</bordersize>
 			<animation effect="fade" end="15" condition="true">Conditional</animation>
         </control>
-        <control type="image">
+        <control type="image" id="528078">
             <posx>313</posx>
             <posy>126</posy>
             <width>70</width>
@@ -1092,6 +1092,18 @@
             <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
             <animation effect="fade" start="0" end="100" time="400">Visible</animation>
             <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
+        </control>
+        <control type="label">
+            <posx>293</posx>
+            <posy>126</posy>
+            <width>120</width>
+            <height>48</height>
+            <align>center</align>
+            <label>$INFO[ListItem.Studio]</label>
+            <font>Font_Reg10_Caps</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <wrapmultiline>true</wrapmultiline>
+            <visible>IsEmpty(Control.GetLabel(528078))</visible>
         </control>
     </include>
     <include name="Custom_cdART_IPtitle">
@@ -1130,7 +1142,7 @@
             <bordersize>5,3,5,3</bordersize>
 			<animation effect="fade" end="15" condition="true">Conditional</animation>
         </control>
-        <control type="image">
+        <control type="image" id="528079">
             <posx>291</posx>
             <posy>116</posy>
             <width>71</width>
@@ -1139,6 +1151,18 @@
             <colordiffuse>FFFFFFFF</colordiffuse>
             <aspectratio aligny="bottom">keep</aspectratio>
             <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+        </control>
+        <control type="label">
+            <posx>273</posx>
+            <posy>116</posy>
+            <width>111</width>
+            <height>48</height>
+            <align>center</align>
+            <label>[UPPERCASE]$INFO[ListItem.Studio][/UPPERCASE]</label>
+            <font>Font_Reg12</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <wrapmultiline>true</wrapmultiline>
+            <visible>IsEmpty(Control.GetLabel(528079))</visible>
         </control>
         <control type="image">
             <posx>159</posx>
