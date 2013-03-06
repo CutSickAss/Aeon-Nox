@@ -66,7 +66,7 @@
             <posy>150</posy>
             <width>300</width>
             <height>450</height>
-            <aspectratio scalediffuse="false">scale</aspectratio>
+            <aspectratio scalediffuse="false">stretch</aspectratio>
             <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
         </control>
         <control type="image">
@@ -83,7 +83,7 @@
             <posy>601</posy>
             <width>300</width>
             <height>450</height>
-            <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+            <aspectratio aligny="top" scalediffuse="false">stretch</aspectratio>
             <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
             <animation effect="fade" start="100" end="30" time="160">Focus</animation>
             <animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
@@ -124,7 +124,7 @@
             <posy>381</posy>
             <width>150</width>
             <height>225</height>
-            <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+            <aspectratio aligny="top" scalediffuse="false">stretch</aspectratio>
             <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
             <animation effect="fade" start="100" end="30" time="160">Focus</animation>
             <animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
@@ -222,12 +222,26 @@
                         <width>390</width>
                         <height>400</height>
                         <aspectratio>keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.Art(discart)]</texture>
+                        <texture background="true">$VAR[cdArtVar]</texture>
                         <animation effect="slide" delay="1600" end="0,-260" time="320" tween="quadratic">Focus</animation>
                         <animation effect="slide" start="0,-260" end="0" time="160" tween="quadratic" easing="in">Unfocus</animation>
                         <animation effect="zoom" start="100" end="70" center="auto" time="160" condition="!Control.HasFocus(57)">Conditional</animation>
-                        <visible>Container.Content(movies)</visible>
+                        <visible>Container.Content(movies) + [!IsEmpty(ListItem.Art(discart)) | [Skin.HasSetting(customcdart) + IsEmpty(ListItem.Art(fanart))]]</visible>
                         <bordersize>7</bordersize>
+                    </control>
+                    <control type="group">
+                        <posx>-176</posx>
+                        <posy>153</posy>
+                        <include>Custom_cdART</include>
+                        <control type="group">
+                            <include>Custom_cdART_IPtitle</include>
+                            <animation effect="slide" start="0,0" end="0,-150" condition="true">Conditional</animation>
+                        </control>
+                        <animation effect="slide" delay="1600" end="0,-260" time="320" tween="quadratic">Focus</animation>
+                        <animation effect="slide" start="0,-260" end="0" time="160" tween="quadratic" easing="in">Unfocus</animation>
+                        <animation effect="zoom" end="126" condition="true">Conditional</animation>
+                        <animation effect="zoom" start="100" end="70" center="auto" time="160" condition="!Control.HasFocus(57)">Conditional</animation>
+                        <visible>[Container.Content(movies) | Container.Content(tvshows)] + IsEmpty(ListItem.Art(discart)) + Skin.HasSetting(customcdart) + !SubString(ListItem.Path,videodb://1/7/)</visible>
                     </control>
                     <control type="group">
                         <include condition="!Window.IsActive(programs)">ShiftThumbs</include>

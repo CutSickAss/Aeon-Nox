@@ -1,2 +1,6 @@
-/*.xbt
+media/
+*.dll
+*.bat
+*.exe
+*.txt
 debuggrid1080.png

@@ -123,7 +123,7 @@
                         <posy>77</posy>
                         <width>508</width>
                         <height>287</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="DefaultVideoCover.png">$VAR[InfoWallPreviewTextureVar]</texture>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <bordersize>9</bordersize>
@@ -133,7 +133,7 @@
                         <posy>77</posy>
                         <width>508</width>
                         <height>287</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                         <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                         <bordersize>9</bordersize>
@@ -164,7 +164,7 @@
                     <posy>827</posy>
                     <width>530</width>
                     <height>795</height>
-                    <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+                    <aspectratio aligny="top" scalediffuse="false">stretch</aspectratio>
                     <texture background="true" flipy="true" diffuse="views/tripanel/poster_diffuse_ref.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                     <fadetime>400</fadetime>
                 </control>
@@ -173,14 +173,14 @@
                     <posy>31</posy>
                     <width>530</width>
                     <height>795</height>
-                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                     <texture background="true" diffuse="views/tripanel/poster_diffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                     <fadetime>400</fadetime>
                 </control>
                 <control type="image">
                     <width>640</width>
                     <height>980</height>
-                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                     <texture>views/tripanel/poster_overlay.png</texture>
                 </control>
             </control>
@@ -210,7 +210,7 @@
                     <posy>762</posy>
                     <width>487</width>
                     <height>732</height>
-                    <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+                    <aspectratio aligny="top" scalediffuse="false">stretch</aspectratio>
                     <texture background="true" flipy="true" diffuse="views/tripanel/poster_diffuse_ref.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                     <fadetime>400</fadetime>
                 </control>
@@ -219,21 +219,21 @@
                     <posy>29</posy>
                     <width>487</width>
                     <height>732</height>
-                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                     <texture background="true" diffuse="views/tripanel/poster_diffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                     <fadetime>400</fadetime>
                 </control>
                 <control type="image">
                     <width>590</width>
                     <height>903</height>
-                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                     <texture>views/tripanel/poster_overlay.png</texture>
                     <visible>!Stringcompare(Skin.String(TriPanelPosition),3)</visible>
                 </control>
                 <control type="image">
                     <width>590</width>
                     <height>903</height>
-                    <aspectratio align="center" scalediffuse="false">scale</aspectratio>
+                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                     <texture flipx="true">views/tripanel/poster_overlay.png</texture>
                     <visible>Stringcompare(Skin.String(TriPanelPosition),3)</visible>
                 </control>
@@ -357,7 +357,7 @@
                         <posy>77</posy>
                         <width>508</width>
                         <height>287</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/multiplex_tvmask.png" fallback="DefaultVideoCover.png">$VAR[InfoWallPreviewTextureVar]</texture>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <bordersize>9</bordersize>
@@ -367,7 +367,7 @@
                         <posy>77</posy>
                         <width>508</width>
                         <height>287</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                         <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                         <bordersize>9</bordersize>

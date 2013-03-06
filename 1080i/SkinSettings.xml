@@ -619,6 +619,12 @@
                         <onclick>Skin.ToggleSetting(DisableBannersVL)</onclick>
                         <selected>!Skin.HasSetting(DisableBannersVL)</selected>
                     </control>
+                    <control type="radiobutton" id="599">
+                        <label>$LOCALIZE[31972]</label>
+                        <include>Default_SettingRadioButtonShort</include>
+                        <onclick>Skin.ToggleSetting(DisablePosterLiteVL)</onclick>
+                        <selected>!Skin.HasSetting(DisablePosterLiteVL)</selected>
+                    </control>
                 </control>
                 <control type="grouplist" id="9005">
                     <posx>387</posx>

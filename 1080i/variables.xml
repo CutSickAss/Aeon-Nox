@@ -196,7 +196,7 @@
         <value>grey</value>
     </variable>
     <variable name="ExtendedColorVar">
-        <value condition="Skin.HasSetting(colorpanels)">$VAR[ColorDiffuseVar]</value>
+        <value condition="[Skin.HasSetting(ExtendedGlowMode) | Skin.HasSetting(colorpanels)]">$VAR[ColorDiffuseVar]</value>
         <value>FFFFFFFF</value>
     </variable>
     <variable name="QuickNavButtonLabelVar">
@@ -456,7 +456,7 @@
         <value condition="Skin.HasSetting(NoVideoLibraryFanart)">special://skin/backgrounds/movies/</value>
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="!IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MoviesBackground)]</value>
-        <value>special://skin/backgrounds/movies/</value>
+        <value>special://skin/backgrounds/fallback_movies.jpg</value>
     </variable>
     <variable name="TVShowFanartVar">
         <value condition="Skin.HasSetting(NoVideoLibraryFanartTVShows) + IsEmpty(Skin.String(TVShowsBackground))">special://skin/backgrounds/tvshows/</value>
@@ -2536,5 +2536,53 @@
         <value condition="SubString(ListItem.Icon,Default,left)">$INFO[ListItem.Icon]</value>
         <value>$INFO[ListItem.ActualIcon]</value>
     </variable>
-    
+
+    <!-- PosterLite -->
+    <variable name="PLTitleColor">
+        <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
+        <value>FF111111</value>
+    </variable>
+    <variable name="PLColorDiffuse">
+        <value condition="Skin.HasSetting(randomcolor) + Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)">$VAR[DayTimeColorVar]</value>
+        <value condition="Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)">$VAR[AreaColorVar]</value>
+        <value condition="Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(DisableGlowbar) + Substring(Skin.CurrentTheme,whit)">black</value>
+        <value condition="Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(DisableGlowbar) + !Substring(Skin.CurrentTheme,whit)">white</value>
+        <value>FF1C1C1C</value>
+    </variable>
+    <variable name="PLRatingColor">
+        <value condition="Substring(Skin.CurrentTheme,whit)">white</value>
+        <value>FFFFFF00</value>
+    </variable>
+    <variable name="PLWatchedIcon">
+        <value condition="Container.Content(movies) + ListItem.IsFolder + !Stringcompare(ListItem.Label,..)">common/set.png</value>
+        <value condition="Container.ListItem.IsResumable + [Skin.HasSetting(watchedoverlay) | Skin.HasSetting(newstatus)]">dialogs/circle/$INFO[ListItem.PercentPlayed].png</value>
+        <value condition="!IsEmpty(ListItem.Top250)">common/imdb.png</value>
+    </variable>
+    <variable name="PLIconVar">
+        <value condition="Container.Content(movies)">$INFO[Skin.String(PosterLiteMovies)]</value>
+        <value condition="Container.Content(tvshows)">$INFO[Skin.String(PosterLiteTVShows)]</value>
+        <value condition="Container.Content(genres)">$INFO[Skin.String(PosterLiteGenres)]</value>
+        <value condition="Container.Content(sets)">$INFO[Skin.String(PosterLiteSets)]</value>
+    </variable>
+    <variable name="PLIconLabel">
+        <value condition="StringCompare(Control.GetLabel(528707),poster)">$LOCALIZE[31060]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),landscape)">$LOCALIZE[31150]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),logo)">$LOCALIZE[31059]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),clearart)">$LOCALIZE[31086]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),banner)">$LOCALIZE[31058]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),noicon)">$LOCALIZE[106]</value>
+    </variable>
+    <variable name="PLPlusIconVar">
+        <value condition="Container.Content(movies)">$INFO[Skin.String(PosterLitePlusMovies)]</value>
+        <value condition="Container.Content(tvshows)">$INFO[Skin.String(PosterLitePlusTVShows)]</value>
+    </variable>
+    <variable name="PLPlusIconLabel">
+        <value condition="StringCompare(Control.GetLabel(528708),logo)">$LOCALIZE[31059]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),clearart)">$LOCALIZE[31086]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),cdart)">$LOCALIZE[31377]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),extrathumbs)">$LOCALIZE[31198]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),banner)">$LOCALIZE[31058]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),noicon)">$LOCALIZE[106]</value>
+    </variable>
+
 </includes>

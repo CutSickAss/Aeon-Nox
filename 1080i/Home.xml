@@ -444,7 +444,7 @@
                 <include>Animation_VisibleChange400</include>
             </control>
             <control type="image">
-                <aspectratio align="center" aligny="top">keep</aspectratio>
+                <aspectratio align="center" aligny="top">scale</aspectratio>
                 <texture background="true">$VAR[HomeFSImageVar]</texture>
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
@@ -456,7 +456,7 @@
                 <visible>!IsEmpty(Window(home).Property(weatherwidget))</visible>
                 <control type="multiimage">
                     <aligny>center</aligny>
-                    <aspectratio>keep</aspectratio>
+                    <aspectratio>scale</aspectratio>
                     <imagepath>$INFO[Window(weather).Property(MapPath)]</imagepath>
                     <fadetime>0</fadetime>
                     <include>FullscreenDimensions</include>

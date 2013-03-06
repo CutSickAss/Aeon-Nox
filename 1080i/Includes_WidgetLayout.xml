@@ -362,7 +362,7 @@
                         <posy>723</posy>
                         <width>498</width>
                         <height>318</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture>common/black.png</texture>
                         <animation effect="fade" end="30" condition="true">conditional</animation>
                         <bordersize>9</bordersize>
@@ -1463,7 +1463,7 @@
                     <control type="image">
                         <width>345</width>
                         <height>194</height>
-                        <aspectratio aligny="top" align="center">scale</aspectratio>
+                        <aspectratio aligny="top" align="center">stretch</aspectratio>
                         <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$VAR[ClassicWidgetImageVar]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
@@ -1600,7 +1600,7 @@
                 <control type="image">
                     <width>260</width>
                     <height>390</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[Container(8000).ListItem.Property(Poster)]</texture>
                     <fadetime>IconCrossfadeTime</fadetime>
                 </control>
@@ -2643,7 +2643,7 @@
                         <posy>-345</posy>
                         <width>1330</width>
                         <height>690</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[Container(5010).ListItem.Property(Fanart)]</texture>
                         <colordiffuse>44FFFFFF</colordiffuse>
                         <visible>!IsEmpty(Container(5010).ListItem.Property(Fanart))</visible>
@@ -2675,7 +2675,7 @@
                         <posy>-345</posy>
                         <width>460</width>
                         <height>690</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[Container(5010).ListItem.Icon]</texture>
                         <visible>IsEmpty(Container(5010).ListItem.Property(Poster))</visible>
                     </control>
@@ -2684,7 +2684,7 @@
                         <posy>-345</posy>
                         <width>460</width>
                         <height>690</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[Container(5010).ListItem.Property(Poster)]</texture>
                     </control>
                     <control type="grouplist" id="5020">
@@ -2916,7 +2916,7 @@
                         <posy>5</posy>
                         <width>1100</width>
                         <height>690</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[Container(5010).ListItem.Property(Fanart)]</texture>
                         <colordiffuse>44FFFFFF</colordiffuse>
                         <visible>!IsEmpty(Container(5010).ListItem.Property(Fanart))</visible>
@@ -3185,7 +3185,7 @@
                     <posy>63</posy>
                     <width>345</width>
                     <height>194</height>
-                    <aspectratio aligny="top" align="center">scale</aspectratio>
+                    <aspectratio aligny="top" align="center">stretch</aspectratio>
                     <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$VAR[ClassicWidget2ImageVar]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                     <bordersize>7</bordersize>
@@ -3321,7 +3321,7 @@
                 <control type="image">
                     <width>260</width>
                     <height>390</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[Container(7000).ListItem.Property(Poster)]</texture>
                     <fadetime>IconCrossfadeTime</fadetime>
                 </control>
@@ -4335,7 +4335,7 @@
                         <posy>-345</posy>
                         <width>1330</width>
                         <height>690</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[Container(6010).ListItem.Property(Fanart)]</texture>
                         <colordiffuse>44FFFFFF</colordiffuse>
                         <visible>!IsEmpty(Container(6010).ListItem.Property(Fanart))</visible>
@@ -4367,7 +4367,7 @@
                         <posy>-345</posy>
                         <width>460</width>
                         <height>690</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[Container(6010).ListItem.Icon]</texture>
                         <visible>IsEmpty(Container(6010).ListItem.Property(Poster))</visible>
                     </control>
@@ -4376,7 +4376,7 @@
                         <posy>-345</posy>
                         <width>460</width>
                         <height>690</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[Container(6010).ListItem.Property(Poster)]</texture>
                     </control>
                     <control type="grouplist" id="6020">
@@ -4608,7 +4608,7 @@
                         <posy>5</posy>
                         <width>1100</width>
                         <height>690</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[Container(6010).ListItem.Property(Fanart)]</texture>
                         <colordiffuse>44FFFFFF</colordiffuse>
                         <visible>!IsEmpty(Container(6010).ListItem.Property(Fanart))</visible>
@@ -4830,7 +4830,7 @@
                         <posy>5</posy>
                         <width>218</width>
                         <height>340</height>
-                        <aspectratio align="center">scale</aspectratio>
+                        <aspectratio align="center">stretch</aspectratio>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
                     </control>
                     <control type="image">
@@ -4850,7 +4850,7 @@
                         <posy>5</posy>
                         <width>218</width>
                         <height>340</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
                     </control>
                     <control type="image">
@@ -5271,7 +5271,7 @@
                         <posy>5</posy>
                         <width>218</width>
                         <height>340</height>
-                        <aspectratio align="center">scale</aspectratio>
+                        <aspectratio align="center">stretch</aspectratio>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
                     </control>
                     <control type="image">
@@ -5291,7 +5291,7 @@
                         <posy>5</posy>
                         <width>218</width>
                         <height>340</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
                     </control>
                     <control type="image">
@@ -6186,7 +6186,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case1Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6206,7 +6206,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case2Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6227,7 +6227,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case3Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6248,7 +6248,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case4Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6269,7 +6269,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case5Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6290,7 +6290,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case6Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6311,7 +6311,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case7Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6332,7 +6332,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case8Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6353,7 +6353,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case9Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6374,7 +6374,7 @@
                         <width>223</width>
                         <height>334</height>
                         <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case10Var]</texture>
                         <fadetime>600</fadetime>
                     </control>
@@ -6948,7 +6948,7 @@
                 <posy>30</posy>
                 <width>193</width>
                 <height>290</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
                 <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Property(Poster)]</texture>
                 <fadetime>IconCrossfadeTime</fadetime>
             </control>
@@ -7045,7 +7045,7 @@
                 <posy>5</posy>
                 <width>532</width>
                 <height>340</height>
-                <aspectratio align="center">scale</aspectratio>
+                <aspectratio align="center">stretch</aspectratio>
                 <texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
             </control>
             <control type="image">

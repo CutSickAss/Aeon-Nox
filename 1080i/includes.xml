@@ -35,10 +35,11 @@
     <include file="Includes_CustomizerWindow.xml" />
     <include file="Viewtype_FullscreenPanel.xml" />
     <include file="Includes_NextAired.xml" />
+    <include file="Viewtype_PosterLite.xml" />
     <constant name="AutoScrollTime">2000</constant>
     <include name="VideoBackground">
         <control type="group">
-            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509)] + !Control.IsVisible(7679)]]</visible>
+            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(528) | [[Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509)] + !Control.IsVisible(7679)]] + ![Control.IsVisible(528)+!Skin.HasSetting(fstrailer)]</visible>
             <include>Animation_VisibleChange200</include>
             <control type="image">
                 <texture>common/black.png</texture>
@@ -885,6 +886,17 @@
         <onload>Skin.SetString(CustomHomeItem4.Disable,1)</onload>
         <onload>Skin.SetString(CustomHomeItem5.Disable,1)</onload>
         <onload>Skin.SetString(CustomHomeItem6.Disable,1)</onload>
+        <onload>Skin.SetString(InfoPanelMovies,infopanelonmanual)</onload>
+        <onload>Skin.SetString(InfoPanelTVShows,infopanelonmanual)</onload>
+        <onload>Skin.SetBool(pliteback1)</onload>
+        <onload>Skin.SetBool(PLPAn)</onload>
+        <onload>Skin.SetString(PosterLiteMovies,poster)</onload>
+        <onload>Skin.SetString(PosterLiteTVShows,poster)</onload>
+        <onload>Skin.SetString(PosterLiteGenres,poster)</onload>
+        <onload>Skin.SetString(PosterLiteSets,poster)</onload>
+        <onload>Skin.SetString(PosterLitePlusMovies,noicon)</onload>
+        <onload>Skin.SetString(PosterLitePlusTVShows,banner)</onload>
+        <onload>Skin.SetString(PLBackDarkness,D9FFFFFF)</onload>
         <onload>Skin.SetBool(firstrun4.0)</onload>
     </include>
     <include name="DelayAnimations">
@@ -893,6 +905,18 @@
         <animation effect="fade" end="100" time="120" delay="3000" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
         <animation effect="fade" end="100" time="120" delay="4000" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
         <animation effect="fade" end="100" time="120" delay="5000" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
+    </include>
+    <include name="PLDelAn">
+        <animation effect="fade" delay="1500" condition="Stringcompare(Skin.String(InfopanelDelay),1)">WindowOpen</animation>
+        <animation effect="fade" delay="1500" condition="Stringcompare(Skin.String(InfopanelDelay),1)">Visible</animation>
+        <animation effect="fade" delay="2500" condition="Stringcompare(Skin.String(InfopanelDelay),2)">WindowOpen</animation>
+        <animation effect="fade" delay="2500" condition="Stringcompare(Skin.String(InfopanelDelay),2)">Visible</animation>
+        <animation effect="fade" delay="3500" condition="Stringcompare(Skin.String(InfopanelDelay),3)">WindowOpen</animation>
+        <animation effect="fade" delay="3500" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
+        <animation effect="fade" delay="4500" condition="Stringcompare(Skin.String(InfopanelDelay),4)">WindowOpen</animation>
+        <animation effect="fade" delay="4500" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
+        <animation effect="fade" delay="5500" condition="Stringcompare(Skin.String(InfopanelDelay),5)">WindowOpen</animation>
+        <animation effect="fade" delay="5500" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
@@ -1535,7 +1559,6 @@
                 <width>2080</width>
                 <height>87</height>
                 <texture border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             </control>
             <control type="progress" id="23">
                 <posx>150</posx>

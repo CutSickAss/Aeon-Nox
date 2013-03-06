@@ -2225,3 +2225,7 @@ msgstr ""
 msgctxt "#31965"
 msgid "Playlist widget"
 msgstr ""
+
+msgctxt "#31972"
+msgid "PosterLite"
+msgstr ""

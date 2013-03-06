@@ -211,6 +211,12 @@
                     <onclick>Container.SetViewMode(509)</onclick>
                     <visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(programs) | [Window.IsActive(pictures) + !Substring(Container.FolderPath,\comics\)] | Container.Content(addons) | Window.IsActive(addonbrowser) | Window.IsActive(musicplaylist)] + !Container.Content(years)</visible>
                 </item>
+                <item>
+                    <label>$LOCALIZE[31972]</label>
+                    <onclick>Container.SetViewMode(528)</onclick>
+                    <visible>Window.IsActive(videos) + [Container.Content(movies) | Container.Content(sets) | Container.Content(genres) | Container.Content(tvshows)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisablePosterLiteVL)]</visible>
+                </item>
             </content>
         </control>
         <control type="button" id="810">

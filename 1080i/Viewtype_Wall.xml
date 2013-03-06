@@ -257,7 +257,7 @@
                 <posy>-14</posy>
                 <width>212</width>
                 <height>296</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
                 <texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                 <bordersize>18</bordersize>
             </control>
@@ -288,7 +288,7 @@
                     <posy>-14</posy>
                     <width>212</width>
                     <height>296</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                     <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>18</bordersize>

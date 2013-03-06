@@ -115,7 +115,7 @@
                     <posy>166</posy>
                     <width>204</width>
                     <height>303</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
                     <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                     <fadetime>275</fadetime>
                 </control>

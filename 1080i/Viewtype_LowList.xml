@@ -164,7 +164,7 @@
                             <posy>607</posy>
                             <width>628</width>
                             <height>360</height>
-                            <aspectratio>scale</aspectratio>
+                            <aspectratio>stretch</aspectratio>
                             <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
                             <fadetime>400</fadetime>
                             <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -186,7 +186,7 @@
                         <posy>607</posy>
                         <width>628</width>
                         <height>360</height>
-                        <aspectratio>scale</aspectratio>
+                        <aspectratio>stretch</aspectratio>
                         <texture background="true">$INFO[ListItem.Thumb]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -367,7 +367,7 @@
                             <posx>1770</posx>
                             <posy>987</posy>
                             <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
-                            <include>OSDFlagVars</include>
+                            <include>OSDFlagVarsMPAA</include>
                             <visible>Container.Content(tvshows) | [Container.Content(seasons) + !IsEmpty(ListItem.TVShowTitle)]</visible>
                         </control>
                         <control type="image">
@@ -607,9 +607,24 @@
                 <animation effect="slide" tween="cubic" easing="in" time="240" end="-450">WindowClose</animation>
                 <animation effect="slide" end="-40,0" time="320" easing="inout" tween="cubic" condition="Control.HasFocus(69)">Conditional</animation>
                 <animation effect="slide" end="0,-40" time="320" easing="inout" tween="cubic" condition="Skin.HasSetting(usecaseslowlist)">Conditional</animation>
+                <animation effect="fade" start="0" end="100" time="400" delay="160" condition="!IsEmpty(ListItem.Art(discart))">Visible</animation>
+                <animation effect="rotate" end="-360" center="auto" time="6400" delay="800" loop="false" reversible="false" tween="cubic" easing="inout" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
                 <visible>Skin.HasSetting(lowlistcdart)</visible>
                 <visible>Container.Content(movies)</visible>
-                <animation effect="rotate" end="-360" center="auto" time="6400" delay="800" loop="false" reversible="false" tween="cubic" easing="inout" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
+            </control>
+            <control type="group">
+                <posx>-114</posx>
+                <posy>236</posy>
+                <animation effect="slide" tween="cubic" easing="in" time="320" start="-450" end="0">WindowOpen</animation>
+                <animation effect="slide" tween="cubic" easing="in" time="240" end="-450">WindowClose</animation>
+                <animation effect="slide" end="-40,0" time="320" easing="inout" tween="cubic" condition="Control.HasFocus(69)">Conditional</animation>
+                <animation effect="slide" end="0,-40" time="320" easing="inout" tween="cubic" condition="Skin.HasSetting(usecaseslowlist)">Conditional</animation>
+                <animation effect="fade" start="0" end="100" time="400" delay="160" condition="IsEmpty(ListItem.Art(discart))">Visible</animation>
+                <animation effect="rotate" end="-360" center="241.9,436" time="6400" delay="800" loop="false" reversible="false" tween="cubic" easing="inout" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
+                <animation effect="zoom" end="133.3" condition="true">Conditional</animation>
+                <include>Custom_cdART</include>
+                <include>Custom_cdART_title</include>
+                <visible>Skin.HasSetting(lowlistcdart) + IsEmpty(ListItem.Art(discart)) + !SubString(ListItem.Path,videodb://1/7/) + [[Container.Content(movies) + Skin.HasSetting(customcdart)] | Container.Content(tvshows)]</visible>
             </control>
             <control type="group">
                 <posx>40</posx>
@@ -639,14 +654,14 @@
                         <posy>-130</posy>
                         <width>399</width>
                         <height>600</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture diffuse="thumbs/movieposter_mask.png">common/black.png</texture>
                     </control>
                     <control type="image">
                         <posy>-130</posy>
                         <width>399</width>
                         <height>600</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                     </control>
                     <control type="image">
@@ -664,7 +679,7 @@
                         <posy>472</posy>
                         <width>395</width>
                         <height>300</height>
-                        <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+                        <aspectratio aligny="top" scalediffuse="false">stretch</aspectratio>
                         <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">$VAR[ListPosterVar]</texture>
                         <fadetime>400</fadetime>
                         <animation effect="slide" end="0,23" time="320" easing="inout" tween="cubic" condition="Skin.HasSetting(usecaseslowlist)">Conditional</animation>
@@ -693,13 +708,13 @@
                     <control type="image">
                         <width>420</width>
                         <height>237</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture diffuse="thumbs/multiplex_tvmask.png" background="true">$INFO[ListItem.Icon]</texture>
                     </control>
                     <control type="image">
                         <width>420</width>
                         <height>237</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture diffuse="thumbs/multiplex_tvmask.png" background="true">thumbs/multiplex_tv_glass.png</texture>
                     </control>
                     <control type="image">
