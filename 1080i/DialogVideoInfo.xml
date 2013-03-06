@@ -1455,6 +1455,7 @@
                 <posy>620</posy>
                 <width>300</width>
                 <height>300</height>
+				<aspectratio>keep</aspectratio>
                 <texture background="true">$INFO[ListItem.Art(discart)]</texture>
                 <include>Animation_VisibleChange200</include>
                                     <visible>![ControlGroup(5000).HasFocus(10) | ControlGroup(5000).HasFocus(12) | ControlGroup(5000).HasFocus(21) | ControlGroup(5000).HasFocus(22) | ControlGroup(5000).HasFocus(24)]</visible>

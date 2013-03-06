@@ -625,8 +625,8 @@
             </control>
             <control type="group">
                 <visible>!Container.Content(tvshows)+!SubString(ListItem.Path,videodb://1/7/)</visible>
-                <posx>548</posx>
-                <posy>994</posy>
+                <posx>545</posx>
+                <posy>996</posy>
                 <control type="image">
                     <include>CuFlVa</include>
                     <texture>flags/music/year/year.png</texture>
@@ -652,24 +652,18 @@
                     <include>AudioFlagsVarsMPAA</include>
                     <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                 </control>
-                <control type="image">
-                    <posx>533</posx>
-                    <posy>-1</posy>
-                    <include>CuFlVa</include>
-                    <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
-                </control>
                 <control type="image" id="528076">
-                    <posx>722</posx>
-                    <posy>4</posy>
+                    <posx>533</posx>
+                    <posy>2</posy>
                     <width>120</width>
                     <height>82</height>
                     <include>CuFlVa</include>
                     <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
                 </control>
                 <control type="label">
-                    <posx>722</posx>
+                    <posx>533</posx>
                     <posy>-3</posy>
-                    <width>136</width>
+                    <width>142</width>
                     <height>92</height>
                     <align>center</align>
                     <label>$INFO[ListItem.Studio]</label>
@@ -679,24 +673,31 @@
                     <visible>IsEmpty(Control.GetLabel(528076))</visible>
                 </control>
                 <control type="image">
-                    <posx>873</posx>
+                    <posx>702</posx>
+                    <posy>-1</posy>
                     <include>CuFlVa</include>
-                    <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+                    <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
                 </control>
                 <control type="image">
-                    <posx>1030</posx>
+                    <posx>866</posx>
                     <include>CuFlVa</include>
                     <texture fallback="flags/resolution/defaultscreen.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
                 </control>
                 <control type="image">
-                    <posx>1194</posx>
+                    <posx>1030</posx>
                     <include>CuFlVa</include>
-                    <texture fallback="flags/audio/defaultsound.png">$INFO[ListItem.AudioCodec,flags/info/]$INFO[ListItem.AudioChannels,,.png]</texture>
+                    <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>1194</posx>
+                    <posy>-1</posy>
+                    <include>CuFlVa</include>
+                    <texture fallback="flags/audio/defaultsound.png">$VAR[AudioFlagVar,flags/audio/,.png]</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>Container.Content(tvshows)</visible>
-                <posx>1357</posx>
+                <posx>1354</posx>
                 <posy>1021</posy>
                 <control type="label">
                     <posx>-800</posx>
@@ -730,7 +731,7 @@
                 <control type="label">
                     <posx>222</posx>
                     <posy>-27</posy>
-                    <width>136</width>
+                    <width>142</width>
                     <height>92</height>
                     <align>center</align>
                     <label>$INFO[ListItem.Studio]</label>
@@ -749,7 +750,7 @@
         </control>
     </include>
     <include name="CuFlVa">
-        <width>136</width>
+        <width>142</width>
         <height>92</height>
         <font>Font_Bold22</font>
         <align>center</align>
