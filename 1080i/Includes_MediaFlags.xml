@@ -674,7 +674,7 @@
                 </control>
                 <control type="image">
                     <posx>702</posx>
-                    <posy>-1</posy>
+                    <posy>-2</posy>
                     <include>CuFlVa</include>
                     <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
                 </control>
