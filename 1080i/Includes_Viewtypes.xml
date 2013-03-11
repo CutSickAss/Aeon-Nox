@@ -156,7 +156,7 @@
             <include>Animation_CommonFade</include>
             <visible>[Control.IsVisible(8857) | Control.IsVisible(8860)] + ![Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(518) | Control.IsVisible(57) | Control.IsVisible(511) | Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(506) | Control.IsVisible(550) | Control.IsVisible(528)]</visible>
             <animation effect="slide" time="160" end="1440" tween="cubic" condition="Control.IsVisible(510)">Conditional</animation>
-            <animation effect="slide" time="160" end="-770" tween="cubic" condition="Control.IsVisible(512)">Conditional</animation>
+            <animation effect="slide" time="160" end="-750" tween="cubic" condition="Control.IsVisible(512)">Conditional</animation>
         </control>
 		
         <!-- PosterLite -->
@@ -193,9 +193,10 @@
             <animation effect="fade" time="800">Hidden</animation>
         </control>
         <control type="scrollbar" id="61">
-            <posx>458</posx>
+            <posx>465</posx>
             <posy>1035</posy>
             <height>40</height>
+            <width>975</width>
             <visible>Control.IsVisible(509) | Control.IsVisible(500) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
             <animation effect="fade" start="100" end="0" time="320" condition="![Control.HasFocus(61) | Control.IsVisible(4050)]">Conditional</animation>
             <onup>50</onup>
