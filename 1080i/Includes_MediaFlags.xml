@@ -725,7 +725,7 @@
                     <texture fallback="flags/resolution/defaultscreen.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
                 </control>
                 <control type="image">
-                    <posx>1030</posx>
+                    <posx>1015</posx>
                     <include>CuFlVa</include>
                     <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
                 </control>
