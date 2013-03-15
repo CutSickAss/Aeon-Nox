@@ -2587,6 +2587,12 @@
     </variable>
 
     <!-- PosterLite -->
+    <variable name="PLCharacterArtVar">
+        <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.characterart)]</value>
+        <value condition="!IsEmpty(ListItem.Art(characterart))">$INFO[ListItem.Art(characterart)]</value>
+        <value condition="IsEmpty(ListItem.Art(characterart)) + !IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+        <value>$INFO[ListItem.Art(clearlogo)]</value>
+    </variable>
     <variable name="PLTitleColor">
         <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
         <value>FF111111</value>
@@ -2618,6 +2624,8 @@
         <value condition="StringCompare(Control.GetLabel(528707),landscape)">$LOCALIZE[31150]</value>
         <value condition="StringCompare(Control.GetLabel(528707),logo)">$LOCALIZE[31059]</value>
         <value condition="StringCompare(Control.GetLabel(528707),clearart)">$LOCALIZE[31086]</value>
+        <value condition="StringCompare(Control.GetLabel(528707),characterart)">CharacterART</value>
+        <value condition="StringCompare(Control.GetLabel(528707),cdart)">$LOCALIZE[31377]</value>
         <value condition="StringCompare(Control.GetLabel(528707),banner)">$LOCALIZE[31058]</value>
         <value condition="StringCompare(Control.GetLabel(528707),noicon)">$LOCALIZE[106]</value>
     </variable>
@@ -2628,6 +2636,7 @@
     <variable name="PLPlusIconLabel">
         <value condition="StringCompare(Control.GetLabel(528708),logo)">$LOCALIZE[31059]</value>
         <value condition="StringCompare(Control.GetLabel(528708),clearart)">$LOCALIZE[31086]</value>
+        <value condition="StringCompare(Control.GetLabel(528708),characterart)">CharacterART</value>
         <value condition="StringCompare(Control.GetLabel(528708),cdart)">$LOCALIZE[31377]</value>
         <value condition="StringCompare(Control.GetLabel(528708),extrathumbs)">$LOCALIZE[31198]</value>
         <value condition="StringCompare(Control.GetLabel(528708),banner)">$LOCALIZE[31058]</value>

@@ -621,9 +621,10 @@
         </control>
     </include>
 
+	<!-- PosterLite -->
     <include name="PLFlags">
         <control type="group">
-            <visible>[StringCompare(Control.GetLabel(528707),logo)|StringCompare(Control.GetLabel(528707),clearart)|StringCompare(Control.GetLabel(528707),noicon)]</visible>
+            <visible>[StringCompare(Control.GetLabel(528707),logo)|StringCompare(Control.GetLabel(528707),clearart)|StringCompare(Control.GetLabel(528707),characterart)|StringCompare(Control.GetLabel(528707),cdart)|StringCompare(Control.GetLabel(528707),noicon)]</visible>
             <visible>[Skin.HasSetting(watchedoverlay) + SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus) + SubString(ListItem(0).Overlay,OverlayUnWatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
             <include>Animation_VisibleChange200</include>
             <posx>200r</posx>
@@ -703,12 +704,12 @@
                 </control>
                 <control type="label">
                     <posx>533</posx>
-                    <posy>-3</posy>
+                    <posy>10</posy>
                     <width>142</width>
-                    <height>92</height>
+                    <height>72</height>
                     <align>center</align>
-                    <label>$INFO[ListItem.Studio]</label>
-                    <font>Font_Reg14_Caps</font>
+                    <label>[UPPERCASE][B]$INFO[ListItem.Studio][/B][/UPPERCASE]</label>
+                    <font>Font_Reg15</font>
                     <textcolor>grey</textcolor>
                     <wrapmultiline>true</wrapmultiline>
                     <visible>IsEmpty(Control.GetLabel(528076))</visible>
@@ -771,12 +772,12 @@
                 </control>
                 <control type="label">
                     <posx>222</posx>
-                    <posy>-27</posy>
+                    <posy>-14</posy>
                     <width>142</width>
-                    <height>92</height>
+                    <height>72</height>
                     <align>center</align>
-                    <label>$INFO[ListItem.Studio]</label>
-                    <font>Font_Reg14_Caps</font>
+                    <label>[UPPERCASE][B]$INFO[ListItem.Studio][/B][/UPPERCASE]</label>
+                    <font>Font_Reg15</font>
                     <textcolor>grey</textcolor>
                     <wrapmultiline>true</wrapmultiline>
                     <visible>IsEmpty(Control.GetLabel(528077))</visible>
