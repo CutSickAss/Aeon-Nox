@@ -36,16 +36,16 @@
 		<control type="group">
 		  <!-- Movies and TV shows -->
 		  <control type="textbox">
-			<posy>52</posy>
+			<posy>57</posy>
 			<width>1321</width>
-			<height>174</height>
+			<height>163</height>
 			<aligny>justify</aligny>
-			<font>Font_Reg24</font>
+			<font>Font_Reg25</font>
 			<label>$VAR[GlobalPlotVar]</label>
 			<autoscroll time="6000" delay="10000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 		  </control>
 		  <control type="fadelabel">
-			<posy>-4</posy>
+			<posy>-2</posy>
 			<width>765</width>
 			<height>75</height>
 			<scrollout>false</scrollout>
@@ -56,7 +56,7 @@
 			<visible>!IsEmpty(ListItem.Genre)+StringCompare(Control.GetLabel(528708),banner)</visible>
 		  </control>
 		  <control type="fadelabel">
-			<posy>-4</posy>
+			<posy>-2</posy>
 			<width>930</width>
 			<height>75</height>
 			<scrollout>false</scrollout>
@@ -98,9 +98,9 @@
 		  </control>
 		</control>
 	  </control>
-	  <!-- PLcdART -->
+	  <!-- PLcdART, top-left -->
 	  <control type="group">
-		<visible>[[Container.Content(movies)+Skin.HasSetting(PLcdART)]|[Container.Content(tvshows)+Skin.HasSetting(PLcdARTtv)]]+!StringCompare(Control.GetLabel(528707),cdart)+!StringCompare(Control.GetLabel(528707),noicon)+!SubString(ListItem.Path,videodb://1/7/)</visible>
+		<visible>[[Container.Content(movies)+Skin.HasSetting(PLcdART)]|[Container.Content(tvshows)+Skin.HasSetting(PLcdARTtv)]]+!StringCompare(Control.GetLabel(528707),cdart)+!StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(528707),characterart)+!SubString(ListItem.Path,videodb://1/7/)</visible>
 		<posx>-509</posx>
 		<posy>-450</posy>
 		<control type="image">
@@ -278,8 +278,8 @@
 		  <visible>StringCompare(Control.GetLabel(528707),clearart)+Control.IsVisible(528196)</visible>
 		</control>
 		<control type="group">
-		  <posx>14</posx>
-		  <posy>810</posy>
+		  <posx>48</posx>
+		  <posy>560</posy>
 		  <include>PLCharacter</include>
 		  <visible>StringCompare(Control.GetLabel(528707),characterart)+Control.IsVisible(528196)</visible>
 		</control>
@@ -430,11 +430,11 @@
 		<include>PLClearShadow</include>
 	  </control>
 	</focusedlayout>
-	<itemlayout width="420" height="164" condition="StringCompare(Control.GetLabel(528707),characterart)+!Control.IsVisible(528196)">
+	<itemlayout width="280" height="164" condition="StringCompare(Control.GetLabel(528707),characterart)+!Control.IsVisible(528196)">
 	  <control type="group">
-		<posx>-605</posx>
-		<posy>836</posy>
-		<animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
+		<posx>-445</posx>
+		<posy>800</posy>
+		<animation effect="zoom" center="auto" start="44" end="44" condition="true">Conditional</animation>
 	  	<include>PosFade</include>
 		<include>PLCharacter</include>
 		<include>PLCharacterShadow</include>
@@ -442,13 +442,14 @@
 	</itemlayout>
 	<focusedlayout width="570" height="224" condition="StringCompare(Control.GetLabel(528707),characterart)">
 	  <control type="group">
-		<posx>-485</posx>
-		<posy>810</posy>
-		<animation effect="zoom" center="0,910" start="74" end="100" time="480" tween="back" easing="out" reversible="false">Focus</animation>
-		<animation effect="zoom" start="100" end="100" condition="!Control.HasFocus(528)">Unfocus</animation>
-		<animation type="Unfocus" reversible="false" condition="Control.HasFocus(528)">
-		  <effect type="zoom" center="-10,900" start="100" end="74" time="240" />
-		  <effect type="slide" end="-150,4" />
+		<posx>-171</posx>
+		<posy>560</posy>
+		<animation effect="zoom" center="100,988" start="44" end="100" time="240" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Focus</animation>
+		<animation effect="zoom" center="-125,988" start="100" end="44" time="240" tween="quadratic" easing="out" reversible="false" condition="Container.OnNext">Unfocus</animation>
+		<animation effect="zoom" center="-125,988" start="44" end="100" time="240" tween="quadratic" easing="out" reversible="false" condition="Container.OnPrevious">Focus</animation>
+		<animation type="Unfocus" reversible="false" condition="Container.OnPrevious">
+		  <effect type="slide" end="-400" />
+		  <effect type="zoom" center="416,988" start="100" end="44" time="240" tween="quadratic" easing="out" />
 		</animation>
 		<include>PLCharacter</include>
 		<include>PLCharacterShadow</include>
@@ -701,10 +702,11 @@
   </include>
   <include name="PLCharacter">
 	<control type="textbox">
-	  <posy>10</posy>
-	  <width>518</width>
+	  <posy>235</posy>
+	  <width>460</width>
 	  <height>210</height>
 	  <align>center</align>
+	  <aligny>bottom</aligny>
 	  <font>Font_MainClassic3</font>
 	  <textcolor>FFE00000</textcolor>
 	  <shadowcolor>black</shadowcolor>
@@ -713,8 +715,8 @@
 	  <visible>IsEmpty(ListItem.Art(characterart))+IsEmpty(ListItem.Art(characterart))+IsEmpty(ListItem.Art(clearlogo))</visible>
 	</control>
 	<control type="image">
-	  <width>525</width>
-	  <height>204</height>
+	  <width>464</width>
+	  <height>464</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="bottom">keep</aspectratio>
 	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[PLCharacterArtVar]</texture>
@@ -722,9 +724,9 @@
   </include>
   <include name="PLCharacterShadow">
 	<control type="image">
-	  <posy>205</posy>
-	  <width>525</width>
-	  <height>204</height>
+	  <posy>465</posy>
+	  <width>464</width>
+	  <height>464</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="top">keep</aspectratio>
 	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[PLCharacterArtVar]</texture>

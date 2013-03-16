@@ -317,7 +317,7 @@
                     <label>$LOCALIZE[31812]</label>
                     <onclick>Skin.ToggleSetting(PLcdARTtv)</onclick>
                     <selected>Skin.HasSetting(PLcdARTtv)</selected>
-                    <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !StringCompare(Control.GetLabel(528707),cdart) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
+                    <visible>Container.Content(tvshows) + Stringcompare(Window(home).Property(actualViewtype),PosterLite) + !StringCompare(Control.GetLabel(528707),cdart) + !StringCompare(Control.GetLabel(528707),characterart) + !StringCompare(Control.GetLabel(528707),noicon)</visible>
                 </control>
 
                 <!--Landscape Options-->
