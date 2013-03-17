@@ -332,6 +332,7 @@
 	<pagecontrol>528061</pagecontrol>
 	<focusposition>2</focusposition>
 	<preloaditems>2</preloaditems>
+	<visible>![!IsEmpty(Skin.String((DisablePosterLiteVL)) + Window.IsActive(videos)]</visible>
 	<scrolltime tween="quadratic" easing="out">300</scrolltime>
 	<include>Animation_OpenCloseZoom_New</include>
 	<itemlayout width="190" height="1000" condition="StringCompare(Control.GetLabel(528707),poster)+!Control.IsVisible(528196)">
