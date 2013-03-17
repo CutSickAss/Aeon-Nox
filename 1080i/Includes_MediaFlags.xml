@@ -684,22 +684,23 @@
             <control type="group">
                 <visible>!Container.Content(tvshows)+!SubString(ListItem.Path,videodb://1/7/)</visible>
                 <posx>545</posx>
-                <posy>996</posy>
+                <posy>1006</posy>
                 <control type="image">
+                    <posy>-10</posy>
+					<height>92</height>
                     <include>CuFlVa</include>
                     <texture>flags/music/year/year.png</texture>
                     <visible>!IsEmpty(ListItem.Year)</visible>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>22</posy>
+                    <posy>12</posy>
                     <include>CuFlVa</include>
                     <label>$INFO[ListItem.Year]</label>
                     <visible>!IsEmpty(ListItem.Year)</visible>
                 </control>
                 <control type="label">
                     <posx>159</posx>
-                    <posy>23</posy>
+                    <posy>13</posy>
                     <width>210</width>
                     <include>CuFlVa</include>
                     <label>$INFO[ListItem.Duration] $LOCALIZE[12391]</label>
@@ -707,12 +708,13 @@
                 </control>
                 <control type="image">
                     <posx>376</posx>
+					<posy>5</posy>
                     <include>AudioFlagsVarsMPAA</include>
                     <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                 </control>
                 <control type="image" id="528076">
                     <posx>533</posx>
-                    <posy>2</posy>
+                    <posy>-8</posy>
                     <width>120</width>
                     <height>82</height>
                     <include>CuFlVa</include>
@@ -720,19 +722,15 @@
                 </control>
                 <control type="label">
                     <posx>533</posx>
-                    <posy>10</posy>
-                    <width>142</width>
-                    <height>72</height>
-                    <align>center</align>
                     <label>[UPPERCASE][B]$INFO[ListItem.Studio][/B][/UPPERCASE]</label>
                     <font>Font_Reg15</font>
+					<include>CuFlVa</include>
                     <textcolor>grey</textcolor>
                     <wrapmultiline>true</wrapmultiline>
                     <visible>IsEmpty(Control.GetLabel(528076))</visible>
                 </control>
                 <control type="image">
                     <posx>702</posx>
-                    <posy>-2</posy>
                     <include>CuFlVa</include>
                     <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
                 </control>
@@ -748,7 +746,6 @@
                 </control>
                 <control type="image">
                     <posx>1194</posx>
-                    <posy>-1</posy>
                     <include>CuFlVa</include>
                     <texture fallback="flags/audio/defaultsound.png">$VAR[AudioFlagVar,flags/audio/,.png]</texture>
                 </control>
@@ -769,6 +766,7 @@
                 </control>
                 <control type="image">
                     <posy>-24</posy>
+					<height>92</height>
                     <include>CuFlVa</include>
                     <texture>flags/music/year/year.png</texture>
                 </control>
@@ -779,7 +777,7 @@
                     <label>$INFO[ListItem.Year]</label>
                 </control>
                 <control type="image" id="528077">
-                    <posx>222</posx>
+                    <posx>210</posx>
                     <posy>-20</posy>
                     <width>124</width>
                     <height>84</height>
@@ -789,18 +787,17 @@
                 <control type="label">
                     <posx>222</posx>
                     <posy>-14</posy>
-                    <width>142</width>
-                    <height>72</height>
-                    <align>center</align>
                     <label>[UPPERCASE][B]$INFO[ListItem.Studio][/B][/UPPERCASE]</label>
                     <font>Font_Reg15</font>
+					<include>CuFlVa</include>
                     <textcolor>grey</textcolor>
                     <wrapmultiline>true</wrapmultiline>
                     <visible>IsEmpty(Control.GetLabel(528077))</visible>
                 </control>
                 <control type="image">
-                    <posx>376</posx>
-                    <posy>-25</posy>
+                    <posx>380</posx>
+                    <posy>-16</posy>
+					<height>72</height>
                     <include>AudioFlagsVarsMPAA</include>
                     <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                 </control>
@@ -809,7 +806,7 @@
     </include>
     <include name="CuFlVa">
         <width>142</width>
-        <height>92</height>
+        <height>72</height>
         <font>Font_Bold22</font>
         <align>center</align>
         <aligny>justify</aligny>

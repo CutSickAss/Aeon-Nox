@@ -257,6 +257,13 @@
                     <onclick>-</onclick>
                     <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </item>
+                <item>
+                    <label>$LOCALIZE[31972]</label>
+                    <onclick>Container.SetViewMode(528)</onclick>
+                    <visible>Window.IsActive(videos) + [Container.Content(movies) | Container.Content(sets) | Container.Content(genres) | Container.Content(tvshows)]</visible>
+                    <visible>![Window.IsActive(videos) + !IsEmpty(Skin.String(DisablePosterLiteVL))]</visible>
+                    <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
+                </item>
                  <item>
                     <label>$LOCALIZE[31477]</label>
                     <thumb>$INFO[Skin.String(DisableTriPanelVL)]</thumb>
