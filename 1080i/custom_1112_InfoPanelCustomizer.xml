@@ -14,7 +14,7 @@
                 <label>$VAR[InfoPanelVar]</label>
                 <include>BreadcrumbsLabel</include>
                 <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
-                <visible>Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(508)</visible>
+                <visible>Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(508) | Control.IsVisible(528)</visible>
             </control>
         <control type="group">
             <control type="image">
@@ -78,7 +78,7 @@
                     <onclick condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Skin.SetString(InfoPanel$INFO[Window(home).Property(Area)],infopanelonmanual)</onclick>
                     <onclick condition="Stringcompare(Control.GetLabel(4421),infopanelon)">Skin.SetString(InfoPanel$INFO[Window(home).Property(Area)],infopaneloff)</onclick>
                     <onclick condition="Stringcompare(Control.GetLabel(4421),infopanelonauto)">Skin.SetString(InfoPanel$INFO[Window(home).Property(Area)],infopanelon)</onclick>
-                    <visible>[Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) + !Skin.HasSetting(showcasezoom)] | [Stringcompare(Window(home).Property(actualViewtype),ShowcaseSquare) + !Skin.HasSetting(showcasesquarezoom)] | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners)</visible>
+                    <visible>[Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) + !Skin.HasSetting(showcasezoom)] | [Stringcompare(Window(home).Property(actualViewtype),ShowcaseSquare) + !Skin.HasSetting(showcasesquarezoom)] | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
                     <visible>![Stringcompare(Window(home).Property(actualViewtype),Shift) + !Skin.HasSetting(smallshiftview) + Window.IsActive(videos)]</visible>
                     <visible>!Container.Content(sets)</visible>
                 </control>
@@ -125,6 +125,7 @@
             <ondown>1625</ondown>
             <onright>Dialog.Close(1119)</onright>
             <onback>Dialog.Close(1119)</onback>
+			<visible>!Stringcompare(Window(home).Property(actualViewtype),PosterLite)</visible>
             <animation type="WindowClose">
                 <effect type="fade" start="100" end="0" time="320" />
                 <effect type="zoom" end="180,100" time="320" tween="cubic" />
@@ -227,16 +228,16 @@
             <control type="grouplist">
             <orientation>vertical</orientation>
             <height>1080</height>
-            <control type="ratiobutton" id="10">
+            <control type="button" id="10">
                 <posx>330</posx>
                 <posy>75</posy>
                 <width>147</width>
                 <align>center</align>
                 <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus border="3">settings/listselect_nf.png</texturenofocus>
-                <label>2 sec</label>
+                <label>3 sec</label>
                 <textcolor>white3</textcolor>
-                <onclick>Skin.SetString(InfopanelDelay,2)</onclick>
+                <onclick>Skin.SetString(InfopanelDelay,3)</onclick>
             </control>
             </control>
         </control>
