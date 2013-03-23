@@ -100,7 +100,7 @@
 	  </control>
 	  <!-- PLcdART, top-left -->
 	  <control type="group">
-		<visible>[[Container.Content(movies)+Skin.HasSetting(PLcdART)]|[Container.Content(tvshows)+Skin.HasSetting(PLcdARTtv)]]+!StringCompare(Control.GetLabel(528707),cdart)+!StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(528707),characterart)+!SubString(ListItem.Path,videodb://1/7/)</visible>
+		<visible>[[Container.Content(movies)+Skin.HasSetting(PLcdART)]|[Container.Content(tvshows)+Skin.HasSetting(PLcdARTtv)]]+!StringCompare(Control.GetLabel(528707),cdart)+!StringCompare(Control.GetLabel(528707),noicon)+!StringCompare(Control.GetLabel(528707),characterart)+!SubString(ListItem.Path,videodb://1/7/)+!StringCompare(ListItem.Label,..)</visible>
 		<posx>-509</posx>
 		<posy>-450</posy>
 		<control type="image">
