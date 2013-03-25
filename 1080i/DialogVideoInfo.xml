@@ -283,7 +283,7 @@
                                 <height>67</height>
                                 <aspectratio align="center">keep</aspectratio>
                                 <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
-                                <colordiffuse>white2</colordiffuse>
+                                <include>AudioFlagsVarsMPAA</include>
                                 <visible>Container.Content(movies) | Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(episodes)</visible>
                             </control>
                             <control type="image">
