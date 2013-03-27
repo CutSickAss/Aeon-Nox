@@ -976,6 +976,15 @@
                 <label>$LOCALIZE[20457]:  $INFO[ListItem.Label]</label>
                 <visible>!Control.IsVisible(9900)</visible>
             </control>
+            <control type="fadelabel">
+                <posx>550</posx>
+                <posy>1039</posy>
+                <width>1320</width>
+                <font>Font_Bold22_Caps</font>
+                <textcolor>$VAR[TitleColorVar]</textcolor>
+				<label>$LOCALIZE[180]:  $VAR[FanartPanelValue5Var]</label>
+                <visible>SubString(ListItem.Path,videodb://1/7/,left) + System.HasAddon(script.extendedinfo)</visible>
+            </control>
             <control type="group">
                 <visible>!Container.Content(tvshows)+!SubString(ListItem.Path,videodb://1/7/)</visible>
                 <posx>545</posx>

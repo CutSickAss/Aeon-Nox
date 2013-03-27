@@ -52,8 +52,8 @@
 			<pauseatend>2000</pauseatend>
 			<scrollspeed>10</scrollspeed>
 			<font>Font_Bold19</font>
-			<label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Genre][/COLOR]</label>
-			<visible>!IsEmpty(ListItem.Genre)+StringCompare(Control.GetLabel(528708),banner)</visible>
+			<label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$VAR[TriPanelValue2Var][/COLOR]</label>
+			<visible>StringCompare(Control.GetLabel(528708),banner)</visible>
 		  </control>
 		  <control type="fadelabel">
 			<posy>-2</posy>
@@ -63,8 +63,8 @@
 			<pauseatend>2000</pauseatend>
 			<scrollspeed>10</scrollspeed>
 			<font>Font_Bold19</font>
-			<label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$INFO[ListItem.Genre][/COLOR]</label>
-			<visible>!IsEmpty(ListItem.Genre)+!StringCompare(Control.GetLabel(528708),banner)</visible>
+			<label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$VAR[TriPanelValue2Var][/COLOR]</label>
+			<visible>!StringCompare(Control.GetLabel(528708),banner)</visible>
 		  </control>
 		  <!-- Movies only -->
 		  <control type="group">

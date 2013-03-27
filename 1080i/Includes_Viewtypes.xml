@@ -790,7 +790,7 @@
                         <width>391</width>
                         <height>220</height>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb3.jpg]</texture>
+                        <texture fallback="fallback.png" background="true">$VAR[ExtraThumb3Var]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
@@ -800,7 +800,7 @@
                         <width>391</width>
                         <height>220</height>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb4.jpg]</texture>
+                        <texture fallback="fallback.png" background="true">$VAR[ExtraThumb4Var]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
@@ -817,7 +817,7 @@
                         <width>391</width>
                         <height>220</height>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+                        <texture fallback="fallback.png" background="true">$VAR[ExtraThumb1Var]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
@@ -827,7 +827,7 @@
                         <width>391</width>
                         <height>220</height>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+                        <texture fallback="fallback.png" background="true">$VAR[ExtraThumb2Var]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
