@@ -5557,36 +5557,36 @@
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/$INFO[System.Date(yyyy)]/$INFO[System.Date(mm)]/babe_$INFO[System.Date(mm)]-$INFO[System.Date(dd)]-$INFO[System.Date(yyyy)].jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/$INFO[System.Date(yyyy)]/$INFO[System.Date(mm)]/babe_$INFO[System.Date(mm)]-$INFO[System.Date(dd)]-$INFO[System.Date(yyyy)].jpg</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babesimagespanel)</visible>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/01/babe_01-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/01/babe_01-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babesimagespanel)</visible>
             <onclick>SetFocus(5014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/02/babe_02-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/02/babe_02-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babesimagespanel)</visible>
             <onclick>SetFocus(5014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/03/babe_03-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/03/babe_03-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babesimagespanel)</visible>
             <onclick>SetFocus(5014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/04/babe_04-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/04/babe_04-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babesimagespanel)</visible>
             <onclick>SetFocus(5014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/05/babe_05-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/05/babe_05-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babesimagespanel)</visible>
             <onclick>SetFocus(5014)</onclick>
         </item>
     </include>
@@ -5654,6 +5654,114 @@
             <thumb>$INFO[Window(home).Property(bigpictures.photo.7.pic)]</thumb>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
+        </item>
+    </include>
+    <include name="XKCDContent">
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.0.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.0.description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.0.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.1.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.1.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.1.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.2.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.2.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.2.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.3.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.3.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.3.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.4.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.4.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.4.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.5.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.5.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.5.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.6.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.6.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.6.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.7.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.7.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.7.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),xkcd)</visible>
+        </item>
+    </include>
+    <include name="CyanideContent">
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.1.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.1.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.2.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.2.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.3.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.3.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.4.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.4.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.5.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.5.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.6.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.6.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.7.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.7.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.8.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.8.Image)]</thumb>
+            <onclick>SetFocus(5014)</onclick>
+            <visible>Substring(Control.GetLabel(4321),cyanide)</visible>
         </item>
     </include>
     <include name="FeaturedWidgetLeftMovies">

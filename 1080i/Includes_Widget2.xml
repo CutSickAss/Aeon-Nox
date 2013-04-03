@@ -5723,7 +5723,7 @@
                         <height>52</height>
                         <align>center</align>
                         <label>31374</label>
-                        <font>Font_Bold20</font>
+                        <font>Font_Bold34</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     </control>
                     <control type="label">
@@ -5750,7 +5750,7 @@
                         <height>30</height>
                         <align>center</align>
                         <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Bold35</font>
+                        <font>Font_Bold56</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Current.Temperature))</visible>
                     </control>
@@ -5765,7 +5765,7 @@
                         <width>284</width>
                         <height>52</height>
                         <align>center</align>
-                        <font>Font_Bold20</font>
+                        <font>Font_Bold34</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <info>Window(weather).Property(Day0.Title)</info>
                     </control>
@@ -5794,7 +5794,7 @@
                         <height>30</height>
                         <align>right</align>
                         <label>$LOCALIZE[419] :</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="label">
@@ -5803,7 +5803,7 @@
                         <width>142</width>
                         <height>30</height>
                         <label>$INFO[Window(weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>red</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Day0.HighTemp))</visible>
                     </control>
@@ -5814,7 +5814,7 @@
                         <height>52</height>
                         <align>right</align>
                         <label>$LOCALIZE[418] :</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="label">
@@ -5823,7 +5823,7 @@
                         <width>142</width>
                         <height>52</height>
                         <label>$INFO[Window(weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>blue</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Day0.LowTemp))</visible>
                     </control>
@@ -5838,7 +5838,7 @@
                         <width>284</width>
                         <height>52</height>
                         <align>center</align>
-                        <font>Font_Bold20</font>
+                        <font>Font_Bold34</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <info>Window(weather).Property(Day1.Title)</info>
                     </control>
@@ -5867,7 +5867,7 @@
                         <height>30</height>
                         <align>right</align>
                         <label>$LOCALIZE[419] :</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="label">
@@ -5876,7 +5876,7 @@
                         <width>142</width>
                         <height>30</height>
                         <label>$INFO[Window(weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>red</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Day1.HighTemp))</visible>
                     </control>
@@ -5887,7 +5887,7 @@
                         <height>45</height>
                         <align>right</align>
                         <label>$LOCALIZE[418] :</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="label">
@@ -5896,7 +5896,7 @@
                         <width>142</width>
                         <height>45</height>
                         <label>$INFO[Window(weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>blue</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Day1.LowTemp))</visible>
                     </control>
@@ -5911,7 +5911,7 @@
                         <width>284</width>
                         <height>52</height>
                         <align>center</align>
-                        <font>Font_Bold20</font>
+                        <font>Font_Bold34</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <info>Window(weather).Property(Day2.Title)</info>
                     </control>
@@ -5940,7 +5940,7 @@
                         <height>30</height>
                         <align>right</align>
                         <label>$LOCALIZE[419] :</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="label">
@@ -5949,7 +5949,7 @@
                         <width>142</width>
                         <height>30</height>
                         <label>$INFO[Window(weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>red</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Day2.HighTemp))</visible>
                     </control>
@@ -5960,7 +5960,7 @@
                         <height>45</height>
                         <align>right</align>
                         <label>$LOCALIZE[418] :</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="label">
@@ -5969,7 +5969,7 @@
                         <width>142</width>
                         <height>45</height>
                         <label>$INFO[Window(weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>blue</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Day2.LowTemp))</visible>
                     </control>
@@ -5984,7 +5984,7 @@
                         <width>284</width>
                         <height>52</height>
                         <align>center</align>
-                        <font>Font_Bold20</font>
+                        <font>Font_Bold34</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <info>Window(weather).Property(Day3.Title)</info>
                     </control>
@@ -6013,7 +6013,7 @@
                         <height>30</height>
                         <align>right</align>
                         <label>$LOCALIZE[419] :</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="label">
@@ -6022,7 +6022,7 @@
                         <width>142</width>
                         <height>30</height>
                         <label>$INFO[Window(weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>red</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Day3.HighTemp))</visible>
                     </control>
@@ -6033,7 +6033,7 @@
                         <height>45</height>
                         <align>right</align>
                         <label>$LOCALIZE[418] :</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey2</textcolor>
                     </control>
                     <control type="label">
@@ -6042,7 +6042,7 @@
                         <width>142</width>
                         <height>45</height>
                         <label>$INFO[Window(weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits]</label>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>blue</textcolor>
                         <visible>!IsEmpty(Window(weather).Property(Day3.LowTemp))</visible>
                     </control>
@@ -6602,43 +6602,43 @@
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/06/babe_06-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/06/babe_06-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4325),babesimagespanel)</visible>
             <onclick>SetFocus(6014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/07/babe_07-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/07/babe_07-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4325),babesimagespanel)</visible>
             <onclick>SetFocus(6014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/08/babe_08-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/08/babe_08-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4325),babesimagespanel)</visible>
             <onclick>SetFocus(6014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/09/babe_09-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/09/babe_09-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4325),babesimagespanel)</visible>
             <onclick>SetFocus(6014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/10/babe_10-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/10/babe_10-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4325),babesimagespanel)</visible>
             <onclick>SetFocus(6014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/11/babe_11-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/11/babe_11-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4325),babesimagespanel)</visible>
             <onclick>SetFocus(6014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/12/babe_12-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/12/babe_12-$INFO[System.Date(dd)]-2012.jpg</thumb>
-            <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4325),babesimagespanel)</visible>
             <onclick>SetFocus(6014)</onclick>
         </item>
     </include>
@@ -6713,5 +6713,113 @@
         <ondown condition="!Skin.HasSetting(lowermainmenu) | !Control.IsVisible(4444)">7993</ondown>
         <ondown condition="Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
         <onback>7993</onback>
+    </include>
+    <include name="XKCDContent2">
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.0.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.0.description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.0.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.1.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.1.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.1.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.2.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.2.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.2.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.3.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.3.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.3.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.4.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.4.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.4.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.5.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.5.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.5.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.6.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.6.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.6.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),xkcd)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(XKCD.7.Title)]</label>
+            <property name="Plot">$INFO[Window(home).Property(XKCD.7.Description)]</property>
+            <thumb>$INFO[Window(home).Property(XKCD.7.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),xkcd)</visible>
+        </item>
+    </include>
+    <include name="CyanideContent2">
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.1.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.1.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.2.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.2.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.3.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.3.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.4.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.4.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.5.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.5.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.6.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.6.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.7.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.7.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),cyanide)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(CyanideHappiness.8.Title)]</label>
+            <thumb>$INFO[Window(home).Property(CyanideHappiness.8.Image)]</thumb>
+            <onclick>SetFocus(6014)</onclick>
+            <visible>Substring(Control.GetLabel(4325),cyanide)</visible>
+        </item>
     </include>
 </includes>

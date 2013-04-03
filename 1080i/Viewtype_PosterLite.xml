@@ -40,7 +40,7 @@
 			<width>1321</width>
 			<height>163</height>
 			<aligny>justify</aligny>
-			<font>Font_Reg25</font>
+			<font>Font_Reg42</font>
 			<label>$VAR[GlobalPlotVar]</label>
 			<autoscroll time="6000" delay="10000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 		  </control>
@@ -51,7 +51,7 @@
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
 			<scrollspeed>10</scrollspeed>
-			<font>Font_Bold19</font>
+			<font>Font_Bold33</font>
 			<label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$VAR[TriPanelValue2Var][/COLOR]</label>
 			<visible>StringCompare(Control.GetLabel(528708),banner)</visible>
 		  </control>
@@ -62,7 +62,7 @@
 			<scrollout>false</scrollout>
 			<pauseatend>2000</pauseatend>
 			<scrollspeed>10</scrollspeed>
-			<font>Font_Bold19</font>
+			<font>Font_Bold33</font>
 			<label>$LOCALIZE[515]: [COLOR=$VAR[TitleColorVar]]$VAR[TriPanelValue2Var][/COLOR]</label>
 			<visible>!StringCompare(Control.GetLabel(528708),banner)</visible>
 		  </control>
@@ -85,7 +85,7 @@
 			  <posy>26</posy>
 			  <width>695</width>
 			  <height>75</height>
-			  <font>Font_Bold19</font>
+			  <font>Font_Bold33</font>
 			  <align>center</align>
 			  <aligny>center</aligny>
 			  <scrollspeed>15</scrollspeed>
@@ -764,7 +764,7 @@
 	  <posy>285</posy>
 	  <width>320</width>
 	  <height>120</height>
-	  <font>Font_Reg22</font>
+	  <font>Font_Reg38</font>
 	  <align>center</align>
 	  <scroll>true</scroll>
 	  <textcolor>FFE00000</textcolor>
@@ -824,7 +824,7 @@
 	  <width>530</width>
 	  <height>70</height>
 	  <align>center</align>
-	  <font>Font_Reg25_Caps</font>
+	  <font>Font_Reg42_Caps</font>
 	  <textcolor>FFE00000</textcolor>
 	  <shadowcolor>black</shadowcolor>
 	  <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
