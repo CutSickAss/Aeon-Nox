@@ -1072,7 +1072,7 @@
                 <font>Font_Bold37_Caps</font>
                 <textcolor>$VAR[TitleColorVar]</textcolor>
                 <label>$LOCALIZE[20457]:  $INFO[ListItem.Label]</label>
-                <visible>!Control.IsVisible(9900)</visible>
+                <visible>!Control.IsVisible(9900) + !Skin.HasSetting(backendmode)</visible>
             </control>
             <control type="fadelabel">
                 <posx>550</posx>
@@ -1081,7 +1081,7 @@
                 <font>Font_Bold37_Caps</font>
                 <textcolor>$VAR[TitleColorVar]</textcolor>
 				<label>$LOCALIZE[180]:  $VAR[FanartPanelValue5Var]</label>
-                <visible>SubString(ListItem.Path,videodb://1/7/,left) + System.HasAddon(script.extendedinfo)</visible>
+                <visible>SubString(ListItem.Path,videodb://1/7/,left) + Skin.HasSetting(backendmode)</visible>
             </control>
             <control type="group">
                 <visible>!Container.Content(tvshows)+!SubString(ListItem.Path,videodb://1/7/)</visible>

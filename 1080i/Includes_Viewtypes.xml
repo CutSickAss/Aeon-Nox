@@ -1226,7 +1226,7 @@
             <width>190</width>
             <height>74</height>
             <aspectratio aligny="bottom">keep</aspectratio>
-            <texture background="true">$VAR[TVShowLogoVar]</texture>
+            <texture background="true">$VAR[LogoVarList]</texture>
         </control>
     </include>
     <include name="Custom_cdART_title">
@@ -1336,7 +1336,7 @@
             <height>70</height>
             <fadetime>4000</fadetime>
             <aspectratio aligny="bottom">keep</aspectratio>
-            <texture background="true">$VAR[TVShowLogoVar]</texture>
+            <texture background="true">$VAR[LogoVarList]</texture>
         </control>
         <control type="fadelabel">
             <posx>139</posx>
