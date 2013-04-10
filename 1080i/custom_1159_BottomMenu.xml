@@ -149,8 +149,9 @@
                         <label2>$INFO[Window(home).Property(News.RSS.1.Title)]</label2>
                         <thumb>special://skin/extras/BigIcons/Web.png</thumb>
                         <onclick>Dialog.Close(1159)</onclick>
-                        <onclick>-</onclick>
-                        <visible>System.HasAddon(script.rssclient)</visible>
+                            <onclick>SetProperty(Featured,rssnews,home)</onclick>
+                            <onclick>ActivateWindow(1140)</onclick>
+                        <visible>System.HasAddon(script.extendedinfo)</visible>
                     </item>
                     <item id="6">
                         <label>$LOCALIZE[33050] ($INFO[Window(weather).Property(Alerts.Count)])</label>

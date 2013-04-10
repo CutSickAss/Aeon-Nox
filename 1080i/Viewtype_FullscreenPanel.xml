@@ -482,7 +482,7 @@
                             <width>520</width>
                             <height>500</height>
                             <aspectratio aligny="bottom">keep</aspectratio>
-                            <texture background="true">$VAR[TVShowLogoVar]</texture>
+                            <texture background="true">$VAR[LogoVarList]</texture>
                             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
                             <visible>StringCompare(Container.FolderPath,videodb://5/) | Container.Content(tvshows)</visible>
                         </control>
@@ -593,7 +593,7 @@
                             <width>520</width>
                             <height>500</height>
                             <aspectratio aligny="bottom">keep</aspectratio>
-                            <texture background="true">$VAR[TVShowLogoVar]</texture>
+                            <texture background="true">$VAR[LogoVarList]</texture>
                             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
                             <visible>StringCompare(Container.FolderPath,videodb://5/) | Container.Content(tvshows)</visible>
                         </control>
@@ -1167,7 +1167,7 @@
             <width>520</width>
             <height>500</height>
             <aspectratio aligny="bottom">keep</aspectratio>
-            <texture background="true">$VAR[TVShowLogoVar]</texture>
+            <texture background="true">$VAR[LogoVarList]</texture>
             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
             <visible>StringCompare(Container.FolderPath,videodb://5/) | Container.Content(tvshows)</visible>
         </control>
@@ -1242,7 +1242,7 @@
             <width>520</width>
             <height>500</height>
             <aspectratio aligny="bottom">keep</aspectratio>
-            <texture background="true">$VAR[TVShowLogoVar]</texture>
+            <texture background="true">$VAR[LogoVarList]</texture>
             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
             <visible>StringCompare(Container.FolderPath,videodb://5/) | Container.Content(tvshows)</visible>
         </control>
