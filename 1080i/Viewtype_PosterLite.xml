@@ -142,7 +142,7 @@
 		  <height>157</height>
 		  <fadetime>250</fadetime>
 		  <aspectratio aligny="bottom">keep</aspectratio>
-		  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
+		  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[LogoVarList]</texture>
 		  <animation effect="slide" end="0,200" time="160" condition="[StringCompare(Control.GetLabel(4421),infopaneloff)|[StringCompare(Control.GetLabel(528707),noicon)+!Control.IsVisible(528200)]]">Conditional</animation>
 		  <visible>StringCompare(Control.GetLabel(528708),logo)</visible>
 		</control>
@@ -655,7 +655,7 @@
 	  <height>204</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="bottom">keep</aspectratio>
-	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
+	  <texture diffuse="thumbs/multiplex_tvmask.png">$VAR[LogoVarList]</texture>
 	</control>
   </include>
   <include name="PLLogoShadow">
@@ -665,7 +665,7 @@
 	  <height>204</height>
 	  <fadetime>250</fadetime>
 	  <aspectratio aligny="top">keep</aspectratio>
-	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[TVShowLogoVar]</texture>
+	  <texture flipy="true" diffuse="thumbs/multiplex_tvmask.png">$VAR[LogoVarList]</texture>
 	  <animation effect="fade" start="10" end="10" condition="true">Conditional</animation>
 	</control>
   </include>
@@ -815,7 +815,7 @@
 	  <width>528</width>
 	  <height>98</height>
 	  <aspectratio scalediffuse="false">keep</aspectratio>
-	  <texture diffuse="thumbs/banner_mask.png">$VAR[TVShowLogoVar]</texture>
+	  <texture diffuse="thumbs/banner_mask.png">$VAR[LogoVarList]</texture>
 	  <visible>IsEmpty(ListItem.Art(banner))+IsEmpty(ListItem.Art(tvshow.banner))</visible>
 	</control>
 	<control type="textbox">
